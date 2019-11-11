@@ -20,4 +20,4 @@ What follows is a very brief installation guide taken from the more extensive <a
 # Installation
 * To install simply clone/download this repository and include the entire folder in your path (the docs and bin subfolders are optional and not part of the source code). You will also need to do the same with Eigen.
 * See this <a href="https://nickg-math.github.io/Mackey/html/use.html">page</a> for details on how to set up and call the library from your source code.
-* As for compiler support, I have tested the code with the following C++ compilers: GCC 9.2 (Linux), Clang 10 (Linux and MacOS), Intel Compiler 19 (Linux and Windows), MSVC 19 (Windows). Remember to use the option -std=c++17. For more information on compiler options, see the ,a href="https://nickg-math.github.io/Mackey/html/perf.html">perf</a> page.
+* As for compiler support, I have tested the code with the following C++ compilers: GCC 9.2 (Linux), Clang 10 (Linux and MacOS), Intel Compiler 19 (Linux and Windows), MSVC 19 (Windows). Remember to use the option -std=c++17. For more information on compiler options, see the <a href="https://nickg-math.github.io/Mackey/html/perf.html">perf</a> page.

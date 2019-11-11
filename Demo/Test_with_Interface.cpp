@@ -1,9 +1,9 @@
 //Eigen directives
-#define EIGEN_USE_MKL_ALL
+//#define EIGEN_USE_MKL_ALL
 //#define EIGEN_NO_DEBUG //disable Eigen assertions
 //#define NDEBUG
 
-//Mackey directives
+#define MACKEY_NAMES
 
 #ifdef _MSC_VER
 #define _SILENCE_CXX17_ADAPTOR_TYPEDEFS_DEPRECATION_WARNING //Eigen won't work otherwise.
@@ -11,12 +11,14 @@
 //note: These preprocessor directives must be before any includes.
 
 #include <iostream>
+#include "Implementation.h"
+#include "Optional_Implementation.h"
 #include "C4Verify.h"
 
 
 using namespace C4Test;
 
-typedef Eigen::Matrix<short, 1, -1> rank_t;
+typedef Eigen::Matrix<char, 1, -1> rank_t;
 typedef Eigen::Matrix<char, -1, -1> diff_t;
 
 

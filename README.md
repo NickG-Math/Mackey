@@ -8,3 +8,19 @@ There are three ways you can use it:
 * This project is a header-only library written in C++. It's more general, more modular and extensible, and about 20-30 times faster than the MATLAB version. To get started with a user-guide/tutorial, please refer to this Github <a href="https://nickg-math.github.io/Mackey/html/index.html">page</a>. It also contains extensive documentation for every method and class of the project.
 
 You can also view a graph created by this library and drawn by graphviz  <a href="https://github.com/NickG-Math/Mackey/blob/master/Multiplication_Graph.svg">here</a> (first download it and then open the svg via a browser).
+
+
+
+Here's a very quick installation guide to get started, partially taken from the fuller <a href="https://nickg-math.github.io/Mackey/html/index.html">documentation</a>.
+
+# Requirements
+* C++17 and the standard library.
+* Eigen, a header only library for matrix manipulation. I've tested this with Eigen 3.3.7
+* Optional: For improved performance you can use the Intel MKL with Eigen and further combine with OpenMP for multithreading.
+* Optional: To draw the multiplication graphs you will need Graphviz.
+
+# Installation
+* To install simply clone/download the folder Mackey and include it in your path. You will also need to do the same with Eigen.
+* See this <a href="https://nickg-math.github.io/Mackey/html/use.html">page</a> for details on how to set up and call the library.
+* As for compiler support, I have tested the code with the following C++ compilers: GCC 9.2 (Linux), Clang 10 (Linux and MacOS), Intel Compiler 19 (Linux and Windows), MSVC 19 (Windows). Remember to use the option -std=c++17. For more information on compiler options, see the per page
+

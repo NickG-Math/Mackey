@@ -11,7 +11,7 @@ You can also view a graph created by this library and drawn by graphviz  <a href
 
 
 
-Here's a very quick installation guide to get started, partially taken from the fuller <a href="https://nickg-math.github.io/Mackey/html/index.html">documentation</a>.
+What follows is a very brief installation guide taken from the more extensive <a href="https://nickg-math.github.io/Mackey/html/index.html">documentation</a>.
 
 # Requirements
 * C++17 and the standard library.

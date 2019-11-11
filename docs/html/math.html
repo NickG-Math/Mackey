@@ -19,6 +19,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -90,7 +96,7 @@ $(document).ready(function(){initNavTree('math.html','');});
 Briefly</h1>
 <p>There are three fundamental ideas that make our code work:</p>
 <ul>
-<li>Homology of chain complexes of free <img class="formulaInl" alt="$\mathbb Z$" src="form_3.png"/> modules can be algorithmically computed by turning the differentials into matrices and then diagonalizing them (Smith Normal Form).</li>
+<li>Homology of chain complexes of free \(\mathbb Z\) modules can be algorithmically computed by turning the differentials into matrices and then diagonalizing them (Smith Normal Form).</li>
 <li>Free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are determined by their bottom level groups. The higher levels are obtained by taking fixed points, and this can be done algorithmically on our matrices as long as equivariant bases are used (this is an ordered basis in which elements in the same orbit are written consecutively).</li>
 <li>Box products of <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are tensor products on the bottom level. This is not true for the higher levels, however using the bulletpoint above, higher levels are obtained by transferring. This is how box products of chain complexes of free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are computed.</li>
 </ul>
@@ -98,17 +104,17 @@ Briefly</h1>
 <p>By converting all our differentials to matrices, using equivariant bases throughout, we can reduce our computations to pure linear algebra (over the integers), avoiding any symbolic math.</p>
 <h1><a class="anchor" id="imd"></a>
 In more detail</h1>
-<p>Here's how the code works in more detail (for simplicity we specialize to the <img class="formulaInl" alt="$G=C_4$" src="form_1.png"/> case, although everything works with different prime powers:</p>
+<p>Here's how the code works in more detail (for simplicity we specialize to the \(G=C_4\) case, although everything works with different prime powers:</p>
 <h2><a class="anchor" id="add"></a>
 The additive structure</h2>
 <ul>
-<li>The input are the bottom levels of the chains of the spheres <img class="formulaInl" alt="$S^{n\sigma+m\lambda}$" src="form_4.png"/> for <img class="formulaInl" alt="$n,m\ge 0$" src="form_5.png"/>. We could in fact do with only <img class="formulaInl" alt="$S^{\sigma},S^{\lambda}$" src="form_6.png"/>, but this would result in taking arbitrarily many box products and destroy performance. Instead using the spheres <img class="formulaInl" alt="$S^{n\sigma+m\lambda}$" src="form_4.png"/> for <img class="formulaInl" alt="$n,m\ge 0$" src="form_5.png"/> we only have to take triple box products at most, for some of the multiplicative structure.</li>
-<li>The data of a Chain complex are the ranks and differentials. The differentials are stored as matrices, but the ranks are stored as integer arrays and not integers. This is crucial as for example <img class="formulaInl" alt="$\mathbb Z[C_4]$" src="form_7.png"/> transfers completely differently from <img class="formulaInl" alt="$\mathbb Z[C_2]\oplus \mathbb Z[C_2]$" src="form_8.png"/> even though they both have rank <img class="formulaInl" alt="$4=2+2$" src="form_9.png"/> over <img class="formulaInl" alt="$\mathbb Z$" src="form_3.png"/>. With our conventions, <img class="formulaInl" alt="$\mathbb Z[C_2]\oplus \mathbb Z[C_2]$" src="form_8.png"/> has rank <img class="formulaInl" alt="$[2,2]$" src="form_10.png"/> while <img class="formulaInl" alt="$\mathbb Z[C_4]$" src="form_7.png"/> has rank <img class="formulaInl" alt="$4$" src="form_11.png"/>.</li>
+<li>The input are the bottom levels of the chains of the spheres \(S^{n\sigma+m\lambda}\) for \(n,m\ge 0\). We could in fact do with only \(S^{\sigma},S^{\lambda}\), but this would result in taking arbitrarily many box products and destroy performance. Instead using the spheres \(S^{n\sigma+m\lambda}\) for \(n,m\ge 0\) we only have to take triple box products at most, for some of the multiplicative structure.</li>
+<li>The data of a Chain complex are the ranks and differentials. The differentials are stored as matrices, but the ranks are stored as integer arrays and not integers. This is crucial as for example \(\mathbb Z[C_4]\) transfers completely differently from \(\mathbb Z[C_2]\oplus \mathbb Z[C_2]\) even though they both have rank \(4=2+2\) over \(\mathbb Z\). With our conventions, \(\mathbb Z[C_2]\oplus \mathbb Z[C_2]\) has rank \([2,2]\) while \(\mathbb Z[C_4]\) has rank \(4\).</li>
 <li>We transfer both ranks and differentials to higher levels. While transferring ranks is straightforward, transferring differentials is quite a bit more complicated and requires to have already transferred the ranks of the domain and range of the differentials.</li>
 <li>Using the familiar homology algorithm we compute the groups of the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor at every level. We also compute their generators (as elements in the Chain complex)</li>
-<li>We transfer/restrict and compute the Weyl group action on the group generators. This concludes the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor computation for the <img class="formulaInl" alt="$S^{n\sigma+m\lambda}$" src="form_4.png"/>, <img class="formulaInl" alt="$n,m\ge 0$" src="form_5.png"/>.</li>
+<li>We transfer/restrict and compute the Weyl group action on the group generators. This concludes the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor computation for the \(S^{n\sigma+m\lambda}\), \(n,m\ge 0\).</li>
 <li>To obtain the chains of the rest of the spheres, we box the Chains we already have. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly. However the most convenient bases for tensoring are not equivariant, and in the end we have to change bases through permutation matrices.</li>
-<li>We then perform the same procedure with transferring to get the entrire <img class="formulaInl" alt="$RO(G)$" src="form_0.png"/> homology.</li>
+<li>We then perform the same procedure with transferring to get the entrire \(RO(G)\) homology.</li>
 </ul>
 <h2><a class="anchor" id="mult"></a>
 The multiplicative structure</h2>
@@ -125,27 +131,27 @@ Factorization</h2>
 <p>Even if we can multiply any two generators, that doesn't mean we can automatically write any element as a product of our preferred generators. If we know the expression then we can easily check it, however factorizing is a lot more complicated:</p>
 <ul>
 <li>First we form a multiplication table, where all generators (in a range of course) are multiplied with the "basic irreducibles". These can be the Euler and orientation classes.</li>
-<li>Once we have that we can draw a directed colored graph by connecting <img class="formulaInl" alt="$a$" src="form_12.png"/> with <img class="formulaInl" alt="$ab$" src="form_13.png"/> for <img class="formulaInl" alt="$b$" src="form_14.png"/> a basic irreducible; we color this edge red. If multiplication by b is an isomorphism i.e. <img class="formulaInl" alt="$a=(ab)/b$" src="form_15.png"/> then we also connect <img class="formulaInl" alt="$ab$" src="form_13.png"/> with <img class="formulaInl" alt="$a$" src="form_12.png"/>; we color this edge blue.</li>
-<li>Since the product <img class="formulaInl" alt="$ab$" src="form_13.png"/> may not be a generator, but rather a multiple of it, we need to allow multiples of generators as distinct nodes. We never allow trivial (0) multiples of generators.</li>
+<li>Once we have that we can draw a directed colored graph by connecting \(a\) with \(ab\) for \(b\) a basic irreducible; we color this edge red. If multiplication by b is an isomorphism i.e. \(a=(ab)/b\) then we also connect \(ab\) with \(a\); we color this edge blue.</li>
+<li>Since the product \(ab\) may not be a generator, but rather a multiple of it, we need to allow multiples of generators as distinct nodes. We never allow trivial (0) multiples of generators.</li>
 <li>To obtain a factorization, we simply need to connect 1 with any node in the graph. For the most efficient factorizations, we want to minimize the alternation of blue and red edges. This is done by a generalized Dikjstra algorithm.</li>
-<li>For the generators not connected to 1 (eg <img class="formulaInl" alt="$s_3$" src="form_16.png"/>) we perform the same process using different sources for our graph.</li>
+<li>For the generators not connected to 1 (eg \(s_3\)) we perform the same process using different sources for our graph.</li>
 </ul>
 <h1><a class="anchor" id="caveat"></a>
 A caveat</h1>
 <h2><a class="anchor" id="cyclic"></a>
 Cyclic Generators</h2>
 <ul>
-<li>The way we prove that say a transfer map is multiplication by <img class="formulaInl" alt="$2$" src="form_17.png"/>, is by computing the generators at the domain and target, compute the transfer of the domain generator and compare with the target. Of course, there are usually multiple choices of generators, but up to isomorphism we get the same <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor.</li>
-<li>There is a caveat however that appears when computing the multiplicative structure: If we prove that <img class="formulaInl" alt="$ab$" src="form_13.png"/> and <img class="formulaInl" alt="$cd$" src="form_18.png"/> are both generators of the same cyclic group, then we can't conclude that they are equal. Eg if the group is <img class="formulaInl" alt="$\mathbb Z/4$" src="form_19.png"/> or <img class="formulaInl" alt="$\mathbb Z$" src="form_3.png"/> then they differ by a sign. Still, since we are interested in generating the <img class="formulaInl" alt="$RO(G)$" src="form_0.png"/> homology, as opposed to finding exact relations, we don't have to distinguish between cyclic generators and we don't need to stress over this detail.</li>
-<li>If we are interested in exact relations, then we can resolve the multiple generator ambiguity as follows: <img class="formulaInl" alt="$ab$" src="form_13.png"/> and <img class="formulaInl" alt="$cd$" src="form_18.png"/> are produced by tensoring different complexes, and if we have an explicit chain homotopy between them then we can compare directly. For example if they are obtained by tensoring <img class="formulaInl" alt="$C_*(S^{n\sigma+m\lambda})\otimes C_*S^{\lambda}$" src="form_20.png"/> and <img class="formulaInl" alt="$C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{2\lambda}$" src="form_21.png"/> then we can compare them by using <img class="formulaInl" alt="$C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{\lambda}\otimes C_*S^{\lambda}$" src="form_22.png"/> as a stepping stone.</li>
+<li>The way we prove that say a transfer map is multiplication by \(2\), is by computing the generators at the domain and target, compute the transfer of the domain generator and compare with the target. Of course, there are usually multiple choices of generators, but up to isomorphism we get the same <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor.</li>
+<li>There is a caveat however that appears when computing the multiplicative structure: If we prove that \(ab\) and \(cd\) are both generators of the same cyclic group, then we can't conclude that they are equal. Eg if the group is \(\mathbb Z/4\) or \(\mathbb Z\) then they differ by a sign. Still, since we are interested in generating the \(RO(G)\) homology, as opposed to finding exact relations, we don't have to distinguish between cyclic generators and we don't need to stress over this detail.</li>
+<li>If we are interested in exact relations, then we can resolve the multiple generator ambiguity as follows: \(ab\) and \(cd\) are produced by tensoring different complexes, and if we have an explicit chain homotopy between them then we can compare directly. For example if they are obtained by tensoring \(C_*(S^{n\sigma+m\lambda})\otimes C_*S^{\lambda}\) and \(C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{2\lambda}\) then we can compare them by using \(C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{\lambda}\otimes C_*S^{\lambda}\) as a stepping stone.</li>
 <li>The problem with the above approach is that we need to take more and more box products, which is the most costly operation for runtime.</li>
 </ul>
 <h2><a class="anchor" id="noncycl"></a>
 Non cyclic generators</h2>
 <ul>
-<li>There is a situtation where this caveat cannot be sidestepped and that's when we have non cyclic groups. Here's an example where this problem comes up: If we have <img class="formulaInl" alt="$\mathbb Z\oplus \mathbb Z/2$" src="form_23.png"/> with generators <img class="formulaInl" alt="$x,y$" src="form_24.png"/> respectively then we can't automatically distinguish <img class="formulaInl" alt="$x$" src="form_25.png"/> from <img class="formulaInl" alt="$x+y$" src="form_26.png"/> as there is an automorphism of <img class="formulaInl" alt="$\mathbb Z\oplus \mathbb Z/2$" src="form_23.png"/> exchanging them. In that case the difference between <img class="formulaInl" alt="$ab$" src="form_13.png"/> and <img class="formulaInl" alt="$cd$" src="form_18.png"/> generating the same group can be much more severe than multiplication with an integer coprime to the group's order (or a sign).</li>
+<li>There is a situtation where this caveat cannot be sidestepped and that's when we have non cyclic groups. Here's an example where this problem comes up: If we have \(\mathbb Z\oplus \mathbb Z/2\) with generators \(x,y\) respectively then we can't automatically distinguish \(x\) from \(x+y\) as there is an automorphism of \(\mathbb Z\oplus \mathbb Z/2\) exchanging them. In that case the difference between \(ab\) and \(cd\) generating the same group can be much more severe than multiplication with an integer coprime to the group's order (or a sign).</li>
 <li>One way out of this is to apply the approach for cyclic generators, breaking down our box products further, until they can be compared.</li>
-<li>Alternatively (and this is the approach we take in practice) is to ignore these products and make no statement as to the equality of <img class="formulaInl" alt="$ab$" src="form_13.png"/> and <img class="formulaInl" alt="$cd$" src="form_18.png"/>. This gives us less data to work with, but at least in the <img class="formulaInl" alt="$C_4$" src="form_27.png"/> case this is enough to write the factorization of any element. </li>
+<li>Alternatively (and this is the approach we take in practice) is to ignore these products and make no statement as to the equality of \(ab\) and \(cd\). This gives us less data to work with, but at least in the \(C_4\) case this is enough to write the factorization of any element. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

@@ -19,6 +19,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -88,8 +94,8 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="intro"></a>
 Introduction</h1>
-<p>This is a C++ header only library devoted to numerically computing the <img class="formulaInl" alt="$RO(G)$" src="form_0.png"/> homology of a point. It is hosted on ...</p>
-<p>For a quick demonstration in the case of <img class="formulaInl" alt="$G=C_4$" src="form_1.png"/> you can use one of the available binaries in ...</p>
+<p>This is a C++ header only library devoted to numerically computing the \(RO(G)\) homology of a point. It is hosted <a href="https://github.com/NickG-Math/Mackey">here</a></p>
+<p>For a quick demonstration in the case of \(G=C_4\) you can use one of the available binaries <a href="https://github.com/NickG-Math/Mackey/Exec">here</a>.</p>
 <h1><a class="anchor" id="req"></a>
 Requirements</h1>
 <ul>
@@ -101,25 +107,25 @@ Requirements</h1>
 <h1><a class="anchor" id="install"></a>
 Installation</h1>
 <ul>
-<li>To install simply clone/download the repository ... and include it in your path. You will also need to do the same with Eigen.</li>
+<li>To install simply clone/download the folder <a href="https://github.com/NickG-Math/Mackey/Mackey">Mackey</a> and include it in your path. You will also need to do the same with Eigen.</li>
 <li>See the page <a class="el" href="use.html">How to Use</a> for a tutorial on using the library.</li>
 <li>As for compiler support, I have tested the code with the following C++ compilers: GCC 9.2 (Linux), Clang 10 (Linux and MacOS), Intel Compiler 19 (Linux and Windows), MSVC 19 (Windows). Remember to use the option <code>-std=c++17</code>. For more information on compiler options, see the per page.</li>
 </ul>
 <h1><a class="anchor" id="status"></a>
 Current Status</h1>
 <ul>
-<li>The project is close to being complete for <img class="formulaInl" alt="$G$" src="form_2.png"/> a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in <a class="el" href="use.html#how">Step 0: Setting the Group Parameters</a>. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.</li>
+<li>The project is close to being complete for \(G\) a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in <a class="el" href="use.html#how">Step 0: Setting the Group Parameters</a>. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.</li>
 <li>For general cyclic groups a few aspects that involve transferring need reworking. The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated graphs, so care has to be taken to account for all these extra transfers and restrictions. Ultimately this is the only part that needs changing.</li>
 <li>The bulletpoint above also applies to general finite abelian groups. We also need to specify the order of the elements of the group and how they relate to the subgroup diagram to form our equivariant bases.</li>
 <li>For non abelian groups the same bulletpoint applies, with the added complication of needing the real representation theory of our group. And of course we need the standard chains for these groups as well.</li>
-<li>For coefficients other than <img class="formulaInl" alt="$\mathbb Z$" src="form_3.png"/> a lot more things start to break, as transferring becomes more complicated as non cyclic modules are involved in the free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors.</li>
+<li>For coefficients other than \(\mathbb Z\) a lot more things start to break, as transferring becomes more complicated as non cyclic modules are involved in the free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors.</li>
 </ul>
 <h1><a class="anchor" id="doc"></a>
 Documentation</h1>
 <p>The documentation was produced by doxygen and is organized in four tabs: Home (this page), Related Pages, Namespaces, Classes and Files.</p>
 <ul>
 <li>The Related Pages tab explain how the program works, starting from the math and moving to more technical territory regarding the actual implementation.</li>
-<li>The Namespaces, Classes and Files tabs offer a much more indepth look into all classes and functions appearing in the ... . Note that only public and protected members and named namespaces are documented here.</li>
+<li>The Namespaces, Classes and Files tabs offer a much more indepth look into all classes and functions of this project . Note that only public and protected members and named namespaces are documented here.</li>
 </ul>
 <p>I recommend starting with the Related Pages and then moving to the other tabs. If you just want to use this library for computations, you only really have to go over the <a class="el" href="use.html#how">Step 0: Setting the Group Parameters</a> section. </p>
 </div></div><!-- contents -->

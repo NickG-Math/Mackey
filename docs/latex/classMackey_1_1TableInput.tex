@@ -1,0 +1,193 @@
+\hypertarget{classMackey_1_1TableInput}{}\section{Mackey\+:\+:Table\+Input$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1TableInput}\index{Mackey\+::\+Table\+Input$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Table\+Input$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+
+
+The input for the multiplication table.  
+
+
+
+
+{\ttfamily \#include $<$Table.\+h$>$}
+
+
+
+Inheritance diagram for Mackey\+:\+:Table\+Input$<$ rank\+\_\+t, diff\+\_\+t $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classMackey_1_1TableInput__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1TableInput_a6beec147bbfcf4e03f7a11519e478aba}{Table\+Input} (const std\+::vector$<$ int $>$ \&\hyperlink{classMackey_1_1TableInput_a3f4bf3973cebe4bc2d305d111fa8b478}{minsphere}, const std\+::vector$<$ int $>$ \&\hyperlink{classMackey_1_1TableInput_a56448ebdfecb95da4c52349d4ccbf576}{maxsphere})
+\begin{DoxyCompactList}\small\item\em Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily extendible. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename deg\+\_\+t $>$ }\\bool \hyperlink{classMackey_1_1TableInput_a8fc6c520589273fad3e606a8a72086a8}{withinrange} (const deg\+\_\+t \&)
+\begin{DoxyCompactList}\small\item\em Checks if a given sphere is within the range of minsphere and maxsphere. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename deg\+\_\+t $>$ }\\int \hyperlink{classMackey_1_1TableInput_a277a59b7c30aa21e37c0ed7f187552cd}{hash} (const deg\+\_\+t \&)
+\begin{DoxyCompactList}\small\item\em Hashes the given sphere to produce the index for Indexed\+Chains. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1TableInput_a1f61296eba16c62517e325d21e7a5505}{Non\+Zero\+Homology}
+\begin{DoxyCompactList}\small\item\em The nonzero homology groups used for the table. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1TableInput_aa612b7b41454848c19d3192ab6211ee4}{Indexed\+Chains}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Chains}{Chains} of the nonzero homology groups. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1TableInput_ad85c480708a6b1a3e43725f10c818554}{antimap}
+\begin{DoxyCompactList}\small\item\em antimap\mbox{[}i\mbox{]} reveals the generator of Non\+Zero\+Homology\mbox{[}i\mbox{]} \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::vector$<$ int $>$, int $>$ \hyperlink{classMackey_1_1TableInput_abf72738d5aee3a185548d8a4db232ea4}{map}
+\begin{DoxyCompactList}\small\item\em The inverse of antimap. \end{DoxyCompactList}\item 
+const std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1TableInput_a56448ebdfecb95da4c52349d4ccbf576}{maxsphere}
+\begin{DoxyCompactList}\small\item\em The upper bound on the range of our spheres. \end{DoxyCompactList}\item 
+const std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1TableInput_a3f4bf3973cebe4bc2d305d111fa8b478}{minsphere}
+\begin{DoxyCompactList}\small\item\em The lower bound on the range of our spheres. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
+class Mackey\+::\+Table\+Input$<$ rank\+\_\+t, diff\+\_\+t $>$}
+
+The input for the multiplication table. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1TableInput_a6beec147bbfcf4e03f7a11519e478aba}\label{classMackey_1_1TableInput_a6beec147bbfcf4e03f7a11519e478aba}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!Table\+Input@{Table\+Input}}
+\index{Table\+Input@{Table\+Input}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{Table\+Input()}{TableInput()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1TableInput}{Table\+Input} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily extendible. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1TableInput_a6beec147bbfcf4e03f7a11519e478aba_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1TableInput_a277a59b7c30aa21e37c0ed7f187552cd}\label{classMackey_1_1TableInput_a277a59b7c30aa21e37c0ed7f187552cd}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!hash@{hash}}
+\index{hash@{hash}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+template$<$typename deg\+\_\+t $>$ \\
+int \hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::hash (\begin{DoxyParamCaption}\item[{const deg\+\_\+t \&}]{sphere }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Hashes the given sphere to produce the index for Indexed\+Chains. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classMackey_1_1TableInput_a277a59b7c30aa21e37c0ed7f187552cd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1TableInput_a277a59b7c30aa21e37c0ed7f187552cd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1TableInput_a8fc6c520589273fad3e606a8a72086a8}\label{classMackey_1_1TableInput_a8fc6c520589273fad3e606a8a72086a8}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!withinrange@{withinrange}}
+\index{withinrange@{withinrange}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{withinrange()}{withinrange()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+template$<$typename deg\+\_\+t $>$ \\
+bool \hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::withinrange (\begin{DoxyParamCaption}\item[{const deg\+\_\+t \&}]{sphere }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Checks if a given sphere is within the range of minsphere and maxsphere. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1TableInput_a8fc6c520589273fad3e606a8a72086a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1TableInput_ad85c480708a6b1a3e43725f10c818554}\label{classMackey_1_1TableInput_ad85c480708a6b1a3e43725f10c818554}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!antimap@{antimap}}
+\index{antimap@{antimap}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{antimap}{antimap}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::antimap\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+antimap\mbox{[}i\mbox{]} reveals the generator of Non\+Zero\+Homology\mbox{[}i\mbox{]} 
+
+antimap\mbox{[}i\mbox{]} consists of the degree, the position of the generator (0 unless noncyclic) and a multiple (if we don\textquotesingle{}t have a generator, but rather the multiple of one) Example\+: \{5,4,-\/2,0,2\} means that we have 2 times the 0-\/th generator in degree k=5, n=4, m=-\/2. \mbox{\Hypertarget{classMackey_1_1TableInput_aa612b7b41454848c19d3192ab6211ee4}\label{classMackey_1_1TableInput_aa612b7b41454848c19d3192ab6211ee4}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!Indexed\+Chains@{Indexed\+Chains}}
+\index{Indexed\+Chains@{Indexed\+Chains}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{Indexed\+Chains}{IndexedChains}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+std\+::vector$<$\hyperlink{classMackey_1_1Chains}{Chains}$<$rank\+\_\+t, diff\+\_\+t$>$ $>$ \hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Indexed\+Chains\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \hyperlink{classMackey_1_1Chains}{Chains} of the nonzero homology groups. 
+
+They are saved for performance. \mbox{\Hypertarget{classMackey_1_1TableInput_abf72738d5aee3a185548d8a4db232ea4}\label{classMackey_1_1TableInput_abf72738d5aee3a185548d8a4db232ea4}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!map@{map}}
+\index{map@{map}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+std\+::map$<$std\+::vector$<$int$>$, int$>$ \hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The inverse of antimap. 
+
+\mbox{\Hypertarget{classMackey_1_1TableInput_a56448ebdfecb95da4c52349d4ccbf576}\label{classMackey_1_1TableInput_a56448ebdfecb95da4c52349d4ccbf576}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!maxsphere@{maxsphere}}
+\index{maxsphere@{maxsphere}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{maxsphere}{maxsphere}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+const std\+::vector$<$int$>$ \hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::maxsphere\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The upper bound on the range of our spheres. 
+
+\mbox{\Hypertarget{classMackey_1_1TableInput_a3f4bf3973cebe4bc2d305d111fa8b478}\label{classMackey_1_1TableInput_a3f4bf3973cebe4bc2d305d111fa8b478}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!minsphere@{minsphere}}
+\index{minsphere@{minsphere}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{minsphere}{minsphere}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+const std\+::vector$<$int$>$ \hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::minsphere\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The lower bound on the range of our spheres. 
+
+\mbox{\Hypertarget{classMackey_1_1TableInput_a1f61296eba16c62517e325d21e7a5505}\label{classMackey_1_1TableInput_a1f61296eba16c62517e325d21e7a5505}} 
+\index{Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}!Non\+Zero\+Homology@{Non\+Zero\+Homology}}
+\index{Non\+Zero\+Homology@{Non\+Zero\+Homology}!Mackey\+::\+Table\+Input@{Mackey\+::\+Table\+Input}}
+\subsubsection{\texorpdfstring{Non\+Zero\+Homology}{NonZeroHomology}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1TableInput}{Mackey\+::\+Table\+Input}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Non\+Zero\+Homology\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The nonzero homology groups used for the table. 
+
+The order is not important (we use antimap to recover the degrees and generators). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Table_8h}{Table.\+h}\end{DoxyCompactItemize}

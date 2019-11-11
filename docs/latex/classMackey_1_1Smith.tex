@@ -1,0 +1,123 @@
+\hypertarget{classMackey_1_1Smith}{}\section{Mackey\+:\+:Smith$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1Smith}\index{Mackey\+::\+Smith$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$@{Mackey\+::\+Smith$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$}}
+
+
+The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form.  
+
+
+
+
+{\ttfamily \#include $<$Smith.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1Smith_a43f657bfa335acf5fe10dd864326c0aa}{Smith} (const smith\+S\+\_\+t \&Original, const bool \&wantP, const bool \&wantQ)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+smith\+S\+\_\+t \hyperlink{classMackey_1_1Smith_a676606c4002b08a37f0ea11dc3686dbe}{S}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form. \end{DoxyCompactList}\item 
+smith\+R\+\_\+t \hyperlink{classMackey_1_1Smith_a5a831316edd85dedc7394b39fda103a2}{P}
+\begin{DoxyCompactList}\small\item\em One of the coefficient matrices (S=P$\ast$\+A$\ast$Q). Should be row major for best performance. \end{DoxyCompactList}\item 
+smith\+R\+\_\+t \hyperlink{classMackey_1_1Smith_ade9f9fbe25629c7e20bc9cfe69ee91ad}{Qi}
+\begin{DoxyCompactList}\small\item\em One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi). Should be row major for best performance. \end{DoxyCompactList}\item 
+smith\+C\+\_\+t \hyperlink{classMackey_1_1Smith_af93f16dfd0ce77406d9696a026092306}{Q}
+\begin{DoxyCompactList}\small\item\em One of the coefficient matrices (S=P$\ast$\+A$\ast$Q). Should be column major for best performance. \end{DoxyCompactList}\item 
+smith\+C\+\_\+t \hyperlink{classMackey_1_1Smith_a97f16eca1aa9f4f6c36c2680fdcf277e}{Pi}
+\begin{DoxyCompactList}\small\item\em One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi). Should be column major for best performance. \end{DoxyCompactList}\item 
+const int \hyperlink{classMackey_1_1Smith_a02ea735836a4a70f504e360495b0e1e1}{L}
+\begin{DoxyCompactList}\small\item\em The length of the diagonal of S. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$\newline
+class Mackey\+::\+Smith$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$}
+
+The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1Smith_a43f657bfa335acf5fe10dd864326c0aa}\label{classMackey_1_1Smith_a43f657bfa335acf5fe10dd864326c0aa}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Smith@{Smith}}
+\index{Smith@{Smith}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{Smith()}{Smith()}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t , typename smith\+R\+\_\+t , typename smith\+C\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::\hyperlink{classMackey_1_1Smith}{Smith} (\begin{DoxyParamCaption}\item[{const smith\+S\+\_\+t \&}]{Original,  }\item[{const bool \&}]{wantP,  }\item[{const bool \&}]{wantQ }\end{DoxyParamCaption})}
+
+Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P$\ast$\+A$\ast$Q and A=Pi$\ast$\+S$\ast$\+Qi
+
+The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1Smith_a02ea735836a4a70f504e360495b0e1e1}\label{classMackey_1_1Smith_a02ea735836a4a70f504e360495b0e1e1}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!L@{L}}
+\index{L@{L}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{L}{L}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
+const int \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::L}
+
+
+
+The length of the diagonal of S. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a5a831316edd85dedc7394b39fda103a2}\label{classMackey_1_1Smith_a5a831316edd85dedc7394b39fda103a2}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!P@{P}}
+\index{P@{P}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{P}{P}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
+smith\+R\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::P}
+
+
+
+One of the coefficient matrices (S=P$\ast$\+A$\ast$Q). Should be row major for best performance. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a97f16eca1aa9f4f6c36c2680fdcf277e}\label{classMackey_1_1Smith_a97f16eca1aa9f4f6c36c2680fdcf277e}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Pi@{Pi}}
+\index{Pi@{Pi}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{Pi}{Pi}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
+smith\+C\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::Pi}
+
+
+
+One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi). Should be column major for best performance. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_af93f16dfd0ce77406d9696a026092306}\label{classMackey_1_1Smith_af93f16dfd0ce77406d9696a026092306}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Q@{Q}}
+\index{Q@{Q}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
+smith\+C\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::Q}
+
+
+
+One of the coefficient matrices (S=P$\ast$\+A$\ast$Q). Should be column major for best performance. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_ade9f9fbe25629c7e20bc9cfe69ee91ad}\label{classMackey_1_1Smith_ade9f9fbe25629c7e20bc9cfe69ee91ad}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Qi@{Qi}}
+\index{Qi@{Qi}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{Qi}{Qi}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
+smith\+R\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::Qi}
+
+
+
+One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi). Should be row major for best performance. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a676606c4002b08a37f0ea11dc3686dbe}\label{classMackey_1_1Smith_a676606c4002b08a37f0ea11dc3686dbe}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!S@{S}}
+\index{S@{S}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{S}{S}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
+smith\+S\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::S}
+
+
+
+The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Smith_8h}{Smith.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="Mackey::boxchangebasis" name="Mackey::boxchangebasis">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="229,5,369,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a92891f5582872405be46b80b5fa1fb84" title="Returns the change of basis matrix (as a permutation) from basis A to basis B. A,B can be std::vector..." alt="" coords="224,56,373,83"/>
+</map>

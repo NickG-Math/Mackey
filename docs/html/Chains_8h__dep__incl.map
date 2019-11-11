@@ -1,0 +1,10 @@
+<map id="Mackey/Chains.h" name="Mackey/Chains.h">
+<area shape="rect" id="node2" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="5,155,112,181"/>
+<area shape="rect" id="node7" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="62,80,194,107"/>
+<area shape="rect" id="node8" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="154,155,275,181"/>
+<area shape="rect" id="node9" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="270,80,413,107"/>
+<area shape="rect" id="node3" href="$Green_8h.html" title="Contains the class Green for multiplying generators. " alt="" coords="155,229,274,256"/>
+<area shape="rect" id="node4" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="95,304,231,331"/>
+<area shape="rect" id="node5" href="$Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="157,379,272,405"/>
+<area shape="rect" id="node6" href="$Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="135,453,294,480"/>
+</map>

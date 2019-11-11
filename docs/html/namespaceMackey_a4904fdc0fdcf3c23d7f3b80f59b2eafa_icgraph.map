@@ -1,0 +1,8 @@
+<map id="Mackey::intexp" name="Mackey::intexp">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="164,107,284,133"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="332,5,505,32"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a" title="Same as the other constructor but with default selections 0,0. " alt="" coords="341,56,496,83"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="359,107,479,133"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Levels.html#a450b9aba828f03dd340e89169a4bd9e0" title="Mackey::Levels::Levels" alt="" coords="339,157,499,184"/>
+<area shape="rect" id="node7" href="$classMackey_1_1TableInput.html#a6beec147bbfcf4e03f7a11519e478aba" title="Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily..." alt="" coords="350,209,487,250"/>
+</map>

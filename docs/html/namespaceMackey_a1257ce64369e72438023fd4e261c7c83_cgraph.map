@@ -1,0 +1,6 @@
+<map id="Mackey::rankBox" name="Mackey::rankBox">
+<area shape="rect" id="node2" href="$namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B. " alt="" coords="184,5,311,32"/>
+<area shape="rect" id="node3" href="$Matrix__Mixing_8h.html#a9835569cd762628d6745f8695ff7565a" title="Forms the block diagonal matrix with n blocks all equal to A. " alt="" coords="216,56,279,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="177,107,317,133"/>
+<area shape="rect" id="node5" href="$Matrix__Mixing_8h.html#aa1a4865b3160803edd9ea8cbb42b5a71" title="Mixes the left and right differentials to produce the differential for the box product. " alt="" coords="202,157,293,184"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Mackey::KeepRow" name="Mackey::KeepRow">
+<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Default constructor. " alt="" coords="187,5,389,32"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Homology.html#a3ef6bc9a9859c3711c11d153ba55b3e1" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="201,56,375,83"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="228,107,348,133"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a" title="Same as the other constructor but with default selections 0,0. " alt="" coords="461,31,616,57"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Mackey::Homology::Homology" alt="" coords="437,81,640,108"/>
+</map>

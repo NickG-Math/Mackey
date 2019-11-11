@@ -1,0 +1,133 @@
+\hypertarget{classMackey_1_1Junction}{}\section{Mackey\+:\+:Junction$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1Junction}\index{Mackey\+::\+Junction$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Junction$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+
+
+The input for \hyperlink{classMackey_1_1Homology}{Homology}, consisting of an entering and an exiting differential.  
+
+
+
+
+{\ttfamily \#include $<$Chains.\+h$>$}
+
+
+
+Inheritance diagram for Mackey\+:\+:Junction$<$ rank\+\_\+t, diff\+\_\+t $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classMackey_1_1Junction__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1Junction_a943b60d8e77594e4b19da7a5e40cb62e}{Junction} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Junction_ae6e36887e5bd3be8fe6175a501c749db}{Junction} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, int)
+\begin{DoxyCompactList}\small\item\em Extract the \hyperlink{classMackey_1_1Junction}{Junction} C\mbox{[}i+1\mbox{]}-\/$>$C\mbox{[}i\mbox{]}-\/$>$C\mbox{[}i-\/1\mbox{]} from the \hyperlink{classMackey_1_1Chains}{Chains} C. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Junction_a62c85d26100ca5e561b3c9edf32b473f}{Junction} (const rank\+\_\+t \&\hyperlink{classMackey_1_1Junction_a70d63a0f6ad20b052210ab0009815a9e}{rank}, const rank\+\_\+t \&\hyperlink{classMackey_1_1Junction_afe400bc60b84966b933fd57c11400607}{rank\+Out}, const rank\+\_\+t \&\hyperlink{classMackey_1_1Junction_a6174a3bef929f4b5b892d3b7ccb20528}{rank\+In}, const diff\+\_\+t \&\hyperlink{classMackey_1_1Junction_a909fce095bc4647a312d6b10480b2d9a}{diff\+Out}, const diff\+\_\+t \&\hyperlink{classMackey_1_1Junction_a581e0d7b62b7bf380d68936a79828cfc}{diff\+In})
+\begin{DoxyCompactList}\small\item\em Construct \hyperlink{classMackey_1_1Junction}{Junction} by directly setting the elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rank\+\_\+t \hyperlink{classMackey_1_1Junction_a70d63a0f6ad20b052210ab0009815a9e}{rank}
+\begin{DoxyCompactList}\small\item\em The rank of the middle group. \end{DoxyCompactList}\item 
+rank\+\_\+t \hyperlink{classMackey_1_1Junction_afe400bc60b84966b933fd57c11400607}{rank\+Out}
+\item 
+rank\+\_\+t \hyperlink{classMackey_1_1Junction_a6174a3bef929f4b5b892d3b7ccb20528}{rank\+In}
+\item 
+diff\+\_\+t \hyperlink{classMackey_1_1Junction_a909fce095bc4647a312d6b10480b2d9a}{diff\+Out}
+\item 
+diff\+\_\+t \hyperlink{classMackey_1_1Junction_a581e0d7b62b7bf380d68936a79828cfc}{diff\+In}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
+class Mackey\+::\+Junction$<$ rank\+\_\+t, diff\+\_\+t $>$}
+
+The input for \hyperlink{classMackey_1_1Homology}{Homology}, consisting of an entering and an exiting differential. 
+
+This is the part C\mbox{[}i+1\mbox{]}--$>$C\mbox{[}i\mbox{]}--$>$C\mbox{[}i-\/1\mbox{]} of a Chain complex C. C\mbox{[}i\mbox{]}--$>$C\mbox{[}i-\/1\mbox{]} is the \char`\"{}\+Out\char`\"{} part while C\mbox{[}i+1\mbox{]}--$>$C\mbox{[}i\mbox{]} is the \char`\"{}\+In\char`\"{} part. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1Junction_a943b60d8e77594e4b19da7a5e40cb62e}\label{classMackey_1_1Junction_a943b60d8e77594e4b19da7a5e40cb62e}} 
+\index{Mackey\+::\+Junction@{Mackey\+::\+Junction}!Junction@{Junction}}
+\index{Junction@{Junction}!Mackey\+::\+Junction@{Mackey\+::\+Junction}}
+\subsubsection{\texorpdfstring{Junction()}{Junction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Junction}{Mackey\+::\+Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Junction}{Junction} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classMackey_1_1Junction_ae6e36887e5bd3be8fe6175a501c749db}\label{classMackey_1_1Junction_ae6e36887e5bd3be8fe6175a501c749db}} 
+\index{Mackey\+::\+Junction@{Mackey\+::\+Junction}!Junction@{Junction}}
+\index{Junction@{Junction}!Mackey\+::\+Junction@{Mackey\+::\+Junction}}
+\subsubsection{\texorpdfstring{Junction()}{Junction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Junction}{Mackey\+::\+Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Junction}{Junction} (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{C,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Extract the \hyperlink{classMackey_1_1Junction}{Junction} C\mbox{[}i+1\mbox{]}-\/$>$C\mbox{[}i\mbox{]}-\/$>$C\mbox{[}i-\/1\mbox{]} from the \hyperlink{classMackey_1_1Chains}{Chains} C. 
+
+\mbox{\Hypertarget{classMackey_1_1Junction_a62c85d26100ca5e561b3c9edf32b473f}\label{classMackey_1_1Junction_a62c85d26100ca5e561b3c9edf32b473f}} 
+\index{Mackey\+::\+Junction@{Mackey\+::\+Junction}!Junction@{Junction}}
+\index{Junction@{Junction}!Mackey\+::\+Junction@{Mackey\+::\+Junction}}
+\subsubsection{\texorpdfstring{Junction()}{Junction()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Junction}{Mackey\+::\+Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Junction}{Junction} (\begin{DoxyParamCaption}\item[{const rank\+\_\+t \&}]{rank,  }\item[{const rank\+\_\+t \&}]{rank\+Out,  }\item[{const rank\+\_\+t \&}]{rank\+In,  }\item[{const diff\+\_\+t \&}]{diff\+Out,  }\item[{const diff\+\_\+t \&}]{diff\+In }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct \hyperlink{classMackey_1_1Junction}{Junction} by directly setting the elements. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1Junction_a581e0d7b62b7bf380d68936a79828cfc}\label{classMackey_1_1Junction_a581e0d7b62b7bf380d68936a79828cfc}} 
+\index{Mackey\+::\+Junction@{Mackey\+::\+Junction}!diff\+In@{diff\+In}}
+\index{diff\+In@{diff\+In}!Mackey\+::\+Junction@{Mackey\+::\+Junction}}
+\subsubsection{\texorpdfstring{diff\+In}{diffIn}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+diff\+\_\+t \hyperlink{classMackey_1_1Junction}{Mackey\+::\+Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::diff\+In}
+
+\mbox{\Hypertarget{classMackey_1_1Junction_a909fce095bc4647a312d6b10480b2d9a}\label{classMackey_1_1Junction_a909fce095bc4647a312d6b10480b2d9a}} 
+\index{Mackey\+::\+Junction@{Mackey\+::\+Junction}!diff\+Out@{diff\+Out}}
+\index{diff\+Out@{diff\+Out}!Mackey\+::\+Junction@{Mackey\+::\+Junction}}
+\subsubsection{\texorpdfstring{diff\+Out}{diffOut}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+diff\+\_\+t \hyperlink{classMackey_1_1Junction}{Mackey\+::\+Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::diff\+Out}
+
+\mbox{\Hypertarget{classMackey_1_1Junction_a70d63a0f6ad20b052210ab0009815a9e}\label{classMackey_1_1Junction_a70d63a0f6ad20b052210ab0009815a9e}} 
+\index{Mackey\+::\+Junction@{Mackey\+::\+Junction}!rank@{rank}}
+\index{rank@{rank}!Mackey\+::\+Junction@{Mackey\+::\+Junction}}
+\subsubsection{\texorpdfstring{rank}{rank}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Junction}{Mackey\+::\+Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::rank}
+
+
+
+The rank of the middle group. 
+
+\mbox{\Hypertarget{classMackey_1_1Junction_a6174a3bef929f4b5b892d3b7ccb20528}\label{classMackey_1_1Junction_a6174a3bef929f4b5b892d3b7ccb20528}} 
+\index{Mackey\+::\+Junction@{Mackey\+::\+Junction}!rank\+In@{rank\+In}}
+\index{rank\+In@{rank\+In}!Mackey\+::\+Junction@{Mackey\+::\+Junction}}
+\subsubsection{\texorpdfstring{rank\+In}{rankIn}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Junction}{Mackey\+::\+Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::rank\+In}
+
+\mbox{\Hypertarget{classMackey_1_1Junction_afe400bc60b84966b933fd57c11400607}\label{classMackey_1_1Junction_afe400bc60b84966b933fd57c11400607}} 
+\index{Mackey\+::\+Junction@{Mackey\+::\+Junction}!rank\+Out@{rank\+Out}}
+\index{rank\+Out@{rank\+Out}!Mackey\+::\+Junction@{Mackey\+::\+Junction}}
+\subsubsection{\texorpdfstring{rank\+Out}{rankOut}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Junction}{Mackey\+::\+Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::rank\+Out}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Chains_8h}{Chains.\+h}\end{DoxyCompactItemize}

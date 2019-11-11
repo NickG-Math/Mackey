@@ -1,0 +1,101 @@
+\hypertarget{classMackey_1_1Chains}{}\section{Mackey\+:\+:Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1Chains}\index{Mackey\+::\+Chains$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Chains$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+
+
+A Chain complex.  
+
+
+
+
+{\ttfamily \#include $<$Chains.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1Chains_ade226a800be59b53f1f1850e0753dbcb}{Chains} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Chains_a23e36ad0f810adeecad83b87b7034335}{Chains} (const std\+::vector$<$ rank\+\_\+t $>$ \&\hyperlink{classMackey_1_1Chains_ad041dff6f210ae5be4de0a3b076a4d95}{rank}, const std\+::vector$<$ diff\+\_\+t $>$ \&\hyperlink{classMackey_1_1Chains_a9ccee2cbb3daa1e82bab920aeef59516}{diff})
+\begin{DoxyCompactList}\small\item\em Constructor given ranks and diffs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1Chains_ad041dff6f210ae5be4de0a3b076a4d95}{rank}
+\begin{DoxyCompactList}\small\item\em rank\mbox{[}i\mbox{]}=rank(\+C\mbox{[}i\mbox{]}) \end{DoxyCompactList}\item 
+std\+::vector$<$ diff\+\_\+t $>$ \hyperlink{classMackey_1_1Chains_a9ccee2cbb3daa1e82bab920aeef59516}{diff}
+\begin{DoxyCompactList}\small\item\em diff\mbox{[}i\mbox{]} is the differential C\mbox{[}i\mbox{]}-\/$>$C\mbox{[}i-\/1\mbox{]} (diff\mbox{[}0\mbox{]} is always empty) \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1Chains_a12a79cb031092cfd3473bb6512e7ae94}{maxindex}
+\begin{DoxyCompactList}\small\item\em The maximum index of the Chain complex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
+class Mackey\+::\+Chains$<$ rank\+\_\+t, diff\+\_\+t $>$}
+
+A Chain complex. 
+
+Our chain complexes are always indexed as C\mbox{[}maxindex\mbox{]}---$>$C\mbox{[}0\mbox{]}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1Chains_ade226a800be59b53f1f1850e0753dbcb}\label{classMackey_1_1Chains_ade226a800be59b53f1f1850e0753dbcb}} 
+\index{Mackey\+::\+Chains@{Mackey\+::\+Chains}!Chains@{Chains}}
+\index{Chains@{Chains}!Mackey\+::\+Chains@{Mackey\+::\+Chains}}
+\subsubsection{\texorpdfstring{Chains()}{Chains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Chains}{Mackey\+::\+Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Chains}{Chains} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classMackey_1_1Chains_a23e36ad0f810adeecad83b87b7034335}\label{classMackey_1_1Chains_a23e36ad0f810adeecad83b87b7034335}} 
+\index{Mackey\+::\+Chains@{Mackey\+::\+Chains}!Chains@{Chains}}
+\index{Chains@{Chains}!Mackey\+::\+Chains@{Mackey\+::\+Chains}}
+\subsubsection{\texorpdfstring{Chains()}{Chains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Chains}{Mackey\+::\+Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Chains}{Chains} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ rank\+\_\+t $>$ \&}]{rank,  }\item[{const std\+::vector$<$ diff\+\_\+t $>$ \&}]{diff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor given ranks and diffs. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1Chains_a9ccee2cbb3daa1e82bab920aeef59516}\label{classMackey_1_1Chains_a9ccee2cbb3daa1e82bab920aeef59516}} 
+\index{Mackey\+::\+Chains@{Mackey\+::\+Chains}!diff@{diff}}
+\index{diff@{diff}!Mackey\+::\+Chains@{Mackey\+::\+Chains}}
+\subsubsection{\texorpdfstring{diff}{diff}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$diff\+\_\+t$>$ \hyperlink{classMackey_1_1Chains}{Mackey\+::\+Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::diff}
+
+
+
+diff\mbox{[}i\mbox{]} is the differential C\mbox{[}i\mbox{]}-\/$>$C\mbox{[}i-\/1\mbox{]} (diff\mbox{[}0\mbox{]} is always empty) 
+
+\mbox{\Hypertarget{classMackey_1_1Chains_a12a79cb031092cfd3473bb6512e7ae94}\label{classMackey_1_1Chains_a12a79cb031092cfd3473bb6512e7ae94}} 
+\index{Mackey\+::\+Chains@{Mackey\+::\+Chains}!maxindex@{maxindex}}
+\index{maxindex@{maxindex}!Mackey\+::\+Chains@{Mackey\+::\+Chains}}
+\subsubsection{\texorpdfstring{maxindex}{maxindex}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1Chains}{Mackey\+::\+Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::maxindex}
+
+
+
+The maximum index of the Chain complex. 
+
+\mbox{\Hypertarget{classMackey_1_1Chains_ad041dff6f210ae5be4de0a3b076a4d95}\label{classMackey_1_1Chains_ad041dff6f210ae5be4de0a3b076a4d95}} 
+\index{Mackey\+::\+Chains@{Mackey\+::\+Chains}!rank@{rank}}
+\index{rank@{rank}!Mackey\+::\+Chains@{Mackey\+::\+Chains}}
+\subsubsection{\texorpdfstring{rank}{rank}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1Chains}{Mackey\+::\+Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::rank}
+
+
+
+rank\mbox{[}i\mbox{]}=rank(\+C\mbox{[}i\mbox{]}) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Chains_8h}{Chains.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="Mackey::dimension" name="Mackey::dimension">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a425b988266cedec0299fb539d99179b1" title="Returns the standard Chains of the given sphere. " alt="" coords="188,5,357,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#abd3c2e12c91baa573c6dbaa37eeb0518" title="Returns the Chains of any given given sphere. " alt="" coords="204,56,341,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the Mackey functor homology of the given sphere. " alt="" coords="207,107,338,133"/>
+<area shape="rect" id="node5" href="$classMackey_1_1TableInput.html#a6beec147bbfcf4e03f7a11519e478aba" title="Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily..." alt="" coords="204,158,341,199"/>
+</map>

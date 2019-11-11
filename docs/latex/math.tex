@@ -1,0 +1,59 @@
+\hypertarget{math_Briefly}{}\section{Briefly}\label{math_Briefly}
+There are three fundamental ideas that make our code work\+:
+
+
+\begin{DoxyItemize}
+\item Homology of chain complexes of free $\mathbb Z$ modules can be algorithmically computed by turning the differentials into matrices and then diagonalizing them (Smith Normal Form).
+\item Free \hyperlink{namespaceMackey}{Mackey} functors are determined by their bottom level groups. The higher levels are obtained by taking fixed points, and this can be done algorithmically on our matrices as long as equivariant bases are used (this is an ordered basis in which elements in the same orbit are written consecutively).
+\item Box products of \hyperlink{namespaceMackey}{Mackey} functors are tensor products on the bottom level. This is not true for the higher levels, however using the bulletpoint above, higher levels are obtained by transferring. This is how box products of chain complexes of free \hyperlink{namespaceMackey}{Mackey} functors are computed.
+\end{DoxyItemize}
+
+These three ideas dictate our approach\+: We work primarily on the bottom level, before transferring to get the higher ones. Homology is computed in each level separately and transfers/restrictions/\+Weyl group actions on the generators can be computed on the chains. But the chains are always free, so we can also algorithmically compute the effect of transfers/restrictions and Weyl group actions.
+
+By converting all our differentials to matrices, using equivariant bases throughout, we can reduce our computations to pure linear algebra (over the integers), avoiding any symbolic math.\hypertarget{math_imd}{}\section{In more detail}\label{math_imd}
+Here\textquotesingle{}s how the code works in more detail (for simplicity we specialize to the $G=C_4$ case, although everything works with different prime powers\+:\hypertarget{math_add}{}\subsection{The additive structure}\label{math_add}
+
+\begin{DoxyItemize}
+\item The input are the bottom levels of the chains of the spheres $S^{n\sigma+m\lambda}$ for $n,m\ge 0$. We could in fact do with only $S^{\sigma},S^{\lambda}$, but this would result in taking arbitrarily many box products and destroy performance. Instead using the spheres $S^{n\sigma+m\lambda}$ for $n,m\ge 0$ we only have to take triple box products at most, for some of the multiplicative structure.
+\item The data of a Chain complex are the ranks and differentials. The differentials are stored as matrices, but the ranks are stored as integer arrays and not integers. This is crucial as for example $\mathbb Z[C_4]$ transfers completely differently from $\mathbb Z[C_2]\oplus \mathbb Z[C_2]$ even though they both have rank $4=2+2$ over $\mathbb Z$. With our conventions, $\mathbb Z[C_2]\oplus \mathbb Z[C_2]$ has rank $[2,2]$ while $\mathbb Z[C_4]$ has rank $4$.
+\item We transfer both ranks and differentials to higher levels. While transferring ranks is straightforward, transferring differentials is quite a bit more complicated and requires to have already transferred the ranks of the domain and range of the differentials.
+\item Using the familiar homology algorithm we compute the groups of the \hyperlink{namespaceMackey}{Mackey} functor at every level. We also compute their generators (as elements in the Chain complex)
+\item We transfer/restrict and compute the Weyl group action on the group generators. This concludes the \hyperlink{namespaceMackey}{Mackey} functor computation for the $S^{n\sigma+m\lambda}$, $n,m\ge 0$.
+\item To obtain the chains of the rest of the spheres, we box the Chains we already have. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly. However the most convenient bases for tensoring are not equivariant, and in the end we have to change bases through permutation matrices.
+\item We then perform the same procedure with transferring to get the entrire $RO(G)$ homology.
+\end{DoxyItemize}\hypertarget{math_mult}{}\subsection{The multiplicative structure}\label{math_mult}
+Once we have the additive structure, we can work on multiplying the additive generators.
+
+
+\begin{DoxyItemize}
+\item First we restrict the generators to the bottom level.
+\item We then take the product of their restrictions as an element of the box product of chain complexes at bottom level.
+\item The product of restrictions is a restriction and as we are working with free \hyperlink{namespaceMackey}{Mackey} functors, restriction is an injection. By inverting it we can get the product of generators at a higher level as element an of the box product.
+\item We finally take homology and write that product in terms of the generators.
+\end{DoxyItemize}
+
+Once we know how to multiply any two additive generators, we have in effect determined the multiplicative structure (see below for a catch).\hypertarget{math_factor}{}\subsection{Factorization}\label{math_factor}
+Even if we can multiply any two generators, that doesn\textquotesingle{}t mean we can automatically write any element as a product of our preferred generators. If we know the expression then we can easily check it, however factorizing is a lot more complicated\+:
+
+
+\begin{DoxyItemize}
+\item First we form a multiplication table, where all generators (in a range of course) are multiplied with the \char`\"{}basic irreducibles\char`\"{}. These can be the Euler and orientation classes.
+\item Once we have that we can draw a directed colored graph by connecting $a$ with $ab$ for $b$ a basic irreducible; we color this edge red. If multiplication by b is an isomorphism i.\+e. $a=(ab)/b$ then we also connect $ab$ with $a$; we color this edge blue.
+\item Since the product $ab$ may not be a generator, but rather a multiple of it, we need to allow multiples of generators as distinct nodes. We never allow trivial (0) multiples of generators.
+\item To obtain a factorization, we simply need to connect 1 with any node in the graph. For the most efficient factorizations, we want to minimize the alternation of blue and red edges. This is done by a generalized Dikjstra algorithm.
+\item For the generators not connected to 1 (eg $s_3$) we perform the same process using different sources for our graph.
+\end{DoxyItemize}\hypertarget{math_caveat}{}\section{A caveat}\label{math_caveat}
+\hypertarget{math_cyclic}{}\subsection{Cyclic Generators}\label{math_cyclic}
+
+\begin{DoxyItemize}
+\item The way we prove that say a transfer map is multiplication by $2$, is by computing the generators at the domain and target, compute the transfer of the domain generator and compare with the target. Of course, there are usually multiple choices of generators, but up to isomorphism we get the same \hyperlink{namespaceMackey}{Mackey} functor.
+\item There is a caveat however that appears when computing the multiplicative structure\+: If we prove that $ab$ and $cd$ are both generators of the same cyclic group, then we can\textquotesingle{}t conclude that they are equal. Eg if the group is $\mathbb Z/4$ or $\mathbb Z$ then they differ by a sign. Still, since we are interested in generating the $RO(G)$ homology, as opposed to finding exact relations, we don\textquotesingle{}t have to distinguish between cyclic generators and we don\textquotesingle{}t need to stress over this detail.
+\item If we are interested in exact relations, then we can resolve the multiple generator ambiguity as follows\+: $ab$ and $cd$ are produced by tensoring different complexes, and if we have an explicit chain homotopy between them then we can compare directly. For example if they are obtained by tensoring $C_*(S^{n\sigma+m\lambda})\otimes C_*S^{\lambda}$ and $C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{2\lambda}$ then we can compare them by using $C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{\lambda}\otimes C_*S^{\lambda}$ as a stepping stone.
+\item The problem with the above approach is that we need to take more and more box products, which is the most costly operation for runtime.
+\end{DoxyItemize}\hypertarget{math_noncycl}{}\subsection{Non cyclic generators}\label{math_noncycl}
+
+\begin{DoxyItemize}
+\item There is a situtation where this caveat cannot be sidestepped and that\textquotesingle{}s when we have non cyclic groups. Here\textquotesingle{}s an example where this problem comes up\+: If we have $\mathbb Z\oplus \mathbb Z/2$ with generators $x,y$ respectively then we can\textquotesingle{}t automatically distinguish $x$ from $x+y$ as there is an automorphism of $\mathbb Z\oplus \mathbb Z/2$ exchanging them. In that case the difference between $ab$ and $cd$ generating the same group can be much more severe than multiplication with an integer coprime to the group\textquotesingle{}s order (or a sign).
+\item One way out of this is to apply the approach for cyclic generators, breaking down our box products further, until they can be compared.
+\item Alternatively (and this is the approach we take in practice) is to ignore these products and make no statement as to the equality of $ab$ and $cd$. This gives us less data to work with, but at least in the $C_4$ case this is enough to write the factorization of any element. 
+\end{DoxyItemize}

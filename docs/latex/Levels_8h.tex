@@ -1,0 +1,60 @@
+\hypertarget{Levels_8h}{}\section{Mackey/\+Levels.h File Reference}
+\label{Levels_8h}\index{Mackey/\+Levels.\+h@{Mackey/\+Levels.\+h}}
+
+
+Contains the methods for transfering, restricting and Weyl-\/group-\/acting.  
+
+
+{\ttfamily \#include \char`\"{}Wrapper.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Chains.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}General.\+h\char`\"{}}\newline
+Include dependency graph for Levels.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{Levels_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{Levels_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMackey_1_1Levels}{Mackey\+::\+Levels$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Storage of various levels of Junction/\+Chains. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceMackey}{Mackey}
+\begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar $>$ }\\Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \hyperlink{namespaceMackey_a671613d53fc3b0c9c4b115bc8b2797e6}{Mackey\+::transfer} (const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&rank, int level)
+\begin{DoxyCompactList}\small\item\em Transfer the rank to given level. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\diff\+\_\+t \hyperlink{namespaceMackey_ad7524839b58c80d4b2c54827e4833b12}{Mackey\+::transfer} (const diff\+\_\+t \&diff, const rank\+\_\+t \&domain, rank\+\_\+t \&domain\+\_\+top, const rank\+\_\+t \&range, rank\+\_\+t \&range\+\_\+top, int level)
+\begin{DoxyCompactList}\small\item\em Transfer the differential to given level. We need the ranks both at the original level and the given level, for both domain and range. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Junction$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a914aba7f868e67ae3fd9da3995678660}{Mackey\+::transfer} (const Junction$<$ rank\+\_\+t, diff\+\_\+t $>$ \&J, int level)
+\begin{DoxyCompactList}\small\item\em Transfer \hyperlink{classMackey_1_1Junction}{Junction} to the desired level. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a50837580391b5c6705e23c637d742b22}{Mackey\+::transfer} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, int level)
+\begin{DoxyCompactList}\small\item\em Transfer \hyperlink{classMackey_1_1Chains}{Chains} to the desired level. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename Derived $>$ }\\Derived \hyperlink{namespaceMackey_a0550bf97e47b3c319cb5e1bd81008d89}{Mackey\+::transfer} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
+\begin{DoxyCompactList}\small\item\em Transfer generator to level given the ranks at the original level (domain) and the target level (range). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ }\\gen\+\_\+t \hyperlink{namespaceMackey_ad1e907ff76b07d4fc4c9d4bdf25918bd}{Mackey\+::restriction} (const gen\+\_\+t \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
+\begin{DoxyCompactList}\small\item\em Restrict generator to level given the ranks at the original level (domain) and the target level (range). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived , typename T $>$ }\\void \hyperlink{namespaceMackey_aab8a6292210a3b71960cb03b79d218e6}{Mackey\+::shiftsegment} (Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&V, int tracker, T rankvalue)
+\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ }\\gen\+\_\+t \hyperlink{namespaceMackey_a3204eaf23b52b27392baaaf0a6898f76}{Mackey\+::action} (const gen\+\_\+t \&generator, const rank\+\_\+t \&rank)
+\begin{DoxyCompactList}\small\item\em Compute the Weyl group action on a generator given the rank of the group it lives in. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ }\\gen\+\_\+t \hyperlink{namespaceMackey_a30b5667e411ff694aa989e95e394bb41}{Mackey\+::inv\+Res} (const gen\+\_\+t \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the methods for transfering, restricting and Weyl-\/group-\/acting. 
+

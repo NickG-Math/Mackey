@@ -1,0 +1,5 @@
+<map id="Mackey::ROGreen" name="Mackey::ROGreen">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="189,5,313,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#abb4d03d1e773bb1004e3b41737ef2380" title="Given vector or array returns vector starting from index 1. " alt="" coords="367,31,504,57"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa" title="Compute the dimension of a representation sphere. " alt="" coords="184,107,319,133"/>
+</map>

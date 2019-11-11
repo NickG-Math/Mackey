@@ -1,0 +1,16 @@
+<map id="Mackey/Factorization.h" name="Mackey/Factorization.h">
+<area shape="rect" id="node2" href="$Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="371,80,437,107"/>
+<area shape="rect" id="node23" href="$Graph_8h.html" title="Contains weighted/colored graph classes and Dikjstra algorithms. " alt="" coords="855,453,923,480"/>
+<area shape="rect" id="node3" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="321,155,407,181"/>
+<area shape="rect" id="node8" href="$Green_8h.html" title="Contains the class Green for multiplying generators. " alt="" coords="411,229,479,256"/>
+<area shape="rect" id="node4" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="180,453,303,480"/>
+<area shape="rect" id="node9" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="410,304,481,331"/>
+<area shape="rect" id="node13" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="561,379,617,405"/>
+<area shape="rect" id="node19" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="237,379,329,405"/>
+<area shape="rect" id="node10" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="404,379,487,405"/>
+<area shape="rect" id="node11" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="431,453,505,480"/>
+<area shape="rect" id="node12" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="327,453,406,480"/>
+<area shape="rect" id="node14" href="$Matrix__Mixing_8h.html" title="Contains block operations on matrices. " alt="" coords="529,453,644,480"/>
+<area shape="rect" id="node15" href="$ChangeBasis_8h.html" title="Contains the construction of the change of basis matrices. " alt="" coords="669,453,779,480"/>
+<area shape="rect" id="node20" href="$Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="89,453,156,480"/>
+</map>

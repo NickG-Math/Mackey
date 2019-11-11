@@ -1,0 +1,140 @@
+\hypertarget{classMackey_1_1Homology}{}\section{Mackey\+:\+:Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1Homology}\index{Mackey\+::\+Homology$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Homology$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+
+
+The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_1Junction}{Junction}.  
+
+
+
+
+{\ttfamily \#include $<$Homology.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2}{Homology} ()
+\item 
+\hyperlink{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22}{Homology} (const \hyperlink{classMackey_1_1Junction}{Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1}{basis} (const gen\+\_\+t \&)
+\begin{DoxyCompactList}\small\item\em Given an element in homology, write it as a linear combination of the generators of the homology. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rank\+\_\+t \hyperlink{classMackey_1_1Homology_aaae78e6463ce6e60e7f4c5861304bc5b}{Groups}
+\begin{DoxyCompactList}\small\item\em Encodes the homology groups as follows\+: Groups=\mbox{[}1,2,3\mbox{]} means homology Z+\+Z/2+\+Z/3. \end{DoxyCompactList}\item 
+diff\+\_\+t \hyperlink{classMackey_1_1Homology_afc375f3632f97e3fe3e24c06f1e18fa2}{Generators}
+\begin{DoxyCompactList}\small\item\em Encodes the generators homology groups as follows\+: The i-\/th column corresponds to the generator for Groups\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
+bool \hyperlink{classMackey_1_1Homology_ae3bb3781bab2b5884295e04a8fddf36e}{is\+Zero}
+\begin{DoxyCompactList}\small\item\em 1 if the homology is trivial \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
+class Mackey\+::\+Homology$<$ rank\+\_\+t, diff\+\_\+t $>$}
+
+The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_1Junction}{Junction}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2}\label{classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Homology@{Homology}}
+\index{Homology@{Homology}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{Homology()}{Homology()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology}{Homology} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22}\label{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Homology@{Homology}}
+\index{Homology@{Homology}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{Homology()}{Homology()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology}{Homology} (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Junction}{Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{J }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Compute the homology from the given \hyperlink{classMackey_1_1Junction}{Junction} Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1}\label{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!basis@{basis}}
+\index{basis@{basis}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{basis()}{basis()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+template$<$typename gen\+\_\+t $>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basis (\begin{DoxyParamCaption}\item[{const gen\+\_\+t \&}]{generator }\end{DoxyParamCaption})}
+
+
+
+Given an element in homology, write it as a linear combination of the generators of the homology. 
+
+The answer is encoded as follows\+: basis=\mbox{[}-\/1,0,3\mbox{]} means element=-\/gen\mbox{[}0\mbox{]}+3$\ast$gen\mbox{[}2\mbox{]} Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1Homology_afc375f3632f97e3fe3e24c06f1e18fa2}\label{classMackey_1_1Homology_afc375f3632f97e3fe3e24c06f1e18fa2}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Generators@{Generators}}
+\index{Generators@{Generators}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{Generators}{Generators}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+diff\+\_\+t \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Generators}
+
+
+
+Encodes the generators homology groups as follows\+: The i-\/th column corresponds to the generator for Groups\mbox{[}i\mbox{]}. 
+
+\mbox{\Hypertarget{classMackey_1_1Homology_aaae78e6463ce6e60e7f4c5861304bc5b}\label{classMackey_1_1Homology_aaae78e6463ce6e60e7f4c5861304bc5b}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Groups@{Groups}}
+\index{Groups@{Groups}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{Groups}{Groups}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Groups}
+
+
+
+Encodes the homology groups as follows\+: Groups=\mbox{[}1,2,3\mbox{]} means homology Z+\+Z/2+\+Z/3. 
+
+\mbox{\Hypertarget{classMackey_1_1Homology_ae3bb3781bab2b5884295e04a8fddf36e}\label{classMackey_1_1Homology_ae3bb3781bab2b5884295e04a8fddf36e}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!is\+Zero@{is\+Zero}}
+\index{is\+Zero@{is\+Zero}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{is\+Zero}{isZero}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+bool \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::is\+Zero}
+
+
+
+1 if the homology is trivial 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Homology_8h}{Homology.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="Mackey::Homology::Homology" name="Mackey::Homology::Homology">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="256,5,396,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="259,56,393,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a782d9ce52543c3ae3520b4859dda3240" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="263,107,389,133"/>
+</map>

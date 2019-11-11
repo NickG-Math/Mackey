@@ -1,0 +1,55 @@
+\hypertarget{ChangeBasis_8h}{}\section{Mackey/\+Change\+Basis.h File Reference}
+\label{ChangeBasis_8h}\index{Mackey/\+Change\+Basis.\+h@{Mackey/\+Change\+Basis.\+h}}
+
+
+Contains the construction of the change of basis matrices.  
+
+
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+Include dependency graph for Change\+Basis.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ChangeBasis_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{ChangeBasis_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMackey_1_1ChangeBasis}{Mackey\+::\+Change\+Basis$<$ rank\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em The change of basis permutation matrices needed for the box product. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceMackey}{Mackey}
+\begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef short \hyperlink{namespaceMackey_a67b5f4650ba2f166d15133a1bea2472b}{Mackey\+::p\+Scalar}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ p\+Scalar $>$ \hyperlink{namespaceMackey_a92891f5582872405be46b80b5fa1fb84}{Mackey\+::changebasis} (const T \&A, const T \&B)
+\begin{DoxyCompactList}\small\item\em Returns the change of basis matrix (as a permutation) from basis A to basis B. A,B can be std\+::vector\textquotesingle{}s. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::pair$<$ std\+::vector$<$ p\+Scalar $>$, std\+::vector$<$ p\+Scalar $>$ $>$ \hyperlink{namespaceMackey_a90ea60504ffb74da3a53875368225f8f}{Mackey\+::boxchangebasis} (const rank\+\_\+t \&rankC, const rank\+\_\+t \&rankD)
+\begin{DoxyCompactList}\small\item\em Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matrices (as permutations). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\Change\+Basis$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a70952d513d08b47bc282441a3e9d732c}{Mackey\+::memo\+Change\+Basis} (const rank\+\_\+t \&rank1, const rank\+\_\+t \&rank2)
+\begin{DoxyCompactList}\small\item\em Memoizing the \hyperlink{classMackey_1_1ChangeBasis}{Change\+Basis} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the construction of the change of basis matrices. 
+

@@ -1,0 +1,11 @@
+<map id="Mackey::summation" name="Mackey::summation">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a1257ce64369e72438023fd4e261c7c83" title="The tensor product of ranks of chains A,B. " alt="" coords="233,5,357,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="209,56,380,83"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a" title="Same as the other constructor but with default selections 0,0. " alt="" coords="453,259,608,285"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Default constructor. " alt="" coords="193,157,396,184"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="235,208,355,235"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="228,309,361,336"/>
+<area shape="rect" id="node10" href="$namespaceMackey.html#a30b5667e411ff694aa989e95e394bb41" title="Mackey::invRes" alt="" coords="236,259,353,285"/>
+<area shape="rect" id="node4" href="$classMackey_1_1ChangeBasis.html#a036c1f54ffb4cf4115efa2fab60c354b" title="Constructs the change of basis matrices given two ranks. " alt="" coords="453,49,608,90"/>
+<area shape="rect" id="node9" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="444,309,617,336"/>
+</map>

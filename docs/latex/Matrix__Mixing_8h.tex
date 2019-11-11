@@ -1,0 +1,74 @@
+\hypertarget{Matrix__Mixing_8h}{}\section{Mackey/\+Matrix\+\_\+\+Mixing.h File Reference}
+\label{Matrix__Mixing_8h}\index{Mackey/\+Matrix\+\_\+\+Mixing.\+h@{Mackey/\+Matrix\+\_\+\+Mixing.\+h}}
+
+
+Contains block operations on matrices.  
+
+
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Matrix\+\_\+\+Mixing.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{Matrix__Mixing_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{Matrix__Mixing_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Derived $>$ }\\Derived \hyperlink{Matrix__Mixing_8h_a9835569cd762628d6745f8695ff7565a}{blkdiag} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A, const int n)
+\begin{DoxyCompactList}\small\item\em Forms the block diagonal matrix with n blocks all equal to A. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived $>$ }\\Derived \hyperlink{Matrix__Mixing_8h_aa1a4865b3160803edd9ea8cbb42b5a71}{Matrix\+Mixer} (std\+::vector$<$ Derived $>$ \&L, std\+::vector$<$ Derived $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Mixes the left and right differentials to produce the differential for the box product. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains block operations on matrices. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Matrix__Mixing_8h_a9835569cd762628d6745f8695ff7565a}\label{Matrix__Mixing_8h_a9835569cd762628d6745f8695ff7565a}} 
+\index{Matrix\+\_\+\+Mixing.\+h@{Matrix\+\_\+\+Mixing.\+h}!blkdiag@{blkdiag}}
+\index{blkdiag@{blkdiag}!Matrix\+\_\+\+Mixing.\+h@{Matrix\+\_\+\+Mixing.\+h}}
+\subsubsection{\texorpdfstring{blkdiag()}{blkdiag()}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+Derived blkdiag (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&}]{A,  }\item[{const int}]{n }\end{DoxyParamCaption})}
+
+
+
+Forms the block diagonal matrix with n blocks all equal to A. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{Matrix__Mixing_8h_a9835569cd762628d6745f8695ff7565a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Matrix__Mixing_8h_aa1a4865b3160803edd9ea8cbb42b5a71}\label{Matrix__Mixing_8h_aa1a4865b3160803edd9ea8cbb42b5a71}} 
+\index{Matrix\+\_\+\+Mixing.\+h@{Matrix\+\_\+\+Mixing.\+h}!Matrix\+Mixer@{Matrix\+Mixer}}
+\index{Matrix\+Mixer@{Matrix\+Mixer}!Matrix\+\_\+\+Mixing.\+h@{Matrix\+\_\+\+Mixing.\+h}}
+\subsubsection{\texorpdfstring{Matrix\+Mixer()}{MatrixMixer()}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+Derived Matrix\+Mixer (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Derived $>$ \&}]{L,  }\item[{std\+::vector$<$ Derived $>$ \&}]{R }\end{DoxyParamCaption})}
+
+
+
+Mixes the left and right differentials to produce the differential for the box product. 
+
+The left differentials are stored in a vector L and the right differentials in a vector R. The mixing is L\mbox{[}0\mbox{]}, then R\mbox{[}0\mbox{]} directly to the right, then L\mbox{[}1\mbox{]} directly below then... It\textquotesingle{}s assumed that L,R have consistent dimensions for the blocks to fit coherently. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{Matrix__Mixing_8h_aa1a4865b3160803edd9ea8cbb42b5a71_icgraph}
+\end{center}
+\end{figure}

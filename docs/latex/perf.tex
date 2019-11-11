@@ -1,0 +1,23 @@
+\hypertarget{perf_compoptions}{}\section{Compiler Options}\label{perf_compoptions}
+
+\begin{DoxyItemize}
+\item Clang seems to produce marginally faster code.
+\item The Linux binary runs measurably faster than the Windows one.
+\item I recommend the following compiler options (G\+CC, Clang)\+: {\ttfamily -\/\+Ofast --funroll-\/loops -\/march=native }
+\item With the Intel and Microsoft compilers Eigen recommends {\ttfamily -\/inline-\/forceinline} option.
+\item Note\+: {\ttfamily -\/\+Ofast} doesn\textquotesingle{}t actually reduce the accuracy of our results, since we only use integers even if the data-\/type is sometimes a floating point (see \hyperlink{perf_intvsfloat}{Integers vs Floats} for an explanation as to why we do that). 
+\end{DoxyItemize}\hypertarget{perf_thread}{}\section{Multithreading}\label{perf_thread}
+
+\begin{DoxyItemize}
+\item While the binaries in ... are all single-\/threaded, the most (by far) computationally intensive calculations can be multithreaded extemelly easily and efficiently. This is as simple as adding a {\ttfamily \#pragma omp parallel for} before certain loops that compute the additive/multiplicative structure in a range. There is no need to lock anything.
+\item There is one caveat\+: While the loop iterations are independent, they are not all equally intensive. A sphere like $S^{2\sigma+\lambda}$ is cheaper to compute compared to $S^{6\sigma+8\lambda}$ which is in turn much cheaper compared to $S^{6\sigma-8\lambda}$ as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are by comparison much more expensive in run-\/time as they involve arbitrarily large permutation matrices.
+\item So it\textquotesingle{}s important to equally divide the work amongst the thread. At this point, this has to be done manually.
+\end{DoxyItemize}\hypertarget{perf_intvsfloat}{}\section{Integers vs Floats}\label{perf_intvsfloat}
+I use integers (or indeed {\ttfamily char} and {\ttfamily short}) for the majority of the computations; that\textquotesingle{}s usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception\+: Matrix multiplication. Eigen is much slower with integer matrix multiplication compared to floating points, and the Intel M\+KL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.\hypertarget{perf_memo}{}\section{Memoizing Change\+Basis}\label{perf_memo}
+To form the Box product of Chains we need the change of basis matrices. These matrices only depend on the ranks of the given Chains, call them rank1 and rank2. The ranks that actually come up in our computations always look like \mbox{[}?,order,...,order,?\mbox{]} where order is the order of the group and ? $\le$ order. This means that we very effectively memoize this function for better performance.\hypertarget{perf_bottle}{}\section{Bottlenecks}\label{perf_bottle}
+
+\begin{DoxyItemize}
+\item The biggest performance bottleneck is found in the multiplicative structure. That\textquotesingle{}s when we apply some large change of basis matrices through Eigen\textquotesingle{}s permutation matrix product. This is a memory bottleneck.
+\item The second biggest bottleneck lies in the transfering very large differentials. To transfer we need to delete certain rows of the matrix, and this is done by copying the remaining rows into a new matrix. This is a memory bottleneck.
+\item A more minor bottleneck is the Smith normal form computation. The problem is that it involves going through our matrix both by rows and by columns, which is not ideal for cache locality. The S\+NF is both memory and core bound. 
+\end{DoxyItemize}

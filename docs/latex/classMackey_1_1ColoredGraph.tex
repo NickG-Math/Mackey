@@ -1,0 +1,108 @@
+\hypertarget{classMackey_1_1ColoredGraph}{}\section{Mackey\+:\+:Colored\+Graph Class Reference}
+\label{classMackey_1_1ColoredGraph}\index{Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}}
+
+
+A directed \hyperlink{classMackey_1_1Graph}{Graph} with two colors.  
+
+
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+
+
+Inheritance diagram for Mackey\+:\+:Colored\+Graph\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classMackey_1_1ColoredGraph__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mackey\+:\+:Colored\+Graph\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classMackey_1_1ColoredGraph__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1ColoredGraph_a9ee26fcb36db12b5dd17702f4dc06d25}{Colored\+Graph} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&\hyperlink{classMackey_1_1Graph_a0a2aeb9b16c5f0e583f360943b7f340f}{edges}, const std\+::vector$<$ std\+::vector$<$ char $>$$>$ \&colors)
+\begin{DoxyCompactList}\small\item\em Construct given the edges and colors. \end{DoxyCompactList}\item 
+void \hyperlink{classMackey_1_1ColoredGraph_a8ed05073805b34a0087a7ed94e889694}{draw} ()
+\begin{DoxyCompactList}\small\item\em Writes a graph.\+dot file representing the colored graph (using red and blue). The nodes are unnamed points. \end{DoxyCompactList}\item 
+void \hyperlink{classMackey_1_1ColoredGraph_a912a6e5cb94386d9ff6510e968b41e7d}{draw} (const std\+::vector$<$ std\+::string $>$ \&)
+\begin{DoxyCompactList}\small\item\em Writes a graph.\+dot file representing the colored graph (using red and blue) and named nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMackey_1_1ColoredGraph_a2debfc8158c19d7b93550156a3e2676a}{Graph$<$ Colored\+Graph $>$}
+\begin{DoxyCompactList}\small\item\em Used to set up the C\+R\+TP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A directed \hyperlink{classMackey_1_1Graph}{Graph} with two colors. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1ColoredGraph_a9ee26fcb36db12b5dd17702f4dc06d25}\label{classMackey_1_1ColoredGraph_a9ee26fcb36db12b5dd17702f4dc06d25}} 
+\index{Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}!Colored\+Graph@{Colored\+Graph}}
+\index{Colored\+Graph@{Colored\+Graph}!Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}}
+\subsubsection{\texorpdfstring{Colored\+Graph()}{ColoredGraph()}}
+{\footnotesize\ttfamily Mackey\+::\+Colored\+Graph\+::\+Colored\+Graph (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{edges,  }\item[{const std\+::vector$<$ std\+::vector$<$ char $>$$>$ \&}]{colors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct given the edges and colors. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classMackey_1_1ColoredGraph_a9ee26fcb36db12b5dd17702f4dc06d25_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1ColoredGraph_a8ed05073805b34a0087a7ed94e889694}\label{classMackey_1_1ColoredGraph_a8ed05073805b34a0087a7ed94e889694}} 
+\index{Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}!draw@{draw}}
+\index{draw@{draw}!Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mackey\+::\+Colored\+Graph\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Writes a graph.\+dot file representing the colored graph (using red and blue). The nodes are unnamed points. 
+
+\mbox{\Hypertarget{classMackey_1_1ColoredGraph_a912a6e5cb94386d9ff6510e968b41e7d}\label{classMackey_1_1ColoredGraph_a912a6e5cb94386d9ff6510e968b41e7d}} 
+\index{Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}!draw@{draw}}
+\index{draw@{draw}!Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mackey\+::\+Colored\+Graph\+::draw (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{names }\end{DoxyParamCaption})}
+
+
+
+Writes a graph.\+dot file representing the colored graph (using red and blue) and named nodes. 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1ColoredGraph_a2debfc8158c19d7b93550156a3e2676a}\label{classMackey_1_1ColoredGraph_a2debfc8158c19d7b93550156a3e2676a}} 
+\index{Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}!Graph$<$ Colored\+Graph $>$@{Graph$<$ Colored\+Graph $>$}}
+\index{Graph$<$ Colored\+Graph $>$@{Graph$<$ Colored\+Graph $>$}!Mackey\+::\+Colored\+Graph@{Mackey\+::\+Colored\+Graph}}
+\subsubsection{\texorpdfstring{Graph$<$ Colored\+Graph $>$}{Graph< ColoredGraph >}}
+{\footnotesize\ttfamily friend class \hyperlink{classMackey_1_1Graph}{Graph}$<$ \hyperlink{classMackey_1_1ColoredGraph}{Colored\+Graph} $>$\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Used to set up the C\+R\+TP. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Graph_8h}{Graph.\+h}\end{DoxyCompactItemize}

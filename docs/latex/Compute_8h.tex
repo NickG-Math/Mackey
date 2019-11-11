@@ -1,0 +1,54 @@
+\hypertarget{Compute_8h}{}\section{Mackey/\+Compute.h File Reference}
+\label{Compute_8h}\index{Mackey/\+Compute.\+h@{Mackey/\+Compute.\+h}}
+
+
+Contains the computations for R\+O(\+G) Chains and Homology as \hyperlink{namespaceMackey}{Mackey} and Green functors.  
+
+
+{\ttfamily \#include \char`\"{}Mackey\+Functor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Green.\+h\char`\"{}}\newline
+Include dependency graph for Compute.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Compute_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{Compute_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceMackey}{Mackey}
+\begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_a7da73ade3ee83c4ffd614e79242d7c04}{Mackey\+::\+Reindex} (T degree)
+\begin{DoxyCompactList}\small\item\em Reindexes the homological degree k=degree\mbox{[}0\mbox{]} so that it is always 0$<$=k$<$=dimension(sphere) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_a5efb3695c450e4e590b86f20700f726b}{Mackey\+::inv\+Reindex} (T degree)
+\begin{DoxyCompactList}\small\item\em Inverse of \hyperlink{namespaceMackey_a7da73ade3ee83c4ffd614e79242d7c04}{Reindex}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a425b988266cedec0299fb539d99179b1}{Mackey\+::\+Standard\+Chains} (const deg\+\_\+t \&sphere)
+\begin{DoxyCompactList}\small\item\em Returns the standard \hyperlink{classMackey_1_1Chains}{Chains} of the given sphere. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a08fd3743ffb625fceca454da757dfa5d}{Mackey\+::\+R\+O\+Chains} (int i, const deg\+\_\+t \&sphere)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classMackey_1_1Chains}{Chains} of any given sphere up to index i. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_abd3c2e12c91baa573c6dbaa37eeb0518}{Mackey\+::\+R\+O\+Chains} (const deg\+\_\+t \&sphere)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classMackey_1_1Chains}{Chains} of any given given sphere. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Mackey\+Functor$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a1c195484cc947abef84c726b534af5a5}{Mackey\+::\+Homology\+Levels} (const Levels$<$ Junction$<$ rank\+\_\+t, diff\+\_\+t $>$ $>$ \&J)
+\begin{DoxyCompactList}\small\item\em The \hyperlink{namespaceMackey}{Mackey} functor \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_1Junction}{Junction} of \hyperlink{namespaceMackey}{Mackey} functors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\std\+::vector$<$ Mackey\+Functor$<$ rank\+\_\+t $>$ $>$ \hyperlink{namespaceMackey_a58708ee937b0c4172b7cde8e5f856504}{Mackey\+::\+R\+O\+Homology} (const deg\+\_\+t \&sphere)
+\begin{DoxyCompactList}\small\item\em Computes the \hyperlink{namespaceMackey}{Mackey} functor homology of the given sphere. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, int select\+First, int select\+Second)
+\begin{DoxyCompactList}\small\item\em Computes the \hyperlink{namespaceMackey}{Mackey} functor homology of the given sphere. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a07d3b1e748c6cf2fd8a6e21b948a0afe}{Mackey\+::\+R\+O\+Green} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second)
+\begin{DoxyCompactList}\small\item\em Computes the \hyperlink{namespaceMackey}{Mackey} functor homology of the given sphere with default 0,0 selections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the computations for R\+O(\+G) Chains and Homology as \hyperlink{namespaceMackey}{Mackey} and Green functors. 
+

@@ -19,12 +19,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-});
-</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -94,8 +88,8 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="intro"></a>
 Introduction</h1>
-<p>This is a C++ header only library devoted to numerically computing the \(RO(G)\) homology of a point. It is hosted on ...</p>
-<p>For a quick demonstration in the case of \(G=C_4\) you can use one of the available binaries in ...</p>
+<p>This is a C++ header only library devoted to numerically computing the <img class="formulaInl" alt="$RO(G)$" src="form_0.png"/> homology of a point. It is hosted on ...</p>
+<p>For a quick demonstration in the case of <img class="formulaInl" alt="$G=C_4$" src="form_1.png"/> you can use one of the available binaries in ...</p>
 <h1><a class="anchor" id="req"></a>
 Requirements</h1>
 <ul>
@@ -114,11 +108,11 @@ Installation</h1>
 <h1><a class="anchor" id="status"></a>
 Current Status</h1>
 <ul>
-<li>The project is close to being complete for \(G\) a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in <a class="el" href="use.html#how">Step 0: Setting the Group Parameters</a>. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.</li>
+<li>The project is close to being complete for <img class="formulaInl" alt="$G$" src="form_2.png"/> a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in <a class="el" href="use.html#how">Step 0: Setting the Group Parameters</a>. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.</li>
 <li>For general cyclic groups a few aspects that involve transferring need reworking. The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated graphs, so care has to be taken to account for all these extra transfers and restrictions. Ultimately this is the only part that needs changing.</li>
 <li>The bulletpoint above also applies to general finite abelian groups. We also need to specify the order of the elements of the group and how they relate to the subgroup diagram to form our equivariant bases.</li>
 <li>For non abelian groups the same bulletpoint applies, with the added complication of needing the real representation theory of our group. And of course we need the standard chains for these groups as well.</li>
-<li>For coefficients other than \(\mathbb Z\) a lot more things start to break, as transferring becomes more complicated as non cyclic modules are involved in the free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors.</li>
+<li>For coefficients other than <img class="formulaInl" alt="$\mathbb Z$" src="form_3.png"/> a lot more things start to break, as transferring becomes more complicated as non cyclic modules are involved in the free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors.</li>
 </ul>
 <h1><a class="anchor" id="doc"></a>
 Documentation</h1>

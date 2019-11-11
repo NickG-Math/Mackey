@@ -19,12 +19,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-});
-</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -105,7 +99,7 @@ Compiler Options</h1>
 Multithreading</h1>
 <ul>
 <li>While the binaries in ... are all single-threaded, the most (by far) computationally intensive calculations can be multithreaded extemelly easily and efficiently. This is as simple as adding a <code>#pragma omp parallel for</code> before certain loops that compute the additive/multiplicative structure in a range. There is no need to lock anything.</li>
-<li>There is one caveat: While the loop iterations are independent, they are not all equally intensive. A sphere like \(S^{2\sigma+\lambda}\) is cheaper to compute compared to \(S^{6\sigma+8\lambda}\) which is in turn much cheaper compared to \(S^{6\sigma-8\lambda}\) as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are by comparison much more expensive in run-time as they involve arbitrarily large permutation matrices.</li>
+<li>There is one caveat: While the loop iterations are independent, they are not all equally intensive. A sphere like <img class="formulaInl" alt="$S^{2\sigma+\lambda}$" src="form_61.png"/> is cheaper to compute compared to <img class="formulaInl" alt="$S^{6\sigma+8\lambda}$" src="form_62.png"/> which is in turn much cheaper compared to <img class="formulaInl" alt="$S^{6\sigma-8\lambda}$" src="form_63.png"/> as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are by comparison much more expensive in run-time as they involve arbitrarily large permutation matrices.</li>
 <li>So it's important to equally divide the work amongst the thread. At this point, this has to be done manually.</li>
 </ul>
 <h1><a class="anchor" id="intvsfloat"></a>
@@ -113,7 +107,7 @@ Integers vs Floats</h1>
 <p>I use integers (or indeed <code>char</code> and <code>short</code>) for the majority of the computations; that's usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception: Matrix multiplication. Eigen is much slower with integer matrix multiplication compared to floating points, and the Intel MKL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.</p>
 <h1><a class="anchor" id="memo"></a>
 Memoizing ChangeBasis</h1>
-<p>To form the Box product of Chains we need the change of basis matrices. These matrices only depend on the ranks of the given Chains, call them rank1 and rank2. The ranks that actually come up in our computations always look like [?,order,...,order,?] where order is the order of the group and ? \(\le\) order. This means that we very effectively memoize this function for better performance.</p>
+<p>To form the Box product of Chains we need the change of basis matrices. These matrices only depend on the ranks of the given Chains, call them rank1 and rank2. The ranks that actually come up in our computations always look like [?,order,...,order,?] where order is the order of the group and ? <img class="formulaInl" alt="$\le$" src="form_64.png"/> order. This means that we very effectively memoize this function for better performance.</p>
 <h1><a class="anchor" id="bottle"></a>
 Bottlenecks</h1>
 <ul>

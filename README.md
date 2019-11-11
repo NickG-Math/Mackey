@@ -1,4 +1,2 @@
 # Mackey
-A project for computing the RO(G) homology of a point.
-
-The doxygen documention is available <a href="docs/html/index.html">here</a>
+A project for computing the RO(G) homology of a point. Please click <a href="docs/html/index.html">this</a> for a user-guide and the doxygen-produced documentation.

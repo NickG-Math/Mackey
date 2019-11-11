@@ -22,7 +22,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
+    jax: ["input/TeX","output/NativeMML"],
 });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('use.html','');});
 <div class="textblock"><h1><a class="anchor" id="how"></a>
 Step 0: Setting the Group Parameters</h1>
 <ul>
-<li>For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for \(G=C_4\)) on how to set them in the file Implementation.h available in <a href="https://github.com/NickG-Math/Mackey/Demo">Demo</a>. These parameters all live in the <a class="el" href="namespaceGroupSpecific.html">GroupSpecific</a> namespace and we will go over them in more detail below.</li>
-<li>There are also some optional ones that allow you to identify and print the names of the computed <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors. This functionality is disabled by default, but can easily be turned on by defining the macro <code>MACKEY_NAMES</code> and setting the optional parameters. The way this is done is explained in the file Optional_Implementation.h in <a href="https://github.com/NickG-Math/Mackey/Demo">Demo</a>. The implementation there is for \(G=C_4\) and the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors in the \(RO(C_4)\) homology.</li>
+<li>For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for \(G=C_4\)) on how to set them in the file Implementation.h available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. These parameters all live in the <a class="el" href="namespaceGroupSpecific.html">GroupSpecific</a> namespace and we will go over them in more detail below.</li>
+<li>There are also some optional ones that allow you to identify and print the names of the computed <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors. This functionality is disabled by default, but can easily be turned on by defining the macro <code>MACKEY_NAMES</code> and setting the optional parameters. The way this is done is explained in the file Optional_Implementation.h in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>. The implementation there is for \(G=C_4\) and the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors in the \(RO(C_4)\) homology.</li>
 </ul>
 <h2><a class="anchor" id="var"></a>
 Global variables</h2>
@@ -129,7 +129,7 @@ The additive structure</h2>
 <p>sets</p>
 <p>\( M=H_*(S^{2\sigma-2\lambda})\)</p>
 <p>Here the typenames <code>rank_t,diff_t</code> can be set to <code>Eigen::Matrix&lt;char,1,-1&gt;</code> and <code>Eigen::Matrix&lt;char,-1,-1&gt;</code> respectively for maximum performance, as long as the order of the group is \( &lt;127 \).</p>
-<p>Here <code>M</code> is an object of class <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a> so you should read the documentation of that on how to extract that information. If the optional parameters are set then it's also possible to extract the name of the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor as seen in the "C4Verify.h" file in <a href="https://github.com/NickG-Math/Mackey/Demo">Demo</a></p>
+<p>Here <code>M</code> is an object of class <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a> so you should read the documentation of that on how to extract that information. If the optional parameters are set then it's also possible to extract the name of the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor as seen in the "C4Verify.h" file in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a></p>
 <h2><a class="anchor" id="step1mult"></a>
 The multiplicative structure</h2>
 <p>The file <code>&lt;<a class="el" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. ">Mackey/Compute.h</a>&gt;</code> also exposes the method <a class="el" href="namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77">ROGreen</a> that multiplies two generators in the Green functor \(H_{\star}(S)\). Example: The code</p>
@@ -148,7 +148,7 @@ Factorization</h2>
 <p>and <code>std::cout&lt;&lt; F.getname(i) </code></p>
 <p>to print the name of the <code>i</code>-th generator. This name will be nonempty as long as it's created by multiplying/dividing the basic irreducibles with <code>1</code>. As such, it will fail for say <code>s_3</code>. To improve it use instead</p>
 <p><code>F.compute_with_sources({[0,0,0],[-3,0,-2]}, {"1","s3"});</code></p>
-<p>For more details see the code in TestFactorization.cpp of the <a href="https://github.com/NickG-Math/Mackey/Demo">Demo</a> folder </p>
+<p>For more details see the code in TestFactorization.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

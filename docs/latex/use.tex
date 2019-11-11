@@ -1,8 +1,8 @@
 \hypertarget{use_how}{}\section{Step 0\+: Setting the Group Parameters}\label{use_how}
 
 \begin{DoxyItemize}
-\item For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for $G=C_4$) on how to set them in the file Implementation.\+h available in \href{https://github.com/NickG-Math/Mackey/Demo}{\tt Demo}. These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.
-\item There are also some optional ones that allow you to identify and print the names of the computed \hyperlink{namespaceMackey}{Mackey} functors. This functionality is disabled by default, but can easily be turned on by defining the macro {\ttfamily M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES} and setting the optional parameters. The way this is done is explained in the file Optional\+\_\+\+Implementation.\+h in \href{https://github.com/NickG-Math/Mackey/Demo}{\tt Demo}. The implementation there is for $G=C_4$ and the \hyperlink{namespaceMackey}{Mackey} functors in the $RO(C_4)$ homology.
+\item For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for $G=C_4$) on how to set them in the file Implementation.\+h available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.
+\item There are also some optional ones that allow you to identify and print the names of the computed \hyperlink{namespaceMackey}{Mackey} functors. This functionality is disabled by default, but can easily be turned on by defining the macro {\ttfamily M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES} and setting the optional parameters. The way this is done is explained in the file Optional\+\_\+\+Implementation.\+h in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}. The implementation there is for $G=C_4$ and the \hyperlink{namespaceMackey}{Mackey} functors in the $RO(C_4)$ homology.
 \end{DoxyItemize}\hypertarget{use_var}{}\subsection{Global variables}\label{use_var}
 The global variables that need to be set are\+:
 
@@ -35,7 +35,7 @@ $ M=H_*(S^{2\sigma-2\lambda})$
 
 Here the typenames {\ttfamily rank\+\_\+t,diff\+\_\+t} can be set to {\ttfamily Eigen\+::\+Matrix$<$char,1,-\/1$>$} and {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} respectively for maximum performance, as long as the order of the group is $ <127 $.
 
-Here {\ttfamily M} is an object of class \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor} so you should read the documentation of that on how to extract that information. If the optional parameters are set then it\textquotesingle{}s also possible to extract the name of the \hyperlink{namespaceMackey}{Mackey} functor as seen in the \char`\"{}\+C4\+Verify.\+h\char`\"{} file in \href{https://github.com/NickG-Math/Mackey/Demo}{\tt Demo}\hypertarget{use_step1mult}{}\subsection{The multiplicative structure}\label{use_step1mult}
+Here {\ttfamily M} is an object of class \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor} so you should read the documentation of that on how to extract that information. If the optional parameters are set then it\textquotesingle{}s also possible to extract the name of the \hyperlink{namespaceMackey}{Mackey} functor as seen in the \char`\"{}\+C4\+Verify.\+h\char`\"{} file in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}\hypertarget{use_step1mult}{}\subsection{The multiplicative structure}\label{use_step1mult}
 The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} also exposes the method \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} that multiplies two generators in the Green functor $H_{\star}(S)$. Example\+: The code
 
 {\ttfamily auto linear\+\_\+combination= R\+O\+Green$<$rank\+\_\+t,diff\+\_\+t$>$(2,\{0,2,-\/2\},\{1,3,-\/4\},0,0);}
@@ -63,4 +63,4 @@ to print the name of the {\ttfamily i}-\/th generator. This name will be nonempt
 
 {\ttfamily F.\+compute\+\_\+with\+\_\+sources(\{\mbox{[}0,0,0\mbox{]},\mbox{[}-\/3,0,-\/2\mbox{]}\}, \{\char`\"{}1\char`\"{},\char`\"{}s3\char`\"{}\});}
 
-For more details see the code in Test\+Factorization.\+cpp of the \href{https://github.com/NickG-Math/Mackey/Demo}{\tt Demo} folder 
+For more details see the code in Test\+Factorization.\+cpp of the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder 

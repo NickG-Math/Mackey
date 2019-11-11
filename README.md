@@ -15,12 +15,12 @@ Here's a very quick installation guide to get started, partially taken from the 
 
 # Requirements
 * C++17 and the standard library.
-* Eigen, a header only library for matrix manipulation. I've tested this with Eigen 3.3.7
+* <a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. I've tested this with Eigen 3.3.7
 * Optional: For improved performance you can use the Intel MKL with Eigen and further combine with OpenMP for multithreading.
 * Optional: To draw the multiplication graphs you will need Graphviz.
 
 # Installation
-* To install simply clone/download the folder Mackey and include it in your path. You will also need to do the same with Eigen.
+* To install simply clone/download this repository and include the entire folder it in your path (the docs and bin subfolders are optional and not part of the source code). You will also need to do the same with Eigen.
 * See this <a href="https://nickg-math.github.io/Mackey/html/use.html">page</a> for details on how to set up and call the library.
 * As for compiler support, I have tested the code with the following C++ compilers: GCC 9.2 (Linux), Clang 10 (Linux and MacOS), Intel Compiler 19 (Linux and Windows), MSVC 19 (Windows). Remember to use the option -std=c++17. For more information on compiler options, see the per page
 

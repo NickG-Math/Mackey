@@ -20,6 +20,7 @@ var hierarchy =
     ] ],
     [ "Mackey::Levels< T >", "classMackey_1_1Levels.html", null ],
     [ "Mackey::MackeyFunctor< rank_t >", "classMackey_1_1MackeyFunctor.html", null ],
+    [ "GroupSpecificOptional::MackeyList< rank_t >", "classGroupSpecificOptional_1_1MackeyList.html", null ],
     [ "Mackey::Smith< smithS_t, smithR_t, smithC_t >", "classMackey_1_1Smith.html", null ],
     [ "Mackey::TableInput< rank_t, diff_t >", "classMackey_1_1TableInput.html", [
       [ "Mackey::MultiplicationTable< rank_t, diff_t >", "classMackey_1_1MultiplicationTable.html", [

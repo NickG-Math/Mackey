@@ -22,7 +22,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/NativeMML"],
+    jax: ["input/TeX","output/SVG"],
 });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -128,12 +128,16 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a70d63a0f6ad20b052210ab0009815a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of the middle group.  <a href="#a70d63a0f6ad20b052210ab0009815a9e">More...</a><br /></td></tr>
 <tr class="separator:a70d63a0f6ad20b052210ab0009815a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe400bc60b84966b933fd57c11400607"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Junction.html#afe400bc60b84966b933fd57c11400607">rankOut</a></td></tr>
+<tr class="memdesc:afe400bc60b84966b933fd57c11400607"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of the rightmost group.  <a href="#afe400bc60b84966b933fd57c11400607">More...</a><br /></td></tr>
 <tr class="separator:afe400bc60b84966b933fd57c11400607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6174a3bef929f4b5b892d3b7ccb20528"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Junction.html#a6174a3bef929f4b5b892d3b7ccb20528">rankIn</a></td></tr>
+<tr class="memdesc:a6174a3bef929f4b5b892d3b7ccb20528"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of the leftmost group.  <a href="#a6174a3bef929f4b5b892d3b7ccb20528">More...</a><br /></td></tr>
 <tr class="separator:a6174a3bef929f4b5b892d3b7ccb20528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a909fce095bc4647a312d6b10480b2d9a"><td class="memItemLeft" align="right" valign="top">diff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Junction.html#a909fce095bc4647a312d6b10480b2d9a">diffOut</a></td></tr>
+<tr class="memdesc:a909fce095bc4647a312d6b10480b2d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exiting differential.  <a href="#a909fce095bc4647a312d6b10480b2d9a">More...</a><br /></td></tr>
 <tr class="separator:a909fce095bc4647a312d6b10480b2d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a581e0d7b62b7bf380d68936a79828cfc"><td class="memItemLeft" align="right" valign="top">diff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Junction.html#a581e0d7b62b7bf380d68936a79828cfc">diffIn</a></td></tr>
+<tr class="memdesc:a581e0d7b62b7bf380d68936a79828cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entering differential.  <a href="#a581e0d7b62b7bf380d68936a79828cfc">More...</a><br /></td></tr>
 <tr class="separator:a581e0d7b62b7bf380d68936a79828cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -277,6 +281,8 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>The entering differential. </p>
+
 </div>
 </div>
 <a id="a909fce095bc4647a312d6b10480b2d9a"></a>
@@ -292,6 +298,8 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The exiting differential. </p>
 
 </div>
 </div>
@@ -327,6 +335,8 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>The rank of the leftmost group. </p>
+
 </div>
 </div>
 <a id="afe400bc60b84966b933fd57c11400607"></a>
@@ -342,6 +352,8 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The rank of the rightmost group. </p>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/NativeMML"],
+    jax: ["input/TeX","output/SVG"],
 });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('classMackey_1_1Smith.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a43f657bfa335acf5fe10dd864326c0aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a43f657bfa335acf5fe10dd864326c0aa">Smith</a> (const smithS_t &amp;Original, const bool &amp;wantP, const bool &amp;wantQ)</td></tr>
+<tr class="memdesc:a43f657bfa335acf5fe10dd864326c0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi.  <a href="#a43f657bfa335acf5fe10dd864326c0aa">More...</a><br /></td></tr>
 <tr class="separator:a43f657bfa335acf5fe10dd864326c0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -167,7 +168,8 @@ template&lt;typename smithS_t , typename smithR_t , typename smithC_t &gt; </div
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi</p>
+
+<p>Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi. </p>
 <p>The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed. </p>
 
 </div>

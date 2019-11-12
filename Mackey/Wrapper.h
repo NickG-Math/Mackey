@@ -125,6 +125,7 @@ namespace Mackey {
 
 
 #ifdef MACKEY_NAMES
+///Contains optional group specific variables for printing Mackey functors.
 namespace GroupSpecificOptional {
 
 	using namespace Mackey;

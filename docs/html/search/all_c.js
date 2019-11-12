@@ -3,6 +3,8 @@ var searchData=
   ['mackey',['Mackey',['../namespaceMackey.html',1,'']]],
   ['mackeyfunctor',['MackeyFunctor',['../classMackey_1_1MackeyFunctor.html',1,'Mackey::MackeyFunctor&lt; rank_t &gt;'],['../classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93',1,'Mackey::MackeyFunctor::MackeyFunctor()'],['../classMackey_1_1MackeyFunctor.html#a7cdc1be794a7b39e7d4b86c2ad26355e',1,'Mackey::MackeyFunctor::MackeyFunctor(const rank_t &amp;, int)']]],
   ['mackeyfunctor_2eh',['MackeyFunctor.h',['../MackeyFunctor_8h.html',1,'']]],
+  ['mackeylist',['MackeyList',['../classGroupSpecificOptional_1_1MackeyList.html',1,'GroupSpecificOptional']]],
+  ['mackeys',['Mackeys',['../classGroupSpecificOptional_1_1MackeyList.html#aa15b7c7dbcccc2b30442f46aba42b776',1,'GroupSpecificOptional::MackeyList']]],
   ['map',['map',['../classMackey_1_1TableInput.html#abf72738d5aee3a185548d8a4db232ea4',1,'Mackey::TableInput']]],
   ['matrix_5fmixing_2eh',['Matrix_Mixing.h',['../Matrix__Mixing_8h.html',1,'']]],
   ['matrixmixer',['MatrixMixer',['../Matrix__Mixing_8h.html#aa1a4865b3160803edd9ea8cbb42b5a71',1,'Matrix_Mixing.h']]],

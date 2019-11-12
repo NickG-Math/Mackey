@@ -22,7 +22,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/NativeMML"],
+    jax: ["input/TeX","output/SVG"],
 });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -326,6 +326,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aac9deeccbe291d1dd17df46a3d7c1f2b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aac9deeccbe291d1dd17df46a3d7c1f2b">StandardChains</a> (int i, const deg_t &amp;sphere)</td></tr>
 <tr class="memdesc:aac9deeccbe291d1dd17df46a3d7c1f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the standard <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> of the given sphere up to index i.  <a href="#aac9deeccbe291d1dd17df46a3d7c1f2b">More...</a><br /></td></tr>
 <tr class="separator:aac9deeccbe291d1dd17df46a3d7c1f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a216f2d9a39510ce4513d5d8a576adc43"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
+<tr class="memitem:a216f2d9a39510ce4513d5d8a576adc43"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a216f2d9a39510ce4513d5d8a576adc43">identify</a> (<a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &amp;M)</td></tr>
+<tr class="memdesc:a216f2d9a39510ce4513d5d8a576adc43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor with its Latex notation using the MackeyList. Only used if macro MACKEY_NAMES is defined.  <a href="#a216f2d9a39510ce4513d5d8a576adc43">More...</a><br /></td></tr>
+<tr class="separator:a216f2d9a39510ce4513d5d8a576adc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -752,13 +756,44 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceMackey_a1c195484cc947abef84c726b534af5a5_cgraph.png" border="0" usemap="#namespaceMackey_a1c195484cc947abef84c726b534af5a5_cgraph" alt=""/></div>
 <map name="namespaceMackey_a1c195484cc947abef84c726b534af5a5_cgraph" id="namespaceMackey_a1c195484cc947abef84c726b534af5a5_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Mackey::MackeyFunctor\l::resize" alt="" coords="227,5,393,47"/>
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize Groups, Transfers, Restrictions and Levels. " alt="" coords="227,5,393,47"/>
 <area shape="rect" id="node3" href="namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="250,71,370,98"/>
 <area shape="rect" id="node5" href="namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="243,122,377,149"/>
 <area shape="rect" id="node7" href="namespaceMackey.html#a3204eaf23b52b27392baaaf0a6898f76" title="Compute the Weyl group action on a generator given the rank of the group it lives in..." alt="" coords="255,173,365,199"/>
 <area shape="rect" id="node4" href="namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="461,71,572,98"/>
 <area shape="rect" id="node6" href="namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="447,122,587,149"/>
 <area shape="rect" id="node8" href="namespaceMackey.html#aab8a6292210a3b71960cb03b79d218e6" title="Mackey::shiftsegment" alt="" coords="441,173,592,199"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a216f2d9a39510ce4513d5d8a576adc43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a216f2d9a39510ce4513d5d8a576adc43">&#9670;&nbsp;</a></span>identify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Mackey::identify </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identifies the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor with its Latex notation using the MackeyList. Only used if macro MACKEY_NAMES is defined. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43_cgraph.png" border="0" usemap="#namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43_cgraph" alt=""/></div>
+<map name="namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43_cgraph" id="namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#ae63fdf151f6ee653d6cb50d442948e30" title="Normalizes a Mackey Functor. " alt="" coords="172,5,339,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1" title="Compares two Mackey Functors (after normalizing) and returns 1 if equal. " alt="" coords="172,71,339,112"/>
 </map>
 </div>
 
@@ -796,12 +831,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa_icgraph.png" border="0" usemap="#namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa_icgraph" alt=""/></div>
 <map name="namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa_icgraph" id="namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa_icgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="164,107,284,133"/>
+<area shape="rect" id="node2" href="namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="164,81,284,108"/>
 <area shape="rect" id="node3" href="namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="332,5,505,32"/>
 <area shape="rect" id="node4" href="classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a" title="Same as the other constructor but with default selections 0,0. " alt="" coords="341,56,496,83"/>
 <area shape="rect" id="node5" href="namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="359,107,479,133"/>
-<area shape="rect" id="node6" href="classMackey_1_1Levels.html#a450b9aba828f03dd340e89169a4bd9e0" title="Mackey::Levels::Levels" alt="" coords="339,157,499,184"/>
-<area shape="rect" id="node7" href="classMackey_1_1TableInput.html#a6beec147bbfcf4e03f7a11519e478aba" title="Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily..." alt="" coords="350,209,487,250"/>
+<area shape="rect" id="node6" href="classMackey_1_1TableInput.html#a6beec147bbfcf4e03f7a11519e478aba" title="Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily..." alt="" coords="350,158,487,199"/>
 </map>
 </div>
 
@@ -1011,7 +1045,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceMackey_a782d9ce52543c3ae3520b4859dda3240_icgraph.png" border="0" usemap="#namespaceMackey_a782d9ce52543c3ae3520b4859dda3240_icgraph" alt=""/></div>
 <map name="namespaceMackey_a782d9ce52543c3ae3520b4859dda3240_icgraph" id="namespaceMackey_a782d9ce52543c3ae3520b4859dda3240_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Default constructor. " alt="" coords="180,5,383,32"/>
+<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Compute the homology from the given Junction. " alt="" coords="180,5,383,32"/>
 </map>
 </div>
 
@@ -1051,11 +1085,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceMackey_ae44b27dcf905a7ff976ebc79f197c579_icgraph.png" border="0" usemap="#namespaceMackey_ae44b27dcf905a7ff976ebc79f197c579_icgraph" alt=""/></div>
 <map name="namespaceMackey_ae44b27dcf905a7ff976ebc79f197c579_icgraph" id="namespaceMackey_ae44b27dcf905a7ff976ebc79f197c579_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Default constructor. " alt="" coords="187,5,389,32"/>
+<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Compute the homology from the given Junction. " alt="" coords="187,5,389,32"/>
 <area shape="rect" id="node3" href="classMackey_1_1Homology.html#a3ef6bc9a9859c3711c11d153ba55b3e1" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="201,56,375,83"/>
 <area shape="rect" id="node6" href="namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="228,107,348,133"/>
 <area shape="rect" id="node4" href="classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a" title="Same as the other constructor but with default selections 0,0. " alt="" coords="461,31,616,57"/>
-<area shape="rect" id="node5" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Mackey::Homology::Homology" alt="" coords="437,81,640,108"/>
+<area shape="rect" id="node5" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="437,81,640,108"/>
 </map>
 </div>
 
@@ -1761,15 +1795,6 @@ template&lt;typename rank_t , typename diff_t , typename deg_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the standard <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> of the given sphere up to index i. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph.png" border="0" usemap="#namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph" alt=""/></div>
-<map name="namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph" id="namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#ae63fdf151f6ee653d6cb50d442948e30" title="Normalizes a Mackey Functor. " alt="" coords="223,5,389,47"/>
-<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1" title="Compares two Mackey Functors (after normalizing) and returns 1 if equal. " alt="" coords="223,71,389,112"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -1833,7 +1858,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node2" href="namespaceMackey.html#a1257ce64369e72438023fd4e261c7c83" title="The tensor product of ranks of chains A,B. " alt="" coords="233,5,357,32"/>
 <area shape="rect" id="node3" href="namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="209,56,380,83"/>
 <area shape="rect" id="node5" href="classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a" title="Same as the other constructor but with default selections 0,0. " alt="" coords="453,259,608,285"/>
-<area shape="rect" id="node6" href="classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Default constructor. " alt="" coords="193,157,396,184"/>
+<area shape="rect" id="node6" href="classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Compute the homology from the given Junction. " alt="" coords="193,157,396,184"/>
 <area shape="rect" id="node7" href="namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="235,208,355,235"/>
 <area shape="rect" id="node8" href="namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="228,309,361,336"/>
 <area shape="rect" id="node10" href="namespaceMackey.html#a30b5667e411ff694aa989e95e394bb41" title="Mackey::invRes" alt="" coords="236,259,353,285"/>
@@ -1889,8 +1914,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node2" href="namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="173,5,347,32"/>
 <area shape="rect" id="node3" href="classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a" title="Same as the other constructor but with default selections 0,0. " alt="" coords="183,56,337,83"/>
 <area shape="rect" id="node4" href="namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="200,107,320,133"/>
-<area shape="rect" id="node5" href="classMackey_1_1Levels.html#a450b9aba828f03dd340e89169a4bd9e0" title="Mackey::Levels::Levels" alt="" coords="180,157,340,184"/>
-<area shape="rect" id="node6" href="classMackey_1_1TableInput.html#a6beec147bbfcf4e03f7a11519e478aba" title="Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily..." alt="" coords="191,209,329,250"/>
+<area shape="rect" id="node5" href="classMackey_1_1TableInput.html#a6beec147bbfcf4e03f7a11519e478aba" title="Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily..." alt="" coords="191,158,329,199"/>
 </map>
 </div>
 

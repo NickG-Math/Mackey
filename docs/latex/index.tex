@@ -11,24 +11,23 @@ For a quick demonstration in the case of $G=C_4$ you can use one of the availabl
 \end{DoxyItemize}\hypertarget{index_install}{}\section{Installation}\label{index_install}
 
 \begin{DoxyItemize}
-\item To install simply clone/download the folder \href{https://github.com/NickG-Math/Mackey/tree/master/Mackey/tree/master/Mackey}{\tt Mackey} and include it in your path. You will also need to do the same with Eigen.
+\item To install simply clone/download the folder \href{https://github.com/NickG-Math/Mackey}{\tt repository} and include it in your path. You will also need to do the same with Eigen.
 \item See the page \hyperlink{use}{How to Use} for a tutorial on using the library.
-\item As for compiler support, I have tested the code with the following C++ compilers\+: G\+CC 9.\+2 (Linux), Clang 10 (Linux and Mac\+OS), Intel Compiler 19 (Linux and Windows), M\+S\+VC 19 (Windows). Remember to use the option {\ttfamily -\/std=c++17}. For more information on compiler options, see the per page.
+\item As for compiler support, I have tested the code with the following C++ compilers\+: G\+CC 9.\+2 (Linux), Clang 10 (Linux and Mac\+OS), Intel Compiler 19 (Linux and Windows), M\+S\+VC 19 (Windows). Remember to use the option {\ttfamily -\/std=c++17}. For more information on compiler options, see the \hyperlink{perf}{Performance} page.
 \end{DoxyItemize}\hypertarget{index_status}{}\section{Current Status}\label{index_status}
 
 \begin{DoxyItemize}
-\item The project is close to being complete for $G$ a cyclic group of prime power order. The only input that\textquotesingle{}s needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these \char`\"{}standard chains\char`\"{}. The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \hyperlink{use_how}{Step 0\+: Setting the Group Parameters}. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.
-\item For general cyclic groups a few aspects that involve transferring need reworking. The problem is that non prime-\/power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated graphs, so care has to be taken to account for all these extra transfers and restrictions. Ultimately this is the only part that needs changing.
+\item The project is effectively complete for $G$ a cyclic group of prime power order. The only input that\textquotesingle{}s needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these \char`\"{}standard chains\char`\"{}. The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \hyperlink{use_how}{Step 0\+: Setting the Group Parameters}. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.
+\item For general cyclic groups a few aspects that involve transferring need reworking. The problem is that non prime-\/power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, so care has to be taken to account for all these extra transfers and restrictions. Ultimately this is the only part that needs changing.
 \item The bulletpoint above also applies to general finite abelian groups. We also need to specify the order of the elements of the group and how they relate to the subgroup diagram to form our equivariant bases.
-\item For non abelian groups the same bulletpoint applies, with the added complication of needing the real representation theory of our group. And of course we need the standard chains for these groups as well.
+\item For non abelian groups we have the added complication of needing the real representation theory of our group. And of course we need the standard chains for these groups as well.
 \item For coefficients other than $\mathbb Z$ a lot more things start to break, as transferring becomes more complicated as non cyclic modules are involved in the free \hyperlink{namespaceMackey}{Mackey} functors.
 \end{DoxyItemize}\hypertarget{index_doc}{}\section{Documentation}\label{index_doc}
-The documentation was produced by doxygen and is organized in four tabs\+: Home (this page), Related Pages, Namespaces, Classes and Files.
+This documentation is organized in pages\+:
 
 
 \begin{DoxyItemize}
-\item The Related Pages tab explain how the program works, starting from the math and moving to more technical territory regarding the actual implementation.
-\item The Namespaces, Classes and Files tabs offer a much more indepth look into all classes and functions of this project . Note that only public and protected members and named namespaces are documented.
+\item The \href{namespaces.html}{\tt Related pages} consisting of \hyperlink{index}{General Information}, \hyperlink{math}{From Math to Code}, \hyperlink{use}{How to Use}, \hyperlink{algo}{Algorithm Details}, \hyperlink{perf}{Performance}. These explain how the program works, starting from the math and moving to more technical territory regarding the actual implementation. I recommend starting from these.
+\item The pages \href{namespaces.html}{\tt Namespaces}, \href{annotated.html}{\tt Classes} and \href{files.html}{\tt Files} that are automatically generated pages by doxygen from the source code. These offer a much more indepth look into all classes and functions of this project. Note that only public and protected members and named namespaces are documented.
+\item I recommend starting with the \href{namespaces.html}{\tt related pages} before moving and then moving to the other tabs. If you just want to use this library for computations, you only really have to go over the \hyperlink{use_how}{Step 0\+: Setting the Group Parameters} section. 
 \end{DoxyItemize}
-
-I recommend starting with the Related Pages and then moving to the other tabs. If you just want to use this library for computations, you only really have to go over the \hyperlink{use_how}{Step 0\+: Setting the Group Parameters} section. 

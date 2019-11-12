@@ -69,6 +69,7 @@ namespace Mackey {
 		return transfer;
 
 	}
+
 	/////////////////////////////////////////////////
 	/// Storage of various levels of Junction/Chains
 
@@ -77,7 +78,8 @@ namespace Mackey {
 	template<typename T>
 	class Levels {
 	public:
-		std::vector<T> level;
+		std::vector<T> level; ///<The various levels.
+		///Transfer the bottom and get all levels.
 		Levels(T& bottom) {
 			level.resize(power + 1);
 			level[0] = std::move(bottom);

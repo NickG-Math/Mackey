@@ -22,7 +22,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/NativeMML"],
+    jax: ["input/TeX","output/SVG"],
 });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -105,11 +105,13 @@ $(document).ready(function(){initNavTree('classMackey_1_1MackeyFunctor.html','')
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a44d3104a47f23de5d8141b7800db6d11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11">resize</a> (int levels)</td></tr>
+<tr class="memdesc:a44d3104a47f23de5d8141b7800db6d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize Groups, Transfers, Restrictions and <a class="el" href="classMackey_1_1Levels.html" title="Storage of various levels of Junction/Chains. ">Levels</a>.  <a href="#a44d3104a47f23de5d8141b7800db6d11">More...</a><br /></td></tr>
 <tr class="separator:a44d3104a47f23de5d8141b7800db6d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075cd364217700d5f5c2459d4a988a93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93">MackeyFunctor</a> ()</td></tr>
+<tr class="memdesc:a075cd364217700d5f5c2459d4a988a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a075cd364217700d5f5c2459d4a988a93">More...</a><br /></td></tr>
 <tr class="separator:a075cd364217700d5f5c2459d4a988a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cdc1be794a7b39e7d4b86c2ad26355e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a7cdc1be794a7b39e7d4b86c2ad26355e">MackeyFunctor</a> (const rank_t &amp;, int)</td></tr>
-<tr class="memdesc:a7cdc1be794a7b39e7d4b86c2ad26355e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a7cdc1be794a7b39e7d4b86c2ad26355e">More...</a><br /></td></tr>
+<tr class="memdesc:a7cdc1be794a7b39e7d4b86c2ad26355e"><td class="mdescLeft">&#160;</td><td class="mdescRight">When there is only one generator at each level we can use this convenient constructor.  <a href="#a7cdc1be794a7b39e7d4b86c2ad26355e">More...</a><br /></td></tr>
 <tr class="separator:a7cdc1be794a7b39e7d4b86c2ad26355e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a334a91a445ac86cc5cce53b29efd6df1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1">compare</a> (const <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &amp;)</td></tr>
 <tr class="memdesc:a334a91a445ac86cc5cce53b29efd6df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functors (after normalizing) and returns 1 if equal.  <a href="#a334a91a445ac86cc5cce53b29efd6df1">More...</a><br /></td></tr>
@@ -124,6 +126,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a4f8f5f7ac6267bdee2a67c8874bdd9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Groups starting at level 0 (see <a class="el" href="classMackey_1_1Homology.html" title="The Homology of a Junction. ">Homology</a> for the labeling)  <a href="#a4f8f5f7ac6267bdee2a67c8874bdd9a3">More...</a><br /></td></tr>
 <tr class="separator:a4f8f5f7ac6267bdee2a67c8874bdd9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3106846b46d3eb4d297abe785bdb0481"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; rank_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a3106846b46d3eb4d297abe785bdb0481">Tr</a></td></tr>
+<tr class="memdesc:a3106846b46d3eb4d297abe785bdb0481"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transfers starting at level 0. It's encoded as a vectors of vectors of arrays because the answer may be noncyclic.  <a href="#a3106846b46d3eb4d297abe785bdb0481">More...</a><br /></td></tr>
 <tr class="separator:a3106846b46d3eb4d297abe785bdb0481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9299f915835edaa2b67880bfe6330502"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; rank_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a9299f915835edaa2b67880bfe6330502">Res</a></td></tr>
 <tr class="memdesc:a9299f915835edaa2b67880bfe6330502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as transfers, but now using restrictions.  <a href="#a9299f915835edaa2b67880bfe6330502">More...</a><br /></td></tr>
@@ -162,6 +165,8 @@ template&lt;typename rank_t&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default constructor. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -202,14 +207,13 @@ template&lt;typename rank_t &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Default constructor. </p>
-<p>When there is only one generator at each level we can use this convenient constructor </p>
+<p>When there is only one generator at each level we can use this convenient constructor. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e_cgraph" alt=""/></div>
 <map name="classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e_cgraph" id="classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Mackey::MackeyFunctor\l::resize" alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize Groups, Transfers, Restrictions and Levels. " alt="" coords="220,5,387,47"/>
 </map>
 </div>
 
@@ -248,8 +252,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1_icgraph" alt=""/></div>
 <map name="classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1_icgraph" id="classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Mackey::MackeyFunctor\l::MackeyFunctor" alt="" coords="221,5,388,47"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#aac9deeccbe291d1dd17df46a3d7c1f2b" title="Returns the standard Chains of the given sphere up to index i. " alt="" coords="220,71,389,98"/>
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a216f2d9a39510ce4513d5d8a576adc43" title="Identifies the Mackey Functor with its Latex notation using the MackeyList. Only used if macro MACKEY..." alt="" coords="244,71,363,98"/>
 </map>
 </div>
 
@@ -278,8 +282,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30_icgraph" alt=""/></div>
 <map name="classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30_icgraph" id="classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Mackey::MackeyFunctor\l::MackeyFunctor" alt="" coords="221,5,388,47"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#aac9deeccbe291d1dd17df46a3d7c1f2b" title="Returns the standard Chains of the given sphere up to index i. " alt="" coords="220,71,389,98"/>
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a216f2d9a39510ce4513d5d8a576adc43" title="Identifies the Mackey Functor with its Latex notation using the MackeyList. Only used if macro MACKEY..." alt="" coords="244,71,363,98"/>
 </map>
 </div>
 
@@ -310,13 +314,15 @@ template&lt;typename rank_t&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resize Groups, Transfers, Restrictions and <a class="el" href="classMackey_1_1Levels.html" title="Storage of various levels of Junction/Chains. ">Levels</a>. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11_icgraph" alt=""/></div>
 <map name="classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11_icgraph" id="classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11_icgraph">
 <area shape="rect" id="node2" href="namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="220,5,393,32"/>
-<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a7cdc1be794a7b39e7d4b86c2ad26355e" title="Default constructor. " alt="" coords="223,57,390,98"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a7cdc1be794a7b39e7d4b86c2ad26355e" title="When there is only one generator at each level we can use this convenient constructor. " alt="" coords="223,57,390,98"/>
 </map>
 </div>
 
@@ -372,7 +378,9 @@ template&lt;typename rank_t&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The transfers starting at level 0. It's encoded as a vectors of vectors of arrays because the answer may be noncyclic Example (C4): If Tr[0]={[2]} and Tr[1]={[1,1],[2,3]} then Tr_0^2(gen)=2*gen and Tr_2^4(gen0)=gen0+gen1 and Tr_2^4(gen1)=2*gen0+3*gen1 </p>
+
+<p>The transfers starting at level 0. It's encoded as a vectors of vectors of arrays because the answer may be noncyclic. </p>
+<p>Example (C4): If Tr[0]={[2]} and Tr[1]={[1,1],[2,3]} then Tr_0^2(gen)=2*gen and Tr_2^4(gen0)=gen0+gen1 and Tr_2^4(gen1)=2*gen0+3*gen1 </p>
 
 </div>
 </div>

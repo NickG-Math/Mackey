@@ -36,10 +36,12 @@ namespace Mackey {
 	public:
 
 		rank_t rank;///<The rank of the middle group
+		rank_t rankOut;///<The rank of the rightmost group
+		rank_t rankIn;///<The rank of the leftmost group
+		diff_t diffOut;///<The exiting differential
+		diff_t diffIn;///<The entering differential
 
-		rank_t rankOut, rankIn;
-		diff_t diffOut, diffIn;
-		
+
 		///Default constructor
 		Junction() {};
 	/// Extract the Junction C[i+1]->C[i]->C[i-1] from the Chains C.

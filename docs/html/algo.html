@@ -22,7 +22,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/NativeMML"],
+    jax: ["input/TeX","output/SVG"],
 });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -92,6 +92,13 @@ $(document).ready(function(){initNavTree('algo.html','');});
 <div class="title">Algorithm Details </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#smith">Smith Normal Form</a></li>
+<li class="level1"><a href="#cob">Change of Basis</a></li>
+<li class="level1"><a href="#box">Box product</a></li>
+<li class="level1"><a href="#graph">Graphs</a></li>
+</ul>
+</div>
 <div class="textblock"><h1><a class="anchor" id="smith"></a>
 Smith Normal Form</h1>
 <p>For the Smith Normal Form we use a variant of the classical row-column elimination algorithm. Interestingly, for our matrices, an entry divides or is divided by any other. We optimize for this by not finding the minimum elements of the matrix, and instead working with the first nonzero element in each row and column. This is much faster for our matrices, but slower and much more dangerous for random matrices: the Smith normal form coefficient matrices \(P,Q\) can easily overflow in that case (while the usual row-column elimination algorithm can give accurate results).</p>

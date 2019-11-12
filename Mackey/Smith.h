@@ -45,7 +45,7 @@ namespace Mackey{
 
 	/////////////////////////////////////////////////
 	/// Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi
-	///
+
 	///The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed.
 	/////////////////////////////////////////////////
 		Smith(const smithS_t& Original, const bool& wantP, const bool& wantQ);

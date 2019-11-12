@@ -22,7 +22,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/NativeMML"],
+    jax: ["input/TeX","output/SVG"],
 });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -92,11 +92,22 @@ $(document).ready(function(){initNavTree('perf.html','');});
 <div class="title">Performance </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="compoptions"></a>
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#compoptions">Compiler Options</a></li>
+<li class="level1"><a href="#thread">Multithreading</a></li>
+<li class="level1"><a href="#intvsfloat">Integers vs Floats</a></li>
+<li class="level1"><a href="#memo">Memoizing ChangeBasis</a></li>
+<li class="level1"><a href="#bottle">Bottlenecks</a></li>
+</ul>
+</div>
+<div class="textblock"><p>First, two observations:</p>
+<ul>
+<li>The Linux binary runs measurably faster than the Windows one.</li>
+<li>Out of all compilers, Clang seems to produce marginally faster code.</li>
+</ul>
+<h1><a class="anchor" id="compoptions"></a>
 Compiler Options</h1>
 <ul>
-<li>Clang seems to produce marginally faster code.</li>
-<li>The Linux binary runs measurably faster than the Windows one.</li>
 <li>I recommend the following compiler options (GCC, Clang): <code>-Ofast &ndash;funroll-loops -march=native </code></li>
 <li>With the Intel and Microsoft compilers Eigen recommends <code>-inline-forceinline</code> option.</li>
 <li>Note: <code>-Ofast</code> doesn't actually reduce the accuracy of our results, since we only use integers even if the data-type is sometimes a floating point (see <a class="el" href="perf.html#intvsfloat">Integers vs Floats</a> for an explanation as to why we do that). </li>

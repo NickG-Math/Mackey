@@ -22,7 +22,7 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/NativeMML"],
+    jax: ["input/TeX","output/SVG"],
 });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -92,6 +92,19 @@ $(document).ready(function(){initNavTree('math.html','');});
 <div class="title">From Math to Code </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#Briefly">Briefly</a></li>
+<li class="level1"><a href="#imd">In more detail</a><ul><li class="level2"><a href="#add">The additive structure</a></li>
+<li class="level2"><a href="#mult">The multiplicative structure</a></li>
+<li class="level2"><a href="#factor">Factorization</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#caveat">A caveat</a><ul><li class="level2"><a href="#cyclic">Cyclic Generators</a></li>
+<li class="level2"><a href="#noncycl">Non cyclic generators</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="textblock"><h1><a class="anchor" id="Briefly"></a>
 Briefly</h1>
 <p>There are three fundamental ideas that make our code work:</p>
@@ -100,18 +113,18 @@ Briefly</h1>
 <li>Free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are determined by their bottom level groups. The higher levels are obtained by taking fixed points, and this can be done algorithmically on our matrices as long as equivariant bases are used (this is an ordered basis in which elements in the same orbit are written consecutively).</li>
 <li>Box products of <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are tensor products on the bottom level. This is not true for the higher levels, however using the bulletpoint above, higher levels are obtained by transferring. This is how box products of chain complexes of free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are computed.</li>
 </ul>
-<p>These three ideas dictate our approach: We work primarily on the bottom level, before transferring to get the higher ones. Homology is computed in each level separately and transfers/restrictions/Weyl group actions on the generators can be computed on the chains. But the chains are always free, so we can also algorithmically compute the effect of transfers/restrictions and Weyl group actions.</p>
+<p>These three ideas dictate our approach: We work primarily on the bottom level, before transferring to get the higher ones. Homology is computed in each level separately and transfers/restrictions/Weyl group actions on the generators can be computed on the chains. But the chains are always free, so we can also algorithmically compute the effect of these operations.</p>
 <p>By converting all our differentials to matrices, using equivariant bases throughout, we can reduce our computations to pure linear algebra (over the integers), avoiding any symbolic math.</p>
 <h1><a class="anchor" id="imd"></a>
 In more detail</h1>
-<p>Here's how the code works in more detail (for simplicity we specialize to the \(G=C_4\) case, although everything works with different prime powers:</p>
+<p>Here's how the code works in more detail (for simplicity we specialize to the \(G=C_4\) case, although everything works equally well with general prime powers):</p>
 <h2><a class="anchor" id="add"></a>
 The additive structure</h2>
 <ul>
-<li>The input are the bottom levels of the chains of the spheres \(S^{n\sigma+m\lambda}\) for \(n,m\ge 0\). We could in fact do with only \(S^{\sigma},S^{\lambda}\), but this would result in taking arbitrarily many box products and destroy performance. Instead using the spheres \(S^{n\sigma+m\lambda}\) for \(n,m\ge 0\) we only have to take triple box products at most, for some of the multiplicative structure.</li>
+<li>The input are the bottom levels of the chains of the spheres \(S^{n\sigma+m\lambda}\) for \(n,m\ge 0\). We could do away with only \(S^{\sigma},S^{\lambda}\), but this would result in taking arbitrarily many box products and devastate run-time performance. Instead, if we use the spheres \(S^{n\sigma+m\lambda}\) for \(n,m\ge 0\) we only have to take double box products at worst, and that's only for part of the multiplicative structure.</li>
 <li>The data of a Chain complex are the ranks and differentials. The differentials are stored as matrices, but the ranks are stored as integer arrays and not integers. This is crucial as for example \(\mathbb Z[C_4]\) transfers completely differently from \(\mathbb Z[C_2]\oplus \mathbb Z[C_2]\) even though they both have rank \(4=2+2\) over \(\mathbb Z\). With our conventions, \(\mathbb Z[C_2]\oplus \mathbb Z[C_2]\) has rank \([2,2]\) while \(\mathbb Z[C_4]\) has rank \(4\).</li>
 <li>We transfer both ranks and differentials to higher levels. While transferring ranks is straightforward, transferring differentials is quite a bit more complicated and requires to have already transferred the ranks of the domain and range of the differentials.</li>
-<li>Using the familiar homology algorithm we compute the groups of the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor at every level. We also compute their generators (as elements in the Chain complex)</li>
+<li>Using the classical homology algorithm we compute the groups of the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor at every level. We also compute their generators (as elements in the Chain complex)</li>
 <li>We transfer/restrict and compute the Weyl group action on the group generators. This concludes the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor computation for the \(S^{n\sigma+m\lambda}\), \(n,m\ge 0\).</li>
 <li>To obtain the chains of the rest of the spheres, we box the Chains we already have. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly. However the most convenient bases for tensoring are not equivariant, and in the end we have to change bases through permutation matrices.</li>
 <li>We then perform the same procedure with transferring to get the entrire \(RO(G)\) homology.</li>

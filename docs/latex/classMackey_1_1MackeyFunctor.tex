@@ -13,11 +13,11 @@ A \hyperlink{namespaceMackey}{Mackey} Functor.
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11}{resize} (int levels)
-\item 
+\begin{DoxyCompactList}\small\item\em Resize Groups, Transfers, Restrictions and \hyperlink{classMackey_1_1Levels}{Levels}. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1MackeyFunctor_a075cd364217700d5f5c2459d4a988a93}{Mackey\+Functor} ()
-\item 
-\hyperlink{classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e}{Mackey\+Functor} (const rank\+\_\+t \&, int)
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e}{Mackey\+Functor} (const rank\+\_\+t \&, int)
+\begin{DoxyCompactList}\small\item\em When there is only one generator at each level we can use this convenient constructor. \end{DoxyCompactList}\item 
 bool \hyperlink{classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1}{compare} (const \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \&)
 \begin{DoxyCompactList}\small\item\em Compares two \hyperlink{namespaceMackey}{Mackey} Functors (after normalizing) and returns 1 if equal. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30}{normalize} ()
@@ -28,7 +28,7 @@ void \hyperlink{classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30}{
 std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1MackeyFunctor_a4f8f5f7ac6267bdee2a67c8874bdd9a3}{Groups}
 \begin{DoxyCompactList}\small\item\em The Groups starting at level 0 (see \hyperlink{classMackey_1_1Homology}{Homology} for the labeling) \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_a3106846b46d3eb4d297abe785bdb0481}{Tr}
-\item 
+\begin{DoxyCompactList}\small\item\em The transfers starting at level 0. It\textquotesingle{}s encoded as a vectors of vectors of arrays because the answer may be noncyclic. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_a9299f915835edaa2b67880bfe6330502}{Res}
 \begin{DoxyCompactList}\small\item\em Same as transfers, but now using restrictions. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_aa6488386f0731b1a2c80b494376709a0}{Weyl}
@@ -49,6 +49,10 @@ A \hyperlink{namespaceMackey}{Mackey} Functor.
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
 \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Default constructor. 
+
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -65,9 +69,9 @@ Here is the call graph for this function\+:\nopagebreak
 
 
 
-Default constructor. 
+When there is only one generator at each level we can use this convenient constructor. 
 
-When there is only one generator at each level we can use this convenient constructor Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -120,6 +124,10 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
 void \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::resize (\begin{DoxyParamCaption}\item[{int}]{levels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Resize Groups, Transfers, Restrictions and \hyperlink{classMackey_1_1Levels}{Levels}. 
+
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -159,7 +167,11 @@ Same as transfers, but now using restrictions.
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
 std\+::vector$<$std\+::vector$<$rank\+\_\+t$>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::Tr}
 
-The transfers starting at level 0. It\textquotesingle{}s encoded as a vectors of vectors of arrays because the answer may be noncyclic Example (C4)\+: If Tr\mbox{[}0\mbox{]}=\{\mbox{[}2\mbox{]}\} and Tr\mbox{[}1\mbox{]}=\{\mbox{[}1,1\mbox{]},\mbox{[}2,3\mbox{]}\} then Tr\+\_\+0$^\wedge$2(gen)=2$\ast$gen and Tr\+\_\+2$^\wedge$4(gen0)=gen0+gen1 and Tr\+\_\+2$^\wedge$4(gen1)=2$\ast$gen0+3$\ast$gen1 \mbox{\Hypertarget{classMackey_1_1MackeyFunctor_aa6488386f0731b1a2c80b494376709a0}\label{classMackey_1_1MackeyFunctor_aa6488386f0731b1a2c80b494376709a0}} 
+
+
+The transfers starting at level 0. It\textquotesingle{}s encoded as a vectors of vectors of arrays because the answer may be noncyclic. 
+
+Example (C4)\+: If Tr\mbox{[}0\mbox{]}=\{\mbox{[}2\mbox{]}\} and Tr\mbox{[}1\mbox{]}=\{\mbox{[}1,1\mbox{]},\mbox{[}2,3\mbox{]}\} then Tr\+\_\+0$^\wedge$2(gen)=2$\ast$gen and Tr\+\_\+2$^\wedge$4(gen0)=gen0+gen1 and Tr\+\_\+2$^\wedge$4(gen1)=2$\ast$gen0+3$\ast$gen1 \mbox{\Hypertarget{classMackey_1_1MackeyFunctor_aa6488386f0731b1a2c80b494376709a0}\label{classMackey_1_1MackeyFunctor_aa6488386f0731b1a2c80b494376709a0}} 
 \index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!Weyl@{Weyl}}
 \index{Weyl@{Weyl}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
 \subsubsection{\texorpdfstring{Weyl}{Weyl}}

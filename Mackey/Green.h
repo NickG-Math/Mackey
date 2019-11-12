@@ -3,8 +3,9 @@
 #include "Box.h"
 #include "Homology.h"
 #include <numeric> //for gcd
+
 ///@file
-///@brief Contains the class \ref Green "Green" for multiplying generators.
+///@brief Contains the class and methods for multiplying generators.
 
 namespace Mackey {
 

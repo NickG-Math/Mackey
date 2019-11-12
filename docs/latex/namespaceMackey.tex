@@ -133,7 +133,9 @@ typedef Eigen\+::\+Matrix$<$ \hyperlink{namespaceMackey_aa1901d96dd7e8dd384bb01f
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a011b8e23bc2eedf751a9ce7bdc9e4cb9}{inv\+Reindex} (int k, const T \&sphere)
 \begin{DoxyCompactList}\small\item\em Inverse of \hyperlink{namespaceMackey_a7da73ade3ee83c4ffd614e79242d7c04}{Reindex}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\\hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b}{Standard\+Chains} (int i, const deg\+\_\+t \&sphere)
-\begin{DoxyCompactList}\small\item\em Returns the standard \hyperlink{classMackey_1_1Chains}{Chains} of the given sphere up to index i. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the standard \hyperlink{classMackey_1_1Chains}{Chains} of the given sphere up to index i. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::string \hyperlink{namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43}{identify} (\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \&M)
+\begin{DoxyCompactList}\small\item\em Identifies the \hyperlink{namespaceMackey}{Mackey} Functor with its Latex notation using the Mackey\+List. Only used if macro M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES is defined. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -338,6 +340,24 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespaceMackey_a1c195484cc947abef84c726b534af5a5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43}\label{namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43}} 
+\index{Mackey@{Mackey}!identify@{identify}}
+\index{identify@{identify}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{identify()}{identify()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t $>$ \\
+std\+::string Mackey\+::identify (\begin{DoxyParamCaption}\item[{\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \&}]{M }\end{DoxyParamCaption})}
+
+
+
+Identifies the \hyperlink{namespaceMackey}{Mackey} Functor with its Latex notation using the Mackey\+List. Only used if macro M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES is defined. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa}\label{namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa}} 
@@ -744,13 +764,6 @@ Here is the call graph for this function\+:\nopagebreak
 
 Returns the standard \hyperlink{classMackey_1_1Chains}{Chains} of the given sphere up to index i. 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{namespaceMackey_a4b31e1685ed5771bcced308b3b13c7f0}\label{namespaceMackey_a4b31e1685ed5771bcced308b3b13c7f0}} 
 \index{Mackey@{Mackey}!Standard\+Diff@{Standard\+Diff}}
 \index{Standard\+Diff@{Standard\+Diff}!Mackey@{Mackey}}

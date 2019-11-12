@@ -44,19 +44,26 @@ namespace Mackey
 	public:
 		std::vector<rank_t> Groups;///<The Groups starting at level 0 (see Homology for the labeling)
 
+		//////////////////////////////////////////////////////////////////////////////
 		///The transfers starting at level 0. It's encoded as a vectors of vectors of arrays because the answer may be noncyclic
+
 		///Example (C4): If Tr[0]={[2]} and Tr[1]={[1,1],[2,3]} then Tr_0^2(gen)=2*gen and Tr_2^4(gen0)=gen0+gen1 and Tr_2^4(gen1)=2*gen0+3*gen1
+		//////////////////////////////////////////////////////////////////////////////
 		std::vector<std::vector<rank_t>> Tr;
 
 		std::vector<std::vector<rank_t>> Res;///<Same as transfers, but now using restrictions
 		std::vector<std::vector<rank_t>> Weyl;///<Same as transfers, but now using the Weyl group action
-
+		
+		///Resize Groups, Transfers, Restrictions and Levels.
 		void resize(int levels) {
 			Groups.resize(levels); Tr.resize(levels - 1); Res.resize(levels - 1); Weyl.resize(levels - 1);
 		}
 		
-		MackeyFunctor() {};///<Default constructor		
-		MackeyFunctor(const rank_t&, int);///<When there is only one generator at each level we can use this convenient constructor
+		///Default constructor
+		MackeyFunctor() {};	
+
+		///When there is only one generator at each level we can use this convenient constructor	
+		MackeyFunctor(const rank_t&, int);
 
 		
 		bool compare(const MackeyFunctor<rank_t>&);///<Compares two Mackey Functors (after normalizing) and returns 1 if equal.

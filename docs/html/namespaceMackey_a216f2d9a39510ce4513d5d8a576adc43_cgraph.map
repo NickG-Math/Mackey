@@ -1,0 +1,4 @@
+<map id="Mackey::identify" name="Mackey::identify">
+<area shape="rect" id="node2" href="$classMackey_1_1MackeyFunctor.html#ae63fdf151f6ee653d6cb50d442948e30" title="Normalizes a Mackey Functor. " alt="" coords="172,5,339,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1" title="Compares two Mackey Functors (after normalizing) and returns 1 if equal. " alt="" coords="172,71,339,112"/>
+</map>

@@ -26,9 +26,12 @@ namespace Mackey {
 		rank_t Groups;///<Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3
 		diff_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
 		bool isZero;///<1 if the homology is trivial
+		
+		///Default constructor
+		Homology() {};
 
-		Homology() {};///<Default constructor
-		Homology(const Junction<rank_t, diff_t>&);///<Compute the homology from the given Junction
+		///Compute the homology from the given Junction
+		Homology(const Junction<rank_t, diff_t>&);
 
 		//////////////////////////////////////
 		///Given an element in homology, write it as a linear combination of the generators of the homology

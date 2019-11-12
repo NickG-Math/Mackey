@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['names',['names',['../classGroupSpecificOptional_1_1MackeyList.html#a8e25429ed075c31ace2b02bf72f5ef05',1,'GroupSpecificOptional::MackeyList']]],
   ['nonzerohomology',['NonZeroHomology',['../classMackey_1_1TableInput.html#a1f61296eba16c62517e325d21e7a5505',1,'Mackey::TableInput']]],
   ['normalbasis',['normalBasis',['../classMackey_1_1Green.html#a7fd2fac9558c75fdef0b0ded1bee70d8',1,'Mackey::Green']]],
   ['normalize',['normalize',['../classMackey_1_1MackeyFunctor.html#ae63fdf151f6ee653d6cb50d442948e30',1,'Mackey::MackeyFunctor']]],

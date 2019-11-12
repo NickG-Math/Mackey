@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['mackeys',['Mackeys',['../classGroupSpecificOptional_1_1MackeyList.html#aa15b7c7dbcccc2b30442f46aba42b776',1,'GroupSpecificOptional::MackeyList']]],
   ['map',['map',['../classMackey_1_1TableInput.html#abf72738d5aee3a185548d8a4db232ea4',1,'Mackey::TableInput']]],
   ['maxindex',['maxindex',['../classMackey_1_1Chains.html#a12a79cb031092cfd3473bb6512e7ae94',1,'Mackey::Chains']]],
   ['maxsphere',['maxsphere',['../classMackey_1_1TableInput.html#a56448ebdfecb95da4c52349d4ccbf576',1,'Mackey::TableInput']]],

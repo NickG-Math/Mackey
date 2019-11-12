@@ -1,8 +1,12 @@
-\hypertarget{perf_compoptions}{}\section{Compiler Options}\label{perf_compoptions}
+First, two observations\+:
+
 
 \begin{DoxyItemize}
-\item Clang seems to produce marginally faster code.
 \item The Linux binary runs measurably faster than the Windows one.
+\item Out of all compilers, Clang seems to produce marginally faster code.
+\end{DoxyItemize}\hypertarget{perf_compoptions}{}\section{Compiler Options}\label{perf_compoptions}
+
+\begin{DoxyItemize}
 \item I recommend the following compiler options (G\+CC, Clang)\+: {\ttfamily -\/\+Ofast --funroll-\/loops -\/march=native }
 \item With the Intel and Microsoft compilers Eigen recommends {\ttfamily -\/inline-\/forceinline} option.
 \item Note\+: {\ttfamily -\/\+Ofast} doesn\textquotesingle{}t actually reduce the accuracy of our results, since we only use integers even if the data-\/type is sometimes a floating point (see \hyperlink{perf_intvsfloat}{Integers vs Floats} for an explanation as to why we do that). 

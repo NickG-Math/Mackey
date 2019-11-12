@@ -1,29 +1,30 @@
 \mainpage General Information
 \tableofcontents
  \section intro Introduction
-This is a C++ header only library devoted to numerically computing the \f$RO(G)\f$ homology of a point. It is hosted <a href="https://github.com/NickG-Math/Mackey">here</a>
+This is a C++ header only library devoted to numerically computing the \f$RO(G)\f$ homology of a point. You can find the GitHub repository <a href="https://github.com/NickG-Math/Mackey">here</a>.
 
 For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the available binaries <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">here</a>.
 
 
 \section req Requirements
  * C++17 and the standard library.
- * <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. I've tested this with Eigen 3.3.7
+ * <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. I've tested the code with Eigen 3.3.7 though newer versions shouldn't break compatibility.
  * Optional: For improved performance you can use the Intel MKL with Eigen and further combine with OpenMP for multithreading.
  * Optional: To draw the multiplication graphs you will need Graphviz.
  
 \section install Installation
 
-* To install simply clone/download the folder <a href="https://github.com/NickG-Math/Mackey">repository</a> and include it in your path. You will also need to do the same with Eigen.
+* To install simply clone/download the <a href="https://github.com/NickG-Math/Mackey">repository</a> and include it in your path. You will also need to do the same with Eigen.
 
 * See the page \ref use for a tutorial on using the library.
 
-* As for compiler support, I have tested the code with the following C++ compilers: GCC 9.2 (Linux), Clang 10 (Linux and MacOS), Intel Compiler 19 (Linux and Windows), MSVC 19 (Windows). Remember to use the option <CODE>-std=c++17</CODE>. For more information on compiler options, see the \ref perf page.
-
+* As for compiler support, I have tested the code with the following C++ compilers: GCC 9.2 (Linux), Clang 10 (Linux and MacOS), Intel Compiler 19 (Linux and Windows), MSVC 19 (Windows). Remember to use the option ```-std=c++17```. For more information on compiler options, see the \ref perf page.
 
 \section status Current Status
 
-* The project is effectively complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.
+* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.
+
+* The one thing that hasn't been implemented for prime power groups are Frobenius relations: The multiplicative structure is computed levelwise, but through the Frobenius relations we can extract information from the lower levels (if our generators are transfers of those lower levels).  
 
 * For general cyclic groups a few aspects that involve transferring need reworking. The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, so care has to be taken to account for all these extra transfers and restrictions. Ultimately this is the only part that needs changing.
 
@@ -31,7 +32,7 @@ For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the avai
 
 * For non abelian groups we have the added complication of needing the real representation theory of our group. And of course we need the standard chains for these groups as well. 
 
-* For coefficients other than \f$\mathbb Z\f$ a lot more things start to break, as transferring becomes more complicated as non cyclic modules are involved in the free Mackey functors.
+* For coefficients other than \f$\mathbb Z\f$ a lot more things start to break, as transferring becomes more complicated when non cyclic modules are involved in the free Mackey functors.
 
 \section doc Documentation
 

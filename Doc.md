@@ -48,7 +48,7 @@ This documentation is organized in pages:
 \tableofcontents
 \section Briefly
 
-There are three fundamental ideas that make our code work:
+There are three fundamental ideas that make the code work:
 
 * Homology of chain complexes of free \f$\mathbb Z\f$ modules can be algorithmically computed by turning the differentials into matrices and then diagonalizing them (Smith Normal Form). 
 
@@ -67,7 +67,7 @@ Here's how the code works in more detail (for simplicity we specialize to the \f
 
 \subsection add The additive structure
 
-* The input are the bottom levels of the chains of the spheres \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$. We could do away with only \f$S^{\sigma},S^{\lambda}\f$, but this would result in taking arbitrarily many box products and devastate run-time performance. Instead, if we use the spheres  \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$ we only have to take double box products at worst, and that's only for part of the multiplicative structure.
+* The inputs are the bottom levels of the chains of the spheres \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$. We could do away with only \f$S^{\sigma},S^{\lambda}\f$, but this would result in taking arbitrarily many box products and devastate run-time performance. Instead, if we use the spheres  \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$ we only have to take double box products at worst, and that's only for part of the multiplicative structure.
 
 * The data of a Chain complex are the ranks and differentials. The differentials are stored as matrices, but the ranks are stored as integer arrays and not integers. This is crucial as for example \f$\mathbb Z[C_4]\f$ transfers completely differently from \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ even though they both have rank \f$4=2+2\f$ over \f$\mathbb Z\f$. 
 With our conventions, \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ has rank \f$[2,2]\f$ while \f$\mathbb Z[C_4]\f$ has rank \f$4\f$.
@@ -162,7 +162,7 @@ If we use the pattern \f$a,b,c,d\f$ instead we get <br>
 
 * The matrices appearing in the Standard Chains all look like this due to equivariance.
 
-\section next Calling the library
+\section next Step 1: Calling the library
 
 Once Step 0 is complete, you can include ```<Mackey/Compute.h>``` to access the methods relating to the additive and multiplicative structure, and ```<Mackey/Factorization.h>``` to access the factorization methods. For a demonstration you can use the files included in the <a href="https://github.com/NickG-Math/Mackey/Demo">Demo</a> folder.
 

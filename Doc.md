@@ -137,24 +137,22 @@ Even if we can multiply any two generators, that doesn't mean we can automatical
 
 * For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for \f$G=C_4\f$) on how to set them in the file Implementation.h available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. These parameters all live in the \ref GroupSpecific "GroupSpecific" namespace and we will go over them in more detail below.
 
-* There are also some optional ones that allow you to identify and print the names of the computed Mackey functors. This functionality is disabled by default, but can easily be turned on by defining the macro ```MACKEY_NAMES``` and setting the optional parameters. The way this is done is explained in the file Optional_Implementation.h in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>. The implementation there is for \f$G=C_4\f$ and the Mackey functors in the \f$RO(C_4)\f$ homology.
+* There are also some optional parameters that allow you to identify and print the names of the computed Mackey functors. This functionality is disabled by default, but can easily be turned on by defining the macro ```MACKEY_NAMES``` and setting the optional parameters living in the namespace \ref GroupSpecificOptional "GroupSpecificOptional". An example of how this is done is contained the file Optional_Implementation.h in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>. The implementation there is for \f$G=C_4\f$ and the 16 Mackey functors in the \f$RO(C_4)\f$ homology.
 
 \subsection var Global variables
 
 The global variables that need to be set are:
 
 * \ref GroupSpecific::Variables::prime "prime" : the \f$p\f$ in \f$G=C_{p^n}\f$.
-* \ref GroupSpecific::Variables::power "power": the \f$n\f$ in \f$G=C_{p^n}\f$.
+* \ref GroupSpecific::Variables::power "power" : the \f$n\f$ in \f$G=C_{p^n}\f$.
 * \ref GroupSpecific::Variables::reps "reps" : the number of nontrivial irreducible real representations of \f$G\f$.
 * \ref GroupSpecific::Variables::sphere_dimensions "sphere_dimensions" : the array consisting of the dimensions of those representations (so we must fix an order for them beforehand).
 
 \subsection fun The standard differentials
 
-* There is one function that needs to be manually defined, and that's \ref GroupSpecific::Function::StandardDiff "StandardDiff" creating the differential for the standard chains. In practice what this means is setting the correct matrix given the input sphere. Apart from the case work that comes from math, I have made the construction of the differential as painless as possible. 
+* There is one function that needs to be manually defined, the \ref GroupSpecific::Function::StandardDiff "StandardDiff" computing the differentials for the standard chains. In practice this amounts to assigning the corresponding matrix given the index of the differential and the sphere (for \f$G=C_4\f$ this amounts to specifying a matrix for every triple \f$i,n,m\f$ where \f$n,m\f$ have the same signs). Apart from the case work that comes from the math, I have made the construction of these differentials as painless as possible, using the \ref Mackey::altmatrix "altmatrix" function
 
-* This construction is done through the \ref Mackey::altmatrix "altmatrix" function, that creates alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. 
-
-* An example: The matrix of size 4x4 with pattern \f$a,b\f$ is <br>
+* \ref Mackey::altmatrix "altmatrix" returns alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. An example: The matrix of size 4x4 with pattern \f$a,b\f$ is <br>
 \f$\begin{matrix} a&b&a&b\\ b&a&b&a\\ a&b&a&b \\  b&a&b&a \end{matrix}\f$ <br> 
 If we use the pattern \f$a,b,c,d\f$ instead we get <br>
 \f$\begin{matrix} a&b&c&d\\ b&c&d&a\\ c&d&a&b \\  d&a&b&c \end{matrix}\f$ <br> 
@@ -163,46 +161,46 @@ If we use the pattern \f$a,b,c,d\f$ instead we get <br>
 
 \section next Step 1: Calling the library
 
-Once Step 0 is complete, you can include ```<Mackey/Compute.h>``` to access the methods relating to the additive and multiplicative structure, and ```<Mackey/Factorization.h>``` to access the factorization methods. For a demonstration you can use the files included in the <a href="https://github.com/NickG-Math/Mackey/Demo">Demo</a> folder.
-
+Once Step 0 is complete, you can include ```<Mackey/Compute.h>``` to access the methods relating to the additive and multiplicative structure, and ```<Mackey/Factorization.h>``` to access the factorization methods. For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/Demo">Demo</a> folder together with the provided two Implementation header files that come from Step 0.
 
 \subsection step1add The additive structure
 
 The file ```<Mackey/Compute.h>``` exposes the method \ref Mackey::ROHomology "ROHomology" that computes the homology of a given sphere as a Mackey functor. Example: The code
 
-<CODE> auto M= ROHomology<rank_t,diff_t>({2,-2}); </CODE>
+<CODE> auto M= Mackey::ROHomology<rank_t,diff_t>({2,-2}); </CODE>
 
 sets 
 
 \f$ M=H_*(S^{2\sigma-2\lambda})\f$
 
-Here the typenames ```rank_t,diff_t``` can be set to ```Eigen::Matrix<char,1,-1>``` and ```Eigen::Matrix<char,-1,-1>``` respectively for maximum performance, as long as the order of the group is \f$ <127 \f$. 
+The typenames ```rank_t,diff_t``` can be set to ```Eigen::Matrix<char,1,-1>``` and ```Eigen::Matrix<char,-1,-1>``` respectively for maximum performance for small groups of prime power order \f$ <127 \f$. Otherwise replace ```char``` with ```short```.
 
-Here ```M``` is an object of class \ref Mackey::MackeyFunctor "MackeyFunctor" so you should read the documentation of that on how to extract that information. If the optional parameters are set then it's also possible to extract the name of the Mackey functor as seen in the "C4Verify.h" file in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>
+Here ```M``` is an object of class \ref Mackey::MackeyFunctor "MackeyFunctor" so you should read the documentation of that on how to extract that information. If the optional parameters are set then it's also possible to extract the name of the Mackey functor using the method \ref Mackey::identify "identify". Simply use
 
+<CODE> std::cout << identify(M); </CODE>
 
 \subsection step1mult The multiplicative structure
 
 The file ```<Mackey/Compute.h>``` also exposes the method \ref Mackey::ROGreen "ROGreen" that multiplies two generators in the Green functor \f$H_{\star}(S)\f$. Example: The code
 
-```auto linear_combination= ROGreen<rank_t,diff_t>(2,{0,2,-2},{1,3,-4},0,0);```
+```auto linear_combination= Mackey::ROGreen<rank_t,diff_t>(2,{0,2,-2},{1,3,-4},0,0);```
 
 multiplies the generators of
 
 \f$ H_0^{C_4}(S^{2\sigma-2\lambda}) \otimes H_1^{C_4}(S^{3\sigma-4\lambda}) \to H_1^{C_4}(S^{5\sigma-6\lambda})  \f$
 
-writing the answer as a linear combination of the generators in the box product. The first argument of \ref Mackey::ROGreen "ROGreen" indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for \f$C_4\f$, level=2 is the top level. The second and third entries are the degrees of the two generators, while the last two are needed if we have noncyclic groups. Then \f$1,2\f$ selects the second and third generators of these noncyclic groups respectively (remember that in C++ counting starts from \f$0\f$.
+writing the answer as a linear combination of the generators in the box product. The first argument of \ref Mackey::ROGreen "ROGreen" indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for \f$C_4\f$, level=2 is the top level. The second and third entries are the degrees of the two generators, while the last two are needed if we have noncyclic groups. In that case, these two select the generators we want (eg \f$1,2\f$ selects the second and third generators of the noncyclic groups respectively; remember that in C++ counting starts from \f$0\f$).
 
-The result of the computation ```linear_combination``` is an Eigen array (```rank_t```) that contains the coefficients eg if it's ```[2,1]``` then the product of generators is 2 times the first generator plus 1 times the second. For convenience we omit any signs etc. and identify generators of the same cyclic groups (see \ref caveat).
+The result of the computation ```linear_combination``` is an Eigen row vector (```rank_t```) that contains the coefficients eg if it's ```[2,1]``` then the product of generators is 2 times the first generator plus 1 times the second. For convenience we omit any signs etc. and identify generators of the same cyclic groups (see \ref caveat) but it's also possible to get the nonnormalized version (see Mackey::Green).
 
 
 \subsection step1fact Factorization
 
-The file ```<Mackey/Factorization.h>``` also exposes the class \ref Mackey::Factorization "Factorization" whose constructor creates the multiplication graph and factorizes all generators using the given sources. First construct as:
+The file ```<Mackey/Factorization.h>``` exposes the class \ref Mackey::Factorization "Factorization" whose constructor creates the multiplication graph and the method \ref Mackey::Factorization::compute_with_sources "compute_with_sources(...)" factorizes all generators using the given sources. First construct the multiplication graph via:
 
 <CODE>auto F= Factorization<rank_t, diff_t> F({ -5,-5 }, { 5,5 }, { {0,1,0},{2,2,0},{0,0,1},{2,0,1} }, { "asigma", "u2sigma", "alambda", "ulambda" });</CODE>
 
-This will work to factorize within the range of \f$S^{-5\sigma-5\lambda}\f$ to \f$S^{5\sigma+5\lambda}\f$ by multiplying with the basic irreducibles \f$ a_{\sigma}, u_{2\sigma}, a_{\lambda}, u_{\lambda}\f$ that live in degrees \f$[0,1,0],[2,2,0],[0,0,1],[2,0,1]\f$ respectively.
+This will work in the range from \f$S^{-5\sigma-5\lambda}\f$ to \f$S^{5\sigma+5\lambda}\f$ by multiplying all generators of \f$H_{\star}S\f$ with the basic irreducibles \f$ a_{\sigma}, u_{2\sigma}, a_{\lambda}, u_{\lambda}\f$ of degrees \f$[0,1,0],[2,2,0],[0,0,1],[2,0,1]\f$ respectively.
 
 After that, to actually get the factorizations use
 
@@ -210,9 +208,11 @@ After that, to actually get the factorizations use
 
 and <CODE>std::cout<< F.getname(i) </CODE>
 
-to print the name of the ```i```-th generator. This name will be nonempty as long as it's created by multiplying/dividing the basic irreducibles with ```1```. As such, it will fail for say ```s_3```. To improve it use instead
+to print the name of the ```i```-th generator. This name will be nonempty as long as the generator can be obtained by multiplying/dividing the basic irreducibles with ```1```. As such, it will fail for say ```s_3```. In that case instead use
 
 <CODE>F.compute_with_sources({[0,0,0],[-3,0,-2]}, {"1","s3"});</CODE>
+
+where now both \f$1\f$ and \f$s_3\f$ are used as sources.
 
 For more details see the code in TestFactorization.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder
 

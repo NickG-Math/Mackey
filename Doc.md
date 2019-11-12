@@ -221,31 +221,32 @@ For more details see the code in TestFactorization.cpp of the <a href="https://g
 \tableofcontents
 \section smith Smith Normal Form
 
-For the Smith Normal Form we use a variant of the classical row-column elimination algorithm. Interestingly, for our matrices, an entry divides or is divided by any other. We optimize for this by not finding the minimum elements of the matrix, and instead working with the first nonzero element in each row and column. This is much faster for our matrices, but slower and much more dangerous for random matrices: the Smith normal form coefficient matrices \f$P,Q\f$ can easily overflow in that case (while the usual row-column elimination algorithm can give accurate results).
+For the Smith Normal Form we use a variant of the classical row-column elimination algorithm. Interestingly, for our matrices, an entry divides or is divided by any other. We optimize for this by not finding the minimum element of each submatrix, and instead work with the first nonzero element in each row and column. This is much faster for our matrices, but slower and much more dangerous for random matrices: the Smith normal form coefficient matrices \f$P,Q\f$ can easily overflow in that case (while the usual row-column elimination algorithm can give accurate results).
 
 \section cob Change of Basis
 
 If we have bases for modules \f$A,B\f$ then \f$A\otimes B\f$ can be canonically given two lexicographical bases, that we call left and right convenient bases. 
 But if \f$A,B\f$ are the bottom levels of free Mackey functors then they have equivariant bases and the tensor product also gets an equivariant basis, called the canonical one. 
-The left and right convenient bases are used to write the left and right differentials in a simple manner (hence their designation as convenient). The canonical bases are used to transfer.
+The left and right convenient bases are used to write the left and right differentials in a simple manner (hence their designation as convenient). The canonical bases are used to transfer. To get the change of basis matrix, we are reduced to computing the permutation  \f$a^{-1}b\f$ where \f$a,b\f$ are two permutations of the same set.
+
 \section box Box product
 
-Computing the tensor product of Chain complexes breaks down to computing the left and right differentials \f$L(x\otimes y)=dx\otimes y\f$ and \f$R(x\otimes y)=(-1)^{|x|}x\otimes dy\f$ respectively. If we use the convenient bases explained in the previous section, these are just block diagonal matrices with the blocks being the differential from the original chains \f$d\f$. To get \f$L,R\f$ w.r.t. the canonical bases, we need to apply the change of basis matrices explained above. Once we do that the total differential of the tensor product is just \f$L+R\f$. To be more accurate, \f$L\f$ is not a single differential, but rather a sequence of them, one for each summand of the Box product. That is, \f$(C\otimes D)_n\to (C\otimes D)_{n-1}\f$ is a map \f$C_n\otimes D_0\oplus\cdots \oplus C_0\otimes D_n\to C_0\otimes D_{n-1}\oplus\cdots\oplus C_{n-1}\otimes D_0\f$. Each summand of this map is computed separately into an \f$L\f$ and an \f$R\f$, and then these are mixed together to form the total differential. The mixing specifies that we start with a block \f$ L_0\f$, then place \f$ R_0\f$ directly below it, then \f$L_1\f$ adjecent to the right of \f$ R_0\f$ etc.
+Computing the tensor product of Chain complexes breaks down to computing the left and right differentials \f$L(x\otimes y)=dx\otimes y\f$ and \f$R(x\otimes y)=(-1)^{|x|}x\otimes dy\f$ respectively. If we use the convenient bases explained in the previous section, these are just block diagonal matrices with the blocks being the differential from the original chains \f$d\f$. To get \f$L,R\f$ w.r.t. the canonical bases, we need to apply the change of basis matrices. Once we do that the total differential of the tensor product is just \f$L+R\f$. To be more accurate, \f$L\f$ is not a single differential, but rather a sequence of them, one for each summand of the Box product; \f$(C\otimes D)_n\to (C\otimes D)_{n-1}\f$ is a map \f$C_n\otimes D_0\oplus\cdots \oplus C_0\otimes D_n\to C_0\otimes D_{n-1}\oplus\cdots\oplus C_{n-1}\otimes D_0\f$. Each summand of this map is computed separately into an \f$L\f$ and an \f$R\f$, and then these are mixed together to form the total differential. The mixing specifies that we start with a block \f$ L_0\f$, then place \f$ R_0\f$ directly below it, then \f$L_1\f$ adjecent to the right of \f$ R_0\f$ etc.
 
 \section graph Graphs
 
 * For weighted graphs we want the shortest path from a given source to all other points. I use a straightforward implementation of Dikjstra's algorithm using std::priority_queue.
 
-* For graphs of two colors, we are interested in the paths from the source to all points with the minimum alternations of colors (an alternation of colors means switching from division to multiplication and vice-versa). 
-This problem can be easily reduced to the previous bullet, by using a sort of "dual" graph where now the nodes are colored and edges between same colored nodes have weight 0, while for different colored nodes we get weight 1.
-To get the new graph simply duplicate the nodes of the original, color the originals by red and the new ones by blue, and quadruple the edges (so we using all combinations of colored nodes).
-After that we can find the red and blue paths starting and ending from a red/blue source and compare them in length, choosing the shortest one.
+* For graphs of two colors, we are interested in the paths from the source to all points with the minimum numer of alternating colors (an alternation of colors means switching from division to multiplication and vice-versa). 
+This problem can be easily reduced to finding the shortest path for weighted graphs, by using a sort of "dual" graph where now the nodes are colored and the now monochrome edges between same colored nodes have weight 0, while for different colored nodes we get weight 1.
+To get the new graph simply duplicate the nodes of the original, color the originals by red and the new ones by blue, and quadruple the edges (so we using all combinations of colored nodes) and set the weights as I just explained.
+After that, find the red and blue paths starting from a red/blue source and ending to each point, compare them in length and choose the shortest one.
 
 
 \page perf Performance
 \tableofcontents
 
-First, two observations:
+First, two heuristic observations:
 
 * The Linux binary runs measurably faster than the Windows one.
 * Out of all compilers, Clang seems to produce marginally faster code. 
@@ -254,15 +255,16 @@ First, two observations:
 
 
 * I recommend the following compiler options (GCC, Clang): <CODE>-Ofast --funroll-loops -march=native </CODE>
-* With the Intel and Microsoft compilers Eigen recommends <CODE>-inline-forceinline</CODE> option.
-* Note: ```-Ofast``` doesn't actually reduce the accuracy of our results, since we only use integers even if the data-type is sometimes a floating point (see \ref intvsfloat for an explanation as to why we do that). 
+* With the Intel compiler Eigen <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support">recommends</a> the <CODE>-inline-forceinline</CODE> option.
+* Note: ```-Ofast``` doesn't actually reduce the accuracy of our results, since we only use integer values. This is true even when the data-type is sometimes a floating point (see \ref intvsfloat for an explanation as to why we sometimes use fp data types). 
+
 \section thread Multithreading
 
-* While the <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">binaries</a> are all single-threaded, the most (by far) computationally intensive calculations can be multithreaded extemelly easily and efficiently. This is as simple as adding a ```#pragma omp parallel for``` before certain loops that compute the additive/multiplicative structure in a range. There is no need to lock anything.
+* While the <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">binaries</a> are all single-threaded, the most (by far) computationally intensive calculations can be multithreaded extemelly easily and efficiently. This is as simple as adding a ```#pragma omp parallel for``` before the loops that compute the additive/multiplicative structure in a range. There is no need to lock anything.
 
-* There is one caveat: While the loop iterations are independent, they are not all equally intensive. A sphere like \f$S^{2\sigma+\lambda}\f$ is cheaper to compute compared to \f$S^{6\sigma+8\lambda}\f$ which is in turn much cheaper compared to \f$S^{6\sigma-8\lambda}\f$ as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are by comparison much more expensive in run-time as they involve arbitrarily large permutation matrices.
+* There is one caveat: While the loop iterations are independent, they are not all equally computationally intensive. A sphere like \f$S^{2\sigma+\lambda}\f$ is cheaper to compute compared to \f$S^{6\sigma+8\lambda}\f$ which is in turn much cheaper compared to \f$S^{6\sigma-8\lambda}\f$ as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are even more expensive in run-time as they involve arbitrarily large permutation matrices.
 
-* So it's important to equally divide the work amongst the thread. At this point, this has to be done manually.
+* So it's important to equally divide the work amongst the threads. At this point, this has to be done manually on the user's end.
 
 \section intvsfloat Integers vs Floats
 
@@ -272,13 +274,11 @@ So when we need to multiply matrices we cast them to floats. This is only needed
 
 \section memo Memoizing ChangeBasis
 
-To form the Box product of Chains we need the change of basis matrices. These matrices only depend on the ranks of the given Chains, call them rank1 and rank2. 
-The ranks that actually come up in our computations always look like [?,order,...,order,?] where order is the order of the group and ?\f$\le\f$ order.
-This means that we very effectively memoize this function for better performance.
-
+To form the Box product of chains we need the change of basis matrices. These matrices only depend on the ranks of the given chains. 
+But the ranks that actually come up in our computations always look like [?,order,...,order,?] where order is the order of the group and ?\f$\le\f$ order. This means that we very effectively memoize this function for improved performance.
 
 \section bottle Bottlenecks
 
-* The biggest performance bottleneck is found in the multiplicative structure. That's when we apply some large change of basis matrices through Eigen's permutation matrix product. This is a memory bottleneck.
-* The second biggest bottleneck lies in the transfering very large differentials. To transfer we need to delete certain rows of the matrix, and this is done by copying the remaining rows into a new matrix.  This is a memory bottleneck.
-* A more minor bottleneck is the Smith normal form computation. The problem is that it involves going through our matrix both by rows and by columns, which is not ideal for cache locality. The SNF is both memory and core bound.
+* The biggest performance bottleneck is found in the multiplicative structure. That's when we apply some large change of basis matrices through Eigen's permutation matrix product. This is mainly a memory bottleneck.
+* The second biggest bottleneck lies in the transfering very large differentials. To transfer we need to delete certain rows of the matrix, and this is done by copying the remaining rows into a new matrix.  This is another memory bottleneck.
+* A third somewhat more minor bottleneck is the Smith normal form computation. The problem is that it involves going through our matrix both by rows and by columns, which is not ideal for cache locality. The SNF is both memory and core bound.

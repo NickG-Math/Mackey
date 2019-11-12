@@ -2,65 +2,70 @@
 
 \begin{DoxyItemize}
 \item For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for $G=C_4$) on how to set them in the file Implementation.\+h available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.
-\item There are also some optional ones that allow you to identify and print the names of the computed \hyperlink{namespaceMackey}{Mackey} functors. This functionality is disabled by default, but can easily be turned on by defining the macro {\ttfamily M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES} and setting the optional parameters. The way this is done is explained in the file Optional\+\_\+\+Implementation.\+h in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}. The implementation there is for $G=C_4$ and the \hyperlink{namespaceMackey}{Mackey} functors in the $RO(C_4)$ homology.
+\item There are also some optional parameters that allow you to identify and print the names of the computed \hyperlink{namespaceMackey}{Mackey} functors. This functionality is disabled by default, but can easily be turned on by defining the macro M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES and setting the optional parameters living in the namespace \hyperlink{namespaceGroupSpecificOptional}{Group\+Specific\+Optional}. An example of how this is done is contained the file Optional\+\_\+\+Implementation.\+h in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}. The implementation there is for $G=C_4$ and the 16 \hyperlink{namespaceMackey}{Mackey} functors in the $RO(C_4)$ homology.
 \end{DoxyItemize}\hypertarget{use_var}{}\subsection{Global variables}\label{use_var}
 The global variables that need to be set are\+:
 
 
 \begin{DoxyItemize}
 \item \hyperlink{classGroupSpecific_1_1Variables_a38586ec998bcbfdf325e6cfc6598b54b}{prime} \+: the $p$ in $G=C_{p^n}$.
-\item \hyperlink{classGroupSpecific_1_1Variables_ac9bd6be19cc41e6877ee25a2d1c7be80}{power}\+: the $n$ in $G=C_{p^n}$.
+\item \hyperlink{classGroupSpecific_1_1Variables_ac9bd6be19cc41e6877ee25a2d1c7be80}{power} \+: the $n$ in $G=C_{p^n}$.
 \item \hyperlink{classGroupSpecific_1_1Variables_a5504789b0b60050e6ea223fdeb84874a}{reps} \+: the number of nontrivial irreducible real representations of $G$.
 \item \hyperlink{classGroupSpecific_1_1Variables_a4746f16736abcf4c705dd8690ec12ca0}{sphere\+\_\+dimensions} \+: the array consisting of the dimensions of those representations (so we must fix an order for them beforehand).
 \end{DoxyItemize}\hypertarget{use_fun}{}\subsection{The standard differentials}\label{use_fun}
 
 \begin{DoxyItemize}
-\item There is one function that needs to be manually defined, and that\textquotesingle{}s \hyperlink{classGroupSpecific_1_1Function_a8ead55e2f2e2bbda4deea3964793498d}{Standard\+Diff} creating the differential for the standard chains. In practice what this means is setting the correct matrix given the input sphere. Apart from the case work that comes from math, I have made the construction of the differential as painless as possible.
-\item This construction is done through the \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{altmatrix} function, that creates alternating matrices of the desired size and the desired \char`\"{}pattern\char`\"{}. This pattern is repeated cyclically in the columns of the matrix.
-\item An example\+: The matrix of size 4x4 with pattern $a,b$ is ~\newline
+\item There is one function that needs to be manually defined, the \hyperlink{classGroupSpecific_1_1Function_a8ead55e2f2e2bbda4deea3964793498d}{Standard\+Diff} computing the differentials for the standard chains. In practice this amounts to assigning the corresponding matrix given the index of the differential and the sphere (for $G=C_4$ this amounts to specifying a matrix for every triple $i,n,m$ where $n,m$ have the same signs). Apart from the case work that comes from the math, I have made the construction of these differentials as painless as possible, using the \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{altmatrix} function
+\item \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{altmatrix} returns alternating matrices of the desired size and the desired \char`\"{}pattern\char`\"{}. This pattern is repeated cyclically in the columns of the matrix. An example\+: The matrix of size 4x4 with pattern $a,b$ is ~\newline
  $\begin{matrix} a&b&a&b\\ b&a&b&a\\ a&b&a&b \\ b&a&b&a \end{matrix}$ ~\newline
  If we use the pattern $a,b,c,d$ instead we get ~\newline
  $\begin{matrix} a&b&c&d\\ b&c&d&a\\ c&d&a&b \\ d&a&b&c \end{matrix}$ ~\newline
 
 \item The matrices appearing in the Standard Chains all look like this due to equivariance.
-\end{DoxyItemize}\hypertarget{use_next}{}\section{Calling the library}\label{use_next}
-Once Step 0 is complete, you can include {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} to access the methods relating to the additive and multiplicative structure, and {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} to access the factorization methods. For a demonstration you can use the files included in the \href{https://github.com/NickG-Math/Mackey/Demo}{\tt Demo} folder.\hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
+\end{DoxyItemize}\hypertarget{use_next}{}\section{Step 1\+: Calling the library}\label{use_next}
+Once Step 0 is complete, you can include {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} to access the methods relating to the additive and multiplicative structure, and {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} to access the factorization methods. For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder together with the provided two Implementation header files that come from Step 0.\hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
 The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} exposes the method \hyperlink{namespaceMackey_a58708ee937b0c4172b7cde8e5f856504}{R\+O\+Homology} that computes the homology of a given sphere as a \hyperlink{namespaceMackey}{Mackey} functor. Example\+: The code
 
-{\ttfamily  auto M= R\+O\+Homology$<$rank\+\_\+t,diff\+\_\+t$>$(\{2,-\/2\}); }
+{\ttfamily  auto M= \hyperlink{namespaceMackey_a58708ee937b0c4172b7cde8e5f856504}{Mackey\+::\+R\+O\+Homology$<$rank\+\_\+t,diff\+\_\+t$>$}(\{2,-\/2\}); }
 
 sets
 
 $ M=H_*(S^{2\sigma-2\lambda})$
 
-Here the typenames {\ttfamily rank\+\_\+t,diff\+\_\+t} can be set to {\ttfamily Eigen\+::\+Matrix$<$char,1,-\/1$>$} and {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} respectively for maximum performance, as long as the order of the group is $ <127 $.
+The typenames {\ttfamily rank\+\_\+t,diff\+\_\+t} can be set to {\ttfamily Eigen\+::\+Matrix$<$char,1,-\/1$>$} and {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} respectively for maximum performance for small groups of prime power order $ <127 $. Otherwise replace {\ttfamily char} with {\ttfamily short}.
 
-Here {\ttfamily M} is an object of class \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor} so you should read the documentation of that on how to extract that information. If the optional parameters are set then it\textquotesingle{}s also possible to extract the name of the \hyperlink{namespaceMackey}{Mackey} functor as seen in the \char`\"{}\+C4\+Verify.\+h\char`\"{} file in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}\hypertarget{use_step1mult}{}\subsection{The multiplicative structure}\label{use_step1mult}
+Here {\ttfamily M} is an object of class \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor} so you should read the documentation of that on how to extract that information. If the optional parameters are set then it\textquotesingle{}s also possible to extract the name of the \hyperlink{namespaceMackey}{Mackey} functor using the method \hyperlink{namespaceMackey_a216f2d9a39510ce4513d5d8a576adc43}{identify}. Simply use
+
+{\ttfamily  std\+::cout $<$$<$ identify(\+M); }\hypertarget{use_step1mult}{}\subsection{The multiplicative structure}\label{use_step1mult}
 The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} also exposes the method \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} that multiplies two generators in the Green functor $H_{\star}(S)$. Example\+: The code
 
-{\ttfamily auto linear\+\_\+combination= R\+O\+Green$<$rank\+\_\+t,diff\+\_\+t$>$(2,\{0,2,-\/2\},\{1,3,-\/4\},0,0);}
+{\ttfamily auto linear\+\_\+combination= \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green}$<$rank\+\_\+t,diff\+\_\+t$>$(2,\{0,2,-\/2\},\{1,3,-\/4\},0,0);}
 
 multiplies the generators of
 
 $ H_0^{C_4}(S^{2\sigma-2\lambda}) \otimes H_1^{C_4}(S^{3\sigma-4\lambda}) \to H_1^{C_4}(S^{5\sigma-6\lambda}) $
 
-writing the answer as a linear combination of the generators in the box product. The first argument of \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for $C_4$, level=2 is the top level. The second and third entries are the degrees of the two generators, while the last two are needed if we have noncyclic groups. Then $1,2$ selects the second and third generators of these noncyclic groups respectively (remember that in C++ counting starts from $0$.
+writing the answer as a linear combination of the generators in the box product. The first argument of \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for $C_4$, level=2 is the top level. The second and third entries are the degrees of the two generators, while the last two are needed if we have noncyclic groups. In that case, these two select the generators we want (eg $1,2$ selects the second and third generators of the noncyclic groups respectively; remember that in C++ counting starts from $0$).
 
-The result of the computation {\ttfamily linear\+\_\+combination} is an Eigen array ({\ttfamily rank\+\_\+t}) that contains the coefficients eg if it\textquotesingle{}s {\ttfamily \mbox{[}2,1\mbox{]}} then the product of generators is 2 times the first generator plus 1 times the second. For convenience we omit any signs etc. and identify generators of the same cyclic groups (see \hyperlink{math_caveat}{A caveat}).\hypertarget{use_step1fact}{}\subsection{Factorization}\label{use_step1fact}
-The file {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} also exposes the class \hyperlink{classMackey_1_1Factorization}{Factorization} whose constructor creates the multiplication graph and factorizes all generators using the given sources. First construct as\+:
+The result of the computation {\ttfamily linear\+\_\+combination} is an Eigen row vector ({\ttfamily rank\+\_\+t}) that contains the coefficients eg if it\textquotesingle{}s {\ttfamily \mbox{[}2,1\mbox{]}} then the product of generators is 2 times the first generator plus 1 times the second. For convenience we omit any signs etc. and identify generators of the same cyclic groups (see \hyperlink{math_caveat}{A caveat}) but it\textquotesingle{}s also possible to get the nonnormalized version (see \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}).\hypertarget{use_step1fact}{}\subsection{Factorization}\label{use_step1fact}
+The file {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} exposes the class \hyperlink{classMackey_1_1Factorization}{Factorization} whose constructor creates the multiplication graph and the method \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources(...)} factorizes all generators using the given sources. First construct the multiplication graph via\+:
 
 {\ttfamily auto F= Factorization$<$rank\+\_\+t, diff\+\_\+t$>$ F(\{ -\/5,-\/5 \}, \{ 5,5 \}, \{ \{0,1,0\},\{2,2,0\},\{0,0,1\},\{2,0,1\} \}, \{ \char`\"{}asigma\char`\"{}, \char`\"{}u2sigma\char`\"{}, \char`\"{}alambda\char`\"{}, \char`\"{}ulambda\char`\"{} \});}
 
-This will work to factorize within the range of $S^{-5\sigma-5\lambda}$ to $S^{5\sigma+5\lambda}$ by multiplying with the basic irreducibles $ a_{\sigma}, u_{2\sigma}, a_{\lambda}, u_{\lambda}$ that live in degrees $[0,1,0],[2,2,0],[0,0,1],[2,0,1]$ respectively.
+This will work in the range from $S^{-5\sigma-5\lambda}$ to $S^{5\sigma+5\lambda}$ by multiplying all generators of $H_{\star}S$ with the basic irreducibles $ a_{\sigma}, u_{2\sigma}, a_{\lambda}, u_{\lambda}$ of degrees $[0,1,0],[2,2,0],[0,0,1],[2,0,1]$ respectively.
 
 After that, to actually get the factorizations use
 
 {\ttfamily F.\+compute\+\_\+with\+\_\+sources(\{\mbox{[}0,0,0\mbox{]}\}, \{\char`\"{}1\char`\"{}\});}
 
-and {\ttfamily std\+::cout$<$$<$ F.\+getname(i) }
+and
 
-to print the name of the {\ttfamily i}-\/th generator. This name will be nonempty as long as it\textquotesingle{}s created by multiplying/dividing the basic irreducibles with {\ttfamily 1}. As such, it will fail for say {\ttfamily s\+\_\+3}. To improve it use instead
+{\ttfamily std\+::cout$<$$<$ F.\+getname(i) }
+
+to print the name of the {\ttfamily i}-\/th generator. This name will be nonempty as long as the generator can be obtained by multiplying/dividing the basic irreducibles with {\ttfamily 1}. As such, it will fail for say {\ttfamily s\+\_\+3}. In that case instead use
 
 {\ttfamily F.\+compute\+\_\+with\+\_\+sources(\{\mbox{[}0,0,0\mbox{]},\mbox{[}-\/3,0,-\/2\mbox{]}\}, \{\char`\"{}1\char`\"{},\char`\"{}s3\char`\"{}\});}
+
+where now both $1$ and $s_3$ are used as sources.
 
 For more details see the code in Test\+Factorization.\+cpp of the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder 

@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('perf.html','');});
 <li class="level1"><a href="#bottle">Bottlenecks</a></li>
 </ul>
 </div>
-<div class="textblock"><p>First, two observations:</p>
+<div class="textblock"><p>First, two heuristic observations:</p>
 <ul>
 <li>The Linux binary runs measurably faster than the Windows one.</li>
 <li>Out of all compilers, Clang seems to produce marginally faster code.</li>
@@ -109,28 +109,28 @@ $(document).ready(function(){initNavTree('perf.html','');});
 Compiler Options</h1>
 <ul>
 <li>I recommend the following compiler options (GCC, Clang): <code>-Ofast &ndash;funroll-loops -march=native </code></li>
-<li>With the Intel and Microsoft compilers Eigen recommends <code>-inline-forceinline</code> option.</li>
-<li>Note: <code>-Ofast</code> doesn't actually reduce the accuracy of our results, since we only use integers even if the data-type is sometimes a floating point (see <a class="el" href="perf.html#intvsfloat">Integers vs Floats</a> for an explanation as to why we do that). </li>
+<li>With the Intel compiler Eigen <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support">recommends</a> the <code>-inline-forceinline</code> option.</li>
+<li>Note: <code>-Ofast</code> doesn't actually reduce the accuracy of our results, since we only use integer values. This is true even when the data-type is sometimes a floating point (see <a class="el" href="perf.html#intvsfloat">Integers vs Floats</a> for an explanation as to why we sometimes use fp data types).</li>
 </ul>
 <h1><a class="anchor" id="thread"></a>
 Multithreading</h1>
 <ul>
-<li>While the <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">binaries</a> are all single-threaded, the most (by far) computationally intensive calculations can be multithreaded extemelly easily and efficiently. This is as simple as adding a <code>#pragma omp parallel for</code> before certain loops that compute the additive/multiplicative structure in a range. There is no need to lock anything.</li>
-<li>There is one caveat: While the loop iterations are independent, they are not all equally intensive. A sphere like \(S^{2\sigma+\lambda}\) is cheaper to compute compared to \(S^{6\sigma+8\lambda}\) which is in turn much cheaper compared to \(S^{6\sigma-8\lambda}\) as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are by comparison much more expensive in run-time as they involve arbitrarily large permutation matrices.</li>
-<li>So it's important to equally divide the work amongst the thread. At this point, this has to be done manually.</li>
+<li>While the <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">binaries</a> are all single-threaded, the most (by far) computationally intensive calculations can be multithreaded extemelly easily and efficiently. This is as simple as adding a <code>#pragma omp parallel for</code> before the loops that compute the additive/multiplicative structure in a range. There is no need to lock anything.</li>
+<li>There is one caveat: While the loop iterations are independent, they are not all equally computationally intensive. A sphere like \(S^{2\sigma+\lambda}\) is cheaper to compute compared to \(S^{6\sigma+8\lambda}\) which is in turn much cheaper compared to \(S^{6\sigma-8\lambda}\) as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are even more expensive in run-time as they involve arbitrarily large permutation matrices.</li>
+<li>So it's important to equally divide the work amongst the threads. At this point, this has to be done manually on the user's end.</li>
 </ul>
 <h1><a class="anchor" id="intvsfloat"></a>
 Integers vs Floats</h1>
 <p>I use integers (or indeed <code>char</code> and <code>short</code>) for the majority of the computations; that's usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception: Matrix multiplication. Eigen is much slower with integer matrix multiplication compared to floating points, and the Intel MKL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.</p>
 <h1><a class="anchor" id="memo"></a>
 Memoizing ChangeBasis</h1>
-<p>To form the Box product of Chains we need the change of basis matrices. These matrices only depend on the ranks of the given Chains, call them rank1 and rank2. The ranks that actually come up in our computations always look like [?,order,...,order,?] where order is the order of the group and ? \(\le\) order. This means that we very effectively memoize this function for better performance.</p>
+<p>To form the Box product of chains we need the change of basis matrices. These matrices only depend on the ranks of the given chains. But the ranks that actually come up in our computations always look like [?,order,...,order,?] where order is the order of the group and ? \(\le\) order. This means that we very effectively memoize this function for improved performance.</p>
 <h1><a class="anchor" id="bottle"></a>
 Bottlenecks</h1>
 <ul>
-<li>The biggest performance bottleneck is found in the multiplicative structure. That's when we apply some large change of basis matrices through Eigen's permutation matrix product. This is a memory bottleneck.</li>
-<li>The second biggest bottleneck lies in the transfering very large differentials. To transfer we need to delete certain rows of the matrix, and this is done by copying the remaining rows into a new matrix. This is a memory bottleneck.</li>
-<li>A more minor bottleneck is the Smith normal form computation. The problem is that it involves going through our matrix both by rows and by columns, which is not ideal for cache locality. The SNF is both memory and core bound. </li>
+<li>The biggest performance bottleneck is found in the multiplicative structure. That's when we apply some large change of basis matrices through Eigen's permutation matrix product. This is mainly a memory bottleneck.</li>
+<li>The second biggest bottleneck lies in the transfering very large differentials. To transfer we need to delete certain rows of the matrix, and this is done by copying the remaining rows into a new matrix. This is another memory bottleneck.</li>
+<li>A third somewhat more minor bottleneck is the Smith normal form computation. The problem is that it involves going through our matrix both by rows and by columns, which is not ideal for cache locality. The SNF is both memory and core bound. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

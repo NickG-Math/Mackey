@@ -25,7 +25,7 @@ var NAVTREE =
         [ "Global variables", "use.html#var", null ],
         [ "The standard differentials", "use.html#fun", null ]
       ] ],
-      [ "Calling the library", "use.html#next", [
+      [ "Step 1: Calling the library", "use.html#next", [
         [ "The additive structure", "use.html#step1add", null ],
         [ "The multiplicative structure", "use.html#step1mult", null ],
         [ "Factorization", "use.html#step1fact", null ]

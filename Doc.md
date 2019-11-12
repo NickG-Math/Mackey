@@ -36,11 +36,11 @@ For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the avai
 
 \section doc Documentation
 
-This documentation is organized in pages:
+This documentation is organized in pages as follows:
  
-* The  <a href="namespaces.html">Related pages</a> consisting of \ref index, \ref math, \ref use, \ref algo, \ref perf. These explain how the program works, starting from the math and moving to more technical territory regarding the actual implementation. I recommend starting from these.
+* The  <a href="namespaces.html">Related pages</a> consist of \ref index, \ref math, \ref use, \ref algo, \ref perf. These explain how the program works, starting from the math and moving to more technical territory regarding the actual implementation.
 
-* The pages <a href="namespaces.html">Namespaces</a>, <a href="annotated.html">Classes</a>  and <a href="files.html">Files</a> that are automatically generated pages by doxygen from the source code. These offer a much more indepth look into all classes and functions of this project. Note that only public and protected members and named namespaces are documented.
+* The pages <a href="namespaces.html">Namespaces</a>, <a href="annotated.html">Classes</a>  and <a href="files.html">Files</a> are automatically generated pages by doxygen from the source code. These offer a much more indepth look into all classes and functions of this project. Note that only public and protected members and named namespaces are documented.
 
 * I recommend starting with the <a href="namespaces.html">related pages</a> before moving and then moving to the other tabs. If you just want to use this library for computations, you only really have to go over the \ref how section.
 
@@ -53,7 +53,7 @@ There are three fundamental ideas that make the code work:
 
 * Homology of chain complexes of free \f$\mathbb Z\f$ modules can be algorithmically computed by turning the differentials into matrices and then diagonalizing them (Smith Normal Form). 
 
-* Free Mackey functors are determined by their bottom level groups. The higher levels are obtained by taking fixed points, and this can be done algorithmically on our matrices as long as equivariant bases are used (this is an ordered basis in which elements in the same orbit are written consecutively).
+* Free Mackey functors are determined by their bottom level groups. The higher levels are obtained by taking fixed points, and this can be done algorithmically on our matrices by writing them with respect to equivariant bases (an equivariant basis is an ordered basis in which elements in the same orbit are written consecutively).
 
 * Box products of Mackey functors are tensor products on the bottom level. This is not true for the higher levels, however using the bulletpoint above, higher levels are obtained by transferring. This is how box products of chain complexes of free Mackey functors are computed.
 
@@ -70,18 +70,18 @@ Here's how the code works in more detail (for simplicity we specialize to the \f
 
 * The inputs are the bottom levels of the chains of the spheres \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$. We could do away with only \f$S^{\sigma},S^{\lambda}\f$, but this would result in taking arbitrarily many box products and devastate run-time performance. Instead, if we use the spheres  \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$ we only have to take double box products at worst, and that's only for part of the multiplicative structure.
 
-* The data of a Chain complex are the ranks and differentials. The differentials are stored as matrices, but the ranks are stored as integer arrays and not integers. This is crucial as for example \f$\mathbb Z[C_4]\f$ transfers completely differently from \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ even though they both have rank \f$4=2+2\f$ over \f$\mathbb Z\f$. 
+* The data of a chain complex are the ranks and differentials. The differentials are stored as matrices, but the ranks are stored as integer arrays and not integers. This is crucial as for example \f$\mathbb Z[C_4]\f$ transfers completely differently from \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ even though they both have rank \f$4=2+2\f$ over \f$\mathbb Z\f$. 
 With our conventions, \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ has rank \f$[2,2]\f$ while \f$\mathbb Z[C_4]\f$ has rank \f$4\f$.
 
 * We transfer both ranks and differentials to higher levels. While transferring ranks is straightforward, transferring differentials is quite a bit more complicated and requires to have already transferred the ranks of the domain and range of the differentials.
 
-* Using the classical homology algorithm we compute the groups of the Mackey functor at every level. We also compute their generators (as elements in the Chain complex)
+* Using the classical homology algorithm we compute the groups of the Mackey functor at every level. We also compute their generators (as elements in the chain complex)
 
-* We transfer/restrict and compute the Weyl group action on the group generators. This concludes the Mackey functor computation for the  \f$S^{n\sigma+m\lambda}\f$, \f$n,m\ge 0\f$.
+* We transfer/restrict and compute the Weyl group action on the group generators. This concludes the Mackey functor computation for the  \f$S^{n\sigma+m\lambda}\f$, \f$n,m\f$ having the same sign (if \f$n,m<0\f$ we take the dual chain complex, which has the effect of switching all differentials to their transposes).
 
 * To obtain the chains of the rest of the spheres, we box the Chains we already have. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly. However the most convenient bases for tensoring are not equivariant, and in the end we have to change bases through permutation matrices.
 
-* We then perform the same procedure with transferring to get the entrire \f$RO(G)\f$ homology.
+* We then perform the same procedure on these chains to get the entrire \f$RO(G)\f$ homology as a (graded) Mackey functor.
 
 \subsection mult The multiplicative structure
 
@@ -91,32 +91,32 @@ Once we have the additive structure, we can work on multiplying the additive gen
 
 * We then take the product of their restrictions as an element of the box product of chain complexes at bottom level.
 
-* The product of restrictions is a restriction and as we are working with free Mackey functors, restriction is an injection. By inverting it we can get the product of generators at a higher level as element an of the box product.
+* The product of restrictions is a restriction and as we are working with free Mackey functors, restriction is an injection. By inverting it we can get the product of generators at a higher level as an element of the box product.
 
-* We finally take homology and write that product in terms of the generators.
+* We finally take homology of the resulting chains and write that product in terms of the generators of the homology.
 
-Once we know how to multiply any two additive generators, we have in effect determined the multiplicative structure (see below for a catch).
+Once we know how to multiply any two additive generators, we have in effect determined the multiplicative structure (see \ref caveat for a catch).
 
 \subsection factor Factorization
 
-Even if we can multiply any two generators, that doesn't mean we can automatically write any element as a product of our preferred generators. If we know the expression then we can easily check it, however factorizing is a lot more complicated:
+Even if we can multiply any two generators, that doesn't mean we can automatically write any element as a product of our preferred generators. Verifying that for example the generator of \f$H_{-2}S^{-2\sigma}\f$ is \f$2/u_{2\sigma}\f$, is simple enough; coming up with the expression of the generator is a lot more complicated. This is done automatically by the factorization process:
 
-* First we form a multiplication table, where all generators (in a range of course) are multiplied with the "basic irreducibles". These can be the Euler and orientation classes. 
+* First we form a multiplication table, where all generators (in a range) are multiplied with the "basic irreducibles". These basic irreducibles can be the Euler and orientation classes.
 
-* Once we have that we can draw a directed colored graph by connecting \f$a\f$ with \f$ab\f$ for \f$b\f$ a basic irreducible; we color this edge red. If multiplication by b is an isomorphism i.e. \f$a=(ab)/b\f$ then we also connect \f$ab\f$ with \f$a\f$; we color this edge blue.
+* Once we have the table we can draw a directed colored graph by drawing the edges \f$a\to ab\f$ for \f$b\f$ a basic irreducible; we color these edges red. If multiplication by \f$b\f$ is an isomorphism i.e. \f$a=(ab)/b\f$ then we also connect \f$ab\to a\f$; we color such edges blue.
 
-* Since the product \f$ab\f$ may not be a generator, but rather a multiple of it, we need to allow multiples of generators as distinct nodes. We never allow trivial (0) multiples of generators.
+* Since the product \f$ab\f$ may not be a generator, but rather a multiple of it, we need to allow multiples of generators as distinct nodes. On the other hand, we never allow trivial (0) multiples of generators.
 
-* To obtain a factorization, we simply need to connect 1 with any node in the graph. For the most efficient factorizations, we want to minimize the alternation of blue and red edges. This is done by a generalized Dikjstra algorithm.
+* To obtain a factorization, we simply need to connect 1 with any node in the graph. For the most efficient factorizations, we want to minimize the number we alternate between blue and red edges in each path. This is done by a modified Dikjstra algorithm.
 
-* For the generators not connected to 1 (eg \f$s_3\f$) we perform the same process using different sources for our graph.
+* For the generators not connected to 1 (eg \f$s_3\f$) we need to perform the same process using different sources for our graph (eg using \f$s_3\f$ as the source for all paths).
 
 \section caveat A caveat
 \subsection cyclic Cyclic Generators
 
-* The way we prove that say a transfer map is multiplication by \f$2\f$, is by computing the generators at the domain and target, compute the transfer of the domain generator and compare with the target. Of course, there are usually multiple choices of generators, but up to isomorphism we get the same Mackey functor. 
+* The way we prove that say a transfer map is multiplication by \f$2\f$, is by computing the generators at the domain and target, computing the transfer of the domain generator and comparing with the target. Of course, there are usually multiple choices of generators, but up to isomorphism we get the same Mackey functor. 
 
-* There is a caveat however that appears when computing the multiplicative structure: If we prove that \f$ab\f$ and \f$cd\f$ are both generators of the same cyclic group, then we can't conclude that they are equal. Eg if the group is \f$\mathbb Z/4\f$ or \f$\mathbb Z\f$ then they differ by a sign. Still, since we are interested in generating the \f$RO(G)\f$ homology, as opposed to finding exact relations, we don't have to distinguish between cyclic generators and we don't need to stress over this detail.
+* There is a caveat however that appears when computing the multiplicative structure: If we prove that \f$ab\f$ and \f$cd\f$ are both generators of the same cyclic group, then we can't conclude that they are equal. Eg if the group is \f$\mathbb Z/4\f$ or \f$\mathbb Z\f$ then they differ by a sign. Still, since we are interested in generating the \f$RO(G)\f$ homology, as opposed to finding exact relations, we don't have to distinguish between cyclic generators and we don't need to worry about this detail.
 
 * If we are interested in exact relations, then we can resolve the multiple generator ambiguity as follows: \f$ab\f$ and \f$cd\f$ are produced by tensoring different complexes, and if we have an explicit chain homotopy between them then we can compare directly. For example if they are obtained by tensoring \f$C_*(S^{n\sigma+m\lambda})\otimes C_*S^{\lambda}\f$ and \f$C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{2\lambda}\f$ then we can compare them by using \f$C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{\lambda}\otimes C_*S^{\lambda}\f$ as a stepping stone. 
 
@@ -125,13 +125,11 @@ Even if we can multiply any two generators, that doesn't mean we can automatical
 
 \subsection noncycl Non cyclic generators
 
-* There is a situtation where this caveat cannot be sidestepped and that's when we have non cyclic groups. Here's an example where this problem comes up: If we have \f$\mathbb Z\oplus \mathbb Z/2\f$ with generators \f$x,y\f$ respectively then we can't automatically distinguish \f$x\f$ from \f$x+y\f$ as there is an automorphism of \f$\mathbb Z\oplus \mathbb Z/2\f$ exchanging them. In that case the difference between \f$ab\f$ and \f$cd\f$ generating the same group can be much more severe than multiplication with an integer coprime to the group's order (or a sign).
+* There is a situtation where the caveat above cannot be sidestepped and that's when we have non cyclic groups. Here's an example where this problem comes up: If we have \f$\mathbb Z\oplus \mathbb Z/2\f$ with generators \f$x,y\f$ respectively then we can't automatically distinguish \f$x\f$ from \f$x+y\f$ as there is an automorphism of \f$\mathbb Z\oplus \mathbb Z/2\f$ exchanging them. In that case the difference between \f$ab\f$ and \f$cd\f$ generating the same group can be much more severe than just an integer coprime to the group's order (or a sign).
 
-* One way out of this is to apply the approach for cyclic generators, breaking down our box products further, until they can be compared.
+* One way out of this is to break down our box products further until they can be directly compared.
 
-* Alternatively (and this is the approach we take in practice) is to ignore these products and make no statement as to the equality of \f$ab\f$ and \f$cd\f$. This gives us less data to work with, but at least in the \f$C_4\f$ case this is enough to write the factorization of any element. 
-
-
+* Alternatively (and this is the approach we take in practice) we can choose to ignore these products and make no statement as to the equality of \f$ab\f$ and \f$cd\f$ if they live in non cyclic groups. This gives us less data to work with, but at least in the \f$C_4\f$ case this is enough to write the factorization of any element. 
 
 \page use How to Use
 \tableofcontents

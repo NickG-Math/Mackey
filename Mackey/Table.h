@@ -310,7 +310,7 @@ namespace Mackey{
 
 		std::vector<std::pair<rank_t, rank_t>> thepair(number_of_nodes * basicIrreducibles.size());
 
-//#pragma omp parallel for num_threads(12) 
+//#pragma omp parallel for num_threads(12)
 		for (int i = 0; i < number_of_nodes; i++) {
 			edges[i].reserve(2 * basicIrreducibles.size());
 			for (int j = 0; j < basicIrreducibles.size(); j++) {
@@ -380,7 +380,7 @@ namespace Mackey{
 		auto hashed = this->hash(index);
 		auto degreeD = Reindex(this->antimap[i]).front();
 		auto D = this->IndexedChains[hashed];
-		auto selectD = this->antimap[i].back();
+		auto selectD = this->antimap[i][this->antimap[i].size()-2];
 		auto degreeC = basicIrreducibles[j].front();
 		auto C = basicChains[j];
 		Green<rank_t, diff_t> G(C, D, power, degreeC, degreeD, 0, selectD);

@@ -21,6 +21,8 @@ namespace Mackey {
 
 		/// Retrieve the factorization of the i-th generator
 		std::string getname(int i);
+		/// Retrieve the degree of the i-th generator
+		std::vector<int> getdegree(int i);
 		/// Form the multiplication table and graph given the max and min spheres and the basic irreducibles
 		Factorization(const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&);
 		/// Compute the factorizations using the given sources for the multiplication graph and their given names.
@@ -36,6 +38,13 @@ namespace Mackey {
 		void set_source_names(const std::vector<std::string>&);
 
 	};
+
+	template<typename rank_t, typename diff_t>
+	std::vector<int> Factorization<rank_t, diff_t>::getdegree(int i) {
+		std::vector<int> degree((this->antimap[i]).begin(), (this->antimap[i]).end() - 2);
+		return degree;
+	}
+
 
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::set_sources(const std::vector<std::vector<int>>& given_sources) {

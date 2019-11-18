@@ -8,21 +8,24 @@
 
 namespace Mackey {
 	
-	//////////////////////////////////////////////////
-	///The floating point type for Homology computations
-
-	///Should be float to maximize performance, or potentially double for groups of order not a prime power.
-	/////////////////////////////////////////////////
-	typedef float fScalar;
-	///The type of our casted differentials
-	typedef Eigen::Matrix<fScalar, -1, -1> fdiff_t;
-
 
 	///The Homology of a Junction
 	template<typename rank_t, typename diff_t>
 	class Homology {
 	public:
 		
+//////////////////////////////////////////////////
+///The floating point type for Homology computations
+
+///Should be float to maximize performance, or potentially double for groups of order not a prime power.
+/////////////////////////////////////////////////
+		typedef typename diff_t::Scalar fScalar;
+		typedef Eigen::Matrix<fScalar, -1, -1> fdiff_t;	///<The type of our casted differentials
+
+
+
+
+
 		rank_t Groups;///<Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3
 		diff_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
 		bool isZero;///<1 if the homology is trivial
@@ -111,7 +114,7 @@ namespace Mackey {
 
 				}
 				else if (abs(IN.S(i, i)) != 1) {
-					Groups(i) = abs(IN.S(i, i));
+					Groups(i) = static_cast<typename rank_t::Scalar>(abs(IN.S(i, i)));
 					isZero = 0;
 					dontModOut.push_back(i);
 				}
@@ -149,12 +152,12 @@ namespace Mackey {
 
 		for (int j = 0; j < Groups.size();j++) {
 			if (Groups(j) != 1) {
-				basisArray(j) = (Groups(j) + static_cast<int>(element(j)) % Groups(j)) % Groups(j);
+				basisArray(j) = (Groups(j) + static_cast<typename rank_t::Scalar>(element(j)) % Groups(j)) % Groups(j);
 				//This is needed due to C++ conventions for % take a symmetric range w.r.t. 0 instead of >=0. So we can't just do element(j)%Groups(j)
 				//Also we can't use our own mod since this is mod of floats over int (although we could just define mod to just cast to int.
 			}
 			else {
-				basisArray(j) = element(j);
+				basisArray(j) = static_cast<typename rank_t::Scalar>(element(j));
 			}
 		}
 		return basisArray;

@@ -119,9 +119,8 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	void BoxPoint<rank_t, diff_t> ::getdiff() {
-		std::vector<diff_t> LeftDiff;
-		LeftDiff.resize(i + 1);
-		std::vector<diff_t> RightDiff = LeftDiff;
+		std::vector<diff_t> LeftDiff(i + 1);
+		std::vector<diff_t> RightDiff(i + 1);
 
 		for (int j = lowlimit; j <= highlimit; j++) {
 			auto Domain = memoChangeBasis<rank_t>(C.rank[j], D.rank[i - j]);
@@ -133,7 +132,7 @@ namespace Mackey {
 			}
 			if (i - j >= 1) //We have a RightDiff
 			{
-				auto sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
+				typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
 				diff_t convRightDiff = sign * blkdiag(D.diff[i - j], summation(C.rank[j]));
 				auto RangeR = memoChangeBasis<rank_t>(C.rank[j], D.rank[i - j - 1]);
 				RightDiff[j] = RangeR.RighttoCanon.inverse() * convRightDiff * Domain.RighttoCanon;

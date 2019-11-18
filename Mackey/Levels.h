@@ -125,7 +125,7 @@ namespace Mackey {
 		for (int i = 0; i < domain.size(); i++)
 		{
 			if (domain(i) == range(i)) {
-				transferred.segment(trackran, range(i)) = prime * generator.segment(trackdom, range(i));
+				transferred.segment(trackran, range(i)) = static_cast<typename Derived::Scalar>(prime) * generator.segment(trackdom, range(i));
 			}
 			else {
 				transferred.segment(trackran, range(i)) = generator.segment(trackdom, range(i));

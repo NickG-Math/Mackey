@@ -10,21 +10,21 @@ namespace {
 
 	template<typename Scalar>
 	inline Scalar mod(Scalar x, Scalar y) {
-		if constexpr (std::is_integral_v<Scalar>) {
-			return x % y;
+		if constexpr (std::is_floating_point_v<Scalar>) {
+			return std::fmod(x, y);
 		}
 		else {
-			return std::fmod(x, y);
+			return x % y;
 		}
 	}
 
 	template<typename Scalar>
 	inline Scalar customfloor(Scalar x) {
-		if constexpr (std::is_integral_v<Scalar>) {
-			return x;
+		if constexpr (std::is_floating_point_v<Scalar>) {
+			return floor(x);
 		}
 		else {
-			return floor(x);
+			return x;
 		}
 	}
 

@@ -137,14 +137,14 @@ namespace C4Test{
 			auto M = ROHomology<rank_t, diff_t>(i);
 			int k = 0;
 			for (auto& j : M) {
-				auto name = identify(j);
 				if (!silence) {
+					auto name = identify(j);
 					auto MackeyName = C4MackeyAnswer(k, n, m);
-					//if (MackeyName != name)
-					//	throw(0);
-					//else {
+					if (MackeyName != name)
+						throw(0);
+					else {
 					std::cout << "The k=" << invReindex<std::vector<int>>(k, { n,m }) << " homology of the n=" << n << " and m=" << m << " sphere is " << name << "\n";
-					//}
+					}
 				}
 				k++;
 			}

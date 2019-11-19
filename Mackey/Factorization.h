@@ -176,6 +176,9 @@ namespace Mackey {
 					name.append("*");
 				}
 			}
+			if (name.back() == '*') {
+				name.pop_back();
+			}
 			name.append(")");
 		}
 		return name;

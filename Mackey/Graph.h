@@ -27,8 +27,17 @@ namespace Mackey {
 		//////////////////////////////////////
 		std::vector<std::vector<int>> path;
 
+		/////////////////////////////////////
+		/// The weighted distance from a selected source to all points.
+
+		///The type of weight will depend on the specialization of Graph.
+		std::vector<int> weightedDistance;
+
+
 		/// Construct given the edges of the graph
-		Graph(const std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) { path.resize(number_of_nodes); }
+		Graph(const std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) { 
+			path.resize(number_of_nodes); weightedDistance.assign(number_of_nodes, -1);
+		}
 
 		/// A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations.
 		void computeWithSource(int givensource) {
@@ -40,6 +49,7 @@ namespace Mackey {
 		void computeWithSource_clear(int givensource) {
 			path.clear();
 			path.resize(number_of_nodes);
+			weightedDistance.assign(number_of_nodes, -1);
 			static_cast<T*>(this)->initialize();
 			computeWithSource(givensource);
 		};
@@ -92,14 +102,10 @@ namespace Mackey {
 	/// A directed Graph with weights
 	class WeightedGraph : public Graph<WeightedGraph> {
 	public:
-
-		/// The weighted distance from the source to all points
-		std::vector<int> weightedDistance;
-
 		/// Sets edges and 0 weights
 		WeightedGraph(const std::vector<std::vector<int>>& edges) : Graph(edges), weights(zeroWeight(edges)) { initialize(); } //we must initalize here and not in a constructor of Graph because we can't static_cast(this) in a constructor
 
-	/// Sets edges and weights
+		/// Sets edges and weights
 		WeightedGraph(const std::vector<std::vector<int>>& edges, const std::vector<std::vector<int>>& weights) : Graph(edges), weights(weights) { initialize(); } //see above why this is here
 	private:
 		const std::vector<std::vector<int>> weights;
@@ -112,7 +118,6 @@ namespace Mackey {
 		void stepDistance(int);
 		void stepPath(int, int);
 		void computeDistance();
-
 		friend class Graph<WeightedGraph>; ///<Used to set up the CRTP.
 	};
 
@@ -130,7 +135,6 @@ namespace Mackey {
 	void WeightedGraph::initialize() {
 		visited.assign(number_of_nodes, 0);
 		distance.assign(number_of_nodes, 0);
-		weightedDistance.assign(number_of_nodes, -1);
 		closest = distance;
 	}
 
@@ -196,10 +200,10 @@ namespace Mackey {
 		/// Writes a graph.dot file representing the colored graph (using red and blue) and named nodes
 		void draw(const std::vector<std::string>&);
 	private:
+		/// The colors of the graph
 		const std::vector<std::vector<char>> colors;
 		void computePath();
 		std::vector<int> adjustpath(std::vector<int>& path);
-
 		friend class  Graph<ColoredGraph>; ///<Used to set up the CRTP.
 	};
 
@@ -270,12 +274,16 @@ namespace Mackey {
 				}
 			}
 			if (finder <= 1) {
-				if (path[i].empty() || (path[i].size() > redpath[2 * i + finder].size() && !redpath[2 * i + finder].empty()))
+				if (weightedDistance[i]==-1 || (weightedDistance[i] > reddistance[2 * i + finder] && reddistance[2 * i + finder]>=0 ) || (weightedDistance[i]==reddistance[2 * i + finder] && path[i].size()>redpath[2 * i + finder].size() && reddistance[2 * i + finder] >= 0)) {
 					path[i] = adjustpath(redpath[2 * i + finder]);
+					weightedDistance[i] = reddistance[2 * i + finder];
+				}
 			}
 			else {
-				if (path[i].empty() || (path[i].size() > bluepath[2 * i + finder - 2].size() && !bluepath[2 * i + finder - 2].empty()))
+				if (weightedDistance[i] == -1 || (weightedDistance[i] > bluedistance[2 * i + finder - 2] && bluedistance[2 * i + finder - 2]>=0) || (weightedDistance[i]==bluedistance[2 * i + finder - 2] && path[i].size()>bluepath[2*i+finder-2].size()&& bluedistance[2 * i + finder - 2] >= 0)) {
 					path[i] = adjustpath(bluepath[2 * i + finder - 2]);
+					weightedDistance[i] = bluedistance[2 * i + finder - 2];
+				}
 			}
 		}
 	}

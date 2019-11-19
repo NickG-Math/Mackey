@@ -154,8 +154,10 @@ namespace Mackey {
 			return name;
 		}
 		factorize(i);
-		name.append(std::to_string(multiple));
-		name.append("*");
+		if (multiple != 1) {
+			name.append(std::to_string(multiple));
+			name.append("*");
+		}
 		name.append(source_names[path[i].back()]);
 		for (int j = 0; j < factorization.size(); j++) {
 			if (orderOfoperations[j] == 1) {

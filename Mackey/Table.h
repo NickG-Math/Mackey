@@ -12,6 +12,9 @@ namespace Mackey {
 	class TableInput {
 	protected:
 
+		const int level; ///<The Mackey functor level we are working on.
+
+
 		///////////////////////////////////////////////////
 		/// The nonzero homology groups used for the table. 
 
@@ -39,8 +42,8 @@ namespace Mackey {
 		const std::vector<int> maxsphere;///<The upper bound on the range of our spheres
 		const std::vector<int> minsphere;///<The lower bound on the range of our spheres
 
-		/// Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily extendible
-		TableInput(const std::vector<int>& minsphere, const std::vector<int>& maxsphere);
+		/// Constructs the input of the multiplication table.
+		TableInput(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere);
 
 		/// Checks if a given sphere is within the range of minsphere and maxsphere
 		template<typename deg_t>
@@ -53,8 +56,8 @@ namespace Mackey {
 
 
 	template<typename rank_t, typename diff_t>
-	TableInput<rank_t, diff_t>::TableInput(const std::vector<int>& minsphere, const std::vector<int>& maxsphere) :
-		minsphere(minsphere), maxsphere(maxsphere)
+	TableInput<rank_t, diff_t>::TableInput(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere) :
+		level(level), minsphere(minsphere), maxsphere(maxsphere)
 	{
 		auto spheres = DegreeConstruction(minsphere, maxsphere);
 		auto maxlength = spheres.size() * (dimension(maxsphere - minsphere) + 1);
@@ -66,12 +69,11 @@ namespace Mackey {
 			auto C = ROChains<rank_t, diff_t>(i);
 			for (int k = 0; k <= C.maxindex;k++) {
 				Junction<rank_t, diff_t> J(C, k);
-				Junction<rank_t, diff_t> J_top = transfer(J, power);
+				Junction<rank_t, diff_t> J_top = transfer(J, level);
 				Homology<rank_t, diff_t> H(J_top);
 				if (!H.isZero) {
 					for (int j = 0; j < H.Groups.size(); j++) {
-						NonZeroHomology.push_back(H.Groups); // we want NonZeroHomology to be in sync with antimap and map, this won't happen too many times
-
+						NonZeroHomology.push_back(H.Groups); // we want NonZeroHomology to be in sync with antimap and map
 						std::vector<int> generator;
 						generator.reserve(3 + i.size());
 						generator.push_back(invReindex(k, i));
@@ -155,7 +157,7 @@ namespace Mackey{
 		const std::vector<Chains<rank_t, diff_t>> basicChains;///<The Chains of the basic irreducibles.
 
 		///Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles.
-		MultiplicationTable(const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&);
+		MultiplicationTable(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&);
 	private:
 		std::pair<rank_t, rank_t> makeproduct(int, int);
 		void makeEdgeCyclic(const rank_t&, const rank_t&, int, int, int, int);
@@ -172,8 +174,8 @@ namespace Mackey{
 	};
 
 	template<typename rank_t, typename diff_t>
-	MultiplicationTable<rank_t, diff_t>::MultiplicationTable(const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles)
-		:TableInput<rank_t, diff_t>(minsphere, maxsphere), basicIrreducibles(basicIrreducibles), basicChains(getChains<rank_t,diff_t>(basicIrreducibles)){
+	MultiplicationTable<rank_t, diff_t>::MultiplicationTable(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles)
+		:TableInput<rank_t, diff_t>(level, minsphere, maxsphere), basicIrreducibles(basicIrreducibles), basicChains(getChains<rank_t,diff_t>(basicIrreducibles)){
 		number_of_nodes = TableInput<rank_t, diff_t>::antimap.size();
 		edges.reserve((prime + 1) * number_of_nodes); //when we need to add extra nodes
 		edges.resize(number_of_nodes);
@@ -383,7 +385,7 @@ namespace Mackey{
 		auto selectD = this->antimap[i][this->antimap[i].size()-2];
 		auto degreeC = basicIrreducibles[j].front();
 		auto C = basicChains[j];
-		Green<rank_t, diff_t> G(C, D, power, degreeC, degreeD, 0, selectD);
+		Green<rank_t, diff_t> G(C, D, this->level, degreeC, degreeD, 0, selectD);
 		return std::make_pair(G.normalBasis, G.Groups);
 	}
 }

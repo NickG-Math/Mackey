@@ -24,7 +24,7 @@ namespace Mackey {
 		/// Retrieve the degree of the i-th generator
 		std::vector<int> getdegree(int i);
 		/// Form the multiplication table and graph given the max and min spheres and the basic irreducibles
-		Factorization(const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&);
+		Factorization(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&);
 		/// Compute the factorizations using the given sources for the multiplication graph and their given names.
 		void compute_with_sources(const std::vector<std::vector<int>>&, const std::vector<std::string>&);
 
@@ -57,8 +57,8 @@ namespace Mackey {
 	}
 
 	template<typename rank_t, typename diff_t>
-	Factorization<rank_t, diff_t>::Factorization(const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, const std::vector<std::string>& basicIrr_names)
-		: MultiplicationTable<rank_t, diff_t>(minsphere, maxsphere, basicIrreducibles), basicIrr_names(basicIrr_names), ColoredGraph(MultiplicationTable<rank_t, diff_t>::edges, MultiplicationTable<rank_t, diff_t>::colors)
+	Factorization<rank_t, diff_t>::Factorization(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, const std::vector<std::string>& basicIrr_names)
+		: MultiplicationTable<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles), basicIrr_names(basicIrr_names), ColoredGraph(MultiplicationTable<rank_t, diff_t>::edges, MultiplicationTable<rank_t, diff_t>::colors)
 	{
 		size = ColoredGraph::number_of_nodes;
 		realsize = this->second_pass_nodes;

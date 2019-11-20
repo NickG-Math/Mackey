@@ -19,11 +19,8 @@ namespace Mackey {
 
 ///Should be float to maximize performance, or potentially double for groups of order not a prime power.
 /////////////////////////////////////////////////
-		typedef typename diff_t::Scalar fScalar;
+		typedef float fScalar;
 		typedef Eigen::Matrix<fScalar, -1, -1> fdiff_t;	///<The type of our casted differentials
-
-
-
 
 
 		rank_t Groups;///<Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3
@@ -63,7 +60,7 @@ namespace Mackey {
 		}
 		else if (J.diffOut.size() == 0) {
 			Out = Eigen::MatrixBase<fdiff_t>::Zero(1, M);
-			In = (J.diffIn).template cast<fScalar>();
+			In = J.diffIn.template cast<fScalar>();
 		}
 		else if (J.diffIn.size() == 0) {
 			In = Eigen::MatrixBase<fdiff_t>::Zero(M, 1);
@@ -81,7 +78,7 @@ namespace Mackey {
 		isZero = 1;
 		int j = 0;
 		for (int i = 0; i < M;i++) {
-			if (((i > OUT.L - 1) || (OUT.S(i, i) == 0))) {
+			if (((i > OUT.L - 1) || (static_cast<typename diff_t::Scalar>(OUT.S(i, i)) == 0))) {
 				//Remember that Q is invertible so it can't have zero columns
 				isZero = 0;
 				Kernel.col(j) = OUT.Q.col(i);
@@ -100,21 +97,20 @@ namespace Mackey {
 		P1 = std::move(IN.P); //IN won't be needed outside of this call so don't copy
 		Kernel = Kernel * IN.Pi;
 		Generators = Kernel.template cast<typename diff_t::Scalar>();
-		auto maxsize = Kernel.cols();
+		auto maxsize = Generators.cols();
 		Groups.resize(maxsize);
 		dontModOut.reserve(maxsize);
-
 		isZero = 1;
 		for (int i = 0; i < maxsize;i++) {
 			if (i < In.rows() && i < In.cols()) {
-				if (IN.S(i, i) == 0) {
+				auto diagonalentry = static_cast<typename diff_t::Scalar>(abs(IN.S(i, i)));
+				if (diagonalentry == 0) {
 					Groups(i) = 1;
 					isZero = 0;
 					dontModOut.push_back(i);
-
 				}
-				else if (abs(IN.S(i, i)) != 1) {
-					Groups(i) = static_cast<typename rank_t::Scalar>(abs(IN.S(i, i)));
+				else if (diagonalentry != 1) {
+					Groups(i) = static_cast<typename rank_t::Scalar>(diagonalentry);
 					isZero = 0;
 					dontModOut.push_back(i);
 				}
@@ -129,7 +125,6 @@ namespace Mackey {
 			Groups.resize(0);
 			return;
 		}
-
 		Generators = KeepCol(Generators, dontModOut);
 		Groups = KeepCol(Groups, dontModOut);
 	}
@@ -149,15 +144,15 @@ namespace Mackey {
 		element = KeepRow(element, nonZeroVectors);
 		element = P1 * element;
 		element = KeepRow(element, dontModOut);
-
+		Eigen::Matrix<typename diff_t::Scalar, -1, 1> castelement = element.template cast<typename diff_t::Scalar>();
 		for (int j = 0; j < Groups.size();j++) {
 			if (Groups(j) != 1) {
-				basisArray(j) = (Groups(j) + static_cast<typename rank_t::Scalar>(element(j)) % Groups(j)) % Groups(j);
+				basisArray(j) = (Groups(j) + static_cast<typename rank_t::Scalar>(castelement(j)) % Groups(j)) % Groups(j);
 				//This is needed due to C++ conventions for % take a symmetric range w.r.t. 0 instead of >=0. So we can't just do element(j)%Groups(j)
 				//Also we can't use our own mod since this is mod of floats over int (although we could just define mod to just cast to int.
 			}
 			else {
-				basisArray(j) = static_cast<typename rank_t::Scalar>(element(j));
+				basisArray(j) = static_cast<typename rank_t::Scalar>(castelement(j));
 			}
 		}
 		return basisArray;

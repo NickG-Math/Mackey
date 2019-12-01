@@ -12,17 +12,7 @@ namespace Mackey {
 	///The Homology of a Junction
 	template<typename rank_t, typename diff_t>
 	class Homology {
-	public:
-
-		
-//////////////////////////////////////////////////
-///The floating point type for Homology computations
-
-///Should be float to maximize performance, or potentially double for groups of order not a prime power.
-/////////////////////////////////////////////////
-		typedef float fScalar;
-		typedef Eigen::Matrix<fScalar, -1, -1> fdiff_t;	///<The type of our casted differentials
-
+	public:	
 		rank_t Groups;///<Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3
 		diff_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
 		bool isZero;///<1 if the homology is trivial
@@ -73,13 +63,8 @@ namespace Mackey {
 			Out = Eigen::MatrixBase<diff_t>::Zero(1, M);
 		}
 		else if (J.diffOut.size() == 0) {
-<<<<<<< HEAD
 			Out = Eigen::MatrixBase<diff_t>::Zero(1, M);
 			In = J.diffIn;
-=======
-			Out = Eigen::MatrixBase<fdiff_t>::Zero(1, M);
-			In = J.diffIn.template cast<fScalar>();
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 		}
 		else if (J.diffIn.size() == 0) {
 			In = Eigen::MatrixBase<diff_t>::Zero(M, 1);
@@ -118,11 +103,7 @@ namespace Mackey {
 		isZero = 1;
 		int j = 0;
 		for (int i = 0; i < M;i++) {
-<<<<<<< HEAD
 			if ( (i > OUT.L - 1) || (OUT.diagonal[i] == 0) ) {
-=======
-			if (((i > OUT.L - 1) || (static_cast<typename diff_t::Scalar>(OUT.S(i, i)) == 0))) {
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 				//Remember that Q is invertible so it can't have zero columns
 				isZero = 0;
 				Kernel.col(j) = OUT.Q.col(i);
@@ -147,17 +128,12 @@ namespace Mackey {
 		Kernel = Kernel * IN.Pi;
 		Generators = Kernel.template cast<typename diff_t::Scalar>();
 		auto maxsize = Generators.cols();
-<<<<<<< HEAD
 		std::vector<typename rank_t::Scalar> groups;
 		groups.reserve(maxsize);
-=======
-		Groups.resize(maxsize);
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 		dontModOut.reserve(maxsize);
 		isZero = 1;
 		diagonal = IN.diagonal.template cast<typename diff_t::Scalar>();
 		for (int i = 0; i < maxsize;i++) {
-<<<<<<< HEAD
 			if (i < L) {
 				if (abs(diagonal[i]) == 0) {
 					groups.push_back(1);
@@ -166,17 +142,6 @@ namespace Mackey {
 				}
 				else if (abs(diagonal[i]) != 1) {
 					groups.push_back(static_cast<typename rank_t::Scalar>(abs(diagonal[i])));
-=======
-			if (i < In.rows() && i < In.cols()) {
-				auto diagonalentry = static_cast<typename diff_t::Scalar>(abs(IN.S(i, i)));
-				if (diagonalentry == 0) {
-					Groups(i) = 1;
-					isZero = 0;
-					dontModOut.push_back(i);
-				}
-				else if (diagonalentry != 1) {
-					Groups(i) = static_cast<typename rank_t::Scalar>(diagonalentry);
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 					isZero = 0;
 					dontModOut.push_back(i);
 				}
@@ -191,10 +156,7 @@ namespace Mackey {
 			Generators.resize(0,0);
 			return;
 		}
-<<<<<<< HEAD
 		Groups = Eigen::Map<Eigen::Matrix<typename rank_t::Scalar,1,-1>>(groups.data(), groups.size());
-=======
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 		Generators = KeepCol(Generators, dontModOut);
 	}
 
@@ -212,30 +174,20 @@ namespace Mackey {
 		element = KeepRow(element, nonZeroVectors);
 		element = In_P * element;
 		element = KeepRow(element, dontModOut);
-<<<<<<< HEAD
 		Eigen::Matrix<long, -1, 1> longelement = element.template cast<long>(); //cast long here as it might be large; after that we modulo 
-=======
-		Eigen::Matrix<typename diff_t::Scalar, -1, 1> castelement = element.template cast<typename diff_t::Scalar>();
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
+
 		for (int j = 0; j < Groups.size();j++) {
 			typename diff_t::Scalar coeff;
 			if (Groups(j) != 1) {
-<<<<<<< HEAD
 				coeff = static_cast<typename diff_t::Scalar>(longelement(j) % Groups(j));//need to cast incase extra mod is applied by our coefficients. Useless for Z coefficients
 				basisArray(j) = (Groups(j) + static_cast<typename rank_t::Scalar>(coeff)) % Groups(j);
-=======
-				basisArray(j) = (Groups(j) + static_cast<typename rank_t::Scalar>(castelement(j)) % Groups(j)) % Groups(j);
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 				//This is needed due to C++ conventions for % take a symmetric range w.r.t. 0 instead of >=0. So we can't just do element(j)%Groups(j)
 				//Also we can't use our own mod since this is mod of floats over int (although we could just define mod to just cast to int.
 			}
 			else {
-<<<<<<< HEAD
 				coeff = static_cast<typename diff_t::Scalar>(longelement(j));//need to cast incase extra mod is applied by our coefficients. Useless for Z coefficients
 				basisArray(j) = static_cast<typename rank_t::Scalar>(coeff);
-=======
-				basisArray(j) = static_cast<typename rank_t::Scalar>(castelement(j));
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
+
 			}
 		}
 		return basisArray;

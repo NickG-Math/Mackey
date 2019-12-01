@@ -17,15 +17,29 @@ namespace Mackey {
 		/// The total number of generators we can factorize
 		int realsize;
 		/// The names of the basic irreducibles.
-		const std::vector<std::string> basicIrr_names;
+		std::vector<std::string> basicIrr_names;
 
 		/// Retrieve the factorization of the i-th generator
-		std::string getname(int i);
+		std::string getname(int);
+
+		/// Retrieve the degree of the i-th generator
+		std::vector<int> getdegree(int) const;
+
+		/// Retrieve the position of the i-th generator, always 0 if cyclic
+		int getposition(int i) const;
+
+		/// Find the element with given degree, position and multiple
+		int getelement(int, int, int) const;
+
+		/// Retrieve the degree of the i-th generator
+		int getdegreeindex(const std::vector<int>&) const;
+
 		/// Form the multiplication table and graph given the max and min spheres and the basic irreducibles
-		Factorization(const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&);
+		Factorization(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&);
+
 		/// Compute the factorizations using the given sources for the multiplication graph and their given names.
 		void compute_with_sources(const std::vector<std::vector<int>>&, const std::vector<std::string>&);
-
+		 
 	private:
 		void factorize(int i);
 		int multiple;
@@ -34,25 +48,53 @@ namespace Mackey {
 		std::map<int, std::string> source_names;
 		void set_sources(const std::vector<std::vector<int>>&);
 		void set_source_names(const std::vector<std::string>&);
-
 	};
+
+	template<typename rank_t, typename diff_t>
+	inline std::vector<int> Factorization<rank_t, diff_t>::getdegree(int i) const  {
+		return this->degree[this->tracker[i]];
+	}
+
+	template<typename rank_t, typename diff_t>
+	inline int Factorization<rank_t, diff_t>::getposition(int i)  const  {
+		return this->element[i][this->element[i].size()-2];
+	}
+
+	template<typename rank_t, typename diff_t>
+	inline int Factorization<rank_t, diff_t>::getelement(int index, int pos, int multiple) const {
+		auto iterator = this->antielement.find({ index,pos,multiple });
+		if (iterator == this->antielement.end())
+			return -1;
+		else
+			return iterator->second;
+	}
+
+	template<typename rank_t, typename diff_t>
+	inline int Factorization<rank_t, diff_t>::getdegreeindex(const std::vector<int>& degree) const {
+		auto iterator = this->antidegree.find(degree);
+		if (iterator == this->antidegree.end())
+			return -1;
+		else
+			return iterator->second;
+	}
+
+
 
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::set_sources(const std::vector<std::vector<int>>& given_sources) {
 		sources.reserve(given_sources.size());
-		for (auto i : given_sources) {
-			i.push_back(0);
-			i.push_back(1);
-			sources.push_back(this->map[i]);
+		for (const auto& i : given_sources) {
+			auto deg = this->antidegree[i];
+			sources.push_back(this->antielement[{deg, 0, 1}]);
 		}
 	}
 
 	template<typename rank_t, typename diff_t>
-	Factorization<rank_t, diff_t>::Factorization(const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, const std::vector<std::string>& basicIrr_names)
-		: MultiplicationTable<rank_t, diff_t>(minsphere, maxsphere, basicIrreducibles), basicIrr_names(basicIrr_names), ColoredGraph(MultiplicationTable<rank_t, diff_t>::edges, MultiplicationTable<rank_t, diff_t>::colors)
+	Factorization<rank_t, diff_t>::Factorization(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, const std::vector<std::string>& basicIrr_names)
+		: MultiplicationTable<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles), ColoredGraph(MultiplicationTable<rank_t, diff_t>::edges, MultiplicationTable<rank_t, diff_t>::colors), basicIrr_names(basicIrr_names)
 	{
 		size = ColoredGraph::number_of_nodes;
-		realsize = this->second_pass_nodes;
+		realsize = this->number_of_generators;
 		factorization.reserve(3);
 		orderOfoperations.reserve(3);
 	}
@@ -60,7 +102,7 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::set_source_names(const std::vector<std::string>& names) {
-		for (int i = 0; i < names.size(); i++)
+		for (std::vector<int>::size_type i = 0; i < names.size(); i++)
 		{
 			source_names[sources[i]] = names[i];
 		}
@@ -70,16 +112,16 @@ namespace Mackey {
 	void Factorization<rank_t, diff_t>::compute_with_sources(const std::vector<std::vector<int>>& given_sources, const std::vector<std::string>& names) {
 		set_sources(given_sources);
 		set_source_names(names);
-		for (auto i : sources) {
+		for (const auto& i : sources) {
 			computeWithSource(i);
 		}
 	}
+
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::factorize(int i) {
-		if (path[i].empty()) {
+		if (path[i].empty())
 			return;
-		}
-		std::vector<int> difference;
+
 		std::vector<int> zerovector(prime + 1);
 
 		factorization.clear();
@@ -92,17 +134,17 @@ namespace Mackey {
 		std::vector<int> negcounter(this->basicIrreducibles.size());
 
 		for (int j = path[i].size() - 2; j >= 0; j--) {
-			difference = this->antimap[path[i][j]] - this->antimap[path[i][j + 1]];
-			auto difference_last = difference.back();
-			difference.pop_back();
-			difference.pop_back();
+			int indexstart = this->tracker[path[i][j]];
+			int indexend= this->tracker[path[i][j+1]];
 
+			auto difference = this->degree[indexstart] - this->degree[indexend];
+			auto difference_last = this->element[path[i][j]].back() - this->element[path[i][j+1]].back();
 			if (difference_last != 0 && difference == zerovector) {
-				multiple *= this->antimap[path[i][j]].back();
+				multiple *= this->element[path[i][j]].back();
 			}
 
 
-			for (int k = 0; k < this->basicIrreducibles.size(); k++) {
+			for (decltype(this->basicIrreducibles.size()) k = 0; k < this->basicIrreducibles.size(); k++) {
 				if (difference == this->basicIrreducibles[k]) {
 					if (flagneg) {
 						orderOfoperations.push_back(-1);
@@ -139,23 +181,23 @@ namespace Mackey {
 
 
 	template<typename rank_t, typename diff_t>
-	std::string Factorization<rank_t, diff_t>::getname(int i) {
+	std::string Factorization<rank_t, diff_t>::getname(int i)
+	{
 		std::string name;
-		if (this->path[i].empty()) {
+		if (this->path[i].empty())
 			return name;
-		}
 		factorize(i);
-		name.append(std::to_string(multiple));
-		name.append("*");
+		if (multiple != 1) {
+			name.append(std::to_string(multiple));
+			name.append("*");
+		}
 		name.append(source_names[path[i].back()]);
-		for (int j = 0; j < factorization.size(); j++) {
-			if (orderOfoperations[j] == 1) {
+		for (std::vector<int>::size_type j = 0; j < factorization.size(); j++) {
+			if (orderOfoperations[j] == 1)
 				name.append("*(");
-			}
-			else {
+			else 
 				name.append("/(");
-			}
-			for (int k = 0; k < factorization[j].size(); k++) {
+			for (std::vector<int>::size_type k = 0; k < factorization[j].size(); k++) {
 				if (factorization[j][k] > 0) {
 					name.append(basicIrr_names[k]);
 					if (factorization[j][k] > 1) {
@@ -165,6 +207,8 @@ namespace Mackey {
 					name.append("*");
 				}
 			}
+			if (name.back() == '*')
+				name.pop_back();
 			name.append(")");
 		}
 		return name;

@@ -132,9 +132,9 @@ namespace GroupSpecificOptional {
 	//////////////////////////////
 /// A list of Mackey functors and their names.
 
-/// Only used if macro MACKEY_NAMES is defined (list is optional)
+/// Only used if macro MACKEY_NAMES is defined (list is optional). The diff_t template is used to get the coefficient type
 //////////////////////////////
-	template<typename rank_t>
+	template<typename rank_t, typename diff_t>
 	class MackeyList {
 	public:
 		static const std::vector<MackeyFunctor<rank_t>> Mackeys;///<The list of Mackey functors
@@ -145,17 +145,17 @@ namespace GroupSpecificOptional {
 namespace Mackey{
 
 	///Identifies the Mackey Functor with its Latex notation using the MackeyList. Only used if macro MACKEY_NAMES is defined.
-	template<typename rank_t>
+	template<typename rank_t, typename diff_t>
 	std::string identify(MackeyFunctor<rank_t>& M)
 	{
-		std::string name;
 		M.normalize();
-		GroupSpecificOptional::MackeyList<rank_t> List;
-		for (int i = 0; i < List.Mackeys.size(); i++) {
+		GroupSpecificOptional::MackeyList<rank_t, diff_t> List;
+		for (decltype(List.Mackeys.size()) i = 0; i < List.Mackeys.size(); i++) {
 			if (M.compare(List.Mackeys[i])) {
 				return List.names[i];
 			}
 		}
+		return std::string();
 	}
 }
 #endif

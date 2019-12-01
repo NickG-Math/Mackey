@@ -15,15 +15,16 @@
 #include "Implementation.h"
 #include "Optional_Implementation.h"
 #include "C4Verify.h" //to verify
+#include <Mackey/Z_n.h>
 
 
-typedef Eigen::Matrix<short, 1, -1> rank_t;
+typedef Eigen::Matrix<char, 1, -1> rank_t;
 typedef Eigen::Matrix<char, -1, -1> diff_t;
 
 
 int main() {
 	auto begin = std::chrono::high_resolution_clock::now();
-	C4Test::C4MackeyTest<rank_t, diff_t>(-40, 0, 0, 30, 0);
+	C4Test::C4MackeyTest<rank_t, diff_t>(-30, 30, -30, 30, 0);
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << "ns" << std::endl;
 }

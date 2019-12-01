@@ -42,7 +42,7 @@ namespace Mackey {
 		diff_t diffIn;///<The entering differential
 
 
-		///Default constructor
+	///Default constructor
 		Junction() {};
 	/// Extract the Junction C[i+1]->C[i]->C[i-1] from the Chains C.
 		Junction(const Chains<rank_t, diff_t>&, int);

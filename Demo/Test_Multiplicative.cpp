@@ -13,7 +13,8 @@
 #include "Implementation.h"
 #include "C4Verify.h" //to verify
 
-typedef Eigen::Matrix<short, 1, -1> rank_t;
+
+typedef Eigen::Matrix<char, 1, -1> rank_t;
 typedef Eigen::Matrix<char, -1, -1> diff_t;
 
 int main() {

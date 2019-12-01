@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <Eigen/Dense>
+#include <numeric> //lcm
 
 ///@file
 ///@brief Contains general functions and vector overloads independent of everything else.
@@ -10,23 +11,22 @@ namespace Mackey {
 
 	///////////////////////////////////////////////////
 	///Given minimum and maximum degrees, constructs everything in between.
-	///
+
 	///deg_t here is usually an std::vector<int>.
 	///For example if minimum=[-1,-1] and maximum=[2,3] then the result is {[-1,-1],[0,-1],[1,-1],[2,-1],[-1,0],...,[2,3]}
 	///////////////////////////////////////////////////
 	template<typename deg_t>
 	std::vector<deg_t> DegreeConstruction(const deg_t& minimum, const deg_t& maximum) {
 		auto totallength = maximum[0] - minimum[0] + 1;
-		for (int i = 1; i < maximum.size(); i++) {
+		for (decltype(maximum.size()) i = 1; i < maximum.size(); i++) {
 			totallength *= maximum[i] - minimum[i] + 1;
 		}
 		std::vector<deg_t> degrees;
 		auto degree = minimum;
 		degrees.reserve(totallength);
-		int counter = 0;
 		for (int counter = 0; counter < totallength; counter++) {
 			degrees.push_back(degree);
-			int i = 0;
+			decltype(maximum.size()) i = 0;
 			while (i < maximum.size() - 1 && degree[i] == maximum[i]) {
 				degree[i] = minimum[i];
 				i++;
@@ -36,16 +36,65 @@ namespace Mackey {
 		return degrees;
 	}
 
+
 	/////////////////////////////////////////////
-	///Given vector or array returns vector starting from index 1.
-	
-	///Example given v apply as remove0th(v.data(),v.size())
-	////////////////////////////////////////////
+///Given vector or array returns vector starting from index start.
+
+///Example given v apply as tail(v.data(),v.size(), start)
+////////////////////////////////////////////
 	template<typename T>
-	inline std::vector<T> remove0th(const T* const& ptr, int size) {
-		std::vector<T> vec(ptr + 1, ptr + size);
+	inline std::vector<T> tail(const T* const& ptr, int size, int start) {
+		std::vector<T> vec(ptr + start, ptr + size);
 		return vec;
 	}
+
+
+	/////////////////////////////////////////////
+	///Given vector or array returns vector starting from index 1.
+
+	///Example given v apply as tail(v.data(),v.size())
+	////////////////////////////////////////////
+	template<typename T>
+	inline std::vector<T> tail(const T* const& ptr, int size) {
+		return tail(ptr,size,1);
+	}
+
+	///Find first instance of a in v
+	template<typename T>
+	int find(const T& v, int a) {
+		for (decltype(v.size()) i = 0; i < v.size(); i++) {
+			if (v[i]==a)
+				return i;
+		}
+		return -1;
+	}
+
+	///Count the instances of a in v and return the last one
+	template<typename T, typename S>
+	std::pair<int,int> findcount(const T& v, S a) {
+		int counter = 0;
+		int pos = 0;
+		for (int i = 0; i < v.size(); i++) {
+			if (v[i] == a) {
+				counter++;
+				pos = i;
+			}
+		}
+		return std::make_pair(counter, pos);
+	}
+
+	///Makes the multiple of the basis vector 0,...,multiple,...,0
+	inline std::vector<int> basisVector(int total, int position, int multiple) {
+		std::vector<int> v(total);
+		v[position] = multiple;
+		return v;
+	}
+
+	///Makes the basis vector 0,...,1,...,0
+	inline std::vector<int> basisVector(int total, int position) {
+		return basisVector(total,position,1);
+	}
+
 
 
 	///Makes a new matrix out of A keeping only its rows indicated by Z
@@ -74,11 +123,8 @@ namespace Mackey {
 
 	////////////////////////////////////////////////////////////
 	///Takes the sum of the entries of an Eigen vector at higher precision than its inputs.
-
-	///T is anything with sum() and cast<int>() methods.
-	///////////////////////////////////////////////////////////
-	template<typename T>
-	int summation(const T& A) {
+	template<typename Derived>
+	int summation(const Eigen::MatrixBase<Derived>& A) {
 		return A.template cast<int>().sum();
 	}
 
@@ -104,7 +150,6 @@ namespace Mackey {
 		for (int i = 0; i < m; i += alt.size()) {
 			column.segment(i, alt.size()) = alt;
 		}
-
 		for (int j = n-1; j>=0; j--) {
 			rotate(column);
 			matrix.col(j)=column;
@@ -135,5 +180,31 @@ namespace Mackey {
 		}
 		return c;
 	}
+
+	///Coordinate-wise difference of vectors (up to the minimum of their lengths)
+	template <typename T>
+	std::vector<T> operator*(T a, const std::vector<T>& b)
+	{
+		std::vector<T> c;
+		c.reserve(b.size());
+		for (int i = 0; i < b.size(); i++) {
+			c.push_back(a * b[i]);
+		}
+		return c;
+	}
+
+	///Least common multiple of vector of elements
+	template<typename T>
+	int lcm(const T& v) {
+		if (v.size()==0)
+			return 0;
+		auto n=1;
+		for (const auto& i:v) {
+			n = std::lcm(n, i);
+		}
+		return n;
+	}
+
+
 
 }

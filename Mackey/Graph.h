@@ -18,7 +18,7 @@ namespace Mackey {
 	template<typename T>
 	class Graph {
 	public:
-		const int number_of_nodes; ///<The number of vertices
+		int number_of_nodes; ///<The number of vertices
 
 		//////////////////////////////////////
 		/// The "shortest" path from a selected source to any other point. 
@@ -27,8 +27,17 @@ namespace Mackey {
 		//////////////////////////////////////
 		std::vector<std::vector<int>> path;
 
+		/////////////////////////////////////
+		/// The weighted distance from a selected source to all points.
+
+		///The type of weight will depend on the specialization of Graph.
+		std::vector<int> weightedDistance;
+
+
 		/// Construct given the edges of the graph
-		Graph(const std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) { path.resize(number_of_nodes); }
+		Graph(std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) { 
+			path.resize(number_of_nodes); weightedDistance.assign(number_of_nodes, -1);
+		}
 
 		/// A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations.
 		void computeWithSource(int givensource) {
@@ -40,6 +49,7 @@ namespace Mackey {
 		void computeWithSource_clear(int givensource) {
 			path.clear();
 			path.resize(number_of_nodes);
+			weightedDistance.assign(number_of_nodes, -1);
 			static_cast<T*>(this)->initialize();
 			computeWithSource(givensource);
 		};
@@ -50,7 +60,9 @@ namespace Mackey {
 		void draw(const std::vector<std::string>&);
 
 	protected:
-		const std::vector<std::vector<int>> edges; ///<The edges of the graph
+		///Default constructor
+		Graph() {};
+		std::vector<std::vector<int>> edges; ///<The edges of the graph
 		int source; ///<The source of the graph
 	private:
 		//These are defined in the inherited classes
@@ -92,17 +104,17 @@ namespace Mackey {
 	/// A directed Graph with weights
 	class WeightedGraph : public Graph<WeightedGraph> {
 	public:
-
-		/// The weighted distance from the source to all points
-		std::vector<int> weightedDistance;
+		///Default constructor
+		WeightedGraph() {};
 
 		/// Sets edges and 0 weights
-		WeightedGraph(const std::vector<std::vector<int>>& edges) : Graph(edges), weights(zeroWeight(edges)) { initialize(); } //we must initalize here and not in a constructor of Graph because we can't static_cast(this) in a constructor
+		WeightedGraph(std::vector<std::vector<int>>& edges) : Graph(edges), weights(zeroWeight(edges)) { initialize(); } //we must initalize here and not in a constructor of Graph because we can't static_cast(this) in a constructor
 
-	/// Sets edges and weights
-		WeightedGraph(const std::vector<std::vector<int>>& edges, const std::vector<std::vector<int>>& weights) : Graph(edges), weights(weights) { initialize(); } //see above why this is here
+		/// Sets edges and weights
+		WeightedGraph(std::vector<std::vector<int>>& edges, std::vector<std::vector<int>>& weights) : Graph(edges), weights(weights) { initialize(); } //see above why this is here
+
 	private:
-		const std::vector<std::vector<int>> weights;
+		std::vector<std::vector<int>> weights;
 		std::vector<int> distance, closest;
 		std::vector<char> visited, reachable; //not bool for performance
 		std::priority_queue<std::pair<int, int>> next;
@@ -112,7 +124,6 @@ namespace Mackey {
 		void stepDistance(int);
 		void stepPath(int, int);
 		void computeDistance();
-
 		friend class Graph<WeightedGraph>; ///<Used to set up the CRTP.
 	};
 
@@ -130,7 +141,6 @@ namespace Mackey {
 	void WeightedGraph::initialize() {
 		visited.assign(number_of_nodes, 0);
 		distance.assign(number_of_nodes, 0);
-		weightedDistance.assign(number_of_nodes, -1);
 		closest = distance;
 	}
 
@@ -189,17 +199,20 @@ namespace Mackey {
 	class ColoredGraph : public Graph<ColoredGraph> {
 	public:
 		/// Construct given the edges and colors
-		ColoredGraph(const std::vector<std::vector<int>>& edges, const std::vector<std::vector<char>>& colors) : Graph(edges), colors(colors) {}
+		ColoredGraph(std::vector<std::vector<int>>& edges, std::vector<std::vector<char>>& colors) : Graph(edges), colors(colors) {}
 
 		/// Writes a graph.dot file representing the colored graph (using red and blue). The nodes are unnamed points.
 		void draw();
 		/// Writes a graph.dot file representing the colored graph (using red and blue) and named nodes
 		void draw(const std::vector<std::string>&);
+
 	private:
-		const std::vector<std::vector<char>> colors;
+		std::vector<std::vector<char>> colors;		///<The colors of the graph
 		void computePath();
+		void constructDual();
 		std::vector<int> adjustpath(std::vector<int>& path);
 
+		WeightedGraph dual;
 		friend class  Graph<ColoredGraph>; ///<Used to set up the CRTP.
 	};
 
@@ -209,13 +222,11 @@ namespace Mackey {
 		return path;
 	}
 
-
-	void ColoredGraph::computePath() {
+	void ColoredGraph::constructDual() {
 		//we create a new Graph with colored nodes and monochrome edges
 		//every node i of the original graph gives two colored nodes i_red, i_blue and 
 		//the monochrome edges ending at i_red are only the red edges of the original graph (same for blue)
 		//the monochrome edges that alternate node colors are given weight one
-
 
 		auto number_of_colored_nodes = 2 * number_of_nodes;
 		std::vector<std::vector<int>> monochrome_edges, weights;
@@ -228,7 +239,7 @@ namespace Mackey {
 			monochrome_edges[2 * i + 1].reserve(edges[i].size());
 			weights[2 * i + 1].reserve(edges[i].size());
 
-			for (int j = 0; j < edges[i].size(); j++) {
+			for (std::vector<int>::size_type j = 0; j < edges[i].size(); j++) {
 				if (!colors[i][j]) {//red target
 					monochrome_edges[2 * i].push_back(2 * edges[i][j]); //red to red
 					weights[2 * i].push_back(0);
@@ -246,14 +257,17 @@ namespace Mackey {
 
 			}
 		}
+		dual=WeightedGraph(monochrome_edges, weights);
+	}
 
-		WeightedGraph G(monochrome_edges, weights);
-		G.computeWithSource(2 * source);
-		auto redpath = std::move(G.path);
-		auto reddistance = std::move(G.weightedDistance);
-		G.computeWithSource_clear(2 * source + 1);
-		auto bluepath = std::move(G.path);
-		auto bluedistance = std::move(G.weightedDistance);
+	void ColoredGraph::computePath() {
+		constructDual();
+		dual.computeWithSource(2 * source);
+		auto redpath = std::move(dual.path);
+		auto reddistance = std::move(dual.weightedDistance);
+		dual.computeWithSource_clear(2 * source + 1);
+		auto bluepath = std::move(dual.path);
+		auto bluedistance = std::move(dual.weightedDistance);
 
 		for (int i = 0; i < number_of_nodes; i++) {
 			std::array<int, 3> V = { reddistance[2 * i + 1], bluedistance[2 * i], bluedistance[2 * i + 1] };
@@ -270,12 +284,16 @@ namespace Mackey {
 				}
 			}
 			if (finder <= 1) {
-				if (path[i].empty() || (path[i].size() > redpath[2 * i + finder].size() && !redpath[2 * i + finder].empty()))
+				if (weightedDistance[i]==-1 || (weightedDistance[i] > reddistance[2 * i + finder] && reddistance[2 * i + finder]>=0 ) || (weightedDistance[i]==reddistance[2 * i + finder] && path[i].size()>redpath[2 * i + finder].size() && reddistance[2 * i + finder] >= 0)) {
 					path[i] = adjustpath(redpath[2 * i + finder]);
+					weightedDistance[i] = reddistance[2 * i + finder];
+				}
 			}
 			else {
-				if (path[i].empty() || (path[i].size() > bluepath[2 * i + finder - 2].size() && !bluepath[2 * i + finder - 2].empty()))
+				if (weightedDistance[i] == -1 || (weightedDistance[i] > bluedistance[2 * i + finder - 2] && bluedistance[2 * i + finder - 2]>=0) || (weightedDistance[i]==bluedistance[2 * i + finder - 2] && path[i].size()>bluepath[2*i+finder-2].size()&& bluedistance[2 * i + finder - 2] >= 0)) {
 					path[i] = adjustpath(bluepath[2 * i + finder - 2]);
+					weightedDistance[i] = bluedistance[2 * i + finder - 2];
+				}
 			}
 		}
 	}
@@ -287,7 +305,7 @@ namespace Mackey {
 		file.open("graph.dot");
 		file << "digraph G{ \n node[shape=point] \n";
 		for (int i = 0; i < number_of_nodes; i++) {
-			for (int j = 0; j < edges[i].size(); j++) {
+			for (std::vector<int>::size_type j = 0; j < edges[i].size(); j++) {
 				file << i << "->" << edges[i][j] << "[color=\"" << coloring[colors[i][j]] << "\"]\n";
 			}
 		}
@@ -301,7 +319,7 @@ namespace Mackey {
 		file.open("graph.dot");
 		file << "digraph G{ \n";
 		for (int i = 0; i < number_of_nodes; i++) {
-			for (int j = 0; j < edges[i].size(); j++) {
+			for (std::vector<int>::size_type j = 0; j < edges[i].size(); j++) {
 				file << "\"" << names[i] << "\"" << "->" << "\"" << names[edges[i][j]] << "\" [color=\"" << coloring[colors[i][j]] << "\"]\n";
 			}
 		}

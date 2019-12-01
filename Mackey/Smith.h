@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include <Eigen/Dense>
 #include <cmath>
 #include <type_traits>
@@ -10,27 +11,26 @@ namespace {
 
 	template<typename Scalar>
 	inline Scalar mod(Scalar x, Scalar y) {
-		if constexpr (std::is_integral_v<Scalar>) {
-			return x % y;
+		if constexpr (std::is_floating_point_v<Scalar>) {
+			return std::fmod(x, y);
 		}
 		else {
-			return std::fmod(x, y);
+			return x % y;
 		}
 	}
 
 	template<typename Scalar>
 	inline Scalar customfloor(Scalar x) {
-		if constexpr (std::is_integral_v<Scalar>) {
-			return x;
-		}
-		else {
+		if constexpr (std::is_floating_point_v<Scalar>) {
 			return floor(x);
 		}
+		else {
+			return x;
+		}
 	}
-
 }
 
-namespace Mackey{
+namespace Mackey {
 	/// The Smith Normal Form
 	template <typename smithS_t, typename smithR_t, typename smithC_t>
 	class Smith {
@@ -40,14 +40,14 @@ namespace Mackey{
 		smithR_t Qi;	///< One of the coefficient matrices (A=Pi*S*Qi). Should be row major for best performance
 		smithC_t Q;		///< One of the coefficient matrices (S=P*A*Q). Should be column major for best performance
 		smithC_t Pi;	///< One of the coefficient matrices (A=Pi*S*Qi). Should be column major for best performance
-		const int L;	///< The length of the diagonal of S.
+		Eigen::Matrix<typename smithS_t::Scalar,1,-1> diagonal; ///<The diagonal of the Smith normal form
+		const int L;	///< The length of the diagonal of the Smith normal form.
 
+		/////////////////////////////////////////////////
+		/// Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi
 
-	/////////////////////////////////////////////////
-	/// Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi
-
-	///The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed.
-	/////////////////////////////////////////////////
+		///The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed.
+		/////////////////////////////////////////////////
 		Smith(const smithS_t& Original, const bool& wantP, const bool& wantQ);
 
 	private:
@@ -61,22 +61,20 @@ namespace Mackey{
 	};
 
 
-	template <typename smithS_t, typename smithR_t, typename smithC_t>
+	template<typename smithS_t, typename smithR_t, typename smithC_t>
 	Smith<smithS_t, smithR_t, smithC_t> ::Smith(const smithS_t& Original, const bool& wantP, const bool& wantQ)
-		: S(Original), M(S.rows()), N(S.cols()), L(std::min(S.rows(), S.cols())), wantP(wantP), wantQ(wantQ) { //Initializer List
+		: S(Original), L(std::min(S.rows(), S.cols())), M(S.rows()), N(S.cols()), wantP(wantP), wantQ(wantQ) { //Initializer List
 		if (wantP) {
-			P.resize(M, M);
-			P.setIdentity();
-			Pi = P;
+			P = Eigen::MatrixBase<smithR_t>::Identity(M, M);
+			Pi = Eigen::MatrixBase<smithC_t>::Identity(M, M);
 		}
 		if (wantQ) {
-			Q.resize(N, N);
-			Q.setIdentity();
-			Qi = Q;
+			Q = Eigen::MatrixBase<smithC_t>::Identity(N, N);
+			Qi = Eigen::MatrixBase<smithR_t>::Identity(N, N);
 		}
+		diagonal.resize(L);
 		SmithIt();
 	}
-
 
 	template <typename smithS_t, typename smithR_t, typename smithC_t>
 	void Smith<smithS_t, smithR_t, smithC_t>::SmithIt() {
@@ -96,6 +94,7 @@ namespace Mackey{
 					searchRow(start, i, j);
 				}
 			}
+			diagonal[start]=S(start, start);
 		}
 	}
 
@@ -105,8 +104,8 @@ namespace Mackey{
 			auto thequotient = S(start, j) / S(start, start);
 			S.col(j).tail(M - start) += -thequotient * S.col(start).tail(M - start);
 			if (wantQ) {
-				Q.col(j) += -thequotient * Q.col(start);
-				Qi.row(start) += thequotient * Qi.row(j);
+				Q.col(j) += -static_cast<typename smithC_t::Scalar>(thequotient)* Q.col(start);
+				Qi.row(start) += static_cast<typename smithR_t::Scalar>(thequotient)* Qi.row(j);
 			}
 			j++;
 		}
@@ -116,9 +115,9 @@ namespace Mackey{
 			S.col(j).tail(M - start) += -thequotient * S.col(start).tail(M - start);
 			if (wantQ) {
 				Q.col(start).swap(Q.col(j));
-				Q.col(j) += -thequotient * Q.col(start);
+				Q.col(j) += -static_cast<typename smithC_t::Scalar>(thequotient)* Q.col(start);
 				Qi.row(start).swap(Qi.row(j));
-				Qi.row(start) += thequotient * Qi.row(j);
+				Qi.row(start) += static_cast<typename smithR_t::Scalar>(thequotient)* Qi.row(j);
 			}
 			j++;
 			i = start + 1;
@@ -128,9 +127,9 @@ namespace Mackey{
 			S.col(j).tail(M - start) += -thequotient * S.col(start).tail(M - start);
 			S.col(start).swap(S.col(j));
 			if (wantQ) {
-				Q.col(j) += -thequotient * Q.col(start);
+				Q.col(j) += -static_cast<typename smithC_t::Scalar>(thequotient)* Q.col(start);
 				Q.col(start).swap(Q.col(j));
-				Qi.row(start) += thequotient * Qi.row(j);
+				Qi.row(start) += static_cast<typename smithR_t::Scalar>(thequotient)* Qi.row(j);
 				Qi.row(start).swap(Qi.row(j));
 			}
 			i = start + 1;
@@ -143,20 +142,21 @@ namespace Mackey{
 			auto thequotient = S(i, start) / S(start, start);
 			S.row(i).tail(N - start) += -thequotient * S.row(start).tail(N - start);
 			if (wantP) {
-				P.row(i) += -thequotient * P.row(start);
-				Pi.col(start) += thequotient * Pi.col(i);
+				P.row(i) += -static_cast<typename smithR_t::Scalar>(thequotient)* P.row(start);
+				Pi.col(start) += static_cast<typename smithC_t::Scalar>(thequotient)* Pi.col(i);
 			}
 			i++;
 		}
 		else if (mod(S(start, start), S(i, start)) == 0) {
 			S.row(start).tail(N - start).swap(S.row(i).tail(N - start));
 			auto thequotient = S(i, start) / S(start, start);
+			smithS_t temp = -thequotient * S.row(start).tail(N - start);
 			S.row(i).tail(N - start) += -thequotient * S.row(start).tail(N - start);
 			if (wantP) {
 				P.row(start).swap(P.row(i));
-				P.row(i) += -thequotient * P.row(start);
+				P.row(i) += -static_cast<typename smithR_t::Scalar>(thequotient)* P.row(start);
 				Pi.col(start).swap(Pi.col(i));
-				Pi.col(start) += thequotient * Pi.col(i);
+				Pi.col(start) += static_cast<typename smithC_t::Scalar>(thequotient)* Pi.col(i);
 			}
 			i++;
 			j = start + 1;
@@ -166,9 +166,9 @@ namespace Mackey{
 			S.row(i).tail(N - start) += -thequotient * S.row(start).tail(N - start);
 			S.row(start).tail(N - start).swap(S.row(i).tail(N - start));
 			if (wantP) {
-				P.row(i) += -thequotient * P.row(start);
+				P.row(i) += -static_cast<typename smithR_t::Scalar>(thequotient)* P.row(start);
 				P.row(start).swap(P.row(i));
-				Pi.col(start) += thequotient * Pi.col(i);
+				Pi.col(start) += static_cast<typename smithC_t::Scalar>(thequotient)* Pi.col(i);
 				Pi.col(start).swap(Pi.col(i));
 			}
 			j = start + 1;
@@ -210,7 +210,7 @@ namespace Mackey{
 					return;
 				}
 			}
-			//If you made it here then row is zero outside of start
+			/////If you made it here then row is zero outside of start
 			j = N;
 		}
 	}
@@ -245,8 +245,9 @@ namespace Mackey{
 					return;
 				}
 			}
-			//If you made it here then column is zero outside of start
+			/////////If you made it here then column is zero outside of start
 			i = M;
 		}
 	}
+
 }

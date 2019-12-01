@@ -13,27 +13,32 @@ namespace Mackey {
 	/////////////////////////////////////////////////
 	/// The integer type for the permutation matrices.
 	///
-	/// Short should be good enough for everything, char is only good for the additive structure.
+	/// Int for everything (including Massey products), short for everything else, char is only good for the additive structure.
 	/////////////////////////////////////////////////
-	typedef short pScalar; 
+	typedef int pScalar; 
+
 
 	///Returns the change of basis matrix (as a permutation) from basis A to basis B. A,B can be std::vector's
-	template<typename T>
-	std::vector<pScalar> changebasis(const T& A, const T& B)
+	template<typename Scalar, typename T>
+	std::vector<Scalar> changebasis(const T& A, const T& B)
 	{
-		auto size = A.size();
-		auto max = *std::max_element(A.begin(), A.end());
-		std::vector<pScalar> C(max + 1); //The inverse of A
-		for (size_t i = 0; i < size; i++) {
+		Scalar size = A.size();
+		long max = *std::max_element(A.begin(), A.end());
+		std::vector<Scalar> C(max + 1); //The inverse of A
+		for (Scalar i = 0; i < size; i++) {
 			C[A[i]] = i;
 		}
-		std::vector<pScalar> change;
+		std::vector<Scalar> change;
 		change.reserve(size);
-		for (auto i:B) {
+		for (const auto & i : B) {
 			change.push_back(C[i]); //change[i]=C[B[i]]
 		}
 		return change;
 	}
+
+	///Default template using the Mackey::pScalar
+	template<typename Scalar=pScalar, typename T>
+	std::vector<Scalar> changebasis(const T& A, const T& B);
 
 	///Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matrices (as permutations).
 	template<typename rank_t>
@@ -93,7 +98,8 @@ namespace Mackey {
 				}
 			}
 		}
-		return std::make_pair(changebasis(leftconv, canonical), changebasis(rightconv, canonical));
+		//GCC fails with default template argument deduction in the following if I don't manually include it as <pScalar>
+		return std::make_pair(changebasis<pScalar>(leftconv, canonical), changebasis<pScalar>(rightconv, canonical));
 	}
 
 
@@ -122,26 +128,40 @@ namespace Mackey {
 	////////////////////////////////////////////////////////////
 /// Memoizing the ChangeBasis constructor
 
-/// We utilize the observation that the ranks appearing look like ?,maxpower,...,maxpower,?. So we only need store the ?'s and total length
+/// We utilize the observation that with the exception of Massey products, the ranks appearing look like ?,prime^power,...,prime^power,?. So we only need store the ?'s and total length
 ///////////////////////////////////////////////////////////
 	template<typename rank_t>
 	ChangeBasis<rank_t> memoChangeBasis(const rank_t& rank1, const rank_t& rank2) {
 		static std::map<std::array<int, 6>, ChangeBasis<rank_t>> memoizer;
 		const std::array<int, 6> key = {static_cast<int>(rank2.size()), rank2[0], rank2[rank2.size() - 1], rank1[0], rank1[rank1.size() - 1], static_cast<int>(rank1.size()) };
-
-		const auto iterator = memoizer.find(key);
-		if (iterator == memoizer.end()) {
-			ChangeBasis<rank_t> newchange(rank1, rank2);
-			memoizer[key] = newchange;
-			return newchange;
+		bool notadmissible=0;
+		for (int i = 1; i < rank1.size() - 1; i++) {
+			if (rank1[i] != intexp(power)) {
+				notadmissible = 1;
+				break;
+			}
 		}
-		else {
-			return iterator->second;
+		for (int i = 1; i < rank2.size() - 1; i++) {
+			if (rank2[i] != intexp(power)) {
+				notadmissible = 1;
+				break;
+			}
 		}
+		if (!notadmissible) {
+			const auto iterator = memoizer.find(key);
+			if (iterator == memoizer.end()) {
+				ChangeBasis<rank_t> newchange(rank1, rank2);
+				memoizer[key] = newchange;
+				return newchange;
+			}
+			else
+				return iterator->second;
+		}
+		return ChangeBasis<rank_t>(rank1, rank2);
 	}
 
 
-	//A more general (but slower) memoizer
+	//A slower memoizer
 	//template<typename rank_t, typename pScalar>
 	//ChangeBasis<rank_t, pScalar> memoChangeBasis(const rank_t& rank1, const rank_t& rank2) {
 	//	static std::map<std::pair<std::vector<typename rank_t::Scalar>, std::vector<typename rank_t::Scalar>>, ChangeBasis<rank_t>> memoizer;

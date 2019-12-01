@@ -137,14 +137,14 @@ namespace C4Test{
 			auto M = ROHomology<rank_t, diff_t>(i);
 			int k = 0;
 			for (auto& j : M) {
-				auto name=identify(j);
 				if (!silence) {
+					auto name = identify<rank_t, diff_t>(j);
 					auto MackeyName = C4MackeyAnswer(k, n, m);
-					if (MackeyName != name)
-						throw(0);
-					else {
-						std::cout << "The k=" << k << " homology of the n=" << n << " and m=" << m << " sphere is " << MackeyName << "\n";
-					}
+					//if (MackeyName != name)
+					//	throw(0);
+					//else {
+					std::cout << "The k=" << invReindex<std::vector<int>>(k, { n,m }) << " homology of the n=" << n << " and m=" << m << " sphere is " << name << "\n";
+						//}
 				}
 				k++;
 			}
@@ -211,6 +211,10 @@ namespace C4Test{
 				throw(2);
 			}
 		}
+
+		//element = -8 * u2sigma +6 * ulambda;
+		//basis = ROGreen<rank_t, diff_t, rank_t>(2, u2sigma, element);
+
 
 
 		for (int n2 = 0; n2 >= -rangeN2; n2--) {
@@ -418,6 +422,10 @@ namespace C4Test{
 				}
 			}
 		}
+
+//element = 9 * u2sigma -10 * ulambda;
+//basis = ROGreen<rank_t, diff_t, rank_t>(2, ulambda, element, 0, 1);
+
 
 		for (int n2 = 1; n2 <= rangeN2; n2++) {
 			for (int m2 = -1; m2 >= -rangeM2; m2--) {

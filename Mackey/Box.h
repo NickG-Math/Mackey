@@ -32,25 +32,14 @@ namespace Mackey {
 		void getrangerank();
 		void getdiff();
 
-		/// The box (tensor) product of Chains
+		/// The box (tensor) product of Chains as a Junction in a desired degree
 		template<typename shadow_rank_t, typename shadow_diff_t>
 		friend class JunctionBox;
-		/// Get the box product of C,D up to index i
+
+		/// The box (tensor) product of Chains
 		template<typename shadow_rank_t, typename shadow_diff_t>
-		friend Chains<shadow_rank_t, shadow_diff_t> Box(const Chains<shadow_rank_t, shadow_diff_t>& C, const Chains<shadow_rank_t, shadow_diff_t>& D, int i);
-	};
+		friend class ChainsBox;
 
-
-	/// The box (tensor) product of Chains
-	template<typename rank_t, typename diff_t>
-	class JunctionBox :public Junction<rank_t, diff_t> {
-	public:
-
-		/// The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding)
-		std::vector<rank_t> detailedrank;
-
-		/// Get the i-th Junction of C box D.
-		JunctionBox(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int);
 	};
 
 
@@ -119,9 +108,8 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	void BoxPoint<rank_t, diff_t> ::getdiff() {
-		std::vector<diff_t> LeftDiff;
-		LeftDiff.resize(i + 1);
-		std::vector<diff_t> RightDiff = LeftDiff;
+		std::vector<diff_t> LeftDiff(i + 1);
+		std::vector<diff_t> RightDiff(i + 1);
 
 		for (int j = lowlimit; j <= highlimit; j++) {
 			auto Domain = memoChangeBasis<rank_t>(C.rank[j], D.rank[i - j]);
@@ -133,7 +121,7 @@ namespace Mackey {
 			}
 			if (i - j >= 1) //We have a RightDiff
 			{
-				auto sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
+				typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
 				diff_t convRightDiff = sign * blkdiag(D.diff[i - j], summation(C.rank[j]));
 				auto RangeR = memoChangeBasis<rank_t>(C.rank[j], D.rank[i - j - 1]);
 				RightDiff[j] = RangeR.RighttoCanon.inverse() * convRightDiff * Domain.RighttoCanon;
@@ -141,6 +129,72 @@ namespace Mackey {
 		}
 		diff = MatrixMixer(LeftDiff, RightDiff);
 	}
+
+
+	template<typename rank_t, typename diff_t>
+	class ChainsBox :public Chains<rank_t, diff_t> {
+	public:
+
+		/// The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding)
+		std::vector<std::vector<rank_t>> detailedrank;
+
+		///Default Constructor
+		ChainsBox() {};
+
+		/// Set the variables directly
+		ChainsBox(const std::vector<rank_t>& rank, const std::vector<diff_t>& diff, const std::vector<std::vector<rank_t>>& detailedrank)
+			:Chains<rank_t,diff_t>(rank,diff), detailedrank(detailedrank){}
+
+		/// Get C box D up to index i.
+		ChainsBox(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int);
+
+		/// Get C box D.
+		ChainsBox(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&);
+
+	};
+
+	template<typename rank_t, typename diff_t>
+	ChainsBox<rank_t, diff_t>::ChainsBox(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i) {
+		std::vector<rank_t> rank;
+		std::vector<diff_t> diff;
+		std::vector<std::vector<rank_t>> detailedrank;
+		rank.reserve(i + 1);
+		diff.reserve(i + 1);
+		detailedrank.reserve(i + 1);
+		for (int j = 0; j <= i;j++) {
+			BoxPoint<rank_t, diff_t> BoxedAtPointj(C, D, j);
+			BoxedAtPointj.getdomainrank();
+			BoxedAtPointj.getdiff();
+			rank.push_back(BoxedAtPointj.rank_domain);
+			diff.push_back(BoxedAtPointj.diff);
+			detailedrank.push_back(BoxedAtPointj.detailedrank);
+		}
+		*this=ChainsBox<rank_t, diff_t>(rank, diff,detailedrank);
+	}
+
+	template<typename rank_t, typename diff_t>
+	ChainsBox<rank_t, diff_t>::ChainsBox(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D) : ChainsBox<rank_t, diff_t>(C, D, C.maxindex + D.maxindex) {}
+
+
+
+	/// The box (tensor) product of Chains as a Junction in the given degree
+	template<typename rank_t, typename diff_t>
+	class JunctionBox :public Junction<rank_t, diff_t> {
+	public:
+
+		/// The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding)
+		std::vector<rank_t> detailedrank;
+
+		///Default Constructor
+		JunctionBox() {};
+
+		/// Get the i-th Junction of C box D.
+		JunctionBox(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int);
+
+		///Get the i-th Junction of an already boxed chain
+		JunctionBox(const ChainsBox<rank_t, diff_t>&, int);
+
+	};
 
 	template<typename rank_t, typename diff_t>
 	JunctionBox<rank_t, diff_t>::JunctionBox(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i)
@@ -163,32 +217,24 @@ namespace Mackey {
 		}
 	}
 
-
+	template<typename rank_t, typename diff_t>
+	JunctionBox<rank_t, diff_t>::JunctionBox(const ChainsBox<rank_t, diff_t>& C, int i) : Junction<rank_t,diff_t>(C,i)
+	{
+		detailedrank = C.detailedrank[i];
+	}
 
 
 	/// Get the box product of C,D up to index i
 	template<typename rank_t, typename diff_t>
-	Chains<rank_t, diff_t> Box(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i) {
-		std::vector<rank_t> rank;
-		std::vector<diff_t> diff;
-		rank.reserve(i + 1);
-		diff.reserve(i + 1);
-		for (int j = 0; j <= i;j++) {
-			BoxPoint<rank_t, diff_t> BoxedAtPointj(C, D, j);
-			BoxedAtPointj.getdomainrank();
-			BoxedAtPointj.getdiff();
-			rank.push_back(BoxedAtPointj.rank_domain);
-			diff.push_back(BoxedAtPointj.diff);
-		}
-		Chains<rank_t, diff_t> Boxed(rank, diff);
-		return Boxed;
+	inline Chains<rank_t, diff_t> Box(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i) {
+		return ChainsBox<rank_t, diff_t>(C,D,i);
 	}
 
 
 	
 	/// Get the entire box product of C,D
 	template<typename rank_t, typename diff_t>
-	Chains<rank_t, diff_t> Box(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D) {
-		return Box < rank_t, diff_t>(C, D, C.maxindex + D.maxindex);
+	inline Chains<rank_t, diff_t> Box(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D) {
+		return Box<rank_t, diff_t>(C, D, C.maxindex + D.maxindex);
 	}
 }

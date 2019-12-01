@@ -10,7 +10,7 @@
 
 namespace Mackey {
 	//////////////////////////////////////////////
-	/// The box (tensor) product of Chains
+	/// The box (tensor) product of Chains at a single index
 
 	/// We only store a single differential and the ranks of its domain and range
 	/// Use through JunctionBox or the friend function Box.
@@ -130,7 +130,7 @@ namespace Mackey {
 		diff = MatrixMixer(LeftDiff, RightDiff);
 	}
 
-
+	/// The box (tensor) product of Chains
 	template<typename rank_t, typename diff_t>
 	class ChainsBox :public Chains<rank_t, diff_t> {
 	public:
@@ -177,7 +177,7 @@ namespace Mackey {
 
 
 
-	/// The box (tensor) product of Chains as a Junction in the given degree
+	/// The box (tensor) product of Chains as a Junction in the given index
 	template<typename rank_t, typename diff_t>
 	class JunctionBox :public Junction<rank_t, diff_t> {
 	public:

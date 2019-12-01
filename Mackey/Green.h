@@ -50,9 +50,10 @@ namespace Mackey {
 
 
 	namespace internal {
+		
+		///Computes the homology at given level, the generators and their restrictions
 		template<typename rank_t, typename diff_t>
 		class ChainsLevelGen {
-		public:
 			typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
 			diff_t Gens;
 			gen_t gen, res_gen;
@@ -77,6 +78,13 @@ namespace Mackey {
 					gen = Gens.col(0);
 				res_gen = restriction(gen, rank_level, C.rank[degree]);
 			}
+
+			template<typename s_rank_t, typename s_diff_t>
+			friend class GreenCompute;
+			
+			template<typename s_rank_t, typename s_diff_t>
+			friend class MasseyCompute;
+
 		};
 
 

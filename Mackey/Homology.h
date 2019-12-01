@@ -13,8 +13,7 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	class Homology {
 	public:
-<<<<<<< HEAD
-=======
+
 		
 //////////////////////////////////////////////////
 ///The floating point type for Homology computations
@@ -24,8 +23,6 @@ namespace Mackey {
 		typedef float fScalar;
 		typedef Eigen::Matrix<fScalar, -1, -1> fdiff_t;	///<The type of our casted differentials
 
-
->>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 		rank_t Groups;///<Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3
 		diff_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
 		bool isZero;///<1 if the homology is trivial

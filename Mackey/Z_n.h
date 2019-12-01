@@ -161,8 +161,9 @@ inline std::ostream& operator<<(std::ostream& out, const Z<2>& a) {
 	return out << a.x;
 }
 
-//See the Eigen documentation for this. 
+///See the Eigen documentation for this. 
 namespace Eigen {
+	///Specializing NumTraits to Z/nZ coefficients
 	template<int N>
 	struct NumTraits<Z<N>>
 	{

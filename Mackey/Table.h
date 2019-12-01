@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 #pragma once
 #include "Compute.h"
 #include "Green.h"
+
 ///@file
 ///@brief Contains the classes and methods to form the multiplication table/graph.
 

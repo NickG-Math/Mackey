@@ -78,6 +78,7 @@ namespace Mackey {
 	class Levels {
 	public:
 		std::vector<T> level; ///<The various levels.
+
 		///Transfer the bottom and get all levels.
 		Levels(T& bottom) {
 			level.resize(power + 1);

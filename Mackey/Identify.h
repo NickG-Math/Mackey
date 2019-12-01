@@ -20,6 +20,7 @@ namespace Mackey {
 		rank_t group_lower; ///<The homology group at one level lower
 		std::vector<rank_t> Tr; ///<The transfers of the lower level generators to our level
 		std::vector<rank_t> Res; ///<The restrictions of the generators to the lower level
+
 		///Default Constructor
 		IDGenerators() {};
 	};
@@ -133,7 +134,7 @@ namespace Mackey {
 		return better_candidates;
 	}
 
-
+	///Contains classes and methods whose user interface is provided by the rest of the library
 	namespace internal {
 		///Computes the homology at given level and the identification data coming from the Mackey functor structure
 		template<typename rank_t, typename diff_t>
@@ -145,7 +146,6 @@ namespace Mackey {
 			IDGeneratorCompute() {};
 			IDGeneratorCompute(int level, const Junction<rank_t, diff_t>& bottom, bool getQ);
 			IDGeneratorCompute(int level, const Junction<rank_t, diff_t>& bottom);
-
 		private:
 			///Identifies the generators in case of non cyclic homology.
 			void id(const Junction<rank_t, diff_t>&);

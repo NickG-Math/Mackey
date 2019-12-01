@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('General_8h.html','');});
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;Eigen/Dense&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for General.h:</div>
 <div class="dyncontent">
@@ -111,12 +112,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="General_8h__dep__incl.png" border="0" usemap="#Mackey_2General_8hdep" alt=""/></div>
 <map name="Mackey_2General_8hdep" id="Mackey_2General_8hdep">
 <area shape="rect" id="node2" href="Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node7" href="Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="137,80,258,107"/>
-<area shape="rect" id="node8" href="Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="282,80,425,107"/>
-<area shape="rect" id="node3" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="138,155,257,181"/>
-<area shape="rect" id="node4" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="77,229,213,256"/>
-<area shape="rect" id="node5" href="Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="140,304,255,331"/>
-<area shape="rect" id="node6" href="Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="118,379,277,405"/>
+<area shape="rect" id="node8" href="Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="189,80,331,107"/>
+<area shape="rect" id="node9" href="Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="93,155,214,181"/>
+<area shape="rect" id="node3" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="94,229,213,256"/>
+<area shape="rect" id="node4" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="83,379,219,405"/>
+<area shape="rect" id="node5" href="Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="145,453,260,480"/>
+<area shape="rect" id="node7" href="Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="89,304,218,331"/>
+<area shape="rect" id="node6" href="Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="123,528,282,555"/>
+<area shape="rect" id="node10" href="Identify_8h.html" title="Contains the identification classes. " alt="" coords="238,155,365,181"/>
 </map>
 </div>
 </div>
@@ -132,23 +135,42 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a49fef6f64b67ff118d35ac45b9c92972"><td class="memTemplParams" colspan="2">template&lt;typename deg_t &gt; </td></tr>
 <tr class="memitem:a49fef6f64b67ff118d35ac45b9c92972"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; deg_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972">Mackey::DegreeConstruction</a> (const deg_t &amp;minimum, const deg_t &amp;maximum)</td></tr>
+<tr class="memdesc:a49fef6f64b67ff118d35ac45b9c92972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given minimum and maximum degrees, constructs everything in between.  <a href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972">More...</a><br /></td></tr>
 <tr class="separator:a49fef6f64b67ff118d35ac45b9c92972"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb4d03d1e773bb1004e3b41737ef2380"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abb4d03d1e773bb1004e3b41737ef2380"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#abb4d03d1e773bb1004e3b41737ef2380">Mackey::remove0th</a> (const T *const &amp;ptr, int size)</td></tr>
-<tr class="memdesc:abb4d03d1e773bb1004e3b41737ef2380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given vector or array returns vector starting from index 1.  <a href="namespaceMackey.html#abb4d03d1e773bb1004e3b41737ef2380">More...</a><br /></td></tr>
-<tr class="separator:abb4d03d1e773bb1004e3b41737ef2380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e4b11e9d2a5b70f8380af87cae31ef3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a1e4b11e9d2a5b70f8380af87cae31ef3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3">Mackey::tail</a> (const T *const &amp;ptr, int size, int start)</td></tr>
+<tr class="memdesc:a1e4b11e9d2a5b70f8380af87cae31ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given vector or array returns vector starting from index start.  <a href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3">More...</a><br /></td></tr>
+<tr class="separator:a1e4b11e9d2a5b70f8380af87cae31ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4403b34f0680dfccf2ab79111f832ba3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4403b34f0680dfccf2ab79111f832ba3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a4403b34f0680dfccf2ab79111f832ba3">Mackey::tail</a> (const T *const &amp;ptr, int size)</td></tr>
+<tr class="memdesc:a4403b34f0680dfccf2ab79111f832ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given vector or array returns vector starting from index 1.  <a href="namespaceMackey.html#a4403b34f0680dfccf2ab79111f832ba3">More...</a><br /></td></tr>
+<tr class="separator:a4403b34f0680dfccf2ab79111f832ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74984d054f1f943ab61dd0415347f141"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a74984d054f1f943ab61dd0415347f141"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a74984d054f1f943ab61dd0415347f141">Mackey::find</a> (const T &amp;v, int a)</td></tr>
+<tr class="memdesc:a74984d054f1f943ab61dd0415347f141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find first instance of a in v.  <a href="namespaceMackey.html#a74984d054f1f943ab61dd0415347f141">More...</a><br /></td></tr>
+<tr class="separator:a74984d054f1f943ab61dd0415347f141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7a26880f8c7c087503e2bc16168d3c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
+<tr class="memitem:a1a7a26880f8c7c087503e2bc16168d3c"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a1a7a26880f8c7c087503e2bc16168d3c">Mackey::findcount</a> (const T &amp;v, S a)</td></tr>
+<tr class="memdesc:a1a7a26880f8c7c087503e2bc16168d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the instances of a in v and return the last one.  <a href="namespaceMackey.html#a1a7a26880f8c7c087503e2bc16168d3c">More...</a><br /></td></tr>
+<tr class="separator:a1a7a26880f8c7c087503e2bc16168d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86cc6cbaa708580f4e382b066bd0b7d4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a86cc6cbaa708580f4e382b066bd0b7d4">Mackey::basisVector</a> (int total, int position, int multiple)</td></tr>
+<tr class="memdesc:a86cc6cbaa708580f4e382b066bd0b7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes the multiple of the basis vector 0,...,multiple,...,0.  <a href="namespaceMackey.html#a86cc6cbaa708580f4e382b066bd0b7d4">More...</a><br /></td></tr>
+<tr class="separator:a86cc6cbaa708580f4e382b066bd0b7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3454eb9b2574a835a29e3f58cfc6ead"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae3454eb9b2574a835a29e3f58cfc6ead">Mackey::basisVector</a> (int total, int position)</td></tr>
+<tr class="memdesc:ae3454eb9b2574a835a29e3f58cfc6ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes the basis vector 0,...,1,...,0.  <a href="namespaceMackey.html#ae3454eb9b2574a835a29e3f58cfc6ead">More...</a><br /></td></tr>
+<tr class="separator:ae3454eb9b2574a835a29e3f58cfc6ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae44b27dcf905a7ff976ebc79f197c579"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename T &gt; </td></tr>
-<tr class="memitem:ae44b27dcf905a7ff976ebc79f197c579"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579">Mackey::KeepRow</a> (const Eigen::DenseBase&lt; Derived &gt; &amp;A, const std::vector&lt; T &gt; &amp;Z)</td></tr>
-<tr class="memdesc:ae44b27dcf905a7ff976ebc79f197c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its rows indicated by Z.  <a href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579">More...</a><br /></td></tr>
+<tr class="memitem:ae44b27dcf905a7ff976ebc79f197c579"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579">Mackey::KeepRow</a> (const Eigen::DenseBase&lt; Derived &gt; &amp;A, const std::vector&lt; T &gt; &amp;<a class="el" href="classZ.html">Z</a>)</td></tr>
+<tr class="memdesc:ae44b27dcf905a7ff976ebc79f197c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its rows indicated by <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>.  <a href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579">More...</a><br /></td></tr>
 <tr class="separator:ae44b27dcf905a7ff976ebc79f197c579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a782d9ce52543c3ae3520b4859dda3240"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename T &gt; </td></tr>
-<tr class="memitem:a782d9ce52543c3ae3520b4859dda3240"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a782d9ce52543c3ae3520b4859dda3240">Mackey::KeepCol</a> (const Eigen::DenseBase&lt; Derived &gt; &amp;A, const std::vector&lt; T &gt; &amp;Z)</td></tr>
-<tr class="memdesc:a782d9ce52543c3ae3520b4859dda3240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its columns indicated by Z.  <a href="namespaceMackey.html#a782d9ce52543c3ae3520b4859dda3240">More...</a><br /></td></tr>
+<tr class="memitem:a782d9ce52543c3ae3520b4859dda3240"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a782d9ce52543c3ae3520b4859dda3240">Mackey::KeepCol</a> (const Eigen::DenseBase&lt; Derived &gt; &amp;A, const std::vector&lt; T &gt; &amp;<a class="el" href="classZ.html">Z</a>)</td></tr>
+<tr class="memdesc:a782d9ce52543c3ae3520b4859dda3240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its columns indicated by <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>.  <a href="namespaceMackey.html#a782d9ce52543c3ae3520b4859dda3240">More...</a><br /></td></tr>
 <tr class="separator:a782d9ce52543c3ae3520b4859dda3240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37f0a650642090aa89d5cbc89dc5d0ee"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a37f0a650642090aa89d5cbc89dc5d0ee"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee">Mackey::summation</a> (const T &amp;A)</td></tr>
-<tr class="memdesc:a37f0a650642090aa89d5cbc89dc5d0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the sum of the entries of an Eigen vector at higher precision than its inputs.  <a href="namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee">More...</a><br /></td></tr>
-<tr class="separator:a37f0a650642090aa89d5cbc89dc5d0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="memTemplParams" colspan="2">template&lt;typename Derived &gt; </td></tr>
+<tr class="memitem:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52">Mackey::summation</a> (const Eigen::MatrixBase&lt; Derived &gt; &amp;A)</td></tr>
+<tr class="memdesc:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the sum of the entries of an <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> vector at higher precision than its inputs.  <a href="namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52">More...</a><br /></td></tr>
+<tr class="separator:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38a833de54971845cbdb8c96f830725b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a38a833de54971845cbdb8c96f830725b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a38a833de54971845cbdb8c96f830725b">Mackey::rotate</a> (T &amp;V)</td></tr>
 <tr class="memdesc:a38a833de54971845cbdb8c96f830725b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circularly rotates given V (an Eigen/std vector)  <a href="namespaceMackey.html#a38a833de54971845cbdb8c96f830725b">More...</a><br /></td></tr>
@@ -165,6 +187,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ae86e49097ef9a09ebcd0173881e88786"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae86e49097ef9a09ebcd0173881e88786">Mackey::operator-</a> (const std::vector&lt; T &gt; &amp;a, const std::vector&lt; T &gt; &amp;b)</td></tr>
 <tr class="memdesc:ae86e49097ef9a09ebcd0173881e88786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordinate-wise difference of vectors (up to the minimum of their lengths)  <a href="namespaceMackey.html#ae86e49097ef9a09ebcd0173881e88786">More...</a><br /></td></tr>
 <tr class="separator:ae86e49097ef9a09ebcd0173881e88786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae235ee5dd92dc1ca64388b8fbb1b4d75"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae235ee5dd92dc1ca64388b8fbb1b4d75"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae235ee5dd92dc1ca64388b8fbb1b4d75">Mackey::operator*</a> (T a, const std::vector&lt; T &gt; &amp;b)</td></tr>
+<tr class="memdesc:ae235ee5dd92dc1ca64388b8fbb1b4d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordinate-wise difference of vectors (up to the minimum of their lengths)  <a href="namespaceMackey.html#ae235ee5dd92dc1ca64388b8fbb1b4d75">More...</a><br /></td></tr>
+<tr class="separator:ae235ee5dd92dc1ca64388b8fbb1b4d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2">Mackey::lcm</a> (const T &amp;v)</td></tr>
+<tr class="memdesc:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Least common multiple of vector of elements.  <a href="namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2">More...</a><br /></td></tr>
+<tr class="separator:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains general functions and vector overloads independent of everything else. </p>

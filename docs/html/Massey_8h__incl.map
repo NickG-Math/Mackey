@@ -1,0 +1,15 @@
+<map id="Mackey/Massey.h" name="Mackey/Massey.h">
+<area shape="rect" id="node2" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="555,80,623,107"/>
+<area shape="rect" id="node3" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="518,155,589,181"/>
+<area shape="rect" id="node16" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="599,229,655,256"/>
+<area shape="rect" id="node21" href="$Identify_8h.html" title="Contains the identification classes. " alt="" coords="418,155,494,181"/>
+<area shape="rect" id="node4" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="313,229,396,256"/>
+<area shape="rect" id="node10" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="421,229,513,256"/>
+<area shape="rect" id="node11" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="627,304,706,331"/>
+<area shape="rect" id="node5" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="389,304,464,331"/>
+<area shape="rect" id="node7" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="243,304,365,331"/>
+<area shape="rect" id="node13" href="$Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="101,304,168,331"/>
+<area shape="rect" id="node17" href="$Matrix__Mixing_8h.html" title="Contains block operations on matrices. " alt="" coords="488,304,603,331"/>
+<area shape="rect" id="node18" href="$ChangeBasis_8h.html" title="Contains the construction of the change of basis matrices. " alt="" coords="730,304,841,331"/>
+<area shape="rect" id="node22" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="178,229,233,256"/>
+</map>

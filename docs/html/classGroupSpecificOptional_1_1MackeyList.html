@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mackey: GroupSpecificOptional::MackeyList&lt; rank_t &gt; Class Template Reference</title>
+<title>Mackey: GroupSpecificOptional::MackeyList&lt; rank_t, diff_t &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('classGroupSpecificOptional_1_1MackeyLi
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classGroupSpecificOptional_1_1MackeyList-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GroupSpecificOptional::MackeyList&lt; rank_t &gt; Class Template Reference</div>  </div>
+<div class="title">GroupSpecificOptional::MackeyList&lt; rank_t, diff_t &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -103,33 +103,33 @@ $(document).ready(function(){initNavTree('classGroupSpecificOptional_1_1MackeyLi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:aa15b7c7dbcccc2b30442f46aba42b776"><td class="memItemLeft" align="right" valign="top">static const std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroupSpecificOptional_1_1MackeyList.html#aa15b7c7dbcccc2b30442f46aba42b776">Mackeys</a></td></tr>
-<tr class="memdesc:aa15b7c7dbcccc2b30442f46aba42b776"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors.  <a href="#aa15b7c7dbcccc2b30442f46aba42b776">More...</a><br /></td></tr>
-<tr class="separator:aa15b7c7dbcccc2b30442f46aba42b776"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e25429ed075c31ace2b02bf72f5ef05"><td class="memItemLeft" align="right" valign="top">static const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroupSpecificOptional_1_1MackeyList.html#a8e25429ed075c31ace2b02bf72f5ef05">names</a></td></tr>
-<tr class="memdesc:a8e25429ed075c31ace2b02bf72f5ef05"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of names.  <a href="#a8e25429ed075c31ace2b02bf72f5ef05">More...</a><br /></td></tr>
-<tr class="separator:a8e25429ed075c31ace2b02bf72f5ef05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abffda7eb6d7cd59f7ea8acb8b6eeb88a"><td class="memItemLeft" align="right" valign="top">static const std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroupSpecificOptional_1_1MackeyList.html#abffda7eb6d7cd59f7ea8acb8b6eeb88a">Mackeys</a></td></tr>
+<tr class="memdesc:abffda7eb6d7cd59f7ea8acb8b6eeb88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors.  <a href="#abffda7eb6d7cd59f7ea8acb8b6eeb88a">More...</a><br /></td></tr>
+<tr class="separator:abffda7eb6d7cd59f7ea8acb8b6eeb88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306cea4e8666fb46637a988b84ea477d"><td class="memItemLeft" align="right" valign="top">static const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroupSpecificOptional_1_1MackeyList.html#a306cea4e8666fb46637a988b84ea477d">names</a></td></tr>
+<tr class="memdesc:a306cea4e8666fb46637a988b84ea477d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of names.  <a href="#a306cea4e8666fb46637a988b84ea477d">More...</a><br /></td></tr>
+<tr class="separator:a306cea4e8666fb46637a988b84ea477d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename rank_t&gt;<br />
-class GroupSpecificOptional::MackeyList&lt; rank_t &gt;</h3>
+<div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
+class GroupSpecificOptional::MackeyList&lt; rank_t, diff_t &gt;</h3>
 
 <p>A list of <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors and their names. </p>
-<p>Only used if macro MACKEY_NAMES is defined (list is optional) </p>
+<p>Only used if macro MACKEY_NAMES is defined (list is optional). The diff_t template is used to get the coefficient type </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa15b7c7dbcccc2b30442f46aba42b776"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa15b7c7dbcccc2b30442f46aba42b776">&#9670;&nbsp;</a></span>Mackeys</h2>
+<a id="abffda7eb6d7cd59f7ea8acb8b6eeb88a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abffda7eb6d7cd59f7ea8acb8b6eeb88a">&#9670;&nbsp;</a></span>Mackeys</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rank_t&gt; </div>
+template&lt;typename rank_t, typename diff_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;<a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt;rank_t&gt; &gt; <a class="el" href="classGroupSpecificOptional_1_1MackeyList.html">GroupSpecificOptional::MackeyList</a>&lt; rank_t &gt;::Mackeys</td>
+          <td class="memname">const std::vector&lt;<a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt;rank_t&gt; &gt; <a class="el" href="classGroupSpecificOptional_1_1MackeyList.html">GroupSpecificOptional::MackeyList</a>&lt; rank_t, diff_t &gt;::Mackeys</td>
         </tr>
       </table>
   </td>
@@ -143,19 +143,19 @@ template&lt;typename rank_t&gt; </div>
 
 </div>
 </div>
-<a id="a8e25429ed075c31ace2b02bf72f5ef05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e25429ed075c31ace2b02bf72f5ef05">&#9670;&nbsp;</a></span>names</h2>
+<a id="a306cea4e8666fb46637a988b84ea477d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306cea4e8666fb46637a988b84ea477d">&#9670;&nbsp;</a></span>names</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rank_t&gt; </div>
+template&lt;typename rank_t, typename diff_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;std::string&gt; <a class="el" href="classGroupSpecificOptional_1_1MackeyList.html">GroupSpecificOptional::MackeyList</a>&lt; rank_t &gt;::names</td>
+          <td class="memname">const std::vector&lt;std::string&gt; <a class="el" href="classGroupSpecificOptional_1_1MackeyList.html">GroupSpecificOptional::MackeyList</a>&lt; rank_t, diff_t &gt;::names</td>
         </tr>
       </table>
   </td>

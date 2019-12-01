@@ -125,8 +125,11 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a97f16eca1aa9f4f6c36c2680fdcf277e"><td class="memItemLeft" align="right" valign="top">smithC_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a97f16eca1aa9f4f6c36c2680fdcf277e">Pi</a></td></tr>
 <tr class="memdesc:a97f16eca1aa9f4f6c36c2680fdcf277e"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (A=Pi*S*Qi). Should be column major for best performance.  <a href="#a97f16eca1aa9f4f6c36c2680fdcf277e">More...</a><br /></td></tr>
 <tr class="separator:a97f16eca1aa9f4f6c36c2680fdcf277e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af473e56486c5081b2e1f657bc8df5539"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; typename smithS_t::Scalar, 1,-1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#af473e56486c5081b2e1f657bc8df5539">diagonal</a></td></tr>
+<tr class="memdesc:af473e56486c5081b2e1f657bc8df5539"><td class="mdescLeft">&#160;</td><td class="mdescRight">The diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> normal form.  <a href="#af473e56486c5081b2e1f657bc8df5539">More...</a><br /></td></tr>
+<tr class="separator:af473e56486c5081b2e1f657bc8df5539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02ea735836a4a70f504e360495b0e1e1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a02ea735836a4a70f504e360495b0e1e1">L</a></td></tr>
-<tr class="memdesc:a02ea735836a4a70f504e360495b0e1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The length of the diagonal of S.  <a href="#a02ea735836a4a70f504e360495b0e1e1">More...</a><br /></td></tr>
+<tr class="memdesc:a02ea735836a4a70f504e360495b0e1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The length of the diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> normal form.  <a href="#a02ea735836a4a70f504e360495b0e1e1">More...</a><br /></td></tr>
 <tr class="separator:a02ea735836a4a70f504e360495b0e1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -175,6 +178,24 @@ template&lt;typename smithS_t , typename smithR_t , typename smithC_t &gt; </div
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="af473e56486c5081b2e1f657bc8df5539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af473e56486c5081b2e1f657bc8df5539">&#9670;&nbsp;</a></span>diagonal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix&lt;typename smithS_t::Scalar,1,-1&gt; <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::diagonal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> normal form. </p>
+
+</div>
+</div>
 <a id="a02ea735836a4a70f504e360495b0e1e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02ea735836a4a70f504e360495b0e1e1">&#9670;&nbsp;</a></span>L</h2>
 
@@ -189,7 +210,7 @@ template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>The length of the diagonal of S. </p>
+<p>The length of the diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> normal form. </p>
 
 </div>
 </div>

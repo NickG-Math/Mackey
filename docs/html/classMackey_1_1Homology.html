@@ -110,10 +110,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a31e26f0fb8e1cd7f0506ae1dbc97ea22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22">Homology</a> (const <a class="el" href="classMackey_1_1Junction.html">Junction</a>&lt; rank_t, diff_t &gt; &amp;)</td></tr>
 <tr class="memdesc:a31e26f0fb8e1cd7f0506ae1dbc97ea22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the homology from the given <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a>.  <a href="#a31e26f0fb8e1cd7f0506ae1dbc97ea22">More...</a><br /></td></tr>
 <tr class="separator:a31e26f0fb8e1cd7f0506ae1dbc97ea22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ef6bc9a9859c3711c11d153ba55b3e1"><td class="memTemplParams" colspan="2">template&lt;typename gen_t &gt; </td></tr>
-<tr class="memitem:a3ef6bc9a9859c3711c11d153ba55b3e1"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a3ef6bc9a9859c3711c11d153ba55b3e1">basis</a> (const gen_t &amp;)</td></tr>
-<tr class="memdesc:a3ef6bc9a9859c3711c11d153ba55b3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an element in homology, write it as a linear combination of the generators of the homology.  <a href="#a3ef6bc9a9859c3711c11d153ba55b3e1">More...</a><br /></td></tr>
-<tr class="separator:a3ef6bc9a9859c3711c11d153ba55b3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42f480509ef68df47308c0f506d44c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#af42f480509ef68df47308c0f506d44c8">Homology</a> (const <a class="el" href="classMackey_1_1Junction.html">Junction</a>&lt; rank_t, diff_t &gt; &amp;, bool)</td></tr>
+<tr class="memdesc:af42f480509ef68df47308c0f506d44c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the homology from the given <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a> with an extra computation of a coefficient matrix needed for boundaries (if getQ=1)  <a href="#af42f480509ef68df47308c0f506d44c8">More...</a><br /></td></tr>
+<tr class="separator:af42f480509ef68df47308c0f506d44c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2887ea74253108f9daff515536538920"><td class="memTemplParams" colspan="2">template&lt;typename gen_t &gt; </td></tr>
+<tr class="memitem:a2887ea74253108f9daff515536538920"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920">basis</a> (const gen_t &amp;) const</td></tr>
+<tr class="memdesc:a2887ea74253108f9daff515536538920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an element in homology, write it as a linear combination of the generators of the homology.  <a href="#a2887ea74253108f9daff515536538920">More...</a><br /></td></tr>
+<tr class="separator:a2887ea74253108f9daff515536538920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a8814da8edd53320b0054a5f253d12"><td class="memTemplParams" colspan="2">template&lt;typename gen_t &gt; </td></tr>
+<tr class="memitem:a75a8814da8edd53320b0054a5f253d12"><td class="memTemplItemLeft" align="right" valign="top">gen_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a75a8814da8edd53320b0054a5f253d12">boundary</a> (const gen_t &amp;) const</td></tr>
+<tr class="memdesc:a75a8814da8edd53320b0054a5f253d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an x that is a boundary returns a y s.t. dy=x.  <a href="#a75a8814da8edd53320b0054a5f253d12">More...</a><br /></td></tr>
+<tr class="separator:a75a8814da8edd53320b0054a5f253d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -134,7 +141,7 @@ class Mackey::Homology&lt; rank_t, diff_t &gt;</h3>
 <p>The <a class="el" href="classMackey_1_1Homology.html" title="The Homology of a Junction. ">Homology</a> of a <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3580b194f986bd59a02fb84db97e00f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3580b194f986bd59a02fb84db97e00f2">&#9670;&nbsp;</a></span>Homology() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3580b194f986bd59a02fb84db97e00f2">&#9670;&nbsp;</a></span>Homology() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,15 +171,16 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph" alt=""/></div>
 <map name="classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph" id="classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a3ef6bc9a9859c3711c11d153ba55b3e1" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="256,5,431,32"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="479,5,612,32"/>
+<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="267,5,441,32"/>
+<area shape="rect" id="node4" href="classMackey_1_1Homology.html#a75a8814da8edd53320b0054a5f253d12" title="Given an x that is a boundary returns a y s.t. dy=x. " alt="" coords="256,56,452,83"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="500,31,633,57"/>
 </map>
 </div>
 
 </div>
 </div>
 <a id="a31e26f0fb8e1cd7f0506ae1dbc97ea22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31e26f0fb8e1cd7f0506ae1dbc97ea22">&#9670;&nbsp;</a></span>Homology() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e26f0fb8e1cd7f0506ae1dbc97ea22">&#9670;&nbsp;</a></span>Homology() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,17 +203,57 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph" alt=""/></div>
 <map name="classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph" id="classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="256,5,396,32"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="259,56,393,83"/>
-<area shape="rect" id="node4" href="namespaceMackey.html#a782d9ce52543c3ae3520b4859dda3240" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="263,107,389,133"/>
+<area shape="rect" id="node2" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="256,5,389,32"/>
+<area shape="rect" id="node3" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="301,56,344,83"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a782d9ce52543c3ae3520b4859dda3240" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="259,107,386,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af42f480509ef68df47308c0f506d44c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42f480509ef68df47308c0f506d44c8">&#9670;&nbsp;</a></span>Homology() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename diff_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1Homology.html">Homology</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Junction.html">Junction</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>J</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>getQ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the homology from the given <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a> with an extra computation of a coefficient matrix needed for boundaries (if getQ=1) </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8_cgraph.png" border="0" usemap="#classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8_cgraph" alt=""/></div>
+<map name="classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8_cgraph" id="classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="256,5,396,32"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3ef6bc9a9859c3711c11d153ba55b3e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ef6bc9a9859c3711c11d153ba55b3e1">&#9670;&nbsp;</a></span>basis()</h2>
+<a id="a2887ea74253108f9daff515536538920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2887ea74253108f9daff515536538920">&#9670;&nbsp;</a></span>basis()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +267,7 @@ template&lt;typename gen_t &gt; </div>
           <td>(</td>
           <td class="paramtype">const gen_t &amp;&#160;</td>
           <td class="paramname"><em>generator</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -229,18 +277,60 @@ template&lt;typename gen_t &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_cgraph" alt=""/></div>
-<map name="classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_cgraph" id="classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_cgraph">
+<div class="center"><img src="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph" alt=""/></div>
+<map name="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph" id="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph">
 <area shape="rect" id="node2" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="228,5,361,32"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_icgraph.png" border="0" usemap="#classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_icgraph" alt=""/></div>
-<map name="classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_icgraph" id="classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a" title="Same as the other constructor but with default selections 0,0. " alt="" coords="252,5,407,32"/>
-<area shape="rect" id="node3" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="228,56,431,83"/>
+<div class="center"><img src="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph.png" border="0" usemap="#classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph" alt=""/></div>
+<map name="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph" id="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="228,5,431,32"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a5b14999d16c90eb1fdaa40d31809f662" title="Writing the transfer of each generator in terms of the generators in the image. " alt="" coords="269,56,389,83"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a7b62b0d041087605dabd4ab3753f1186" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="263,107,396,133"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#a9a4f2ced77550a7c06d2c15b39030ff6" title="Writing the Weyl group action on each generator in terms of the other generators. ..." alt="" coords="274,157,385,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a75a8814da8edd53320b0054a5f253d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a8814da8edd53320b0054a5f253d12">&#9670;&nbsp;</a></span>boundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename diff_t &gt; </div>
+<div class="memtemplate">
+template&lt;typename gen_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">gen_t <a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::boundary </td>
+          <td>(</td>
+          <td class="paramtype">const gen_t &amp;&#160;</td>
+          <td class="paramname"><em>generator</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Given an x that is a boundary returns a y s.t. dy=x. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph" alt=""/></div>
+<map name="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph" id="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="249,5,383,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph.png" border="0" usemap="#classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph" alt=""/></div>
+<map name="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph" id="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="249,5,452,32"/>
 </map>
 </div>
 

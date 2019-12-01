@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['junction',['Junction',['../classMackey_1_1Junction.html',1,'Mackey']]],
-  ['junctionbox',['JunctionBox',['../classMackey_1_1JunctionBox.html',1,'Mackey']]]
+  ['idgeneratorcompact',['IDGeneratorCompact',['../classMackey_1_1IDGeneratorCompact.html',1,'Mackey']]],
+  ['idgeneratorcompute',['IDGeneratorCompute',['../classMackey_1_1internal_1_1IDGeneratorCompute.html',1,'Mackey::internal']]],
+  ['idgenerators',['IDGenerators',['../classMackey_1_1IDGenerators.html',1,'Mackey']]]
 ];

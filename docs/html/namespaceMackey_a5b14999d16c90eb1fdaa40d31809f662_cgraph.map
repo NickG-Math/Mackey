@@ -1,0 +1,6 @@
+<map id="Mackey::transfer" name="Mackey::transfer">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="201,5,321,32"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="173,56,348,83"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="407,5,518,32"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="396,56,529,83"/>
+</map>

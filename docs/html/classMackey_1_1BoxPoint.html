@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('classMackey_1_1BoxPoint.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a>.  
+<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> at a single index.  
  <a href="classMackey_1_1BoxPoint.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Box_8h_source.html">Box.h</a>&gt;</code></p>
@@ -105,22 +105,22 @@ $(document).ready(function(){initNavTree('classMackey_1_1BoxPoint.html','');});
 Friends</h2></td></tr>
 <tr class="memitem:aa6b9506519f57502db8432843a492fd1"><td class="memTemplParams" colspan="2">template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </td></tr>
 <tr class="memitem:aa6b9506519f57502db8432843a492fd1"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#aa6b9506519f57502db8432843a492fd1">JunctionBox</a></td></tr>
-<tr class="memdesc:aa6b9506519f57502db8432843a492fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a>.  <a href="#aa6b9506519f57502db8432843a492fd1">More...</a><br /></td></tr>
+<tr class="memdesc:aa6b9506519f57502db8432843a492fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> as a <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a> in a desired degree.  <a href="#aa6b9506519f57502db8432843a492fd1">More...</a><br /></td></tr>
 <tr class="separator:aa6b9506519f57502db8432843a492fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d7cf2b5aed908bc9bc696c03b011d76"><td class="memTemplParams" colspan="2">template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </td></tr>
-<tr class="memitem:a0d7cf2b5aed908bc9bc696c03b011d76"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; shadow_rank_t, shadow_diff_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#a0d7cf2b5aed908bc9bc696c03b011d76">Box</a> (const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; shadow_rank_t, shadow_diff_t &gt; &amp;C, const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; shadow_rank_t, shadow_diff_t &gt; &amp;D, int i)</td></tr>
-<tr class="memdesc:a0d7cf2b5aed908bc9bc696c03b011d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the box product of C,D up to index i.  <a href="#a0d7cf2b5aed908bc9bc696c03b011d76">More...</a><br /></td></tr>
-<tr class="separator:a0d7cf2b5aed908bc9bc696c03b011d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5da7907baad1a7469bb064b08228610"><td class="memTemplParams" colspan="2">template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </td></tr>
+<tr class="memitem:ac5da7907baad1a7469bb064b08228610"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#ac5da7907baad1a7469bb064b08228610">ChainsBox</a></td></tr>
+<tr class="memdesc:ac5da7907baad1a7469bb064b08228610"><td class="mdescLeft">&#160;</td><td class="mdescRight">The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a>.  <a href="#ac5da7907baad1a7469bb064b08228610">More...</a><br /></td></tr>
+<tr class="separator:ac5da7907baad1a7469bb064b08228610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
 class Mackey::BoxPoint&lt; rank_t, diff_t &gt;</h3>
 
-<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a>. </p>
-<p>We only store a single differential and the ranks of its domain and range Use through <a class="el" href="classMackey_1_1JunctionBox.html" title="The box (tensor) product of Chains. ">JunctionBox</a> or the friend function Box. </p>
+<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> at a single index. </p>
+<p>We only store a single differential and the ranks of its domain and range Use through <a class="el" href="classMackey_1_1JunctionBox.html" title="The box (tensor) product of Chains as a Junction in the given index. ">JunctionBox</a> or the friend function Box. </p>
 </div><h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a0d7cf2b5aed908bc9bc696c03b011d76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d7cf2b5aed908bc9bc696c03b011d76">&#9670;&nbsp;</a></span>Box</h2>
+<a id="ac5da7907baad1a7469bb064b08228610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5da7907baad1a7469bb064b08228610">&#9670;&nbsp;</a></span>ChainsBox</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,27 +133,7 @@ template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt;shadow_rank_t, shadow_diff_t&gt; Box </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; shadow_rank_t, shadow_diff_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; shadow_rank_t, shadow_diff_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>D</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">friend class <a class="el" href="classMackey_1_1ChainsBox.html">ChainsBox</a></td>
         </tr>
       </table>
   </td>
@@ -163,7 +143,7 @@ template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the box product of C,D up to index i. </p>
+<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a>. </p>
 
 </div>
 </div>
@@ -191,7 +171,7 @@ template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a>. </p>
+<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> as a <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a> in a desired degree. </p>
 
 </div>
 </div>

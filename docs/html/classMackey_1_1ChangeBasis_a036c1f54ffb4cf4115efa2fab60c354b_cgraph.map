@@ -1,5 +1,6 @@
 <map id="Mackey::ChangeBasis::ChangeBasis" name="Mackey::ChangeBasis::ChangeBasis">
 <area shape="rect" id="node2" href="$namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="208,31,379,57"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="431,5,571,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a92891f5582872405be46b80b5fa1fb84" title="Returns the change of basis matrix (as a permutation) from basis A to basis B. A,B can be std::vector..." alt="" coords="427,56,576,83"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="427,5,567,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given abelian group. " alt="" coords="444,56,549,83"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="615,56,712,83"/>
 </map>

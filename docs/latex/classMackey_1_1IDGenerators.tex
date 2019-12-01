@@ -1,0 +1,101 @@
+\hypertarget{classMackey_1_1IDGenerators}{}\section{Mackey\+:\+:I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1IDGenerators}\index{Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+
+
+Stores detailed identification data for the generators in non cyclic homology groups using the \hyperlink{namespaceMackey}{Mackey} functor structure.  
+
+
+
+
+{\ttfamily \#include $<$Identify.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1IDGenerators_a2f7d0d382aca772c12e27a3c65510643}{I\+D\+Generators} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators_ad9fd855102a6663a9d7b3c93dc9c369d}{group}
+\begin{DoxyCompactList}\small\item\em The homology group at our level. \end{DoxyCompactList}\item 
+rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators_a6eb50f39a23356d50461163e578e23a4}{group\+\_\+lower}
+\begin{DoxyCompactList}\small\item\em The homology group at one level lower. \end{DoxyCompactList}\item 
+std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1IDGenerators_a5dd4d24cfe493da4522198f03d32f078}{Tr}
+\begin{DoxyCompactList}\small\item\em The transfers of the lower level generators to our level. \end{DoxyCompactList}\item 
+std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1IDGenerators_a10ddb834467f6b1471375542a73d8e6f}{Res}
+\begin{DoxyCompactList}\small\item\em The restrictions of the generators to the lower level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
+class Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$}
+
+Stores detailed identification data for the generators in non cyclic homology groups using the \hyperlink{namespaceMackey}{Mackey} functor structure. 
+
+diff\+\_\+t is used as a template to cleanly get the coefficient type. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a2f7d0d382aca772c12e27a3c65510643}\label{classMackey_1_1IDGenerators_a2f7d0d382aca772c12e27a3c65510643}} 
+\index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!I\+D\+Generators@{I\+D\+Generators}}
+\index{I\+D\+Generators@{I\+D\+Generators}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
+\subsubsection{\texorpdfstring{I\+D\+Generators()}{IDGenerators()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Constructor. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_ad9fd855102a6663a9d7b3c93dc9c369d}\label{classMackey_1_1IDGenerators_ad9fd855102a6663a9d7b3c93dc9c369d}} 
+\index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!group@{group}}
+\index{group@{group}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
+\subsubsection{\texorpdfstring{group}{group}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::group}
+
+
+
+The homology group at our level. 
+
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a6eb50f39a23356d50461163e578e23a4}\label{classMackey_1_1IDGenerators_a6eb50f39a23356d50461163e578e23a4}} 
+\index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!group\+\_\+lower@{group\+\_\+lower}}
+\index{group\+\_\+lower@{group\+\_\+lower}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
+\subsubsection{\texorpdfstring{group\+\_\+lower}{group\_lower}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::group\+\_\+lower}
+
+
+
+The homology group at one level lower. 
+
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a10ddb834467f6b1471375542a73d8e6f}\label{classMackey_1_1IDGenerators_a10ddb834467f6b1471375542a73d8e6f}} 
+\index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!Res@{Res}}
+\index{Res@{Res}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
+\subsubsection{\texorpdfstring{Res}{Res}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Res}
+
+
+
+The restrictions of the generators to the lower level. 
+
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a5dd4d24cfe493da4522198f03d32f078}\label{classMackey_1_1IDGenerators_a5dd4d24cfe493da4522198f03d32f078}} 
+\index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!Tr@{Tr}}
+\index{Tr@{Tr}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
+\subsubsection{\texorpdfstring{Tr}{Tr}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Tr}
+
+
+
+The transfers of the lower level generators to our level. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Identify_8h}{Identify.\+h}\end{DoxyCompactItemize}

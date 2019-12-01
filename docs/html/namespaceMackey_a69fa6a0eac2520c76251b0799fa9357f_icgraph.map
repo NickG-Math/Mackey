@@ -1,0 +1,4 @@
+<map id="Mackey::isBasisElement" name="Mackey::isBasisElement">
+<area shape="rect" id="node2" href="$namespaceMackey.html#ab5bc349f95c14d448e42622de2d6a448" title="Given an array of elements, returns the index of the unique element of the form 0,...,0,?,0,...,0. If not unique then returns &#45;1. " alt="" coords="220,5,399,32"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="447,23,631,65"/>
+</map>

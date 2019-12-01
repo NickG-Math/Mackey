@@ -1,0 +1,137 @@
+\hypertarget{classMackey_1_1IDGeneratorCompact}{}\section{Mackey\+:\+:I\+D\+Generator\+Compact$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1IDGeneratorCompact}\index{Mackey\+::\+I\+D\+Generator\+Compact$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+I\+D\+Generator\+Compact$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+
+
+Compactly stores usable identification data for a given generator in a non cyclic homology group using the \hyperlink{namespaceMackey}{Mackey} functor structure.  
+
+
+
+
+{\ttfamily \#include $<$Identify.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1IDGeneratorCompact_a26a4b6a1cf1ec6be1e63fdecaf142b66}{I\+D\+Generator\+Compact} (const rank\+\_\+t \&, const \hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&)
+\begin{DoxyCompactList}\small\item\em Constructs the identification data for our element given the detailed identification data for all generators. \end{DoxyCompactList}\item 
+bool \hyperlink{classMackey_1_1IDGeneratorCompact_a44f930a793451c67a34101809930a2e6}{operator==} (const \hyperlink{classMackey_1_1IDGeneratorCompact}{I\+D\+Generator\+Compact} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares identifaction data. \end{DoxyCompactList}\item 
+bool \hyperlink{classMackey_1_1IDGeneratorCompact_a6c421e5744b9bc1b6215f2eea864fbdd}{operator!=} (const \hyperlink{classMackey_1_1IDGeneratorCompact}{I\+D\+Generator\+Compact} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares identifaction data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classMackey_1_1IDGeneratorCompact_a7d93b99053f6f9d1d54eca457f1988fa}{torsion}
+\begin{DoxyCompactList}\small\item\em The order of the element, 1 if it\textquotesingle{}s torsion free. \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1IDGeneratorCompact_a986a1a67d8f8455cafc2aeeb2e45203e}{torsionfree}
+\begin{DoxyCompactList}\small\item\em If there is a single \hyperlink{classZ}{Z} then this is the \hyperlink{classZ}{Z} part of the generator. -\/1 otherwise. \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1IDGeneratorCompact_af3fa6fddc65d2cf84691da13773257ac}{restriction}
+\begin{DoxyCompactList}\small\item\em The order of the restriction. \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1IDGeneratorCompact_adec34bb801c96b0eb2e68a63e7b07948}{is\+Transfer}
+\begin{DoxyCompactList}\small\item\em if the element is a transfer. -\/1 if we can\textquotesingle{}t decide \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
+class Mackey\+::\+I\+D\+Generator\+Compact$<$ rank\+\_\+t, diff\+\_\+t $>$}
+
+Compactly stores usable identification data for a given generator in a non cyclic homology group using the \hyperlink{namespaceMackey}{Mackey} functor structure. 
+
+diff\+\_\+t is used as a template to cleanly get the coefficient type. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1IDGeneratorCompact_a26a4b6a1cf1ec6be1e63fdecaf142b66}\label{classMackey_1_1IDGeneratorCompact_a26a4b6a1cf1ec6be1e63fdecaf142b66}} 
+\index{Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}!I\+D\+Generator\+Compact@{I\+D\+Generator\+Compact}}
+\index{I\+D\+Generator\+Compact@{I\+D\+Generator\+Compact}!Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}}
+\subsubsection{\texorpdfstring{I\+D\+Generator\+Compact()}{IDGeneratorCompact()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1IDGeneratorCompact}{Mackey\+::\+I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1IDGeneratorCompact}{I\+D\+Generator\+Compact} (\begin{DoxyParamCaption}\item[{const rank\+\_\+t \&}]{basis,  }\item[{const \hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{Id }\end{DoxyParamCaption})}
+
+
+
+Constructs the identification data for our element given the detailed identification data for all generators. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1IDGeneratorCompact_a26a4b6a1cf1ec6be1e63fdecaf142b66_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1IDGeneratorCompact_a6c421e5744b9bc1b6215f2eea864fbdd}\label{classMackey_1_1IDGeneratorCompact_a6c421e5744b9bc1b6215f2eea864fbdd}} 
+\index{Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+bool \hyperlink{classMackey_1_1IDGeneratorCompact}{Mackey\+::\+I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1IDGeneratorCompact}{I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compares identifaction data. 
+
+\mbox{\Hypertarget{classMackey_1_1IDGeneratorCompact_a44f930a793451c67a34101809930a2e6}\label{classMackey_1_1IDGeneratorCompact_a44f930a793451c67a34101809930a2e6}} 
+\index{Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}!operator==@{operator==}}
+\index{operator==@{operator==}!Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+bool \hyperlink{classMackey_1_1IDGeneratorCompact}{Mackey\+::\+I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1IDGeneratorCompact}{I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compares identifaction data. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1IDGeneratorCompact_adec34bb801c96b0eb2e68a63e7b07948}\label{classMackey_1_1IDGeneratorCompact_adec34bb801c96b0eb2e68a63e7b07948}} 
+\index{Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}!is\+Transfer@{is\+Transfer}}
+\index{is\+Transfer@{is\+Transfer}!Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}}
+\subsubsection{\texorpdfstring{is\+Transfer}{isTransfer}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1IDGeneratorCompact}{Mackey\+::\+I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::is\+Transfer}
+
+
+
+if the element is a transfer. -\/1 if we can\textquotesingle{}t decide 
+
+\mbox{\Hypertarget{classMackey_1_1IDGeneratorCompact_af3fa6fddc65d2cf84691da13773257ac}\label{classMackey_1_1IDGeneratorCompact_af3fa6fddc65d2cf84691da13773257ac}} 
+\index{Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}!restriction@{restriction}}
+\index{restriction@{restriction}!Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}}
+\subsubsection{\texorpdfstring{restriction}{restriction}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1IDGeneratorCompact}{Mackey\+::\+I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::restriction}
+
+
+
+The order of the restriction. 
+
+\mbox{\Hypertarget{classMackey_1_1IDGeneratorCompact_a7d93b99053f6f9d1d54eca457f1988fa}\label{classMackey_1_1IDGeneratorCompact_a7d93b99053f6f9d1d54eca457f1988fa}} 
+\index{Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}!torsion@{torsion}}
+\index{torsion@{torsion}!Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}}
+\subsubsection{\texorpdfstring{torsion}{torsion}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1IDGeneratorCompact}{Mackey\+::\+I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::torsion}
+
+
+
+The order of the element, 1 if it\textquotesingle{}s torsion free. 
+
+\mbox{\Hypertarget{classMackey_1_1IDGeneratorCompact_a986a1a67d8f8455cafc2aeeb2e45203e}\label{classMackey_1_1IDGeneratorCompact_a986a1a67d8f8455cafc2aeeb2e45203e}} 
+\index{Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}!torsionfree@{torsionfree}}
+\index{torsionfree@{torsionfree}!Mackey\+::\+I\+D\+Generator\+Compact@{Mackey\+::\+I\+D\+Generator\+Compact}}
+\subsubsection{\texorpdfstring{torsionfree}{torsionfree}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1IDGeneratorCompact}{Mackey\+::\+I\+D\+Generator\+Compact}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::torsionfree}
+
+
+
+If there is a single \hyperlink{classZ}{Z} then this is the \hyperlink{classZ}{Z} part of the generator. -\/1 otherwise. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Identify_8h}{Identify.\+h}\end{DoxyCompactItemize}

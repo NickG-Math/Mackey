@@ -72,8 +72,9 @@ namespace Mackey
 			for (int k = 0; k <= C.maxindex;k++) {
 				Junction<rank_t, diff_t> J(C, k);
 				internal::IDGeneratorCompute<rank_t, diff_t>ID(level, J);
-				if (!ID.H_level.isZero) {
-					auto length = ID.H_level.Groups.size();
+				auto length = ID.ID.group.size();
+				if (length!=0) {
+
 					NonZeroHomology.push_back(ID.ID);
 
 					std::vector<int> deg;

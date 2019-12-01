@@ -2,7 +2,7 @@
 \label{classMackey_1_1BoxPoint}\index{Mackey\+::\+Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$}}
 
 
-The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains}.  
+The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains} at a single index.  
 
 
 
@@ -13,31 +13,31 @@ The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains}.
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename shadow\+\_\+rank\+\_\+t , typename shadow\+\_\+diff\+\_\+t $>$ }\\class \hyperlink{classMackey_1_1BoxPoint_aa6b9506519f57502db8432843a492fd1}{Junction\+Box}
-\begin{DoxyCompactList}\small\item\em The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename shadow\+\_\+rank\+\_\+t , typename shadow\+\_\+diff\+\_\+t $>$ }\\\hyperlink{classMackey_1_1Chains}{Chains}$<$ shadow\+\_\+rank\+\_\+t, shadow\+\_\+diff\+\_\+t $>$ \hyperlink{classMackey_1_1BoxPoint_a0d7cf2b5aed908bc9bc696c03b011d76}{Box} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ shadow\+\_\+rank\+\_\+t, shadow\+\_\+diff\+\_\+t $>$ \&C, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ shadow\+\_\+rank\+\_\+t, shadow\+\_\+diff\+\_\+t $>$ \&D, int i)
-\begin{DoxyCompactList}\small\item\em Get the box product of C,D up to index i. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains} as a \hyperlink{classMackey_1_1Junction}{Junction} in a desired degree. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename shadow\+\_\+rank\+\_\+t , typename shadow\+\_\+diff\+\_\+t $>$ }\\class \hyperlink{classMackey_1_1BoxPoint_ac5da7907baad1a7469bb064b08228610}{Chains\+Box}
+\begin{DoxyCompactList}\small\item\em The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
 class Mackey\+::\+Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$}
 
-The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains}. 
+The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains} at a single index. 
 
 We only store a single differential and the ranks of its domain and range Use through \hyperlink{classMackey_1_1JunctionBox}{Junction\+Box} or the friend function Box. 
 
 \subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classMackey_1_1BoxPoint_a0d7cf2b5aed908bc9bc696c03b011d76}\label{classMackey_1_1BoxPoint_a0d7cf2b5aed908bc9bc696c03b011d76}} 
-\index{Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}!Box@{Box}}
-\index{Box@{Box}!Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}}
-\subsubsection{\texorpdfstring{Box}{Box}}
+\mbox{\Hypertarget{classMackey_1_1BoxPoint_ac5da7907baad1a7469bb064b08228610}\label{classMackey_1_1BoxPoint_ac5da7907baad1a7469bb064b08228610}} 
+\index{Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}!Chains\+Box@{Chains\+Box}}
+\index{Chains\+Box@{Chains\+Box}!Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}}
+\subsubsection{\texorpdfstring{Chains\+Box}{ChainsBox}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
 template$<$typename shadow\+\_\+rank\+\_\+t , typename shadow\+\_\+diff\+\_\+t $>$ \\
-\hyperlink{classMackey_1_1Chains}{Chains}$<$shadow\+\_\+rank\+\_\+t, shadow\+\_\+diff\+\_\+t$>$ Box (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ shadow\+\_\+rank\+\_\+t, shadow\+\_\+diff\+\_\+t $>$ \&}]{C,  }\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ shadow\+\_\+rank\+\_\+t, shadow\+\_\+diff\+\_\+t $>$ \&}]{D,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+friend class \hyperlink{classMackey_1_1ChainsBox}{Chains\+Box}\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
-Get the box product of C,D up to index i. 
+The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains}. 
 
 \mbox{\Hypertarget{classMackey_1_1BoxPoint_aa6b9506519f57502db8432843a492fd1}\label{classMackey_1_1BoxPoint_aa6b9506519f57502db8432843a492fd1}} 
 \index{Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}!Junction\+Box@{Junction\+Box}}
@@ -49,7 +49,7 @@ friend class \hyperlink{classMackey_1_1JunctionBox}{Junction\+Box}\hspace{0.3cm}
 
 
 
-The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains}. 
+The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains} as a \hyperlink{classMackey_1_1Junction}{Junction} in a desired degree. 
 
 
 

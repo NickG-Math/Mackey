@@ -1,0 +1,5 @@
+<map id="Mackey::TableInput::getsphere" name="Mackey::TableInput::getsphere">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="213,5,306,32"/>
+<area shape="rect" id="node3" href="$classMackey_1_1TableInput.html#aff13b1ef901103816a6ed49bae688629" title="Hashes the given sphere to produce the index for IndexedChains. " alt="" coords="191,57,328,98"/>
+<area shape="rect" id="node4" href="$classMackey_1_1TableInput.html#ae52e7e3ab4605a6ec2d658671db8f896" title="Finds all element indices with the same degree index as i. " alt="" coords="191,122,328,163"/>
+</map>

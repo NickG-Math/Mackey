@@ -1,0 +1,9 @@
+<map id="sphere" name="sphere">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="137,31,261,57"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="129,81,270,108"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a425b988266cedec0299fb539d99179b1" title="Returns the standard Chains of the given sphere. " alt="" coords="115,132,284,159"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a08fd3743ffb625fceca454da757dfa5d" title="Returns the Chains of any given sphere up to index i. " alt="" coords="131,183,268,209"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#a58708ee937b0c4172b7cde8e5f856504" title="Computes the Mackey functor homology of the given sphere. " alt="" coords="122,233,277,260"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="338,5,469,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#aa98cd58919c2f716d8df7d61ef1f5c07" title="Computes the Massey product of three generators in the RO(G) homology given their level..." alt="" coords="332,56,475,83"/>
+</map>

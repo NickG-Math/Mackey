@@ -1,0 +1,14 @@
+<map id="Mackey::summation" name="Mackey::summation">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a1257ce64369e72438023fd4e261c7c83" title="The tensor product of ranks of chains A,B. " alt="" coords="233,5,357,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="209,56,380,83"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Homology.html#af42f480509ef68df47308c0f506d44c8" title="Compute the homology from the given Junction with an extra computation of a coefficient matrix needed..." alt="" coords="193,107,396,133"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="235,157,355,184"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="228,208,361,235"/>
+<area shape="rect" id="node12" href="$namespaceMackey.html#a30b5667e411ff694aa989e95e394bb41" title="Mackey::invRes" alt="" coords="236,259,353,285"/>
+<area shape="rect" id="node13" href="$namespaceMackey_1_1internal.html#a32720f4fc1f6777a8e13a2e0db0bd2da" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="221,310,368,351"/>
+<area shape="rect" id="node4" href="$classMackey_1_1ChangeBasis.html#a036c1f54ffb4cf4115efa2fab60c354b" title="Constructs the change of basis matrices given two ranks. " alt="" coords="470,49,625,90"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="461,132,634,159"/>
+<area shape="rect" id="node9" href="$classMackey_1_1IDGeneratorCompact.html#a26a4b6a1cf1ec6be1e63fdecaf142b66" title="Constructs the identification data for our element given the detailed identification data for all gen..." alt="" coords="447,183,647,225"/>
+<area shape="rect" id="node10" href="$classMackey_1_1internal_1_1IDGeneratorCompute.html#a39700cf08ba57766c87498975b28ec62" title="Computes the identification data. " alt="" coords="444,249,651,290"/>
+<area shape="rect" id="node11" href="$namespaceMackey.html#a7b62b0d041087605dabd4ab3753f1186" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="481,315,614,341"/>
+</map>

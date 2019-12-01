@@ -7,7 +7,7 @@ Contains the class and methods for multiplying generators.
 
 {\ttfamily \#include \char`\"{}Levels.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Box.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Homology.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Identify.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$numeric$>$}\newline
 Include dependency graph for Green.\+h\+:\nopagebreak
 \begin{figure}[H]
@@ -20,19 +20,34 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=230pt]{Green_8h__dep__incl}
+\includegraphics[width=237pt]{Green_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green$<$ rank\+\_\+t, diff\+\_\+t $>$}
-\begin{DoxyCompactList}\small\item\em The result of multiplying two generators in a \hyperlink{classMackey_1_1Green}{Green} functor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The result of multiplying generators in a \hyperlink{classMackey_1_1Green}{Green} functor. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1internal_1_1ChainsLevelGen}{Mackey\+::internal\+::\+Chains\+Level\+Gen$<$ rank\+\_\+t, diff\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em Computes the homology at given level, the generators and their restrictions. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1internal_1_1ProductGen}{Mackey\+::internal\+::\+Product\+Gen$<$ rank\+\_\+t, diff\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em Computes the product of generators at the bottom level. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1internal_1_1GreenCompute}{Mackey\+::internal\+::\+Green\+Compute$<$ rank\+\_\+t, diff\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em Computes the product of generators in a \hyperlink{classMackey_1_1Green}{Green} functor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \hyperlink{namespaceMackey}{Mackey}
-\begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceMackey_1_1internal}{Mackey\+::internal}
+\begin{DoxyCompactList}\small\item\em Contains classes and methods whose user interface is provided by the rest of the library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a80dbde3a859378ede596b48869ec50d9}{Mackey\+::multiply} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int level, int degreeC, int degreeD, int selectC, int selectD)
+\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a2eca4cc709501ad3fc20b82fe4bcbd33}{Mackey\+::multiply} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int level, int degreeC, int degreeD)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

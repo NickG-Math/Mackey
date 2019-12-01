@@ -27,8 +27,10 @@ smith\+C\+\_\+t \hyperlink{classMackey_1_1Smith_af93f16dfd0ce77406d9696a02609230
 \begin{DoxyCompactList}\small\item\em One of the coefficient matrices (S=P$\ast$\+A$\ast$Q). Should be column major for best performance. \end{DoxyCompactList}\item 
 smith\+C\+\_\+t \hyperlink{classMackey_1_1Smith_a97f16eca1aa9f4f6c36c2680fdcf277e}{Pi}
 \begin{DoxyCompactList}\small\item\em One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi). Should be column major for best performance. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix$<$ typename smith\+S\+\_\+t\+::\+Scalar, 1,-\/1 $>$ \hyperlink{classMackey_1_1Smith_af473e56486c5081b2e1f657bc8df5539}{diagonal}
+\begin{DoxyCompactList}\small\item\em The diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. \end{DoxyCompactList}\item 
 const int \hyperlink{classMackey_1_1Smith_a02ea735836a4a70f504e360495b0e1e1}{L}
-\begin{DoxyCompactList}\small\item\em The length of the diagonal of S. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The length of the diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,6 +54,17 @@ Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi s
 The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed. 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1Smith_af473e56486c5081b2e1f657bc8df5539}\label{classMackey_1_1Smith_af473e56486c5081b2e1f657bc8df5539}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!diagonal@{diagonal}}
+\index{diagonal@{diagonal}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{diagonal}{diagonal}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
+Eigen\+::\+Matrix$<$typename smith\+S\+\_\+t\+::\+Scalar,1,-\/1$>$ \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::diagonal}
+
+
+
+The diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. 
+
 \mbox{\Hypertarget{classMackey_1_1Smith_a02ea735836a4a70f504e360495b0e1e1}\label{classMackey_1_1Smith_a02ea735836a4a70f504e360495b0e1e1}} 
 \index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!L@{L}}
 \index{L@{L}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
@@ -61,7 +74,7 @@ const int \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t
 
 
 
-The length of the diagonal of S. 
+The length of the diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. 
 
 \mbox{\Hypertarget{classMackey_1_1Smith_a5a831316edd85dedc7394b39fda103a2}\label{classMackey_1_1Smith_a5a831316edd85dedc7394b39fda103a2}} 
 \index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!P@{P}}

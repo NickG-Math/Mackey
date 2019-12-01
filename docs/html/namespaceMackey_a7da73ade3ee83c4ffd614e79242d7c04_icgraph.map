@@ -1,4 +1,5 @@
 <map id="Mackey::Reindex" name="Mackey::Reindex">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the Mackey functor homology of the given sphere. " alt="" coords="204,5,335,32"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationTable.html#a3a7fcf71b8235a641b3e716064a3e384" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="177,57,361,98"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="204,5,335,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#aa98cd58919c2f716d8df7d61ef1f5c07" title="Computes the Massey product of three generators in the RO(G) homology given their level..." alt="" coords="198,56,341,83"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="177,107,361,149"/>
 </map>

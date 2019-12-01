@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['variables',['Variables',['../classGroupSpecific_1_1Variables.html',1,'GroupSpecific']]]
+  ['productgen',['ProductGen',['../classMackey_1_1internal_1_1ProductGen.html',1,'Mackey::internal']]]
 ];

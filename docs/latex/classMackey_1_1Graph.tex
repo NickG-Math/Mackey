@@ -21,7 +21,7 @@ Inheritance diagram for Mackey\+:\+:Graph$<$ T $>$\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classMackey_1_1Graph_a4f0ca7cec28645835bbad29b8c00992c}{Graph} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&\hyperlink{classMackey_1_1Graph_a0a2aeb9b16c5f0e583f360943b7f340f}{edges})
+\hyperlink{classMackey_1_1Graph_a979aefd7d97cd0344637180c00e7db1b}{Graph} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&\hyperlink{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}{edges})
 \begin{DoxyCompactList}\small\item\em Construct given the edges of the graph. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1Graph_acda32cd8d144dcd1ec771bd8d2753321}{compute\+With\+Source} (int givensource)
 \begin{DoxyCompactList}\small\item\em A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations. \end{DoxyCompactList}\item 
@@ -34,14 +34,21 @@ void \hyperlink{classMackey_1_1Graph_a63aa485ca7838f3dc66da1749e09cd84}{draw} (c
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-const int \hyperlink{classMackey_1_1Graph_a870a7a373445fa2a8fc61bf51d39be9a}{number\+\_\+of\+\_\+nodes}
+int \hyperlink{classMackey_1_1Graph_a6b275a20b0571d4b51fbfa3e596cd67a}{number\+\_\+of\+\_\+nodes}
 \begin{DoxyCompactList}\small\item\em The number of vertices. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1Graph_a66fac95e623ca6e3e85ec33310755831}{path}
-\begin{DoxyCompactList}\small\item\em The \char`\"{}shortest\char`\"{} path from a selected source to any other point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The \char`\"{}shortest\char`\"{} path from a selected source to any other point. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1Graph_ab14d4c1bcbe1a994d28a6c590b27ba8b}{weighted\+Distance}
+\begin{DoxyCompactList}\small\item\em The weighted distance from a selected source to all points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1Graph_a910e6687de1a1a90df5b656e3c850a01}{Graph} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1Graph_a0a2aeb9b16c5f0e583f360943b7f340f}{edges}
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}{edges}
 \begin{DoxyCompactList}\small\item\em The edges of the graph. \end{DoxyCompactList}\item 
 int \hyperlink{classMackey_1_1Graph_a43657a07a21a2dcf422876400360ed5b}{source}
 \begin{DoxyCompactList}\small\item\em The source of the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -56,16 +63,27 @@ A directed \hyperlink{classMackey_1_1Graph}{Graph}.
 This is a general class that can only be used by inheriting from it. T is the type of the graph eg weighted\+Graph or colored\+Graph. It\textquotesingle{}s used for the C\+R\+TP compile-\/time polymorphism. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classMackey_1_1Graph_a4f0ca7cec28645835bbad29b8c00992c}\label{classMackey_1_1Graph_a4f0ca7cec28645835bbad29b8c00992c}} 
+\mbox{\Hypertarget{classMackey_1_1Graph_a979aefd7d97cd0344637180c00e7db1b}\label{classMackey_1_1Graph_a979aefd7d97cd0344637180c00e7db1b}} 
 \index{Mackey\+::\+Graph@{Mackey\+::\+Graph}!Graph@{Graph}}
 \index{Graph@{Graph}!Mackey\+::\+Graph@{Mackey\+::\+Graph}}
-\subsubsection{\texorpdfstring{Graph()}{Graph()}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::\hyperlink{classMackey_1_1Graph}{Graph} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{edges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::\hyperlink{classMackey_1_1Graph}{Graph} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{edges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Construct given the edges of the graph. 
+
+\mbox{\Hypertarget{classMackey_1_1Graph_a910e6687de1a1a90df5b656e3c850a01}\label{classMackey_1_1Graph_a910e6687de1a1a90df5b656e3c850a01}} 
+\index{Mackey\+::\+Graph@{Mackey\+::\+Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Mackey\+::\+Graph@{Mackey\+::\+Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::\hyperlink{classMackey_1_1Graph}{Graph} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Default constructor. 
 
 
 
@@ -131,23 +149,23 @@ Writes a graph.\+dot file representing the graph using node names.
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classMackey_1_1Graph_a0a2aeb9b16c5f0e583f360943b7f340f}\label{classMackey_1_1Graph_a0a2aeb9b16c5f0e583f360943b7f340f}} 
+\mbox{\Hypertarget{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}\label{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}} 
 \index{Mackey\+::\+Graph@{Mackey\+::\+Graph}!edges@{edges}}
 \index{edges@{edges}!Mackey\+::\+Graph@{Mackey\+::\+Graph}}
 \subsubsection{\texorpdfstring{edges}{edges}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-const std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::edges\hspace{0.3cm}{\ttfamily [protected]}}
+std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::edges\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 The edges of the graph. 
 
-\mbox{\Hypertarget{classMackey_1_1Graph_a870a7a373445fa2a8fc61bf51d39be9a}\label{classMackey_1_1Graph_a870a7a373445fa2a8fc61bf51d39be9a}} 
+\mbox{\Hypertarget{classMackey_1_1Graph_a6b275a20b0571d4b51fbfa3e596cd67a}\label{classMackey_1_1Graph_a6b275a20b0571d4b51fbfa3e596cd67a}} 
 \index{Mackey\+::\+Graph@{Mackey\+::\+Graph}!number\+\_\+of\+\_\+nodes@{number\+\_\+of\+\_\+nodes}}
 \index{number\+\_\+of\+\_\+nodes@{number\+\_\+of\+\_\+nodes}!Mackey\+::\+Graph@{Mackey\+::\+Graph}}
 \subsubsection{\texorpdfstring{number\+\_\+of\+\_\+nodes}{number\_of\_nodes}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-const int \hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::number\+\_\+of\+\_\+nodes}
+int \hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::number\+\_\+of\+\_\+nodes}
 
 
 
@@ -175,7 +193,18 @@ int \hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::source\hspac
 
 The source of the graph. 
 
+\mbox{\Hypertarget{classMackey_1_1Graph_ab14d4c1bcbe1a994d28a6c590b27ba8b}\label{classMackey_1_1Graph_ab14d4c1bcbe1a994d28a6c590b27ba8b}} 
+\index{Mackey\+::\+Graph@{Mackey\+::\+Graph}!weighted\+Distance@{weighted\+Distance}}
+\index{weighted\+Distance@{weighted\+Distance}!Mackey\+::\+Graph@{Mackey\+::\+Graph}}
+\subsubsection{\texorpdfstring{weighted\+Distance}{weightedDistance}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+std\+::vector$<$int$>$ \hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::weighted\+Distance}
 
+
+
+The weighted distance from a selected source to all points. 
+
+The type of weight will depend on the specialization of \hyperlink{classMackey_1_1Graph}{Graph}. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

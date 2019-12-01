@@ -16,8 +16,12 @@ The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22}{Homology} (const \hyperlink{classMackey_1_1Junction}{Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&)
 \begin{DoxyCompactList}\small\item\em Compute the homology from the given \hyperlink{classMackey_1_1Junction}{Junction}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename gen\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1}{basis} (const gen\+\_\+t \&)
-\begin{DoxyCompactList}\small\item\em Given an element in homology, write it as a linear combination of the generators of the homology. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8}{Homology} (const \hyperlink{classMackey_1_1Junction}{Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, bool)
+\begin{DoxyCompactList}\small\item\em Compute the homology from the given \hyperlink{classMackey_1_1Junction}{Junction} with an extra computation of a coefficient matrix needed for boundaries (if getQ=1) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{classMackey_1_1Homology_a2887ea74253108f9daff515536538920}{basis} (const gen\+\_\+t \&) const
+\begin{DoxyCompactList}\small\item\em Given an element in homology, write it as a linear combination of the generators of the homology. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+\_\+t $>$ }\\gen\+\_\+t \hyperlink{classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12}{boundary} (const gen\+\_\+t \&) const
+\begin{DoxyCompactList}\small\item\em Given an x that is a boundary returns a y s.\+t. dy=x. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,7 +43,7 @@ The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_
 \mbox{\Hypertarget{classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2}\label{classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Homology@{Homology}}
 \index{Homology@{Homology}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
-\subsubsection{\texorpdfstring{Homology()}{Homology()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Homology()}{Homology()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
 \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology}{Homology} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -57,7 +61,7 @@ Here is the call graph for this function\+:\nopagebreak
 \mbox{\Hypertarget{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22}\label{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Homology@{Homology}}
 \index{Homology@{Homology}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
-\subsubsection{\texorpdfstring{Homology()}{Homology()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{Homology()}{Homology()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
 \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology}{Homology} (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Junction}{Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{J }\end{DoxyParamCaption})}
 
@@ -72,16 +76,34 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8}\label{classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Homology@{Homology}}
+\index{Homology@{Homology}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{Homology()}{Homology()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology}{Homology} (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Junction}{Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{J,  }\item[{bool}]{getQ }\end{DoxyParamCaption})}
+
+
+
+Compute the homology from the given \hyperlink{classMackey_1_1Junction}{Junction} with an extra computation of a coefficient matrix needed for boundaries (if getQ=1) 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1}\label{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1}} 
+\mbox{\Hypertarget{classMackey_1_1Homology_a2887ea74253108f9daff515536538920}\label{classMackey_1_1Homology_a2887ea74253108f9daff515536538920}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!basis@{basis}}
 \index{basis@{basis}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
 \subsubsection{\texorpdfstring{basis()}{basis()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
 template$<$typename gen\+\_\+t $>$ \\
-rank\+\_\+t \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basis (\begin{DoxyParamCaption}\item[{const gen\+\_\+t \&}]{generator }\end{DoxyParamCaption})}
+rank\+\_\+t \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basis (\begin{DoxyParamCaption}\item[{const gen\+\_\+t \&}]{generator }\end{DoxyParamCaption}) const}
 
 
 
@@ -91,14 +113,40 @@ The answer is encoded as follows\+: basis=\mbox{[}-\/1,0,3\mbox{]} means element
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=347pt]{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_cgraph}
+\includegraphics[width=347pt]{classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Homology_a3ef6bc9a9859c3711c11d153ba55b3e1_icgraph}
+\includegraphics[width=350pt]{classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12}\label{classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!boundary@{boundary}}
+\index{boundary@{boundary}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{boundary()}{boundary()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+template$<$typename gen\+\_\+t $>$ \\
+gen\+\_\+t \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::boundary (\begin{DoxyParamCaption}\item[{const gen\+\_\+t \&}]{generator }\end{DoxyParamCaption}) const}
+
+
+
+Given an x that is a boundary returns a y s.\+t. dy=x. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph}
 \end{center}
 \end{figure}
 

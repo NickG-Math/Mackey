@@ -140,15 +140,32 @@ namespace Mackey {
 		template<typename rank_t, typename diff_t>
 		class IDGeneratorCompute {
 		public:
-			IDGenerators<rank_t, diff_t> ID;
+			IDGenerators<rank_t, diff_t> ID; ///<The identification data
+			IDGeneratorCompute(int level, const Junction<rank_t, diff_t>& bottom); ///<Computes the identification data
+		private:
 			rank_t rank_level;
 			Homology<rank_t, diff_t> H_level;
 			IDGeneratorCompute() {};
 			IDGeneratorCompute(int level, const Junction<rank_t, diff_t>& bottom, bool getQ);
-			IDGeneratorCompute(int level, const Junction<rank_t, diff_t>& bottom);
-		private:
 			///Identifies the generators in case of non cyclic homology.
 			void id(const Junction<rank_t, diff_t>&);
+
+			///Compactifies the ID data
+			template<typename s_rank_t, typename s_diff_t>
+			friend class IDGenerators;
+
+			///Forms the input of the Multiplication Table
+			template<typename s_rank_t, typename s_diff_t>
+			friend class TableInput;
+
+			///Computes products
+			template<typename s_rank_t, typename s_diff_t>
+			friend class GreenCompute;
+
+			///Computes Massey products
+			template<typename s_rank_t, typename s_diff_t>
+			friend class MasseyCompute;
+
 		};
 
 		template<typename rank_t, typename diff_t>

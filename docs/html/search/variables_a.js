@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['p',['P',['../classMackey_1_1Smith.html#a5a831316edd85dedc7394b39fda103a2',1,'Mackey::Smith']]],
-  ['path',['path',['../classMackey_1_1Graph.html#a66fac95e623ca6e3e85ec33310755831',1,'Mackey::Graph']]],
-  ['pi',['Pi',['../classMackey_1_1Smith.html#a97f16eca1aa9f4f6c36c2680fdcf277e',1,'Mackey::Smith']]],
-  ['power',['power',['../classGroupSpecific_1_1Variables.html#ac9bd6be19cc41e6877ee25a2d1c7be80',1,'GroupSpecific::Variables::power()'],['../namespaceMackey.html#aafdaaabd06dd9ceefe6fa4f26d13a60d',1,'Mackey::power()']]],
-  ['prime',['prime',['../classGroupSpecific_1_1Variables.html#a38586ec998bcbfdf325e6cfc6598b54b',1,'GroupSpecific::Variables::prime()'],['../namespaceMackey.html#a77e059c6f9b4c6ea096fcf94a7880bc3',1,'Mackey::prime()']]]
+  ['names',['names',['../classGroupSpecificOptional_1_1MackeyList.html#a306cea4e8666fb46637a988b84ea477d',1,'GroupSpecificOptional::MackeyList']]],
+  ['noindeterminacy',['noIndeterminacy',['../classMackey_1_1Massey.html#a4dbd74288447b094c8308f4d68bf8cff',1,'Mackey::Massey']]],
+  ['nonzerohomology',['NonZeroHomology',['../classMackey_1_1TableInput.html#a337fa51024c06d4f9085d8bf00b6001c',1,'Mackey::TableInput']]],
+  ['normalbasis',['normalBasis',['../classMackey_1_1Green.html#a18135b4b1a4aceb387519832a487206a',1,'Mackey::Green::normalBasis()'],['../classMackey_1_1Massey.html#a36e3aa9de7d7617feb243d886c5936c8',1,'Mackey::Massey::normalBasis()']]],
+  ['number_5fof_5fgenerators',['number_of_generators',['../classMackey_1_1MultiplicationTable.html#aa964329ee1c5b9072146567d2bd6567f',1,'Mackey::MultiplicationTable']]],
+  ['number_5fof_5fnodes',['number_of_nodes',['../classMackey_1_1Graph.html#a6b275a20b0571d4b51fbfa3e596cd67a',1,'Mackey::Graph::number_of_nodes()'],['../classMackey_1_1MultiplicationTable.html#a224de8ffa6d10b7d9511880bb8a2260f',1,'Mackey::MultiplicationTable::number_of_nodes()']]]
 ];

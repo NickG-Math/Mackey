@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['q',['Q',['../classMackey_1_1Smith.html#af93f16dfd0ce77406d9696a026092306',1,'Mackey::Smith']]],
-  ['qi',['Qi',['../classMackey_1_1Smith.html#ade9f9fbe25629c7e20bc9cfe69ee91ad',1,'Mackey::Smith']]]
+  ['order',['order',['../classZ.html#a8da63061091de9ee7a146a856f70c4b8',1,'Z::order()'],['../classZ_3_012_01_4.html#a113854b6a1c2fec88ed352c117515c0e',1,'Z&lt; 2 &gt;::order()']]]
 ];

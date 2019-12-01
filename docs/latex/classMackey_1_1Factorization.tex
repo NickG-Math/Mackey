@@ -30,9 +30,17 @@ Collaboration diagram for Mackey\+:\+:Factorization$<$ rank\+\_\+t, diff\+\_\+t 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \hyperlink{classMackey_1_1Factorization_ae3a7645d4ea4de55256503cc83754e7b}{getname} (int i)
+std\+::string \hyperlink{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}{getname} (int)
 \begin{DoxyCompactList}\small\item\em Retrieve the factorization of the i-\/th generator. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Factorization_abc5d77e2e46d2f73ee0aed1f4201999b}{Factorization} (const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
+std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1Factorization_aef67e1ba1bf216416d0ec9923ff90b0d}{getdegree} (int) const
+\begin{DoxyCompactList}\small\item\em Retrieve the degree of the i-\/th generator. \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1Factorization_aac1009ac7388e346e5fe4754686b28b7}{getposition} (int i) const
+\begin{DoxyCompactList}\small\item\em Retrieve the position of the i-\/th generator, always 0 if cyclic. \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1Factorization_ac412da750df7b3b35ca87c3b694fd732}{getelement} (int, int, int) const
+\begin{DoxyCompactList}\small\item\em Find the element with given degree, position and multiple. \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1Factorization_ab90f461af3418417970d4be8682e965d}{getdegreeindex} (const std\+::vector$<$ int $>$ \&) const
+\begin{DoxyCompactList}\small\item\em Retrieve the degree of the i-\/th generator. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422}{Factorization} (int, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
 \begin{DoxyCompactList}\small\item\em Form the multiplication table and graph given the max and min spheres and the basic irreducibles. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
 \begin{DoxyCompactList}\small\item\em Compute the factorizations using the given sources for the multiplication graph and their given names. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -43,7 +51,7 @@ int \hyperlink{classMackey_1_1Factorization_ab958c9491e2e63d0861d92599b0d237d}{s
 \begin{DoxyCompactList}\small\item\em The total number of generators and their multiples we can factorize. \end{DoxyCompactList}\item 
 int \hyperlink{classMackey_1_1Factorization_af5f29d56f33e4835aa699d9d6708b6c8}{realsize}
 \begin{DoxyCompactList}\small\item\em The total number of generators we can factorize. \end{DoxyCompactList}\item 
-const std\+::vector$<$ std\+::string $>$ \hyperlink{classMackey_1_1Factorization_a9b42ad832ad2b70f44d79cef15450244}{basic\+Irr\+\_\+names}
+std\+::vector$<$ std\+::string $>$ \hyperlink{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}{basic\+Irr\+\_\+names}
 \begin{DoxyCompactList}\small\item\em The names of the basic irreducibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -55,12 +63,12 @@ class Mackey\+::\+Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$}
 Factorizes generators into the given basic irreducibles and sources. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classMackey_1_1Factorization_abc5d77e2e46d2f73ee0aed1f4201999b}\label{classMackey_1_1Factorization_abc5d77e2e46d2f73ee0aed1f4201999b}} 
+\mbox{\Hypertarget{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422}\label{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!Factorization@{Factorization}}
 \index{Factorization@{Factorization}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
 \subsubsection{\texorpdfstring{Factorization()}{Factorization()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Factorization}{Factorization} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{basic\+Irreducibles,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{basic\+Irr\+\_\+names }\end{DoxyParamCaption})}
+\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Factorization}{Factorization} (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{basic\+Irreducibles,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{basic\+Irr\+\_\+names }\end{DoxyParamCaption})}
 
 
 
@@ -87,7 +95,40 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMackey_1_1Factorization_ae3a7645d4ea4de55256503cc83754e7b}\label{classMackey_1_1Factorization_ae3a7645d4ea4de55256503cc83754e7b}} 
+\mbox{\Hypertarget{classMackey_1_1Factorization_aef67e1ba1bf216416d0ec9923ff90b0d}\label{classMackey_1_1Factorization_aef67e1ba1bf216416d0ec9923ff90b0d}} 
+\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getdegree@{getdegree}}
+\index{getdegree@{getdegree}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
+\subsubsection{\texorpdfstring{getdegree()}{getdegree()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getdegree (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the degree of the i-\/th generator. 
+
+\mbox{\Hypertarget{classMackey_1_1Factorization_ab90f461af3418417970d4be8682e965d}\label{classMackey_1_1Factorization_ab90f461af3418417970d4be8682e965d}} 
+\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getdegreeindex@{getdegreeindex}}
+\index{getdegreeindex@{getdegreeindex}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
+\subsubsection{\texorpdfstring{getdegreeindex()}{getdegreeindex()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+int \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getdegreeindex (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{degree }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the degree of the i-\/th generator. 
+
+\mbox{\Hypertarget{classMackey_1_1Factorization_ac412da750df7b3b35ca87c3b694fd732}\label{classMackey_1_1Factorization_ac412da750df7b3b35ca87c3b694fd732}} 
+\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getelement@{getelement}}
+\index{getelement@{getelement}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
+\subsubsection{\texorpdfstring{getelement()}{getelement()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+int \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getelement (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{pos,  }\item[{int}]{multiple }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find the element with given degree, position and multiple. 
+
+\mbox{\Hypertarget{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}\label{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getname@{getname}}
 \index{getname@{getname}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
 \subsubsection{\texorpdfstring{getname()}{getname()}}
@@ -98,15 +139,26 @@ std\+::string \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization
 
 Retrieve the factorization of the i-\/th generator. 
 
+\mbox{\Hypertarget{classMackey_1_1Factorization_aac1009ac7388e346e5fe4754686b28b7}\label{classMackey_1_1Factorization_aac1009ac7388e346e5fe4754686b28b7}} 
+\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getposition@{getposition}}
+\index{getposition@{getposition}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
+\subsubsection{\texorpdfstring{getposition()}{getposition()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+int \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getposition (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the position of the i-\/th generator, always 0 if cyclic. 
+
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classMackey_1_1Factorization_a9b42ad832ad2b70f44d79cef15450244}\label{classMackey_1_1Factorization_a9b42ad832ad2b70f44d79cef15450244}} 
+\mbox{\Hypertarget{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}\label{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!basic\+Irr\+\_\+names@{basic\+Irr\+\_\+names}}
 \index{basic\+Irr\+\_\+names@{basic\+Irr\+\_\+names}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
 \subsubsection{\texorpdfstring{basic\+Irr\+\_\+names}{basicIrr\_names}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-const std\+::vector$<$std\+::string$>$ \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basic\+Irr\+\_\+names}
+std\+::vector$<$std\+::string$>$ \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basic\+Irr\+\_\+names}
 
 
 

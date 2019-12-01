@@ -1,13 +1,16 @@
 <map id="Mackey/Compute.h" name="Mackey/Compute.h">
-<area shape="rect" id="node2" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="550,304,673,331"/>
-<area shape="rect" id="node6" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="373,80,441,107"/>
-<area shape="rect" id="node7" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="372,155,443,181"/>
-<area shape="rect" id="node11" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="235,229,291,256"/>
-<area shape="rect" id="node17" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="524,229,616,256"/>
-<area shape="rect" id="node8" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="366,229,449,256"/>
-<area shape="rect" id="node9" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="347,304,422,331"/>
-<area shape="rect" id="node10" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="447,304,525,331"/>
-<area shape="rect" id="node12" href="$Matrix__Mixing_8h.html" title="Contains block operations on matrices. " alt="" coords="209,304,323,331"/>
-<area shape="rect" id="node13" href="$ChangeBasis_8h.html" title="Contains the construction of the change of basis matrices. " alt="" coords="73,304,184,331"/>
-<area shape="rect" id="node18" href="$Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="697,304,763,331"/>
+<area shape="rect" id="node2" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="5,379,128,405"/>
+<area shape="rect" id="node6" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="361,155,429,181"/>
+<area shape="rect" id="node24" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="355,80,434,107"/>
+<area shape="rect" id="node7" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="262,229,333,256"/>
+<area shape="rect" id="node16" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="443,304,499,331"/>
+<area shape="rect" id="node21" href="$Identify_8h.html" title="Contains the identification classes. " alt="" coords="357,229,433,256"/>
+<area shape="rect" id="node8" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="144,304,227,331"/>
+<area shape="rect" id="node10" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="251,304,343,331"/>
+<area shape="rect" id="node11" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="342,379,421,405"/>
+<area shape="rect" id="node9" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="243,379,317,405"/>
+<area shape="rect" id="node13" href="$Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="152,379,219,405"/>
+<area shape="rect" id="node17" href="$Matrix__Mixing_8h.html" title="Contains block operations on matrices. " alt="" coords="445,379,560,405"/>
+<area shape="rect" id="node18" href="$ChangeBasis_8h.html" title="Contains the construction of the change of basis matrices. " alt="" coords="635,379,746,405"/>
+<area shape="rect" id="node22" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="570,304,625,331"/>
 </map>

@@ -19,7 +19,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=230pt]{Homology_8h__dep__incl}
+\includegraphics[width=284pt]{Homology_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -32,13 +32,17 @@ class \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology$<$ rank\+\_\+t, d
 \item 
  \hyperlink{namespaceMackey}{Mackey}
 \begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Typedefs}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-typedef float \hyperlink{namespaceMackey_aa1901d96dd7e8dd384bb01f47a893552}{Mackey\+::f\+Scalar}
-\begin{DoxyCompactList}\small\item\em The floating point type for \hyperlink{classMackey_1_1Homology}{Homology} computations. \end{DoxyCompactList}\item 
-typedef Eigen\+::\+Matrix$<$ f\+Scalar, -\/1, -\/1 $>$ \hyperlink{namespaceMackey_a0070de220d906e8e603d5ab4c68e7784}{Mackey\+::fdiff\+\_\+t}
-\begin{DoxyCompactList}\small\item\em The type of our casted differentials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename T , typename S $>$ }\\T \hyperlink{namespaceMackey_a6aa639a1f656fdcccbcfa6bc719bb817}{Mackey\+::normalize} (const T \&element, const S \&group)
+\begin{DoxyCompactList}\small\item\em Normalizes the element in given abelian group so that element\mbox{[}i\mbox{]}=1 if it generates group\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename S $>$ }\\int \hyperlink{namespaceMackey_a4abdca157edcf425b1e7ceff39d74c2f}{Mackey\+::order} (const T \&element, const S \&group)
+\begin{DoxyCompactList}\small\item\em Finds the order of element in given abelian group. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a69fa6a0eac2520c76251b0799fa9357f}{Mackey\+::is\+Basis\+Element} (const T \&element)
+\begin{DoxyCompactList}\small\item\em If the given element is 0,...,0,?,0,...,0 returns the index of ?. Otherwise returns -\/1. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_ab5bc349f95c14d448e42622de2d6a448}{Mackey\+::find\+Basis\+Element} (const T \&elements)
+\begin{DoxyCompactList}\small\item\em Given an array of elements, returns the index of the unique element of the form 0,...,0,?,0,...,0. If not unique then returns -\/1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

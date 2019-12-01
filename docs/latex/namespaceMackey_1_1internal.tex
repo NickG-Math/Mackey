@@ -1,0 +1,49 @@
+\hypertarget{namespaceMackey_1_1internal}{}\section{Mackey\+:\+:internal Namespace Reference}
+\label{namespaceMackey_1_1internal}\index{Mackey\+::internal@{Mackey\+::internal}}
+
+
+Contains classes and methods whose user interface is provided by the rest of the library.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMackey_1_1internal_1_1ChainsLevelGen}{Chains\+Level\+Gen}
+\begin{DoxyCompactList}\small\item\em Computes the homology at given level, the generators and their restrictions. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1internal_1_1GreenCompute}{Green\+Compute}
+\begin{DoxyCompactList}\small\item\em Computes the product of generators in a \hyperlink{classMackey_1_1Green}{Green} functor. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1internal_1_1IDGeneratorCompute}{I\+D\+Generator\+Compute}
+\begin{DoxyCompactList}\small\item\em Computes the homology at given level and the identification data coming from the \hyperlink{namespaceMackey}{Mackey} functor structure. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1internal_1_1MasseyCompute}{Massey\+Compute}
+\begin{DoxyCompactList}\small\item\em Computes \hyperlink{classMackey_1_1Massey}{Massey} products and their indeterminacy. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1internal_1_1ProductGen}{Product\+Gen}
+\begin{DoxyCompactList}\small\item\em Computes the product of generators at the bottom level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\Eigen\+::\+Permutation\+Matrix$<$-\/1, -\/1, int $>$ \hyperlink{namespaceMackey_1_1internal_a32720f4fc1f6777a8e13a2e0db0bd2da}{box\+\_\+permutation} (const std\+::vector$<$ rank\+\_\+t $>$ \&C, const std\+::vector$<$ rank\+\_\+t $>$ \&D, const std\+::vector$<$ rank\+\_\+t $>$ \&E, int degree)
+\begin{DoxyCompactList}\small\item\em Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains classes and methods whose user interface is provided by the rest of the library. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceMackey_1_1internal_a32720f4fc1f6777a8e13a2e0db0bd2da}\label{namespaceMackey_1_1internal_a32720f4fc1f6777a8e13a2e0db0bd2da}} 
+\index{Mackey\+::internal@{Mackey\+::internal}!box\+\_\+permutation@{box\+\_\+permutation}}
+\index{box\+\_\+permutation@{box\+\_\+permutation}!Mackey\+::internal@{Mackey\+::internal}}
+\subsubsection{\texorpdfstring{box\+\_\+permutation()}{box\_permutation()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t $>$ \\
+Eigen\+::\+Permutation\+Matrix$<$-\/1, -\/1, int$>$ Mackey\+::internal\+::box\+\_\+permutation (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ rank\+\_\+t $>$ \&}]{C,  }\item[{const std\+::vector$<$ rank\+\_\+t $>$ \&}]{D,  }\item[{const std\+::vector$<$ rank\+\_\+t $>$ \&}]{E,  }\item[{int}]{degree }\end{DoxyParamCaption})}
+
+
+
+Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{namespaceMackey_1_1internal_a32720f4fc1f6777a8e13a2e0db0bd2da_cgraph}
+\end{center}
+\end{figure}

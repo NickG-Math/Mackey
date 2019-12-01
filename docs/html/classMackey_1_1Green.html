@@ -97,105 +97,92 @@ $(document).ready(function(){initNavTree('classMackey_1_1Green.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>The result of multiplying two generators in a <a class="el" href="classMackey_1_1Green.html" title="The result of multiplying two generators in a Green functor. ">Green</a> functor.  
+<p>The result of multiplying generators in a <a class="el" href="classMackey_1_1Green.html" title="The result of multiplying generators in a Green functor. ">Green</a> functor.  
  <a href="classMackey_1_1Green.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Green_8h_source.html">Green.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a69095b3ff3f46ce70240df08aa1ba55b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a69095b3ff3f46ce70240df08aa1ba55b">Green</a> (<a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;, <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;, int, int, int, int, int)</td></tr>
-<tr class="memdesc:a69095b3ff3f46ce70240df08aa1ba55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the generators genC, genD of two <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> C,D using their degrees and selections, boxes the C,D and computes genC*genD in the box product.  <a href="#a69095b3ff3f46ce70240df08aa1ba55b">More...</a><br /></td></tr>
-<tr class="separator:a69095b3ff3f46ce70240df08aa1ba55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e51ae3cad1570c7a9bf2b395852982a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a5e51ae3cad1570c7a9bf2b395852982a">Green</a> (<a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;, <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;, int, int, int)</td></tr>
-<tr class="memdesc:a5e51ae3cad1570c7a9bf2b395852982a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as the other constructor but with default selections 0,0.  <a href="#a5e51ae3cad1570c7a9bf2b395852982a">More...</a><br /></td></tr>
-<tr class="separator:a5e51ae3cad1570c7a9bf2b395852982a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3bb0ba97c91a5db4fcf57687a571915"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#ad3bb0ba97c91a5db4fcf57687a571915">Green</a> ()</td></tr>
+<tr class="memdesc:ad3bb0ba97c91a5db4fcf57687a571915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#ad3bb0ba97c91a5db4fcf57687a571915">More...</a><br /></td></tr>
+<tr class="separator:ad3bb0ba97c91a5db4fcf57687a571915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614ae228cc8c5cccddcf562923f06f3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a614ae228cc8c5cccddcf562923f06f3a">Green</a> (const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;, const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;, int, int, int)</td></tr>
+<tr class="memdesc:a614ae228cc8c5cccddcf562923f06f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the product of generators given chains, degrees and level.  <a href="#a614ae228cc8c5cccddcf562923f06f3a">More...</a><br /></td></tr>
+<tr class="separator:a614ae228cc8c5cccddcf562923f06f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094a394ff8e1f4801fb3a5f09e071def"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a094a394ff8e1f4801fb3a5f09e071def">select</a> (int, int) const</td></tr>
+<tr class="memdesc:a094a394ff8e1f4801fb3a5f09e071def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the desired generator.  <a href="#a094a394ff8e1f4801fb3a5f09e071def">More...</a><br /></td></tr>
+<tr class="separator:a094a394ff8e1f4801fb3a5f09e071def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a248298bf608a1f0e7e5c448a6a38ae80"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a248298bf608a1f0e7e5c448a6a38ae80">basis</a></td></tr>
-<tr class="memdesc:a248298bf608a1f0e7e5c448a6a38ae80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expresses the product of two generators as a linear combination of the generators of the box product.  <a href="#a248298bf608a1f0e7e5c448a6a38ae80">More...</a><br /></td></tr>
-<tr class="separator:a248298bf608a1f0e7e5c448a6a38ae80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fd2fac9558c75fdef0b0ded1bee70d8"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a7fd2fac9558c75fdef0b0ded1bee70d8">normalBasis</a></td></tr>
-<tr class="memdesc:a7fd2fac9558c75fdef0b0ded1bee70d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as basis, but normalized to not have signs.  <a href="#a7fd2fac9558c75fdef0b0ded1bee70d8">More...</a><br /></td></tr>
-<tr class="separator:a7fd2fac9558c75fdef0b0ded1bee70d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa5ea708949024bd24f1c1e21399cbc"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#acfa5ea708949024bd24f1c1e21399cbc">Groups</a></td></tr>
-<tr class="memdesc:acfa5ea708949024bd24f1c1e21399cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The groups of the tensor product.  <a href="#acfa5ea708949024bd24f1c1e21399cbc">More...</a><br /></td></tr>
+<tr class="memdesc:acfa5ea708949024bd24f1c1e21399cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The homology group the product lives in.  <a href="#acfa5ea708949024bd24f1c1e21399cbc">More...</a><br /></td></tr>
 <tr class="separator:acfa5ea708949024bd24f1c1e21399cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12a01a6d1715538af0bdc6b34fad6b85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a12a01a6d1715538af0bdc6b34fad6b85">isZero</a></td></tr>
-<tr class="memdesc:a12a01a6d1715538af0bdc6b34fad6b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 if the result is 0  <a href="#a12a01a6d1715538af0bdc6b34fad6b85">More...</a><br /></td></tr>
+<tr class="memdesc:a12a01a6d1715538af0bdc6b34fad6b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 if the homology group the product lives in is 0.  <a href="#a12a01a6d1715538af0bdc6b34fad6b85">More...</a><br /></td></tr>
 <tr class="separator:a12a01a6d1715538af0bdc6b34fad6b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfc633ccb548d2d516450399c108174"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a9cfc633ccb548d2d516450399c108174">basis</a></td></tr>
+<tr class="memdesc:a9cfc633ccb548d2d516450399c108174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expresses the product of two generators as a linear combination of the generators of the box product.  <a href="#a9cfc633ccb548d2d516450399c108174">More...</a><br /></td></tr>
+<tr class="separator:a9cfc633ccb548d2d516450399c108174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18135b4b1a4aceb387519832a487206a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a18135b4b1a4aceb387519832a487206a">normalBasis</a></td></tr>
+<tr class="memdesc:a18135b4b1a4aceb387519832a487206a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as basis, now normalized.  <a href="#a18135b4b1a4aceb387519832a487206a">More...</a><br /></td></tr>
+<tr class="separator:a18135b4b1a4aceb387519832a487206a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ba76e7f7b71c1e5fca23bc71accf86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a18ba76e7f7b71c1e5fca23bc71accf86">first_number_selections</a></td></tr>
+<tr class="memdesc:a18ba76e7f7b71c1e5fca23bc71accf86"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of selections of generators for the first factor.  <a href="#a18ba76e7f7b71c1e5fca23bc71accf86">More...</a><br /></td></tr>
+<tr class="separator:a18ba76e7f7b71c1e5fca23bc71accf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1240acdc0e901e496597eab2d0ef27f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a1240acdc0e901e496597eab2d0ef27f2">second_number_selections</a></td></tr>
+<tr class="memdesc:a1240acdc0e901e496597eab2d0ef27f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of selections of generators for the second factor.  <a href="#a1240acdc0e901e496597eab2d0ef27f2">More...</a><br /></td></tr>
+<tr class="separator:a1240acdc0e901e496597eab2d0ef27f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ced169c915348d6b0f3f178c6b2d7ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1IDGenerators.html">IDGenerators</a>&lt; rank_t, diff_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a3ced169c915348d6b0f3f178c6b2d7ff">boxID</a></td></tr>
+<tr class="memdesc:a3ced169c915348d6b0f3f178c6b2d7ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies the generators of the homology group the product lives in.  <a href="#a3ced169c915348d6b0f3f178c6b2d7ff">More...</a><br /></td></tr>
+<tr class="separator:a3ced169c915348d6b0f3f178c6b2d7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
 class Mackey::Green&lt; rank_t, diff_t &gt;</h3>
 
-<p>The result of multiplying two generators in a <a class="el" href="classMackey_1_1Green.html" title="The result of multiplying two generators in a Green functor. ">Green</a> functor. </p>
+<p>The result of multiplying generators in a <a class="el" href="classMackey_1_1Green.html" title="The result of multiplying generators in a Green functor. ">Green</a> functor. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a69095b3ff3f46ce70240df08aa1ba55b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69095b3ff3f46ce70240df08aa1ba55b">&#9670;&nbsp;</a></span>Green() <span class="overload">[1/2]</span></h2>
+<a id="ad3bb0ba97c91a5db4fcf57687a571915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3bb0ba97c91a5db4fcf57687a571915">&#9670;&nbsp;</a></span>Green() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rank_t , typename diff_t &gt; </div>
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1Green.html">Green</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>D</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>level</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>degreeC</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>degreeD</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>selectC</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>selectD</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Computes the generators genC, genD of two <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> C,D using their degrees and selections, boxes the C,D and computes genC*genD in the box product. </p>
+<p>Default constructor. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph.png" border="0" usemap="#classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph" alt=""/></div>
+<map name="classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph" id="classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1Green.html#a094a394ff8e1f4801fb3a5f09e071def" title="Selects the desired generator. " alt="" coords="208,5,363,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a5e51ae3cad1570c7a9bf2b395852982a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e51ae3cad1570c7a9bf2b395852982a">&#9670;&nbsp;</a></span>Green() <span class="overload">[2/2]</span></h2>
+<a id="a614ae228cc8c5cccddcf562923f06f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a614ae228cc8c5cccddcf562923f06f3a">&#9670;&nbsp;</a></span>Green() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,13 +192,13 @@ template&lt;typename rank_t , typename diff_t &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1Green.html">Green</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>C</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>D</em>, </td>
         </tr>
         <tr>
@@ -240,27 +227,57 @@ template&lt;typename rank_t , typename diff_t &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Same as the other constructor but with default selections 0,0. </p>
+<p>Computes the product of generators given chains, degrees and level. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a094a394ff8e1f4801fb3a5f09e071def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a094a394ff8e1f4801fb3a5f09e071def">&#9670;&nbsp;</a></span>select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename diff_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::select </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>select_first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>select_second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Selects the desired generator. </p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Green_a5e51ae3cad1570c7a9bf2b395852982a_cgraph.png" border="0" usemap="#classMackey_1_1Green_a5e51ae3cad1570c7a9bf2b395852982a_cgraph" alt=""/></div>
-<map name="classMackey_1_1Green_a5e51ae3cad1570c7a9bf2b395852982a_cgraph" id="classMackey_1_1Green_a5e51ae3cad1570c7a9bf2b395852982a_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="235,5,355,32"/>
-<area shape="rect" id="node4" href="namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="431,107,571,133"/>
-<area shape="rect" id="node5" href="namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="229,107,362,133"/>
-<area shape="rect" id="node6" href="namespaceMackey.html#a30b5667e411ff694aa989e95e394bb41" title="Mackey::invRes" alt="" coords="237,157,354,184"/>
-<area shape="rect" id="node7" href="classMackey_1_1Homology.html#a3ef6bc9a9859c3711c11d153ba55b3e1" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="208,208,383,235"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="445,5,556,32"/>
-<area shape="rect" id="node8" href="namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="434,208,567,235"/>
+<div class="center"><img src="classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph.png" border="0" usemap="#classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph" alt=""/></div>
+<map name="classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph" id="classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1Green.html#ad3bb0ba97c91a5db4fcf57687a571915" title="Default constructor. " alt="" coords="223,5,377,32"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title="Mackey::multiply" alt="" coords="239,56,361,83"/>
+<area shape="rect" id="node5" href="classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="208,107,392,149"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="440,56,571,83"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a248298bf608a1f0e7e5c448a6a38ae80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a248298bf608a1f0e7e5c448a6a38ae80">&#9670;&nbsp;</a></span>basis</h2>
+<a id="a9cfc633ccb548d2d516450399c108174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfc633ccb548d2d516450399c108174">&#9670;&nbsp;</a></span>basis</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,12 +285,49 @@ Here is the call graph for this function:</div>
 template&lt;typename rank_t, typename diff_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">rank_t <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::basis</td>
+          <td class="memname">std::vector&lt;rank_t&gt; <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::basis</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Expresses the product of two generators as a linear combination of the generators of the box product. </p>
+<p>For each selection of generators we have an array expressing the product as a linear combination of generators in the degree of the product </p>
+
+</div>
+</div>
+<a id="a3ced169c915348d6b0f3f178c6b2d7ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ced169c915348d6b0f3f178c6b2d7ff">&#9670;&nbsp;</a></span>boxID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1IDGenerators.html">IDGenerators</a>&lt;rank_t, diff_t&gt; <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::boxID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identifies the generators of the homology group the product lives in. </p>
+
+</div>
+</div>
+<a id="a18ba76e7f7b71c1e5fca23bc71accf86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ba76e7f7b71c1e5fca23bc71accf86">&#9670;&nbsp;</a></span>first_number_selections</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::first_number_selections</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of selections of generators for the first factor. </p>
 
 </div>
 </div>
@@ -291,7 +345,7 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>The groups of the tensor product. </p>
+<p>The homology group the product lives in. </p>
 
 </div>
 </div>
@@ -309,12 +363,12 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>1 if the result is 0 </p>
+<p>1 if the homology group the product lives in is 0. </p>
 
 </div>
 </div>
-<a id="a7fd2fac9558c75fdef0b0ded1bee70d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fd2fac9558c75fdef0b0ded1bee70d8">&#9670;&nbsp;</a></span>normalBasis</h2>
+<a id="a18135b4b1a4aceb387519832a487206a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18135b4b1a4aceb387519832a487206a">&#9670;&nbsp;</a></span>normalBasis</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -322,12 +376,30 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 template&lt;typename rank_t, typename diff_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">rank_t <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::normalBasis</td>
+          <td class="memname">std::vector&lt;rank_t&gt; <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::normalBasis</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Same as basis, but normalized to not have signs. </p>
+<p>Same as basis, now normalized. </p>
+
+</div>
+</div>
+<a id="a1240acdc0e901e496597eab2d0ef27f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1240acdc0e901e496597eab2d0ef27f2">&#9670;&nbsp;</a></span>second_number_selections</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::second_number_selections</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of selections of generators for the second factor. </p>
 
 </div>
 </div>

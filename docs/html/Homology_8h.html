@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('Homology_8h.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Homology.h File Reference</div>  </div>
 </div><!--header-->
@@ -107,9 +107,9 @@ Include dependency graph for Homology.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Homology_8h__incl.png" border="0" usemap="#Mackey_2Homology_8h" alt=""/></div>
 <map name="Mackey_2Homology_8h" id="Mackey_2Homology_8h">
-<area shape="rect" id="node2" href="Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="5,80,80,107"/>
-<area shape="rect" id="node4" href="General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="105,80,183,107"/>
-<area shape="rect" id="node6" href="Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="211,80,277,107"/>
+<area shape="rect" id="node2" href="Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="147,80,222,107"/>
+<area shape="rect" id="node4" href="General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="44,80,123,107"/>
+<area shape="rect" id="node7" href="Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="246,80,313,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,10 +117,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Homology_8h__dep__incl.png" border="0" usemap="#Mackey_2Homology_8hdep" alt=""/></div>
 <map name="Mackey_2Homology_8hdep" id="Mackey_2Homology_8hdep">
-<area shape="rect" id="node2" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="66,80,185,107"/>
-<area shape="rect" id="node3" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="5,155,141,181"/>
-<area shape="rect" id="node4" href="Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="68,229,183,256"/>
-<area shape="rect" id="node5" href="Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="46,304,205,331"/>
+<area shape="rect" id="node2" href="Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node8" href="Identify_8h.html" title="Contains the identification classes. " alt="" coords="151,80,277,107"/>
+<area shape="rect" id="node3" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="80,155,199,181"/>
+<area shape="rect" id="node4" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="69,304,205,331"/>
+<area shape="rect" id="node5" href="Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="131,379,246,405"/>
+<area shape="rect" id="node7" href="Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="75,229,204,256"/>
+<area shape="rect" id="node6" href="Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="109,453,268,480"/>
 </map>
 </div>
 </div>
@@ -138,14 +141,24 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceMackey"><td class="mdescLeft">&#160;</td><td class="mdescRight">The namespace for everything that is group-independent. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:aa1901d96dd7e8dd384bb01f47a893552"><td class="memItemLeft" align="right" valign="top">typedef float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aa1901d96dd7e8dd384bb01f47a893552">Mackey::fScalar</a></td></tr>
-<tr class="memdesc:aa1901d96dd7e8dd384bb01f47a893552"><td class="mdescLeft">&#160;</td><td class="mdescRight">The floating point type for <a class="el" href="classMackey_1_1Homology.html" title="The Homology of a Junction. ">Homology</a> computations.  <a href="namespaceMackey.html#aa1901d96dd7e8dd384bb01f47a893552">More...</a><br /></td></tr>
-<tr class="separator:aa1901d96dd7e8dd384bb01f47a893552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0070de220d906e8e603d5ab4c68e7784"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; fScalar, -1, -1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a0070de220d906e8e603d5ab4c68e7784">Mackey::fdiff_t</a></td></tr>
-<tr class="memdesc:a0070de220d906e8e603d5ab4c68e7784"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of our casted differentials.  <a href="namespaceMackey.html#a0070de220d906e8e603d5ab4c68e7784">More...</a><br /></td></tr>
-<tr class="separator:a0070de220d906e8e603d5ab4c68e7784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6aa639a1f656fdcccbcfa6bc719bb817"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
+<tr class="memitem:a6aa639a1f656fdcccbcfa6bc719bb817"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a6aa639a1f656fdcccbcfa6bc719bb817">Mackey::normalize</a> (const T &amp;element, const S &amp;group)</td></tr>
+<tr class="memdesc:a6aa639a1f656fdcccbcfa6bc719bb817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the element in given abelian group so that element[i]=1 if it generates group[i].  <a href="namespaceMackey.html#a6aa639a1f656fdcccbcfa6bc719bb817">More...</a><br /></td></tr>
+<tr class="separator:a6aa639a1f656fdcccbcfa6bc719bb817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4abdca157edcf425b1e7ceff39d74c2f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
+<tr class="memitem:a4abdca157edcf425b1e7ceff39d74c2f"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f">Mackey::order</a> (const T &amp;element, const S &amp;group)</td></tr>
+<tr class="memdesc:a4abdca157edcf425b1e7ceff39d74c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the order of element in given abelian group.  <a href="namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f">More...</a><br /></td></tr>
+<tr class="separator:a4abdca157edcf425b1e7ceff39d74c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69fa6a0eac2520c76251b0799fa9357f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a69fa6a0eac2520c76251b0799fa9357f"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a69fa6a0eac2520c76251b0799fa9357f">Mackey::isBasisElement</a> (const T &amp;element)</td></tr>
+<tr class="memdesc:a69fa6a0eac2520c76251b0799fa9357f"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the given element is 0,...,0,?,0,...,0 returns the index of ?. Otherwise returns -1.  <a href="namespaceMackey.html#a69fa6a0eac2520c76251b0799fa9357f">More...</a><br /></td></tr>
+<tr class="separator:a69fa6a0eac2520c76251b0799fa9357f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5bc349f95c14d448e42622de2d6a448"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab5bc349f95c14d448e42622de2d6a448"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ab5bc349f95c14d448e42622de2d6a448">Mackey::findBasisElement</a> (const T &amp;elements)</td></tr>
+<tr class="memdesc:ab5bc349f95c14d448e42622de2d6a448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an array of elements, returns the index of the unique element of the form 0,...,0,?,0,...,0. If not unique then returns -1.  <a href="namespaceMackey.html#ab5bc349f95c14d448e42622de2d6a448">More...</a><br /></td></tr>
+<tr class="separator:ab5bc349f95c14d448e42622de2d6a448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the Homology class and algorithms. </p>

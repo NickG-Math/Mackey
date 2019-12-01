@@ -1,0 +1,177 @@
+\hypertarget{classMackey_1_1Massey}{}\section{Mackey\+:\+:Massey$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1Massey}\index{Mackey\+::\+Massey$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Massey$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+
+
+Stores \hyperlink{classMackey_1_1Massey}{Massey} products and their indeterminacy.  
+
+
+
+
+{\ttfamily \#include $<$Massey.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1Massey_a9e48aaa79f409e96ae2051719710315c}{Massey} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Massey_aea86037b138dc1c2682f5522279e551e}{Massey} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, int, int, int, int, int, int, int)
+\begin{DoxyCompactList}\small\item\em Compute \hyperlink{classMackey_1_1Massey}{Massey} product given level, generator degrees and selections. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Massey_a40730505997c03b7c5c05e022ea23f47}{Massey} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, int, int, int, int)
+\begin{DoxyCompactList}\small\item\em Compute \hyperlink{classMackey_1_1Massey}{Massey} product given level, generator degrees and default 0,0,0 selections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rank\+\_\+t \hyperlink{classMackey_1_1Massey_ab738306412d735a31df4913c20948d65}{basis}
+\begin{DoxyCompactList}\small\item\em Expresses the \hyperlink{classMackey_1_1Massey}{Massey} product as a linear combination of the generators of the box product. \end{DoxyCompactList}\item 
+rank\+\_\+t \hyperlink{classMackey_1_1Massey_a36e3aa9de7d7617feb243d886c5936c8}{normal\+Basis}
+\begin{DoxyCompactList}\small\item\em Same as basis, but normalized. \end{DoxyCompactList}\item 
+rank\+\_\+t \hyperlink{classMackey_1_1Massey_a221c49aa23c7d7cb9a3d26db9e6e4a94}{Groups}
+\begin{DoxyCompactList}\small\item\em The homology group the product lives in. \end{DoxyCompactList}\item 
+std\+::array$<$ rank\+\_\+t, 2 $>$ \hyperlink{classMackey_1_1Massey_a16f62ab5c5d3960702ae9804a3cbdb1f}{indeterminacy}
+\begin{DoxyCompactList}\small\item\em The indeterminacy of the \hyperlink{classMackey_1_1Massey}{Massey} product, stored as two bases. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{classMackey_1_1Massey_ad24cfa697a806bc4468aa12154868447}{box\+ID}
+\begin{DoxyCompactList}\small\item\em Identification data for the generators of the \hyperlink{classMackey_1_1Massey}{Massey} product. \end{DoxyCompactList}\item 
+bool \hyperlink{classMackey_1_1Massey_a7890eb54ac6d6c48576ba131a59e551f}{exists}
+\begin{DoxyCompactList}\small\item\em If the \hyperlink{classMackey_1_1Massey}{Massey} product exists. \end{DoxyCompactList}\item 
+bool \hyperlink{classMackey_1_1Massey_a4dbd74288447b094c8308f4d68bf8cff}{no\+Indeterminacy}
+\begin{DoxyCompactList}\small\item\em If the \hyperlink{classMackey_1_1Massey}{Massey} product has no indeterminacy. \end{DoxyCompactList}\item 
+bool \hyperlink{classMackey_1_1Massey_a8e1b4f51835a4de55c6d10e14a607189}{is\+Zero}
+\begin{DoxyCompactList}\small\item\em If the \hyperlink{classMackey_1_1Massey}{Massey} product is 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
+class Mackey\+::\+Massey$<$ rank\+\_\+t, diff\+\_\+t $>$}
+
+Stores \hyperlink{classMackey_1_1Massey}{Massey} products and their indeterminacy. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1Massey_a9e48aaa79f409e96ae2051719710315c}\label{classMackey_1_1Massey_a9e48aaa79f409e96ae2051719710315c}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!Massey@{Massey}}
+\index{Massey@{Massey}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{Massey()}{Massey()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Massey}{Massey} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_aea86037b138dc1c2682f5522279e551e}\label{classMackey_1_1Massey_aea86037b138dc1c2682f5522279e551e}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!Massey@{Massey}}
+\index{Massey@{Massey}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{Massey()}{Massey()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Massey}{Massey} (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{C,  }\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{D,  }\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{E,  }\item[{int}]{level,  }\item[{int}]{degreeC,  }\item[{int}]{degreeD,  }\item[{int}]{degreeE,  }\item[{int}]{selectC,  }\item[{int}]{selectD,  }\item[{int}]{selectE }\end{DoxyParamCaption})}
+
+
+
+Compute \hyperlink{classMackey_1_1Massey}{Massey} product given level, generator degrees and selections. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_a40730505997c03b7c5c05e022ea23f47}\label{classMackey_1_1Massey_a40730505997c03b7c5c05e022ea23f47}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!Massey@{Massey}}
+\index{Massey@{Massey}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{Massey()}{Massey()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Massey}{Massey} (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{C,  }\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{D,  }\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{E,  }\item[{int}]{level,  }\item[{int}]{degreeC,  }\item[{int}]{degreeD,  }\item[{int}]{degreeE }\end{DoxyParamCaption})}
+
+
+
+Compute \hyperlink{classMackey_1_1Massey}{Massey} product given level, generator degrees and default 0,0,0 selections. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1Massey_ab738306412d735a31df4913c20948d65}\label{classMackey_1_1Massey_ab738306412d735a31df4913c20948d65}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!basis@{basis}}
+\index{basis@{basis}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{basis}{basis}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basis}
+
+
+
+Expresses the \hyperlink{classMackey_1_1Massey}{Massey} product as a linear combination of the generators of the box product. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_ad24cfa697a806bc4468aa12154868447}\label{classMackey_1_1Massey_ad24cfa697a806bc4468aa12154868447}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!box\+ID@{box\+ID}}
+\index{box\+ID@{box\+ID}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{box\+ID}{boxID}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$rank\+\_\+t, diff\+\_\+t$>$ \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::box\+ID}
+
+
+
+Identification data for the generators of the \hyperlink{classMackey_1_1Massey}{Massey} product. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_a7890eb54ac6d6c48576ba131a59e551f}\label{classMackey_1_1Massey_a7890eb54ac6d6c48576ba131a59e551f}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!exists@{exists}}
+\index{exists@{exists}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{exists}{exists}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+bool \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::exists}
+
+
+
+If the \hyperlink{classMackey_1_1Massey}{Massey} product exists. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_a221c49aa23c7d7cb9a3d26db9e6e4a94}\label{classMackey_1_1Massey_a221c49aa23c7d7cb9a3d26db9e6e4a94}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!Groups@{Groups}}
+\index{Groups@{Groups}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{Groups}{Groups}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Groups}
+
+
+
+The homology group the product lives in. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_a16f62ab5c5d3960702ae9804a3cbdb1f}\label{classMackey_1_1Massey_a16f62ab5c5d3960702ae9804a3cbdb1f}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!indeterminacy@{indeterminacy}}
+\index{indeterminacy@{indeterminacy}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{indeterminacy}{indeterminacy}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::array$<$rank\+\_\+t, 2$>$ \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::indeterminacy}
+
+
+
+The indeterminacy of the \hyperlink{classMackey_1_1Massey}{Massey} product, stored as two bases. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_a8e1b4f51835a4de55c6d10e14a607189}\label{classMackey_1_1Massey_a8e1b4f51835a4de55c6d10e14a607189}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!is\+Zero@{is\+Zero}}
+\index{is\+Zero@{is\+Zero}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{is\+Zero}{isZero}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+bool \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::is\+Zero}
+
+
+
+If the \hyperlink{classMackey_1_1Massey}{Massey} product is 0. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_a4dbd74288447b094c8308f4d68bf8cff}\label{classMackey_1_1Massey_a4dbd74288447b094c8308f4d68bf8cff}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!no\+Indeterminacy@{no\+Indeterminacy}}
+\index{no\+Indeterminacy@{no\+Indeterminacy}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{no\+Indeterminacy}{noIndeterminacy}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+bool \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::no\+Indeterminacy}
+
+
+
+If the \hyperlink{classMackey_1_1Massey}{Massey} product has no indeterminacy. 
+
+\mbox{\Hypertarget{classMackey_1_1Massey_a36e3aa9de7d7617feb243d886c5936c8}\label{classMackey_1_1Massey_a36e3aa9de7d7617feb243d886c5936c8}} 
+\index{Mackey\+::\+Massey@{Mackey\+::\+Massey}!normal\+Basis@{normal\+Basis}}
+\index{normal\+Basis@{normal\+Basis}!Mackey\+::\+Massey@{Mackey\+::\+Massey}}
+\subsubsection{\texorpdfstring{normal\+Basis}{normalBasis}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::normal\+Basis}
+
+
+
+Same as basis, but normalized. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mackey/\hyperlink{Massey_8h}{Massey.\+h}\end{DoxyCompactItemize}

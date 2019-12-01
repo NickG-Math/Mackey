@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['names',['names',['../classGroupSpecificOptional_1_1MackeyList.html#a8e25429ed075c31ace2b02bf72f5ef05',1,'GroupSpecificOptional::MackeyList']]],
-  ['nonzerohomology',['NonZeroHomology',['../classMackey_1_1TableInput.html#a1f61296eba16c62517e325d21e7a5505',1,'Mackey::TableInput']]],
-  ['normalbasis',['normalBasis',['../classMackey_1_1Green.html#a7fd2fac9558c75fdef0b0ded1bee70d8',1,'Mackey::Green']]],
-  ['number_5fof_5fnodes',['number_of_nodes',['../classMackey_1_1Graph.html#a870a7a373445fa2a8fc61bf51d39be9a',1,'Mackey::Graph::number_of_nodes()'],['../classMackey_1_1MultiplicationTable.html#a224de8ffa6d10b7d9511880bb8a2260f',1,'Mackey::MultiplicationTable::number_of_nodes()']]]
+  ['mackeys',['Mackeys',['../classGroupSpecificOptional_1_1MackeyList.html#abffda7eb6d7cd59f7ea8acb8b6eeb88a',1,'GroupSpecificOptional::MackeyList']]],
+  ['maxindex',['maxindex',['../classMackey_1_1Chains.html#a12a79cb031092cfd3473bb6512e7ae94',1,'Mackey::Chains']]],
+  ['maxsphere',['maxsphere',['../classMackey_1_1TableInput.html#a56448ebdfecb95da4c52349d4ccbf576',1,'Mackey::TableInput']]],
+  ['minsphere',['minsphere',['../classMackey_1_1TableInput.html#a3f4bf3973cebe4bc2d305d111fa8b478',1,'Mackey::TableInput']]]
 ];

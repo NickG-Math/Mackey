@@ -1,10 +1,10 @@
 var classMackey_1_1MultiplicationTable =
 [
-    [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html#a3a7fcf71b8235a641b3e716064a3e384", null ],
-    [ "basicChains", "classMackey_1_1MultiplicationTable.html#a2072078bd506c1b8f8aa80044af159ec", null ],
-    [ "basicIrreducibles", "classMackey_1_1MultiplicationTable.html#ae24bff3ca169d3f9584f6bf7dcb390b1", null ],
+    [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b", null ],
+    [ "basicChains", "classMackey_1_1MultiplicationTable.html#ad135c8e904a71919c96437b444f4b1bb", null ],
+    [ "basicIrreducibles", "classMackey_1_1MultiplicationTable.html#af6896ea01c087e71533de423d7cf65ac", null ],
     [ "colors", "classMackey_1_1MultiplicationTable.html#a11dcad2d104dfd310c8d3439fa00a4ce", null ],
     [ "edges", "classMackey_1_1MultiplicationTable.html#a3e1f526da86649b8a41465d27395d04b", null ],
-    [ "number_of_nodes", "classMackey_1_1MultiplicationTable.html#a224de8ffa6d10b7d9511880bb8a2260f", null ],
-    [ "second_pass_nodes", "classMackey_1_1MultiplicationTable.html#a0c2fa316e3b79691a73a69e552a52bfc", null ]
+    [ "number_of_generators", "classMackey_1_1MultiplicationTable.html#aa964329ee1c5b9072146567d2bd6567f", null ],
+    [ "number_of_nodes", "classMackey_1_1MultiplicationTable.html#a224de8ffa6d10b7d9511880bb8a2260f", null ]
 ];

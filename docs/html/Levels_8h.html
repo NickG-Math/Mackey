@@ -100,17 +100,19 @@ $(document).ready(function(){initNavTree('Levels_8h.html','');});
 <p>Contains the methods for transfering, restricting and Weyl-group-acting.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Wrapper_8h_source.html">Wrapper.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Chains_8h_source.html">Chains.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Homology_8h_source.html">Homology.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="General_8h_source.html">General.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Levels.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Levels_8h__incl.png" border="0" usemap="#Mackey_2Levels_8h" alt=""/></div>
 <map name="Mackey_2Levels_8h" id="Mackey_2Levels_8h">
-<area shape="rect" id="node2" href="Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="168,80,251,107"/>
-<area shape="rect" id="node3" href="Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="5,155,80,181"/>
-<area shape="rect" id="node8" href="General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="105,155,183,181"/>
-<area shape="rect" id="node5" href="MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="208,155,331,181"/>
+<area shape="rect" id="node2" href="Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="117,80,200,107"/>
+<area shape="rect" id="node8" href="Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="275,80,367,107"/>
+<area shape="rect" id="node9" href="General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="251,155,330,181"/>
+<area shape="rect" id="node3" href="Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="152,155,227,181"/>
+<area shape="rect" id="node5" href="MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node11" href="Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="355,155,421,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -118,10 +120,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Levels_8h__dep__incl.png" border="0" usemap="#Mackey_2Levels_8hdep" alt=""/></div>
 <map name="Mackey_2Levels_8hdep" id="Mackey_2Levels_8hdep">
-<area shape="rect" id="node2" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="66,80,185,107"/>
-<area shape="rect" id="node3" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="5,155,141,181"/>
-<area shape="rect" id="node4" href="Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="68,229,183,256"/>
-<area shape="rect" id="node5" href="Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="46,304,205,331"/>
+<area shape="rect" id="node2" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="27,80,146,107"/>
+<area shape="rect" id="node3" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="16,229,152,256"/>
+<area shape="rect" id="node4" href="Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="78,304,193,331"/>
+<area shape="rect" id="node6" href="Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="22,155,151,181"/>
+<area shape="rect" id="node5" href="Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="56,379,215,405"/>
 </map>
 </div>
 </div>
@@ -168,13 +171,25 @@ Functions</h2></td></tr>
 <tr class="memitem:aab8a6292210a3b71960cb03b79d218e6"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename T &gt; </td></tr>
 <tr class="memitem:aab8a6292210a3b71960cb03b79d218e6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aab8a6292210a3b71960cb03b79d218e6">Mackey::shiftsegment</a> (Eigen::MatrixBase&lt; Derived &gt; &amp;V, int tracker, T rankvalue)</td></tr>
 <tr class="separator:aab8a6292210a3b71960cb03b79d218e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3204eaf23b52b27392baaaf0a6898f76"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename gen_t &gt; </td></tr>
-<tr class="memitem:a3204eaf23b52b27392baaaf0a6898f76"><td class="memTemplItemLeft" align="right" valign="top">gen_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a3204eaf23b52b27392baaaf0a6898f76">Mackey::action</a> (const gen_t &amp;generator, const rank_t &amp;rank)</td></tr>
-<tr class="memdesc:a3204eaf23b52b27392baaaf0a6898f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Weyl group action on a generator given the rank of the group it lives in.  <a href="namespaceMackey.html#a3204eaf23b52b27392baaaf0a6898f76">More...</a><br /></td></tr>
-<tr class="separator:a3204eaf23b52b27392baaaf0a6898f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa515b26c0fbc7f19b36cee7d826f07b9"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename Derived &gt; </td></tr>
+<tr class="memitem:aa515b26c0fbc7f19b36cee7d826f07b9"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aa515b26c0fbc7f19b36cee7d826f07b9">Mackey::action</a> (const Eigen::MatrixBase&lt; Derived &gt; &amp;generator, const rank_t &amp;rank)</td></tr>
+<tr class="memdesc:aa515b26c0fbc7f19b36cee7d826f07b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Weyl group action on a generator given the rank of the group it lives in.  <a href="namespaceMackey.html#aa515b26c0fbc7f19b36cee7d826f07b9">More...</a><br /></td></tr>
+<tr class="separator:aa515b26c0fbc7f19b36cee7d826f07b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30b5667e411ff694aa989e95e394bb41"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename gen_t &gt; </td></tr>
 <tr class="memitem:a30b5667e411ff694aa989e95e394bb41"><td class="memTemplItemLeft" align="right" valign="top">gen_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a30b5667e411ff694aa989e95e394bb41">Mackey::invRes</a> (const gen_t &amp;generator, const rank_t &amp;domain, const rank_t &amp;range)</td></tr>
 <tr class="separator:a30b5667e411ff694aa989e95e394bb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b14999d16c90eb1fdaa40d31809f662"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t &gt; </td></tr>
+<tr class="memitem:a5b14999d16c90eb1fdaa40d31809f662"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a5b14999d16c90eb1fdaa40d31809f662">Mackey::transfer</a> (const Homology&lt; rank_t, diff_t &gt; &amp;low, const Homology&lt; rank_t, diff_t &gt; &amp;high, const rank_t &amp;rank_low, const rank_t &amp;rank_high)</td></tr>
+<tr class="memdesc:a5b14999d16c90eb1fdaa40d31809f662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing the transfer of each generator in terms of the generators in the image.  <a href="namespaceMackey.html#a5b14999d16c90eb1fdaa40d31809f662">More...</a><br /></td></tr>
+<tr class="separator:a5b14999d16c90eb1fdaa40d31809f662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b62b0d041087605dabd4ab3753f1186"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t &gt; </td></tr>
+<tr class="memitem:a7b62b0d041087605dabd4ab3753f1186"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a7b62b0d041087605dabd4ab3753f1186">Mackey::restriction</a> (const Homology&lt; rank_t, diff_t &gt; &amp;high, const Homology&lt; rank_t, diff_t &gt; &amp;low, const rank_t &amp;rank_high, const rank_t &amp;rank_low)</td></tr>
+<tr class="memdesc:a7b62b0d041087605dabd4ab3753f1186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing the restriction of each generator in terms of the generators in the image.  <a href="namespaceMackey.html#a7b62b0d041087605dabd4ab3753f1186">More...</a><br /></td></tr>
+<tr class="separator:a7b62b0d041087605dabd4ab3753f1186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a4f2ced77550a7c06d2c15b39030ff6"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t &gt; </td></tr>
+<tr class="memitem:a9a4f2ced77550a7c06d2c15b39030ff6"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a9a4f2ced77550a7c06d2c15b39030ff6">Mackey::action</a> (const Homology&lt; rank_t, diff_t &gt; &amp;H, const rank_t &amp;rank)</td></tr>
+<tr class="memdesc:a9a4f2ced77550a7c06d2c15b39030ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing the Weyl group action on each generator in terms of the other generators.  <a href="namespaceMackey.html#a9a4f2ced77550a7c06d2c15b39030ff6">More...</a><br /></td></tr>
+<tr class="separator:a9a4f2ced77550a7c06d2c15b39030ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the methods for transfering, restricting and Weyl-group-acting. </p>

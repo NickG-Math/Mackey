@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pscalar',['pScalar',['../namespaceMackey.html#a67b5f4650ba2f166d15133a1bea2472b',1,'Mackey']]]
+  ['literal',['Literal',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#afc07a3fc65ced03bfc30de81355ac988',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
 ];

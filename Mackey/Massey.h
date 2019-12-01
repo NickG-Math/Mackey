@@ -6,18 +6,26 @@
 
 namespace Mackey {
 
-	///Massey products
+	///Stores Massey products and their indeterminacy
 	template<typename rank_t, typename diff_t>
 	class Massey {
 	public:
-		rank_t basis, normalBasis, Groups;
-		std::array<rank_t, 2> indeterminacy;
-		IDGenerators<rank_t, diff_t> boxID;
-		bool noCycle;
-		bool noIndeterminacy;
-		bool isZero;
-		Massey() { noCycle = 1; isZero = 1; }
+		rank_t basis; ///<Expresses the Massey product as a linear combination of the generators of the box product.
+		rank_t normalBasis; ///<Same as basis, but normalized
+		rank_t Groups; ///<The homology group the product lives in.
+		std::array<rank_t, 2> indeterminacy; ///< The indeterminacy of the Massey product, stored as two bases
+		IDGenerators<rank_t, diff_t> boxID; ///< Identification data for the generators of the Massey product
+		bool exists; ///< If the Massey product exists
+		bool noIndeterminacy; ///<If the Massey product has no indeterminacy
+		bool isZero; ///<If the Massey product is 0.
+	
+		///Default constructor
+		Massey() { exists = 0; isZero = 1; }
+
+		///Compute Massey product given level, generator degrees and selections
 		Massey(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int, int, int, int, int, int, int);
+
+		///Compute Massey product given level, generator degrees and default 0,0,0 selections
 		Massey(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int, int, int, int);
 
 	};
@@ -25,6 +33,7 @@ namespace Mackey {
 	namespace internal 
 	{
 
+		///Forms the permutation allowing us to go from C box (D box E) to (C box D) box E.
 		template<typename rank_t>
 		Eigen::PermutationMatrix<-1, -1, int> box_permutation(const std::vector<rank_t>& C, const std::vector<rank_t>& D, const std::vector<rank_t>& E, int degree) {
 			auto Cmax = std::min((int)C.size() - 1, degree);
@@ -60,7 +69,7 @@ namespace Mackey {
 			return Eigen::PermutationMatrix<-1, -1, int>(Eigen::Map<Eigen::Matrix<int, -1, 1>>(perm.data(), perm.size()));
 		}
 
-
+		///Computes Massey products and their indeterminacy
 		template<typename rank_t, typename diff_t>
 		class MasseyCompute {
 			Massey<rank_t, diff_t> Mass;
@@ -93,6 +102,7 @@ namespace Mackey {
 			void compute();
 			void indeterminacy();
 
+			///Stores Massey products and their indeterminacy
 			template<typename s_rank_t, typename s_diff_t>
 			friend class Mackey::Massey;
 		};
@@ -106,7 +116,7 @@ namespace Mackey {
 			if (Mass.isZero)
 				return;
 			box();
-			if (Mass.noCycle)
+			if (!Mass.exists)
 				return;
 			compute();
 			indeterminacy();
@@ -162,7 +172,7 @@ namespace Mackey {
 
 		template<typename rank_t, typename diff_t>
 		void MasseyCompute<rank_t, diff_t>::box() {
-			Mass.noCycle = 1;
+			Mass.exists = 0;
 			BoxCD = ChainsBox<rank_t, diff_t>(C, D, std::min(C.maxindex + D.maxindex, degreeC + degreeD + degreeE + 2));
 			boundaryCD = box_boundary(C, D, BoxCD, resgenC, resgenD, degreeC, degreeD);
 			if (boundaryCD.size() == 0)
@@ -171,7 +181,7 @@ namespace Mackey {
 			boundaryDE = box_boundary(D, E, BoxDE, resgenD, resgenE, degreeD, degreeE);
 			if (boundaryDE.size() == 0)
 				return;
-			Mass.noCycle = 0;
+			Mass.exists = 1;
 			Box = JunctionBox<rank_t, diff_t>(BoxCD, E, degreeC + degreeD + degreeE + 1);
 		}
 

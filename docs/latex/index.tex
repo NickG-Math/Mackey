@@ -5,13 +5,13 @@ For a quick demonstration in the case of $G=C_4$ you can use one of the availabl
 
 \begin{DoxyItemize}
 \item C++17 and the standard library.
-\item \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page}{\tt Eigen}, a header only library for matrix manipulation. I\textquotesingle{}ve tested the code with Eigen 3.\+3.\+7 though newer versions shouldn\textquotesingle{}t break compatibility.
-\item Optional\+: For improved performance you can use the Intel M\+KL with Eigen and further combine with Open\+MP for multithreading.
+\item \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page}{\tt Eigen}, a header only library for matrix manipulation. I\textquotesingle{}ve tested the code with \hyperlink{namespaceEigen}{Eigen} 3.\+3.\+7 though newer versions shouldn\textquotesingle{}t break compatibility.
+\item Optional\+: For improved performance you can use the Intel M\+KL with \hyperlink{namespaceEigen}{Eigen} and further combine with Open\+MP for multithreading.
 \item Optional\+: To draw the multiplication graphs you will need Graphviz.
 \end{DoxyItemize}\hypertarget{index_install}{}\section{Installation}\label{index_install}
 
 \begin{DoxyItemize}
-\item To install simply clone/download the \href{https://github.com/NickG-Math/Mackey}{\tt repository} and include it in your path. You will also need to do the same with Eigen.
+\item To install simply clone/download the \href{https://github.com/NickG-Math/Mackey}{\tt repository} and include it in your path. You will also need to do the same with \hyperlink{namespaceEigen}{Eigen}.
 \item See the page \hyperlink{use}{How to Use} for a tutorial on using the library.
 \item As for compiler support, I have tested the code with the following C++ compilers\+: G\+CC 9.\+2 (Linux), Clang 10 (Linux and Mac\+OS), Intel Compiler 19 (Linux and Windows), M\+S\+VC 19 (Windows). Remember to use the option {\ttfamily -\/std=c++17}. For more information on compiler options, see the \hyperlink{perf}{Performance} page.
 \end{DoxyItemize}\hypertarget{index_status}{}\section{Current Status}\label{index_status}

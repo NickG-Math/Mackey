@@ -1,7 +1,8 @@
 <map id="Mackey/Matrix_Mixing.h" name="Mackey/Matrix_Mixing.h">
-<area shape="rect" id="node2" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="72,80,179,107"/>
-<area shape="rect" id="node3" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="66,155,185,181"/>
-<area shape="rect" id="node4" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="5,229,141,256"/>
-<area shape="rect" id="node5" href="$Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="68,304,183,331"/>
-<area shape="rect" id="node6" href="$Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="46,379,205,405"/>
+<area shape="rect" id="node2" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="34,80,141,107"/>
+<area shape="rect" id="node3" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="28,155,147,181"/>
+<area shape="rect" id="node4" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="17,304,153,331"/>
+<area shape="rect" id="node5" href="$Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="79,379,194,405"/>
+<area shape="rect" id="node7" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="23,229,152,256"/>
+<area shape="rect" id="node6" href="$Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="57,453,216,480"/>
 </map>

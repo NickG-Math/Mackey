@@ -14,7 +14,7 @@ namespace Mackey {
 	class Green {
 	public:
 		rank_t Groups;///<The homology group the product lives in.
-		bool isZero;///<1 if the the homology group the product lives in is 0.
+		bool isZero;///<1 if the homology group the product lives in is 0.
 
 		//////////////////////////////////////////////////////////////
 		///Expresses the product of two generators as a linear combination of the generators of the box product
@@ -79,18 +79,19 @@ namespace Mackey {
 				res_gen = restriction(gen, rank_level, C.rank[degree]);
 			}
 
+			/// Computes the product of generators in a Green functor
 			template<typename s_rank_t, typename s_diff_t>
 			friend class GreenCompute;
 			
+			///Computes Massey products and their indeterminacy
 			template<typename s_rank_t, typename s_diff_t>
 			friend class MasseyCompute;
 
 		};
 
-
+		///Computes the product of generators at the bottom level
 		template<typename rank_t, typename diff_t>
 		class ProductGen {
-		public:
 			typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
 			gen_t product;
 			int padright, padleft;
@@ -125,6 +126,14 @@ namespace Mackey {
 				product.segment(padleft, canonProduct.size()) = canonProduct;
 			}
 
+			///Computes products
+			template<typename s_rank_t, typename s_diff_t>
+			friend class GreenCompute;
+
+			///Computes Massey products
+			template<typename s_rank_t, typename s_diff_t>
+			friend class MasseyCompute;
+
 		};
 
 		/// Computes the product of generators in a Green functor
@@ -156,6 +165,7 @@ namespace Mackey {
 			/// Computes the product of generators genC, genD by combining the results of getGens and box
 			void compute();
 
+			/// The result of multiplying generators in a Green functor
 			template<typename s_rank, typename s_diff>
 			friend class Mackey::Green;
 		};

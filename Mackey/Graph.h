@@ -35,7 +35,11 @@ namespace Mackey {
 
 
 		/// Construct given the edges of the graph
+<<<<<<< HEAD
 		Graph(std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) { 
+=======
+		Graph(const std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) { 
+>>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 			path.resize(number_of_nodes); weightedDistance.assign(number_of_nodes, -1);
 		}
 
@@ -104,15 +108,23 @@ namespace Mackey {
 	/// A directed Graph with weights
 	class WeightedGraph : public Graph<WeightedGraph> {
 	public:
+<<<<<<< HEAD
 		///Default constructor
 		WeightedGraph() {};
 
+=======
+>>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 		/// Sets edges and 0 weights
 		WeightedGraph(std::vector<std::vector<int>>& edges) : Graph(edges), weights(zeroWeight(edges)) { initialize(); } //we must initalize here and not in a constructor of Graph because we can't static_cast(this) in a constructor
 
 		/// Sets edges and weights
 		WeightedGraph(std::vector<std::vector<int>>& edges, std::vector<std::vector<int>>& weights) : Graph(edges), weights(weights) { initialize(); } //see above why this is here
 
+<<<<<<< HEAD
+=======
+		/// Sets edges and weights
+		WeightedGraph(const std::vector<std::vector<int>>& edges, const std::vector<std::vector<int>>& weights) : Graph(edges), weights(weights) { initialize(); } //see above why this is here
+>>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 	private:
 		std::vector<std::vector<int>> weights;
 		std::vector<int> distance, closest;
@@ -207,12 +219,20 @@ namespace Mackey {
 		void draw(const std::vector<std::string>&);
 
 	private:
+<<<<<<< HEAD
 		std::vector<std::vector<char>> colors;		///<The colors of the graph
+=======
+		/// The colors of the graph
+		const std::vector<std::vector<char>> colors;
+>>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 		void computePath();
 		void constructDual();
 		std::vector<int> adjustpath(std::vector<int>& path);
+<<<<<<< HEAD
 
 		WeightedGraph dual;
+=======
+>>>>>>> df2e02523d9b0cf2be901620a7daf93ba97830a8
 		friend class  Graph<ColoredGraph>; ///<Used to set up the CRTP.
 	};
 

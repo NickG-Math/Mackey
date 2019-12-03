@@ -1,8 +1,8 @@
 \hypertarget{use_how}{}\section{Step 0\+: Setting the Group Parameters}\label{use_how}
 
 \begin{DoxyItemize}
-\item For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for $G=C_4$) on how to set them in the file Implementation.\+h available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.
-\item There are also some optional parameters that allow you to identify and print the names of the computed \hyperlink{namespaceMackey}{Mackey} functors. This functionality is disabled by default, but can easily be turned on by defining the macro M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES and setting the optional parameters living in the namespace \hyperlink{namespaceGroupSpecificOptional}{Group\+Specific\+Optional}. An example of how this is done is contained the file Optional\+\_\+\+Implementation.\+h in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}. The implementation there is for $G=C_4$ and the 16 \hyperlink{namespaceMackey}{Mackey} functors in the $RO(C_4)$ homology.
+\item For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for $G=C_4$) on how to set them in the file {\ttfamily Implementation.\+h} available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.
+\item There are also some optional parameters that allow you to identify and print the names of the computed \hyperlink{namespaceMackey}{Mackey} functors. This functionality is disabled by default, but can easily be turned on by defining the macro M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES and setting the optional parameters living in the namespace \hyperlink{namespaceGroupSpecificOptional}{Group\+Specific\+Optional}. An example of how this is done is contained the file {\ttfamily Optional\+\_\+\+Implementation.\+h} in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}. The implementation there is for $G=C_4$ and the 16 \hyperlink{namespaceMackey}{Mackey} functors in the $RO(C_4)$ homology. We have included both the $\underline{\mathbb Z}$ and $\underline{\mathbb F_2}$ coefficient cases for reference.
 \end{DoxyItemize}\hypertarget{use_var}{}\subsection{Global variables}\label{use_var}
 The global variables that need to be set are\+:
 
@@ -23,7 +23,14 @@ The global variables that need to be set are\+:
 
 \item The matrices appearing in the Standard Chains all look like this due to equivariance.
 \end{DoxyItemize}\hypertarget{use_next}{}\section{Step 1\+: Calling the library}\label{use_next}
-Once Step 0 is complete, you can include {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} to access the methods relating to the additive and multiplicative structure, and {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} to access the factorization methods. For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder together with the provided two Implementation header files that come from Step 0.\hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
+Once Step 0 is complete, you can include {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} to access the methods relating to the additive and multiplicative structure and Massey products, and {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} to access the factorization methods. For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder together with the provided two Implementation header files that come from Step 0.\hypertarget{use_coeff}{}\subsection{Coefficients and templates}\label{use_coeff}
+There are two template arguments that always need to be specified, and their typenames are always {\ttfamily rank\+\_\+t,diff\+\_\+t}. These are the coefficients used for the rank arrays and differential matrices respectively.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily rank\+\_\+t} can be set to {\ttfamily Eigen\+::\+Matrix$<$char,1,-\/1$>$} for groups of prime power order $<127$ and we can replace {\ttfamily char} by better precision integers for higher prime power orders.
+\item {\ttfamily diff\+\_\+t} depends on the desired coefficients\+: eg we can set it to {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} for integer coefficients and groups of small power order, or {\ttfamily \hyperlink{namespaceEigen}{Eigen}$<$\hyperlink{classZ}{Z}$<$N$>$,-\/1,-\/1$>$} for $\mathbb Z/n\mathbb Z$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file {\ttfamily \hyperlink{Z__n_8h}{Z\+\_\+n.\+h}} where we define $\mathbb Z/n\mathbb Z$ coefficients.
+\end{DoxyItemize}\hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
 The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} exposes the method \hyperlink{namespaceMackey_a58708ee937b0c4172b7cde8e5f856504}{R\+O\+Homology} that computes the homology of a given sphere as a \hyperlink{namespaceMackey}{Mackey} functor. Example\+: The code
 
 {\ttfamily  auto M= \hyperlink{namespaceMackey_a58708ee937b0c4172b7cde8e5f856504}{Mackey\+::\+R\+O\+Homology$<$rank\+\_\+t,diff\+\_\+t$>$}(\{2,-\/2\}); }
@@ -32,23 +39,25 @@ sets
 
 $ M=H_*(S^{2\sigma-2\lambda})$
 
-The typenames {\ttfamily rank\+\_\+t,diff\+\_\+t} can be set to {\ttfamily Eigen\+::\+Matrix$<$char,1,-\/1$>$} and {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} respectively for maximum performance for small groups of prime power order $ <127 $. Otherwise replace {\ttfamily char} with {\ttfamily short}.
+Here {\ttfamily M} is an object of class \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor} so you should read the documentation of that on how to extract that information. If the optional parameters are set then it\textquotesingle{}s also possible to extract the name of the \hyperlink{namespaceMackey}{Mackey} functor using the method \hyperlink{namespaceMackey_ad0ca46ae450950b13360c44a2de1cb43}{identify\+\_\+\+Mackey}. Simply use
 
-Here {\ttfamily M} is an object of class \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor} so you should read the documentation of that on how to extract that information. If the optional parameters are set then it\textquotesingle{}s also possible to extract the name of the \hyperlink{namespaceMackey}{Mackey} functor using the method \hyperlink{namespaceMackey_a3fa96ba9b7316a92eca2f5c0bd1cca4d}{identify}. Simply use
-
-{\ttfamily  std\+::cout $<$$<$ identify(\+M); }\hypertarget{use_step1mult}{}\subsection{The multiplicative structure}\label{use_step1mult}
+{\ttfamily  std\+::cout $<$$<$ identify\+\_\+\+Mackey(\+M); }\hypertarget{use_step1mult}{}\subsection{The multiplicative structure}\label{use_step1mult}
 The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} also exposes the method \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} that multiplies two generators in the Green functor $H_{\star}(S)$. Example\+: The code
 
-{\ttfamily auto linear\+\_\+combination= \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green}$<$rank\+\_\+t,diff\+\_\+t$>$(2,\{0,2,-\/2\},\{1,3,-\/4\},0,0);}
+{\ttfamily  auto linear\+\_\+combination= \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green$<$rank\+\_\+t,diff\+\_\+t$>$}(2,\{0,2,-\/2\},\{1,3,-\/4\}); }
 
 multiplies the generators of
 
-$ H_0^{C_4}(S^{2\sigma-2\lambda}) \otimes H_1^{C_4}(S^{3\sigma-4\lambda}) \to H_1^{C_4}(S^{5\sigma-6\lambda}) $
+$ H_0^{C_4}(S^{2\sigma-2\lambda}) \otimes H_1^{C_4}(S^{3\sigma-4\lambda}) \to H_1^{C_4}(S^{5\sigma-6\lambda}) $ $ a\otimes b\mapsto ab$
 
-writing the answer as a linear combination of the generators in the box product. The first argument of \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for $C_4$, level=2 is the top level. The second and third entries are the degrees of the two generators, while the last two are needed if we have noncyclic groups. In that case, these two select the generators we want (eg $1,2$ selects the second and third generators of the noncyclic groups respectively; remember that in C++ counting starts from $0$).
+writing the answer as a linear combination of the generators in the box product. The first argument of \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for $C_4$, level=2 is the top level. The second and third entries are the degrees of the two generators.
 
-The result of the computation {\ttfamily linear\+\_\+combination} is an \hyperlink{namespaceEigen}{Eigen} row vector ({\ttfamily rank\+\_\+t}) that contains the coefficients eg if it\textquotesingle{}s {\ttfamily \mbox{[}2,1\mbox{]}} then the product of generators is 2 times the first generator plus 1 times the second. For convenience we omit any signs etc. and identify generators of the same cyclic groups (see \hyperlink{math_caveat}{A caveat}) but it\textquotesingle{}s also possible to get the nonnormalized version (see \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}).\hypertarget{use_step1fact}{}\subsection{Factorization}\label{use_step1fact}
-The file {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} exposes the class \hyperlink{classMackey_1_1Factorization}{Factorization} whose constructor creates the multiplication graph and the method \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources(...)} factorizes all generators using the given sources. First construct the multiplication graph via\+:
+If the homology in these degrees is not cyclic, then the generators are not determined by their degree and need to be selected. In that case we can provide an optional final 2 {\ttfamily int} arguments in {\ttfamily \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green}} that perform the selection\+: eg $1,2$ selects the second and third generators of the noncyclic groups respectively (remember that in C++ counting starts from $0$). The default selection is $0,0$
+
+The result of the computation {\ttfamily linear\+\_\+combination} is an \hyperlink{namespaceEigen}{Eigen} row vector ({\ttfamily rank\+\_\+t}) that can be intrepreted as follows\+: if the result is $[t_1,...,t_n]$ then $ ab=\sum_it_ig_i$ where $g_i$ are the generators of the homology group the product lives in.
+
+For convenience we normalize the basis to omit any signs and identify generators of the same cyclic groups (see \hyperlink{math_caveat}{A caveat}) but it\textquotesingle{}s also possible to get the nonnormalized version (\hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}).\hypertarget{use_step1fact}{}\subsection{Factorization}\label{use_step1fact}
+The file {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} exposes the class \hyperlink{classMackey_1_1Factorization}{Factorization} whose constructor creates the multiplication graph and the method \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources} that factorizes all generators using the given sources. First construct the multiplication graph via\+:
 
 {\ttfamily auto F= Factorization$<$rank\+\_\+t, diff\+\_\+t$>$ F(\{ -\/5,-\/5 \}, \{ 5,5 \}, \{ \{0,1,0\},\{2,2,0\},\{0,0,1\},\{2,0,1\} \}, \{ \char`\"{}asigma\char`\"{}, \char`\"{}u2sigma\char`\"{}, \char`\"{}alambda\char`\"{}, \char`\"{}ulambda\char`\"{} \});}
 
@@ -68,4 +77,15 @@ to print the name of the {\ttfamily i}-\/th generator. This name will be nonempt
 
 where now both $1$ and $s_3$ are used as sources.
 
-For more details see the code in Test\+Factorization.\+cpp of the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder 
+For more details see the code in Test\+Factorization.\+cpp of the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder\hypertarget{use_step1Mass}{}\subsection{Massey products}\label{use_step1Mass}
+The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} finally exposes the method \hyperlink{namespaceMackey_aa98cd58919c2f716d8df7d61ef1f5c07}{R\+O\+Massey} for (triple) Massey products in the Green functor $H_{\star}(S)$. Example\+: The code
+
+{\ttfamily auto Mass= \hyperlink{namespaceMackey_aa98cd58919c2f716d8df7d61ef1f5c07}{Mackey\+::\+R\+O\+Massey$<$rank\+\_\+t,diff\+\_\+t$>$}(2,\{0,1,0\},\{-\/3,-\/3,0\},\{2,2,0\});}
+
+computes the Massey product $\langle a_{\sigma},w_3,u_{2\sigma}\rangle $ and its indeterminacy. As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product, while the indeterminacy is expressed as two groups (left and right indeterminacy). If both are $0$ then we have the member variable {\ttfamily no\+Indeterminacy=1}.
+
+We can also provide three optional {\ttfamily int} arguments at the end for selections, see \hyperlink{use_step1mult}{The multiplicative structure} for what that does.
+
+Finally, {\ttfamily Mass} is of type {\ttfamily \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}} so read the documentation of that class to see how to extract the relevant data.
+
+For more details see the code in Test\+Massey.\+cpp of the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder 

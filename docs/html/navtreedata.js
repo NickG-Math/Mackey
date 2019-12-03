@@ -13,7 +13,8 @@ var NAVTREE =
       [ "In more detail", "math.html#imd", [
         [ "The additive structure", "math.html#add", null ],
         [ "The multiplicative structure", "math.html#mult", null ],
-        [ "Factorization", "math.html#factor", null ]
+        [ "Factorization", "math.html#factor", null ],
+        [ "Massey Products", "math.html#Mass", null ]
       ] ],
       [ "A caveat", "math.html#caveat", [
         [ "Cyclic Generators", "math.html#cyclic", null ],
@@ -26,9 +27,11 @@ var NAVTREE =
         [ "The standard differentials", "use.html#fun", null ]
       ] ],
       [ "Step 1: Calling the library", "use.html#next", [
+        [ "Coefficients and templates", "use.html#coeff", null ],
         [ "The additive structure", "use.html#step1add", null ],
         [ "The multiplicative structure", "use.html#step1mult", null ],
-        [ "Factorization", "use.html#step1fact", null ]
+        [ "Factorization", "use.html#step1fact", null ],
+        [ "Massey products", "use.html#step1Mass", null ]
       ] ]
     ] ],
     [ "Algorithm Details", "algo.html", [
@@ -42,6 +45,7 @@ var NAVTREE =
       [ "Multithreading", "perf.html#thread", null ],
       [ "Integers vs Floats", "perf.html#intvsfloat", null ],
       [ "Memoizing ChangeBasis", "perf.html#memo", null ],
+      [ "Box Products", "perf.html#boxproducts", null ],
       [ "Bottlenecks", "perf.html#bottle", null ]
     ] ],
     [ "Namespaces", null, [

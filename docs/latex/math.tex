@@ -42,18 +42,39 @@ Even if we can multiply any two generators, that doesn\textquotesingle{}t mean w
 \item Since the product $ab$ may not be a generator, but rather a multiple of it, we need to allow multiples of generators as distinct nodes. On the other hand, we never allow trivial (0) multiples of generators.
 \item To obtain a factorization, we simply need to connect 1 with any node in the graph. For the most efficient factorizations, we want to minimize the number we alternate between blue and red edges in each path. This is done by a modified Dikjstra algorithm.
 \item For the generators not connected to 1 (eg $s_3$) we need to perform the same process using different sources for our graph (eg using $s_3$ as the source for all paths).
+\end{DoxyItemize}\hypertarget{math_Mass}{}\subsection{Massey Products}\label{math_Mass}
+The chains based approach we use means that Massey products can be computed from definition. The only extra thing we need is the following\+:
+
+
+\begin{DoxyItemize}
+\item Given an element $x$ that vanishes in homology we can find a $y$ that bounds it\+: $dy=x$. This is part of our homology algorithm.
+\end{DoxyItemize}
+
+So Massey products work like this\+:
+
+
+\begin{DoxyItemize}
+\item Suppose we have $ab=bc=0$ in homology. We lift $a,b,c$ to chains $C,D,E$ and explicitly compute $ab, bc$ in $C\otimes D$ and $D\otimes E$ respectively, as in \hyperlink{math_mult}{The multiplicative structure}.
+\item After that we find $ds=ab, dt=bc$ and form $sc$ and $at$ in the box products $(C\otimes D) \otimes E$ and $C\otimes (D\otimes E)$ respectively.
+\item These box products are isomorphic up to a permutation that we can explicitly compute. Thus we can write $sc$ and $at$ as elements of the same chain complex in the same basis.
+\item Finally we form $sc+(-1)^{|a|+|b|+1}at$ and compute its image in homology.
 \end{DoxyItemize}\hypertarget{math_caveat}{}\section{A caveat}\label{math_caveat}
 \hypertarget{math_cyclic}{}\subsection{Cyclic Generators}\label{math_cyclic}
 
 \begin{DoxyItemize}
 \item The way we prove that say a transfer map is multiplication by $2$, is by computing the generators at the domain and target, computing the transfer of the domain generator and comparing with the target. Of course, there are usually multiple choices of generators, but up to isomorphism we get the same \hyperlink{namespaceMackey}{Mackey} functor.
-\item There is a caveat however that appears when computing the multiplicative structure\+: If we prove that $ab$ and $cd$ are both generators of the same cyclic group, then we can\textquotesingle{}t conclude that they are equal. Eg if the group is $\mathbb Z/4$ or $\mathbb Z$ then they differ by a sign. Still, since we are interested in generating the $RO(G)$ homology, as opposed to finding exact relations, we don\textquotesingle{}t have to distinguish between cyclic generators and we don\textquotesingle{}t need to worry about this detail.
-\item If we are interested in exact relations, then we can resolve the multiple generator ambiguity as follows\+: $ab$ and $cd$ are produced by tensoring different complexes, and if we have an explicit chain homotopy between them then we can compare directly. For example if they are obtained by tensoring $C_*(S^{n\sigma+m\lambda})\otimes C_*S^{\lambda}$ and $C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{2\lambda}$ then we can compare them by using $C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{\lambda}\otimes C_*S^{\lambda}$ as a stepping stone.
-\item The problem with the above approach is that we need to take more and more box products, which is the most costly operation for runtime.
+\item There is a catch however that appears when computing the multiplicative structure\+: If we prove that $ab$ and $cd$ are both generators of the same cyclic group, then we can\textquotesingle{}t conclude that they are equal. Eg if the group is $\mathbb Z/4$ or $\mathbb Z$ then they differ by a sign. Still, since we are interested in generating the $RO(G)$ homology, as opposed to finding exact relations, we don\textquotesingle{}t have to distinguish between cyclic generators and we don\textquotesingle{}t need to worry about this detail.
+\item If we are interested in exact relations, then are ways to resolve the ambiguity as we explain in the following subsection.
 \end{DoxyItemize}\hypertarget{math_noncycl}{}\subsection{Non cyclic generators}\label{math_noncycl}
 
 \begin{DoxyItemize}
-\item There is a situtation where the caveat above cannot be sidestepped and that\textquotesingle{}s when we have non cyclic groups. Here\textquotesingle{}s an example where this problem comes up\+: If we have $\mathbb Z\oplus \mathbb Z/2$ with generators $x,y$ respectively then we can\textquotesingle{}t automatically distinguish $x$ from $x+y$ as there is an automorphism of $\mathbb Z\oplus \mathbb Z/2$ exchanging them. In that case the difference between $ab$ and $cd$ generating the same group can be much more severe than just an integer coprime to the group\textquotesingle{}s order (or a sign).
-\item One way out of this is to break down our box products further until they can be directly compared.
-\item Alternatively (and this is the approach we take in practice) we can choose to ignore these products and make no statement as to the equality of $ab$ and $cd$ if they live in non cyclic groups. This gives us less data to work with, but at least in the $C_4$ case this is enough to write the factorization of any element. 
+\item There is a situtation where the caveat above cannot be sidestepped and that\textquotesingle{}s when we have non cyclic groups. A typical example\+: If we have $\mathbb Z\oplus \mathbb Z/2$ with generators $x,y$ respectively then we can\textquotesingle{}t automatically distinguish $x$ from $x+y$ as there is an automorphism of $\mathbb Z\oplus \mathbb Z/2$ exchanging them. In that case the difference between $ab$ and $cd$ generating the same group can be much more severe than just an integer coprime to the group\textquotesingle{}s order (or a sign).
+\item For another example, when computing the $RO(C_4)$ homology in $\mathbb F_2$ coefficients the group $\mathbb F_2\oplus \mathbb F_2$ tends to appear frequently; unfortunately the three generators cannot be distingusihed.
+\item One way out of this is to break down our box products further until they can be directly compared. This is difficult to program generally and comes at a very high performance cost as we need more iterated box products.
+\item Another way is to use the fact that these noncyclic homology groups result from extensions of \hyperlink{namespaceMackey}{Mackey} functors, not just group extensions. So for example in $\mathbb Z\oplus \mathbb Z/2$ we can distinguish $x$ from $x+y$ using that $x$ is a transfer. This doesn\textquotesingle{}t always work\+: We can have a $\mathbb F_2\oplus \mathbb F_2$ generated by $x,y$ with $x$ having restriction $0$ while $y$ having restriction $1$ and no generator being a transfer; in this case we cannot distinguish between $y$ and $x+y$.
+\item There is one final trick we can use to resolve this ambiguity as it appears the Factorization algorithm\+: Assume we have $ab$ living in the $\mathbb F_2\oplus \mathbb F_2$ as above and we know that $x$ (which can be distinguished from the other two generators) is divisible by $b$. If $ab$ is $x$ there is no ambiguity, so the problem is if it\textquotesingle{}s $y$ or $x+y$. So one of them is divisible by $b$, but since we know that $x$ is divisible by $b$, both have to be $b$ divisible and $a$ is either $y/b$ or $x/b+y/b$. Both of these are equally good generators of a noncyclic group, and as we are only interested in generators, we can use either of them and don\textquotesingle{}t need to distinguish between them.
 \end{DoxyItemize}
+
+In practice, for $\mathbb Z$ coefficients and $G=C_4$ we can choose to ignore the products we can\textquotesingle{}t identify and make no statement as to the equality of $ab$ and $cd$ if they live in non cyclic groups. This gives us less data to work with, but at least in that case this is enough to write the factorization of any element.
+
+For $G=C_4$ and $\mathbb F_2$ coefficients ignoring them won\textquotesingle{}t work as we have many more instances of noncyclic groups. Instead we need to use all the bulletpoints above to identify our generators and factorize every element. 

@@ -146,7 +146,7 @@ namespace Mackey{
 
 	///Identifies the Mackey Functor with its Latex notation using the MackeyList. Only used if macro MACKEY_NAMES is defined.
 	template<typename rank_t, typename diff_t>
-	std::string identify(MackeyFunctor<rank_t>& M)
+	std::string identify_Mackey(MackeyFunctor<rank_t>& M)
 	{
 		M.normalize();
 		GroupSpecificOptional::MackeyList<rank_t, diff_t> List;

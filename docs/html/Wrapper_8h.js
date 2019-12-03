@@ -4,7 +4,7 @@ var Wrapper_8h =
     [ "Function", "classGroupSpecific_1_1Function.html", "classGroupSpecific_1_1Function" ],
     [ "MackeyList", "classGroupSpecificOptional_1_1MackeyList.html", "classGroupSpecificOptional_1_1MackeyList" ],
     [ "dimension", "Wrapper_8h.html#a6a5d40e69e5628ea84896ee43f4a91fa", null ],
-    [ "identify", "Wrapper_8h.html#aef8ef1f2b3e72e33d5c028a76d1577db", null ],
+    [ "identify_Mackey", "Wrapper_8h.html#ad0ca46ae450950b13360c44a2de1cb43", null ],
     [ "intexp", "Wrapper_8h.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa", null ],
     [ "intlog", "Wrapper_8h.html#aa0cac9097035c5fe8448742e22e6f78b", null ],
     [ "invReindex", "Wrapper_8h.html#a011b8e23bc2eedf751a9ce7bdc9e4cb9", null ],

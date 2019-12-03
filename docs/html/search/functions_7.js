@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['identify',['identify',['../namespaceMackey.html#a3fa96ba9b7316a92eca2f5c0bd1cca4d',1,'Mackey::identify(const rank_t &amp;basis, const IDGenerators&lt; rank_t, diff_t &gt; &amp;Id_first, const IDGenerators&lt; rank_t, diff_t &gt; &amp;Id_second)'],['../namespaceMackey.html#aef8ef1f2b3e72e33d5c028a76d1577db',1,'Mackey::identify(MackeyFunctor&lt; rank_t &gt; &amp;M)']]],
+  ['identify',['identify',['../namespaceMackey.html#a3fa96ba9b7316a92eca2f5c0bd1cca4d',1,'Mackey']]],
+  ['identify_5fmackey',['identify_Mackey',['../namespaceMackey.html#ad0ca46ae450950b13360c44a2de1cb43',1,'Mackey']]],
   ['idgeneratorcompact',['IDGeneratorCompact',['../classMackey_1_1IDGeneratorCompact.html#a26a4b6a1cf1ec6be1e63fdecaf142b66',1,'Mackey::IDGeneratorCompact']]],
   ['idgeneratorcompute',['IDGeneratorCompute',['../classMackey_1_1internal_1_1IDGeneratorCompute.html#a39700cf08ba57766c87498975b28ec62',1,'Mackey::internal::IDGeneratorCompute']]],
   ['idgenerators',['IDGenerators',['../classMackey_1_1IDGenerators.html#a2f7d0d382aca772c12e27a3c65510643',1,'Mackey::IDGenerators']]],

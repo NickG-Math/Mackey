@@ -26,7 +26,7 @@ void doMackey(Factorization<rank_t, diff_t>  F) {
 			for (int k = 0; k < F.realsize; k++) {
 				auto deg = F.getdegree(i) + F.getdegree(j) + F.getdegree(k);
 				deg[0] += 1;
-				if (deg[0] != -3 || deg[1] != 0 || deg[2] != -2)
+				if (deg[0] != 0 || deg[1] != 0 || deg[2] != 0)
 					continue;
 				auto u = F.getdegreeindex(deg);
 				if (u == -1)
@@ -51,10 +51,10 @@ void doMackey(Factorization<rank_t, diff_t>  F) {
 
 		omp_set_lock(&lock);
 
-		if (!a.noCycle && a.noIndeterminacy && a.basis.size() == 1 && a.basis[0] != 0) {
+		if (a.exists && a.noIndeterminacy && a.basis.size() == 1 && a.basis[0] != 0) {
 			std::cout << "[" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "] = " << (int)a.normalBasis[0] << " * " << F.getname(element) << "\n";
 		}
-		else if (!a.noCycle && a.noIndeterminacy) {
+		else if (a.exists && a.noIndeterminacy) {
 			std::cout << "[" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "] = " << 0 << "\n";
 		}
 		omp_unset_lock(&lock);
@@ -77,7 +77,7 @@ int main() {
 
 	//Factorization<rank_t, diff_t> F(2, { -4,-4 }, { 4,4 }, { {0,1,0},{1,1,0},{0,0,1},{2,0,1} }, { "asigma", "usigma", "alambda", "ulambda" });
 
-	Factorization<rank_t, diff_t> F(2, { -4,-4 }, { 4,4 }, { {0,1,0},{2,2,0},{0,0,1},{2,0,1} }, { "asigma", "u2sigma", "alambda", "ulambda" });
+	Factorization<rank_t, diff_t> F(2, { -3,-3 }, { 3,3 }, { {0,1,0},{2,2,0},{0,0,1},{2,0,1} }, { "asigma", "u2sigma", "alambda", "ulambda" });
 
 	F.compute_with_sources(true_sources, source_names); //computes the factorizations
 	auto begin = std::chrono::high_resolution_clock::now();

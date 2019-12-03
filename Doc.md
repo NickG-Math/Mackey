@@ -22,17 +22,22 @@ For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the avai
 
 \section status Current Status
 
-* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.
+* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to nonnegative linear combinations of irreducible representations; we call these "standard chains". 
+The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. 
+It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.
 
-* The one thing that hasn't been implemented for prime-power cyclic groups are Frobenius relations: The multiplicative structure is computed levelwise, but through the Frobenius relations we can extract information from the lower levels (if our generators are transfers of those lower levels). 
+* The one thing that hasn't been implemented for prime-power cyclic groups are Frobenius relations: 
+The multiplicative structure is computed levelwise, but this could be made more effective using the Frobenius relations. 
 
-* For general cyclic groups a few aspects that involve transferring need reworking. The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, so care has to be taken to account for all these extra transfers and restrictions. Ultimately this is the only part that needs changing.
+* For general cyclic groups a few aspects that involve transferring need reworking. 
+The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, so care has to be taken to account for all these extra transfers and restrictions. 
+Ultimately this is the only part that needs changing.
 
 * The bulletpoint above also applies to general finite abelian groups. We also need to specify the order of the elements of the group and how they relate to the subgroup diagram to form our equivariant bases.
 
 * For non abelian groups we have the added complication of needing the real representation theory of our group. And of course we need the standard chains for these groups as well. 
 
-* For coefficients other than \f$\mathbb Z\f$ a lot more things start to break, as transferring becomes more complicated when non cyclic modules are involved in the free Mackey functors.
+* For non constant coefficients a lot more things start to break, as transferring becomes more complicated when non cyclic modules are involved in the free Mackey functors.
 
 \section doc Documentation
 
@@ -107,29 +112,61 @@ Even if we can multiply any two generators, that doesn't mean we can automatical
 
 * Since the product \f$ab\f$ may not be a generator, but rather a multiple of it, we need to allow multiples of generators as distinct nodes. On the other hand, we never allow trivial (0) multiples of generators.
 
-* To obtain a factorization, we simply need to connect 1 with any node in the graph. For the most efficient factorizations, we want to minimize the number we alternate between blue and red edges in each path. This is done by a modified Dikjstra algorithm.
+* To obtain a factorization, we simply need to connect 1 with any node in the graph. For the most efficient factorizations, we want to minimize the number we alternate between blue and red edges in each path. 
+This is done by a modified Dikjstra algorithm.
 
 * For the generators not connected to 1 (eg \f$s_3\f$) we need to perform the same process using different sources for our graph (eg using \f$s_3\f$ as the source for all paths).
+
+\subsection Mass Massey Products
+
+The chains based approach here means that Massey products can be computed from definition. The main idea:
+
+* Given an element \f$x\f$ that's 0 in homology we can find a \f$y\f$ such that \f$dy=x\f$ from the homology algorithm.
+
+So Massey products work like this:
+
+* Suppose we have \f$ab=bc=0\f$ in homology. We can explicitly compute \f$ab, bc\f$ in chains \f$C\otimes D\f$ and \f$D\otimes E\f$ as in \ref mult.
+
+* After that we find \f$ds=ab, dt=bc\f$ and form \f$sc\f$ and \f$at\f$ in the box products \f$(C\otimes D) \otimes E\f$ and \f$C\otimes (D\otimes E)\f$ respectively.
+
+* These box products are isomorphic up to a permutation that we can explicitly compute. Thus we can write \f$sc\f$ and \f$at\f$ as elements of the same chain complex in the same basis.
+
+* Finally we form \f$sc+(-1)^{|a|+|b|+1}at\f$ and compute its image in homology.
 
 \section caveat A caveat
 \subsection cyclic Cyclic Generators
 
-* The way we prove that say a transfer map is multiplication by \f$2\f$, is by computing the generators at the domain and target, computing the transfer of the domain generator and comparing with the target. Of course, there are usually multiple choices of generators, but up to isomorphism we get the same Mackey functor. 
+* The way we prove that say a transfer map is multiplication by \f$2\f$, is by computing the generators at the domain and target, computing the transfer of the domain generator and comparing with the target. 
+Of course, there are usually multiple choices of generators, but up to isomorphism we get the same Mackey functor. 
 
-* There is a caveat however that appears when computing the multiplicative structure: If we prove that \f$ab\f$ and \f$cd\f$ are both generators of the same cyclic group, then we can't conclude that they are equal. Eg if the group is \f$\mathbb Z/4\f$ or \f$\mathbb Z\f$ then they differ by a sign. Still, since we are interested in generating the \f$RO(G)\f$ homology, as opposed to finding exact relations, we don't have to distinguish between cyclic generators and we don't need to worry about this detail.
+* There is a caveat however that appears when computing the multiplicative structure: If we prove that \f$ab\f$ and \f$cd\f$ are both generators of the same cyclic group, then we can't conclude that they are equal. 
+Eg if the group is \f$\mathbb Z/4\f$ or \f$\mathbb Z\f$ then they differ by a sign. Still, since we are interested in generating the \f$RO(G)\f$ homology, as opposed to finding exact relations, we don't have to distinguish between cyclic generators and we don't need to worry about this detail.
 
-* If we are interested in exact relations, then we can resolve the multiple generator ambiguity as follows: \f$ab\f$ and \f$cd\f$ are produced by tensoring different complexes, and if we have an explicit chain homotopy between them then we can compare directly. For example if they are obtained by tensoring \f$C_*(S^{n\sigma+m\lambda})\otimes C_*S^{\lambda}\f$ and \f$C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{2\lambda}\f$ then we can compare them by using \f$C_*(S^{n\sigma+(m-1)\lambda})\otimes C_*S^{\lambda}\otimes C_*S^{\lambda}\f$ as a stepping stone. 
-
-* The problem with the above approach is that we need to take more and more box products, which is the most costly operation for runtime.
+* If we are interested in exact relations, then are ways to resolve the ambiguity as we explain in the next section.
 
 
 \subsection noncycl Non cyclic generators
 
-* There is a situtation where the caveat above cannot be sidestepped and that's when we have non cyclic groups. Here's an example where this problem comes up: If we have \f$\mathbb Z\oplus \mathbb Z/2\f$ with generators \f$x,y\f$ respectively then we can't automatically distinguish \f$x\f$ from \f$x+y\f$ as there is an automorphism of \f$\mathbb Z\oplus \mathbb Z/2\f$ exchanging them. In that case the difference between \f$ab\f$ and \f$cd\f$ generating the same group can be much more severe than just an integer coprime to the group's order (or a sign).
+* There is a situtation where the caveat above cannot be sidestepped and that's when we have non cyclic groups. Here's an example where this problem comes up: 
+If we have \f$\mathbb Z\oplus \mathbb Z/2\f$ with generators \f$x,y\f$ respectively then we can't automatically distinguish \f$x\f$ from \f$x+y\f$ as there is an automorphism of \f$\mathbb Z\oplus \mathbb Z/2\f$ exchanging them. 
+In that case the difference between \f$ab\f$ and \f$cd\f$ generating the same group can be much more severe than just an integer coprime to the group's order (or a sign).
 
-* One way out of this is to break down our box products further until they can be directly compared.
+* For another example, in \f$\mathbb F_2\f$ coefficients we can have \f$\mathbb F_2\oplus \mathbb F_2\f$; the three generators cannot be distingusihed.
 
-* Alternatively (and this is the approach we take in practice) we can choose to ignore these products and make no statement as to the equality of \f$ab\f$ and \f$cd\f$ if they live in non cyclic groups. This gives us less data to work with, but at least in the \f$C_4\f$ case this is enough to write the factorization of any element. 
+* One way out of this is to break down our box products further until they can be directly compared. This is difficult to program in general and comes at a very high performance cost as we need more iterated box products.
+
+* Another way is to use the fact that these result from extensions of Mackey functors, not just groups. So for example in $\f$\mathbb Z\oplus \mathbb Z/2\f$ we can distinguish \f$x\f$ from \f$x+y\f$ using that \f$x\f$ is a transfer. 
+This doesn't always work: We can have a \f$\mathbb F_2\oplus \mathbb F_2\f$ generated by \f$x,y\f$  where nothing is a transfer, \f$x\f$ has restriction \f$0\f$ while \f$y\f$ has restriction;
+in this case we cannot distinguish between \f$y\f$ and \f$x+y\f$.
+
+*There is one final trick we can use to resolve this ambiguity in the Factorization algorithm: Assume we have \f$ab\f$ living in a $\mathbb F_2\oplus \mathbb \F_2$ as above and we know that \f$x\f$ (which can be distinguished from
+the other two generators) is divisible by \f$b\f$. If either \f$ab\f$ is \f$y\f$ or \f$x+y\f$, both of these are divisible by \f$b\f$. So \f$a\f$ is either \f$y/b\f$ or \f$x/b+y/b\f$ but both of these are generators of a noncyclic group.
+Since we are only interested in generators, we can use either of those and thus don't need to distinguish between them.
+
+
+In practice, for \f$\mathbb Z\f$ coefficients and \f$G=C_4\f$ we can choose to ignore these products we can't identify and make no statement as to the equality of \f$ab\f$ and \f$cd\f$ if they live in non cyclic groups. This gives us less data to work with, but at least in that case this is enough to write the factorization of any element. 
+
+For \f$G=C_4\f$ and  \f$\mathbb F_2\f$ this won't work as we have many more instances of noncyclic groups and we need to use all the bulletpoints above to identify our generators. With these we can successfully factorize every element.
 
 \page use How to Use
 \tableofcontents
@@ -217,6 +254,19 @@ to print the name of the ```i```-th generator. This name will be nonempty as lon
 where now both \f$1\f$ and \f$s_3\f$ are used as sources.
 
 For more details see the code in TestFactorization.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder
+
+
+\subsection step1Mass Massey products
+
+
+The file ```<Mackey/Compute.h>``` finally exposes the method \ref Mackey::ROMassey "ROMassey" for (triple) Massey products in the Green functor \f$H_{\star}(S)\f$. Example: The code
+
+```auto Mass= Mackey::ROGreen<rank_t,diff_t>(2,{0,1,0},{-3,-3,0},{2,2,0},0,0,0);```
+
+computes the Massey product \f$\langle a_{\sigma},w_3,u_{2\sigma}\rangle \f$ and its indeterminacy. As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product,
+while the indeterminacy is expressed in terms of groups. If the indeterminacy is zero then we have the member variable ```noIndeterminacy=1```
+
+For more details see the code in TestMassey.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder
 
 
 \page algo Algorithm Details

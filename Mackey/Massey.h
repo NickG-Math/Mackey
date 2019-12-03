@@ -172,7 +172,6 @@ namespace Mackey {
 
 		template<typename rank_t, typename diff_t>
 		void MasseyCompute<rank_t, diff_t>::box() {
-			Mass.exists = 0;
 			BoxCD = ChainsBox<rank_t, diff_t>(C, D, std::min(C.maxindex + D.maxindex, degreeC + degreeD + degreeE + 2));
 			boundaryCD = box_boundary(C, D, BoxCD, resgenC, resgenD, degreeC, degreeD);
 			if (boundaryCD.size() == 0)

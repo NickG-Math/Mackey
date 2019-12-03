@@ -140,11 +140,10 @@ namespace C4Test{
 			for (auto& j : M) {
 				if (!silence) {
 					auto name = identify_Mackey<rank_t, diff_t>(j);
-					bool correct=1;
 					if constexpr std::is_integral_v<typename diff_t::Scalar>{
 						auto MackeyName = C4MackeyAnswer(k, n, m);
 						if (MackeyName != name)
-						throw(0);
+							throw(0);
 					}
 					std::cout << "The k=" << invReindex<std::vector<int>>(k, { n,m }) << " homology of the n=" << n << " and m=" << m << " sphere is " << name << "\n";
 				}

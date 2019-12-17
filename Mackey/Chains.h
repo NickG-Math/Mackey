@@ -22,6 +22,31 @@ namespace Mackey {
 
 		Chains(const std::vector<rank_t>& rank, const std::vector<diff_t>& diff) : rank(rank), diff(diff) 
 		{ maxindex = rank.size() - 1; }	///<Constructor given ranks and diffs
+
+		///The dual of a Chain complex reindexed as a Chain complex and up to index k
+		Chains dualize(int k) {
+			std::vector<rank_t> rank_dual;
+			std::vector<diff_t> diff_dual;
+			rank_dual.reserve(maxindex + 1);
+			diff_dual.reserve(maxindex + 1);
+			for (int i = 0; i <= k; i++) {
+				auto index = maxindex - i;
+				rank_dual.push_back(rank[index]);
+				if (i == 0) {
+					diff_t empty;
+					diff_dual.push_back(empty);
+				}
+				else
+					diff_dual.push_back(diff[index + 1].transpose());
+			}
+			return Chains(rank_dual, diff_dual);
+		}
+
+		///The dual of a Chain complex reindexed as a Chain complex (as opposed to cochains)
+		Chains dualize() {
+			return dualize(maxindex);
+		}
+
 	};
 
 	/////////////////////////////////

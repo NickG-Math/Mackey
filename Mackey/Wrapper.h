@@ -1,6 +1,7 @@
 #pragma once
 #include "Chains.h"
 #include "MackeyFunctor.h"
+#include "General.h"
 
 #if !defined __INTEL_COMPILER && defined _MSC_VER
 #include <intrin.h>
@@ -21,12 +22,12 @@ namespace GroupSpecific {
 		const static std::vector<int> sphere_dimensions; ///< The dimensions of the representations of the group (the order has to be fixed beforehand)
 	};
 
-	///The function for the standard differentials.
+	///The function for the Chains up to a given index corresponding to non-virtual representations.
 	template<typename rank_t, typename diff_t, typename deg_t>
 	class Function {
 	public:
-		typedef std::pair<rank_t, diff_t>(*functype)(int, const deg_t&);	///<The type of a function pointer to StandardDiff
-		const static functype StandardDiff;		///<The function pointer to StandardDiff
+		typedef Mackey::Chains<rank_t, diff_t>(*functype)(int, const deg_t&);	///<The type of a function pointer to PositiveChains
+		const static functype PositiveChains;		///<The function pointer to PositiveChains
 
 	};
 }
@@ -37,12 +38,6 @@ namespace Mackey {
 	const auto prime = GroupSpecific::Variables::prime; ///< If G=C_p^n then prime=p
 	const auto power = GroupSpecific::Variables::power; ///< If G=C_p^n then power=n
 	const auto reps = GroupSpecific::Variables::reps; ///< The number of representations of the group
-
-	///Computes the i-th differential of the standard chains given GroupSpecific::Function::StandardDiff.
-	template<typename rank_t, typename diff_t, typename deg_t>
-	std::pair<rank_t, diff_t> StandardDiff(int i, const deg_t& sphere) {
-		return GroupSpecific::Function<rank_t, diff_t, deg_t>::StandardDiff(i, sphere);
-	}
 
 	///Raise power to given exponent
 	template<typename T>
@@ -109,16 +104,19 @@ namespace Mackey {
 	///Returns the standard Chains of the given sphere up to index i.
 	template<typename rank_t, typename diff_t, typename deg_t>
 	Chains<rank_t, diff_t> StandardChains(int i, const deg_t& sphere) {
-		std::vector<rank_t> rank;
-		std::vector<diff_t> diff;
-		rank.reserve(i + 1);
-		diff.reserve(i + 1);
-		for (int j = 0; j <= i; j++) {
-			std::pair<rank_t, diff_t> B = StandardDiff<rank_t, diff_t>(j, sphere);
-			rank.push_back(B.first);
-			diff.push_back(B.second);
+		bool cohomology = 0;
+		for (const auto& i : sphere) {
+			if (i < 0) {
+				cohomology = 1;
+				break;
+			}
 		}
-		return Chains<rank_t, diff_t>(rank, diff);
+		if (!cohomology)
+			return GroupSpecific::Function<rank_t, diff_t, deg_t>::PositiveChains(i, sphere);
+		else {
+			auto C = GroupSpecific::Function<rank_t, diff_t, deg_t>::PositiveChains(dimension(-sphere), -sphere);
+			return C.dualize(i);
+		}
 	}
 
 }

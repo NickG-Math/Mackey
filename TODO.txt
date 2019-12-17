@@ -1,0 +1,8 @@
+--put the operators internally in F2coeff.
+--if I typedef globally then no templates? Maybe use that for Homology?
+
+--Add to the documentation.
+--identify generators via transfers and restrictions. It's unlikely we have <Z/2>+<Z/2>, much more likely it's different Mackeys.
+
+--Eigen direct call
+--More on clang precision directives.

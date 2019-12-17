@@ -1,7 +1,7 @@
-#define EIGEN_USE_MKL_ALL
+//#define EIGEN_USE_MKL_ALL
 
 #include <iostream>
-#include "Implementation.h"
+#include "C4_Implementation.h"
 #include "Mackey/Factorization.h"
 #include "omp.h"
 

@@ -156,6 +156,7 @@ namespace Mackey {
 		}
 		return matrix;
 	}
+	   	  
 
 	///Coordinate-wise sum of vectors (up to the minimum of their lengths)
 	template <typename T>
@@ -179,6 +180,18 @@ namespace Mackey {
 			c.push_back(a[i] - b[i]);
 		}
 		return c;
+	}
+
+	///Coordinate-wise opposite of vector
+	template <typename T>
+	std::vector<T> operator-(const std::vector<T>& a)
+	{
+		std::vector<T> b;
+		b.reserve(a.size());
+		for (const auto & i:a) {
+			b.push_back(-i);
+		}
+		return b;
 	}
 
 	///Coordinate-wise difference of vectors (up to the minimum of their lengths)

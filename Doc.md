@@ -22,9 +22,9 @@ For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the avai
 
 \section status Current Status
 
-* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual representations or their opposites; we call these "standard chains". 
+* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual representations; we call these "standard chains". 
 The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. 
-It might be worth it to automate this process as well; after all, the differentials of the standard chains can all be obtained using the fact that the homology at the bottom level has to be trivial apart from top dimension.
+We have automated this process for prime 2.
 
 * The one thing that hasn't been implemented for prime-power cyclic groups are Frobenius relations: 
 The multiplicative structure is computed levelwise, but this could be made more effective using the Frobenius relations. 
@@ -173,9 +173,13 @@ For \f$G=C_4\f$ and  \f$\mathbb F_2\f$ coefficients ignoring them won't work as 
 \tableofcontents
 \section how Step 0: Setting the Group Parameters
 
-* For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for \f$G=C_4\f$) on how to set them in the file  ```Implementation.h``` available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. These parameters all live in the \ref GroupSpecific "GroupSpecific" namespace and we will go over them in more detail below.
+* For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example for \f$G=C_4\f$ on how to set them in the file  ```C4_Implementation.h``` available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. 
+We also have a more general example for \f$G=C_{2^n}\f$ implemented in ```C2n_Implementation.h```.
 
-* There are also some optional parameters that allow you to identify and print the names of the computed Mackey functors. This functionality is disabled by default, but can easily be turned on by defining the macro \ref MACKEY_NAMES and setting the optional parameters living in the namespace \ref GroupSpecificOptional "GroupSpecificOptional". An example of how this is done is contained the file ```Optional_Implementation.h``` in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>. The implementation there is for \f$G=C_4\f$ and the 16 Mackey functors in the \f$RO(C_4)\f$ homology. We have included both the \f$\underline{\mathbb Z}\f$ and \f$\underline{\mathbb F_2}\f$ coefficient cases for reference.
+These parameters all live in the \ref GroupSpecific "GroupSpecific" namespace and we will go over them in more detail below.
+
+* There are also some optional parameters that allow you to identify and print the names of the computed Mackey functors. This functionality is disabled by default, but can easily be turned on by defining the macro \ref MACKEY_NAMES and setting the optional parameters living in the namespace \ref GroupSpecificOptional "GroupSpecificOptional". 
+An example of how this is done is contained the file ```C4_Optional_Implementation.h``` in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>. The implementation there is for \f$G=C_4\f$ and the 16 Mackey functors in the \f$RO(C_4)\f$ homology. We have included both the \f$\underline{\mathbb Z}\f$ and \f$\underline{\mathbb F_2}\f$ coefficient cases for reference.
 
 \subsection var Global variables
 
@@ -186,20 +190,25 @@ The global variables that need to be set are:
 * \ref GroupSpecific::Variables::reps "reps" : the number of nontrivial irreducible real representations of \f$G\f$.
 * \ref GroupSpecific::Variables::sphere_dimensions "sphere_dimensions" : the array consisting of the dimensions of those representations (so we must fix an order for them beforehand).
 
-\subsection fun The standard differentials
+\subsection fun The standard chains
 
-* There is one function that needs to be manually defined, the \ref GroupSpecific::Function::StandardDiff "StandardDiff" computing the differentials for the standard chains. In practice this amounts to assigning the corresponding matrix given the index of the differential and the sphere (for \f$G=C_4\f$ this amounts to specifying a matrix for every triple \f$i,n,m\f$ where \f$n,m\f$ have the same signs). Apart from the case work that comes from the math, I have made the construction of these differentials as painless as possible, using the \ref Mackey::altmatrix "altmatrix" function
+* There is one function that needs to be manually defined, the \ref GroupSpecific::Function::PositiveChains "PositiveChains" computing the chains for actual representations. 
+In practice this amounts to assigning the corresponding matrix given the index of the differential and the sphere (for \f$G=C_4\f$ this amounts to specifying a matrix for every triple \f$i,n,m\f$ where \f$n,m\f$ have the same signs). 
+Apart from the case work that comes from the math, I have made the construction of these differentials as painless as possible, using the \ref Mackey::altmatrix "altmatrix" function
 
 * \ref Mackey::altmatrix "altmatrix" returns alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. An example: The matrix of size 4x4 with pattern \f$a,b\f$ is <br>
 \f$\begin{matrix} a&b&a&b\\ b&a&b&a\\ a&b&a&b \\  b&a&b&a \end{matrix}\f$ <br> 
 If we use the pattern \f$a,b,c,d\f$ instead we get <br>
 \f$\begin{matrix} a&b&c&d\\ b&c&d&a\\ c&d&a&b \\  d&a&b&c \end{matrix}\f$ <br> 
 
-* The matrices appearing in the Standard Chains all look like this due to equivariance
+* The matrices appearing in the Standard Chains all look like this due to equivariance.
+
+We have automated this process for general \f$G=C_{2^n}\f$ in ```C2n_Implementation.h``` using the recursion established in HHR17 pg 392. All that needs to be changed is the power variable.
 
 \section next Step 1: Calling the library
 
-Once Step 0 is complete, you can include ```<Mackey/Compute.h>``` to access the methods relating to the additive and multiplicative structure and Massey products, and ```<Mackey/Factorization.h>``` to access the factorization methods. For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder together with the provided two Implementation header files that come from Step 0.
+Once Step 0 is complete, you can include ```<Mackey/Compute.h>``` to access the methods relating to the additive and multiplicative structure and Massey products, and ```<Mackey/Factorization.h>``` to access the factorization methods. 
+For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder together with the provided Implementation header files (Step 0).
 
 \subsection coeff Coefficients and templates
 

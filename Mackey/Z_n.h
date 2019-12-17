@@ -48,6 +48,10 @@ public:
 		x = (x + b.x) % N;
 		return *this;
 	}
+	inline Z<N> operator -=(const Z<N>& b) {
+		x = (x - b.x) % N;
+		return *this;
+	}
 	inline Z<N> operator -() const {
 		return Z<N>(-x);
 	}
@@ -67,6 +71,11 @@ public:
 		return (x <= b.x);
 	}
 };
+
+template<int N>
+inline Z<N> operator -(const Z<N>& a) {
+	return Z<N>(-a.x);
+}
 template<int N>
 inline Z<N> operator *(const Z<N>& a, const Z<N>& b) { //Eigen needs this to be non member
 	return Z<N>(a.x * b.x);
@@ -129,6 +138,10 @@ public:
 		x = x ^ b.x;
 		return *this;
 	}
+	inline Z<2> operator -=(const Z<2>& b) {
+		x = x ^ b.x;
+		return *this;
+	}
 	inline Z<2> operator -() {
 		return *this;
 	}
@@ -148,6 +161,11 @@ public:
 		return (x <= b.x);
 	}
 };
+
+inline Z<2> operator -(const Z<2>& a) {
+	return a;
+}
+
 inline Z<2> operator *(const Z<2>& a, const Z<2>& b) { //Eigen needs this to be non member
 	return Z<2>(a.x * b.x);
 }

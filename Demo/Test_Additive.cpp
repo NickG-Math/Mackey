@@ -1,5 +1,5 @@
 //Eigen directives
-#define EIGEN_USE_MKL_ALL
+//#define EIGEN_USE_MKL_ALL
 //#define EIGEN_NO_DEBUG //disable Eigen assertions
 //#define NDEBUG
 
@@ -12,19 +12,22 @@
 
 #include <iostream>
 #include <chrono>
-#include "Implementation.h"
-#include "Optional_Implementation.h"
+#include "C2n_Implementation.h"
+
+#include "C4_Optional_Implementation.h"
 #include "C4Verify.h" //to verify
 #include <Mackey/Z_n.h>
 
 
 typedef Eigen::Matrix<char, 1, -1> rank_t;
-typedef Eigen::Matrix<char, -1, -1> diff_t;
+typedef Eigen::Matrix<Z<2>, -1, -1> diff_t;
+
 
 
 int main() {
+	auto C = Mackey::ROHomology<rank_t, diff_t, std::vector<int>>({ 5,5 });
 	auto begin = std::chrono::high_resolution_clock::now();
-	C4Test::C4MackeyTest<rank_t, diff_t>(-30, 30, -30, 30, 0);
+	C4Test::C4MackeyTest<rank_t, diff_t>(-5, 5, -5, 5, 0);
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << "ns" << std::endl;
 }

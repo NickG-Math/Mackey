@@ -161,6 +161,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html">MultiplicationTable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Multiplication Table.  <a href="classMackey_1_1MultiplicationTable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formal polynomials with arbitrary coefficients.  <a href="classMackey_1_1Polynomial.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html">Smith</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> Normal Form.  <a href="classMackey_1_1Smith.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -308,6 +311,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ae86e49097ef9a09ebcd0173881e88786"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae86e49097ef9a09ebcd0173881e88786">operator-</a> (const std::vector&lt; T &gt; &amp;a, const std::vector&lt; T &gt; &amp;b)</td></tr>
 <tr class="memdesc:ae86e49097ef9a09ebcd0173881e88786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordinate-wise difference of vectors (up to the minimum of their lengths)  <a href="#ae86e49097ef9a09ebcd0173881e88786">More...</a><br /></td></tr>
 <tr class="separator:ae86e49097ef9a09ebcd0173881e88786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d67cfe3e93ac3ef2301547372b48e15"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9d67cfe3e93ac3ef2301547372b48e15"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a9d67cfe3e93ac3ef2301547372b48e15">operator-</a> (const std::vector&lt; T &gt; &amp;a)</td></tr>
+<tr class="memdesc:a9d67cfe3e93ac3ef2301547372b48e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordinate-wise opposite of vector.  <a href="#a9d67cfe3e93ac3ef2301547372b48e15">More...</a><br /></td></tr>
+<tr class="separator:a9d67cfe3e93ac3ef2301547372b48e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae235ee5dd92dc1ca64388b8fbb1b4d75"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ae235ee5dd92dc1ca64388b8fbb1b4d75"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae235ee5dd92dc1ca64388b8fbb1b4d75">operator*</a> (T a, const std::vector&lt; T &gt; &amp;b)</td></tr>
 <tr class="memdesc:ae235ee5dd92dc1ca64388b8fbb1b4d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coordinate-wise difference of vectors (up to the minimum of their lengths)  <a href="#ae235ee5dd92dc1ca64388b8fbb1b4d75">More...</a><br /></td></tr>
@@ -392,10 +399,37 @@ Functions</h2></td></tr>
 <tr class="memitem:a9a4f2ced77550a7c06d2c15b39030ff6"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a9a4f2ced77550a7c06d2c15b39030ff6">action</a> (const <a class="el" href="classMackey_1_1Homology.html">Homology</a>&lt; rank_t, diff_t &gt; &amp;H, const rank_t &amp;rank)</td></tr>
 <tr class="memdesc:a9a4f2ced77550a7c06d2c15b39030ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing the Weyl group action on each generator in terms of the other generators.  <a href="#a9a4f2ced77550a7c06d2c15b39030ff6">More...</a><br /></td></tr>
 <tr class="separator:a9a4f2ced77550a7c06d2c15b39030ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b31e1685ed5771bcced308b3b13c7f0"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t , typename deg_t &gt; </td></tr>
-<tr class="memitem:a4b31e1685ed5771bcced308b3b13c7f0"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; rank_t, diff_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a4b31e1685ed5771bcced308b3b13c7f0">StandardDiff</a> (int i, const deg_t &amp;sphere)</td></tr>
-<tr class="memdesc:a4b31e1685ed5771bcced308b3b13c7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the i-th differential of the standard chains given <a class="el" href="classGroupSpecific_1_1Function.html#a8ead55e2f2e2bbda4deea3964793498d" title="The function pointer to StandardDiff. ">GroupSpecific::Function::StandardDiff</a>.  <a href="#a4b31e1685ed5771bcced308b3b13c7f0">More...</a><br /></td></tr>
-<tr class="separator:a4b31e1685ed5771bcced308b3b13c7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61f8cf9c3cf22acfedda5f427423f6c4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a61f8cf9c3cf22acfedda5f427423f6c4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a61f8cf9c3cf22acfedda5f427423f6c4">operator+</a> (const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a, const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:a61f8cf9c3cf22acfedda5f427423f6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29199dd05885558a19e305b49ab7b180"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a29199dd05885558a19e305b49ab7b180"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a29199dd05885558a19e305b49ab7b180">operator+=</a> (<a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a, const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:a29199dd05885558a19e305b49ab7b180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e1e4a6dac913bc86971d8515475fa5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a76e1e4a6dac913bc86971d8515475fa5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a76e1e4a6dac913bc86971d8515475fa5">operator-</a> (const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a)</td></tr>
+<tr class="separator:a76e1e4a6dac913bc86971d8515475fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a803f57e25754b9ca58e4757a46f9b23a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a803f57e25754b9ca58e4757a46f9b23a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a803f57e25754b9ca58e4757a46f9b23a">operator-</a> (const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a, const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:a803f57e25754b9ca58e4757a46f9b23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb1fbb70826d41d001bef40d09d9e3f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9cb1fbb70826d41d001bef40d09d9e3f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a9cb1fbb70826d41d001bef40d09d9e3f">operator-=</a> (<a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a, const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:a9cb1fbb70826d41d001bef40d09d9e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bbd83e8170a608aea65f7d916b4bc6d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7bbd83e8170a608aea65f7d916b4bc6d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a7bbd83e8170a608aea65f7d916b4bc6d">operator*</a> (const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a, const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:a7bbd83e8170a608aea65f7d916b4bc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04fadcf186ab504cafeb259178ee4827"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a04fadcf186ab504cafeb259178ee4827"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt;, <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a04fadcf186ab504cafeb259178ee4827">divide</a> (const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a, const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:a04fadcf186ab504cafeb259178ee4827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26fb6e8a8b7350d13f866570d588e6c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac26fb6e8a8b7350d13f866570d588e6c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ac26fb6e8a8b7350d13f866570d588e6c">operator/</a> (const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a, const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:ac26fb6e8a8b7350d13f866570d588e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb145e729d40138080b5a58d26a89388"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:adb145e729d40138080b5a58d26a89388"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#adb145e729d40138080b5a58d26a89388">operator%</a> (const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;a, const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:adb145e729d40138080b5a58d26a89388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9319a9af0a3cad8cfec47e9197dc82"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2b9319a9af0a3cad8cfec47e9197dc82"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a2b9319a9af0a3cad8cfec47e9197dc82">geometric</a> (int max)</td></tr>
+<tr class="memdesc:a2b9319a9af0a3cad8cfec47e9197dc82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geometric sum 1+...+x^{max}.  <a href="#a2b9319a9af0a3cad8cfec47e9197dc82">More...</a><br /></td></tr>
+<tr class="separator:a2b9319a9af0a3cad8cfec47e9197dc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4904fdc0fdcf3c23d7f3b80f59b2eafa"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a4904fdc0fdcf3c23d7f3b80f59b2eafa"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa">intexp</a> (const T exponent)</td></tr>
 <tr class="memdesc:a4904fdc0fdcf3c23d7f3b80f59b2eafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raise power to given exponent.  <a href="#a4904fdc0fdcf3c23d7f3b80f59b2eafa">More...</a><br /></td></tr>
@@ -961,6 +995,45 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a04fadcf186ab504cafeb259178ee4827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04fadcf186ab504cafeb259178ee4827">&#9670;&nbsp;</a></span>divide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt;, <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt; &gt; Mackey::divide </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_a04fadcf186ab504cafeb259178ee4827_icgraph.png" border="0" usemap="#namespaceMackey_a04fadcf186ab504cafeb259178ee4827_icgraph" alt=""/></div>
+<map name="namespaceMackey_a04fadcf186ab504cafeb259178ee4827_icgraph" id="namespaceMackey_a04fadcf186ab504cafeb259178ee4827_icgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#ac26fb6e8a8b7350d13f866570d588e6c" title="Mackey::operator/" alt="" coords="168,5,295,32"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#adb145e729d40138080b5a58d26a89388" title="Mackey::operator%" alt="" coords="164,56,299,83"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a74984d054f1f943ab61dd0415347f141"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74984d054f1f943ab61dd0415347f141">&#9670;&nbsp;</a></span>find()</h2>
 
@@ -1078,6 +1151,28 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node2" href="classMackey_1_1IDGeneratorCompact.html#a26a4b6a1cf1ec6be1e63fdecaf142b66" title="Constructs the identification data for our element given the detailed identification data for all gen..." alt="" coords="183,5,383,47"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a2b9319a9af0a3cad8cfec47e9197dc82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9319a9af0a3cad8cfec47e9197dc82">&#9670;&nbsp;</a></span>geometric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt; Mackey::geometric </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Geometric sum 1+...+x^{max}. </p>
 
 </div>
 </div>
@@ -1791,8 +1886,84 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="adb145e729d40138080b5a58d26a89388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb145e729d40138080b5a58d26a89388">&#9670;&nbsp;</a></span>operator%()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt; Mackey::operator% </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_adb145e729d40138080b5a58d26a89388_cgraph.png" border="0" usemap="#namespaceMackey_adb145e729d40138080b5a58d26a89388_cgraph" alt=""/></div>
+<map name="namespaceMackey_adb145e729d40138080b5a58d26a89388_cgraph" id="namespaceMackey_adb145e729d40138080b5a58d26a89388_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a04fadcf186ab504cafeb259178ee4827" title="Mackey::divide" alt="" coords="188,5,299,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7bbd83e8170a608aea65f7d916b4bc6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bbd83e8170a608aea65f7d916b4bc6d">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt; Mackey::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_a7bbd83e8170a608aea65f7d916b4bc6d_cgraph.png" border="0" usemap="#namespaceMackey_a7bbd83e8170a608aea65f7d916b4bc6d_cgraph" alt=""/></div>
+<map name="namespaceMackey_a7bbd83e8170a608aea65f7d916b4bc6d_cgraph" id="namespaceMackey_a7bbd83e8170a608aea65f7d916b4bc6d_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1Polynomial.html#a0e0bda8d8d0d5ade1cbb0b0cc79b8d56" title="Default value 0. " alt="" coords="181,5,321,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ae235ee5dd92dc1ca64388b8fbb1b4d75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae235ee5dd92dc1ca64388b8fbb1b4d75">&#9670;&nbsp;</a></span>operator*()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae235ee5dd92dc1ca64388b8fbb1b4d75">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1823,8 +1994,46 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a61f8cf9c3cf22acfedda5f427423f6c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61f8cf9c3cf22acfedda5f427423f6c4">&#9670;&nbsp;</a></span>operator+() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt; Mackey::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_a61f8cf9c3cf22acfedda5f427423f6c4_cgraph.png" border="0" usemap="#namespaceMackey_a61f8cf9c3cf22acfedda5f427423f6c4_cgraph" alt=""/></div>
+<map name="namespaceMackey_a61f8cf9c3cf22acfedda5f427423f6c4_cgraph" id="namespaceMackey_a61f8cf9c3cf22acfedda5f427423f6c4_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1Polynomial.html#a0e0bda8d8d0d5ade1cbb0b0cc79b8d56" title="Default value 0. " alt="" coords="184,5,324,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="adb4974b5ffe533abb955ccb6b9096155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb4974b5ffe533abb955ccb6b9096155">&#9670;&nbsp;</a></span>operator+()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adb4974b5ffe533abb955ccb6b9096155">&#9670;&nbsp;</a></span>operator+() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1855,8 +2064,88 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a29199dd05885558a19e305b49ab7b180"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29199dd05885558a19e305b49ab7b180">&#9670;&nbsp;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt;&amp; Mackey::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76e1e4a6dac913bc86971d8515475fa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76e1e4a6dac913bc86971d8515475fa5">&#9670;&nbsp;</a></span>operator-() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt; Mackey::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a803f57e25754b9ca58e4757a46f9b23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a803f57e25754b9ca58e4757a46f9b23a">&#9670;&nbsp;</a></span>operator-() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt; Mackey::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae86e49097ef9a09ebcd0173881e88786"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae86e49097ef9a09ebcd0173881e88786">&#9670;&nbsp;</a></span>operator-()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86e49097ef9a09ebcd0173881e88786">&#9670;&nbsp;</a></span>operator-() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1884,6 +2173,96 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Coordinate-wise difference of vectors (up to the minimum of their lengths) </p>
+
+</div>
+</div>
+<a id="a9d67cfe3e93ac3ef2301547372b48e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d67cfe3e93ac3ef2301547372b48e15">&#9670;&nbsp;</a></span>operator-() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;T&gt; Mackey::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Coordinate-wise opposite of vector. </p>
+
+</div>
+</div>
+<a id="a9cb1fbb70826d41d001bef40d09d9e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cb1fbb70826d41d001bef40d09d9e3f">&#9670;&nbsp;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt;&amp; Mackey::operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac26fb6e8a8b7350d13f866570d588e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26fb6e8a8b7350d13f866570d588e6c">&#9670;&nbsp;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt;T&gt; Mackey::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Polynomial.html">Polynomial</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_ac26fb6e8a8b7350d13f866570d588e6c_cgraph.png" border="0" usemap="#namespaceMackey_ac26fb6e8a8b7350d13f866570d588e6c_cgraph" alt=""/></div>
+<map name="namespaceMackey_ac26fb6e8a8b7350d13f866570d588e6c_cgraph" id="namespaceMackey_ac26fb6e8a8b7350d13f866570d588e6c_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a04fadcf186ab504cafeb259178ee4827" title="Mackey::divide" alt="" coords="180,5,291,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2769,38 +3148,15 @@ template&lt;typename rank_t , typename diff_t , typename deg_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the standard <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> of the given sphere up to index i. </p>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph.png" border="0" usemap="#namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph" alt=""/></div>
+<map name="namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph" id="namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa" title="Compute the dimension of a representation sphere. " alt="" coords="223,5,357,32"/>
+<area shape="rect" id="node3" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="405,5,448,32"/>
+</map>
 </div>
-</div>
-<a id="a4b31e1685ed5771bcced308b3b13c7f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b31e1685ed5771bcced308b3b13c7f0">&#9670;&nbsp;</a></span>StandardDiff()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename rank_t , typename diff_t , typename deg_t &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::pair&lt;rank_t, diff_t&gt; Mackey::StandardDiff </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const deg_t &amp;&#160;</td>
-          <td class="paramname"><em>sphere</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Computes the i-th differential of the standard chains given <a class="el" href="classGroupSpecific_1_1Function.html#a8ead55e2f2e2bbda4deea3964793498d" title="The function pointer to StandardDiff. ">GroupSpecific::Function::StandardDiff</a>. </p>
 
 </div>
 </div>

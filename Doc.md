@@ -193,8 +193,7 @@ The global variables that need to be set are:
 \subsection fun The standard chains
 
 * There is one function that needs to be manually defined, the \ref GroupSpecific::Function::PositiveChains "PositiveChains" computing the chains for actual representations. 
-In practice this amounts to assigning the corresponding matrix given the index of the differential and the sphere (for \f$G=C_4\f$ this amounts to specifying a matrix for every triple \f$i,n,m\f$ where \f$n,m\f$ have the same signs). 
-Apart from the case work that comes from the math, I have made the construction of these differentials as painless as possible, using the \ref Mackey::altmatrix "altmatrix" function
+I have made the construction of these Chains as painless as possible, using the \ref Mackey::altmatrix "altmatrix" function
 
 * \ref Mackey::altmatrix "altmatrix" returns alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. An example: The matrix of size 4x4 with pattern \f$a,b\f$ is <br>
 \f$\begin{matrix} a&b&a&b\\ b&a&b&a\\ a&b&a&b \\  b&a&b&a \end{matrix}\f$ <br> 

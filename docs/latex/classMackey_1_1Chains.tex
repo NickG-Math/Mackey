@@ -24,7 +24,11 @@ Inheritance diagram for Mackey\+:\+:Chains$<$ rank\+\_\+t, diff\+\_\+t $>$\+:\no
 \hyperlink{classMackey_1_1Chains_ade226a800be59b53f1f1850e0753dbcb}{Chains} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1Chains_a23e36ad0f810adeecad83b87b7034335}{Chains} (const std\+::vector$<$ rank\+\_\+t $>$ \&\hyperlink{classMackey_1_1Chains_ad041dff6f210ae5be4de0a3b076a4d95}{rank}, const std\+::vector$<$ diff\+\_\+t $>$ \&\hyperlink{classMackey_1_1Chains_a9ccee2cbb3daa1e82bab920aeef59516}{diff})
-\begin{DoxyCompactList}\small\item\em Constructor given ranks and diffs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor given ranks and diffs. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Chains}{Chains} \hyperlink{classMackey_1_1Chains_a9aa778859604adb53977935b03caa5a5}{dualize} (int k)
+\begin{DoxyCompactList}\small\item\em The dual of a Chain complex reindexed as a Chain complex and up to index k. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Chains}{Chains} \hyperlink{classMackey_1_1Chains_a199843c84295e6755a41cf80ed0db7fd}{dualize} ()
+\begin{DoxyCompactList}\small\item\em The dual of a Chain complex reindexed as a Chain complex (as opposed to cochains) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -56,6 +60,13 @@ Our chain complexes are always indexed as C\mbox{[}maxindex\mbox{]}---$>$C\mbox{
 
 Default constructor. 
 
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Chains_ade226a800be59b53f1f1850e0753dbcb_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Chains_a23e36ad0f810adeecad83b87b7034335}\label{classMackey_1_1Chains_a23e36ad0f810adeecad83b87b7034335}} 
 \index{Mackey\+::\+Chains@{Mackey\+::\+Chains}!Chains@{Chains}}
 \index{Chains@{Chains}!Mackey\+::\+Chains@{Mackey\+::\+Chains}}
@@ -66,6 +77,38 @@ Default constructor.
 
 
 Constructor given ranks and diffs. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1Chains_a9aa778859604adb53977935b03caa5a5}\label{classMackey_1_1Chains_a9aa778859604adb53977935b03caa5a5}} 
+\index{Mackey\+::\+Chains@{Mackey\+::\+Chains}!dualize@{dualize}}
+\index{dualize@{dualize}!Mackey\+::\+Chains@{Mackey\+::\+Chains}}
+\subsubsection{\texorpdfstring{dualize()}{dualize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Chains}{Chains} \hyperlink{classMackey_1_1Chains}{Mackey\+::\+Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::dualize (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The dual of a Chain complex reindexed as a Chain complex and up to index k. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Chains_a9aa778859604adb53977935b03caa5a5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1Chains_a199843c84295e6755a41cf80ed0db7fd}\label{classMackey_1_1Chains_a199843c84295e6755a41cf80ed0db7fd}} 
+\index{Mackey\+::\+Chains@{Mackey\+::\+Chains}!dualize@{dualize}}
+\index{dualize@{dualize}!Mackey\+::\+Chains@{Mackey\+::\+Chains}}
+\subsubsection{\texorpdfstring{dualize()}{dualize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Chains}{Chains} \hyperlink{classMackey_1_1Chains}{Mackey\+::\+Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::dualize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The dual of a Chain complex reindexed as a Chain complex (as opposed to cochains) 
 
 
 

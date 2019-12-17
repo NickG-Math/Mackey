@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['geometric',['geometric',['../namespaceMackey.html#a2b9319a9af0a3cad8cfec47e9197dc82',1,'Mackey']]],
   ['getdegree',['getdegree',['../classMackey_1_1Factorization.html#aef67e1ba1bf216416d0ec9923ff90b0d',1,'Mackey::Factorization']]],
   ['getdegreeindex',['getdegreeindex',['../classMackey_1_1Factorization.html#ab90f461af3418417970d4be8682e965d',1,'Mackey::Factorization']]],
   ['getelement',['getelement',['../classMackey_1_1Factorization.html#ac412da750df7b3b35ca87c3b694fd732',1,'Mackey::Factorization']]],

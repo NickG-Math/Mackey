@@ -31,6 +31,7 @@ var hierarchy =
     [ "Mackey::Massey< rank_t, diff_t >", "classMackey_1_1Massey.html", null ],
     [ "Mackey::internal::MasseyCompute< rank_t, diff_t >", "classMackey_1_1internal_1_1MasseyCompute.html", null ],
     [ "Eigen::NumTraits< Z< N > >", "structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html", null ],
+    [ "Mackey::Polynomial< T >", "classMackey_1_1Polynomial.html", null ],
     [ "Mackey::internal::ProductGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ProductGen.html", null ],
     [ "Mackey::Smith< smithS_t, smithR_t, smithC_t >", "classMackey_1_1Smith.html", null ],
     [ "Mackey::TableInput< rank_t, diff_t >", "classMackey_1_1TableInput.html", [

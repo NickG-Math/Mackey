@@ -18,6 +18,7 @@ var namespaceMackey =
     [ "MackeyFunctor", "classMackey_1_1MackeyFunctor.html", "classMackey_1_1MackeyFunctor" ],
     [ "Massey", "classMackey_1_1Massey.html", "classMackey_1_1Massey" ],
     [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html", "classMackey_1_1MultiplicationTable" ],
+    [ "Polynomial", "classMackey_1_1Polynomial.html", "classMackey_1_1Polynomial" ],
     [ "Smith", "classMackey_1_1Smith.html", "classMackey_1_1Smith" ],
     [ "TableInput", "classMackey_1_1TableInput.html", "classMackey_1_1TableInput" ],
     [ "WeightedGraph", "classMackey_1_1WeightedGraph.html", "classMackey_1_1WeightedGraph" ]

@@ -17,6 +17,7 @@ var classZ_3_012_01_4 =
     [ "operator+=", "classZ_3_012_01_4.html#abe24998e8f1ba064141ad5f3d04fb7e1", null ],
     [ "operator-", "classZ_3_012_01_4.html#a4a983a0acbe231f84fdc948c64996a55", null ],
     [ "operator-", "classZ_3_012_01_4.html#a72004bd105e0df1330f7c1f61919b9dd", null ],
+    [ "operator-=", "classZ_3_012_01_4.html#aac3bc93e616ba069f99e794dad872799", null ],
     [ "operator<", "classZ_3_012_01_4.html#aec8e51a2935d539f11220270f35c1c31", null ],
     [ "operator<=", "classZ_3_012_01_4.html#a6e1b77419935d4f017ffab84df3ca520", null ],
     [ "operator==", "classZ_3_012_01_4.html#a98508d39c9695bdda292044170ef5718", null ],

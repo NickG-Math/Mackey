@@ -8,6 +8,8 @@ var Z__n_8h =
     [ "is_finite_cyclic", "Z__n_8h.html#afe8e1404c86fb9609734d3e0074ac7ed", null ],
     [ "operator*", "Z__n_8h.html#ab3391fa5020ce6c8d6b703b0916a85e5", null ],
     [ "operator*", "Z__n_8h.html#a1108bc22957ae83bd843218b814279a3", null ],
+    [ "operator-", "Z__n_8h.html#a14586a95b3e3649821bac56ac4187b39", null ],
+    [ "operator-", "Z__n_8h.html#ac54fac7d97b31bbb0bf52744d5c7aea0", null ],
     [ "operator/", "Z__n_8h.html#af47a4a1cded24448aad24e29e426db26", null ],
     [ "operator/", "Z__n_8h.html#abac55ebc972cfc33fd16d016dea962a3", null ],
     [ "operator<<", "Z__n_8h.html#a1574eec5ee2263cdb25ce788824221c7", null ],

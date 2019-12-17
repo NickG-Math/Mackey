@@ -97,31 +97,31 @@ $(document).ready(function(){initNavTree('classGroupSpecific_1_1Function.html','
 </div><!--header-->
 <div class="contents">
 
-<p>The function for the standard differentials.  
+<p>The function for the Chains up to a given index corresponding to non-virtual representations.  
  <a href="classGroupSpecific_1_1Function.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Wrapper_8h_source.html">Wrapper.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a16b2712611a10d8cc8034b9bdf89af06"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; rank_t, diff_t &gt;(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroupSpecific_1_1Function.html#a16b2712611a10d8cc8034b9bdf89af06">functype</a>) (int, const deg_t &amp;)</td></tr>
-<tr class="memdesc:a16b2712611a10d8cc8034b9bdf89af06"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a function pointer to StandardDiff.  <a href="#a16b2712611a10d8cc8034b9bdf89af06">More...</a><br /></td></tr>
-<tr class="separator:a16b2712611a10d8cc8034b9bdf89af06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d984ea6bf824b9112d0cf978a46741"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classMackey_1_1Chains.html">Mackey::Chains</a>&lt; rank_t, diff_t &gt;(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroupSpecific_1_1Function.html#a73d984ea6bf824b9112d0cf978a46741">functype</a>) (int, const deg_t &amp;)</td></tr>
+<tr class="memdesc:a73d984ea6bf824b9112d0cf978a46741"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a function pointer to PositiveChains.  <a href="#a73d984ea6bf824b9112d0cf978a46741">More...</a><br /></td></tr>
+<tr class="separator:a73d984ea6bf824b9112d0cf978a46741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a8ead55e2f2e2bbda4deea3964793498d"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classGroupSpecific_1_1Function.html#a16b2712611a10d8cc8034b9bdf89af06">functype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroupSpecific_1_1Function.html#a8ead55e2f2e2bbda4deea3964793498d">StandardDiff</a></td></tr>
-<tr class="memdesc:a8ead55e2f2e2bbda4deea3964793498d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function pointer to StandardDiff.  <a href="#a8ead55e2f2e2bbda4deea3964793498d">More...</a><br /></td></tr>
-<tr class="separator:a8ead55e2f2e2bbda4deea3964793498d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d247b31d297f733e9cd6f68921a37cd"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classGroupSpecific_1_1Function.html#a73d984ea6bf824b9112d0cf978a46741">functype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGroupSpecific_1_1Function.html#a6d247b31d297f733e9cd6f68921a37cd">PositiveChains</a></td></tr>
+<tr class="memdesc:a6d247b31d297f733e9cd6f68921a37cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function pointer to PositiveChains.  <a href="#a6d247b31d297f733e9cd6f68921a37cd">More...</a><br /></td></tr>
+<tr class="separator:a6d247b31d297f733e9cd6f68921a37cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t, typename diff_t, typename deg_t&gt;<br />
 class GroupSpecific::Function&lt; rank_t, diff_t, deg_t &gt;</h3>
 
-<p>The function for the standard differentials. </p>
+<p>The function for the Chains up to a given index corresponding to non-virtual representations. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a16b2712611a10d8cc8034b9bdf89af06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16b2712611a10d8cc8034b9bdf89af06">&#9670;&nbsp;</a></span>functype</h2>
+<a id="a73d984ea6bf824b9112d0cf978a46741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d984ea6bf824b9112d0cf978a46741">&#9670;&nbsp;</a></span>functype</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,18 +129,18 @@ class GroupSpecific::Function&lt; rank_t, diff_t, deg_t &gt;</h3>
 template&lt;typename rank_t , typename diff_t , typename deg_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::pair&lt;rank_t, diff_t&gt;(* <a class="el" href="classGroupSpecific_1_1Function.html">GroupSpecific::Function</a>&lt; rank_t, diff_t, deg_t &gt;::functype) (int, const deg_t &amp;)</td>
+          <td class="memname">typedef <a class="el" href="classMackey_1_1Chains.html">Mackey::Chains</a>&lt;rank_t, diff_t&gt;(* <a class="el" href="classGroupSpecific_1_1Function.html">GroupSpecific::Function</a>&lt; rank_t, diff_t, deg_t &gt;::functype) (int, const deg_t &amp;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The type of a function pointer to StandardDiff. </p>
+<p>The type of a function pointer to PositiveChains. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a8ead55e2f2e2bbda4deea3964793498d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ead55e2f2e2bbda4deea3964793498d">&#9670;&nbsp;</a></span>StandardDiff</h2>
+<a id="a6d247b31d297f733e9cd6f68921a37cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d247b31d297f733e9cd6f68921a37cd">&#9670;&nbsp;</a></span>PositiveChains</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +151,7 @@ template&lt;typename rank_t , typename diff_t , typename deg_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classGroupSpecific_1_1Function.html#a16b2712611a10d8cc8034b9bdf89af06">functype</a> <a class="el" href="classGroupSpecific_1_1Function.html">GroupSpecific::Function</a>&lt; rank_t, diff_t, deg_t &gt;::StandardDiff</td>
+          <td class="memname">const <a class="el" href="classGroupSpecific_1_1Function.html#a73d984ea6bf824b9112d0cf978a46741">functype</a> <a class="el" href="classGroupSpecific_1_1Function.html">GroupSpecific::Function</a>&lt; rank_t, diff_t, deg_t &gt;::PositiveChains</td>
         </tr>
       </table>
   </td>
@@ -161,7 +161,7 @@ template&lt;typename rank_t , typename diff_t , typename deg_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The function pointer to StandardDiff. </p>
+<p>The function pointer to PositiveChains. </p>
 
 </div>
 </div>

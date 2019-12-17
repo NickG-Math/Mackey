@@ -7,11 +7,12 @@ Wraps group-\/specific implementations into a general interface.
 
 {\ttfamily \#include \char`\"{}Chains.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Mackey\+Functor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}General.\+h\char`\"{}}\newline
 Include dependency graph for Wrapper.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=304pt]{Wrapper_8h__incl}
+\includegraphics[width=350pt]{Wrapper_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -27,7 +28,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 class \hyperlink{classGroupSpecific_1_1Variables}{Group\+Specific\+::\+Variables}
 \begin{DoxyCompactList}\small\item\em The global variables. \end{DoxyCompactList}\item 
 class \hyperlink{classGroupSpecific_1_1Function}{Group\+Specific\+::\+Function$<$ rank\+\_\+t, diff\+\_\+t, deg\+\_\+t $>$}
-\begin{DoxyCompactList}\small\item\em The function for the standard differentials. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The function for the Chains up to a given index corresponding to non-\/virtual representations. \end{DoxyCompactList}\item 
 class \hyperlink{classGroupSpecificOptional_1_1MackeyList}{Group\+Specific\+Optional\+::\+Mackey\+List$<$ rank\+\_\+t, diff\+\_\+t $>$}
 \begin{DoxyCompactList}\small\item\em A list of \hyperlink{namespaceMackey}{Mackey} functors and their names. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
@@ -42,8 +43,6 @@ class \hyperlink{classGroupSpecificOptional_1_1MackeyList}{Group\+Specific\+Opti
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\std\+::pair$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a4b31e1685ed5771bcced308b3b13c7f0}{Mackey\+::\+Standard\+Diff} (int i, const deg\+\_\+t \&sphere)
-\begin{DoxyCompactList}\small\item\em Computes the i-\/th differential of the standard chains given \hyperlink{classGroupSpecific_1_1Function_a8ead55e2f2e2bbda4deea3964793498d}{Group\+Specific\+::\+Function\+::\+Standard\+Diff}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa}{Mackey\+::intexp} (const T exponent)
 \begin{DoxyCompactList}\small\item\em Raise power to given exponent. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_aa0cac9097035c5fe8448742e22e6f78b}{Mackey\+::intlog} (const T exponentiated)

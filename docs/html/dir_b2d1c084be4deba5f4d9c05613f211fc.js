@@ -25,6 +25,7 @@ var dir_b2d1c084be4deba5f4d9c05613f211fc =
     ] ],
     [ "Massey.h", "Massey_8h.html", "Massey_8h" ],
     [ "Matrix_Mixing.h", "Matrix__Mixing_8h.html", "Matrix__Mixing_8h" ],
+    [ "Polynomial.h", "Polynomial_8h.html", "Polynomial_8h" ],
     [ "Smith.h", "Smith_8h.html", [
       [ "Smith", "classMackey_1_1Smith.html", "classMackey_1_1Smith" ]
     ] ],

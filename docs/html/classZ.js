@@ -16,6 +16,7 @@ var classZ =
     [ "operator+=", "classZ.html#a3b61b86ccc14f54010c58e8ff2745d91", null ],
     [ "operator-", "classZ.html#ac4751d1ef56abaee7ed90f29939324f2", null ],
     [ "operator-", "classZ.html#a298e4392b981d2ce937823bb26cb7421", null ],
+    [ "operator-=", "classZ.html#ad7620de459cf2248f9f02e51fc5b5350", null ],
     [ "operator<", "classZ.html#ac9464cf14368b566bd4897b7a83d0861", null ],
     [ "operator<=", "classZ.html#a52b5a9afa8054c108b4967dfe2930642", null ],
     [ "operator==", "classZ.html#aee67aee77949c30eb8a0645d7248044c", null ],

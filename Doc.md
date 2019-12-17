@@ -22,9 +22,7 @@ For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the avai
 
 \section status Current Status
 
-* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual representations; we call these "standard chains". 
-The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. 
-We have automated this process for prime 2.
+* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. We have implemented this for all groups \f$G=C_{2^n}\f$.
 
 * The one thing that hasn't been implemented for prime-power cyclic groups are Frobenius relations: 
 The multiplicative structure is computed levelwise, but this could be made more effective using the Frobenius relations. 

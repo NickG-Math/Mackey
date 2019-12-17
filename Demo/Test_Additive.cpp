@@ -20,12 +20,11 @@
 
 
 typedef Eigen::Matrix<char, 1, -1> rank_t;
-typedef Eigen::Matrix<Z<2>, -1, -1> diff_t;
+typedef Eigen::Matrix<char, -1, -1> diff_t;
 
 
 
 int main() {
-	auto C = Mackey::ROHomology<rank_t, diff_t, std::vector<int>>({ 5,5 });
 	auto begin = std::chrono::high_resolution_clock::now();
 	C4Test::C4MackeyTest<rank_t, diff_t>(-5, 5, -5, 5, 0);
 	auto end = std::chrono::high_resolution_clock::now();

@@ -100,8 +100,10 @@ namespace Mackey
 	template<typename sphere_t>
 	int TableInput<rank_t, diff_t>::hash(const sphere_t& sphere) {
 		int hash = sphere[0] - minsphere[0];
+		int prod = maxsphere[0] - minsphere[0] + 1;
 		for (size_t i = 1; i < sphere.size(); i++) {
-			hash += (sphere[i] - minsphere[i]) * (maxsphere[i-1] - minsphere[i-1] + 1);
+			hash += (sphere[i] - minsphere[i]) * prod;
+			prod *= (maxsphere[i] - minsphere[i] + 1);
 		}
 		return hash;
 	}

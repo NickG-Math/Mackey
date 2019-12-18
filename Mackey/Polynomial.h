@@ -5,26 +5,31 @@
 ///@file
 ///@brief Contains the class for formal polynomials in arbitrary coefficients
 
+
+namespace Mackey {
 ///////////////////////////////////
-///The class of formal polynomials in arbitrary coefficients
+///Formal polynomials with arbitrary coefficients
 
 ///Currently only used for a recursion in C2n_Implementation. The operators are self explanatory.
 /////////////////////////////////
-
-namespace Mackey {
 	template<typename T>
 	class Polynomial {
 	public:
-		std::vector<T> p;
-		int degree;
-		Polynomial() : p({ 0 }) { degree = -1; } ///<Default value 0
+		std::vector<T> p; ///<Polynomial v_0+...+v_nx^n stored as vector (v_0,...,v_n)
+		int degree; ///<Degree of the polynomial
+
+		///Default value 0
+		Polynomial() : p({ 0 }) { degree = -1; }
+		
+		///Construct from vector v_0,...,v_n the polynomial v_0+...+v_nx^n
 		Polynomial(const std::vector<T>& q) : p(q) {
 			while (!p.empty() && p.back() == 0) {
 				p.pop_back();
 			}
 			degree = p.size() - 1;
 		}
-
+		
+		///Construct the monomial ax^n given a,n
 		Polynomial(T coeff, int power) {
 			if (coeff != 0) {
 				p.resize(power + 1); p[power] = coeff; degree = power;
@@ -34,7 +39,11 @@ namespace Mackey {
 				degree = -1;
 			}
 		}
+
+		///Construct the constant a
 		Polynomial(T coeff) :Polynomial<T>(coeff, 0) {}
+
+		///Pad polynomial with extra zeros after the highest power
 		void pad(int m) {
 			p.resize(m);
 		}
@@ -122,7 +131,7 @@ namespace Mackey {
 		return divide(a, b).second;
 	}
 
-	///Geometric sum
+	///Geometric sum 1+...+x^{max}
 	template<typename T>
 	Polynomial<T> geometric(int max) {
 		std::vector<T> p(max + 1, 1);

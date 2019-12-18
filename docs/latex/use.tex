@@ -1,8 +1,14 @@
 \hypertarget{use_how}{}\section{Step 0\+: Setting the Group Parameters}\label{use_how}
 
 \begin{DoxyItemize}
-\item For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for $G=C_4$) on how to set them in the file {\ttfamily Implementation.\+h} available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.
-\item There are also some optional parameters that allow you to identify and print the names of the computed \hyperlink{namespaceMackey}{Mackey} functors. This functionality is disabled by default, but can easily be turned on by defining the macro M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES and setting the optional parameters living in the namespace \hyperlink{namespaceGroupSpecificOptional}{Group\+Specific\+Optional}. An example of how this is done is contained the file {\ttfamily Optional\+\_\+\+Implementation.\+h} in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}. The implementation there is for $G=C_4$ and the 16 \hyperlink{namespaceMackey}{Mackey} functors in the $RO(C_4)$ homology. We have included both the $\underline{\mathbb Z}$ and $\underline{\mathbb F_2}$ coefficient cases for reference.
+\item For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example for $G=C_4$ on how to set them in the file {\ttfamily C4\+\_\+\+Implementation.\+h} available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. We also have a more general example for $G=C_{2^n}$ implemented in {\ttfamily C2n\+\_\+\+Implementation.\+h}.
+\end{DoxyItemize}
+
+These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.
+
+
+\begin{DoxyItemize}
+\item There are also some optional parameters that allow you to identify and print the names of the computed \hyperlink{namespaceMackey}{Mackey} functors. This functionality is disabled by default, but can easily be turned on by defining the macro M\+A\+C\+K\+E\+Y\+\_\+\+N\+A\+M\+ES and setting the optional parameters living in the namespace \hyperlink{namespaceGroupSpecificOptional}{Group\+Specific\+Optional}. An example of how this is done is contained the file {\ttfamily C4\+\_\+\+Optional\+\_\+\+Implementation.\+h} in \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo}. The implementation there is for $G=C_4$ and the 16 \hyperlink{namespaceMackey}{Mackey} functors in the $RO(C_4)$ homology. We have included both the $\underline{\mathbb Z}$ and $\underline{\mathbb F_2}$ coefficient cases for reference.
 \end{DoxyItemize}\hypertarget{use_var}{}\subsection{Global variables}\label{use_var}
 The global variables that need to be set are\+:
 
@@ -12,18 +18,20 @@ The global variables that need to be set are\+:
 \item \hyperlink{classGroupSpecific_1_1Variables_ac9bd6be19cc41e6877ee25a2d1c7be80}{power} \+: the $n$ in $G=C_{p^n}$.
 \item \hyperlink{classGroupSpecific_1_1Variables_a5504789b0b60050e6ea223fdeb84874a}{reps} \+: the number of nontrivial irreducible real representations of $G$.
 \item \hyperlink{classGroupSpecific_1_1Variables_a4746f16736abcf4c705dd8690ec12ca0}{sphere\+\_\+dimensions} \+: the array consisting of the dimensions of those representations (so we must fix an order for them beforehand).
-\end{DoxyItemize}\hypertarget{use_fun}{}\subsection{The standard differentials}\label{use_fun}
+\end{DoxyItemize}\hypertarget{use_fun}{}\subsection{The standard chains}\label{use_fun}
 
 \begin{DoxyItemize}
-\item There is one function that needs to be manually defined, the \hyperlink{classGroupSpecific_1_1Function_a8ead55e2f2e2bbda4deea3964793498d}{Standard\+Diff} computing the differentials for the standard chains. In practice this amounts to assigning the corresponding matrix given the index of the differential and the sphere (for $G=C_4$ this amounts to specifying a matrix for every triple $i,n,m$ where $n,m$ have the same signs). Apart from the case work that comes from the math, I have made the construction of these differentials as painless as possible, using the \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{altmatrix} function
+\item There is one function that needs to be manually defined, the \hyperlink{classGroupSpecific_1_1Function_a6d247b31d297f733e9cd6f68921a37cd}{Positive\+Chains} computing the chains for actual representations. I have made the construction of these Chains as painless as possible, using the \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{altmatrix} function
 \item \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{altmatrix} returns alternating matrices of the desired size and the desired \char`\"{}pattern\char`\"{}. This pattern is repeated cyclically in the columns of the matrix. An example\+: The matrix of size 4x4 with pattern $a,b$ is ~\newline
  $\begin{matrix} a&b&a&b\\ b&a&b&a\\ a&b&a&b \\ b&a&b&a \end{matrix}$ ~\newline
  If we use the pattern $a,b,c,d$ instead we get ~\newline
  $\begin{matrix} a&b&c&d\\ b&c&d&a\\ c&d&a&b \\ d&a&b&c \end{matrix}$ ~\newline
 
 \item The matrices appearing in the Standard Chains all look like this due to equivariance.
-\end{DoxyItemize}\hypertarget{use_next}{}\section{Step 1\+: Calling the library}\label{use_next}
-Once Step 0 is complete, you can include {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} to access the methods relating to the additive and multiplicative structure and Massey products, and {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} to access the factorization methods. For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder together with the provided two Implementation header files that come from Step 0.\hypertarget{use_coeff}{}\subsection{Coefficients and templates}\label{use_coeff}
+\end{DoxyItemize}
+
+We have automated this process for general $G=C_{2^n}$ in {\ttfamily C2n\+\_\+\+Implementation.\+h} using the recursion established in H\+H\+R17 pg 392. All that needs to be changed is the power variable.\hypertarget{use_next}{}\section{Step 1\+: Calling the library}\label{use_next}
+Once Step 0 is complete, you can include {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} to access the methods relating to the additive and multiplicative structure and Massey products, and {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} to access the factorization methods. For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder together with the provided Implementation header files (Step 0).\hypertarget{use_coeff}{}\subsection{Coefficients and templates}\label{use_coeff}
 There are two template arguments that always need to be specified, and their typenames are always {\ttfamily rank\+\_\+t,diff\+\_\+t}. These are the coefficients used for the rank arrays and differential matrices respectively.
 
 

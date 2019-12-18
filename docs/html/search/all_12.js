@@ -10,6 +10,5 @@ var searchData=
   ['source',['source',['../classMackey_1_1Graph.html#a43657a07a21a2dcf422876400360ed5b',1,'Mackey::Graph']]],
   ['sphere_5fdimensions',['sphere_dimensions',['../classGroupSpecific_1_1Variables.html#a4746f16736abcf4c705dd8690ec12ca0',1,'GroupSpecific::Variables']]],
   ['standardchains',['StandardChains',['../namespaceMackey.html#a425b988266cedec0299fb539d99179b1',1,'Mackey::StandardChains(const deg_t &amp;sphere)'],['../namespaceMackey.html#aac9deeccbe291d1dd17df46a3d7c1f2b',1,'Mackey::StandardChains(int i, const deg_t &amp;sphere)']]],
-  ['standarddiff',['StandardDiff',['../classGroupSpecific_1_1Function.html#a8ead55e2f2e2bbda4deea3964793498d',1,'GroupSpecific::Function::StandardDiff()'],['../namespaceMackey.html#a4b31e1685ed5771bcced308b3b13c7f0',1,'Mackey::StandardDiff()']]],
   ['summation',['summation',['../namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52',1,'Mackey']]]
 ];

@@ -12,6 +12,7 @@ var General_8h =
     [ "operator*", "General_8h.html#ae235ee5dd92dc1ca64388b8fbb1b4d75", null ],
     [ "operator+", "General_8h.html#adb4974b5ffe533abb955ccb6b9096155", null ],
     [ "operator-", "General_8h.html#ae86e49097ef9a09ebcd0173881e88786", null ],
+    [ "operator-", "General_8h.html#a9d67cfe3e93ac3ef2301547372b48e15", null ],
     [ "rotate", "General_8h.html#a38a833de54971845cbdb8c96f830725b", null ],
     [ "summation", "General_8h.html#a359aa27a035d2b1f1a3f2f8270fc9e52", null ],
     [ "tail", "General_8h.html#a1e4b11e9d2a5b70f8380af87cae31ef3", null ],

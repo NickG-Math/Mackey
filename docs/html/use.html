@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('use.html','');});
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
 <ul><li class="level1"><a href="#how">Step 0: Setting the Group Parameters</a><ul><li class="level2"><a href="#var">Global variables</a></li>
-<li class="level2"><a href="#fun">The standard differentials</a></li>
+<li class="level2"><a href="#fun">The standard chains</a></li>
 </ul>
 </li>
 <li class="level1"><a href="#next">Step 1: Calling the library</a><ul><li class="level2"><a href="#coeff">Coefficients and templates</a></li>
@@ -109,8 +109,11 @@ $(document).ready(function(){initNavTree('use.html','');});
 <div class="textblock"><h1><a class="anchor" id="how"></a>
 Step 0: Setting the Group Parameters</h1>
 <ul>
-<li>For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example (for \(G=C_4\)) on how to set them in the file <code>Implementation.h</code> available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. These parameters all live in the <a class="el" href="namespaceGroupSpecific.html">GroupSpecific</a> namespace and we will go over them in more detail below.</li>
-<li>There are also some optional parameters that allow you to identify and print the names of the computed <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors. This functionality is disabled by default, but can easily be turned on by defining the macro MACKEY_NAMES and setting the optional parameters living in the namespace <a class="el" href="namespaceGroupSpecificOptional.html">GroupSpecificOptional</a>. An example of how this is done is contained the file <code>Optional_Implementation.h</code> in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>. The implementation there is for \(G=C_4\) and the 16 <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors in the \(RO(C_4)\) homology. We have included both the \(\underline{\mathbb Z}\) and \(\underline{\mathbb F_2}\) coefficient cases for reference.</li>
+<li>For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example for \(G=C_4\) on how to set them in the file <code>C4_Implementation.h</code> available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. We also have a more general example for \(G=C_{2^n}\) implemented in <code>C2n_Implementation.h</code>.</li>
+</ul>
+<p>These parameters all live in the <a class="el" href="namespaceGroupSpecific.html">GroupSpecific</a> namespace and we will go over them in more detail below.</p>
+<ul>
+<li>There are also some optional parameters that allow you to identify and print the names of the computed <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors. This functionality is disabled by default, but can easily be turned on by defining the macro MACKEY_NAMES and setting the optional parameters living in the namespace <a class="el" href="namespaceGroupSpecificOptional.html">GroupSpecificOptional</a>. An example of how this is done is contained the file <code>C4_Optional_Implementation.h</code> in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>. The implementation there is for \(G=C_4\) and the 16 <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors in the \(RO(C_4)\) homology. We have included both the \(\underline{\mathbb Z}\) and \(\underline{\mathbb F_2}\) coefficient cases for reference.</li>
 </ul>
 <h2><a class="anchor" id="var"></a>
 Global variables</h2>
@@ -122,9 +125,9 @@ Global variables</h2>
 <li><a class="el" href="classGroupSpecific_1_1Variables.html#a4746f16736abcf4c705dd8690ec12ca0">sphere_dimensions</a> : the array consisting of the dimensions of those representations (so we must fix an order for them beforehand).</li>
 </ul>
 <h2><a class="anchor" id="fun"></a>
-The standard differentials</h2>
+The standard chains</h2>
 <ul>
-<li>There is one function that needs to be manually defined, the <a class="el" href="classGroupSpecific_1_1Function.html#a8ead55e2f2e2bbda4deea3964793498d">StandardDiff</a> computing the differentials for the standard chains. In practice this amounts to assigning the corresponding matrix given the index of the differential and the sphere (for \(G=C_4\) this amounts to specifying a matrix for every triple \(i,n,m\) where \(n,m\) have the same signs). Apart from the case work that comes from the math, I have made the construction of these differentials as painless as possible, using the <a class="el" href="namespaceMackey.html#a26a529f63caac9c5b4dc809e0e5831be">altmatrix</a> function</li>
+<li>There is one function that needs to be manually defined, the <a class="el" href="classGroupSpecific_1_1Function.html#a6d247b31d297f733e9cd6f68921a37cd">PositiveChains</a> computing the chains for actual representations. I have made the construction of these Chains as painless as possible, using the <a class="el" href="namespaceMackey.html#a26a529f63caac9c5b4dc809e0e5831be">altmatrix</a> function</li>
 <li><a class="el" href="namespaceMackey.html#a26a529f63caac9c5b4dc809e0e5831be">altmatrix</a> returns alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. An example: The matrix of size 4x4 with pattern \(a,b\) is <br />
  \(\begin{matrix} a&amp;b&amp;a&amp;b\\ b&amp;a&amp;b&amp;a\\ a&amp;b&amp;a&amp;b \\ b&amp;a&amp;b&amp;a \end{matrix}\) <br />
  If we use the pattern \(a,b,c,d\) instead we get <br />
@@ -132,9 +135,10 @@ The standard differentials</h2>
 </li>
 <li>The matrices appearing in the Standard Chains all look like this due to equivariance.</li>
 </ul>
+<p>We have automated this process for general \(G=C_{2^n}\) in <code>C2n_Implementation.h</code> using the recursion established in HHR17 pg 392. All that needs to be changed is the power variable.</p>
 <h1><a class="anchor" id="next"></a>
 Step 1: Calling the library</h1>
-<p>Once Step 0 is complete, you can include <code>&lt;<a class="el" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. ">Mackey/Compute.h</a>&gt;</code> to access the methods relating to the additive and multiplicative structure and Massey products, and <code>&lt;<a class="el" href="Factorization_8h.html" title="Contains the Factorization class for factorizing generators. ">Mackey/Factorization.h</a>&gt;</code> to access the factorization methods. For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder together with the provided two Implementation header files that come from Step 0.</p>
+<p>Once Step 0 is complete, you can include <code>&lt;<a class="el" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. ">Mackey/Compute.h</a>&gt;</code> to access the methods relating to the additive and multiplicative structure and Massey products, and <code>&lt;<a class="el" href="Factorization_8h.html" title="Contains the Factorization class for factorizing generators. ">Mackey/Factorization.h</a>&gt;</code> to access the factorization methods. For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder together with the provided Implementation header files (Step 0).</p>
 <h2><a class="anchor" id="coeff"></a>
 Coefficients and templates</h2>
 <p>There are two template arguments that always need to be specified, and their typenames are always <code>rank_t,diff_t</code>. These are the coefficients used for the rank arrays and differential matrices respectively.</p>

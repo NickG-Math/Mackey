@@ -47,6 +47,8 @@ class \hyperlink{classMackey_1_1Massey}{Massey}
 \begin{DoxyCompactList}\small\item\em Stores \hyperlink{classMackey_1_1Massey}{Massey} products and their indeterminacy. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}
 \begin{DoxyCompactList}\small\item\em The Multiplication Table. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1Polynomial}{Polynomial}
+\begin{DoxyCompactList}\small\item\em Formal polynomials with arbitrary coefficients. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1Smith}{Smith}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1TableInput}{Table\+Input}
@@ -127,6 +129,8 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_ae3454eb9b2574a835a29e3f58cf
 \begin{DoxyCompactList}\small\item\em Coordinate-\/wise sum of vectors (up to the minimum of their lengths) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_ae86e49097ef9a09ebcd0173881e88786}{operator-\/} (const std\+::vector$<$ T $>$ \&a, const std\+::vector$<$ T $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Coordinate-\/wise difference of vectors (up to the minimum of their lengths) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_a9d67cfe3e93ac3ef2301547372b48e15}{operator-\/} (const std\+::vector$<$ T $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Coordinate-\/wise opposite of vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_ae235ee5dd92dc1ca64388b8fbb1b4d75}{operator$\ast$} (T a, const std\+::vector$<$ T $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Coordinate-\/wise difference of vectors (up to the minimum of their lengths) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a5d8ae76ffb9440e27bfca124d26ee1b2}{lcm} (const T \&v)
@@ -171,8 +175,26 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_ae3454eb9b2574a835a29e3f58cf
 \begin{DoxyCompactList}\small\item\em Writing the restriction of each generator in terms of the generators in the image. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a9a4f2ced77550a7c06d2c15b39030ff6}{action} (const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&H, const rank\+\_\+t \&rank)
 \begin{DoxyCompactList}\small\item\em Writing the Weyl group action on each generator in terms of the other generators. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\std\+::pair$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a4b31e1685ed5771bcced308b3b13c7f0}{Standard\+Diff} (int i, const deg\+\_\+t \&sphere)
-\begin{DoxyCompactList}\small\item\em Computes the i-\/th differential of the standard chains given \hyperlink{classGroupSpecific_1_1Function_a8ead55e2f2e2bbda4deea3964793498d}{Group\+Specific\+::\+Function\+::\+Standard\+Diff}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \hyperlink{namespaceMackey_a61f8cf9c3cf22acfedda5f427423f6c4}{operator+} (const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a, const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \& \hyperlink{namespaceMackey_a29199dd05885558a19e305b49ab7b180}{operator+=} (\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a, const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \hyperlink{namespaceMackey_a76e1e4a6dac913bc86971d8515475fa5}{operator-\/} (const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \hyperlink{namespaceMackey_a803f57e25754b9ca58e4757a46f9b23a}{operator-\/} (const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a, const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \& \hyperlink{namespaceMackey_a9cb1fbb70826d41d001bef40d09d9e3f}{operator-\/=} (\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a, const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \hyperlink{namespaceMackey_a7bbd83e8170a608aea65f7d916b4bc6d}{operator$\ast$} (const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a, const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::pair$<$ \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$, \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ $>$ \hyperlink{namespaceMackey_a04fadcf186ab504cafeb259178ee4827}{divide} (const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a, const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \hyperlink{namespaceMackey_ac26fb6e8a8b7350d13f866570d588e6c}{operator/} (const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a, const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \hyperlink{namespaceMackey_adb145e729d40138080b5a58d26a89388}{operator\%} (const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&a, const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \hyperlink{namespaceMackey_a2b9319a9af0a3cad8cfec47e9197dc82}{geometric} (int max)
+\begin{DoxyCompactList}\small\item\em Geometric sum 1+...+x$^\wedge$\{max\}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa}{intexp} (const T exponent)
 \begin{DoxyCompactList}\small\item\em Raise power to given exponent. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_aa0cac9097035c5fe8448742e22e6f78b}{intlog} (const T exponentiated)
@@ -411,6 +433,20 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=344pt]{namespaceMackey_a6a5d40e69e5628ea84896ee43f4a91fa_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{namespaceMackey_a04fadcf186ab504cafeb259178ee4827}\label{namespaceMackey_a04fadcf186ab504cafeb259178ee4827}} 
+\index{Mackey@{Mackey}!divide@{divide}}
+\index{divide@{divide}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{divide()}{divide()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::pair$<$\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$, \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$ $>$ Mackey\+::divide (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a,  }\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{namespaceMackey_a04fadcf186ab504cafeb259178ee4827_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{namespaceMackey_a74984d054f1f943ab61dd0415347f141}\label{namespaceMackey_a74984d054f1f943ab61dd0415347f141}} 
 \index{Mackey@{Mackey}!find@{find}}
 \index{find@{find}!Mackey@{Mackey}}
@@ -472,6 +508,17 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{namespaceMackey_a1a7a26880f8c7c087503e2bc16168d3c_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{namespaceMackey_a2b9319a9af0a3cad8cfec47e9197dc82}\label{namespaceMackey_a2b9319a9af0a3cad8cfec47e9197dc82}} 
+\index{Mackey@{Mackey}!geometric@{geometric}}
+\index{geometric@{geometric}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{geometric()}{geometric()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$ Mackey\+::geometric (\begin{DoxyParamCaption}\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Geometric sum 1+...+x$^\wedge$\{max\}. 
+
 \mbox{\Hypertarget{namespaceMackey_a1c195484cc947abef84c726b534af5a5}\label{namespaceMackey_a1c195484cc947abef84c726b534af5a5}} 
 \index{Mackey@{Mackey}!Homology\+Levels@{Homology\+Levels}}
 \index{Homology\+Levels@{Homology\+Levels}!Mackey@{Mackey}}
@@ -761,10 +808,38 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=247pt]{namespaceMackey_a6aa639a1f656fdcccbcfa6bc719bb817_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{namespaceMackey_adb145e729d40138080b5a58d26a89388}\label{namespaceMackey_adb145e729d40138080b5a58d26a89388}} 
+\index{Mackey@{Mackey}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator\%()}{operator\%()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$ Mackey\+::operator\% (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a,  }\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{namespaceMackey_adb145e729d40138080b5a58d26a89388_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceMackey_a7bbd83e8170a608aea65f7d916b4bc6d}\label{namespaceMackey_a7bbd83e8170a608aea65f7d916b4bc6d}} 
+\index{Mackey@{Mackey}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$ Mackey\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a,  }\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{namespaceMackey_a7bbd83e8170a608aea65f7d916b4bc6d_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{namespaceMackey_ae235ee5dd92dc1ca64388b8fbb1b4d75}\label{namespaceMackey_ae235ee5dd92dc1ca64388b8fbb1b4d75}} 
 \index{Mackey@{Mackey}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 std\+::vector$<$T$>$ Mackey\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{const std\+::vector$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
 
@@ -772,10 +847,24 @@ std\+::vector$<$T$>$ Mackey\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{T}
 
 Coordinate-\/wise difference of vectors (up to the minimum of their lengths) 
 
+\mbox{\Hypertarget{namespaceMackey_a61f8cf9c3cf22acfedda5f427423f6c4}\label{namespaceMackey_a61f8cf9c3cf22acfedda5f427423f6c4}} 
+\index{Mackey@{Mackey}!operator+@{operator+}}
+\index{operator+@{operator+}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$ Mackey\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a,  }\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{namespaceMackey_a61f8cf9c3cf22acfedda5f427423f6c4_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{namespaceMackey_adb4974b5ffe533abb955ccb6b9096155}\label{namespaceMackey_adb4974b5ffe533abb955ccb6b9096155}} 
 \index{Mackey@{Mackey}!operator+@{operator+}}
 \index{operator+@{operator+}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 std\+::vector$<$T$>$ Mackey\+::operator+ (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{a,  }\item[{const std\+::vector$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
 
@@ -783,10 +872,31 @@ std\+::vector$<$T$>$ Mackey\+::operator+ (\begin{DoxyParamCaption}\item[{const s
 
 Coordinate-\/wise sum of vectors (up to the minimum of their lengths) 
 
+\mbox{\Hypertarget{namespaceMackey_a29199dd05885558a19e305b49ab7b180}\label{namespaceMackey_a29199dd05885558a19e305b49ab7b180}} 
+\index{Mackey@{Mackey}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$\& Mackey\+::operator+= (\begin{DoxyParamCaption}\item[{\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a,  }\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceMackey_a76e1e4a6dac913bc86971d8515475fa5}\label{namespaceMackey_a76e1e4a6dac913bc86971d8515475fa5}} 
+\index{Mackey@{Mackey}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$ Mackey\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceMackey_a803f57e25754b9ca58e4757a46f9b23a}\label{namespaceMackey_a803f57e25754b9ca58e4757a46f9b23a}} 
+\index{Mackey@{Mackey}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$ Mackey\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a,  }\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{namespaceMackey_ae86e49097ef9a09ebcd0173881e88786}\label{namespaceMackey_ae86e49097ef9a09ebcd0173881e88786}} 
 \index{Mackey@{Mackey}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 std\+::vector$<$T$>$ Mackey\+::operator-\/ (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{a,  }\item[{const std\+::vector$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
 
@@ -794,6 +904,38 @@ std\+::vector$<$T$>$ Mackey\+::operator-\/ (\begin{DoxyParamCaption}\item[{const
 
 Coordinate-\/wise difference of vectors (up to the minimum of their lengths) 
 
+\mbox{\Hypertarget{namespaceMackey_a9d67cfe3e93ac3ef2301547372b48e15}\label{namespaceMackey_a9d67cfe3e93ac3ef2301547372b48e15}} 
+\index{Mackey@{Mackey}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$ Mackey\+::operator-\/ (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Coordinate-\/wise opposite of vector. 
+
+\mbox{\Hypertarget{namespaceMackey_a9cb1fbb70826d41d001bef40d09d9e3f}\label{namespaceMackey_a9cb1fbb70826d41d001bef40d09d9e3f}} 
+\index{Mackey@{Mackey}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$\& Mackey\+::operator-\/= (\begin{DoxyParamCaption}\item[{\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a,  }\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceMackey_ac26fb6e8a8b7350d13f866570d588e6c}\label{namespaceMackey_ac26fb6e8a8b7350d13f866570d588e6c}} 
+\index{Mackey@{Mackey}!operator/@{operator/}}
+\index{operator/@{operator/}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$T$>$ Mackey\+::operator/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{a,  }\item[{const \hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{namespaceMackey_ac26fb6e8a8b7350d13f866570d588e6c_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{namespaceMackey_a4abdca157edcf425b1e7ceff39d74c2f}\label{namespaceMackey_a4abdca157edcf425b1e7ceff39d74c2f}} 
 \index{Mackey@{Mackey}!order@{order}}
 \index{order@{order}!Mackey@{Mackey}}
@@ -1131,17 +1273,13 @@ Here is the call graph for this function\+:\nopagebreak
 
 Returns the standard \hyperlink{classMackey_1_1Chains}{Chains} of the given sphere up to index i. 
 
-\mbox{\Hypertarget{namespaceMackey_a4b31e1685ed5771bcced308b3b13c7f0}\label{namespaceMackey_a4b31e1685ed5771bcced308b3b13c7f0}} 
-\index{Mackey@{Mackey}!Standard\+Diff@{Standard\+Diff}}
-\index{Standard\+Diff@{Standard\+Diff}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{Standard\+Diff()}{StandardDiff()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ \\
-std\+::pair$<$rank\+\_\+t, diff\+\_\+t$>$ Mackey\+::\+Standard\+Diff (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{const deg\+\_\+t \&}]{sphere }\end{DoxyParamCaption})}
-
-
-
-Computes the i-\/th differential of the standard chains given \hyperlink{classGroupSpecific_1_1Function_a8ead55e2f2e2bbda4deea3964793498d}{Group\+Specific\+::\+Function\+::\+Standard\+Diff}. 
-
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{namespaceMackey_a359aa27a035d2b1f1a3f2f8270fc9e52}\label{namespaceMackey_a359aa27a035d2b1f1a3f2f8270fc9e52}} 
 \index{Mackey@{Mackey}!summation@{summation}}
 \index{summation@{summation}!Mackey@{Mackey}}

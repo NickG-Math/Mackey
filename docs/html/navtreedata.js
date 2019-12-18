@@ -24,7 +24,7 @@ var NAVTREE =
     [ "How to Use", "use.html", [
       [ "Step 0: Setting the Group Parameters", "use.html#how", [
         [ "Global variables", "use.html#var", null ],
-        [ "The standard differentials", "use.html#fun", null ]
+        [ "The standard chains", "use.html#fun", null ]
       ] ],
       [ "Step 1: Calling the library", "use.html#next", [
         [ "Coefficients and templates", "use.html#coeff", null ],
@@ -83,7 +83,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Box_8h.html",
-"classMackey_1_1Massey.html#ab738306412d735a31df4913c20948d65"
+"classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -151,8 +151,8 @@ namespace C4Test{
 					std::cout << "The k=" << invReindex<std::vector<int>>(k, { n,m }) << " homology of the n=" << n << " and m=" << m << " sphere is " << name << "\n";
 				}
 				k++;
-			}
 #endif
+			}
 		}
 	}
 

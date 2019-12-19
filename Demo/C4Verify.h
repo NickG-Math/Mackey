@@ -138,6 +138,7 @@ namespace C4Test{
 			int k = 0;
 			for (auto& j : M) 
 			{
+#ifdef MACKEY_NAMES
 				if (!silence) 
 				{
 					auto name = identify_Mackey<rank_t, diff_t>(j);
@@ -151,6 +152,7 @@ namespace C4Test{
 				}
 				k++;
 			}
+#endif
 		}
 	}
 

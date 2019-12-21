@@ -157,6 +157,16 @@ namespace Mackey {
 		return matrix;
 	}
 	   	  
+	///Tests if vector is zero
+	template <typename T>
+	bool isZero(const std::vector<T>& a)
+	{
+		for (const auto& i:a) {
+			if (i != 0)
+				return 0;
+		}
+		return 1;
+	}
 
 	///Coordinate-wise sum of vectors (up to the minimum of their lengths)
 	template <typename T>

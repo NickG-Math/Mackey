@@ -118,7 +118,7 @@ namespace Mackey
 			else
 				break;
 		}
-		for (std::vector<int>::size_type j = i + 1; j < element.size(); j++) {
+		for (int j = i + 1; j < element.size(); j++) {
 			if (index == tracker[j])
 				tracked.push_back(j);
 			else
@@ -176,9 +176,9 @@ namespace Mackey
 		:TableInput<rank_t, diff_t>(level, minsphere, maxsphere), basicIrreducibles(basicIrreducibles) {
 		number_of_nodes = this->element.size();
 		number_of_generators = number_of_nodes;
-		edges.reserve((prime + 1) * number_of_nodes); //when we need to add extra nodes
+		edges.reserve((power + 1) * number_of_nodes); //when we need to add extra nodes
 		edges.resize(number_of_nodes);
-		colors.reserve((prime + 1) * number_of_nodes);
+		colors.reserve((power + 1) * number_of_nodes);
 		colors.resize(number_of_nodes);
 		getChains();
 		make();

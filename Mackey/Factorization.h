@@ -122,8 +122,6 @@ namespace Mackey {
 		if (path[i].empty())
 			return;
 
-		std::vector<int> zerovector(prime + 1);
-
 		factorization.clear();
 		orderOfoperations.clear();
 		multiple = 1;
@@ -139,7 +137,7 @@ namespace Mackey {
 
 			auto difference = this->degree[indexstart] - this->degree[indexend];
 			auto difference_last = this->element[path[i][j]].back() - this->element[path[i][j+1]].back();
-			if (difference_last != 0 && difference == zerovector) {
+			if (difference_last != 0 && isZero(difference) ) {
 				multiple *= this->element[path[i][j]].back();
 			}
 
@@ -156,7 +154,7 @@ namespace Mackey {
 					flagpos = 1;
 					break;
 				}
-				else if (difference == zerovector - this->basicIrreducibles[k]) {
+				else if (difference == - this->basicIrreducibles[k]) {
 					if (flagpos) {
 						orderOfoperations.push_back(1);
 						factorization.push_back(poscounter); //flush

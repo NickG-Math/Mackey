@@ -1,5 +1,9 @@
 //#define EIGEN_USE_MKL_ALL
 
+#ifdef _MSC_VER
+#define _SILENCE_CXX17_ADAPTOR_TYPEDEFS_DEPRECATION_WARNING //Eigen won't work otherwise.
+#endif
+
 #include <iostream>
 #include "C4_Implementation.h"
 #include "Mackey/Factorization.h"

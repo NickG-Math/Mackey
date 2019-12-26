@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['real',['Real',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a44847690171e3535ea893e5d3742d5dc',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
+  ['nested',['Nested',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#aadda945d9b822d2c43cddd141d895ab5',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
+  ['noninteger',['NonInteger',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a54a7b88f9d282c613909ac128476d3d1',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
 ];

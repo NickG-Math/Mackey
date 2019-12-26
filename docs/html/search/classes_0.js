@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boxpoint',['BoxPoint',['../classMackey_1_1BoxPoint.html',1,'Mackey']]]
+  ['additivestructure',['AdditiveStructure',['../classMackey_1_1AdditiveStructure.html',1,'Mackey']]]
 ];

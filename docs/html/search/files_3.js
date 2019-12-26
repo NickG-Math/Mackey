@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['factorization_2eh',['Factorization.h',['../Factorization_8h.html',1,'']]]
+  ['doc_2emd',['Doc.md',['../Doc_8md.html',1,'']]]
 ];

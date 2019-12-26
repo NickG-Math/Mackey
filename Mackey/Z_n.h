@@ -9,7 +9,7 @@
 ///////////////////////////////////
 ///The class of Z/N coefficients
 
-///The operators are self explanatory
+///The operators are self explanatory. N should be prime for division to work.
 /////////////////////////////////
 template<int N>
 class Z {
@@ -80,9 +80,14 @@ template<int N>
 inline Z<N> operator *(const Z<N>& a, const Z<N>& b) { //Eigen needs this to be non member
 	return Z<N>(a.x * b.x);
 }
+//N better be prime for this
 template<int N>
-inline Z<N> operator /(const Z<N>& a, const Z<N>& b) {
-	return Z<N>(a.x / b.x);
+Z<N> operator /(const Z<N>& a, const Z<N>& b) {
+	for (int i = 1; i < N; i++) {
+		if ((b.x * i - a.x) % N == 0)
+			return Z<N>(i);
+	}
+	throw("Division not possible in Z/N coefficients");
 }
 template<int N>
 inline Z<N> abs(const Z<N>& a) {
@@ -145,8 +150,8 @@ public:
 	inline Z<2> operator -() {
 		return *this;
 	}
-	inline Z<2> operator %(const Z<2>& b) const {
-		return Z<2>(x % b.x);
+	inline Z<2> operator %(const Z<2>& b) const { //the only way for a%b=1 is b=0 and a=1
+		return Z<2>(x && !b.x);
 	}
 	inline bool operator ==(const Z<2>& b) const {
 		return (x == b.x);
@@ -170,7 +175,10 @@ inline Z<2> operator *(const Z<2>& a, const Z<2>& b) { //Eigen needs this to be 
 	return Z<2>(a.x * b.x);
 }
 inline Z<2> operator /(const Z<2>& a, const Z<2>& b) {
-	return Z<2>(a.x / b.x);
+	if (b.x)
+		return a;
+	else
+		throw("Division by 0 in Z/2 coefficients");
 }
 inline Z<2> abs(const Z<2>& a) {
 	return a;

@@ -12,8 +12,10 @@ The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classMackey_1_1Smith_a43f657bfa335acf5fe10dd864326c0aa}{Smith} (const smith\+S\+\_\+t \&Original, const bool \&wantP, const bool \&wantQ)
-\begin{DoxyCompactList}\small\item\em Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P$\ast$\+A$\ast$Q and A=Pi$\ast$\+S$\ast$\+Qi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classMackey_1_1Smith_a534aaf0e0b2da7d312d80ad7d67ae794}{Smith} (const smith\+S\+\_\+t \&, bool, bool, bool)
+\begin{DoxyCompactList}\small\item\em Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P$\ast$\+A$\ast$Q and A=Pi$\ast$\+S$\ast$\+Qi. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Smith_a207e1221d2d15f9d9ab4ef36be67eb85}{Smith} (const smith\+S\+\_\+t \&A, bool wantP, bool wantQ)
+\begin{DoxyCompactList}\small\item\em Same as the other constructor, but don\textquotesingle{}t sort. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,7 +29,7 @@ smith\+C\+\_\+t \hyperlink{classMackey_1_1Smith_af93f16dfd0ce77406d9696a02609230
 \begin{DoxyCompactList}\small\item\em One of the coefficient matrices (S=P$\ast$\+A$\ast$Q). Should be column major for best performance. \end{DoxyCompactList}\item 
 smith\+C\+\_\+t \hyperlink{classMackey_1_1Smith_a97f16eca1aa9f4f6c36c2680fdcf277e}{Pi}
 \begin{DoxyCompactList}\small\item\em One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi). Should be column major for best performance. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix$<$ typename smith\+S\+\_\+t\+::\+Scalar, 1,-\/1 $>$ \hyperlink{classMackey_1_1Smith_af473e56486c5081b2e1f657bc8df5539}{diagonal}
+Eigen\+::\+Matrix$<$ typename smith\+S\+\_\+t\+::\+Scalar, 1, -\/1 $>$ \hyperlink{classMackey_1_1Smith_a5cd4750403fb58647adb6eaa42580e3c}{diagonal}
 \begin{DoxyCompactList}\small\item\em The diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. \end{DoxyCompactList}\item 
 const int \hyperlink{classMackey_1_1Smith_a02ea735836a4a70f504e360495b0e1e1}{L}
 \begin{DoxyCompactList}\small\item\em The length of the diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -40,26 +42,44 @@ class Mackey\+::\+Smith$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$
 The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classMackey_1_1Smith_a43f657bfa335acf5fe10dd864326c0aa}\label{classMackey_1_1Smith_a43f657bfa335acf5fe10dd864326c0aa}} 
+\mbox{\Hypertarget{classMackey_1_1Smith_a534aaf0e0b2da7d312d80ad7d67ae794}\label{classMackey_1_1Smith_a534aaf0e0b2da7d312d80ad7d67ae794}} 
 \index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Smith@{Smith}}
 \index{Smith@{Smith}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
-\subsubsection{\texorpdfstring{Smith()}{Smith()}}
+\subsubsection{\texorpdfstring{Smith()}{Smith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t , typename smith\+R\+\_\+t , typename smith\+C\+\_\+t $>$ \\
-\hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::\hyperlink{classMackey_1_1Smith}{Smith} (\begin{DoxyParamCaption}\item[{const smith\+S\+\_\+t \&}]{Original,  }\item[{const bool \&}]{wantP,  }\item[{const bool \&}]{wantQ }\end{DoxyParamCaption})}
+\hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::\hyperlink{classMackey_1_1Smith}{Smith} (\begin{DoxyParamCaption}\item[{const smith\+S\+\_\+t \&}]{Original,  }\item[{bool}]{wantP,  }\item[{bool}]{wantQ,  }\item[{bool}]{sort }\end{DoxyParamCaption})}
 
 
 
 Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P$\ast$\+A$\ast$Q and A=Pi$\ast$\+S$\ast$\+Qi. 
 
-The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed. 
+The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed. If sort=1 the diagonal matrix S has decreasing entries, otherwise the order is not specified Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classMackey_1_1Smith_a534aaf0e0b2da7d312d80ad7d67ae794_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1Smith_a207e1221d2d15f9d9ab4ef36be67eb85}\label{classMackey_1_1Smith_a207e1221d2d15f9d9ab4ef36be67eb85}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Smith@{Smith}}
+\index{Smith@{Smith}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{Smith()}{Smith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::\hyperlink{classMackey_1_1Smith}{Smith} (\begin{DoxyParamCaption}\item[{const smith\+S\+\_\+t \&}]{A,  }\item[{bool}]{wantP,  }\item[{bool}]{wantQ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Same as the other constructor, but don\textquotesingle{}t sort. 
+
+
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classMackey_1_1Smith_af473e56486c5081b2e1f657bc8df5539}\label{classMackey_1_1Smith_af473e56486c5081b2e1f657bc8df5539}} 
+\mbox{\Hypertarget{classMackey_1_1Smith_a5cd4750403fb58647adb6eaa42580e3c}\label{classMackey_1_1Smith_a5cd4750403fb58647adb6eaa42580e3c}} 
 \index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!diagonal@{diagonal}}
 \index{diagonal@{diagonal}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
 \subsubsection{\texorpdfstring{diagonal}{diagonal}}
 {\footnotesize\ttfamily template$<$typename smith\+S\+\_\+t, typename smith\+R\+\_\+t, typename smith\+C\+\_\+t$>$ \\
-Eigen\+::\+Matrix$<$typename smith\+S\+\_\+t\+::\+Scalar,1,-\/1$>$ \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::diagonal}
+Eigen\+::\+Matrix$<$typename smith\+S\+\_\+t\+::\+Scalar, 1, -\/1$>$ \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ smith\+S\+\_\+t, smith\+R\+\_\+t, smith\+C\+\_\+t $>$\+::diagonal}
 
 
 

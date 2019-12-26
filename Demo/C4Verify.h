@@ -1,116 +1,115 @@
 #pragma once
-#include <Mackey/Compute.h>
-#include <string>
+#include <Mackey/Additive.h>
 #include <iostream>
 
 ///@file
 ///@brief Contains testing functions for the G=C4 case.
 namespace {
 
-	std::string C4MackeyAnswer(int k, int n, int m) {
-		std::string MackeyName;
+	std::vector<std::string> C4MackeyAnswer(int k, int n, int m) {
+		std::vector<std::string> MackeyName;
 		std::vector<int> sphere = { n,m };
 		k = Mackey::invReindex(k, sphere);
 		if (n >= 0 && m >= 0) {
 			if (k == n + 2 * m && abs(n) % 2 == 0)
-				MackeyName = "Z";
+				MackeyName = { "Z","111" };
 			else if (k == n + 2 * m && abs(n) % 2 == 1)
-				MackeyName = "Z_-";
+				MackeyName = { "Z_-","110" };
 			else if (((abs(n) % 2 == 0 && k < n) || (abs(n) % 2 == 1 && k < n + 2 * m)) && abs(k) % 2 == 0 && k >= 0)
-				MackeyName = "Z/2";
+				MackeyName = { "Z/2","002" };
 			else if (abs(n) % 2 == 0 && k >= n && k < n + 2 * m && abs(k) % 2 == 0)
-				MackeyName = "Z/4";
+				MackeyName = { "Z/4","024" };
 			else if (abs(n) % 2 == 1 && k >= n && k < n + 2 * m && abs(k) % 2 == 1)
-				MackeyName = "overline Z/2";
+				MackeyName = { "overline Z/2","020" };
 			else
-				MackeyName = "0";
+				MackeyName = { "0","0" };
 		}
 		else if (n <= 0 && m <= 0) {
 			if (k == n + 2 * m && n == -1 && m == 0)
-				MackeyName = "Z_-";
+				MackeyName = { "Z_-","110" };
 			else if (k == n + 2 * m && m == 0 && n != 0 && !(abs(n) % 2))
-				MackeyName = "p^*L";
+				MackeyName = { "p^*L","111 # 1" };
 			else if (k == n + 2 * m && n <= -3 && m == 0 && (abs(n) % 2) == 1)
-				MackeyName = "p^*L_-";
+				MackeyName = { "p^*L_-","112 # 1" };
 			else if (k == n + 2 * m && m != 0 && (abs(n) % 2) == 0)
-				MackeyName = "L";
+				MackeyName = { "L","111 # 01" };
 			else if (k == n + 2 * m && m != 0 && (abs(n) % 2) == 1)
-				MackeyName = "L_-";
+				MackeyName = { "L_-","112 # 01" };
 			else if (n < 0 && k <= 0 && abs(k) >= 3 && abs(k) % 2 == 1 && ((m == 0 && abs(k) < abs(n)) || (m != 0 && (abs(n) % 2) == 0 && abs(k) <= abs(n) + 1) || (m != 0 && (abs(n) % 2) == 1 && abs(k) < abs(n) + abs(2 * m))))
-				MackeyName = "Z/2";
+				MackeyName = { "Z/2","002" };
 			else if (abs(n) % 2 == 0 && k <= 0 && abs(k) >= abs(n) + 3 && abs(k) < abs(n + 2 * m) && abs(k) % 2 == 1)
-				MackeyName = "Z/4";
+				MackeyName = { "Z/4","024" };
 			else if (abs(n) % 2 == 1 && k <= 0 && abs(k) >= abs(n) + 3 && abs(k) < abs(n + 2 * m) && abs(k) % 2 == 0)
-				MackeyName = "overline Z/2";
+				MackeyName = { "overline Z/2","020" };
 			else
-				MackeyName = "0";
+				MackeyName = { "0","0" };
 		}
 		else if (n > 0 && m < 0) {
 			m = -m;
 			if (n % 2 == 1) {
 				if ((n - 2 * m < k && k <= n - 4 && abs(k) % 2 == 1) || (0 <= k && k < n - 2 * m && abs(k) % 2 == 0))
-					MackeyName = "Z/2";
+					MackeyName = { "Z/2","002" };
 				else if (k == n - 2 * m && m >= 2)
-					MackeyName = "L_-";
+					MackeyName = { "L_-","112 # 01" };
 				else if (k == n - 2 && m == 1)
-					MackeyName = "Z_-^flat";
+					MackeyName = { "Z_-^flat","110 # 0" };
 				else if (k == n - 3 && n >= 3 && m >= 2)
-					MackeyName = "Q^sharp";
+					MackeyName = { "Q^sharp","022" };
 				else if ((n - 2 * m < k && k <= n - 5 && k < 0 && abs(k) % 2 == 0) || (k == -2 && n == 1 && m >= 2))
-					MackeyName = "overline Z/2";
+					MackeyName = { "overline Z/2","020" };
 				else if (n - 2 * m < k && k <= n - 5 && 0 <= k && abs(k) % 2 == 0)
-					MackeyName = "Z/2+overline Z/2";
+					MackeyName = { "Z/2+overline Z/2","020 + 002", "002 + 020" };
 				else
-					MackeyName = "0";
+					MackeyName = { "0","0" };
 			}
 			else {
 				if (0 <= k && k <= n - 4 && abs(k) % 2 == 0 && k != n - 2 * m)
-					MackeyName = "Z/2";
+					MackeyName = { "Z/2","002" };
 				else if (n - 2 * m < k && k < n - 3 && abs(k) % 2 == 1)
-					MackeyName = "Z/4";
+					MackeyName = { "Z/4","024" };
 				else if (k == n - 2 * m && n - 2 * m < 0 && m >= 2)
-					MackeyName = "L";
+					MackeyName = { "L","111 # 01" };
 				else if (k == n - 2 && m == 1)
-					MackeyName = "L^sharp";
+					MackeyName = { "L^sharp","111 # 0" };
 				else if (k == n - 3 && m >= 2)
-					MackeyName = "Q^sharp";
+					MackeyName = { "Q^sharp","022" };
 				else if (k == n - 2 * m && n - 2 * m >= 0 && m >= 2)
-					MackeyName = "Z/2+L";
+					MackeyName = { "Z/2+L","002 + 111 # 01", " 111 # 01 + 002"  };
 				else
-					MackeyName = "0";
+					MackeyName = { "0","0" };
 			}
 		}
 		else {
 			n = -n;
 			if (n % 2 == 0) {
 				if (k == -n + 2 * m)
-					MackeyName = "Z";
+					MackeyName = { "Z","111" };
 				else if (-n + 1 <= k && k <= -3 && abs(k) % 2 == 1)
-					MackeyName = "Z/2";
+					MackeyName = { "Z/2","002" };
 				else if (-n + 2 <= k && k < -n + 2 * m && abs(k) % 2 == 0)
-					MackeyName = "Z/4";
+					MackeyName = { "Z/4","024" };
 				else if (k == -n)
-					MackeyName = "Q";
+					MackeyName = { "Q","022 # 1" };
 				else
-					MackeyName = "0";
+					MackeyName = { "0","0" };
 			}
 			else {
 				if (k == -n + 2 * m && k >= -1)
-					MackeyName = "Z_-";
+					MackeyName = { "Z_-","110" };
 				else if ((-n + 1 <= k && k < 2 * m - n && abs(k) % 2 == 0) || (2 * m - n < k && k <= -3 && abs(k) % 2 == 1 && k != 2 * m - n))
-					MackeyName = "Z/2";
+					MackeyName = { "Z/2","002" };
 				else if (-1 <= k && k < -n + 2 * m && abs(k) % 2 == 1)
-					MackeyName = "overline Z/2";
+					MackeyName = { "overline Z/2","020" };
 
 				else if (k == -n && k <= -3)
-					MackeyName = "Q";
+					MackeyName = { "Q","022 # 1" };
 				else if (k >= -n + 2 && k < -n + 2 * m && k <= -3 && abs(k) % 2 == 1)
-					MackeyName = "Z/2+overline Z/2";
+					MackeyName = { "Z/2+overline Z/2","020 + 002", "002 + 020" };
 
 				else if (k == -n + 2 * m && k <= -3)
-					MackeyName = "Z/2+Z_-";
+					MackeyName = { "Z/2+Z_-","002 + 110","110 + 002"  };
 				else
-					MackeyName = "0";
+					MackeyName = { "0","0" };
 			}
 		}
 		return MackeyName;
@@ -119,7 +118,7 @@ namespace {
 }
 
 ///The namespace for testing the answers produced by Mackey (in case of G=C4).
-namespace C4Test{
+namespace C4Test {
 
 	using namespace Mackey;
 
@@ -127,31 +126,28 @@ namespace C4Test{
 	template<typename rank_t, typename diff_t>
 	void C4MackeyTest(int rangeNLow, int rangeNHigh, int rangeMLow, int rangeMHigh, bool silence)
 	{
-		std::vector<int> minimum = { rangeNLow, rangeMLow };
-		std::vector<int> maximum = { rangeNHigh, rangeMHigh };
-		auto degrees = DegreeConstruction(minimum, maximum);
-		for (const auto& i : degrees)
-		{
-			auto n = i[0];
-			auto m = i[1];
-			auto M = ROHomology<rank_t, diff_t>(i);
-			int k = 0;
-			for (auto& j : M) 
+		std::vector<int> minsphere = { rangeNLow, rangeMLow };
+		std::vector<int> maxsphere = { rangeNHigh, rangeMHigh };
+		AdditiveStructure<rank_t, diff_t> A(minsphere, maxsphere);
+		A.identify();
+		auto spheres = DegreeConstruction(minsphere, maxsphere);
+		if (!silence) {
+			if constexpr (std::is_integral_v<typename diff_t::Scalar>) //C4MackeyAnswer has only been done for Z coefficients
 			{
-#ifdef MACKEY_NAMES
-				if (!silence) 
-				{
-					auto name = identify_Mackey<rank_t, diff_t>(j);
-					if constexpr (std::is_integral_v<typename diff_t::Scalar>) //C4MackeyAnswer has only been done for Z coefficients
-					{
+				for (const auto& i : spheres) {
+					auto n = i[0];
+					auto m = i[1];
+					auto vector = A.getMackey(i);
+					int k = 0;
+					for (const auto& j : vector) {
+						auto name = j.name;
 						auto MackeyName = C4MackeyAnswer(k, n, m);
-						if (MackeyName != name) 
+						if (MackeyName[1] != name && (MackeyName.size()<3 || MackeyName[2] != name))
 							throw(0);
+						std::cout << "The k=" << invReindex<std::vector<int>>(k, { n,m }) << " homology of the n=" << n << " and m=" << m << " sphere is " << MackeyName[0] << "\n";
+						k++;
 					}
-					std::cout << "The k=" << invReindex<std::vector<int>>(k, { n,m }) << " homology of the n=" << n << " and m=" << m << " sphere is " << name << "\n";
 				}
-				k++;
-#endif
 			}
 		}
 	}

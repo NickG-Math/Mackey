@@ -1,4 +1,4 @@
-#include <Mackey/Compute.h>
+#include <Mackey/Wrapper.h>
 #include <Mackey/Polynomial.h>
 
 //Demo for a group specific implementation for C_2^n. Currently for n=2, you only have to set the power variable below to the n you want

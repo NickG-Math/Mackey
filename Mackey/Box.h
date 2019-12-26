@@ -1,7 +1,6 @@
 #pragma once
 #include "General.h" 
 #include "Chains.h" 
-#include "Matrix_Mixing.h"
 #include "ChangeBasis.h"
 
 ///@file
@@ -62,8 +61,8 @@ namespace Mackey {
 		}
 		return C;
 	}
-	
-	///The tensor product of ranks of chains A,B
+
+	///The rank of the i-th differential of the tensor product of chains C,D
 	template<typename rank_t, typename diff_t>
 	std::pair<rank_t, std::vector<rank_t>> rankBox(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i) {
 		rank_t rank;
@@ -106,6 +105,66 @@ namespace Mackey {
 		rank_range = RanksLower.first;
 	}
 
+	///////////////////////////////////////////////////////////////////////
+	///Forms the block diagonal matrix with k many copies of a, and then applies the permutations left^{-1} * block *right 
+
+	///Significant performance improvement over the naive implementation by forming left^{-1}*block in one step
+	///////////////////////////////////////////////////////////////////////////
+	template<typename Derived, typename S>
+	Derived permutation_block(const Eigen::PermutationMatrix<-1, -1, S>& left, const Eigen::PermutationMatrix<-1, -1, S>& right, const Eigen::MatrixBase<Derived>& a, int k) {
+		int n = a.cols();
+		int m = a.rows();
+		Derived b = Eigen::MatrixBase<Derived>::Zero(m * k, n * k);
+		for (int i = 0; i < b.rows(); i++) {
+			auto u = left.indices()[i] % m;
+			auto v = left.indices()[i] / m;
+			b.row(i).segment(n * v, n) = a.row(u).segment(0, n);
+		}
+		return b * right;
+	}
+
+
+
+	/////////////////////////////////////////////////////////////////////////////
+///Mixes the left and right differentials to produce the differential for the box product
+
+///The left differentials are stored in a vector L and the right differentials in a vector R.
+///The mixing is L[0], then R[0] directly to the right, then L[1] directly below then...
+///It's assumed that L,R have consistent dimensions for the blocks to fit coherently.
+////////////////////////////////////////////////////////////////////////////
+	template<typename Derived>
+	Derived MatrixMixer(std::vector<Derived>& L, std::vector<Derived>& R) {
+		auto rows = L[0].rows();
+		auto cols = std::max(L[0].cols(), R[0].cols());
+		for (size_t i = 0; i < L.size() - 1; i++) {
+			rows += std::max(L[i + 1].rows(), R[i].rows());
+			cols += std::max(L[i + 1].cols(), R[i + 1].cols());
+		}
+		rows += R[R.size() - 1].rows();
+
+		Derived mixed;
+		mixed.setZero(rows, cols);
+		int horz = 0, vert = 0;
+		for (size_t i = 0;i < L.size();i++) {
+			auto rowsL = L[i].rows();
+			auto colsL = L[i].cols();
+			if (rowsL > 0) {
+				mixed.block(vert, horz, rowsL, colsL) = L[i];
+				vert += rowsL;
+			}
+			auto rowsR = R[i].rows();
+			auto colsR = R[i].cols();
+
+			if (colsR > 0) {
+				mixed.block(vert, horz, rowsR, colsR) = R[i];
+				horz += colsR;
+			}
+		}
+		return mixed;
+	}
+
+
+
 	template<typename rank_t, typename diff_t>
 	void BoxPoint<rank_t, diff_t> ::getdiff() {
 		std::vector<diff_t> LeftDiff(i + 1);
@@ -115,16 +174,14 @@ namespace Mackey {
 			auto Domain = memoChangeBasis<rank_t>(C.rank[j], D.rank[i - j]);
 			if (j >= 1) //We have a LeftDiff
 			{
-				diff_t convLeftDiff = blkdiag(C.diff[j], summation(D.rank[i - j]));
 				auto RangeL = memoChangeBasis<rank_t>(C.rank[j - 1], D.rank[i - j]);
-				LeftDiff[j] = RangeL.LefttoCanon.inverse() * convLeftDiff * Domain.LefttoCanon;
+				LeftDiff[j] = permutation_block(RangeL.LefttoCanon, Domain.LefttoCanon, C.diff[j], summation(D.rank[i - j]));
 			}
 			if (i - j >= 1) //We have a RightDiff
 			{
 				typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
-				diff_t convRightDiff = sign * blkdiag(D.diff[i - j], summation(C.rank[j]));
 				auto RangeR = memoChangeBasis<rank_t>(C.rank[j], D.rank[i - j - 1]);
-				RightDiff[j] = RangeR.RighttoCanon.inverse() * convRightDiff * Domain.RighttoCanon;
+				RightDiff[j] = permutation_block(RangeR.RighttoCanon, Domain.RighttoCanon, static_cast<diff_t>(sign * D.diff[i - j]), summation(C.rank[j]));
 			}
 		}
 		diff = MatrixMixer(LeftDiff, RightDiff);
@@ -143,7 +200,7 @@ namespace Mackey {
 
 		/// Set the variables directly
 		ChainsBox(const std::vector<rank_t>& rank, const std::vector<diff_t>& diff, const std::vector<std::vector<rank_t>>& detailedrank)
-			:Chains<rank_t,diff_t>(rank,diff), detailedrank(detailedrank){}
+			:Chains<rank_t, diff_t>(rank, diff), detailedrank(detailedrank) {}
 
 		/// Get C box D up to index i.
 		ChainsBox(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int);
@@ -169,7 +226,7 @@ namespace Mackey {
 			diff.push_back(BoxedAtPointj.diff);
 			detailedrank.push_back(BoxedAtPointj.detailedrank);
 		}
-		*this=ChainsBox<rank_t, diff_t>(rank, diff,detailedrank);
+		*this = ChainsBox<rank_t, diff_t>(rank, diff, detailedrank);
 	}
 
 	template<typename rank_t, typename diff_t>
@@ -218,7 +275,7 @@ namespace Mackey {
 	}
 
 	template<typename rank_t, typename diff_t>
-	JunctionBox<rank_t, diff_t>::JunctionBox(const ChainsBox<rank_t, diff_t>& C, int i) : Junction<rank_t,diff_t>(C,i)
+	JunctionBox<rank_t, diff_t>::JunctionBox(const ChainsBox<rank_t, diff_t>& C, int i) : Junction<rank_t, diff_t>(C, i)
 	{
 		detailedrank = C.detailedrank[i];
 	}
@@ -227,11 +284,11 @@ namespace Mackey {
 	/// Get the box product of C,D up to index i
 	template<typename rank_t, typename diff_t>
 	inline Chains<rank_t, diff_t> Box(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i) {
-		return ChainsBox<rank_t, diff_t>(C,D,i);
+		return ChainsBox<rank_t, diff_t>(C, D, i);
 	}
 
 
-	
+
 	/// Get the entire box product of C,D
 	template<typename rank_t, typename diff_t>
 	inline Chains<rank_t, diff_t> Box(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D) {

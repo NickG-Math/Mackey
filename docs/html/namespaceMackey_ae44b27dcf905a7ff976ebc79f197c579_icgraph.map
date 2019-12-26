@@ -4,7 +4,7 @@
 <area shape="rect" id="node8" href="$classMackey_1_1Homology.html#a75a8814da8edd53320b0054a5f253d12" title="Given an x that is a boundary returns a y s.t. dy=x. " alt="" coords="190,56,386,83"/>
 <area shape="rect" id="node9" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="228,157,348,184"/>
 <area shape="rect" id="node4" href="$classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="437,56,640,83"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a5b14999d16c90eb1fdaa40d31809f662" title="Writing the transfer of each generator in terms of the generators in the image. " alt="" coords="479,107,599,133"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a7b62b0d041087605dabd4ab3753f1186" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="472,157,605,184"/>
-<area shape="rect" id="node7" href="$namespaceMackey.html#a9a4f2ced77550a7c06d2c15b39030ff6" title="Writing the Weyl group action on each generator in terms of the other generators. ..." alt="" coords="483,208,594,235"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a3f20cf0ccf7d280f6a6e308c381dc350" title="Writing the transfer of each generator in terms of the generators in the image. " alt="" coords="479,107,599,133"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a256b1e73e413a924ce2bf0e86551a928" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="472,157,605,184"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a2169692139cf46ac28719780e2a7f867" title="Writing the Weyl group action on each generator in terms of the other generators. ..." alt="" coords="483,208,594,235"/>
 </map>

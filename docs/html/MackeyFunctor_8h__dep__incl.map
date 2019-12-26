@@ -1,9 +1,12 @@
 <map id="Mackey/MackeyFunctor.h" name="Mackey/MackeyFunctor.h">
-<area shape="rect" id="node2" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="73,379,209,405"/>
-<area shape="rect" id="node5" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="102,80,234,107"/>
-<area shape="rect" id="node3" href="$Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="136,453,251,480"/>
-<area shape="rect" id="node4" href="$Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="114,528,273,555"/>
-<area shape="rect" id="node6" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="119,155,241,181"/>
-<area shape="rect" id="node7" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="127,229,246,256"/>
-<area shape="rect" id="node8" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="129,304,258,331"/>
+<area shape="rect" id="node2" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="7,379,143,405"/>
+<area shape="rect" id="node7" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="43,80,175,107"/>
+<area shape="rect" id="node11" href="$Identify_8h.html" title="Contains the identification classes. " alt="" coords="191,155,318,181"/>
+<area shape="rect" id="node3" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology. " alt="" coords="9,528,140,555"/>
+<area shape="rect" id="node5" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table. " alt="" coords="187,453,301,480"/>
+<area shape="rect" id="node4" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="87,603,230,629"/>
+<area shape="rect" id="node6" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="165,528,323,555"/>
+<area shape="rect" id="node8" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="46,155,167,181"/>
+<area shape="rect" id="node9" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="99,229,218,256"/>
+<area shape="rect" id="node10" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="94,304,223,331"/>
 </map>

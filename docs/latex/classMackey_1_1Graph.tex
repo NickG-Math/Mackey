@@ -30,7 +30,9 @@ void \hyperlink{classMackey_1_1Graph_a769966fd9422efb15a53db185a8be278}{compute\
 void \hyperlink{classMackey_1_1Graph_ab88d38f2fa1822d415ce7dac272b32dc}{draw} ()
 \begin{DoxyCompactList}\small\item\em Writes a graph.\+dot file representing the graph. The nodes are unnamed. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1Graph_a63aa485ca7838f3dc66da1749e09cd84}{draw} (const std\+::vector$<$ std\+::string $>$ \&)
-\begin{DoxyCompactList}\small\item\em Writes a graph.\+dot file representing the graph using node names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Writes a graph.\+dot file representing the graph using node names. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1Graph_a910e6687de1a1a90df5b656e3c850a01}{Graph} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,17 +41,12 @@ int \hyperlink{classMackey_1_1Graph_a6b275a20b0571d4b51fbfa3e596cd67a}{number\+\
 std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1Graph_a66fac95e623ca6e3e85ec33310755831}{path}
 \begin{DoxyCompactList}\small\item\em The \char`\"{}shortest\char`\"{} path from a selected source to any other point. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1Graph_ab14d4c1bcbe1a994d28a6c590b27ba8b}{weighted\+Distance}
-\begin{DoxyCompactList}\small\item\em The weighted distance from a selected source to all points. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{classMackey_1_1Graph_a910e6687de1a1a90df5b656e3c850a01}{Graph} ()
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The weighted distance from a selected source to all points. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}{edges}
+\begin{DoxyCompactList}\small\item\em The edges of the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}{edges}
-\begin{DoxyCompactList}\small\item\em The edges of the graph. \end{DoxyCompactList}\item 
 int \hyperlink{classMackey_1_1Graph_a43657a07a21a2dcf422876400360ed5b}{source}
 \begin{DoxyCompactList}\small\item\em The source of the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -79,7 +76,7 @@ Construct given the edges of the graph.
 \index{Graph@{Graph}!Mackey\+::\+Graph@{Mackey\+::\+Graph}}
 \subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::\hyperlink{classMackey_1_1Graph}{Graph} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::\hyperlink{classMackey_1_1Graph}{Graph} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -154,7 +151,7 @@ Writes a graph.\+dot file representing the graph using node names.
 \index{edges@{edges}!Mackey\+::\+Graph@{Mackey\+::\+Graph}}
 \subsubsection{\texorpdfstring{edges}{edges}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::edges\hspace{0.3cm}{\ttfamily [protected]}}
+std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}$<$ T $>$\+::edges}
 
 
 

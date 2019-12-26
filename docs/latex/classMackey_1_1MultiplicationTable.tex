@@ -15,38 +15,43 @@ Inheritance diagram for Mackey\+:\+:Multiplication\+Table$<$ rank\+\_\+t, diff\+
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=218pt]{classMackey_1_1MultiplicationTable__inherit__graph}
+\includegraphics[width=220pt]{classMackey_1_1MultiplicationTable__inherit__graph}
 \end{center}
 \end{figure}
-
-
-Collaboration diagram for Mackey\+:\+:Multiplication\+Table$<$ rank\+\_\+t, diff\+\_\+t $>$\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=218pt]{classMackey_1_1MultiplicationTable__coll__graph}
-\end{center}
-\end{figure}
-\subsection*{Protected Member Functions}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b}{Multiplication\+Table} (int, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&)
 \begin{DoxyCompactList}\small\item\em Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classMackey_1_1MultiplicationTable_ad5a05c126e0b3c769fa9b1196a8db96a}{level}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{namespaceMackey}{Mackey} functor level we are working in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999}{getsphere} (const std\+::vector$<$ int $>$ \&deg)
+\begin{DoxyCompactList}\small\item\em Isolate sphere from the degree vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classMackey_1_1MultiplicationTable_a224de8ffa6d10b7d9511880bb8a2260f}{number\+\_\+of\+\_\+nodes}
-\begin{DoxyCompactList}\small\item\em The total number of nodes in the multiplication graph. \end{DoxyCompactList}\item 
-int \hyperlink{classMackey_1_1MultiplicationTable_aa964329ee1c5b9072146567d2bd6567f}{number\+\_\+of\+\_\+generators}
-\begin{DoxyCompactList}\small\item\em The number of generators in the multiplication graph //////////////////////////////////////////// The edges of the multiplication graph. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable_a3e1f526da86649b8a41465d27395d04b}{edges}
-\begin{DoxyCompactList}\small\item\em We connect a to ab for basic irreducible b, and also connect ab to a if multiplication by b is an injection. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable_a11dcad2d104dfd310c8d3439fa00a4ce}{colors}
-\begin{DoxyCompactList}\small\item\em The colors of the edges of the multiplication graph. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable_ad392b9570c511595a08642f5d54d20eb}{Non\+Zero\+Homology}
+\begin{DoxyCompactList}\small\item\em The nonzero homology groups in our given range and level and their identification information (if non cyclic). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable_a9a0d2a2d8561e378e08fcf4929df2cf6}{degree}
+\begin{DoxyCompactList}\small\item\em Maps each index of Non\+Zero\+Homology to the corresponding degree. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::vector$<$ int $>$, int $>$ \hyperlink{classMackey_1_1MultiplicationTable_ac5749155e5531a3c728d8227caed63eb}{antidegree}
+\begin{DoxyCompactList}\small\item\em Maps each degree to the corresponding index of Non\+Zero\+Homology. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1MultiplicationTable_a071f7d7c6cd1c75836b64ea8e9923b49}{minsphere}
+\begin{DoxyCompactList}\small\item\em The lower bound on the range of our spheres. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1MultiplicationTable_a4355003c6be4a4f857eba151c8e5bcf6}{maxsphere}
+\begin{DoxyCompactList}\small\item\em The upper bound on the range of our spheres. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable_af6896ea01c087e71533de423d7cf65ac}{basic\+Irreducibles}
 \begin{DoxyCompactList}\small\item\em The basic irreducibles we use to produce the factorizations (eg Euler and orientation classes) \end{DoxyCompactList}\item 
-std\+::vector$<$ \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable_ad135c8e904a71919c96437b444f4b1bb}{basic\+Chains}
-\begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Chains}{Chains} of the basic irreducibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \hyperlink{classMackey_1_1MultiplicationTable_a2a87b9a2f25f4e99c903c8f874fad4fb}{number\+\_\+of\+\_\+irreducibles}
+\begin{DoxyCompactList}\small\item\em The number of basic irreducibles. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ \hyperlink{classMackey_1_1Green}{Green}$<$ rank\+\_\+t, diff\+\_\+t $>$, int $>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable_a045f3f5912a6fe634b1763367725f81f}{Greens}
+\begin{DoxyCompactList}\small\item\em The result of the multiplication table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -61,7 +66,7 @@ The Multiplication Table.
 \index{Multiplication\+Table@{Multiplication\+Table}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
 \subsubsection{\texorpdfstring{Multiplication\+Table()}{MultiplicationTable()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-\hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table} (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{basic\+Irreducibles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+\hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table} (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{basic\+Irreducibles }\end{DoxyParamCaption})}
 
 
 
@@ -74,74 +79,142 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph}
 \end{center}
 \end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999}\label{classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!getsphere@{getsphere}}
+\index{getsphere@{getsphere}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{getsphere()}{getsphere()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$int$>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getsphere (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Isolate sphere from the degree vector. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ad135c8e904a71919c96437b444f4b1bb}\label{classMackey_1_1MultiplicationTable_ad135c8e904a71919c96437b444f4b1bb}} 
-\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!basic\+Chains@{basic\+Chains}}
-\index{basic\+Chains@{basic\+Chains}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
-\subsubsection{\texorpdfstring{basic\+Chains}{basicChains}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::vector$<$\hyperlink{classMackey_1_1Chains}{Chains}$<$rank\+\_\+t, diff\+\_\+t$>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basic\+Chains\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ac5749155e5531a3c728d8227caed63eb}\label{classMackey_1_1MultiplicationTable_ac5749155e5531a3c728d8227caed63eb}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!antidegree@{antidegree}}
+\index{antidegree@{antidegree}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{antidegree}{antidegree}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::map$<$std\+::vector$<$int$>$, int$>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::antidegree\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-The \hyperlink{classMackey_1_1Chains}{Chains} of the basic irreducibles. 
+Maps each degree to the corresponding index of Non\+Zero\+Homology. 
 
 \mbox{\Hypertarget{classMackey_1_1MultiplicationTable_af6896ea01c087e71533de423d7cf65ac}\label{classMackey_1_1MultiplicationTable_af6896ea01c087e71533de423d7cf65ac}} 
 \index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!basic\+Irreducibles@{basic\+Irreducibles}}
 \index{basic\+Irreducibles@{basic\+Irreducibles}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
 \subsubsection{\texorpdfstring{basic\+Irreducibles}{basicIrreducibles}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
 std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basic\+Irreducibles\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 The basic irreducibles we use to produce the factorizations (eg Euler and orientation classes) 
 
-\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a11dcad2d104dfd310c8d3439fa00a4ce}\label{classMackey_1_1MultiplicationTable_a11dcad2d104dfd310c8d3439fa00a4ce}} 
-\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!colors@{colors}}
-\index{colors@{colors}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
-\subsubsection{\texorpdfstring{colors}{colors}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::vector$<$std\+::vector$<$char$>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::colors\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a9a0d2a2d8561e378e08fcf4929df2cf6}\label{classMackey_1_1MultiplicationTable_a9a0d2a2d8561e378e08fcf4929df2cf6}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!degree@{degree}}
+\index{degree@{degree}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{degree}{degree}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::degree\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-The colors of the edges of the multiplication graph. 
+Maps each index of Non\+Zero\+Homology to the corresponding degree. 
 
-The edge from a to ab is red and the one from ab to a (if it exists) is blue \mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a3e1f526da86649b8a41465d27395d04b}\label{classMackey_1_1MultiplicationTable_a3e1f526da86649b8a41465d27395d04b}} 
-\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!edges@{edges}}
-\index{edges@{edges}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
-\subsubsection{\texorpdfstring{edges}{edges}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::edges\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-We connect a to ab for basic irreducible b, and also connect ab to a if multiplication by b is an injection. 
-
-\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_aa964329ee1c5b9072146567d2bd6567f}\label{classMackey_1_1MultiplicationTable_aa964329ee1c5b9072146567d2bd6567f}} 
-\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!number\+\_\+of\+\_\+generators@{number\+\_\+of\+\_\+generators}}
-\index{number\+\_\+of\+\_\+generators@{number\+\_\+of\+\_\+generators}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
-\subsubsection{\texorpdfstring{number\+\_\+of\+\_\+generators}{number\_of\_generators}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-int \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::number\+\_\+of\+\_\+generators\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a045f3f5912a6fe634b1763367725f81f}\label{classMackey_1_1MultiplicationTable_a045f3f5912a6fe634b1763367725f81f}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!Greens@{Greens}}
+\index{Greens@{Greens}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{Greens}{Greens}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$std\+::pair$<$\hyperlink{classMackey_1_1Green}{Green}$<$rank\+\_\+t, diff\+\_\+t$>$, int$>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Greens\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-The number of generators in the multiplication graph //////////////////////////////////////////// The edges of the multiplication graph. 
+The result of the multiplication table. 
 
-\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a224de8ffa6d10b7d9511880bb8a2260f}\label{classMackey_1_1MultiplicationTable_a224de8ffa6d10b7d9511880bb8a2260f}} 
-\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!number\+\_\+of\+\_\+nodes@{number\+\_\+of\+\_\+nodes}}
-\index{number\+\_\+of\+\_\+nodes@{number\+\_\+of\+\_\+nodes}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
-\subsubsection{\texorpdfstring{number\+\_\+of\+\_\+nodes}{number\_of\_nodes}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-int \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::number\+\_\+of\+\_\+nodes\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ad5a05c126e0b3c769fa9b1196a8db96a}\label{classMackey_1_1MultiplicationTable_ad5a05c126e0b3c769fa9b1196a8db96a}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!level@{level}}
+\index{level@{level}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::level}
 
 
 
-The total number of nodes in the multiplication graph. 
+The \hyperlink{namespaceMackey}{Mackey} functor level we are working in. 
+
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a4355003c6be4a4f857eba151c8e5bcf6}\label{classMackey_1_1MultiplicationTable_a4355003c6be4a4f857eba151c8e5bcf6}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!maxsphere@{maxsphere}}
+\index{maxsphere@{maxsphere}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{maxsphere}{maxsphere}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$int$>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::maxsphere\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The upper bound on the range of our spheres. 
+
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a071f7d7c6cd1c75836b64ea8e9923b49}\label{classMackey_1_1MultiplicationTable_a071f7d7c6cd1c75836b64ea8e9923b49}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!minsphere@{minsphere}}
+\index{minsphere@{minsphere}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{minsphere}{minsphere}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$int$>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::minsphere\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The lower bound on the range of our spheres. 
+
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ad392b9570c511595a08642f5d54d20eb}\label{classMackey_1_1MultiplicationTable_ad392b9570c511595a08642f5d54d20eb}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!Non\+Zero\+Homology@{Non\+Zero\+Homology}}
+\index{Non\+Zero\+Homology@{Non\+Zero\+Homology}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{Non\+Zero\+Homology}{NonZeroHomology}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$\hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$rank\+\_\+t$>$ $>$ \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Non\+Zero\+Homology\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The nonzero homology groups in our given range and level and their identification information (if non cyclic). 
+
+The index i group corresponds to the antidegree\mbox{[}i\mbox{]} degree. \mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a2a87b9a2f25f4e99c903c8f874fad4fb}\label{classMackey_1_1MultiplicationTable_a2a87b9a2f25f4e99c903c8f874fad4fb}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!number\+\_\+of\+\_\+irreducibles@{number\+\_\+of\+\_\+irreducibles}}
+\index{number\+\_\+of\+\_\+irreducibles@{number\+\_\+of\+\_\+irreducibles}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{number\+\_\+of\+\_\+irreducibles}{number\_of\_irreducibles}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::number\+\_\+of\+\_\+irreducibles\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The number of basic irreducibles. 
 
 
 

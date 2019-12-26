@@ -1,0 +1,52 @@
+\hypertarget{Automorphisms_8h}{}\section{Mackey/\+Automorphisms.h File Reference}
+\label{Automorphisms_8h}\index{Mackey/\+Automorphisms.\+h@{Mackey/\+Automorphisms.\+h}}
+
+
+Contains the methods for finding the automorphisms of finitely generated abelian groups.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include \char`\"{}General.\+h\char`\"{}}\newline
+Include dependency graph for Automorphisms.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{Automorphisms_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{Automorphisms_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceMackey}{Mackey}
+\begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar $>$ }\\void \hyperlink{namespaceMackey_a5a3367c31144a61006d7c605d6e6ca38}{Mackey\+::normalize} (Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ \&linmap, const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&range, bool positive)
+\begin{DoxyCompactList}\small\item\em Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.). Positive means to use $>$=0 values when taking modulo. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename S $>$ }\\bool \hyperlink{namespaceMackey_aa96cf972d89b207ce6709e867f760f37}{Mackey\+::check\+\_\+isomorphism\+\_\+p\+\_\+group} (int p, const T \&a, const S \&p\+Group)
+\begin{DoxyCompactList}\small\item\em Checks if integer matrix induces an isomorphism p\+Group-\/$>$p\+Group for finite abelian p-\/group. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar $>$ }\\std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ $>$ \hyperlink{namespaceMackey_ab3832e52497b387d4553af06aa26ec99}{Mackey\+::aut\+\_\+p\+\_\+group} (int p, const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&p\+Group)
+\begin{DoxyCompactList}\small\item\em Returns all automorphisms of finite abelian p-\/group. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar $>$ }\\std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ $>$ \hyperlink{namespaceMackey_ac8552763cbbe02f22cedc11c6f8434da}{Mackey\+::inverses} (const std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$$>$ \&isos, const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&Group)
+\begin{DoxyCompactList}\small\item\em Returns the inverses of all the automorphisms Group-\/$>$Group. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_aa136aece9117704b3e5180d92484ed10}{Mackey\+::primes} (int n)
+\begin{DoxyCompactList}\small\item\em Returns all primes up to n. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a2b6ac22efe0be546f2c3f8abc2ceb5b7}{Mackey\+::is\+\_\+p\+\_\+group} (const T \&Group)
+\begin{DoxyCompactList}\small\item\em Finds if given abelian group is actually a p-\/group and returns the p if so (otherwise returns 0) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar $>$ }\\std\+::pair$<$ std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ $>$, std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ $>$ $>$ \hyperlink{namespaceMackey_ac9020d176548a99b3119cd7bda15941d}{Mackey\+::all\+\_\+automorphisms} (const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&Group)
+\begin{DoxyCompactList}\small\item\em Returns all automorphisms of a finitely generated abelian group together with their inverses. Currently only for p-\/groups and Z+p-\/groups (otherwise returns empty) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the methods for finding the automorphisms of finitely generated abelian groups. 
+

@@ -32,6 +32,8 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \item 
 {\footnotesize template$<$typename deg\+\_\+t $>$ }\\std\+::vector$<$ deg\+\_\+t $>$ \hyperlink{namespaceMackey_a49fef6f64b67ff118d35ac45b9c92972}{Mackey\+::\+Degree\+Construction} (const deg\+\_\+t \&minimum, const deg\+\_\+t \&maximum)
 \begin{DoxyCompactList}\small\item\em Given minimum and maximum degrees, constructs everything in between. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \hyperlink{namespaceMackey_a3a4b7761ed7274b145eed9a451b53e61}{Mackey\+::combinations} (const std\+::vector$<$ std\+::vector$<$ T $>$$>$ \&v)
+\begin{DoxyCompactList}\small\item\em Given a vector of vectors v form all combinations of the form \{v\mbox{[}0\mbox{]}\mbox{[}?\mbox{]},v\mbox{[}1\mbox{]}\mbox{[}?\mbox{]},...\} for varying ? \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_a1e4b11e9d2a5b70f8380af87cae31ef3}{Mackey\+::tail} (const T $\ast$const \&ptr, int size, int start)
 \begin{DoxyCompactList}\small\item\em Given vector or array returns vector starting from index start. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_a4403b34f0680dfccf2ab79111f832ba3}{Mackey\+::tail} (const T $\ast$const \&ptr, int size)
@@ -54,6 +56,8 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_ae3454eb9b2574a835a29e3f58cf
 \begin{DoxyCompactList}\small\item\em Circularly rotates given V (an Eigen/std vector) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Matrix\+\_\+t $>$ }\\Matrix\+\_\+t \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{Mackey\+::altmatrix} (int m, int n, const std\+::vector$<$ typename Matrix\+\_\+t\+::\+Scalar $>$ \&v)
 \begin{DoxyCompactList}\small\item\em Creates a matrix of size m x n that alternates the given vector v. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{namespaceMackey_a4c3647777bc890a4649ae24b138bbb79}{Mackey\+::is\+Zero} (const std\+::vector$<$ T $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Tests if vector is zero. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_adb4974b5ffe533abb955ccb6b9096155}{Mackey\+::operator+} (const std\+::vector$<$ T $>$ \&a, const std\+::vector$<$ T $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Coordinate-\/wise sum of vectors (up to the minimum of their lengths) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_ae86e49097ef9a09ebcd0173881e88786}{Mackey\+::operator-\/} (const std\+::vector$<$ T $>$ \&a, const std\+::vector$<$ T $>$ \&b)
@@ -62,8 +66,12 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_ae3454eb9b2574a835a29e3f58cf
 \begin{DoxyCompactList}\small\item\em Coordinate-\/wise opposite of vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_ae235ee5dd92dc1ca64388b8fbb1b4d75}{Mackey\+::operator$\ast$} (T a, const std\+::vector$<$ T $>$ \&b)
 \begin{DoxyCompactList}\small\item\em Coordinate-\/wise difference of vectors (up to the minimum of their lengths) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \hyperlink{namespaceMackey_aa4da3e3b46b9cb20f3be57d7e5da2d5d}{Mackey\+::operator$<$$<$} (std\+::ostream \&out, const std\+::vector$<$ T $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Printing a vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a5d8ae76ffb9440e27bfca124d26ee1b2}{Mackey\+::lcm} (const T \&v)
-\begin{DoxyCompactList}\small\item\em Least common multiple of vector of elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Least common multiple of vector of elements. \end{DoxyCompactList}\item 
+int \hyperlink{namespaceMackey_ae57418329a761aa68d26d68b637fe9dd}{Mackey\+::hashvector} (const std\+::vector$<$ int $>$ \&deg, const std\+::vector$<$ int $>$ \&min, const std\+::vector$<$ int $>$ \&max)
+\begin{DoxyCompactList}\small\item\em Hash vector given minimum and maximum values of its entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

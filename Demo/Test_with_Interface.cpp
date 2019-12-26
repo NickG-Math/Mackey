@@ -3,8 +3,6 @@
 //#define EIGEN_NO_DEBUG //disable Eigen assertions
 //#define NDEBUG
 
-#define MACKEY_NAMES
-
 #ifdef _MSC_VER
 #define _SILENCE_CXX17_ADAPTOR_TYPEDEFS_DEPRECATION_WARNING //Eigen won't work otherwise.
 #endif
@@ -12,7 +10,6 @@
 
 #include <iostream>
 #include "C4_Implementation.h"
-#include "C4_Optional_Implementation.h"
 #include "C4Verify.h"
 
 

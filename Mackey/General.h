@@ -36,6 +36,37 @@ namespace Mackey {
 		return degrees;
 	}
 
+	///Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ?
+	template<typename T>
+	std::vector<std::vector<T>> combinations(const std::vector<std::vector<T>>& v) {
+		std::vector<std::vector<T>> w;
+		std::vector<T> each;
+		each.reserve(v.size());
+		std::vector<int> counter(v.size(), 0);
+		int totalsize = 1;
+		for (const auto& i : v) {
+			totalsize *= i.size();
+		}
+		w.reserve(totalsize);
+		int change = v.size() - 1;
+		while (change >= 0) {
+			while (counter[change] == v[change].size()) {
+				counter[change] = 0;
+				change--;
+				if (change < 0)
+					return w;
+				counter[change]++;
+			}
+			each.clear();
+			for (int i = 0; i < v.size(); i++) {
+				each.push_back(v[i][counter[i]]);
+			}
+			w.push_back(each);
+			change = v.size() - 1;
+			counter[change]++;
+		}
+		return w;
+	}
 
 	/////////////////////////////////////////////
 ///Given vector or array returns vector starting from index start.
@@ -216,6 +247,14 @@ namespace Mackey {
 		return c;
 	}
 
+	///Printing a vector
+	template<typename T>
+	std::ostream& operator<<(std::ostream& out, const std::vector<T>& a) {
+		for (const auto& i : a) 
+			out << i << ",";
+		return out;
+	}
+
 	///Least common multiple of vector of elements
 	template<typename T>
 	int lcm(const T& v) {
@@ -228,6 +267,14 @@ namespace Mackey {
 		return n;
 	}
 
-
-
+	///Hash vector given minimum and maximum values of its entries.
+	int hashvector(const std::vector<int>& deg, const std::vector<int>& min, const std::vector<int>& max) {
+		int hash = deg[0] - min[0];
+		int prod = max[0] - min[0] + 1;
+		for (size_t i = 1; i < deg.size(); i++) {
+			hash += (deg[i] - min[i]) * prod;
+			prod *= max[i] - min[i] + 1;
+		}
+		return hash;
+	}
 }

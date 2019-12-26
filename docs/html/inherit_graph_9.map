@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classMackey_1_1Green.html" title="The result of multiplying generators in a Green functor. " alt="" coords="5,5,153,47"/>
+<area shape="rect" id="node1" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; WeightedGraph \&gt;" alt="" coords="5,5,231,32"/>
+<area shape="rect" id="node2" href="$classMackey_1_1WeightedGraph.html" title="A directed Graph with weights. " alt="" coords="279,5,445,32"/>
 </map>

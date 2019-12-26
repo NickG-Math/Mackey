@@ -2,6 +2,7 @@
 #include "Chains.h"
 #include "General.h"
 #include "Smith.h"
+#include "Z_n.h"
 
 ///@file
 ///@brief Contains the Homology class and algorithms.
@@ -82,12 +83,13 @@ namespace Mackey {
 		if (isZero)
 			return;
 		fdiff_t In_fScalar = Out_Qi * In.template cast<fScalar>();
-		if constexpr (! (std::is_integral_v<typename diff_t::Scalar>)) {
+		if constexpr (!(std::is_integral_v<typename diff_t::Scalar>)) {
 			In = In_fScalar.template cast<typename diff_t::Scalar>();//we cast back if we are using non Z coefficients (F2 etc.). We mustn't do this for Z coefficients due to possible conversion errors.	
 			KernelModImage(In, getQ);
 		}
-		else 
+		else {
 			KernelModImage(In_fScalar, getQ);
+		}
 	}
 
 	template<typename rank_t, typename diff_t>
@@ -96,6 +98,7 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	template<typename Derived>
 	void Homology<rank_t, diff_t>::getKernel(const Eigen::MatrixBase<Derived>& Out) {
+
 		Smith<Derived, fdiff_t, fdiff_t> OUT(Out, 0, 1);
 		Out_Qi = std::move(OUT.Qi);
 		Kernel.resize(M,M);
@@ -121,7 +124,8 @@ namespace Mackey {
 	void Homology<rank_t, diff_t>::KernelModImage(const Eigen::MatrixBase<Derived>& In, bool getQ) {
 		Derived Inner = KeepRow(In, nonZeroVectors);
 		auto L = std::min(Inner.rows(), Inner.cols());
-		Smith<Derived, fdiff_t, fdiff_t> IN(Inner, 1, getQ);
+	
+		Smith<Derived, fdiff_t, fdiff_t> IN(Inner, 1, getQ, 1);
 		In_P = std::move(IN.P); 
 		if (getQ)
 			In_Q = std::move(IN.Q);
@@ -158,16 +162,26 @@ namespace Mackey {
 		}
 		Groups = Eigen::Map<Eigen::Matrix<typename rank_t::Scalar,1,-1>>(groups.data(), groups.size());
 		Generators = KeepCol(Generators, dontModOut);
+
+
+		//Check for non integer coefficients and replace the Z in Groups with Z/N
+		typedef typename diff_t::Scalar coeff;
+		if constexpr (is_finite_cyclic<typename diff_t::Scalar>()) {
+			constexpr int order = coeff::order;
+			for (int i = 0; i < Groups.size(); i++) {
+				if (Groups[i] == 1)
+					Groups[i] = static_cast<typename rank_t::Scalar>(order);
+			}
+		}
+
 	}
 
 
 	template<typename rank_t, typename diff_t>
 	template<typename gen_t>
 	rank_t Homology<rank_t, diff_t>::basis(const gen_t& generator) const {
-		if (isZero) {
-			rank_t basisArray;
-			return basisArray;
-		}
+		if (isZero)
+			return rank_t();
 		rank_t basisArray(Groups.size());
 		Eigen::Matrix<fScalar,-1,1> element = generator.template cast<fScalar>();
 		element = Out_Qi * element;
@@ -182,12 +196,10 @@ namespace Mackey {
 				coeff = static_cast<typename diff_t::Scalar>(longelement(j) % Groups(j));//need to cast incase extra mod is applied by our coefficients. Useless for Z coefficients
 				basisArray(j) = (Groups(j) + static_cast<typename rank_t::Scalar>(coeff)) % Groups(j);
 				//This is needed due to C++ conventions for % take a symmetric range w.r.t. 0 instead of >=0. So we can't just do element(j)%Groups(j)
-				//Also we can't use our own mod since this is mod of floats over int (although we could just define mod to just cast to int.
 			}
 			else {
-				coeff = static_cast<typename diff_t::Scalar>(longelement(j));//need to cast incase extra mod is applied by our coefficients. Useless for Z coefficients
+				coeff = static_cast<typename diff_t::Scalar>(longelement(j));//need to cast in case extra mod is applied by our coefficients. Useless for Z coefficients
 				basisArray(j) = static_cast<typename rank_t::Scalar>(coeff);
-
 			}
 		}
 		return basisArray;
@@ -221,12 +233,15 @@ namespace Mackey {
 
 
 ///Normalizes the element in given abelian group so that element[i]=1 if it generates group[i]
-	template<typename T, typename S>
-	T normalize(const T& element, const S& group) {
-		T normalized = element;
+	template<typename T>
+	Eigen::Matrix<T, 1, -1> normalize(const Eigen::Matrix<T, 1, -1>& element, const Eigen::Matrix<T,1,-1>& group) {
+		auto normalized = element;
 		for (int i = 0; i < element.size(); i++) {
-			if (group[i] != 1 && element[i] != 0) {
-				normalized[i] = std::gcd(element[i], group[i]);
+			if (group[i] != 1 && element[i] % group[i] == 0) {
+				normalized[i] = 0;
+			}
+			else if (group[i] != 1 && element[i] != 0) {
+				normalized[i] = std::gcd((element[i]+group[i])%group[i], group[i]);
 			}
 			else {
 				normalized[i] = abs(element[i]);

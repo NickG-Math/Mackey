@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['antidegree',['antidegree',['../classMackey_1_1TableInput.html#a0eef9eba4856780865fba0abe32057e7',1,'Mackey::TableInput']]],
-  ['antielement',['antielement',['../classMackey_1_1TableInput.html#ad37f09ab6d0bfdab5d55537145b916ed',1,'Mackey::TableInput']]]
+  ['antidegree',['antidegree',['../classMackey_1_1MultiplicationTable.html#ac5749155e5531a3c728d8227caed63eb',1,'Mackey::MultiplicationTable']]],
+  ['antielement',['antielement',['../classMackey_1_1MultiplicationGraph.html#ad0736e72169b51d410d5b61b0f921241',1,'Mackey::MultiplicationGraph']]]
 ];

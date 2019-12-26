@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.5</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -89,6 +89,7 @@ $(document).ready(function(){initNavTree('classMackey_1_1MackeyFunctor.html','')
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classMackey_1_1MackeyFunctor-members.html">List of all members</a>  </div>
@@ -102,10 +103,24 @@ $(document).ready(function(){initNavTree('classMackey_1_1MackeyFunctor.html','')
 
 <p><code>#include &lt;<a class="el" href="MackeyFunctor_8h_source.html">MackeyFunctor.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a124b4175216c4cf9a4b67acc78e9246d"><td class="memItemLeft" align="right" valign="top">typedef rank_t::Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a124b4175216c4cf9a4b67acc78e9246d">Scalar</a></td></tr>
+<tr class="separator:a124b4175216c4cf9a4b67acc78e9246d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271550bc911da5c842bbc90d8bf87973"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html#a124b4175216c4cf9a4b67acc78e9246d">Scalar</a>,-1,-1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973">matrix_t</a></td></tr>
+<tr class="memdesc:a271550bc911da5c842bbc90d8bf87973"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of transfer, restriction and Weyl action matrices.  <a href="#a271550bc911da5c842bbc90d8bf87973">More...</a><br /></td></tr>
+<tr class="separator:a271550bc911da5c842bbc90d8bf87973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53637e79f2502411ba085d2b2a61bb67"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; Eigen::Matrix&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html#a124b4175216c4cf9a4b67acc78e9246d">Scalar</a>,-1,-1 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67">iso_t</a></td></tr>
+<tr class="memdesc:a53637e79f2502411ba085d2b2a61bb67"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of isomorphisms of <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors.  <a href="#a53637e79f2502411ba085d2b2a61bb67">More...</a><br /></td></tr>
+<tr class="separator:a53637e79f2502411ba085d2b2a61bb67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a3f694cd4f0a234be4531c21771772b50"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a3f694cd4f0a234be4531c21771772b50">print</a> () const</td></tr>
+<tr class="memdesc:a3f694cd4f0a234be4531c21771772b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor ignoring the name.  <a href="#a3f694cd4f0a234be4531c21771772b50">More...</a><br /></td></tr>
+<tr class="separator:a3f694cd4f0a234be4531c21771772b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44d3104a47f23de5d8141b7800db6d11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11">resize</a> (int levels)</td></tr>
-<tr class="memdesc:a44d3104a47f23de5d8141b7800db6d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize Groups, Transfers, Restrictions and <a class="el" href="classMackey_1_1Levels.html" title="Storage of various levels of Junction/Chains. ">Levels</a>.  <a href="#a44d3104a47f23de5d8141b7800db6d11">More...</a><br /></td></tr>
+<tr class="memdesc:a44d3104a47f23de5d8141b7800db6d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize all member variables.  <a href="#a44d3104a47f23de5d8141b7800db6d11">More...</a><br /></td></tr>
 <tr class="separator:a44d3104a47f23de5d8141b7800db6d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075cd364217700d5f5c2459d4a988a93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93">MackeyFunctor</a> ()</td></tr>
 <tr class="memdesc:a075cd364217700d5f5c2459d4a988a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a075cd364217700d5f5c2459d4a988a93">More...</a><br /></td></tr>
@@ -113,34 +128,108 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7cdc1be794a7b39e7d4b86c2ad26355e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a7cdc1be794a7b39e7d4b86c2ad26355e">MackeyFunctor</a> (const rank_t &amp;, int)</td></tr>
 <tr class="memdesc:a7cdc1be794a7b39e7d4b86c2ad26355e"><td class="mdescLeft">&#160;</td><td class="mdescRight">When there is only one generator at each level we can use this convenient constructor.  <a href="#a7cdc1be794a7b39e7d4b86c2ad26355e">More...</a><br /></td></tr>
 <tr class="separator:a7cdc1be794a7b39e7d4b86c2ad26355e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a334a91a445ac86cc5cce53b29efd6df1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1">compare</a> (const <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &amp;)</td></tr>
-<tr class="memdesc:a334a91a445ac86cc5cce53b29efd6df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functors (after normalizing) and returns 1 if equal.  <a href="#a334a91a445ac86cc5cce53b29efd6df1">More...</a><br /></td></tr>
-<tr class="separator:a334a91a445ac86cc5cce53b29efd6df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae63fdf151f6ee653d6cb50d442948e30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#ae63fdf151f6ee653d6cb50d442948e30">normalize</a> ()</td></tr>
-<tr class="memdesc:ae63fdf151f6ee653d6cb50d442948e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor.  <a href="#ae63fdf151f6ee653d6cb50d442948e30">More...</a><br /></td></tr>
-<tr class="separator:ae63fdf151f6ee653d6cb50d442948e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001f4a56e79e68ca3fef808e6b0ccca4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a001f4a56e79e68ca3fef808e6b0ccca4">compare</a> (const <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &amp;M) const</td></tr>
+<tr class="memdesc:a001f4a56e79e68ca3fef808e6b0ccca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> and returns 1 if equal.  <a href="#a001f4a56e79e68ca3fef808e6b0ccca4">More...</a><br /></td></tr>
+<tr class="separator:a001f4a56e79e68ca3fef808e6b0ccca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b7b8ce61be39ea51432d0d3737a55f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a24b7b8ce61be39ea51432d0d3737a55f">apply</a> (const <a class="el" href="classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67">iso_t</a> &amp;iso, const <a class="el" href="classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67">iso_t</a> &amp;isoinv) const</td></tr>
+<tr class="memdesc:a24b7b8ce61be39ea51432d0d3737a55f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies isomorphism to <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor (its inverse is also needed)  <a href="#a24b7b8ce61be39ea51432d0d3737a55f">More...</a><br /></td></tr>
+<tr class="separator:a24b7b8ce61be39ea51432d0d3737a55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454e5488d62aa1e8d5ff4df71aeecfa1"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67">iso_t</a> &gt;, std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67">iso_t</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a454e5488d62aa1e8d5ff4df71aeecfa1">automorphisms</a> () const</td></tr>
+<tr class="memdesc:a454e5488d62aa1e8d5ff4df71aeecfa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all automorphisms of a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor and their inverses.  <a href="#a454e5488d62aa1e8d5ff4df71aeecfa1">More...</a><br /></td></tr>
+<tr class="separator:a454e5488d62aa1e8d5ff4df71aeecfa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e081ee78f53fe74e8f65106865f4c5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5">isomorphism_class</a> () const</td></tr>
+<tr class="memdesc:a71e081ee78f53fe74e8f65106865f4c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the isomorphism class of a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor.  <a href="#a71e081ee78f53fe74e8f65106865f4c5">More...</a><br /></td></tr>
+<tr class="separator:a71e081ee78f53fe74e8f65106865f4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd5c9415c0c63c6d79dfa9b0067f416"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a8cd5c9415c0c63c6d79dfa9b0067f416">isomorphic</a> (const std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt;&gt; &amp;isoclass) const</td></tr>
+<tr class="memdesc:a8cd5c9415c0c63c6d79dfa9b0067f416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor belongs to the provided isomorphism class.  <a href="#a8cd5c9415c0c63c6d79dfa9b0067f416">More...</a><br /></td></tr>
+<tr class="separator:a8cd5c9415c0c63c6d79dfa9b0067f416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af183c1f4d1558bc3c7dc75dcf8161ee8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8">isomorphic</a> (const <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &amp;)</td></tr>
+<tr class="memdesc:af183c1f4d1558bc3c7dc75dcf8161ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are isomorphic.  <a href="#af183c1f4d1558bc3c7dc75dcf8161ee8">More...</a><br /></td></tr>
+<tr class="separator:af183c1f4d1558bc3c7dc75dcf8161ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08150b3655fc27a7298d68b1857d830f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a08150b3655fc27a7298d68b1857d830f">normalizeMackey</a> ()</td></tr>
+<tr class="memdesc:a08150b3655fc27a7298d68b1857d830f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor.  <a href="#a08150b3655fc27a7298d68b1857d830f">More...</a><br /></td></tr>
+<tr class="separator:a08150b3655fc27a7298d68b1857d830f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b333a786e44000c96ffd087a81a1d17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a2b333a786e44000c96ffd087a81a1d17">notation</a> ()</td></tr>
+<tr class="memdesc:a2b333a786e44000c96ffd087a81a1d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes name for certain <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors in our universal notation.  <a href="#a2b333a786e44000c96ffd087a81a1d17">More...</a><br /></td></tr>
+<tr class="separator:a2b333a786e44000c96ffd087a81a1d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a4f8f5f7ac6267bdee2a67c8874bdd9a3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a4f8f5f7ac6267bdee2a67c8874bdd9a3">Groups</a></td></tr>
 <tr class="memdesc:a4f8f5f7ac6267bdee2a67c8874bdd9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Groups starting at level 0 (see <a class="el" href="classMackey_1_1Homology.html" title="The Homology of a Junction. ">Homology</a> for the labeling)  <a href="#a4f8f5f7ac6267bdee2a67c8874bdd9a3">More...</a><br /></td></tr>
 <tr class="separator:a4f8f5f7ac6267bdee2a67c8874bdd9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3106846b46d3eb4d297abe785bdb0481"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; rank_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a3106846b46d3eb4d297abe785bdb0481">Tr</a></td></tr>
-<tr class="memdesc:a3106846b46d3eb4d297abe785bdb0481"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transfers starting at level 0. It's encoded as a vectors of vectors of arrays because the answer may be noncyclic.  <a href="#a3106846b46d3eb4d297abe785bdb0481">More...</a><br /></td></tr>
-<tr class="separator:a3106846b46d3eb4d297abe785bdb0481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9299f915835edaa2b67880bfe6330502"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; rank_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a9299f915835edaa2b67880bfe6330502">Res</a></td></tr>
-<tr class="memdesc:a9299f915835edaa2b67880bfe6330502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as transfers, but now using restrictions.  <a href="#a9299f915835edaa2b67880bfe6330502">More...</a><br /></td></tr>
-<tr class="separator:a9299f915835edaa2b67880bfe6330502"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6488386f0731b1a2c80b494376709a0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; rank_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#aa6488386f0731b1a2c80b494376709a0">Weyl</a></td></tr>
-<tr class="memdesc:aa6488386f0731b1a2c80b494376709a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as transfers, but now using the Weyl group action.  <a href="#aa6488386f0731b1a2c80b494376709a0">More...</a><br /></td></tr>
-<tr class="separator:aa6488386f0731b1a2c80b494376709a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae695013be3025f6841326e2ca0d03754"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973">matrix_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#ae695013be3025f6841326e2ca0d03754">Tr</a></td></tr>
+<tr class="memdesc:ae695013be3025f6841326e2ca0d03754"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transfers from level i to level i+1. They are encoded as matrices because the levels may be noncyclic.  <a href="#ae695013be3025f6841326e2ca0d03754">More...</a><br /></td></tr>
+<tr class="separator:ae695013be3025f6841326e2ca0d03754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a659b146972121a5d180c8c38909780"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973">matrix_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a2a659b146972121a5d180c8c38909780">Res</a></td></tr>
+<tr class="memdesc:a2a659b146972121a5d180c8c38909780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as transfers, but now using restrictions.  <a href="#a2a659b146972121a5d180c8c38909780">More...</a><br /></td></tr>
+<tr class="separator:a2a659b146972121a5d180c8c38909780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b2f1a52b0a49f7544ba1025bbe95319"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973">matrix_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#a0b2f1a52b0a49f7544ba1025bbe95319">Weyl</a></td></tr>
+<tr class="memdesc:a0b2f1a52b0a49f7544ba1025bbe95319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as transfers, but now using the Weyl group action.  <a href="#a0b2f1a52b0a49f7544ba1025bbe95319">More...</a><br /></td></tr>
+<tr class="separator:a0b2f1a52b0a49f7544ba1025bbe95319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d69a215249d8b1018ac810ecc63d56"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MackeyFunctor.html#ae1d69a215249d8b1018ac810ecc63d56">name</a></td></tr>
+<tr class="memdesc:ae1d69a215249d8b1018ac810ecc63d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor.  <a href="#ae1d69a215249d8b1018ac810ecc63d56">More...</a><br /></td></tr>
+<tr class="separator:ae1d69a215249d8b1018ac810ecc63d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t&gt;<br />
 class Mackey::MackeyFunctor&lt; rank_t &gt;</h3>
 
 <p>A <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a53637e79f2502411ba085d2b2a61bb67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53637e79f2502411ba085d2b2a61bb67">&#9670;&nbsp;</a></span>iso_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;Eigen::Matrix&lt;<a class="el" href="classMackey_1_1MackeyFunctor.html#a124b4175216c4cf9a4b67acc78e9246d">Scalar</a>,-1,-1&gt; &gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::<a class="el" href="classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67">iso_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type of isomorphisms of <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors. </p>
+
+</div>
+</div>
+<a id="a271550bc911da5c842bbc90d8bf87973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271550bc911da5c842bbc90d8bf87973">&#9670;&nbsp;</a></span>matrix_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Matrix&lt;<a class="el" href="classMackey_1_1MackeyFunctor.html#a124b4175216c4cf9a4b67acc78e9246d">Scalar</a>,-1,-1&gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::<a class="el" href="classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973">matrix_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type of transfer, restriction and Weyl action matrices. </p>
+
+</div>
+</div>
+<a id="a124b4175216c4cf9a4b67acc78e9246d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a124b4175216c4cf9a4b67acc78e9246d">&#9670;&nbsp;</a></span>Scalar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef rank_t::Scalar <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::<a class="el" href="classMackey_1_1MackeyFunctor.html#a124b4175216c4cf9a4b67acc78e9246d">Scalar</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a075cd364217700d5f5c2459d4a988a93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a075cd364217700d5f5c2459d4a988a93">&#9670;&nbsp;</a></span>MackeyFunctor() <span class="overload">[1/2]</span></h2>
 
@@ -172,8 +261,23 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MackeyFunctor_a075cd364217700d5f5c2459d4a988a93_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a075cd364217700d5f5c2459d4a988a93_cgraph" alt=""/></div>
 <map name="classMackey_1_1MackeyFunctor_a075cd364217700d5f5c2459d4a988a93_cgraph" id="classMackey_1_1MackeyFunctor_a075cd364217700d5f5c2459d4a988a93_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1" title="Compares two Mackey Functors (after normalizing) and returns 1 if equal. " alt="" coords="220,5,387,47"/>
-<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#ae63fdf151f6ee653d6cb50d442948e30" title="Normalizes a Mackey Functor. " alt="" coords="220,71,387,112"/>
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a001f4a56e79e68ca3fef808e6b0ccca4" title="Compares two Mackey and returns 1 if equal. " alt="" coords="435,35,601,76"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a24b7b8ce61be39ea51432d0d3737a55f" title="Applies isomorphism to Mackey functor (its inverse is also needed) " alt="" coords="435,291,601,332"/>
+<area shape="rect" id="node5" href="classMackey_1_1MackeyFunctor.html#a454e5488d62aa1e8d5ff4df71aeecfa1" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="435,136,601,177"/>
+<area shape="rect" id="node15" href="classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="220,173,387,215"/>
+<area shape="rect" id="node16" href="classMackey_1_1MackeyFunctor.html#a8cd5c9415c0c63c6d79dfa9b0067f416" title="Returns 1 if the Mackey functor belongs to the provided isomorphism class. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node17" href="classMackey_1_1MackeyFunctor.html#a08150b3655fc27a7298d68b1857d830f" title="Normalizes a Mackey Functor. " alt="" coords="659,232,825,273"/>
+<area shape="rect" id="node18" href="classMackey_1_1MackeyFunctor.html#a2b333a786e44000c96ffd087a81a1d17" title="Computes name for certain Mackey functors in our universal notation. " alt="" coords="220,341,387,383"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a5a3367c31144a61006d7c605d6e6ca38" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="1107,243,1239,270"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#ac9020d176548a99b3119cd7bda15941d" title="Returns all automorphisms of a finitely generated abelian group together with their inverses..." alt="" coords="649,113,835,139"/>
+<area shape="rect" id="node14" href="namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ? " alt="" coords="665,163,819,190"/>
+<area shape="rect" id="node7" href="namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0) ..." alt="" coords="887,142,1025,169"/>
+<area shape="rect" id="node9" href="namespaceMackey.html#ab3832e52497b387d4553af06aa26ec99" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="883,91,1029,118"/>
+<area shape="rect" id="node10" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="1077,35,1269,62"/>
+<area shape="rect" id="node13" href="namespaceMackey.html#ac8552763cbbe02f22cedc11c6f8434da" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group. " alt="" coords="893,193,1019,219"/>
+<area shape="rect" id="node8" href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="1116,153,1231,179"/>
+<area shape="rect" id="node11" href="namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="1077,87,1269,128"/>
+<area shape="rect" id="node12" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="1317,94,1360,121"/>
 </map>
 </div>
 
@@ -213,54 +317,150 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e_cgraph" alt=""/></div>
 <map name="classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e_cgraph" id="classMackey_1_1MackeyFunctor_a7cdc1be794a7b39e7d4b86c2ad26355e_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize Groups, Transfers, Restrictions and Levels. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables. " alt="" coords="220,5,387,47"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a334a91a445ac86cc5cce53b29efd6df1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a334a91a445ac86cc5cce53b29efd6df1">&#9670;&nbsp;</a></span>compare()</h2>
+<a id="a24b7b8ce61be39ea51432d0d3737a55f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b7b8ce61be39ea51432d0d3737a55f">&#9670;&nbsp;</a></span>apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::apply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67">iso_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>iso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67">iso_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>isoinv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies isomorphism to <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor (its inverse is also needed) </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_cgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_cgraph" id="classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a5a3367c31144a61006d7c605d6e6ca38" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="220,13,352,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_icgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_icgraph" id="classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="439,5,606,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="220,68,387,109"/>
+<area shape="rect" id="node4" href="classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="435,71,611,112"/>
+<area shape="rect" id="node6" href="classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="439,136,606,177"/>
+<area shape="rect" id="node5" href="classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="659,71,835,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a454e5488d62aa1e8d5ff4df71aeecfa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454e5488d62aa1e8d5ff4df71aeecfa1">&#9670;&nbsp;</a></span>automorphisms()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename rank_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; std::vector&lt; std::vector&lt; Eigen::Matrix&lt; typename rank_t::Scalar, -1, -1 &gt; &gt; &gt;, std::vector&lt; std::vector&lt; Eigen::Matrix&lt; typename rank_t::Scalar, -1, -1 &gt; &gt; &gt; &gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::automorphisms </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns all automorphisms of a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor and their inverses. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_cgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_cgraph" id="classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#ac9020d176548a99b3119cd7bda15941d" title="Returns all automorphisms of a finitely generated abelian group together with their inverses..." alt="" coords="220,81,405,108"/>
+<area shape="rect" id="node11" href="namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ? " alt="" coords="236,132,389,159"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0) ..." alt="" coords="457,5,596,32"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#ab3832e52497b387d4553af06aa26ec99" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="453,107,600,133"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="648,56,840,83"/>
+<area shape="rect" id="node9" href="namespaceMackey.html#ac8552763cbbe02f22cedc11c6f8434da" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group. " alt="" coords="464,165,589,192"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="687,5,801,32"/>
+<area shape="rect" id="node7" href="namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="648,107,840,149"/>
+<area shape="rect" id="node8" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="888,115,931,141"/>
+<area shape="rect" id="node10" href="namespaceMackey.html#a5a3367c31144a61006d7c605d6e6ca38" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="678,173,810,200"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_icgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_icgraph" id="classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="439,5,606,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="220,68,387,109"/>
+<area shape="rect" id="node4" href="classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="435,71,611,112"/>
+<area shape="rect" id="node6" href="classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="439,136,606,177"/>
+<area shape="rect" id="node5" href="classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="659,71,835,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a001f4a56e79e68ca3fef808e6b0ccca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a001f4a56e79e68ca3fef808e6b0ccca4">&#9670;&nbsp;</a></span>compare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::compare </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Compares two <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functors (after normalizing) and returns 1 if equal. </p>
+<p>Compares two <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> and returns 1 if equal. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1_icgraph" alt=""/></div>
-<map name="classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1_icgraph" id="classMackey_1_1MackeyFunctor_a334a91a445ac86cc5cce53b29efd6df1_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="222,5,389,47"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#ad0ca46ae450950b13360c44a2de1cb43" title="Identifies the Mackey Functor with its Latex notation using the MackeyList. Only used if macro MACKEY..." alt="" coords="220,71,391,98"/>
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a001f4a56e79e68ca3fef808e6b0ccca4_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a001f4a56e79e68ca3fef808e6b0ccca4_icgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a001f4a56e79e68ca3fef808e6b0ccca4_icgraph" id="classMackey_1_1MackeyFunctor_a001f4a56e79e68ca3fef808e6b0ccca4_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="439,5,605,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a8cd5c9415c0c63c6d79dfa9b0067f416" title="Returns 1 if the Mackey functor belongs to the provided isomorphism class. " alt="" coords="222,64,389,105"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#ad0ca46ae450950b13360c44a2de1cb43" title="Identifies the Mackey Functor with its Latex notation using the MackeyList. Only used if macro MACKEY..." alt="" coords="220,130,391,157"/>
+<area shape="rect" id="node4" href="classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="439,71,605,112"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ae63fdf151f6ee653d6cb50d442948e30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae63fdf151f6ee653d6cb50d442948e30">&#9670;&nbsp;</a></span>normalize()</h2>
+<a id="a8cd5c9415c0c63c6d79dfa9b0067f416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd5c9415c0c63c6d79dfa9b0067f416">&#9670;&nbsp;</a></span>isomorphic() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,7 +468,141 @@ Here is the caller graph for this function:</div>
 template&lt;typename rank_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::normalize </td>
+          <td class="memname">bool <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::isomorphic </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>isoclass</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor belongs to the provided isomorphism class. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a8cd5c9415c0c63c6d79dfa9b0067f416_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a8cd5c9415c0c63c6d79dfa9b0067f416_cgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a8cd5c9415c0c63c6d79dfa9b0067f416_cgraph" id="classMackey_1_1MackeyFunctor_a8cd5c9415c0c63c6d79dfa9b0067f416_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a001f4a56e79e68ca3fef808e6b0ccca4" title="Compares two Mackey and returns 1 if equal. " alt="" coords="220,5,387,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a8cd5c9415c0c63c6d79dfa9b0067f416_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a8cd5c9415c0c63c6d79dfa9b0067f416_icgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a8cd5c9415c0c63c6d79dfa9b0067f416_icgraph" id="classMackey_1_1MackeyFunctor_a8cd5c9415c0c63c6d79dfa9b0067f416_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="220,71,387,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af183c1f4d1558bc3c7dc75dcf8161ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af183c1f4d1558bc3c7dc75dcf8161ee8">&#9670;&nbsp;</a></span>isomorphic() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::isomorphic </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns 1 if the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are isomorphic. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_af183c1f4d1558bc3c7dc75dcf8161ee8_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_af183c1f4d1558bc3c7dc75dcf8161ee8_cgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_af183c1f4d1558bc3c7dc75dcf8161ee8_cgraph" id="classMackey_1_1MackeyFunctor_af183c1f4d1558bc3c7dc75dcf8161ee8_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="220,197,387,238"/>
+<area shape="rect" id="node15" href="classMackey_1_1MackeyFunctor.html#a8cd5c9415c0c63c6d79dfa9b0067f416" title="Returns 1 if the Mackey functor belongs to the provided isomorphism class. " alt="" coords="220,262,387,303"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a454e5488d62aa1e8d5ff4df71aeecfa1" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="435,142,601,183"/>
+<area shape="rect" id="node14" href="classMackey_1_1MackeyFunctor.html#a24b7b8ce61be39ea51432d0d3737a55f" title="Applies isomorphism to Mackey functor (its inverse is also needed) " alt="" coords="659,201,825,242"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#ac9020d176548a99b3119cd7bda15941d" title="Returns all automorphisms of a finitely generated abelian group together with their inverses..." alt="" coords="649,99,835,125"/>
+<area shape="rect" id="node13" href="namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ? " alt="" coords="665,149,819,176"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0) ..." alt="" coords="887,5,1025,32"/>
+<area shape="rect" id="node7" href="namespaceMackey.html#ab3832e52497b387d4553af06aa26ec99" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="883,107,1029,133"/>
+<area shape="rect" id="node8" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="1077,56,1269,83"/>
+<area shape="rect" id="node11" href="namespaceMackey.html#ac8552763cbbe02f22cedc11c6f8434da" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group. " alt="" coords="893,157,1019,184"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="1116,5,1231,32"/>
+<area shape="rect" id="node9" href="namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="1077,107,1269,149"/>
+<area shape="rect" id="node10" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="1317,115,1360,141"/>
+<area shape="rect" id="node12" href="namespaceMackey.html#a5a3367c31144a61006d7c605d6e6ca38" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="1107,191,1239,217"/>
+<area shape="rect" id="node16" href="classMackey_1_1MackeyFunctor.html#a001f4a56e79e68ca3fef808e6b0ccca4" title="Compares two Mackey and returns 1 if equal. " alt="" coords="435,262,601,303"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a71e081ee78f53fe74e8f65106865f4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e081ee78f53fe74e8f65106865f4c5">&#9670;&nbsp;</a></span>isomorphism_class()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::isomorphism_class </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the isomorphism class of a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5_cgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5_cgraph" id="classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a454e5488d62aa1e8d5ff4df71aeecfa1" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="220,135,387,177"/>
+<area shape="rect" id="node13" href="classMackey_1_1MackeyFunctor.html#a24b7b8ce61be39ea51432d0d3737a55f" title="Applies isomorphism to Mackey functor (its inverse is also needed) " alt="" coords="220,201,387,242"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#ac9020d176548a99b3119cd7bda15941d" title="Returns all automorphisms of a finitely generated abelian group together with their inverses..." alt="" coords="435,100,620,127"/>
+<area shape="rect" id="node12" href="namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ? " alt="" coords="451,151,604,177"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0) ..." alt="" coords="672,5,811,32"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#ab3832e52497b387d4553af06aa26ec99" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="668,107,815,133"/>
+<area shape="rect" id="node7" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="863,56,1055,83"/>
+<area shape="rect" id="node10" href="namespaceMackey.html#ac8552763cbbe02f22cedc11c6f8434da" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group. " alt="" coords="679,157,804,184"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="901,5,1016,32"/>
+<area shape="rect" id="node8" href="namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="863,107,1055,149"/>
+<area shape="rect" id="node9" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="1103,115,1145,141"/>
+<area shape="rect" id="node11" href="namespaceMackey.html#a5a3367c31144a61006d7c605d6e6ca38" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="893,191,1025,217"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5_icgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5_icgraph" id="classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="220,5,396,47"/>
+<area shape="rect" id="node4" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="225,71,391,112"/>
+<area shape="rect" id="node5" href="classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="225,136,391,177"/>
+<area shape="rect" id="node3" href="classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="444,5,620,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08150b3655fc27a7298d68b1857d830f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08150b3655fc27a7298d68b1857d830f">&#9670;&nbsp;</a></span>normalizeMackey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::normalizeMackey </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -278,14 +612,75 @@ template&lt;typename rank_t &gt; </div>
 
 <p>Normalizes a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> Functor. </p>
 <div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30_icgraph" alt=""/></div>
-<map name="classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30_icgraph" id="classMackey_1_1MackeyFunctor_ae63fdf151f6ee653d6cb50d442948e30_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="222,5,389,47"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#ad0ca46ae450950b13360c44a2de1cb43" title="Identifies the Mackey Functor with its Latex notation using the MackeyList. Only used if macro MACKEY..." alt="" coords="220,71,391,98"/>
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a08150b3655fc27a7298d68b1857d830f_cgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a08150b3655fc27a7298d68b1857d830f_cgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a08150b3655fc27a7298d68b1857d830f_cgraph" id="classMackey_1_1MackeyFunctor_a08150b3655fc27a7298d68b1857d830f_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a5a3367c31144a61006d7c605d6e6ca38" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="220,13,352,39"/>
 </map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a08150b3655fc27a7298d68b1857d830f_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a08150b3655fc27a7298d68b1857d830f_icgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a08150b3655fc27a7298d68b1857d830f_icgraph" id="classMackey_1_1MackeyFunctor_a08150b3655fc27a7298d68b1857d830f_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="220,5,387,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2b333a786e44000c96ffd087a81a1d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b333a786e44000c96ffd087a81a1d17">&#9670;&nbsp;</a></span>notation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::notation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes name for certain <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors in our universal notation. </p>
+<p>Eg 124 means groups <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>, Z/2, Z/4 bottom to top, with transfers multiplication by 2 and restrictions multiplication by 1. Eg 112 #012 means groups <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>, <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>, Z/2 bottom to top, with transfers multiplication by 1 and restrictions multiplication by 2 (the sharp signifies restriction and transfer swap) </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MackeyFunctor_a2b333a786e44000c96ffd087a81a1d17_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a2b333a786e44000c96ffd087a81a1d17_icgraph" alt=""/></div>
+<map name="classMackey_1_1MackeyFunctor_a2b333a786e44000c96ffd087a81a1d17_icgraph" id="classMackey_1_1MackeyFunctor_a2b333a786e44000c96ffd087a81a1d17_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="220,5,396,47"/>
+<area shape="rect" id="node4" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="225,71,391,112"/>
+<area shape="rect" id="node3" href="classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="444,5,620,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3f694cd4f0a234be4531c21771772b50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f694cd4f0a234be4531c21771772b50">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor ignoring the name. </p>
+<p>Printing a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor. </p>
 
 </div>
 </div>
@@ -315,14 +710,19 @@ template&lt;typename rank_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Resize Groups, Transfers, Restrictions and <a class="el" href="classMackey_1_1Levels.html" title="Storage of various levels of Junction/Chains. ">Levels</a>. </p>
+<p>Resize all member variables. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11_icgraph.png" border="0" usemap="#classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11_icgraph" alt=""/></div>
 <map name="classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11_icgraph" id="classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11_icgraph">
 <area shape="rect" id="node2" href="namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="220,5,393,32"/>
-<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a7cdc1be794a7b39e7d4b86c2ad26355e" title="When there is only one generator at each level we can use this convenient constructor. " alt="" coords="223,57,390,98"/>
+<area shape="rect" id="node3" href="classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data. " alt="" coords="229,57,384,98"/>
+<area shape="rect" id="node7" href="classMackey_1_1MackeyFunctor.html#a7cdc1be794a7b39e7d4b86c2ad26355e" title="When there is only one generator at each level we can use this convenient constructor. " alt="" coords="223,122,390,163"/>
+<area shape="rect" id="node8" href="namespaceMackey.html#a738f2b46b7d0c37be203a17083801bbd" title="The sum of two Mackey functors. " alt="" coords="241,188,372,215"/>
+<area shape="rect" id="node4" href="classMackey_1_1IDGenerators.html#ad4e041defebc49fb90c1e7d78b066cdf" title="Default Constructor. " alt="" coords="442,27,597,69"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#a83ac78e6d1695af40d0fa58af5255e84" title="Use the ID data to identify all possible candidates for an element. " alt="" coords="441,93,597,120"/>
+<area shape="rect" id="node6" href="classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="645,86,832,127"/>
 </map>
 </div>
 
@@ -347,8 +747,8 @@ template&lt;typename rank_t&gt; </div>
 
 </div>
 </div>
-<a id="a9299f915835edaa2b67880bfe6330502"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9299f915835edaa2b67880bfe6330502">&#9670;&nbsp;</a></span>Res</h2>
+<a id="ae1d69a215249d8b1018ac810ecc63d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d69a215249d8b1018ac810ecc63d56">&#9670;&nbsp;</a></span>name</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,7 +756,25 @@ template&lt;typename rank_t&gt; </div>
 template&lt;typename rank_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;rank_t&gt; &gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::Res</td>
+          <td class="memname">std::string <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The name of the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor. </p>
+
+</div>
+</div>
+<a id="a2a659b146972121a5d180c8c38909780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a659b146972121a5d180c8c38909780">&#9670;&nbsp;</a></span>Res</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973">matrix_t</a>&gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::Res</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -365,8 +783,8 @@ template&lt;typename rank_t&gt; </div>
 
 </div>
 </div>
-<a id="a3106846b46d3eb4d297abe785bdb0481"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3106846b46d3eb4d297abe785bdb0481">&#9670;&nbsp;</a></span>Tr</h2>
+<a id="ae695013be3025f6841326e2ca0d03754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae695013be3025f6841326e2ca0d03754">&#9670;&nbsp;</a></span>Tr</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,18 +792,18 @@ template&lt;typename rank_t&gt; </div>
 template&lt;typename rank_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;rank_t&gt; &gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::Tr</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973">matrix_t</a>&gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::Tr</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The transfers starting at level 0. It's encoded as a vectors of vectors of arrays because the answer may be noncyclic. </p>
-<p>Example (C4): If Tr[0]={[2]} and Tr[1]={[1,1],[2,3]} then Tr_0^2(gen)=2*gen and Tr_2^4(gen0)=gen0+gen1 and Tr_2^4(gen1)=2*gen0+3*gen1 </p>
+<p>The transfers from level i to level i+1. They are encoded as matrices because the levels may be noncyclic. </p>
+<p>Example (C4): If Tr[0]=[2] and Tr[1]=[1,2;1,3] then Tr_0^2(gen)=2*gen and Tr_2^4(gen0)=gen0+gen1 and Tr_2^4(gen1)=2*gen0+3*gen1 </p>
 
 </div>
 </div>
-<a id="aa6488386f0731b1a2c80b494376709a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6488386f0731b1a2c80b494376709a0">&#9670;&nbsp;</a></span>Weyl</h2>
+<a id="a0b2f1a52b0a49f7544ba1025bbe95319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b2f1a52b0a49f7544ba1025bbe95319">&#9670;&nbsp;</a></span>Weyl</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +811,7 @@ template&lt;typename rank_t&gt; </div>
 template&lt;typename rank_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;rank_t&gt; &gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::Weyl</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973">matrix_t</a>&gt; <a class="el" href="classMackey_1_1MackeyFunctor.html">Mackey::MackeyFunctor</a>&lt; rank_t &gt;::Weyl</td>
         </tr>
       </table>
 </div><div class="memdoc">

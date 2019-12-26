@@ -1,9 +1,7 @@
 <map id="Mackey::lcm" name="Mackey::lcm">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given abelian group. " alt="" coords="151,101,256,127"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="319,13,489,39"/>
-<area shape="rect" id="node5" href="$classMackey_1_1IDGeneratorCompact.html#a26a4b6a1cf1ec6be1e63fdecaf142b66" title="Constructs the identification data for our element given the detailed identification data for all gen..." alt="" coords="304,64,504,105"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a417d303e187dac5a1a2c2c02c6267758" title="Produce all generator candidates that match the ID of the given element. " alt="" coords="308,130,500,157"/>
-<area shape="rect" id="node8" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="755,148,939,189"/>
-<area shape="rect" id="node4" href="$classMackey_1_1ChangeBasis.html#a036c1f54ffb4cf4115efa2fab60c354b" title="Constructs the change of basis matrices given two ranks. " alt="" coords="552,5,707,47"/>
-<area shape="rect" id="node7" href="$namespaceMackey.html#a3fa96ba9b7316a92eca2f5c0bd1cca4d" title="Produce an element using the ID data. " alt="" coords="570,130,689,157"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given abelian group. " alt="" coords="151,71,256,98"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="320,13,491,39"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="312,64,499,105"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Compute the homology from the given Junction. " alt="" coords="304,130,507,157"/>
+<area shape="rect" id="node4" href="$classMackey_1_1ChangeBasis.html#a036c1f54ffb4cf4115efa2fab60c354b" title="Constructs the change of basis matrices given two ranks. " alt="" coords="555,5,709,47"/>
 </map>

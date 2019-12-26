@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.5</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('math.html','');});
 <div class="toc"><h3>Table of Contents</h3>
 <ul><li class="level1"><a href="#Briefly">Briefly</a></li>
 <li class="level1"><a href="#imd">In more detail</a><ul><li class="level2"><a href="#add">The additive structure</a></li>
+<li class="level2"><a href="#mack">Recognizing Mackey Functors</a></li>
 <li class="level2"><a href="#mult">The multiplicative structure</a></li>
 <li class="level2"><a href="#factor">Factorization</a></li>
 <li class="level2"><a href="#Mass">Massey Products</a></li>
@@ -130,9 +131,22 @@ The additive structure</h2>
 <li>To obtain the chains of the rest of the spheres, we box the Chains we already have. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly. However the most convenient bases for tensoring are not equivariant, and in the end we have to change bases through permutation matrices.</li>
 <li>We then perform the same procedure on these chains to get the entrire \(RO(G)\) homology as a (graded) <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor.</li>
 </ul>
+<h2><a class="anchor" id="mack"></a>
+Recognizing Mackey Functors</h2>
+<p>While a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor is determined by the groups, transfers, restrictions and Weyl group actions, it is desirable to have a "universal notation" to concisely describe them. Here's the notation we use:</p>
+<ul>
+<li>First assume all levels are cyclic groups, transfers are multiplication by 2 and corresponding restrictions are multiplication by 1 or vice-versa. Then the notation \(a_1...a_n \sharp b_1...b_m\) means that the levels are \(\mathbb Z/a_i\)or \(\mathbb Z\) if \(a_i=1\) and the transfers at levels \(b_i\) are multiplication by 1, and multiplication by 2 for the rest. The Weyl group action is then determined by the double coset formula.</li>
+<li>For <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors that are sums of Mackeys of this form we use the plus operator to concatenate the notations.</li>
+<li>For \(C_4\) this notation suffices to describe every <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a>, but for \(C_8\) there are three exceptional <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors.</li>
+</ul>
+<p>For the second item, summing <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors is straightforward (block diagonal matrices). The problem is showing that two <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are isomorphic (as opposed to equal). To do that, we collect all automorphisms of the groups in each level and apply them as a natural transformation to our <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor and obtain its isomorphism class. So to check if two <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors are isomorphic, we check if one is equal to a <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor in the equivalence class of the other.</p>
+<ul>
+<li>For finitely generated (abelian) groups with only one \(\mathbb Z\) factor, there are only finitely many automorphisms and we can easily classify them all.</li>
+<li>If there is more than one \(\mathbb Z\) factor, there are infinitely many automorphisms, so the user must provide those that the program should use for the identification.</li>
+</ul>
 <h2><a class="anchor" id="mult"></a>
 The multiplicative structure</h2>
-<p>Once we have the additive structure, we can work on multiplying the additive generators.</p>
+<p>Once we have the additive structure (minus the recognition part), we can work on multiplying the additive generators.</p>
 <ul>
 <li>First we restrict the generators to the bottom level.</li>
 <li>We then take the product of their restrictions as an element of the box product of chain complexes at bottom level.</li>

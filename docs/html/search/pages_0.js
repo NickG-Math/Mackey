@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['algorithm_20details',['Algorithm Details',['../algo.html',1,'']]]
+  ['from_20math_20to_20code',['From Math to Code',['../math.html',1,'']]]
 ];

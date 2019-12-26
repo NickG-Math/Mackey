@@ -1,9 +1,11 @@
 <map id="Mackey/Homology.h" name="Mackey/Homology.h">
 <area shape="rect" id="node2" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="5,80,127,107"/>
-<area shape="rect" id="node8" href="$Identify_8h.html" title="Contains the identification classes. " alt="" coords="151,80,277,107"/>
+<area shape="rect" id="node10" href="$Identify_8h.html" title="Contains the identification classes. " alt="" coords="151,80,277,107"/>
 <area shape="rect" id="node3" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="80,155,199,181"/>
-<area shape="rect" id="node4" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="69,304,205,331"/>
-<area shape="rect" id="node5" href="$Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="131,379,246,405"/>
-<area shape="rect" id="node7" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="75,229,204,256"/>
-<area shape="rect" id="node6" href="$Factorization_8h.html" title="Contains the Factorization class for factorizing generators. " alt="" coords="109,453,268,480"/>
+<area shape="rect" id="node4" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="61,304,197,331"/>
+<area shape="rect" id="node7" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table. " alt="" coords="185,379,299,405"/>
+<area shape="rect" id="node9" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="75,229,204,256"/>
+<area shape="rect" id="node5" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology. " alt="" coords="15,453,146,480"/>
+<area shape="rect" id="node6" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="93,528,236,555"/>
+<area shape="rect" id="node8" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="171,453,329,480"/>
 </map>

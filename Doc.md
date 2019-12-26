@@ -9,12 +9,15 @@ For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the avai
 \section req Requirements
  * C++17 and the standard library.
  * <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. I've tested the code with Eigen 3.3.7 though newer versions shouldn't break compatibility.
- * Optional: For improved performance you can use the Intel MKL with Eigen and further combine with OpenMP for multithreading.
- * Optional: To draw the multiplication graphs you will need Graphviz.
+
+Optionally:
+ * For improved performance you can use the Intel MKL with Eigen and further combine with OpenMP for multithreading.
+ * For serialization we support the <a href="https://uscilab.github.io/cereal">Cereal</a> library.
+ * To draw the multiplication graphs you can use <a href="https://www.graphviz.org">Graphviz</a>.
  
 \section install Installation
 
-* To install simply clone/download the <a href="https://github.com/NickG-Math/Mackey">repository</a> and include it in your path. You will also need to do the same with Eigen.
+* To install simply clone/download the <a href="https://github.com/NickG-Math/Mackey">repository</a> and include it in your path. You will also need to include Eigen and, if serialization is desired, Cereal.
 
 * See the page \ref use for a tutorial on using the library.
 
@@ -22,10 +25,11 @@ For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the avai
 
 \section status Current Status
 
-* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. We have implemented this for all groups \f$G=C_{2^n}\f$.
+* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual representations; we call these "standard chains". 
+The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. We have implemented this for all groups \f$G=C_{2^n}\f$.
 
-* The one thing that hasn't been implemented for prime-power cyclic groups are Frobenius relations: 
-The multiplicative structure is computed levelwise, but this could be made more effective using the Frobenius relations. 
+* What hasn't been implemented for prime-power cyclic groups are Frobenius relations: 
+The multiplicative structure is computed levelwise, but this could be done more effectively using the Frobenius relations. 
 
 * For general cyclic groups a few aspects that involve transferring need reworking. 
 The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, so care has to be taken to account for all these extra transfers and restrictions. 
@@ -86,9 +90,33 @@ With our conventions, \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ has rank \f$[2,2
 
 * We then perform the same procedure on these chains to get the entrire \f$RO(G)\f$ homology as a (graded) Mackey functor.
 
+\subsection mack Recognizing Mackey Functors
+
+While a Mackey functor is determined by the groups, transfers, restrictions and Weyl group actions, it is desirable to have a 
+"universal notation" to concisely describe them. Here's the notation we use:
+
+* First assume all levels are cyclic groups, transfers are multiplication by 2 and corresponding
+restrictions are multiplication by 1 or vice-versa. Then the notation \f$a_1...a_n \sharp b_1...b_m\f$ means that the levels are \f$\mathbb Z/a_i\f$or \f$\mathbb Z\f$ if \f$a_i=1\f$ and the transfers at levels \f$b_i\f$ are multiplication by 1, and multiplication by 2 for the rest. The Weyl group action is then determined by the double coset formula.
+
+* For Mackey functors that are sums of Mackeys of this form we use the plus operator to concatenate the notations.
+
+* For \f$C_4\f$ this notation suffices to describe every Mackey, but for \f$C_8\f$ there are three exceptional Mackey functors.
+
+For the second item, summing Mackey functors is straightforward (block diagonal matrices). The problem is showing that
+two Mackey functors are isomorphic (as opposed to equal). To do that, we collect all automorphisms of the groups in each level and apply them
+as a natural transformation to our Mackey functor and obtain its isomorphism class. So to check if two Mackey functors are isomorphic,
+we check if one is equal to a Mackey functor in the equivalence class of the other.
+
+* For finitely generated (abelian) groups with only one \f$\mathbb Z\f$ factor, there are only finitely many automorphisms and
+we can easily classify them all.
+
+* If there is more than one \f$\mathbb Z\f$ factor, there are infinitely many automorphisms, 
+so the user must provide those that the program should use for the identification. 
+
+
 \subsection mult The multiplicative structure
 
-Once we have the additive structure, we can work on multiplying the additive generators. 
+Once we have the additive structure (minus the recognition part), we can work on multiplying the additive generators. 
 
 * First we restrict the generators to the bottom level.
 
@@ -171,13 +199,10 @@ For \f$G=C_4\f$ and  \f$\mathbb F_2\f$ coefficients ignoring them won't work as 
 \tableofcontents
 \section how Step 0: Setting the Group Parameters
 
-* For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example for \f$G=C_4\f$ on how to set them in the file  ```C4_Implementation.h``` available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. 
+For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example for \f$G=C_4\f$ on how to set them in the file  ```C4_Implementation.h``` available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. 
 We also have a more general example for \f$G=C_{2^n}\f$ implemented in ```C2n_Implementation.h```.
 
 These parameters all live in the \ref GroupSpecific "GroupSpecific" namespace and we will go over them in more detail below.
-
-* There are also some optional parameters that allow you to identify and print the names of the computed Mackey functors. This functionality is disabled by default, but can easily be turned on by defining the macro \ref MACKEY_NAMES and setting the optional parameters living in the namespace \ref GroupSpecificOptional "GroupSpecificOptional". 
-An example of how this is done is contained the file ```C4_Optional_Implementation.h``` in <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a>. The implementation there is for \f$G=C_4\f$ and the 16 Mackey functors in the \f$RO(C_4)\f$ homology. We have included both the \f$\underline{\mathbb Z}\f$ and \f$\underline{\mathbb F_2}\f$ coefficient cases for reference.
 
 \subsection var Global variables
 
@@ -185,7 +210,7 @@ The global variables that need to be set are:
 
 * \ref GroupSpecific::Variables::prime "prime" : the \f$p\f$ in \f$G=C_{p^n}\f$.
 * \ref GroupSpecific::Variables::power "power" : the \f$n\f$ in \f$G=C_{p^n}\f$.
-* \ref GroupSpecific::Variables::reps "reps" : the number of nontrivial irreducible real representations of \f$G\f$.
+* \ref GroupSpecific::Variables::reps "reps" : the number of nontrivial irreducible real representations of \f$G\f$ for our spheres.
 * \ref GroupSpecific::Variables::sphere_dimensions "sphere_dimensions" : the array consisting of the dimensions of those representations (so we must fix an order for them beforehand).
 
 \subsection fun The standard chains
@@ -204,8 +229,9 @@ We have automated this process for general \f$G=C_{2^n}\f$ in ```C2n_Implementat
 
 \section next Step 1: Calling the library
 
-Once Step 0 is complete, you can include ```<Mackey/Compute.h>``` to access the methods relating to the additive and multiplicative structure and Massey products, and ```<Mackey/Factorization.h>``` to access the factorization methods. 
-For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder together with the provided Implementation header files (Step 0).
+Once Step 0 is complete, you can include ```<Mackey/Additive.h>``` to access the methods relating to the additive structure and ```<Mackey/Factorization.h>``` to access the factorization methods. The multiplicative structure and Massey products are found in ```<Mackey/Compute.h>``` but that's already included in the other two headers.
+
+For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder together with the provided Implementation header file (Step 0).
 
 \subsection coeff Coefficients and templates
 
@@ -214,26 +240,46 @@ There are two template arguments that always need to be specified, and their typ
 * ```rank_t``` can be set to ```Eigen::Matrix<char,1,-1>``` for groups of prime power order \f$<127\f$ and we can replace ```char``` by better precision integers for higher prime power orders.
 
 * ```diff_t``` depends on the desired coefficients: eg we can set it to ```Eigen::Matrix<char,-1,-1>``` for integer coefficients and groups of small power order, or ```Eigen<Z<N>,-1,-1>``` for \f$\mathbb Z/n\mathbb Z\f$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is 
-contained in the file ```Z_n.h``` where we define \f$\mathbb Z/n\mathbb Z\f$ coefficients.
+contained in the file ```Z_n.h``` where we define \f$\mathbb Z/n\mathbb Z\f$ coefficients. Note that for the Smith normal form to work properly, \f$n\f$ should be prime
 
 
 \subsection step1add The additive structure
 
-The file ```<Mackey/Compute.h>``` exposes the method \ref Mackey::ROHomology "ROHomology" that computes the homology of a given sphere as a Mackey functor. Example: The code
+The file ```<Mackey/Additive.h>``` exposes the class \ref Mackey::AdditiveStructure "AdditiveStructure" that computes the homology of all spheres in a given range as Mackey functors. Example: The code
 
-<CODE> auto M= Mackey::ROHomology<rank_t,diff_t>({2,-2}); </CODE>
+<CODE> AdditiveStructure<rank_t,diff_t> A({-3,-4},{5,6}); </CODE>
 
-sets 
+computes the homology of all spheres from \f$S^{-3\sigma-4\lambda}\f$ to \f$S^{5\sigma+6\lambda}\f$. To identify the Mackey functors in the "standard" notation
+use
 
-\f$ M=H_*(S^{2\sigma-2\lambda})\f$
+<CODE> A.identify(); </CODE>
 
-Here ```M``` is an object of class \ref Mackey::MackeyFunctor "MackeyFunctor" so you should read the documentation of that on how to extract that information. If the optional parameters are set then it's also possible to extract the name of the Mackey functor using the method \ref Mackey::identify_Mackey "identify_Mackey". Simply use
+After that,
 
-<CODE> std::cout << identify_Mackey(M); </CODE>
+<CODE> A.print_answer(stream); </CODE>
 
+prints the answer in a user provided ```stream```. The answer is of the form
+
+<CODE> The 2 homology of the 4,6 sphere is 002 </CODE>
+
+ as long as the Mackey Functor has been identified. You can survey the identified Mackeys by
+ 
+ <CODE>
+A.print_unique(stream);
+ </CODE>
+ 
+ For ```C_8``` there are three Mackey functors not covered by our "universal notation" and are thus named "unknown 0,...".
+ To survey their Mackey functor structure use
+ 
+  <CODE>
+A.print_unknown(stream);
+ </CODE>
+
+
+ 
 \subsection step1mult The multiplicative structure
 
-The file ```<Mackey/Compute.h>``` also exposes the method \ref Mackey::ROGreen "ROGreen" that multiplies two generators in the Green functor \f$H_{\star}(S)\f$. Example: The code
+The file ```<Mackey/Compute.h>``` exposes the method \ref Mackey::ROGreen "ROGreen" that multiplies two generators in the Green functor \f$H_{\star}(S)\f$. Example: The code
 
 <CODE> auto linear_combination= Mackey::ROGreen<rank_t,diff_t>(2,{0,2,-2},{1,3,-4}); </CODE>
 
@@ -296,11 +342,29 @@ Finally, ```Mass``` is of type ```Mackey::Massey``` so read the documentation of
 For more details see the code in TestMassey.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder
 
 
-\page algo Algorithm Details
+\subsection step1Cer Serialization
+
+The results of the harder computations can all be serialized to binary, xml or json file using the <a href="https://uscilab.github.io/cereal">Cereal</a> library. We have provided a general 
+interface to do that using the \ref Mackey::saver "saver" and \ref Mackey::loader "loader" methods. For example, to serialize ```AdditiveStructure<rank_t,diff_t> A;``` to a binary use
+
+<CODE>saver(A, "filename.bin", "binary");</CODE>
+
+To load use
+
+<CODE>loader(A, "filename.bin", "binary");</CODE>
+
+If ```xml``` serialization is desired use "file.xml" and "xml" instead and similarly for json archives.
+
+\page algo Select Implementation Details
 \tableofcontents
+
 \section smith Smith Normal Form
 
-For the Smith Normal Form we use a variant of the classical row-column elimination algorithm. Interestingly, for our matrices, an entry divides or is divided by any other. We optimize for this by not finding the minimum element of each submatrix, and instead work with the first nonzero element in each row and column. This is much faster for our matrices, but slower and much more dangerous for random matrices: the Smith normal form coefficient matrices \f$P,Q\f$ can easily overflow in that case (while the usual row-column elimination algorithm can give accurate results).
+The Smith Normal Form is difficult to compute for integer matrices as its entries (and especially the entries of the coefficient matrices) can be much larger
+than those of the original matrix. We implement the usual row/column elimination algorithm that checks for the minimum in each iteration and uses it as a pivot to clear rows
+and columns. There is another implementation that forgoes the slow min computation and instead uses the first nonzero element as pivot. For our matrices this
+is usually (much) faster than the other implementation, as for any two entries one divides the other. The problem is that for matrices appearing in the multiplicative structure (two box products), this elimination can use pivots other than the min elements and result in unboundedly large entries exceeding
+the given precision. So for safety we have chosen to keep the slower implementation.   
 
 \section cob Change of Basis
 
@@ -328,15 +392,14 @@ After that, find the red and blue paths starting from a red/blue source and endi
 First, two heuristic observations:
 
 * The Linux binary runs measurably faster than the Windows one.
-* Out of all compilers, Clang seems to produce marginally faster code. 
+* Out of all compilers on Linux, Clang seems to produce marginally faster code. 
 
 \section compoptions Compiler Options
 
 
-* I recommend the following compiler options (GCC, Clang): <CODE>-Ofast --funroll-loops -march=native </CODE>
+* I recommend the following compiler options (GCC, Clang): <CODE>-O3 --funroll-loops -march=native </CODE>
 * With the Intel compiler Eigen <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support">recommends</a> the <CODE>-inline-forceinline</CODE> option.
 * If OpenMP support is desired use ```-fopenmp```.
-* Note: ```-Ofast``` doesn't actually reduce the accuracy of our results, since we only use integer values. This is true even when the data-type is sometimes a floating point (see \ref intvsfloat for an explanation as to why we sometimes use fp data types). 
 
 \section thread Multithreading
 
@@ -344,12 +407,12 @@ First, two heuristic observations:
 
 * There is one caveat: While the loop iterations are independent, they are not all equally computationally intensive. A sphere like \f$S^{2\sigma+\lambda}\f$ is cheaper to compute compared to \f$S^{6\sigma+8\lambda}\f$ which is in turn much cheaper compared to \f$S^{6\sigma-8\lambda}\f$ as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are even more expensive in run-time as they involve arbitrarily large permutation matrices.
 
-* So it's important to equally divide the work amongst the threads. Currently this has to be done manually on the user's end. Or use guided scheduling.
+* So it's important to equally divide the work amongst the threads. Currently this has to be done manually on the user's end.
 
 \section intvsfloat Integers vs Floats
 
 I use integers (or indeed ```char``` and ```short```) for the majority of the computations; that's usually the fastest method and makes the most sense (as all numbers appearing are actually integers).
-There is one important exception: Matrix multiplication. Eigen is much slower with integer matrix multiplication compared to floating points, and the Intel MKL does not even support integer matrix multiplication.
+There is one important exception: Matrix multiplication (and matrix determinant). Eigen is much slower with integer matrix multiplication compared to floating points, and the Intel MKL does not even support integer matrix multiplication.
 So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.
 
 \section memo Memoizing ChangeBasis

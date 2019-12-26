@@ -25,7 +25,7 @@ namespace Mackey {
 		int first_number_selections;///<The number of selections of generators for the first factor
 		int second_number_selections;///<The number of selections of generators for the second factor
 
-		IDGenerators<rank_t, diff_t> boxID;///<Identifies the generators of the homology group the product lives in.
+		IDGenerators<rank_t> boxID;///<Identifies the generators of the homology group the product lives in.
 		
 		///Default constructor
 		Green() { isZero = 1; };

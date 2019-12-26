@@ -21,8 +21,24 @@ Here\textquotesingle{}s how the code works in more detail (for simplicity we spe
 \item We transfer/restrict and compute the Weyl group action on the group generators. This concludes the \hyperlink{namespaceMackey}{Mackey} functor computation for the $S^{n\sigma+m\lambda}$, $n,m$ having the same sign (if $n,m<0$ we take the dual chain complex, which has the effect of switching all differentials to their transposes).
 \item To obtain the chains of the rest of the spheres, we box the Chains we already have. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly. However the most convenient bases for tensoring are not equivariant, and in the end we have to change bases through permutation matrices.
 \item We then perform the same procedure on these chains to get the entrire $RO(G)$ homology as a (graded) \hyperlink{namespaceMackey}{Mackey} functor.
+\end{DoxyItemize}\hypertarget{math_mack}{}\subsection{Recognizing Mackey Functors}\label{math_mack}
+While a \hyperlink{namespaceMackey}{Mackey} functor is determined by the groups, transfers, restrictions and Weyl group actions, it is desirable to have a \char`\"{}universal notation\char`\"{} to concisely describe them. Here\textquotesingle{}s the notation we use\+:
+
+
+\begin{DoxyItemize}
+\item First assume all levels are cyclic groups, transfers are multiplication by 2 and corresponding restrictions are multiplication by 1 or vice-\/versa. Then the notation $a_1...a_n \sharp b_1...b_m$ means that the levels are $\mathbb Z/a_i$or $\mathbb Z$ if $a_i=1$ and the transfers at levels $b_i$ are multiplication by 1, and multiplication by 2 for the rest. The Weyl group action is then determined by the double coset formula.
+\item For \hyperlink{namespaceMackey}{Mackey} functors that are sums of Mackeys of this form we use the plus operator to concatenate the notations.
+\item For $C_4$ this notation suffices to describe every \hyperlink{namespaceMackey}{Mackey}, but for $C_8$ there are three exceptional \hyperlink{namespaceMackey}{Mackey} functors.
+\end{DoxyItemize}
+
+For the second item, summing \hyperlink{namespaceMackey}{Mackey} functors is straightforward (block diagonal matrices). The problem is showing that two \hyperlink{namespaceMackey}{Mackey} functors are isomorphic (as opposed to equal). To do that, we collect all automorphisms of the groups in each level and apply them as a natural transformation to our \hyperlink{namespaceMackey}{Mackey} functor and obtain its isomorphism class. So to check if two \hyperlink{namespaceMackey}{Mackey} functors are isomorphic, we check if one is equal to a \hyperlink{namespaceMackey}{Mackey} functor in the equivalence class of the other.
+
+
+\begin{DoxyItemize}
+\item For finitely generated (abelian) groups with only one $\mathbb Z$ factor, there are only finitely many automorphisms and we can easily classify them all.
+\item If there is more than one $\mathbb Z$ factor, there are infinitely many automorphisms, so the user must provide those that the program should use for the identification.
 \end{DoxyItemize}\hypertarget{math_mult}{}\subsection{The multiplicative structure}\label{math_mult}
-Once we have the additive structure, we can work on multiplying the additive generators.
+Once we have the additive structure (minus the recognition part), we can work on multiplying the additive generators.
 
 
 \begin{DoxyItemize}

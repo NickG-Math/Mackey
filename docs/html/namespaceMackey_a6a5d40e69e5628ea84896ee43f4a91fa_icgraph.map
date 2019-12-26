@@ -1,6 +1,7 @@
 <map id="Mackey::dimension" name="Mackey::dimension">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a425b988266cedec0299fb539d99179b1" title="Returns the standard Chains of the given sphere. " alt="" coords="188,5,357,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#abd3c2e12c91baa573c6dbaa37eeb0518" title="Returns the Chains of any given given sphere. " alt="" coords="204,56,341,83"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="207,107,338,133"/>
-<area shape="rect" id="node5" href="$classMackey_1_1TableInput.html#ac2cad07d3e3188d9254d39affad86713" title="Constructs the input of the multiplication table. " alt="" coords="204,158,341,199"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a425b988266cedec0299fb539d99179b1" title="Returns the standard Chains of the given sphere. " alt="" coords="195,5,365,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#abd3c2e12c91baa573c6dbaa37eeb0518" title="Returns the Chains of any given given sphere. " alt="" coords="211,56,349,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="215,107,345,133"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="188,158,372,199"/>
+<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector. " alt="" coords="420,158,604,199"/>
 </map>

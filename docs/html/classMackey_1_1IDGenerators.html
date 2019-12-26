@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mackey: Mackey::IDGenerators&lt; rank_t, diff_t &gt; Class Template Reference</title>
+<title>Mackey: Mackey::IDGenerators&lt; rank_t &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.5</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -89,11 +89,12 @@ $(document).ready(function(){initNavTree('classMackey_1_1IDGenerators.html','');
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classMackey_1_1IDGenerators-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Mackey::IDGenerators&lt; rank_t, diff_t &gt; Class Template Reference</div>  </div>
+<div class="title">Mackey::IDGenerators&lt; rank_t &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,47 +103,74 @@ $(document).ready(function(){initNavTree('classMackey_1_1IDGenerators.html','');
 
 <p><code>#include &lt;<a class="el" href="Identify_8h_source.html">Identify.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a6b4c91c53aa7fe61ae93a716e891832f"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix&lt; typename rank_t::Scalar, -1, -1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a6b4c91c53aa7fe61ae93a716e891832f">matrix_t</a></td></tr>
+<tr class="memdesc:a6b4c91c53aa7fe61ae93a716e891832f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The matrix type of the transfer and restriction matrices.  <a href="#a6b4c91c53aa7fe61ae93a716e891832f">More...</a><br /></td></tr>
+<tr class="separator:a6b4c91c53aa7fe61ae93a716e891832f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2f7d0d382aca772c12e27a3c65510643"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a2f7d0d382aca772c12e27a3c65510643">IDGenerators</a> ()</td></tr>
-<tr class="memdesc:a2f7d0d382aca772c12e27a3c65510643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="#a2f7d0d382aca772c12e27a3c65510643">More...</a><br /></td></tr>
-<tr class="separator:a2f7d0d382aca772c12e27a3c65510643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4e041defebc49fb90c1e7d78b066cdf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#ad4e041defebc49fb90c1e7d78b066cdf">IDGenerators</a> ()</td></tr>
+<tr class="memdesc:ad4e041defebc49fb90c1e7d78b066cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="#ad4e041defebc49fb90c1e7d78b066cdf">More...</a><br /></td></tr>
+<tr class="separator:ad4e041defebc49fb90c1e7d78b066cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9669af6c07a9ed5a91a662aef6cda1ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed">getMackey</a> () const</td></tr>
+<tr class="memdesc:a9669af6c07a9ed5a91a662aef6cda1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a two-level <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor out of this data.  <a href="#a9669af6c07a9ed5a91a662aef6cda1ed">More...</a><br /></td></tr>
+<tr class="separator:a9669af6c07a9ed5a91a662aef6cda1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad9fd855102a6663a9d7b3c93dc9c369d"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#ad9fd855102a6663a9d7b3c93dc9c369d">group</a></td></tr>
-<tr class="memdesc:ad9fd855102a6663a9d7b3c93dc9c369d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The homology group at our level.  <a href="#ad9fd855102a6663a9d7b3c93dc9c369d">More...</a><br /></td></tr>
-<tr class="separator:ad9fd855102a6663a9d7b3c93dc9c369d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eb50f39a23356d50461163e578e23a4"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a6eb50f39a23356d50461163e578e23a4">group_lower</a></td></tr>
-<tr class="memdesc:a6eb50f39a23356d50461163e578e23a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The homology group at one level lower.  <a href="#a6eb50f39a23356d50461163e578e23a4">More...</a><br /></td></tr>
-<tr class="separator:a6eb50f39a23356d50461163e578e23a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dd4d24cfe493da4522198f03d32f078"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a5dd4d24cfe493da4522198f03d32f078">Tr</a></td></tr>
-<tr class="memdesc:a5dd4d24cfe493da4522198f03d32f078"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transfers of the lower level generators to our level.  <a href="#a5dd4d24cfe493da4522198f03d32f078">More...</a><br /></td></tr>
-<tr class="separator:a5dd4d24cfe493da4522198f03d32f078"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10ddb834467f6b1471375542a73d8e6f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a10ddb834467f6b1471375542a73d8e6f">Res</a></td></tr>
-<tr class="memdesc:a10ddb834467f6b1471375542a73d8e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The restrictions of the generators to the lower level.  <a href="#a10ddb834467f6b1471375542a73d8e6f">More...</a><br /></td></tr>
-<tr class="separator:a10ddb834467f6b1471375542a73d8e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0542bce4c4bcc9037146e04e6fe1d350"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a0542bce4c4bcc9037146e04e6fe1d350">group</a></td></tr>
+<tr class="memdesc:a0542bce4c4bcc9037146e04e6fe1d350"><td class="mdescLeft">&#160;</td><td class="mdescRight">The homology group at our level.  <a href="#a0542bce4c4bcc9037146e04e6fe1d350">More...</a><br /></td></tr>
+<tr class="separator:a0542bce4c4bcc9037146e04e6fe1d350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6108bbb2965a14d7835b9d99167e7315"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a6108bbb2965a14d7835b9d99167e7315">group_lower</a></td></tr>
+<tr class="memdesc:a6108bbb2965a14d7835b9d99167e7315"><td class="mdescLeft">&#160;</td><td class="mdescRight">The homology group at one level lower.  <a href="#a6108bbb2965a14d7835b9d99167e7315">More...</a><br /></td></tr>
+<tr class="separator:a6108bbb2965a14d7835b9d99167e7315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa6391d6fa79951f6d11e880c79081b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1IDGenerators.html#a6b4c91c53aa7fe61ae93a716e891832f">matrix_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a5aa6391d6fa79951f6d11e880c79081b">Tr</a></td></tr>
+<tr class="memdesc:a5aa6391d6fa79951f6d11e880c79081b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The transfer from one level lower to our level.  <a href="#a5aa6391d6fa79951f6d11e880c79081b">More...</a><br /></td></tr>
+<tr class="separator:a5aa6391d6fa79951f6d11e880c79081b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8512fc6a9becb6261a703e6131225e3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1IDGenerators.html#a6b4c91c53aa7fe61ae93a716e891832f">matrix_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1IDGenerators.html#a8512fc6a9becb6261a703e6131225e3f">Res</a></td></tr>
+<tr class="memdesc:a8512fc6a9becb6261a703e6131225e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The restriction from our level to one lower.  <a href="#a8512fc6a9becb6261a703e6131225e3f">More...</a><br /></td></tr>
+<tr class="separator:a8512fc6a9becb6261a703e6131225e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
-class Mackey::IDGenerators&lt; rank_t, diff_t &gt;</h3>
+<div class="textblock"><h3>template&lt;typename rank_t&gt;<br />
+class Mackey::IDGenerators&lt; rank_t &gt;</h3>
 
 <p>Stores detailed identification data for the generators in non cyclic homology groups using the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor structure. </p>
-<p>diff_t is used as a template to cleanly get the coefficient type. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2f7d0d382aca772c12e27a3c65510643"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f7d0d382aca772c12e27a3c65510643">&#9670;&nbsp;</a></span>IDGenerators()</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a6b4c91c53aa7fe61ae93a716e891832f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b4c91c53aa7fe61ae93a716e891832f">&#9670;&nbsp;</a></span>matrix_t</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rank_t, typename diff_t&gt; </div>
+template&lt;typename rank_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Matrix&lt;typename rank_t::Scalar, -1, -1&gt; <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t &gt;::<a class="el" href="classMackey_1_1IDGenerators.html#a6b4c91c53aa7fe61ae93a716e891832f">matrix_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The matrix type of the transfer and restriction matrices. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad4e041defebc49fb90c1e7d78b066cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4e041defebc49fb90c1e7d78b066cdf">&#9670;&nbsp;</a></span>IDGenerators()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1IDGenerators.html">IDGenerators</a> </td>
+          <td class="memname"><a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t &gt;::<a class="el" href="classMackey_1_1IDGenerators.html">IDGenerators</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -156,20 +184,69 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Default Constructor. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1IDGenerators_ad4e041defebc49fb90c1e7d78b066cdf_cgraph.png" border="0" usemap="#classMackey_1_1IDGenerators_ad4e041defebc49fb90c1e7d78b066cdf_cgraph" alt=""/></div>
+<map name="classMackey_1_1IDGenerators_ad4e041defebc49fb90c1e7d78b066cdf_cgraph" id="classMackey_1_1IDGenerators_ad4e041defebc49fb90c1e7d78b066cdf_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data. " alt="" coords="208,5,363,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables. " alt="" coords="411,5,577,47"/>
+</map>
+</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad9fd855102a6663a9d7b3c93dc9c369d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9fd855102a6663a9d7b3c93dc9c369d">&#9670;&nbsp;</a></span>group</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9669af6c07a9ed5a91a662aef6cda1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9669af6c07a9ed5a91a662aef6cda1ed">&#9670;&nbsp;</a></span>getMackey()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rank_t, typename diff_t&gt; </div>
+template&lt;typename rank_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">rank_t <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t, diff_t &gt;::group</td>
+          <td class="memname"><a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t &gt;::getMackey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a two-level <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor out of this data. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_cgraph.png" border="0" usemap="#classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_cgraph" alt=""/></div>
+<map name="classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_cgraph" id="classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables. " alt="" coords="208,5,375,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_icgraph.png" border="0" usemap="#classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_icgraph" alt=""/></div>
+<map name="classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_icgraph" id="classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1IDGenerators.html#ad4e041defebc49fb90c1e7d78b066cdf" title="Default Constructor. " alt="" coords="209,5,363,47"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a83ac78e6d1695af40d0fa58af5255e84" title="Use the ID data to identify all possible candidates for an element. " alt="" coords="208,71,364,98"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="412,64,599,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0542bce4c4bcc9037146e04e6fe1d350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0542bce4c4bcc9037146e04e6fe1d350">&#9670;&nbsp;</a></span>group</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">rank_t <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t &gt;::group</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,16 +255,16 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 
 </div>
 </div>
-<a id="a6eb50f39a23356d50461163e578e23a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6eb50f39a23356d50461163e578e23a4">&#9670;&nbsp;</a></span>group_lower</h2>
+<a id="a6108bbb2965a14d7835b9d99167e7315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6108bbb2965a14d7835b9d99167e7315">&#9670;&nbsp;</a></span>group_lower</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rank_t, typename diff_t&gt; </div>
+template&lt;typename rank_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">rank_t <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t, diff_t &gt;::group_lower</td>
+          <td class="memname">rank_t <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t &gt;::group_lower</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -196,39 +273,39 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 
 </div>
 </div>
-<a id="a10ddb834467f6b1471375542a73d8e6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10ddb834467f6b1471375542a73d8e6f">&#9670;&nbsp;</a></span>Res</h2>
+<a id="a8512fc6a9becb6261a703e6131225e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8512fc6a9becb6261a703e6131225e3f">&#9670;&nbsp;</a></span>Res</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rank_t, typename diff_t&gt; </div>
+template&lt;typename rank_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;rank_t&gt; <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t, diff_t &gt;::Res</td>
+          <td class="memname"><a class="el" href="classMackey_1_1IDGenerators.html#a6b4c91c53aa7fe61ae93a716e891832f">matrix_t</a> <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t &gt;::Res</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The restrictions of the generators to the lower level. </p>
+<p>The restriction from our level to one lower. </p>
 
 </div>
 </div>
-<a id="a5dd4d24cfe493da4522198f03d32f078"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dd4d24cfe493da4522198f03d32f078">&#9670;&nbsp;</a></span>Tr</h2>
+<a id="a5aa6391d6fa79951f6d11e880c79081b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa6391d6fa79951f6d11e880c79081b">&#9670;&nbsp;</a></span>Tr</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rank_t, typename diff_t&gt; </div>
+template&lt;typename rank_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;rank_t&gt; <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t, diff_t &gt;::Tr</td>
+          <td class="memname"><a class="el" href="classMackey_1_1IDGenerators.html#a6b4c91c53aa7fe61ae93a716e891832f">matrix_t</a> <a class="el" href="classMackey_1_1IDGenerators.html">Mackey::IDGenerators</a>&lt; rank_t &gt;::Tr</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The transfers of the lower level generators to our level. </p>
+<p>The transfer from one level lower to our level. </p>
 
 </div>
 </div>

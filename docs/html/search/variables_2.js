@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['colors',['colors',['../classMackey_1_1MultiplicationTable.html#a11dcad2d104dfd310c8d3439fa00a4ce',1,'Mackey::MultiplicationTable']]]
+  ['colors',['colors',['../classMackey_1_1ColoredGraph.html#a29fbdcaf9f94f0f5d48e5390ba49b338',1,'Mackey::ColoredGraph']]]
 ];

@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.5</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('Factorization_8h.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Contains the Factorization class for factorizing generators.  
+<p>Contains the multiplication graph and the methods for factorizing generators.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Table_8h_source.html">Table.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Graph_8h_source.html">Graph.h</a>&quot;</code><br />
@@ -106,23 +106,31 @@ Include dependency graph for Factorization.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Factorization_8h__incl.png" border="0" usemap="#Mackey_2Factorization_8h" alt=""/></div>
 <map name="Mackey_2Factorization_8h" id="Mackey_2Factorization_8h">
-<area shape="rect" id="node2" href="Table_8h.html" title="Contains the classes and methods to form the multiplication table/graph. " alt="" coords="411,80,477,107"/>
-<area shape="rect" id="node27" href="Graph_8h.html" title="Contains weighted/colored graph classes and Dikjstra algorithms. " alt="" coords="955,528,1023,555"/>
-<area shape="rect" id="node3" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="442,155,529,181"/>
-<area shape="rect" id="node8" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="475,304,543,331"/>
-<area shape="rect" id="node4" href="MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="189,528,312,555"/>
-<area shape="rect" id="node26" href="Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="509,229,587,256"/>
-<area shape="rect" id="node9" href="Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="474,379,545,405"/>
-<area shape="rect" id="node18" href="Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="593,453,649,480"/>
-<area shape="rect" id="node23" href="Identify_8h.html" title="Contains the identification classes. " alt="" coords="374,379,450,405"/>
-<area shape="rect" id="node10" href="Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="319,453,401,480"/>
-<area shape="rect" id="node12" href="General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="526,528,605,555"/>
-<area shape="rect" id="node14" href="Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="426,453,518,480"/>
-<area shape="rect" id="node11" href="Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="427,528,501,555"/>
-<area shape="rect" id="node15" href="Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="336,528,403,555"/>
-<area shape="rect" id="node19" href="Matrix__Mixing_8h.html" title="Contains block operations on matrices. " alt="" coords="629,528,744,555"/>
-<area shape="rect" id="node20" href="ChangeBasis_8h.html" title="Contains the construction of the change of basis matrices. " alt="" coords="769,528,879,555"/>
-<area shape="rect" id="node24" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="125,453,179,480"/>
+<area shape="rect" id="node2" href="Table_8h.html" title="Contains the class and methods to form the multiplication table. " alt="" coords="185,80,250,107"/>
+<area shape="rect" id="node27" href="Graph_8h.html" title="Contains weighted/colored graph classes and Dikjstra algorithms. " alt="" coords="901,677,969,704"/>
+<area shape="rect" id="node3" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="215,155,302,181"/>
+<area shape="rect" id="node12" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="257,304,325,331"/>
+<area shape="rect" id="node4" href="MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="93,528,216,555"/>
+<area shape="rect" id="node26" href="Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="282,229,361,256"/>
+<area shape="rect" id="node8" href="Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="291,603,415,629"/>
+<area shape="rect" id="node11" href="General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="422,677,501,704"/>
+<area shape="rect" id="node13" href="Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="475,379,546,405"/>
+<area shape="rect" id="node21" href="Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="709,603,765,629"/>
+<area shape="rect" id="node25" href="Identify_8h.html" title="Contains the identification classes. " alt="" coords="253,453,329,480"/>
+<area shape="rect" id="node14" href="Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="424,453,507,480"/>
+<area shape="rect" id="node16" href="Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="542,603,634,629"/>
+<area shape="rect" id="node15" href="Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="667,677,741,704"/>
+<area shape="rect" id="node17" href="Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="525,677,592,704"/>
+<area shape="rect" id="node20" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="291,677,346,704"/>
+<area shape="rect" id="node22" href="ChangeBasis_8h.html" title="Contains the construction of the change of basis matrices. " alt="" coords="766,677,877,704"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="Factorization_8h__dep__incl.png" border="0" usemap="#Mackey_2Factorization_8hdep" alt=""/></div>
+<map name="Mackey_2Factorization_8hdep" id="Mackey_2Factorization_8hdep">
+<area shape="rect" id="node2" href="Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="13,80,156,107"/>
 </map>
 </div>
 </div>
@@ -130,6 +138,9 @@ Include dependency graph for Factorization.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationGraph.html">Mackey::MultiplicationGraph&lt; rank_t, diff_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Multiplication <a class="el" href="classMackey_1_1Graph.html" title="A directed Graph. ">Graph</a>.  <a href="classMackey_1_1MultiplicationGraph.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Factorization.html">Mackey::Factorization&lt; rank_t, diff_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factorizes generators into the given basic irreducibles and sources.  <a href="classMackey_1_1Factorization.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,7 +152,7 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the Factorization class for factorizing generators. </p>
+<div class="textblock"><p>Contains the multiplication graph and the methods for factorizing generators. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

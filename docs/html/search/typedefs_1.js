@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['literal',['Literal',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#afc07a3fc65ced03bfc30de81355ac988',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
+  ['iso_5ft',['iso_t',['../classMackey_1_1MackeyFunctor.html#a53637e79f2502411ba085d2b2a61bb67',1,'Mackey::MackeyFunctor']]]
 ];

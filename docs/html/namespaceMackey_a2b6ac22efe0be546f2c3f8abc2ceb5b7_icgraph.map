@@ -1,0 +1,9 @@
+<map id="Mackey::is_p_group" name="Mackey::is_p_group">
+<area shape="rect" id="node2" href="$namespaceMackey.html#ac9020d176548a99b3119cd7bda15941d" title="Returns all automorphisms of a finitely generated abelian group together with their inverses..." alt="" coords="192,46,377,73"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a454e5488d62aa1e8d5ff4df71aeecfa1" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="425,39,592,80"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="859,5,1026,47"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="640,68,807,109"/>
+<area shape="rect" id="node6" href="$classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="855,71,1031,112"/>
+<area shape="rect" id="node8" href="$classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="859,136,1026,177"/>
+<area shape="rect" id="node7" href="$classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="1079,71,1255,112"/>
+</map>

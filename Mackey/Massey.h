@@ -14,7 +14,7 @@ namespace Mackey {
 		rank_t normalBasis; ///<Same as basis, but normalized
 		rank_t Groups; ///<The homology group the product lives in.
 		std::array<rank_t, 2> indeterminacy; ///< The indeterminacy of the Massey product, stored as two bases
-		IDGenerators<rank_t, diff_t> boxID; ///< Identification data for the generators of the Massey product
+		IDGenerators<rank_t> boxID; ///< Identification data for the generators of the Massey product
 		bool exists; ///< If the Massey product exists
 		bool noIndeterminacy; ///<If the Massey product has no indeterminacy
 		bool isZero; ///<If the Massey product is 0.

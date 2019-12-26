@@ -1,6 +1,5 @@
 <map id="Mackey::restriction" name="Mackey::restriction">
 <area shape="rect" id="node2" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="203,5,377,32"/>
-<area shape="rect" id="node3" href="$classMackey_1_1IDGeneratorCompact.html#a26a4b6a1cf1ec6be1e63fdecaf142b66" title="Constructs the identification data for our element given the detailed identification data for all gen..." alt="" coords="190,57,390,98"/>
-<area shape="rect" id="node4" href="$classMackey_1_1internal_1_1IDGeneratorCompute.html#a39700cf08ba57766c87498975b28ec62" title="Computes the identification data. " alt="" coords="187,122,393,163"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a7b62b0d041087605dabd4ab3753f1186" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="223,188,357,215"/>
+<area shape="rect" id="node3" href="$classMackey_1_1internal_1_1IDGeneratorCompute.html#a39700cf08ba57766c87498975b28ec62" title="Computes the identification data. " alt="" coords="187,57,393,98"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a256b1e73e413a924ce2bf0e86551a928" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="223,123,357,149"/>
 </map>

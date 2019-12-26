@@ -5,7 +5,6 @@ var searchData=
   ['rankout',['rankOut',['../classMackey_1_1Junction.html#afe400bc60b84966b933fd57c11400607',1,'Mackey::Junction']]],
   ['realsize',['realsize',['../classMackey_1_1Factorization.html#af5f29d56f33e4835aa699d9d6708b6c8',1,'Mackey::Factorization']]],
   ['reps',['reps',['../classGroupSpecific_1_1Variables.html#a5504789b0b60050e6ea223fdeb84874a',1,'GroupSpecific::Variables::reps()'],['../namespaceMackey.html#af282e8433677f2812cb242359f4cd0c1',1,'Mackey::reps()']]],
-  ['res',['Res',['../classMackey_1_1IDGenerators.html#a10ddb834467f6b1471375542a73d8e6f',1,'Mackey::IDGenerators::Res()'],['../classMackey_1_1MackeyFunctor.html#a9299f915835edaa2b67880bfe6330502',1,'Mackey::MackeyFunctor::Res()']]],
-  ['restriction',['restriction',['../classMackey_1_1IDGeneratorCompact.html#af3fa6fddc65d2cf84691da13773257ac',1,'Mackey::IDGeneratorCompact']]],
+  ['res',['Res',['../classMackey_1_1IDGenerators.html#a8512fc6a9becb6261a703e6131225e3f',1,'Mackey::IDGenerators::Res()'],['../classMackey_1_1MackeyFunctor.html#a2a659b146972121a5d180c8c38909780',1,'Mackey::MackeyFunctor::Res()']]],
   ['righttocanon',['RighttoCanon',['../classMackey_1_1ChangeBasis.html#abde8b2dd297be6e5bff1f72c2a3cd208',1,'Mackey::ChangeBasis']]]
 ];

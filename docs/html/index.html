@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.5</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -109,13 +109,16 @@ Requirements</h1>
 <ul>
 <li>C++17 and the standard library.</li>
 <li><a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. I've tested the code with <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> 3.3.7 though newer versions shouldn't break compatibility.</li>
-<li>Optional: For improved performance you can use the Intel MKL with <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> and further combine with OpenMP for multithreading.</li>
-<li>Optional: To draw the multiplication graphs you will need Graphviz.</li>
+</ul>
+<p>Optionally:</p><ul>
+<li>For improved performance you can use the Intel MKL with <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> and further combine with OpenMP for multithreading.</li>
+<li>For serialization we support the <a href="https://uscilab.github.io/cereal">Cereal</a> library.</li>
+<li>To draw the multiplication graphs you can use <a href="https://www.graphviz.org">Graphviz</a>.</li>
 </ul>
 <h1><a class="anchor" id="install"></a>
 Installation</h1>
 <ul>
-<li>To install simply clone/download the <a href="https://github.com/NickG-Math/Mackey">repository</a> and include it in your path. You will also need to do the same with <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a>.</li>
+<li>To install simply clone/download the <a href="https://github.com/NickG-Math/Mackey">repository</a> and include it in your path. You will also need to include <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> and, if serialization is desired, Cereal.</li>
 <li>See the page <a class="el" href="use.html">How to Use</a> for a tutorial on using the library.</li>
 <li>As for compiler support, I have tested the code with the following C++ compilers: GCC 9.2 (Linux), Clang 10 (Linux and MacOS), Intel Compiler 19 (Linux and Windows), MSVC 19 (Windows). Remember to use the option <code>-std=c++17</code>. For more information on compiler options, see the <a class="el" href="perf.html">Performance</a> page.</li>
 </ul>
@@ -123,7 +126,7 @@ Installation</h1>
 Current Status</h1>
 <ul>
 <li>The project is almost complete for \(G\) a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual representations; we call these "standard chains". The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in <a class="el" href="use.html#how">Step 0: Setting the Group Parameters</a>. We have implemented this for all groups \(G=C_{2^n}\).</li>
-<li>The one thing that hasn't been implemented for prime-power cyclic groups are Frobenius relations: The multiplicative structure is computed levelwise, but this could be made more effective using the Frobenius relations.</li>
+<li>What hasn't been implemented for prime-power cyclic groups are Frobenius relations: The multiplicative structure is computed levelwise, but this could be done more effectively using the Frobenius relations.</li>
 <li>For general cyclic groups a few aspects that involve transferring need reworking. The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, so care has to be taken to account for all these extra transfers and restrictions. Ultimately this is the only part that needs changing.</li>
 <li>The bulletpoint above also applies to general finite abelian groups. We also need to specify the order of the elements of the group and how they relate to the subgroup diagram to form our equivariant bases.</li>
 <li>For non abelian groups we have the added complication of needing the real representation theory of our group. And of course we need the standard chains for these groups as well.</li>
@@ -133,7 +136,7 @@ Current Status</h1>
 Documentation</h1>
 <p>This documentation is organized in pages as follows:</p>
 <ul>
-<li>The <a href="namespaces.html">Related pages</a> consist of the pages <a class="el" href="index.html">General Information</a>, <a class="el" href="math.html">From Math to Code</a>, <a class="el" href="use.html">How to Use</a>, <a class="el" href="algo.html">Algorithm Details</a>, <a class="el" href="perf.html">Performance</a>. These explain how the program works, starting from the math and moving to slightly more technical territory regarding the actual implementation.</li>
+<li>The <a href="namespaces.html">Related pages</a> consist of the pages <a class="el" href="index.html">General Information</a>, <a class="el" href="math.html">From Math to Code</a>, <a class="el" href="use.html">How to Use</a>, <a class="el" href="algo.html">Select Implementation Details</a>, <a class="el" href="perf.html">Performance</a>. These explain how the program works, starting from the math and moving to slightly more technical territory regarding the actual implementation.</li>
 <li>The pages <a href="namespaces.html">Namespaces</a>, <a href="annotated.html">Classes</a> and <a href="files.html">Files</a> are automatically generated by doxygen from the source code (and comments in the source code). These offer a much more indepth look into all classes and functions of this project. Note that only public and protected members and named namespaces are documented.</li>
 <li>I recommend starting with the <a href="namespaces.html">related pages</a> before moving to the automatically generated ones. If you just want to use this library for computations, you only really have to go over the <a class="el" href="use.html#how">Step 0: Setting the Group Parameters</a> section. </li>
 </ul>

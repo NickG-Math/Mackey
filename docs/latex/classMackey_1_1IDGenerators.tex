@@ -1,5 +1,5 @@
-\hypertarget{classMackey_1_1IDGenerators}{}\section{Mackey\+:\+:I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
-\label{classMackey_1_1IDGenerators}\index{Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\hypertarget{classMackey_1_1IDGenerators}{}\section{Mackey\+:\+:I\+D\+Generators$<$ rank\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1IDGenerators}\index{Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t $>$@{Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t $>$}}
 
 
 Stores detailed identification data for the generators in non cyclic homology groups using the \hyperlink{namespaceMackey}{Mackey} functor structure.  
@@ -9,90 +9,144 @@ Stores detailed identification data for the generators in non cyclic homology gr
 
 {\ttfamily \#include $<$Identify.\+h$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1 $>$ \hyperlink{classMackey_1_1IDGenerators_a6b4c91c53aa7fe61ae93a716e891832f}{matrix\+\_\+t}
+\begin{DoxyCompactList}\small\item\em The matrix type of the transfer and restriction matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classMackey_1_1IDGenerators_a2f7d0d382aca772c12e27a3c65510643}{I\+D\+Generators} ()
-\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classMackey_1_1IDGenerators_ad4e041defebc49fb90c1e7d78b066cdf}{I\+D\+Generators} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed}{get\+Mackey} () const
+\begin{DoxyCompactList}\small\item\em Get a two-\/level \hyperlink{namespaceMackey}{Mackey} functor out of this data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators_ad9fd855102a6663a9d7b3c93dc9c369d}{group}
+rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators_a0542bce4c4bcc9037146e04e6fe1d350}{group}
 \begin{DoxyCompactList}\small\item\em The homology group at our level. \end{DoxyCompactList}\item 
-rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators_a6eb50f39a23356d50461163e578e23a4}{group\+\_\+lower}
+rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators_a6108bbb2965a14d7835b9d99167e7315}{group\+\_\+lower}
 \begin{DoxyCompactList}\small\item\em The homology group at one level lower. \end{DoxyCompactList}\item 
-std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1IDGenerators_a5dd4d24cfe493da4522198f03d32f078}{Tr}
-\begin{DoxyCompactList}\small\item\em The transfers of the lower level generators to our level. \end{DoxyCompactList}\item 
-std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1IDGenerators_a10ddb834467f6b1471375542a73d8e6f}{Res}
-\begin{DoxyCompactList}\small\item\em The restrictions of the generators to the lower level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classMackey_1_1IDGenerators_a6b4c91c53aa7fe61ae93a716e891832f}{matrix\+\_\+t} \hyperlink{classMackey_1_1IDGenerators_a5aa6391d6fa79951f6d11e880c79081b}{Tr}
+\begin{DoxyCompactList}\small\item\em The transfer from one level lower to our level. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1IDGenerators_a6b4c91c53aa7fe61ae93a716e891832f}{matrix\+\_\+t} \hyperlink{classMackey_1_1IDGenerators_a8512fc6a9becb6261a703e6131225e3f}{Res}
+\begin{DoxyCompactList}\small\item\em The restriction from our level to one lower. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
-class Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$}
+\subsubsection*{template$<$typename rank\+\_\+t$>$\newline
+class Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t $>$}
 
 Stores detailed identification data for the generators in non cyclic homology groups using the \hyperlink{namespaceMackey}{Mackey} functor structure. 
 
-diff\+\_\+t is used as a template to cleanly get the coefficient type. 
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a6b4c91c53aa7fe61ae93a716e891832f}\label{classMackey_1_1IDGenerators_a6b4c91c53aa7fe61ae93a716e891832f}} 
+\index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!matrix\+\_\+t@{matrix\+\_\+t}}
+\index{matrix\+\_\+t@{matrix\+\_\+t}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
+\subsubsection{\texorpdfstring{matrix\+\_\+t}{matrix\_t}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
+typedef Eigen\+::\+Matrix$<$typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1$>$ \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t $>$\+::\hyperlink{classMackey_1_1IDGenerators_a6b4c91c53aa7fe61ae93a716e891832f}{matrix\+\_\+t}}
+
+
+
+The matrix type of the transfer and restriction matrices. 
+
+
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classMackey_1_1IDGenerators_a2f7d0d382aca772c12e27a3c65510643}\label{classMackey_1_1IDGenerators_a2f7d0d382aca772c12e27a3c65510643}} 
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_ad4e041defebc49fb90c1e7d78b066cdf}\label{classMackey_1_1IDGenerators_ad4e041defebc49fb90c1e7d78b066cdf}} 
 \index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!I\+D\+Generators@{I\+D\+Generators}}
 \index{I\+D\+Generators@{I\+D\+Generators}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
 \subsubsection{\texorpdfstring{I\+D\+Generators()}{IDGenerators()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-\hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t $>$\+::\hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Default Constructor. 
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1IDGenerators_ad4e041defebc49fb90c1e7d78b066cdf_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed}\label{classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed}} 
+\index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!get\+Mackey@{get\+Mackey}}
+\index{get\+Mackey@{get\+Mackey}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
+\subsubsection{\texorpdfstring{get\+Mackey()}{getMackey()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t $>$\+::get\+Mackey (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a two-\/level \hyperlink{namespaceMackey}{Mackey} functor out of this data. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1IDGenerators_a9669af6c07a9ed5a91a662aef6cda1ed_icgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classMackey_1_1IDGenerators_ad9fd855102a6663a9d7b3c93dc9c369d}\label{classMackey_1_1IDGenerators_ad9fd855102a6663a9d7b3c93dc9c369d}} 
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a0542bce4c4bcc9037146e04e6fe1d350}\label{classMackey_1_1IDGenerators_a0542bce4c4bcc9037146e04e6fe1d350}} 
 \index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!group@{group}}
 \index{group@{group}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
 \subsubsection{\texorpdfstring{group}{group}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::group}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t $>$\+::group}
 
 
 
 The homology group at our level. 
 
-\mbox{\Hypertarget{classMackey_1_1IDGenerators_a6eb50f39a23356d50461163e578e23a4}\label{classMackey_1_1IDGenerators_a6eb50f39a23356d50461163e578e23a4}} 
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a6108bbb2965a14d7835b9d99167e7315}\label{classMackey_1_1IDGenerators_a6108bbb2965a14d7835b9d99167e7315}} 
 \index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!group\+\_\+lower@{group\+\_\+lower}}
 \index{group\+\_\+lower@{group\+\_\+lower}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
 \subsubsection{\texorpdfstring{group\+\_\+lower}{group\_lower}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::group\+\_\+lower}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t $>$\+::group\+\_\+lower}
 
 
 
 The homology group at one level lower. 
 
-\mbox{\Hypertarget{classMackey_1_1IDGenerators_a10ddb834467f6b1471375542a73d8e6f}\label{classMackey_1_1IDGenerators_a10ddb834467f6b1471375542a73d8e6f}} 
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a8512fc6a9becb6261a703e6131225e3f}\label{classMackey_1_1IDGenerators_a8512fc6a9becb6261a703e6131225e3f}} 
 \index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!Res@{Res}}
 \index{Res@{Res}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
 \subsubsection{\texorpdfstring{Res}{Res}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Res}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1IDGenerators_a6b4c91c53aa7fe61ae93a716e891832f}{matrix\+\_\+t} \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t $>$\+::Res}
 
 
 
-The restrictions of the generators to the lower level. 
+The restriction from our level to one lower. 
 
-\mbox{\Hypertarget{classMackey_1_1IDGenerators_a5dd4d24cfe493da4522198f03d32f078}\label{classMackey_1_1IDGenerators_a5dd4d24cfe493da4522198f03d32f078}} 
+\mbox{\Hypertarget{classMackey_1_1IDGenerators_a5aa6391d6fa79951f6d11e880c79081b}\label{classMackey_1_1IDGenerators_a5aa6391d6fa79951f6d11e880c79081b}} 
 \index{Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}!Tr@{Tr}}
 \index{Tr@{Tr}!Mackey\+::\+I\+D\+Generators@{Mackey\+::\+I\+D\+Generators}}
 \subsubsection{\texorpdfstring{Tr}{Tr}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Tr}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1IDGenerators_a6b4c91c53aa7fe61ae93a716e891832f}{matrix\+\_\+t} \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators}$<$ rank\+\_\+t $>$\+::Tr}
 
 
 
-The transfers of the lower level generators to our level. 
+The transfer from one level lower to our level. 
 
 
 

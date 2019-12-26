@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['polynomial',['Polynomial',['../classMackey_1_1Polynomial.html',1,'Mackey']]],
-  ['productgen',['ProductGen',['../classMackey_1_1internal_1_1ProductGen.html',1,'Mackey::internal']]]
+  ['numtraits_3c_20z_3c_20n_20_3e_20_3e',['NumTraits&lt; Z&lt; N &gt; &gt;',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html',1,'Eigen']]]
 ];

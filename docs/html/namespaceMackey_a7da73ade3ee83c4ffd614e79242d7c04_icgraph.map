@@ -1,5 +1,7 @@
 <map id="Mackey::Reindex" name="Mackey::Reindex">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="204,5,335,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#aa98cd58919c2f716d8df7d61ef1f5c07" title="Computes the Massey product of three generators in the RO(G) homology given their level..." alt="" coords="198,56,341,83"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="177,107,361,149"/>
+<area shape="rect" id="node2" href="$classMackey_1_1AdditiveStructure.html#a2638212adc9b1fdacf0a50d9fb23cf0d" title="Retrieve the Mackey functor for the given degree. " alt="" coords="181,5,357,47"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="204,71,335,98"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#ab75d7bcfa2d92d01bea0d5eef9f48398" title="Computes the Massey product of three generators in the RO(G) homology given their level..." alt="" coords="198,122,341,149"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="177,173,361,215"/>
+<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector. " alt="" coords="409,173,593,215"/>
 </map>

@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.5</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -91,8 +91,14 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 &#160;
 
 <h3><a id="index_a"></a>- a -</h3><ul>
-<li>antitrack()
-: <a class="el" href="classMackey_1_1TableInput.html#ae52e7e3ab4605a6ec2d658671db8f896">Mackey::TableInput&lt; rank_t, diff_t &gt;</a>
+<li>AdditiveStructure()
+: <a class="el" href="classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab">Mackey::AdditiveStructure&lt; rank_t, diff_t &gt;</a>
+</li>
+<li>apply()
+: <a class="el" href="classMackey_1_1MackeyFunctor.html#a24b7b8ce61be39ea51432d0d3737a55f">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
+</li>
+<li>automorphisms()
+: <a class="el" href="classMackey_1_1MackeyFunctor.html#a454e5488d62aa1e8d5ff4df71aeecfa1">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
 </li>
 </ul>
 
@@ -112,16 +118,16 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classMackey_1_1Chains.html#ade226a800be59b53f1f1850e0753dbcb">Mackey::Chains&lt; rank_t, diff_t &gt;</a>
 </li>
 <li>ChainsBox()
-: <a class="el" href="classMackey_1_1ChainsBox.html#a30bb1f7fa7ca1e655c9d8b3501f98369">Mackey::ChainsBox&lt; rank_t, diff_t &gt;</a>
+: <a class="el" href="classMackey_1_1ChainsBox.html#aa5b4853612f378261b6d321da748f576">Mackey::ChainsBox&lt; rank_t, diff_t &gt;</a>
 </li>
 <li>ChangeBasis()
-: <a class="el" href="classMackey_1_1ChangeBasis.html#a036c1f54ffb4cf4115efa2fab60c354b">Mackey::ChangeBasis&lt; rank_t &gt;</a>
+: <a class="el" href="classMackey_1_1ChangeBasis.html#a7edd090a5261e776f8e0221541822a87">Mackey::ChangeBasis&lt; rank_t &gt;</a>
 </li>
 <li>ColoredGraph()
-: <a class="el" href="classMackey_1_1ColoredGraph.html#adada856cdbfc508b2df15919f45a1808">Mackey::ColoredGraph</a>
+: <a class="el" href="classMackey_1_1ColoredGraph.html#a367055b4a615119cc767a738f6e9e719">Mackey::ColoredGraph</a>
 </li>
 <li>compare()
-: <a class="el" href="classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
+: <a class="el" href="classMackey_1_1MackeyFunctor.html#a001f4a56e79e68ca3fef808e6b0ccca4">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
 </li>
 <li>compute_with_sources()
 : <a class="el" href="classMackey_1_1Factorization.html#a2e135a37687fc3d69cd16a8729dd19eb">Mackey::Factorization&lt; rank_t, diff_t &gt;</a>
@@ -169,6 +175,10 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>getelement()
 : <a class="el" href="classMackey_1_1Factorization.html#ac412da750df7b3b35ca87c3b694fd732">Mackey::Factorization&lt; rank_t, diff_t &gt;</a>
 </li>
+<li>getMackey()
+: <a class="el" href="classMackey_1_1AdditiveStructure.html#ad18c28b9da58ec8b1c1579ace5953177">Mackey::AdditiveStructure&lt; rank_t, diff_t &gt;</a>
+, <a class="el" href="classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed">Mackey::IDGenerators&lt; rank_t &gt;</a>
+</li>
 <li>getname()
 : <a class="el" href="classMackey_1_1Factorization.html#ac5088227511baaaec1f62802b75d3a9e">Mackey::Factorization&lt; rank_t, diff_t &gt;</a>
 </li>
@@ -176,7 +186,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classMackey_1_1Factorization.html#aac1009ac7388e346e5fe4754686b28b7">Mackey::Factorization&lt; rank_t, diff_t &gt;</a>
 </li>
 <li>getsphere()
-: <a class="el" href="classMackey_1_1TableInput.html#ace924319da8b66c82214a49277f9e3d3">Mackey::TableInput&lt; rank_t, diff_t &gt;</a>
+: <a class="el" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999">Mackey::MultiplicationTable&lt; rank_t, diff_t &gt;</a>
 </li>
 <li>Graph()
 : <a class="el" href="classMackey_1_1Graph.html#a979aefd7d97cd0344637180c00e7db1b">Mackey::Graph&lt; T &gt;</a>
@@ -188,24 +198,27 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a id="index_h"></a>- h -</h3><ul>
-<li>hash()
-: <a class="el" href="classMackey_1_1TableInput.html#aff13b1ef901103816a6ed49bae688629">Mackey::TableInput&lt; rank_t, diff_t &gt;</a>
-</li>
 <li>Homology()
-: <a class="el" href="classMackey_1_1Homology.html#af42f480509ef68df47308c0f506d44c8">Mackey::Homology&lt; rank_t, diff_t &gt;</a>
+: <a class="el" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2">Mackey::Homology&lt; rank_t, diff_t &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
-<li>IDGeneratorCompact()
-: <a class="el" href="classMackey_1_1IDGeneratorCompact.html#a26a4b6a1cf1ec6be1e63fdecaf142b66">Mackey::IDGeneratorCompact&lt; rank_t, diff_t &gt;</a>
+<li>identify()
+: <a class="el" href="classMackey_1_1AdditiveStructure.html#a07887e78e182c1215fc7c8af3f385529">Mackey::AdditiveStructure&lt; rank_t, diff_t &gt;</a>
 </li>
 <li>IDGeneratorCompute()
 : <a class="el" href="classMackey_1_1internal_1_1IDGeneratorCompute.html#a39700cf08ba57766c87498975b28ec62">Mackey::internal::IDGeneratorCompute&lt; rank_t, diff_t &gt;</a>
 </li>
 <li>IDGenerators()
-: <a class="el" href="classMackey_1_1IDGenerators.html#a2f7d0d382aca772c12e27a3c65510643">Mackey::IDGenerators&lt; rank_t, diff_t &gt;</a>
+: <a class="el" href="classMackey_1_1IDGenerators.html#ad4e041defebc49fb90c1e7d78b066cdf">Mackey::IDGenerators&lt; rank_t &gt;</a>
+</li>
+<li>isomorphic()
+: <a class="el" href="classMackey_1_1MackeyFunctor.html#a8cd5c9415c0c63c6d79dfa9b0067f416">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
+</li>
+<li>isomorphism_class()
+: <a class="el" href="classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
 </li>
 </ul>
 
@@ -232,7 +245,10 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
 </li>
 <li>Massey()
-: <a class="el" href="classMackey_1_1Massey.html#a40730505997c03b7c5c05e022ea23f47">Mackey::Massey&lt; rank_t, diff_t &gt;</a>
+: <a class="el" href="classMackey_1_1Massey.html#a9e48aaa79f409e96ae2051719710315c">Mackey::Massey&lt; rank_t, diff_t &gt;</a>
+</li>
+<li>MultiplicationGraph()
+: <a class="el" href="classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca">Mackey::MultiplicationGraph&lt; rank_t, diff_t &gt;</a>
 </li>
 <li>MultiplicationTable()
 : <a class="el" href="classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b">Mackey::MultiplicationTable&lt; rank_t, diff_t &gt;</a>
@@ -241,8 +257,11 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a id="index_n"></a>- n -</h3><ul>
-<li>normalize()
-: <a class="el" href="classMackey_1_1MackeyFunctor.html#ae63fdf151f6ee653d6cb50d442948e30">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
+<li>normalizeMackey()
+: <a class="el" href="classMackey_1_1MackeyFunctor.html#a08150b3655fc27a7298d68b1857d830f">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
+</li>
+<li>notation()
+: <a class="el" href="classMackey_1_1MackeyFunctor.html#a2b333a786e44000c96ffd087a81a1d17">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
 </li>
 </ul>
 
@@ -273,8 +292,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="classZ_3_012_01_4.html#a69f54f9228c40f6b086c9a86a9869c09">Z&lt; 2 &gt;</a>
 </li>
 <li>operator!=()
-: <a class="el" href="classMackey_1_1IDGeneratorCompact.html#a6c421e5744b9bc1b6215f2eea864fbdd">Mackey::IDGeneratorCompact&lt; rank_t, diff_t &gt;</a>
-, <a class="el" href="classZ.html#a91a2c48fff9d0b4b11e3e7da09c68b7b">Z&lt; N &gt;</a>
+: <a class="el" href="classZ.html#a91a2c48fff9d0b4b11e3e7da09c68b7b">Z&lt; N &gt;</a>
 , <a class="el" href="classZ_3_012_01_4.html#a0003dbeab72988aea1e4b8034f5fa29d">Z&lt; 2 &gt;</a>
 </li>
 <li>operator%()
@@ -291,7 +309,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>operator-()
 : <a class="el" href="classZ.html#ac4751d1ef56abaee7ed90f29939324f2">Z&lt; N &gt;</a>
-, <a class="el" href="classZ_3_012_01_4.html#a72004bd105e0df1330f7c1f61919b9dd">Z&lt; 2 &gt;</a>
+, <a class="el" href="classZ_3_012_01_4.html#a4a983a0acbe231f84fdc948c64996a55">Z&lt; 2 &gt;</a>
 </li>
 <li>operator-=()
 : <a class="el" href="classZ.html#ad7620de459cf2248f9f02e51fc5b5350">Z&lt; N &gt;</a>
@@ -306,8 +324,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="classZ_3_012_01_4.html#a6e1b77419935d4f017ffab84df3ca520">Z&lt; 2 &gt;</a>
 </li>
 <li>operator==()
-: <a class="el" href="classMackey_1_1IDGeneratorCompact.html#a44f930a793451c67a34101809930a2e6">Mackey::IDGeneratorCompact&lt; rank_t, diff_t &gt;</a>
-, <a class="el" href="classZ.html#aee67aee77949c30eb8a0645d7248044c">Z&lt; N &gt;</a>
+: <a class="el" href="classZ.html#aee67aee77949c30eb8a0645d7248044c">Z&lt; N &gt;</a>
 , <a class="el" href="classZ_3_012_01_4.html#a98508d39c9695bdda292044170ef5718">Z&lt; 2 &gt;</a>
 </li>
 </ul>
@@ -318,7 +335,19 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classMackey_1_1Polynomial.html#ad2981034fac81d4ad3f2751c757af5d3">Mackey::Polynomial&lt; T &gt;</a>
 </li>
 <li>Polynomial()
-: <a class="el" href="classMackey_1_1Polynomial.html#a665435bc329352f11b1e424c126d914b">Mackey::Polynomial&lt; T &gt;</a>
+: <a class="el" href="classMackey_1_1Polynomial.html#a0e0bda8d8d0d5ade1cbb0b0cc79b8d56">Mackey::Polynomial&lt; T &gt;</a>
+</li>
+<li>print()
+: <a class="el" href="classMackey_1_1MackeyFunctor.html#a3f694cd4f0a234be4531c21771772b50">Mackey::MackeyFunctor&lt; rank_t &gt;</a>
+</li>
+<li>print_answer()
+: <a class="el" href="classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa">Mackey::AdditiveStructure&lt; rank_t, diff_t &gt;</a>
+</li>
+<li>print_unique()
+: <a class="el" href="classMackey_1_1AdditiveStructure.html#a82ea44d284efe410fb5d43c6a41dd3ed">Mackey::AdditiveStructure&lt; rank_t, diff_t &gt;</a>
+</li>
+<li>print_unknown()
+: <a class="el" href="classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c">Mackey::AdditiveStructure&lt; rank_t, diff_t &gt;</a>
 </li>
 </ul>
 
@@ -335,14 +364,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classMackey_1_1Green.html#a094a394ff8e1f4801fb3a5f09e071def">Mackey::Green&lt; rank_t, diff_t &gt;</a>
 </li>
 <li>Smith()
-: <a class="el" href="classMackey_1_1Smith.html#a43f657bfa335acf5fe10dd864326c0aa">Mackey::Smith&lt; smithS_t, smithR_t, smithC_t &gt;</a>
-</li>
-</ul>
-
-
-<h3><a id="index_t"></a>- t -</h3><ul>
-<li>TableInput()
-: <a class="el" href="classMackey_1_1TableInput.html#ac2cad07d3e3188d9254d39affad86713">Mackey::TableInput&lt; rank_t, diff_t &gt;</a>
+: <a class="el" href="classMackey_1_1Smith.html#a534aaf0e0b2da7d312d80ad7d67ae794">Mackey::Smith&lt; smithS_t, smithR_t, smithC_t &gt;</a>
 </li>
 </ul>
 
@@ -357,7 +379,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <h3><a id="index_z"></a>- z -</h3><ul>
 <li>Z()
 : <a class="el" href="classZ.html#a21a5a03bc44e0a76607d1b89dc9e31cb">Z&lt; N &gt;</a>
-, <a class="el" href="classZ_3_012_01_4.html#a42d7b146ce0e257ea7a7cc79e6140872">Z&lt; 2 &gt;</a>
+, <a class="el" href="classZ_3_012_01_4.html#a2007d91fc07c751853ae945c0ece1c94">Z&lt; 2 &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

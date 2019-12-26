@@ -35,12 +35,14 @@ namespace Mackey {
 
 
 		/// Construct given the edges of the graph
-		Graph(std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) { 
-			path.resize(number_of_nodes); weightedDistance.assign(number_of_nodes, -1);
-		}
+		Graph(std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) {}
 
 		/// A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations.
 		void computeWithSource(int givensource) {
+			if (path.size() == 0) {
+				path.resize(number_of_nodes); 
+				weightedDistance.assign(number_of_nodes, -1);
+			}
 			source = givensource;
 			static_cast<T*>(this)->computePath();
 		};
@@ -59,10 +61,12 @@ namespace Mackey {
 		/// Writes a graph.dot file representing the graph using node names.
 		void draw(const std::vector<std::string>&);
 
-	protected:
+		std::vector<std::vector<int>> edges; ///<The edges of the graph
+
 		///Default constructor
 		Graph() {};
-		std::vector<std::vector<int>> edges; ///<The edges of the graph
+
+	protected:
 		int source; ///<The source of the graph
 	private:
 		//These are defined in the inherited classes
@@ -197,17 +201,30 @@ namespace Mackey {
 	/// A directed Graph with two colors
 	class ColoredGraph : public Graph<ColoredGraph> {
 	public:
+
+		/// Default Constructor
+		ColoredGraph() {};
+
+
 		/// Construct given the edges and colors
 		ColoredGraph(std::vector<std::vector<int>>& edges, std::vector<std::vector<char>>& colors) : Graph(edges), colors(colors) {}
+
 
 		/// Writes a graph.dot file representing the colored graph (using red and blue). The nodes are unnamed points.
 		void draw();
 		/// Writes a graph.dot file representing the colored graph (using red and blue) and named nodes
 		void draw(const std::vector<std::string>&);
 
+		/// Writes a graph.dot file representing the colored graph and named nodes and color gradation for each edge
+		void draw(const std::vector<std::string>&, const std::vector<std::vector<int>>&, int);
+
+		/// Writes a graph.dot file representing the colored graph and named nodes and named edges
+		void draw(const std::vector<std::string>&, const std::vector<std::vector<int>>&, std::vector<std::string>&);
+
+		std::vector<std::vector<char>> colors;	///<The colors of the graph
+
 	private:
 
-		std::vector<std::vector<char>> colors;		///<The colors of the graph
 		void computePath();
 		void constructDual();
 		std::vector<int> adjustpath(std::vector<int>& path);
@@ -326,4 +343,51 @@ namespace Mackey {
 		file << "}";
 		file.close();
 	}
+
+	std::string RGB(int r, int g, int b)
+	{
+		char hex[16];
+		std::snprintf(hex, sizeof(hex), "%02x%02x%02x", r,g,b);
+		return hex;
+	}
+
+
+	void ColoredGraph::draw(const std::vector<std::string>& names, const std::vector<std::vector<int>>& edge_color_gradient, int max_gradient_number) {
+		std::ofstream file;
+		file.open("graph.dot");
+		file << "digraph G{ \n";
+		int green = 256 / (max_gradient_number+1);
+		for (int i = 0; i < number_of_nodes; i++) {
+			for (std::vector<int>::size_type j = 0; j < edges[i].size(); j++) {
+				file << "\"" << names[i] << "\"" << "->" << "\"" << names[edges[i][j]] << "\" [color=\"#";
+				if (colors[i][j] == 0) {//red based
+					file << RGB(255, green * (edge_color_gradient[i][j]+1), 0);
+				}
+				else {// blue based
+					file << RGB(0, green * (edge_color_gradient[i][j] + 1), 255);
+				}
+				file <<  "\"]\n";
+			}
+		}
+		file << "}";
+		file.close();
+	}
+
+
+	void ColoredGraph::draw(const std::vector<std::string>& names, const std::vector<std::vector<int>>& edgeid, std::vector<std::string>& edgenames) {
+		std::ofstream file;
+		file.open("graph.dot");
+		file << "digraph G{ \n";
+		for (int i = 0; i < number_of_nodes; i++) {
+			for (std::vector<int>::size_type j = 0; j < edges[i].size(); j++) {
+				if (colors[i][j] == 1 || edgeid[i][j]==-1)
+					file << "\"" << names[i] << "\"" << "->" << "\"" << names[edges[i][j]] << "\" [color=\"blue\"]\n";
+				else
+					file << "\"" << names[i] << "\"" << "->" << "\"" << names[edges[i][j]] << "\" [color=\"red\", label =\"" << edgenames[edgeid[i][j]] << "\"]\n";
+			}
+		}
+		file << "}";
+		file.close();
+	}
+
 }

@@ -84,7 +84,7 @@ namespace Mackey {
 		}
 		for (int i = 0; i < power; i++) { //for each level
 			if (!H[i].isZero)
-				M.Weyl[i]= action(H[i], J.level[i].rank);
+				M.Weyl[i] = action(H[i], J.level[i].rank);
 		}
 		return M;
 	}
@@ -102,20 +102,6 @@ namespace Mackey {
 		}
 		return M;
 	}
-
-
-	///Computes the Mackey functor homology of the given sphere for the given degree
-	template<typename rank_t, typename diff_t, typename deg_t>
-	MackeyFunctor<rank_t> ROHomology(int k, const deg_t& sphere)
-	{
-		Chains<rank_t, diff_t> A = ROChains<rank_t, diff_t>(sphere);
-		//k = Reindex(k, sphere);
-		Junction<rank_t, diff_t> J(A, k);
-		Levels<Junction<rank_t, diff_t> > L(J);
-		return HomologyLevels<rank_t, diff_t>(L);
-	}
-
-
 
 	///Computes the product of two generators in the RO(G) homology given their level, degrees and selections (if noncyclic)
 	template<typename rank_t, typename diff_t, typename deg_t>
@@ -141,7 +127,7 @@ namespace Mackey {
 
 	///Computes the Massey product of three generators in the RO(G) homology given their level, degrees and selections (if noncyclic)
 	template<typename rank_t, typename diff_t, typename deg_t>
-	Massey<rank_t,diff_t> ROMassey(int level, const deg_t& first, const deg_t& second, const deg_t& third,int selectFirst, int selectSecond, int selectThird) {
+	Massey<rank_t, diff_t> ROMassey(int level, const deg_t& first, const deg_t& second, const deg_t& third, int selectFirst, int selectSecond, int selectThird) {
 		auto refirst = Reindex(first);
 		auto resecond = Reindex(second);
 		auto rethird = Reindex(third);
@@ -154,13 +140,13 @@ namespace Mackey {
 		Chains<rank_t, diff_t> C = ROChains<rank_t, diff_t>(firstsphere);
 		Chains<rank_t, diff_t> D = ROChains<rank_t, diff_t>(secondsphere);
 		Chains<rank_t, diff_t> E = ROChains<rank_t, diff_t>(thirdsphere);
-		return Massey<rank_t,diff_t>(C, D, E, level, degreeC, degreeD, degreeE, selectFirst, selectSecond, selectThird);
+		return Massey<rank_t, diff_t>(C, D, E, level, degreeC, degreeD, degreeE, selectFirst, selectSecond, selectThird);
 	}
 
 	///Computes the Massey product of three generators in the RO(G) homology given their level, degrees and default 0,0,0 selections (if noncyclic)
 	template<typename rank_t, typename diff_t, typename deg_t>
 	inline Massey<rank_t, diff_t> ROMassey(int level, const deg_t& first, const deg_t& second, const deg_t& third) {
-		return ROMassey<rank_t,diff_t,deg_t>(level, first, second, third, 0,0,0);
+		return ROMassey<rank_t, diff_t, deg_t>(level, first, second, third, 0, 0, 0);
 	}
 
 

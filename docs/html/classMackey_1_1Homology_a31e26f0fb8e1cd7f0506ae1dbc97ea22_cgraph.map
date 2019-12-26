@@ -2,4 +2,6 @@
 <area shape="rect" id="node2" href="$namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="256,5,389,32"/>
 <area shape="rect" id="node3" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="301,56,344,83"/>
 <area shape="rect" id="node4" href="$namespaceMackey.html#a782d9ce52543c3ae3520b4859dda3240" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="259,107,386,133"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given abelian group. " alt="" coords="270,157,375,184"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="437,157,535,184"/>
 </map>

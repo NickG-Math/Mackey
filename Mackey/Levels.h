@@ -14,9 +14,7 @@ namespace Mackey {
 		Eigen::Matrix<Scalar, 1, -1> transferred(rank.size());
 		Scalar cutoff = intexp(power - level);
 		for (int i = 0; i < transferred.size(); i++) //when Eigen gets iterators we can replace this with auto
-		{
 			transferred[i] = std::min(rank[i], cutoff);
-		}
 		return transferred;
 	}
 
@@ -24,9 +22,8 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	diff_t transfer(const diff_t& diff, const rank_t& domain, rank_t& domain_top, const rank_t& range, rank_t& range_top, int level) {
 		auto n = intexp(power - level);
-		if (diff.size() == 0) {
+		if (diff.size() == 0)
 			return diff;
-		}
 		diff_t transfer(summation(range_top), summation(domain_top));
 		std::vector<int> keep;
 		keep.reserve(range.size() * n);
@@ -34,9 +31,8 @@ namespace Mackey {
 		int j = 0;
 		for (int i = 0; i < range.size(); i++) {
 			while (j < n + sum + range(i) && j < diff.rows()) {
-				if (!(n + sum <= j && j <= range(i) + sum - 1)) {
+				if (!(n + sum <= j && j <= range(i) + sum - 1))
 					keep.push_back(j);
-				}
 				j++;
 			}
 			sum += range(i);
@@ -66,7 +62,6 @@ namespace Mackey {
 			track += domain(i);
 		}
 		return transfer;
-
 	}
 
 	/////////////////////////////////////////////////
@@ -83,9 +78,8 @@ namespace Mackey {
 		Levels(T& bottom) {
 			level.resize(power + 1);
 			level[0] = std::move(bottom);
-			for (int i = 1; i < power + 1; i++) {
+			for (int i = 1; i < power + 1; i++)
 				level[i] = transfer(level[0], i);
-			}
 		}
 	};
 
@@ -204,41 +198,39 @@ namespace Mackey {
 
 	///Writing the transfer of each generator in terms of the generators in the image.
 	template<typename rank_t, typename diff_t>
-	std::vector<rank_t> transfer(const Homology<rank_t, diff_t>& low, const Homology<rank_t, diff_t>& high, const rank_t& rank_low, const rank_t& rank_high) {
+	Eigen::Matrix<typename rank_t::Scalar,-1,-1> transfer(const Homology<rank_t, diff_t>& low, const Homology<rank_t, diff_t>& high, const rank_t& rank_low, const rank_t& rank_high) {
 		typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-		std::vector<rank_t> Tr;
-		Tr.reserve(low.Generators.cols());
+		Eigen::Matrix<typename rank_t::Scalar, -1, -1> Tr;
+		Tr.resize(high.Groups.size(), low.Groups.size());
 		for (int i = 0; i < low.Generators.cols(); i++) {
 			gen_t generator = low.Generators.col(i);
-			auto q = transfer(generator, rank_low, rank_high);
-			auto l = high.basis(q);
-			Tr.push_back(l);
+			Tr.col(i)= high.basis(transfer(generator, rank_low, rank_high)).transpose();// Eigen::Map<Eigen::Matrix<typename rank_t::Scalar,-1,1>>(u.data(),u.size());
 		}
 		return Tr;
 	}
 
 	///Writing the restriction of each generator in terms of the generators in the image.
 	template<typename rank_t, typename diff_t>
-	std::vector<rank_t> restriction(const Homology<rank_t, diff_t>& high, const Homology<rank_t, diff_t>& low, const rank_t& rank_high, const rank_t& rank_low) {
+	Eigen::Matrix<typename rank_t::Scalar, -1, -1> restriction(const Homology<rank_t, diff_t>& high, const Homology<rank_t, diff_t>& low, const rank_t& rank_high, const rank_t& rank_low) {
 		typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-		std::vector<rank_t> Res;
-		Res.reserve(high.Generators.cols());
+		Eigen::Matrix<typename rank_t::Scalar, -1, -1> Res;
+		Res.resize(low.Groups.size(), high.Groups.size());
 		for (int i = 0; i < high.Generators.cols(); i++) {
 			gen_t generator = high.Generators.col(i);
-			Res.push_back(low.basis(restriction(generator, rank_high, rank_low)));
+			Res.col(i)=low.basis(restriction(generator, rank_high, rank_low)).transpose();
 		}
 		return Res;
 	}
 
 	///Writing the Weyl group action on each generator in terms of the other generators.
 	template<typename rank_t, typename diff_t>
-	std::vector<rank_t> action(const Homology<rank_t, diff_t>& H, const rank_t& rank) {
+	Eigen::Matrix<typename rank_t::Scalar, -1, -1> action(const Homology<rank_t, diff_t>& H, const rank_t& rank) {
 		typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-		std::vector<rank_t> Weyl;
-		Weyl.reserve(H.Generators.cols());
+		Eigen::Matrix<typename rank_t::Scalar, -1, -1> Weyl;
+		Weyl.resize(H.Groups.size(), H.Groups.size());
 		for (int i = 0; i < H.Generators.cols(); i++) {
 			gen_t generator = H.Generators.col(i);
-			Weyl.push_back(H.basis(action(generator, rank)));
+			Weyl.col(i)=H.basis(action(generator, rank)).transpose();
 		}
 		return Weyl;
 	}

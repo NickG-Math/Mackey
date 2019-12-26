@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['levels',['Levels',['../classMackey_1_1Levels.html',1,'Mackey']]]
+  ['junction',['Junction',['../classMackey_1_1Junction.html',1,'Mackey']]],
+  ['junctionbox',['JunctionBox',['../classMackey_1_1JunctionBox.html',1,'Mackey']]]
 ];

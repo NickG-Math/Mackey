@@ -1,7 +1,9 @@
 <map id="Mackey/Identify.h" name="Mackey/Identify.h">
-<area shape="rect" id="node2" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="219,80,311,107"/>
-<area shape="rect" id="node11" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="375,80,430,107"/>
-<area shape="rect" id="node3" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="187,155,261,181"/>
-<area shape="rect" id="node5" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="286,155,365,181"/>
-<area shape="rect" id="node8" href="$Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="96,155,163,181"/>
+<area shape="rect" id="node2" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="285,155,377,181"/>
+<area shape="rect" id="node11" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="543,229,598,256"/>
+<area shape="rect" id="node13" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="401,155,525,181"/>
+<area shape="rect" id="node14" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="600,80,723,107"/>
+<area shape="rect" id="node3" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="188,229,263,256"/>
+<area shape="rect" id="node5" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="338,229,417,256"/>
+<area shape="rect" id="node8" href="$Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="97,229,164,256"/>
 </map>

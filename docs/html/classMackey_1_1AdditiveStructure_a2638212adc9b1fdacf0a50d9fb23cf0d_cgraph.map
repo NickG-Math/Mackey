@@ -1,0 +1,5 @@
+<map id="Mackey::AdditiveStructure::getMackey" name="Mackey::AdditiveStructure::getMackey">
+<area shape="rect" id="node2" href="$classMackey_1_1AdditiveStructure.html#ad18c28b9da58ec8b1c1579ace5953177" title="Retrieve the Mackey functors in the homology of the given sphere. " alt="" coords="229,5,405,47"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="255,71,379,98"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="453,71,547,98"/>
+</map>

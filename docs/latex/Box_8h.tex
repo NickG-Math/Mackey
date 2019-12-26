@@ -7,7 +7,6 @@ Contains the construction of box products of Chains.
 
 {\ttfamily \#include \char`\"{}General.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Chains.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Matrix\+\_\+\+Mixing.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Change\+Basis.\+h\char`\"{}}\newline
 Include dependency graph for Box.\+h\+:\nopagebreak
 \begin{figure}[H]
@@ -20,7 +19,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=237pt]{Box_8h__dep__incl}
+\includegraphics[width=316pt]{Box_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -43,7 +42,11 @@ class \hyperlink{classMackey_1_1JunctionBox}{Mackey\+::\+Junction\+Box$<$ rank\+
 {\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_aaa0ce7673970bf261628768fb11a1995}{Mackey\+::rankmult} (const rank\+\_\+t \&A, const rank\+\_\+t \&B)
 \begin{DoxyCompactList}\small\item\em The tensor product of ranks of modules A,B. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\std\+::pair$<$ rank\+\_\+t, std\+::vector$<$ rank\+\_\+t $>$ $>$ \hyperlink{namespaceMackey_a1257ce64369e72438023fd4e261c7c83}{Mackey\+::rank\+Box} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int i)
-\begin{DoxyCompactList}\small\item\em The tensor product of ranks of chains A,B. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The rank of the i-\/th differential of the tensor product of chains C,D. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived , typename S $>$ }\\Derived \hyperlink{namespaceMackey_ae54ebc8588d873a744541394ac5113f0}{Mackey\+::permutation\+\_\+block} (const Eigen\+::\+Permutation\+Matrix$<$-\/1, -\/1, S $>$ \&left, const Eigen\+::\+Permutation\+Matrix$<$-\/1, -\/1, S $>$ \&right, const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&a, int k)
+\begin{DoxyCompactList}\small\item\em Forms the block diagonal matrix with k many copies of a, and then applies the permutations left$^\wedge$\{-\/1\} $\ast$ block $\ast$right. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived $>$ }\\Derived \hyperlink{namespaceMackey_a993f40280c4b6eae358e8c1bb4daa290}{Mackey\+::\+Matrix\+Mixer} (std\+::vector$<$ Derived $>$ \&L, std\+::vector$<$ Derived $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Mixes the left and right differentials to produce the differential for the box product. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_add5b60c8e734df2be261106e0c719f82}{Mackey\+::\+Box} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int i)
 \begin{DoxyCompactList}\small\item\em Get the box product of C,D up to index i. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a72abbe3708c4e77936c8cc42fbc6753a}{Mackey\+::\+Box} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D)

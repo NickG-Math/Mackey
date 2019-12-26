@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mackey: Algorithm Details</title>
+<title>Mackey: Select Implementation Details</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.5</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('algo.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Algorithm Details </div>  </div>
+<div class="title">Select Implementation Details </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('algo.html','');});
 </div>
 <div class="textblock"><h1><a class="anchor" id="smith"></a>
 Smith Normal Form</h1>
-<p>For the Smith Normal Form we use a variant of the classical row-column elimination algorithm. Interestingly, for our matrices, an entry divides or is divided by any other. We optimize for this by not finding the minimum element of each submatrix, and instead work with the first nonzero element in each row and column. This is much faster for our matrices, but slower and much more dangerous for random matrices: the Smith normal form coefficient matrices \(P,Q\) can easily overflow in that case (while the usual row-column elimination algorithm can give accurate results).</p>
+<p>The Smith Normal Form is difficult to compute for integer matrices as its entries (and especially the entries of the coefficient matrices) can be much larger than those of the original matrix. We implement the usual row/column elimination algorithm that checks for the minimum in each iteration and uses it as a pivot to clear rows and columns. There is another implementation that forgoes the slow min computation and instead uses the first nonzero element as pivot. For our matrices this is usually (much) faster than the other implementation, as for any two entries one divides the other. The problem is that for matrices appearing in the multiplicative structure (two box products), this elimination can use pivots other than the min elements and result in unboundedly large entries exceeding the given precision. So for safety we have chosen to keep the slower implementation.</p>
 <h1><a class="anchor" id="cob"></a>
 Change of Basis</h1>
 <p>If we have bases for modules \(A,B\) then \(A\otimes B\) can be canonically given two lexicographical bases, that we call left and right convenient bases. But if \(A,B\) are the bottom levels of free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors then they have equivariant bases and the tensor product also gets an equivariant basis, called the canonical one. The left and right convenient bases are used to write the left and right differentials in a simple manner (hence their designation as convenient). The canonical bases are used to transfer. To get the change of basis matrix, we are reduced to computing the permutation \(a^{-1}b\) where \(a,b\) are two permutations of the same set.</p>

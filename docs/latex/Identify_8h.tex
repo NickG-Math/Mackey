@@ -6,6 +6,8 @@ Contains the identification classes.
 
 
 {\ttfamily \#include \char`\"{}Homology.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Automorphisms.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Mackey\+Functor.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Z\+\_\+n.\+h\char`\"{}}\newline
 Include dependency graph for Identify.\+h\+:\nopagebreak
 \begin{figure}[H]
@@ -18,16 +20,14 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=237pt]{Identify_8h__dep__incl}
+\includegraphics[width=316pt]{Identify_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$}
+class \hyperlink{classMackey_1_1IDGenerators}{Mackey\+::\+I\+D\+Generators$<$ rank\+\_\+t $>$}
 \begin{DoxyCompactList}\small\item\em Stores detailed identification data for the generators in non cyclic homology groups using the \hyperlink{namespaceMackey}{Mackey} functor structure. \end{DoxyCompactList}\item 
-class \hyperlink{classMackey_1_1IDGeneratorCompact}{Mackey\+::\+I\+D\+Generator\+Compact$<$ rank\+\_\+t, diff\+\_\+t $>$}
-\begin{DoxyCompactList}\small\item\em Compactly stores usable identification data for a given generator in a non cyclic homology group using the \hyperlink{namespaceMackey}{Mackey} functor structure. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1internal_1_1IDGeneratorCompute}{Mackey\+::internal\+::\+I\+D\+Generator\+Compute$<$ rank\+\_\+t, diff\+\_\+t $>$}
 \begin{DoxyCompactList}\small\item\em Computes the homology at given level and the identification data coming from the \hyperlink{namespaceMackey}{Mackey} functor structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
@@ -40,10 +40,8 @@ class \hyperlink{classMackey_1_1internal_1_1IDGeneratorCompute}{Mackey\+::intern
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a417d303e187dac5a1a2c2c02c6267758}{Mackey\+::produce\+\_\+candidates} (const I\+D\+Generator\+Compact$<$ rank\+\_\+t, diff\+\_\+t $>$ \&Id\+\_\+element, const I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$ \&Id\+\_\+group)
-\begin{DoxyCompactList}\small\item\em Produce all generator candidates that match the ID of the given element. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a3fa96ba9b7316a92eca2f5c0bd1cca4d}{Mackey\+::identify} (const rank\+\_\+t \&basis, const I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$ \&Id\+\_\+first, const I\+D\+Generators$<$ rank\+\_\+t, diff\+\_\+t $>$ \&Id\+\_\+second)
-\begin{DoxyCompactList}\small\item\em Produce an element using the ID data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a83ac78e6d1695af40d0fa58af5255e84}{Mackey\+::id\+\_\+candidates} (const rank\+\_\+t \&basis, const I\+D\+Generators$<$ rank\+\_\+t $>$ \&Id\+\_\+first, const I\+D\+Generators$<$ rank\+\_\+t $>$ \&Id\+\_\+second)
+\begin{DoxyCompactList}\small\item\em Use the ID data to identify all possible candidates for an element. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

@@ -12,6 +12,7 @@ var NAVTREE =
       [ "Briefly", "math.html#Briefly", null ],
       [ "In more detail", "math.html#imd", [
         [ "The additive structure", "math.html#add", null ],
+        [ "Recognizing Mackey Functors", "math.html#mack", null ],
         [ "The multiplicative structure", "math.html#mult", null ],
         [ "Factorization", "math.html#factor", null ],
         [ "Massey Products", "math.html#Mass", null ]
@@ -31,10 +32,11 @@ var NAVTREE =
         [ "The additive structure", "use.html#step1add", null ],
         [ "The multiplicative structure", "use.html#step1mult", null ],
         [ "Factorization", "use.html#step1fact", null ],
-        [ "Massey products", "use.html#step1Mass", null ]
+        [ "Massey products", "use.html#step1Mass", null ],
+        [ "Serialization", "use.html#step1Cer", null ]
       ] ]
     ] ],
-    [ "Algorithm Details", "algo.html", [
+    [ "Select Implementation Details", "algo.html", [
       [ "Smith Normal Form", "algo.html#smith", null ],
       [ "Change of Basis", "algo.html#cob", null ],
       [ "Box product", "algo.html#box", null ],
@@ -74,7 +76,8 @@ var NAVTREE =
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Functions", "globals_func.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -82,8 +85,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Box_8h.html",
-"classMackey_1_1MackeyFunctor.html#a334a91a445ac86cc5cce53b29efd6df1"
+"Additive_8h.html",
+"classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920",
+"structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a1d8939bd585b60ec61e806fc7746335ea24b9a1fdb58e87d846d5fd17ca7b2573"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

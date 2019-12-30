@@ -110,8 +110,8 @@ namespace Mackey {
 		auto resecond = Reindex(second);
 		auto degreeC = refirst[0];
 		auto degreeD = resecond[0];
-		auto firstsphere = tail(refirst.data(), refirst.size());
-		auto secondsphere = tail(resecond.data(), resecond.size());
+		auto firstsphere = tail(refirst.data(), refirst.size(),1);
+		auto secondsphere = tail(resecond.data(), resecond.size(), 1);
 		auto limitC = std::min(degreeC + degreeD + 1, dimension(firstsphere));
 		auto limitD = std::min(degreeC + degreeD + 1, dimension(secondsphere));
 		Chains<rank_t, diff_t> C = ROChains<rank_t, diff_t>(limitC, firstsphere);

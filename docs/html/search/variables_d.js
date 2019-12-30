@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['q',['Q',['../classMackey_1_1Smith.html#af93f16dfd0ce77406d9696a026092306',1,'Mackey::Smith']]],
-  ['qi',['Qi',['../classMackey_1_1Smith.html#ade9f9fbe25629c7e20bc9cfe69ee91ad',1,'Mackey::Smith']]]
+  ['source',['source',['../classMackey_1_1Graph.html#a43657a07a21a2dcf422876400360ed5b',1,'Mackey::Graph']]],
+  ['sphere_5fdimensions',['sphere_dimensions',['../classGroupSpecific_1_1Variables.html#a4746f16736abcf4c705dd8690ec12ca0',1,'GroupSpecific::Variables']]]
 ];

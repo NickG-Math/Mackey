@@ -56,73 +56,49 @@ std::vector<rank_t> id_candidates(const rank_t& basis, const IDGenerators<rank_t
 	candidates.reserve(match.size());
 	for (int i = 0; i < match.size(); i++) {
 		rank_t newbasis = autom.first[match[i]][1] * basis.transpose();
-		rank_t normalbasis = normalize(newbasis,Id_second.group);
+		normalize(newbasis,Id_second.group); 
 		bool flag = 0;
 		for (auto& i : candidates) {
-			if (i == normalbasis) {
+			if (i == newbasis) {
 				flag = 1;
 				break;
 			}
 		}
 		if (!flag)
-			candidates.push_back(normalbasis);
+			candidates.push_back(newbasis);
 	}
 	return candidates;
-	
 }
 
 
+///	Find if given elements can all be distinguished i.e. they have pairwise disjoint candidate sets
+template<typename rank_t>
+bool distinguish(const std::vector<rank_t>& elements, const IDGenerators<rank_t>& Id) {
 
+	if (Id.group.size()==1){
+		for (int i = 0; i < elements.size(); i++) {
+			for (int j = i + 1; j < elements.size(); j++) {
+				if (elements[i]==elements[j])
+					return 0;
+			}
+		}
+		return 1;
+	}
+	  
+	std::vector<std::vector<rank_t>> all_candidates;
+	all_candidates.reserve(elements.size());
+	for (const auto& i : elements) {
+		all_candidates.push_back(id_candidates(i,Id,Id));
+	}
+	for (int i = 0; i < all_candidates.size(); i++) {
+		for (int j = i + 1; j < all_candidates.size(); j++) {
+			if (find(all_candidates[i], all_candidates[j][0]) != -1)
+				return 0;
+		}
+	}
+	return 1;
+}
 
-
-
-
-
-
-
-	/////Use the ID data to identify all possible candidates for an element
-	//template<typename rank_t>
-	//std::vector<rank_t> id_candidates(const rank_t& basis, const IDGenerators<rank_t>& Id_first, const IDGenerators<rank_t>& Id_second) {
-
-	//	IDGeneratorCompact<rank_t, diff_t> Id(basis, Id_first);
-	//	std::vector<rank_t> candidates;
-
-	//	rank_t maxindices = Id_second.group;
-	//	rank_t minindices = maxindices;
-	//	minindices.setZero();
-
-	//	typedef typename diff_t::Scalar coeff;
-	//	if constexpr (Mackey::is_finite_cyclic<coeff>()) {
-	//		constexpr int order = coeff::order;
-	//		for (int i = 0; i < maxindices.size(); i++) {
-	//			if (maxindices[i] == 1)
-	//				maxindices[i] = order - 1;
-	//		}
-	//	}
-	//	else {
-	//		for (int i = 0; i < maxindices.size(); i++) {
-	//			if (maxindices[i] == 1)
-	//				maxindices[i] = 0;
-	//		}
-	//		if (Id.torsionfree > 0) { //if torsionfree but with only one Z
-	//			auto pos = find(Id_second.group, 1);
-	//			minindices[pos] = maxindices[pos] = Id.torsionfree;
-	//		}
-	//		else if (!(Id.torsion > 0)) { //infinitely many candidates
-	//			return candidates;
-	//		}
-	//	}
-	//	candidates = DegreeConstruction(minindices, maxindices);
-
-	//	std::vector<rank_t> better_candidates;
-	//	better_candidates.reserve(candidates.size());
-	//	for (const auto& i : candidates) {
-	//		IDGeneratorCompact<rank_t, diff_t> Id_cand(i, Id_second);
-	//		if (Id == Id_cand)
-	//			better_candidates.push_back(i);
-	//	}
-	//	return better_candidates;
-	//}
 
 	///Contains classes and methods whose user interface is provided by the rest of the library
 	namespace internal {
@@ -185,101 +161,4 @@ std::vector<rank_t> id_candidates(const rank_t& basis, const IDGenerators<rank_t
 		}
 	}
 
-
-
-
-//	//////////////////////////////////////////////////////////////////
-/////Compactly stores usable identification data for a given generator in a non cyclic homology group using the Mackey functor structure
-//
-/////diff_t is used as a template to cleanly get the coefficient type.
-//////////////////////////////////////////////////////////////////
-//	template<typename rank_t, typename diff_t>
-//	class IDGeneratorCompact {
-//	public:
-//		int torsion; ///<The order of the element, 1 if it's torsion free
-//		int torsionfree; ///<If there is a single Z then this is the Z part of the generator. -1 otherwise
-//		int restriction; ///<The order of the restriction
-//		int isTransfer; ///<if the element is a transfer. -1 if we can't decide
-//
-//		///Constructs the identification data for our element given the detailed identification data for all generators.
-//		IDGeneratorCompact(const rank_t&, const IDGenerators<rank_t, diff_t>&);
-//
-//		///Compares identifaction data
-//		inline bool operator == (const IDGeneratorCompact& other) const {
-//			return (torsion == other.torsion && torsionfree == other.torsionfree && restriction == other.restriction && isTransfer == other.isTransfer);
-//		}
-//
-//		///Compares identifaction data
-//		inline bool operator != (const IDGeneratorCompact& other) const {
-//			return !(*this == other);
-//		}
-//	};
-
-
-
-
-	//template<typename rank_t, typename diff_t>
-	//IDGeneratorCompact<rank_t, diff_t>::IDGeneratorCompact(const rank_t& basis, const IDGenerators<rank_t, diff_t>& Id) {
-	//	torsion = order(basis, Id.group);
-	//	if (torsion == 1) {
-	//		auto m = findcount(Id.group, 1);
-	//		if (m.first == 1)
-	//			torsionfree = basis[m.second];
-	//		else
-	//			torsionfree = -1;
-	//	}
-	//	if (Id.group_lower.size() != 0) {
-	//		rank_t Res = Id.Res *basis.transpose();
-	//		restriction = order(Res, Id.group_lower);
-	//		isTransfer = 0;
-	//		for (int i = 0; i < Id.Tr.cols(); i++) {
-	//			if (basis == Id.Tr.col(i).transpose()) {
-	//				isTransfer = 1;
-	//				break;
-	//			}
-	//		}
-	//		if (isTransfer == 0 && Id.group_lower.size() != 1)
-	//			isTransfer = -1;
-	//	}
-	//	else {
-	//		restriction = 0;
-	//		isTransfer = 0;
-	//	}
-	//}
-
-
-
-	/////Produce all generator candidates that partially match the ID of the given element
-	//template<typename rank_t, typename diff_t>
-	//std::vector<rank_t> id_candidates(const IDGeneratorCompact<rank_t, diff_t>& Id_element, const rank_t& group) {
-	//	rank_t maxindices = group;
-	//	rank_t minindices = maxindices;
-	//	minindices.setZero();
-
-	//	typedef typename diff_t::Scalar coeff;
-	//	if constexpr (Mackey::is_finite_cyclic<coeff>()) {
-	//		constexpr int order = coeff::order;
-	//		for (int i = 0; i < maxindices.size(); i++) {
-	//			if (maxindices[i] == 1)
-	//				maxindices[i] = order - 1;
-	//		}
-	//		return DegreeConstruction(minindices, maxindices);
-	//	}
-	//	else {
-	//		for (int i = 0; i < maxindices.size(); i++) {
-	//			if (maxindices[i] == 1)
-	//				maxindices[i] = 0;
-	//		}
-	//		if (Id_element.torsion > 0) { //if torsion then there are finitely many candidates
-	//			return DegreeConstruction(minindices, maxindices);
-	//		}
-	//		if (Id_element.torsionfree > 0) { //if torsionfree but with only one Z
-	//			auto pos = find(group, 1);
-	//			minindices[pos] = maxindices[pos] = Id_element.torsionfree;
-	//			return DegreeConstruction(minindices, maxindices);
-	//		}
-	//	}
-	//	//if we have infinitely many candidates return empty
-	//	return std::vector<rank_t>();
-	//}
 }

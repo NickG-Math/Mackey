@@ -2,12 +2,13 @@ var classMackey_1_1Green =
 [
     [ "Green", "classMackey_1_1Green.html#ad3bb0ba97c91a5db4fcf57687a571915", null ],
     [ "Green", "classMackey_1_1Green.html#a614ae228cc8c5cccddcf562923f06f3a", null ],
-    [ "select", "classMackey_1_1Green.html#a094a394ff8e1f4801fb3a5f09e071def", null ],
-    [ "basis", "classMackey_1_1Green.html#a9cfc633ccb548d2d516450399c108174", null ],
+    [ "getNormalBasis", "classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84", null ],
+    [ "getNormalBasis", "classMackey_1_1Green.html#a257e9f34318b5e2dbbe668b4e237a6c3", null ],
+    [ "getNormalBasis", "classMackey_1_1Green.html#a7e2d97abb22044ec3abbe91bc9c33ee9", null ],
+    [ "getNormalBasis", "classMackey_1_1Green.html#a3f7f1f3a020f23a00fae372956f50827", null ],
+    [ "internal::GreenCompute", "classMackey_1_1Green.html#aa7a5b52d9d87397db413615120f34df7", null ],
+    [ "serialize", "classMackey_1_1Green.html#aeb72946219f32efa8f0a45f5f8872c8a", null ],
     [ "boxID", "classMackey_1_1Green.html#aea166896ebdaa17b3c5d21b2ae936e0d", null ],
-    [ "first_number_selections", "classMackey_1_1Green.html#a18ba76e7f7b71c1e5fca23bc71accf86", null ],
     [ "Groups", "classMackey_1_1Green.html#acfa5ea708949024bd24f1c1e21399cbc", null ],
-    [ "isZero", "classMackey_1_1Green.html#a12a01a6d1715538af0bdc6b34fad6b85", null ],
-    [ "normalBasis", "classMackey_1_1Green.html#a18135b4b1a4aceb387519832a487206a", null ],
-    [ "second_number_selections", "classMackey_1_1Green.html#a1240acdc0e901e496597eab2d0ef27f2", null ]
+    [ "isZero", "classMackey_1_1Green.html#a12a01a6d1715538af0bdc6b34fad6b85", null ]
 ];

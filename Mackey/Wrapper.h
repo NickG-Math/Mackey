@@ -7,7 +7,6 @@
 #include <intrin.h>
 #endif 
 
-
 ///@file
 ///@brief Wraps group-specific implementations into a general interface.
 
@@ -42,12 +41,10 @@ namespace Mackey {
 	///Raise power to given exponent
 	template<typename T>
 	inline T intexp(const T exponent) {
-		if (prime == 2) {
+		if (prime == 2)
 			return 1 << exponent;
-		}
-		else {
+		else
 			return static_cast<T>(std::pow(prime, exponent)); //this should be improved...
-		}
 	}
 
 	///Compute log(exponentiated) with base power
@@ -64,18 +61,16 @@ namespace Mackey {
 			return __builtin_ctz(exponentiated);
 #endif
 		}
-		else {
+		else
 			return static_cast<T>(std::log(exponentiated) / std::log(prime)); //this should be improved...
-		}
 	}
 
 	///Compute the dimension of a representation sphere
 	template<typename deg_t>
 	inline int dimension(const deg_t& sphere) {
 		int sum = 0;
-		for (int i = 0; i < reps; i++) {
+		for (int i = 0; i < reps; i++)
 			sum += abs(sphere[i]) * GroupSpecific::Variables::sphere_dimensions[i];
-		}
 		return sum;
 	}
 
@@ -83,9 +78,8 @@ namespace Mackey {
 	template <typename T>
 	inline int Reindex(int k, const T& sphere) {
 		for (int i = 0; i < reps; i++) {
-			if (sphere[i] < 0) {
+			if (sphere[i] < 0)
 				k -= sphere[i] * GroupSpecific::Variables::sphere_dimensions[i];
-			}
 		}
 		return k;
 	}
@@ -94,9 +88,8 @@ namespace Mackey {
 	template <typename T>
 	inline int invReindex(int k, const T& sphere) {
 		for (int i = 0; i < reps; i++) {
-			if (sphere[i] < 0) {
+			if (sphere[i] < 0)
 				k += sphere[i] * GroupSpecific::Variables::sphere_dimensions[i];
-			}
 		}
 		return k;
 	}
@@ -118,44 +111,4 @@ namespace Mackey {
 			return C.dualize(i);
 		}
 	}
-
 }
-
-
-#ifdef MACKEY_NAMES
-///Contains optional group specific variables for printing Mackey functors.
-namespace GroupSpecificOptional {
-
-	using namespace Mackey;
-	//////////////////////////////
-/// A list of Mackey functors and their names.
-
-/// Only used if macro MACKEY_NAMES is defined (list is optional). The diff_t template is used to get the coefficient type
-//////////////////////////////
-	template<typename rank_t, typename diff_t>
-	class MackeyList {
-	public:
-		static const std::vector<MackeyFunctor<rank_t>> Mackeys;///<The list of Mackey functors
-		static const std::vector<std::string> names;///<The list of names
-	};
-}
-
-namespace Mackey{
-
-	///Identifies the Mackey Functor with its Latex notation using the MackeyList. Only used if macro MACKEY_NAMES is defined.
-	template<typename rank_t, typename diff_t>
-	std::string identify_Mackey(MackeyFunctor<rank_t>& M)
-	{
-		M.normalize();
-		GroupSpecificOptional::MackeyList<rank_t, diff_t> List;
-		for (decltype(List.Mackeys.size()) i = 0; i < List.Mackeys.size(); i++) {
-			if (M.compare(List.Mackeys[i])) {
-				return List.names[i];
-			}
-		}
-		return std::string();
-	}
-}
-#endif
-
-

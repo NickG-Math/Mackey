@@ -86,8 +86,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Additive_8h.html",
-"classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920",
-"structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a1d8939bd585b60ec61e806fc7746335ea24b9a1fdb58e87d846d5fd17ca7b2573"
+"classMackey_1_1Green.html#a7e2d97abb22044ec3abbe91bc9c33ee9",
+"namespaceMackey_1_1internal.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

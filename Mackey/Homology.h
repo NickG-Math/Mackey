@@ -3,6 +3,7 @@
 #include "General.h"
 #include "Smith.h"
 #include "Z_n.h"
+#include <numeric>
 
 ///@file
 ///@brief Contains the Homology class and algorithms.
@@ -231,80 +232,151 @@ namespace Mackey {
 	}
 
 
-
-///Normalizes the element in given abelian group so that element[i]=1 if it generates group[i]
-	template<typename T>
-	Eigen::Matrix<T, 1, -1> normalize(const Eigen::Matrix<T, 1, -1>& element, const Eigen::Matrix<T,1,-1>& group) {
-		auto normalized = element;
-		for (int i = 0; i < element.size(); i++) {
-			if (group[i] != 1 && element[i] % group[i] == 0) {
-				normalized[i] = 0;
-			}
-			else if (group[i] != 1 && element[i] != 0) {
-				normalized[i] = std::gcd((element[i]+group[i])%group[i], group[i]);
-			}
-			else {
-				normalized[i] = abs(element[i]);
-			}
-		}
-		return normalized;
-	}
-
-
 	////////////////////////////////////////////////////
-///Finds the order of element in given abelian group.
+///Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite
 
 ///T,S are vectors or 1d Eigen matrices
-///It's assumed that element has been normalized i.e. element[i]=1 if it generates group[i]
 ///////////////////////////////////////////////////
 	template<typename T, typename S>
 	int order(const T& element, const S& group) {
-
 		std::vector<int> fractions;
 		fractions.reserve(group.size());
 
 		for (int i = 0; i < group.size(); i++) {
-			if (group[i] == 1 && element[i] != 0) {
-				return 1; //infinite order
-			}
+			if (group[i] == 1 && element[i] != 0)
+				return 0; //infinite order
 			else if (element[i] != 0) {
-				fractions.push_back(group[i] / element[i]);
+				fractions.push_back(group[i] / std::gcd(element[i], group[i]));
 			}
 		}
 		return lcm(fractions);
 	}
 
-	///If the given element is 0,...,0,?,0,...,0 returns the index of ?. Otherwise returns -1
+	///Normalizes the element in a group so that 0<=element[i]<=group[i] if group[i]!=1
 	template<typename T>
-	int isBasisElement(const T& element) { // >=0 if it's 0,...,0,?,0,...,0
-		int nonZero = 0;
-		int pos = 0;
-		for (int i = 0; i < element.size(); i++) {
-			if (element[i] != 0) {
-				nonZero++;
-				pos = i;
-				if (nonZero>1)
-					return -1; 
-			}
+	void mod_normalize(Eigen::Matrix<T, 1, -1>& element, const Eigen::Matrix<T, 1, -1>& group) {
+		for (int i = 0; i < group.size(); i++) {
+			if (group[i] != 1)
+				element[i] = (element[i] + group[i]) % group[i];
 		}
-		return pos;
 	}
 
-	///Given an array of elements, returns the index of the unique element of the form 0,...,0,?,0,...,0. If not unique then returns -1
+
+	///Normalizes the element in a group to have minimal signs amongst its multiples
 	template<typename T>
-	int findBasisElement(const T& elements) { // >=0 if it's 0,...,0,?,0,...,0
-		int counter = 0;
-		int pos = 0;
-		for (std::vector<int>::size_type i=0; i<elements.size(); i++){
-			if (isBasisElement(elements[i]) != -1) {
-				counter++;
-				pos = i;
-				if (counter > 1)
-					return -1;
+	void normalize(Eigen::Matrix<T, 1, -1>& element, const Eigen::Matrix<T, 1, -1>& group) {
+		if (element.isZero())
+			return;
+		mod_normalize(element,group);
+		if (element.isZero())
+			return;
+		int size = element.size();
+		if (size == 1) {
+			if (group[0] == 1 && element[0] < 0) {
+				element = -element;
+				mod_normalize(element, group);
+				return;
+			}
+			if (group[0]!=1) {
+				element[0] = std::gcd(element[0], group[0]);
+				return;
 			}
 		}
-		if (counter==0)
-			return -1;
-		return pos;
+		auto n = order(element, group);
+		if (n == 0) {
+			for (int i = 0; i < size; i++) {
+				if (group[i] == 1 && element[i] < 0) {
+					element = -element;
+					mod_normalize(element, group);
+					return;
+				}
+			}
+		}
+		if (n <= 2)
+			return;
+		else {
+			auto ideal_element = element;
+			for (int i = 0; i < size; i++) {
+				if (group[i] != 1 && ideal_element[i] != 0)
+					ideal_element[i] = std::gcd(ideal_element[i], group[i]);
+			}
+			int closest_to_ideal = 1;
+			int max_hits = -1;
+			for (int i = 1; i < n; i++) {
+				if (std::gcd(i, n) == 1) {
+					int current_hits = 0;
+					for (int j = 0; j < size; j++) {
+						if ((i * element[j] - ideal_element[j]) % group[j]==0)
+							current_hits++;
+					}
+					if (max_hits == -1 || max_hits < current_hits) {
+						if (current_hits == size) {
+							element = ideal_element;
+							return;
+						}
+						max_hits = current_hits;
+						closest_to_ideal = i;
+					}
+				}
+			}
+			if (closest_to_ideal == 1)
+				return;
+			element=closest_to_ideal * element;
+			mod_normalize(element, group);
+			return;
+		}
 	}
+
+
+	////////////////////////////////////////////////////
+///Finds if two elements are equal in the given finitely generated abelian group
+
+///T,S,R are vectors or 1d Eigen matrices
+///////////////////////////////////////////////////
+	template<typename T, typename S, typename R>
+	bool equals(const T& element1, const S& element2, const R& group) {
+		for (int i = 0; i < group.size(); i++) {
+			if (group[i] == 1 && element1[i] != element2[i])
+				return 0;
+			if (group[i] != 1 && (((element1[i] - element2[i]) % group[i]) != 0))
+				return 0;
+		}
+		return 1;
+	}
+
+	////////////////////////////////////////////////////
+///Finds if element a is a multiple of element b in the given finitely generated abelian group
+
+///T,S,R are vectors or 1d Eigen matrices
+///////////////////////////////////////////////////
+	template<typename T, typename S>
+	int isMultiple(const T& a, const T& b, const S& group) {
+		auto oa = order(a, group);
+		auto ob = order(b, group);
+		if ((oa == 0 && ob != 0) || (ob < oa))
+			return 0;
+		if (oa == 0) {
+			typename T::Scalar q = 0;
+			for (int i = 0; i < a.size(); i++) {
+				if (group[i] == 1 && a[i] != 0) {
+					if (b[i] == 0)
+						return 0;
+					else {
+						q = a[i] / b[i];
+						break;
+					}
+				}
+			}
+			if (equals(a, q * b, group))
+				return q;
+			else
+				return 0;
+		}
+		for (typename T::Scalar i = 1; i < ob; i++) {
+			if (equals(a, i * b, group))
+				return i;
+		}
+		return 0;
+	}
+
 }

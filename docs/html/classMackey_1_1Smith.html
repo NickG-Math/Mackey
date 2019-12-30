@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mackey: Mackey::Smith&lt; smithS_t, smithR_t, smithC_t &gt; Class Template Reference</title>
+<title>Mackey: Mackey::Smith&lt; S_t, R_t, C_t, impl &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.5</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -90,70 +90,64 @@ $(document).ready(function(){initNavTree('classMackey_1_1Smith.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classMackey_1_1Smith-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Mackey::Smith&lt; smithS_t, smithR_t, smithC_t &gt; Class Template Reference</div>  </div>
+<div class="title">Mackey::Smith&lt; S_t, R_t, C_t, impl &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> Normal Form.  
+<p>The safe <a class="el" href="classMackey_1_1Smith.html" title="The safe Smith Normal Form implementation for general coefficients. ">Smith</a> Normal Form implementation for general coefficients.  
  <a href="classMackey_1_1Smith.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Smith_8h_source.html">Smith.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Mackey::Smith&lt; S_t, R_t, C_t, impl &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Smith__inherit__graph.png" border="0" usemap="#Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_inherit__map" id="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_inherit__map">
+<area shape="rect" id="node2" href="classMackey_1_1CommonSmith.html" title="The common variables and methods for the two Smith Normal Form implementations. " alt="" coords="5,5,168,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Mackey::Smith&lt; S_t, R_t, C_t, impl &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Smith__coll__graph.png" border="0" usemap="#Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_coll__map" id="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_coll__map">
+<area shape="rect" id="node2" href="classMackey_1_1CommonSmith.html" title="The common variables and methods for the two Smith Normal Form implementations. " alt="" coords="5,5,168,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a534aaf0e0b2da7d312d80ad7d67ae794"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a534aaf0e0b2da7d312d80ad7d67ae794">Smith</a> (const smithS_t &amp;, bool, bool, bool)</td></tr>
-<tr class="memdesc:a534aaf0e0b2da7d312d80ad7d67ae794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi.  <a href="#a534aaf0e0b2da7d312d80ad7d67ae794">More...</a><br /></td></tr>
-<tr class="separator:a534aaf0e0b2da7d312d80ad7d67ae794"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a207e1221d2d15f9d9ab4ef36be67eb85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a207e1221d2d15f9d9ab4ef36be67eb85">Smith</a> (const smithS_t &amp;A, bool wantP, bool wantQ)</td></tr>
-<tr class="memdesc:a207e1221d2d15f9d9ab4ef36be67eb85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as the other constructor, but don't sort.  <a href="#a207e1221d2d15f9d9ab4ef36be67eb85">More...</a><br /></td></tr>
-<tr class="separator:a207e1221d2d15f9d9ab4ef36be67eb85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a676606c4002b08a37f0ea11dc3686dbe"><td class="memItemLeft" align="right" valign="top">smithS_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a676606c4002b08a37f0ea11dc3686dbe">S</a></td></tr>
-<tr class="memdesc:a676606c4002b08a37f0ea11dc3686dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> Normal Form.  <a href="#a676606c4002b08a37f0ea11dc3686dbe">More...</a><br /></td></tr>
-<tr class="separator:a676606c4002b08a37f0ea11dc3686dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a831316edd85dedc7394b39fda103a2"><td class="memItemLeft" align="right" valign="top">smithR_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a5a831316edd85dedc7394b39fda103a2">P</a></td></tr>
-<tr class="memdesc:a5a831316edd85dedc7394b39fda103a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (S=P*A*Q). Should be row major for best performance.  <a href="#a5a831316edd85dedc7394b39fda103a2">More...</a><br /></td></tr>
-<tr class="separator:a5a831316edd85dedc7394b39fda103a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9f9fbe25629c7e20bc9cfe69ee91ad"><td class="memItemLeft" align="right" valign="top">smithR_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#ade9f9fbe25629c7e20bc9cfe69ee91ad">Qi</a></td></tr>
-<tr class="memdesc:ade9f9fbe25629c7e20bc9cfe69ee91ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (A=Pi*S*Qi). Should be row major for best performance.  <a href="#ade9f9fbe25629c7e20bc9cfe69ee91ad">More...</a><br /></td></tr>
-<tr class="separator:ade9f9fbe25629c7e20bc9cfe69ee91ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af93f16dfd0ce77406d9696a026092306"><td class="memItemLeft" align="right" valign="top">smithC_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#af93f16dfd0ce77406d9696a026092306">Q</a></td></tr>
-<tr class="memdesc:af93f16dfd0ce77406d9696a026092306"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (S=P*A*Q). Should be column major for best performance.  <a href="#af93f16dfd0ce77406d9696a026092306">More...</a><br /></td></tr>
-<tr class="separator:af93f16dfd0ce77406d9696a026092306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97f16eca1aa9f4f6c36c2680fdcf277e"><td class="memItemLeft" align="right" valign="top">smithC_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a97f16eca1aa9f4f6c36c2680fdcf277e">Pi</a></td></tr>
-<tr class="memdesc:a97f16eca1aa9f4f6c36c2680fdcf277e"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (A=Pi*S*Qi). Should be column major for best performance.  <a href="#a97f16eca1aa9f4f6c36c2680fdcf277e">More...</a><br /></td></tr>
-<tr class="separator:a97f16eca1aa9f4f6c36c2680fdcf277e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cd4750403fb58647adb6eaa42580e3c"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; typename smithS_t::Scalar, 1, -1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a5cd4750403fb58647adb6eaa42580e3c">diagonal</a></td></tr>
-<tr class="memdesc:a5cd4750403fb58647adb6eaa42580e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> normal form.  <a href="#a5cd4750403fb58647adb6eaa42580e3c">More...</a><br /></td></tr>
-<tr class="separator:a5cd4750403fb58647adb6eaa42580e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02ea735836a4a70f504e360495b0e1e1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a02ea735836a4a70f504e360495b0e1e1">L</a></td></tr>
-<tr class="memdesc:a02ea735836a4a70f504e360495b0e1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The length of the diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> normal form.  <a href="#a02ea735836a4a70f504e360495b0e1e1">More...</a><br /></td></tr>
-<tr class="separator:a02ea735836a4a70f504e360495b0e1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7923aafcefe7b2b12245dfb6f0700743"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a7923aafcefe7b2b12245dfb6f0700743">Smith</a> (const S_t &amp;A, bool wantP, bool wantQ, bool sort)</td></tr>
+<tr class="memdesc:a7923aafcefe7b2b12245dfb6f0700743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the <a class="el" href="classMackey_1_1Smith.html" title="The safe Smith Normal Form implementation for general coefficients. ">Smith</a> Normal Form and sorts if desired.  <a href="#a7923aafcefe7b2b12245dfb6f0700743">More...</a><br /></td></tr>
+<tr class="separator:a7923aafcefe7b2b12245dfb6f0700743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612e73ee01325c7adf0b7102d007a915"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a612e73ee01325c7adf0b7102d007a915">Smith</a> (const S_t &amp;A, bool wantP, bool wantQ)</td></tr>
+<tr class="memdesc:a612e73ee01325c7adf0b7102d007a915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as the other constructor, but don't sort.  <a href="#a612e73ee01325c7adf0b7102d007a915">More...</a><br /></td></tr>
+<tr class="separator:a612e73ee01325c7adf0b7102d007a915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt;<br />
-class Mackey::Smith&lt; smithS_t, smithR_t, smithC_t &gt;</h3>
+<div class="textblock"><h3>template&lt;typename S_t, typename R_t, typename C_t, typename impl = void&gt;<br />
+class Mackey::Smith&lt; S_t, R_t, C_t, impl &gt;</h3>
 
-<p>The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> Normal Form. </p>
+<p>The safe <a class="el" href="classMackey_1_1Smith.html" title="The safe Smith Normal Form implementation for general coefficients. ">Smith</a> Normal Form implementation for general coefficients. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a534aaf0e0b2da7d312d80ad7d67ae794"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a534aaf0e0b2da7d312d80ad7d67ae794">&#9670;&nbsp;</a></span>Smith() <span class="overload">[1/2]</span></h2>
+<a id="a7923aafcefe7b2b12245dfb6f0700743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7923aafcefe7b2b12245dfb6f0700743">&#9670;&nbsp;</a></span>Smith() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename smithS_t , typename smithR_t , typename smithC_t &gt; </div>
+template&lt;typename S_t, typename R_t, typename C_t, typename impl = void&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::<a class="el" href="classMackey_1_1Smith.html">Smith</a> </td>
+          <td class="memname"><a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t, impl &gt;::<a class="el" href="classMackey_1_1Smith.html">Smith</a> </td>
           <td>(</td>
-          <td class="paramtype">const smithS_t &amp;&#160;</td>
-          <td class="paramname"><em>Original</em>, </td>
+          <td class="paramtype">const S_t &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -179,36 +173,32 @@ template&lt;typename smithS_t , typename smithR_t , typename smithC_t &gt; </div
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi. </p>
-<p>The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed. If sort=1 the diagonal matrix S has decreasing entries, otherwise the order is not specified </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Smith_a534aaf0e0b2da7d312d80ad7d67ae794_cgraph.png" border="0" usemap="#classMackey_1_1Smith_a534aaf0e0b2da7d312d80ad7d67ae794_cgraph" alt=""/></div>
-<map name="classMackey_1_1Smith_a534aaf0e0b2da7d312d80ad7d67ae794_cgraph" id="classMackey_1_1Smith_a534aaf0e0b2da7d312d80ad7d67ae794_cgraph">
-<area shape="rect" id="node2" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="205,5,248,32"/>
-</map>
-</div>
+<p>Computes the <a class="el" href="classMackey_1_1Smith.html" title="The safe Smith Normal Form implementation for general coefficients. ">Smith</a> Normal Form and sorts if desired. </p>
 
 </div>
 </div>
-<a id="a207e1221d2d15f9d9ab4ef36be67eb85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a207e1221d2d15f9d9ab4ef36be67eb85">&#9670;&nbsp;</a></span>Smith() <span class="overload">[2/2]</span></h2>
+<a id="a612e73ee01325c7adf0b7102d007a915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612e73ee01325c7adf0b7102d007a915">&#9670;&nbsp;</a></span>Smith() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
+template&lt;typename S_t, typename R_t, typename C_t, typename impl = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::<a class="el" href="classMackey_1_1Smith.html">Smith</a> </td>
+          <td class="memname"><a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t, impl &gt;::<a class="el" href="classMackey_1_1Smith.html">Smith</a> </td>
           <td>(</td>
-          <td class="paramtype">const smithS_t &amp;&#160;</td>
+          <td class="paramtype">const S_t &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
@@ -237,133 +227,15 @@ template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Same as the other constructor, but don't sort. </p>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph.png" border="0" usemap="#classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph" alt=""/></div>
+<map name="classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph" id="classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v. " alt="" coords="205,5,303,32"/>
+<area shape="rect" id="node3" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="233,56,275,83"/>
+</map>
 </div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5cd4750403fb58647adb6eaa42580e3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cd4750403fb58647adb6eaa42580e3c">&#9670;&nbsp;</a></span>diagonal</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">Eigen::Matrix&lt;typename smithS_t::Scalar, 1, -1&gt; <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::diagonal</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> normal form. </p>
-
-</div>
-</div>
-<a id="a02ea735836a4a70f504e360495b0e1e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02ea735836a4a70f504e360495b0e1e1">&#9670;&nbsp;</a></span>L</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::L</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The length of the diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> normal form. </p>
-
-</div>
-</div>
-<a id="a5a831316edd85dedc7394b39fda103a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a831316edd85dedc7394b39fda103a2">&#9670;&nbsp;</a></span>P</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">smithR_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::P</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>One of the coefficient matrices (S=P*A*Q). Should be row major for best performance. </p>
-
-</div>
-</div>
-<a id="a97f16eca1aa9f4f6c36c2680fdcf277e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97f16eca1aa9f4f6c36c2680fdcf277e">&#9670;&nbsp;</a></span>Pi</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">smithC_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::Pi</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>One of the coefficient matrices (A=Pi*S*Qi). Should be column major for best performance. </p>
-
-</div>
-</div>
-<a id="af93f16dfd0ce77406d9696a026092306"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af93f16dfd0ce77406d9696a026092306">&#9670;&nbsp;</a></span>Q</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">smithC_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::Q</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>One of the coefficient matrices (S=P*A*Q). Should be column major for best performance. </p>
-
-</div>
-</div>
-<a id="ade9f9fbe25629c7e20bc9cfe69ee91ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade9f9fbe25629c7e20bc9cfe69ee91ad">&#9670;&nbsp;</a></span>Qi</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">smithR_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::Qi</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>One of the coefficient matrices (A=Pi*S*Qi). Should be row major for best performance. </p>
-
-</div>
-</div>
-<a id="a676606c4002b08a37f0ea11dc3686dbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a676606c4002b08a37f0ea11dc3686dbe">&#9670;&nbsp;</a></span>S</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename smithS_t, typename smithR_t, typename smithC_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">smithS_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; smithS_t, smithR_t, smithC_t &gt;::S</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form. ">Smith</a> Normal Form. </p>
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['l',['L',['../classMackey_1_1Smith.html#a02ea735836a4a70f504e360495b0e1e1',1,'Mackey::Smith']]],
-  ['lefttocanon',['LefttoCanon',['../classMackey_1_1ChangeBasis.html#aac6a5b932e7feea82c94447d541e6ded',1,'Mackey::ChangeBasis']]],
-  ['level',['level',['../classMackey_1_1Levels.html#af9a1391f683685ae464829b9b32162c8',1,'Mackey::Levels::level()'],['../classMackey_1_1MultiplicationTable.html#ad5a05c126e0b3c769fa9b1196a8db96a',1,'Mackey::MultiplicationTable::level()']]]
+  ['maxindex',['maxindex',['../classMackey_1_1Chains.html#a12a79cb031092cfd3473bb6512e7ae94',1,'Mackey::Chains']]],
+  ['maxsphere',['maxsphere',['../classMackey_1_1AdditiveStructure.html#a1d26ee2b19d9d66744ee4d79c302d9c4',1,'Mackey::AdditiveStructure::maxsphere()'],['../classMackey_1_1MultiplicationTable.html#a4355003c6be4a4f857eba151c8e5bcf6',1,'Mackey::MultiplicationTable::maxsphere()']]],
+  ['minsphere',['minsphere',['../classMackey_1_1AdditiveStructure.html#a1158af906d8bb5b9dcc7eed72367f25e',1,'Mackey::AdditiveStructure::minsphere()'],['../classMackey_1_1MultiplicationTable.html#a071f7d7c6cd1c75836b64ea8e9923b49',1,'Mackey::MultiplicationTable::minsphere()']]]
 ];

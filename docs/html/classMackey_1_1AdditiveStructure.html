@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.5</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('classMackey_1_1AdditiveStructure.html'
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classMackey_1_1AdditiveStructure-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Mackey::AdditiveStructure&lt; rank_t, diff_t &gt; Class Template Reference</div>  </div>
@@ -107,6 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e6b98b9df433129320045abd5e50bab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab">AdditiveStructure</a> (const std::vector&lt; int &gt; &amp;<a class="el" href="classMackey_1_1AdditiveStructure.html#a1158af906d8bb5b9dcc7eed72367f25e">minsphere</a>, const std::vector&lt; int &gt; &amp;<a class="el" href="classMackey_1_1AdditiveStructure.html#a1d26ee2b19d9d66744ee4d79c302d9c4">maxsphere</a>)</td></tr>
 <tr class="memdesc:a6e6b98b9df433129320045abd5e50bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct given the range of our spheres.  <a href="#a6e6b98b9df433129320045abd5e50bab">More...</a><br /></td></tr>
 <tr class="separator:a6e6b98b9df433129320045abd5e50bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2b48da3942beba407b3add7ceb9b63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1AdditiveStructure.html#afd2b48da3942beba407b3add7ceb9b63">AdditiveStructure</a> ()</td></tr>
+<tr class="memdesc:afd2b48da3942beba407b3add7ceb9b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for serealization.  <a href="#afd2b48da3942beba407b3add7ceb9b63">More...</a><br /></td></tr>
+<tr class="separator:afd2b48da3942beba407b3add7ceb9b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad18c28b9da58ec8b1c1579ace5953177"><td class="memTemplParams" colspan="2">template&lt;typename sphere_t &gt; </td></tr>
 <tr class="memitem:ad18c28b9da58ec8b1c1579ace5953177"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMackey_1_1MackeyFunctor.html">MackeyFunctor</a>&lt; rank_t &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1AdditiveStructure.html#ad18c28b9da58ec8b1c1579ace5953177">getMackey</a> (const sphere_t &amp;) const</td></tr>
 <tr class="memdesc:ad18c28b9da58ec8b1c1579ace5953177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors in the homology of the given sphere.  <a href="#ad18c28b9da58ec8b1c1579ace5953177">More...</a><br /></td></tr>
@@ -139,6 +143,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a1d26ee2b19d9d66744ee4d79c302d9c4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1AdditiveStructure.html#a1d26ee2b19d9d66744ee4d79c302d9c4">maxsphere</a></td></tr>
 <tr class="memdesc:a1d26ee2b19d9d66744ee4d79c302d9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The upper bound on the range of our spheres.  <a href="#a1d26ee2b19d9d66744ee4d79c302d9c4">More...</a><br /></td></tr>
 <tr class="separator:a1d26ee2b19d9d66744ee4d79c302d9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac693381dd6714e55f0307b9cea4a87cf"><td class="memTemplParams" colspan="2">template&lt;typename Archive , typename s_rank_t , typename s_diff_t &gt; </td></tr>
+<tr class="memitem:ac693381dd6714e55f0307b9cea4a87cf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1AdditiveStructure.html#ac693381dd6714e55f0307b9cea4a87cf">serialize</a> (Archive &amp;, <a class="el" href="classMackey_1_1AdditiveStructure.html">AdditiveStructure</a>&lt; s_rank_t, s_diff_t &gt; &amp;)</td></tr>
+<tr class="separator:ac693381dd6714e55f0307b9cea4a87cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
@@ -147,7 +157,7 @@ class Mackey::AdditiveStructure&lt; rank_t, diff_t &gt;</h3>
 <p>The additive structure of the RO(G) homology of a point. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6e6b98b9df433129320045abd5e50bab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e6b98b9df433129320045abd5e50bab">&#9670;&nbsp;</a></span>AdditiveStructure()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6b98b9df433129320045abd5e50bab">&#9670;&nbsp;</a></span>AdditiveStructure() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,29 +198,66 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1AdditiveStructure_a6e6b98b9df433129320045abd5e50bab_cgraph.png" border="0" usemap="#classMackey_1_1AdditiveStructure_a6e6b98b9df433129320045abd5e50bab_cgraph" alt=""/></div>
 <map name="classMackey_1_1AdditiveStructure_a6e6b98b9df433129320045abd5e50bab_cgraph" id="classMackey_1_1AdditiveStructure_a6e6b98b9df433129320045abd5e50bab_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#ac78e550c9949977ed71367fb21892e93" title="IDGenerator cerealize. " alt="" coords="255,5,379,32"/>
-<area shape="rect" id="node3" href="classMackey_1_1AdditiveStructure.html#ad18c28b9da58ec8b1c1579ace5953177" title="Retrieve the Mackey functors in the homology of the given sphere. " alt="" coords="229,57,405,98"/>
-<area shape="rect" id="node4" href="classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa" title="Print the Mackey functors for each degree. " alt="" coords="229,174,405,215"/>
-<area shape="rect" id="node5" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="1311,241,1503,268"/>
-<area shape="rect" id="node8" href="classMackey_1_1AdditiveStructure.html#a82ea44d284efe410fb5d43c6a41dd3ed" title="Print the unique Mackey functors that appear. " alt="" coords="229,305,405,346"/>
-<area shape="rect" id="node9" href="classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="229,239,405,281"/>
-<area shape="rect" id="node23" href="classMackey_1_1AdditiveStructure.html#a07887e78e182c1215fc7c8af3f385529" title="Identify the Mackey functors. " alt="" coords="229,370,405,411"/>
-<area shape="rect" id="node24" href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd" title="Hash vector given minimum and maximum values of its entries. " alt="" coords="247,436,387,463"/>
-<area shape="rect" id="node6" href="namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="466,173,607,200"/>
-<area shape="rect" id="node7" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="705,173,798,200"/>
-<area shape="rect" id="node10" href="classMackey_1_1MackeyFunctor.html#a2b333a786e44000c96ffd087a81a1d17" title="Computes name for certain Mackey functors in our universal notation. " alt="" coords="453,341,620,382"/>
-<area shape="rect" id="node11" href="classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="453,275,620,317"/>
-<area shape="rect" id="node12" href="classMackey_1_1MackeyFunctor.html#a454e5488d62aa1e8d5ff4df71aeecfa1" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="668,275,835,317"/>
-<area shape="rect" id="node22" href="classMackey_1_1MackeyFunctor.html#a24b7b8ce61be39ea51432d0d3737a55f" title="Applies isomorphism to Mackey functor (its inverse is also needed) " alt="" coords="892,425,1059,466"/>
-<area shape="rect" id="node13" href="namespaceMackey.html#ac9020d176548a99b3119cd7bda15941d" title="Returns all automorphisms of a finitely generated abelian group together with their inverses..." alt="" coords="883,329,1068,356"/>
-<area shape="rect" id="node21" href="namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ? " alt="" coords="899,279,1052,305"/>
-<area shape="rect" id="node14" href="namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0) ..." alt="" coords="1120,376,1259,403"/>
-<area shape="rect" id="node16" href="namespaceMackey.html#ab3832e52497b387d4553af06aa26ec99" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="1116,325,1263,352"/>
-<area shape="rect" id="node19" href="namespaceMackey.html#ac8552763cbbe02f22cedc11c6f8434da" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group. " alt="" coords="1127,427,1252,453"/>
-<area shape="rect" id="node15" href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="1349,380,1464,407"/>
-<area shape="rect" id="node17" href="namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="1311,314,1503,355"/>
-<area shape="rect" id="node18" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="1551,321,1593,348"/>
-<area shape="rect" id="node20" href="namespaceMackey.html#a5a3367c31144a61006d7c605d6e6ca38" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="1341,452,1473,479"/>
+<area shape="rect" id="node2" href="classMackey_1_1AdditiveStructure.html#afd2b48da3942beba407b3add7ceb9b63" title="Default constructor for serealization. " alt="" coords="229,5,405,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1AdditiveStructure.html#ad18c28b9da58ec8b1c1579ace5953177" title="Retrieve the Mackey functors in the homology of the given sphere. " alt="" coords="229,71,405,112"/>
+<area shape="rect" id="node4" href="classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa" title="Print the Mackey functors for each degree. " alt="" coords="229,188,405,229"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="1311,255,1503,282"/>
+<area shape="rect" id="node8" href="classMackey_1_1AdditiveStructure.html#a82ea44d284efe410fb5d43c6a41dd3ed" title="Print the unique Mackey functors that appear. " alt="" coords="229,319,405,360"/>
+<area shape="rect" id="node9" href="classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="229,253,405,295"/>
+<area shape="rect" id="node23" href="classMackey_1_1AdditiveStructure.html#a07887e78e182c1215fc7c8af3f385529" title="Identify the Mackey functors. " alt="" coords="229,384,405,425"/>
+<area shape="rect" id="node24" href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd" title="Hash vector given minimum and maximum values of its entries. " alt="" coords="247,450,387,477"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="466,187,607,214"/>
+<area shape="rect" id="node7" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="705,187,798,214"/>
+<area shape="rect" id="node10" href="classMackey_1_1MackeyFunctor.html#a2b333a786e44000c96ffd087a81a1d17" title="Computes name for certain Mackey functors in our universal notation. " alt="" coords="453,355,620,396"/>
+<area shape="rect" id="node11" href="classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="453,289,620,331"/>
+<area shape="rect" id="node12" href="classMackey_1_1MackeyFunctor.html#a454e5488d62aa1e8d5ff4df71aeecfa1" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="668,289,835,331"/>
+<area shape="rect" id="node22" href="classMackey_1_1MackeyFunctor.html#a24b7b8ce61be39ea51432d0d3737a55f" title="Applies isomorphism to Mackey functor (its inverse is also needed) " alt="" coords="892,439,1059,480"/>
+<area shape="rect" id="node13" href="namespaceMackey.html#ac9020d176548a99b3119cd7bda15941d" title="Returns all automorphisms of a finitely generated abelian group together with their inverses..." alt="" coords="883,343,1068,370"/>
+<area shape="rect" id="node21" href="namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ? " alt="" coords="899,293,1052,319"/>
+<area shape="rect" id="node14" href="namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0) ..." alt="" coords="1120,390,1259,417"/>
+<area shape="rect" id="node16" href="namespaceMackey.html#ab3832e52497b387d4553af06aa26ec99" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="1116,339,1263,366"/>
+<area shape="rect" id="node19" href="namespaceMackey.html#ac8552763cbbe02f22cedc11c6f8434da" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group. " alt="" coords="1127,441,1252,467"/>
+<area shape="rect" id="node15" href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="1349,394,1464,421"/>
+<area shape="rect" id="node17" href="namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="1311,328,1503,369"/>
+<area shape="rect" id="node18" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="1551,335,1593,362"/>
+<area shape="rect" id="node20" href="namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="1341,466,1473,493"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afd2b48da3942beba407b3add7ceb9b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2b48da3942beba407b3add7ceb9b63">&#9670;&nbsp;</a></span>AdditiveStructure() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1AdditiveStructure.html">Mackey::AdditiveStructure</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1AdditiveStructure.html">AdditiveStructure</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor for serealization. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1AdditiveStructure_afd2b48da3942beba407b3add7ceb9b63_icgraph.png" border="0" usemap="#classMackey_1_1AdditiveStructure_afd2b48da3942beba407b3add7ceb9b63_icgraph" alt=""/></div>
+<map name="classMackey_1_1AdditiveStructure_afd2b48da3942beba407b3add7ceb9b63_icgraph" id="classMackey_1_1AdditiveStructure_afd2b48da3942beba407b3add7ceb9b63_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="229,5,405,47"/>
 </map>
 </div>
 
@@ -436,7 +483,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node7" href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="1125,5,1240,32"/>
 <area shape="rect" id="node10" href="namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="1087,107,1279,149"/>
 <area shape="rect" id="node11" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="1327,115,1369,141"/>
-<area shape="rect" id="node13" href="namespaceMackey.html#a5a3367c31144a61006d7c605d6e6ca38" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="1117,191,1249,217"/>
+<area shape="rect" id="node13" href="namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="1117,191,1249,217"/>
 </map>
 </div>
 <div class="dynheader">
@@ -447,6 +494,47 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node2" href="classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="229,5,405,47"/>
 </map>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ac693381dd6714e55f0307b9cea4a87cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac693381dd6714e55f0307b9cea4a87cf">&#9670;&nbsp;</a></span>serialize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename Archive , typename s_rank_t , typename s_diff_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void serialize </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMackey_1_1AdditiveStructure.html">AdditiveStructure</a>&lt; s_rank_t, s_diff_t &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

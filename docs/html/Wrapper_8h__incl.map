@@ -1,6 +1,6 @@
 <map id="Mackey/Wrapper.h" name="Mackey/Wrapper.h">
-<area shape="rect" id="node2" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="30,229,105,256"/>
-<area shape="rect" id="node4" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="163,80,286,107"/>
-<area shape="rect" id="node10" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="229,229,308,256"/>
-<area shape="rect" id="node8" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="285,155,409,181"/>
+<area shape="rect" id="node2" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="5,229,80,256"/>
+<area shape="rect" id="node4" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="177,80,300,107"/>
+<area shape="rect" id="node10" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="227,229,306,256"/>
+<area shape="rect" id="node8" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="299,155,423,181"/>
 </map>

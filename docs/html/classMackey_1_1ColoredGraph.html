@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.5</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -107,10 +107,11 @@ Inheritance diagram for Mackey::ColoredGraph:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1ColoredGraph__inherit__graph.png" border="0" usemap="#Mackey_1_1ColoredGraph_inherit__map" alt="Inheritance graph"/></div>
 <map name="Mackey_1_1ColoredGraph_inherit__map" id="Mackey_1_1ColoredGraph_inherit__map">
-<area shape="rect" id="node4" href="classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph. " alt="" coords="19,247,206,288"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="19,247,206,288"/>
 <area shape="rect" id="node2" href="classMackey_1_1Graph.html" title="Mackey::Graph\&lt; ColoredGraph \&gt;" alt="" coords="5,95,220,121"/>
 <area shape="rect" id="node3" href="classMackey_1_1Graph.html" title="A directed Graph. " alt="" coords="41,5,184,32"/>
-<area shape="rect" id="node5" href="classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="37,337,188,379"/>
+<area shape="rect" id="node5" href="classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="19,337,206,379"/>
+<area shape="rect" id="node6" href="classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="37,428,188,469"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -137,9 +138,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a912a6e5cb94386d9ff6510e968b41e7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ColoredGraph.html#a912a6e5cb94386d9ff6510e968b41e7d">draw</a> (const std::vector&lt; std::string &gt; &amp;)</td></tr>
 <tr class="memdesc:a912a6e5cb94386d9ff6510e968b41e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a graph.dot file representing the colored graph (using red and blue) and named nodes.  <a href="#a912a6e5cb94386d9ff6510e968b41e7d">More...</a><br /></td></tr>
 <tr class="separator:a912a6e5cb94386d9ff6510e968b41e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5368f26080615293e8c43657f61f9100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ColoredGraph.html#a5368f26080615293e8c43657f61f9100">draw</a> (const std::vector&lt; std::string &gt; &amp;, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;, int)</td></tr>
-<tr class="memdesc:a5368f26080615293e8c43657f61f9100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a graph.dot file representing the colored graph and named nodes and color gradation for each edge.  <a href="#a5368f26080615293e8c43657f61f9100">More...</a><br /></td></tr>
-<tr class="separator:a5368f26080615293e8c43657f61f9100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88cde9e3cc3bfb72409142ac6705b474"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ColoredGraph.html#a88cde9e3cc3bfb72409142ac6705b474">draw</a> (const std::vector&lt; std::string &gt; &amp;, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;, std::vector&lt; std::string &gt; &amp;)</td></tr>
 <tr class="memdesc:a88cde9e3cc3bfb72409142ac6705b474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a graph.dot file representing the colored graph and named nodes and named edges.  <a href="#a88cde9e3cc3bfb72409142ac6705b474">More...</a><br /></td></tr>
 <tr class="separator:a88cde9e3cc3bfb72409142ac6705b474"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,7 +271,7 @@ Here is the call graph for this function:</div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8ed05073805b34a0087a7ed94e889694"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ed05073805b34a0087a7ed94e889694">&#9670;&nbsp;</a></span>draw() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed05073805b34a0087a7ed94e889694">&#9670;&nbsp;</a></span>draw() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +290,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="a912a6e5cb94386d9ff6510e968b41e7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a912a6e5cb94386d9ff6510e968b41e7d">&#9670;&nbsp;</a></span>draw() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a912a6e5cb94386d9ff6510e968b41e7d">&#9670;&nbsp;</a></span>draw() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -311,52 +309,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a5368f26080615293e8c43657f61f9100"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5368f26080615293e8c43657f61f9100">&#9670;&nbsp;</a></span>draw() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Mackey::ColoredGraph::draw </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>names</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>edge_color_gradient</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_gradient_number</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Writes a graph.dot file representing the colored graph and named nodes and color gradation for each edge. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMackey_1_1ColoredGraph_a5368f26080615293e8c43657f61f9100_cgraph.png" border="0" usemap="#classMackey_1_1ColoredGraph_a5368f26080615293e8c43657f61f9100_cgraph" alt=""/></div>
-<map name="classMackey_1_1ColoredGraph_a5368f26080615293e8c43657f61f9100_cgraph" id="classMackey_1_1ColoredGraph_a5368f26080615293e8c43657f61f9100_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#a12645e850e7965ee23d47e00ac7affdf" title="Mackey::RGB" alt="" coords="209,13,315,39"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="a88cde9e3cc3bfb72409142ac6705b474"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88cde9e3cc3bfb72409142ac6705b474">&#9670;&nbsp;</a></span>draw() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a88cde9e3cc3bfb72409142ac6705b474">&#9670;&nbsp;</a></span>draw() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

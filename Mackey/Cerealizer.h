@@ -42,7 +42,14 @@ namespace cereal
 	}
 
 }
-namespace Mackey{
+namespace Mackey {
+
+	///Chains cerealize
+	template<typename Archive, typename rank_t, typename diff_t>
+	void serialize(Archive& archive, Chains<rank_t, diff_t>& C) {
+		archive(CEREAL_NVP(C.maxindex), CEREAL_NVP(C.rank), CEREAL_NVP(C.diff));
+	}
+
 
 	///IDGenerator cerealize
 	template<typename Archive, typename rank_t>
@@ -50,7 +57,7 @@ namespace Mackey{
 		archive(CEREAL_NVP(ID.group), CEREAL_NVP(ID.group_lower), CEREAL_NVP(ID.Tr), CEREAL_NVP(ID.Res));
 	}
 
-	///Mackey cerealize
+	///MackeyFunctor cerealize
 	template<typename Archive, typename rank_t>
 	void serialize(Archive& archive, MackeyFunctor<rank_t>& Mack) {
 		archive(CEREAL_NVP(Mack.Groups), CEREAL_NVP(Mack.Tr), CEREAL_NVP(Mack.Res), CEREAL_NVP(Mack.Weyl), CEREAL_NVP(Mack.name));
@@ -66,78 +73,58 @@ namespace Mackey{
 	///Green cerealize
 	template<typename Archive, typename rank_t, typename diff_t>
 	void serialize(Archive& archive, Green<rank_t, diff_t>& G) {
-		archive(CEREAL_NVP(G.Groups), CEREAL_NVP(G.basis), CEREAL_NVP(G.normalBasis), CEREAL_NVP(G.boxID), CEREAL_NVP(G.first_number_selections), CEREAL_NVP(G.second_number_selections), CEREAL_NVP(G.isZero));
+		archive(CEREAL_NVP(G.Groups), CEREAL_NVP(G.basis), CEREAL_NVP(G.boxID), CEREAL_NVP(G.first_number_selections), CEREAL_NVP(G.second_number_selections), CEREAL_NVP(G.isZero));
 	}
-
-
 
 	///MultiplicationTable cerealize
 	template<typename Archive, typename rank_t, typename diff_t>
 	void serialize(Archive& archive, MultiplicationTable<rank_t, diff_t>& M) {
-		archive(CEREAL_NVP(M.level), CEREAL_NVP(M.NonZeroHomology), CEREAL_NVP(M.degree), CEREAL_NVP(M.antidegree), CEREAL_NVP(M.minsphere), CEREAL_NVP(M.maxsphere), CEREAL_NVP(M.Greens), CEREAL_NVP(M.basicIrreducibles), CEREAL_NVP(M.number_of_irreducibles));
+		archive(CEREAL_NVP(M.level), CEREAL_NVP(M.NonZeroHomology), CEREAL_NVP(M.degree), CEREAL_NVP(M.antidegree), CEREAL_NVP(M.index_product), CEREAL_NVP(M.minsphere), CEREAL_NVP(M.maxsphere), CEREAL_NVP(M.Greens), CEREAL_NVP(M.basicIrreducibles), CEREAL_NVP(M.number_of_irreducibles), CEREAL_NVP(M.basicChains), CEREAL_NVP(M.IndexedChains), CEREAL_NVP(M.tripleGreens));
 	}
-
 
 
 	///Saves object to binary file of given name. Serialization is provided by cereal
 	template<typename T>
 	void saver(const T& A, const std::string& filename, const std::string& type) {
-		if (type=="binary"){
+		std::cout << "Saving to " << filename << "\n";
+		if (type == "binary") {
 			std::ofstream ofs(filename, std::ofstream::binary);
-			{
-				cereal::BinaryOutputArchive oarchive(ofs);
-				oarchive(A);
-			}
-			ofs.close();
+			cereal::BinaryOutputArchive oarchive(ofs);
+			oarchive(A);
 		}
-		else if (type=="xml"){
+		else if (type == "xml") {
 			std::ofstream ofs(filename);
-			{
-				cereal::XMLOutputArchive oarchive(ofs);
-				oarchive(A);
-			}
-			ofs.close();
+			cereal::XMLOutputArchive oarchive(ofs);
+			oarchive(A);
 		}
-		else if (type=="json"){
+		else if (type == "json") {
 			std::ofstream ofs(filename);
-			{
-				cereal::JSONOutputArchive oarchive(ofs);
-				oarchive(A);
-			}
-			ofs.close();
+			cereal::JSONOutputArchive oarchive(ofs);
+			oarchive(A);
 		}
+		std::cout << "Saved \n";
 	}
 
 	///Loads object from binary file of given name. Serialization is provided by cereal
 	template<typename T>
 	void loader(T& A, const std::string& filename, const std::string& type) {
-		std::ifstream ifs;
-		if (type=="binary"){
-			ifs.open(filename, std::ifstream::binary);
-			if (ifs.is_open()){
-				cereal::BinaryInputArchive iarchive(ifs);
+		std::cout << "Loading from " << filename << "\n";
+		if (type == "binary") {
+			std::ifstream ifs(filename, std::ifstream::binary);
+			cereal::BinaryInputArchive iarchive(ifs);
+			iarchive(A);
+		}
+		else {
+			std::ifstream ifs(filename);
+			if (type == "xml") {
+				cereal::XMLInputArchive iarchive(ifs);
 				iarchive(A);
 			}
-			else
-				throw("Could not open file " + filename);
-		}
-		else{
-			ifs.open(filename);
-			if (ifs.is_open()) {
-				if (type == "xml") {
-					cereal::XMLInputArchive iarchive(ifs);
-					iarchive(A);
-				}
-				else if (type == "json") {
-					cereal::JSONInputArchive iarchive(ifs);
-					iarchive(A);
-				}
+			else if (type == "json") {
+				cereal::JSONInputArchive iarchive(ifs);
+				iarchive(A);
 			}
-			else
-				throw("Could not open file " + filename);
 		}
-		ifs.close();
+		std::cout << "Loaded \n";
 	}
-
-
 }

@@ -91,7 +91,11 @@ to print the name of the {\ttfamily i}-\/th generator. This name will be nonempt
 
 where now both $1$ and $s_3$ are used as sources.
 
-For more details see the code in Test\+Factorization.\+cpp of the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder\hypertarget{use_step1Mass}{}\subsection{Massey products}\label{use_step1Mass}
+If you see a {\ttfamily N\+OT F\+O\+U\+ND...} then that may mean the basic identification was not enough to compute all products. You can then use
+
+{\ttfamily F.\+pass\+\_\+disconnected();}
+
+to try computing products involving disconnected generators using triple box products. This will be significantly more computationally expensive.\hypertarget{use_step1Mass}{}\subsection{Massey products}\label{use_step1Mass}
 The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} finally exposes the method \hyperlink{namespaceMackey_ab75d7bcfa2d92d01bea0d5eef9f48398}{R\+O\+Massey} for (triple) Massey products in the Green functor $H_{\star}(S)$. Example\+: The code
 
 {\ttfamily auto Mass= \hyperlink{namespaceMackey_ab75d7bcfa2d92d01bea0d5eef9f48398}{Mackey\+::\+R\+O\+Massey$<$rank\+\_\+t,diff\+\_\+t$>$}(2,\{0,1,0\},\{-\/3,-\/3,0\},\{2,2,0\});}

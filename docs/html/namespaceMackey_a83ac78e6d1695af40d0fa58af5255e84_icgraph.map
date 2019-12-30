@@ -1,3 +1,6 @@
 <map id="Mackey::id_candidates" name="Mackey::id_candidates">
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="209,5,396,47"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a281b9be315d7d51c7e691d4c733ac0c9" title="Find if given elements can all be distinguished i.e. they have pairwise disjoint candidate sets..." alt="" coords="233,5,372,32"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="444,16,631,72"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="209,107,396,149"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="679,23,829,65"/>
 </map>

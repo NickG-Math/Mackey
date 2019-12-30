@@ -1,0 +1,5 @@
+var classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4 =
+[
+    [ "Smith", "classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4.html#a248f8208745c2cddd880a40694a6a64c", null ],
+    [ "Smith", "classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4.html#ad4bdf593897252b89ec2a835d155dec0", null ]
+];

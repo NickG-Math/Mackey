@@ -1,7 +1,8 @@
 <map id="Mackey::Factorization&lt; rank_t, diff_t &gt;" name="Mackey::Factorization&lt; rank_t, diff_t &gt;">
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph. " alt="" coords="20,261,207,303"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationTable.html" title="The Multiplication Table. " alt="" coords="5,171,189,212"/>
-<area shape="rect" id="node4" href="$classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors. " alt="" coords="214,178,370,205"/>
-<area shape="rect" id="node5" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; ColoredGraph \&gt;" alt="" coords="185,95,399,121"/>
-<area shape="rect" id="node6" href="$classMackey_1_1Graph.html" title="A directed Graph. " alt="" coords="221,5,363,32"/>
+<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="20,352,207,393"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="20,261,207,303"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html" title="The Multiplication Table. " alt="" coords="5,171,189,212"/>
+<area shape="rect" id="node5" href="$classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors. " alt="" coords="214,178,370,205"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; ColoredGraph \&gt;" alt="" coords="185,95,399,121"/>
+<area shape="rect" id="node7" href="$classMackey_1_1Graph.html" title="A directed Graph. " alt="" coords="221,5,363,32"/>
 </map>

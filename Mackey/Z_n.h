@@ -203,7 +203,7 @@ namespace Eigen {
 			IsSigned = 0,
 			RequireInitialization = 0,
 			ReadCost = 1,
-			AddCost = 3,
+			AddCost = 1,
 			MulCost = 3
 		};
 		static inline Z<N> digits10() { return 0; }

@@ -8,6 +8,12 @@
 ///@brief Contains the class and methods for multiplying generators.
 
 namespace Mackey {
+	//forward declaration for Clang
+	namespace internal{
+		template<typename rank_t, typename diff_t>
+		class GreenCompute;
+	}
+
 
 	/// The result of multiplying generators in a Green functor
 	template<typename rank_t, typename diff_t>
@@ -15,26 +21,62 @@ namespace Mackey {
 	public:
 		rank_t Groups;///<The homology group the product lives in.
 		bool isZero;///<1 if the homology group the product lives in is 0.
-
-		//////////////////////////////////////////////////////////////
-		///Expresses the product of two generators as a linear combination of the generators of the box product
-
-		std::vector<rank_t> basis;		///<For each selection of generators we have an array expressing the product as a linear combination of generators in the degree of the product
-		std::vector<rank_t> normalBasis; ///<Same as basis, now normalized.
-
-		int first_number_selections;///<The number of selections of generators for the first factor
-		int second_number_selections;///<The number of selections of generators for the second factor
-
 		IDGenerators<rank_t> boxID;///<Identifies the generators of the homology group the product lives in.
-		
+
 		///Default constructor
 		Green() { isZero = 1; };
 
 		///Computes the product of generators given chains, degrees and level
 		Green(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int, int, int);
 
-		///Selects the desired generator
+
+		///Returns the (normalized) product of the given two elements (not necessarily generators)
+		template<typename T, typename S>
+		rank_t getNormalBasis(const T&, const S&) const;
+
+		///Returns the (normalized) product of the selected generator with another element
+		template<typename T = int, typename S>
+		rank_t getNormalBasis(int i, const S& b) const {
+			if (isZero)
+				return rank_t();
+			return getNormalBasis(basisElement<rank_t>(first_number_selections, i), b);
+		}
+
+		///Returns the (normalized) product of the given element with the selected generator
+		template<typename T, typename S = int>
+		rank_t getNormalBasis(const T& a, int j) const {
+			if (isZero)
+				return rank_t();
+			return getNormalBasis(a, basisElement<rank_t>(second_number_selections, j));
+		}
+
+		///Returns the (normalized) product of the selected generators
+		template<typename T = int, typename S = int>
+		rank_t getNormalBasis(int i, int j) const {
+			if (isZero)
+				return rank_t();
+			auto b = basis[select(i, j)];
+			normalize(b, Groups);
+			return b;
+		}
+
+	private:
+		std::vector<rank_t> basis;		///<For each selection of generators the product is a linear combination of generators in its degree
+
+		int first_number_selections;///<The number of selections of generators for the first factor
+		int second_number_selections;///<The number of selections of generators for the second factor
+
+		///Selects the corrent basis and normalBasis index given selections.
 		int select(int, int) const;
+
+		template<typename s_rank_t, typename s_diff_t>
+		friend class internal::GreenCompute;
+
+#ifdef CEREALIZE
+	public:
+		template<typename Archive, typename s_rank, typename s_diff>
+		friend void serialize(Archive&, Green<s_rank, s_diff>&);
+#endif
 
 	};
 
@@ -48,9 +90,30 @@ namespace Mackey {
 		return select_second + select_first * second_number_selections;
 	}
 
+	template<typename rank_t, typename diff_t>
+	template<typename T, typename S>
+	rank_t Green<rank_t, diff_t>::getNormalBasis(const T& c, const S& d) const {
+		if (isZero)
+			return rank_t();
+		rank_t result(basis[0].size());
+		result.setZero();
+		for (int i = 0; i < c.size(); i++) {
+			if (c[i] == 0)
+				continue;
+			for (int j = 0; j < d.size(); j++) {
+				if (d[j] == 0)
+					continue;
+				result += c[i] * d[j] * basis[select(i, j)];
+			}
+		}
+		normalize(result, Groups);
+		return result;
+	}
+
+
 
 	namespace internal {
-		
+
 		///Computes the homology at given level, the generators and their restrictions
 		template<typename rank_t, typename diff_t>
 		class ChainsLevelGen {
@@ -82,7 +145,7 @@ namespace Mackey {
 			/// Computes the product of generators in a Green functor
 			template<typename s_rank_t, typename s_diff_t>
 			friend class GreenCompute;
-			
+
 			///Computes Massey products and their indeterminacy
 			template<typename s_rank_t, typename s_diff_t>
 			friend class MasseyCompute;
@@ -214,7 +277,6 @@ namespace Mackey {
 			gen_t genC, genD;
 			auto combinations = GenC.cols() * GenD.cols();
 			G.basis.reserve(combinations);
-			G.normalBasis.reserve(combinations);
 			for (int i = 0; i < GenC.cols(); i++) {
 				for (int j = 0; j < GenD.cols(); j++) {
 					genC = GenC.col(i);
@@ -224,13 +286,10 @@ namespace Mackey {
 					Restricted.multiply(resGenC, resGenD);
 					product = invRes(Restricted.product, rank_bottom, rank_level);
 					rank_t basis = H_Level.basis(product);
-
 					G.basis.push_back(basis);
-
-					auto normalBasis = normalize(basis, H_Level.Groups);
-					G.normalBasis.push_back(normalBasis);
 				}
 			}
+
 			G.Groups = std::move(H_Level.Groups);
 		}
 
@@ -248,14 +307,13 @@ namespace Mackey {
 	rank_t multiply(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int level, int degreeC, int degreeD, int selectC, int selectD)
 	{
 		Green G(C, D, level, degreeC, degreeD);
-		return G.normalBasis[G.select(selectC, selectD)];
+		return G.getNormalBasis(selectC, selectD);
 	}
 
 	template<typename rank_t, typename diff_t>
 	rank_t multiply(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int level, int degreeC, int degreeD)
 	{
-		Green G(C, D, level, degreeC, degreeD);
-		return G.normalBasis[0];
+		return multiply(C, D, level, degreeC, degreeD, 0, 0);
 	}
 
 

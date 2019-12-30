@@ -1,0 +1,6 @@
+<map id="Mackey::equals" name="Mackey::equals">
+<area shape="rect" id="node2" href="$namespaceMackey.html#aef81f82c080c97bb31154524af52b62c" title="Finds if element a is a multiple of element b in the given finitely generated abelian group..." alt="" coords="168,46,299,73"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]..." alt="" coords="347,39,533,80"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="599,5,750,47"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="581,71,768,112"/>
+</map>

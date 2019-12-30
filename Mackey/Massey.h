@@ -200,7 +200,8 @@ namespace Mackey {
 			gen_t Masseyproduct = invRes(Masseyproduct_bottom, Box.rank, ID.rank_level);
 			Mass.basis = ID.H_level.basis(Masseyproduct);
 			Mass.isZero = Mass.basis.isZero();
-			Mass.normalBasis = normalize(Mass.basis, ID.H_level.Groups);
+			Mass.normalBasis = Mass.basis;
+			normalize(Mass.normalBasis, ID.H_level.Groups);
 			Mass.Groups = ID.H_level.Groups;
 		}
 
@@ -218,8 +219,13 @@ namespace Mackey {
 				gen_t prod_bottom = BoxDE_to_BoxCD * product_bottom(C, BoxDE, C_DE_detailedrank, resgenC, resgen, degreeC, degreeD + degreeE + 1);
 				auto prod_level = invRes(prod_bottom, Box.rank, ID.rank_level);
 				auto basis=ID.H_level.basis(prod_level);
-				if (basis.size()!=0)
-					indeterminacy_left.push_back(order(basis, ID.H_level.Groups));
+				if (basis.size() != 0 && !basis.isZero()) {
+					auto o = order(basis, ID.H_level.Groups);
+					if (o==0)
+						indeterminacy_left.push_back(1);
+					else
+						indeterminacy_left.push_back(o);
+				}
 			}
 
 			Junction<rank_t, diff_t> J_CD(BoxCD, degreeC + degreeD + 1);
@@ -231,10 +237,14 @@ namespace Mackey {
 				gen_t prod_bottom = product_bottom(BoxCD, E, Box, resgen, resgenE, degreeC+degreeD+1, degreeE);
 				auto prod_level = invRes(prod_bottom, Box.rank, ID.rank_level);
 				auto basis = ID.H_level.basis(prod_level);
-				if (basis.size() != 0)
-					indeterminacy_right.push_back(order(basis, ID.H_level.Groups));
+				if (basis.size() != 0 && !basis.isZero()) {
+					auto o = order(basis, ID.H_level.Groups);
+					if (o == 0)
+						indeterminacy_right.push_back(1);
+					else
+						indeterminacy_right.push_back(o);
+				}
 			}
-
 			Mass.indeterminacy[0] = Eigen::Map<rank_t>(indeterminacy_left.data(), indeterminacy_left.size());
 			Mass.indeterminacy[1] = Eigen::Map<rank_t>(indeterminacy_right.data(), indeterminacy_right.size());
 

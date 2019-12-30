@@ -212,6 +212,7 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	ChainsBox<rank_t, diff_t>::ChainsBox(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i) {
+		i = std::min(i, C.maxindex + D.maxindex);
 		std::vector<rank_t> rank;
 		std::vector<diff_t> diff;
 		std::vector<std::vector<rank_t>> detailedrank;

@@ -33,13 +33,12 @@ namespace Mackey {
 		///The type of weight will depend on the specialization of Graph.
 		std::vector<int> weightedDistance;
 
-
 		/// Construct given the edges of the graph
 		Graph(std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) {}
 
 		/// A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations.
 		void computeWithSource(int givensource) {
-			if (path.size() == 0) {
+			if (path.size() < number_of_nodes) { //either hasn't been run, or new nodes were added
 				path.resize(number_of_nodes); 
 				weightedDistance.assign(number_of_nodes, -1);
 			}
@@ -121,7 +120,7 @@ namespace Mackey {
 		std::vector<int> distance, closest;
 		std::vector<char> visited, reachable; //not bool for performance
 		std::priority_queue<std::pair<int, int>> next;
-		std::vector<std::vector<int>> zeroWeight(std::vector<std::vector<int>>);
+		std::vector<std::vector<int>> zeroWeight(const std::vector<std::vector<int>>&);
 		void initialize();
 		void computePath();
 		void stepDistance(int);
@@ -132,7 +131,7 @@ namespace Mackey {
 
 
 
-	std::vector<std::vector<int>> WeightedGraph::zeroWeight(std::vector<std::vector<int>> e) {
+	std::vector<std::vector<int>> WeightedGraph::zeroWeight(const std::vector<std::vector<int>>& e) {
 		std::vector<std::vector<int>> w;
 		w.resize(e.size());
 		for (size_t i = 0; i < e.size(); i++) {
@@ -201,30 +200,23 @@ namespace Mackey {
 	/// A directed Graph with two colors
 	class ColoredGraph : public Graph<ColoredGraph> {
 	public:
+		std::vector<std::vector<char>> colors;	///<The colors of the graph
 
 		/// Default Constructor
 		ColoredGraph() {};
 
-
 		/// Construct given the edges and colors
 		ColoredGraph(std::vector<std::vector<int>>& edges, std::vector<std::vector<char>>& colors) : Graph(edges), colors(colors) {}
-
 
 		/// Writes a graph.dot file representing the colored graph (using red and blue). The nodes are unnamed points.
 		void draw();
 		/// Writes a graph.dot file representing the colored graph (using red and blue) and named nodes
 		void draw(const std::vector<std::string>&);
 
-		/// Writes a graph.dot file representing the colored graph and named nodes and color gradation for each edge
-		void draw(const std::vector<std::string>&, const std::vector<std::vector<int>>&, int);
-
 		/// Writes a graph.dot file representing the colored graph and named nodes and named edges
 		void draw(const std::vector<std::string>&, const std::vector<std::vector<int>>&, std::vector<std::string>&);
 
-		std::vector<std::vector<char>> colors;	///<The colors of the graph
-
 	private:
-
 		void computePath();
 		void constructDual();
 		std::vector<int> adjustpath(std::vector<int>& path);
@@ -315,7 +307,6 @@ namespace Mackey {
 		}
 	}
 
-
 	void ColoredGraph::draw() {
 		std::array<std::string, 2> coloring = { "red","blue" };
 		std::ofstream file;
@@ -343,36 +334,6 @@ namespace Mackey {
 		file << "}";
 		file.close();
 	}
-
-	std::string RGB(int r, int g, int b)
-	{
-		char hex[16];
-		std::snprintf(hex, sizeof(hex), "%02x%02x%02x", r,g,b);
-		return hex;
-	}
-
-
-	void ColoredGraph::draw(const std::vector<std::string>& names, const std::vector<std::vector<int>>& edge_color_gradient, int max_gradient_number) {
-		std::ofstream file;
-		file.open("graph.dot");
-		file << "digraph G{ \n";
-		int green = 256 / (max_gradient_number+1);
-		for (int i = 0; i < number_of_nodes; i++) {
-			for (std::vector<int>::size_type j = 0; j < edges[i].size(); j++) {
-				file << "\"" << names[i] << "\"" << "->" << "\"" << names[edges[i][j]] << "\" [color=\"#";
-				if (colors[i][j] == 0) {//red based
-					file << RGB(255, green * (edge_color_gradient[i][j]+1), 0);
-				}
-				else {// blue based
-					file << RGB(0, green * (edge_color_gradient[i][j] + 1), 255);
-				}
-				file <<  "\"]\n";
-			}
-		}
-		file << "}";
-		file.close();
-	}
-
 
 	void ColoredGraph::draw(const std::vector<std::string>& names, const std::vector<std::vector<int>>& edgeid, std::vector<std::string>& edgenames) {
 		std::ofstream file;

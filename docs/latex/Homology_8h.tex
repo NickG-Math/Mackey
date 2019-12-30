@@ -9,6 +9,7 @@ Contains the Homology class and algorithms.
 {\ttfamily \#include \char`\"{}General.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Smith.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Z\+\_\+n.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
 Include dependency graph for Homology.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -20,7 +21,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=323pt]{Homology_8h__dep__incl}
+\includegraphics[height=550pt]{Homology_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -36,14 +37,16 @@ class \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology$<$ rank\+\_\+t, d
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \hyperlink{namespaceMackey_aa3ee3f5d387e24122f0e2865f742675f}{Mackey\+::normalize} (const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1,-\/1 $>$ \&group)
-\begin{DoxyCompactList}\small\item\em Normalizes the element in given abelian group so that element\mbox{[}i\mbox{]}=1 if it generates group\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename S $>$ }\\int \hyperlink{namespaceMackey_a4abdca157edcf425b1e7ceff39d74c2f}{Mackey\+::order} (const T \&element, const S \&group)
-\begin{DoxyCompactList}\small\item\em Finds the order of element in given abelian group. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a69fa6a0eac2520c76251b0799fa9357f}{Mackey\+::is\+Basis\+Element} (const T \&element)
-\begin{DoxyCompactList}\small\item\em If the given element is 0,...,0,?,0,...,0 returns the index of ?. Otherwise returns -\/1. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_ab5bc349f95c14d448e42622de2d6a448}{Mackey\+::find\+Basis\+Element} (const T \&elements)
-\begin{DoxyCompactList}\small\item\em Given an array of elements, returns the index of the unique element of the form 0,...,0,?,0,...,0. If not unique then returns -\/1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a320b32b8fd44ee75d9f08aa0665c4ec7}{Mackey\+::mod\+\_\+normalize} (Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
+\begin{DoxyCompactList}\small\item\em Normalizes the element in a group so that 0$<$=element\mbox{[}i\mbox{]}$<$=group\mbox{[}i\mbox{]} if group\mbox{[}i\mbox{]}!=1. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a43e260f55a458bed50ab6a75aef7e666}{Mackey\+::normalize} (Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
+\begin{DoxyCompactList}\small\item\em Normalizes the element in a group to have minimal signs amongst its multiples. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename S , typename R $>$ }\\bool \hyperlink{namespaceMackey_a82dd9e46100ec78b6238a3b60a5b1b45}{Mackey\+::equals} (const T \&element1, const S \&element2, const R \&group)
+\begin{DoxyCompactList}\small\item\em Finds if two elements are equal in the given finitely generated abelian group. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename S $>$ }\\int \hyperlink{namespaceMackey_aef81f82c080c97bb31154524af52b62c}{Mackey\+::is\+Multiple} (const T \&a, const T \&b, const S \&group)
+\begin{DoxyCompactList}\small\item\em Finds if element a is a multiple of element b in the given finitely generated abelian group. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

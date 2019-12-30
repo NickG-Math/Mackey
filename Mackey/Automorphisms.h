@@ -10,24 +10,33 @@
 namespace Mackey
 {
 
-	///Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.). Positive means to use >=0 values when taking modulo
+	///Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.).
 	template<typename Scalar>
-	void normalize(Eigen::Matrix<Scalar, -1, -1>& linmap, const Eigen::Matrix<Scalar, 1, -1>& range, bool positive) {
+	void normalize(Eigen::Matrix<Scalar, -1, -1>& linmap, const Eigen::Matrix<Scalar, 1, -1>& range) {
 		for (int j = 0; j < linmap.cols(); j++) {
 			for (int i = 0; i < linmap.rows(); i++) {
-				if (positive) {
-					if (range[i] != 1)
-						linmap(i, j) = (linmap(i, j) + range[i]) % range[i];
-				}
-				else {
-					if (range[i] > 2 && linmap(i, j) == range[i] - 1)
-						linmap(i, j) = -1;
-					else if (range[i] != 1)
-						linmap(i, j) = linmap(i, j) % range[i];
-				}
+				if (range[i] != 1)
+					linmap(i, j) = (linmap(i, j) + range[i]) % range[i];
 			}
 		}
 	}
+
+
+	///Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.) allowing negative entries
+	template<typename Scalar>
+	void normalize_minus(Eigen::Matrix<Scalar, -1, -1>& linmap, const Eigen::Matrix<Scalar, 1, -1>& range, bool positive) {
+		for (int j = 0; j < linmap.cols(); j++) {
+			for (int i = 0; i < linmap.rows(); i++) {
+				if (range[i] > 2 && linmap(i, j) == range[i] - 1)
+					linmap(i, j) = -1;
+				else if (range[i] != 1)
+					linmap(i, j) = linmap(i, j) % range[i];
+			}
+		}
+	}
+
+
+
 
 	///Checks if integer matrix induces an isomorphism pGroup->pGroup for finite abelian p-group
 	template<typename T, typename S>
@@ -36,7 +45,7 @@ namespace Mackey
 		for (int j = 0; j < pGroup.size(); j++) {
 			for (int i = 0; i < pGroup.size(); i++) {
 				auto quot = pGroup[i] / pGroup[j];
-				if (quot!=0 && a(i, j) % quot != 0)
+				if (quot != 0 && a(i, j) % quot != 0)
 					return 0;
 			}
 		}
@@ -77,7 +86,7 @@ namespace Mackey
 			if (inverse[i].size() == 0) {
 				for (int j = i; j < isos.size(); j++) {
 					matrix_t product = isos[i] * isos[j];
-					normalize(product, Group, 1);
+					normalize(product, Group);
 					if (product == id) {
 						inverse[i] = isos[j];
 						inverse[j] = isos[i];
@@ -161,7 +170,7 @@ namespace Mackey
 			}
 			else {
 				int countZ, locationZ;
-				countZ= locationZ=0;
+				countZ = locationZ = 0;
 				for (int i = 0; i < Group.size(); i++) {
 					if (Group[i] == 1) {
 						locationZ = i;
@@ -172,11 +181,11 @@ namespace Mackey
 				}
 				//finite+Z
 				Eigen::Matrix<Scalar, 1, -1> pGroup(1, size - 1);
-				pGroup<< Group.head(locationZ) , Group.tail(size-locationZ-1);
+				pGroup << Group.head(locationZ), Group.tail(size - locationZ - 1);
 				auto p = is_p_group(pGroup);
 				if (p > 0) {
 					auto smalliso = aut_p_group(p, pGroup);
-					Eigen::Matrix<Scalar, 1, -1> onelower = Group - Eigen::Matrix<Scalar, 1, -1>::Constant(size,1);
+					Eigen::Matrix<Scalar, 1, -1> onelower = Group - Eigen::Matrix<Scalar, 1, -1>::Constant(size, 1);
 
 					std::vector<Scalar> maxelement(onelower.data(), onelower.data() + onelower.size()); //the column corresponding to Z
 					std::vector<Scalar> minelement(size);
@@ -186,10 +195,10 @@ namespace Mackey
 					for (const auto& i : smalliso) {
 						for (const auto& j : allcolumns) {
 							matrix_t matrix(size, size);
-							matrix.topLeftCorner(locationZ, locationZ) = i.topLeftCorner(locationZ,locationZ);
+							matrix.topLeftCorner(locationZ, locationZ) = i.topLeftCorner(locationZ, locationZ);
 							matrix.row(locationZ).setZero();
 							matrix.col(locationZ) = Eigen::Map<const Eigen::Matrix<Scalar, -1, 1>>(j.data(), j.size());
-							matrix.bottomRightCorner(size-locationZ-1, size - locationZ - 1) = i.bottomRightCorner(size - locationZ - 1, size - locationZ - 1);
+							matrix.bottomRightCorner(size - locationZ - 1, size - locationZ - 1) = i.bottomRightCorner(size - locationZ - 1, size - locationZ - 1);
 							matrix(locationZ, locationZ) = 1;
 							iso.push_back(matrix);
 							matrix(locationZ, locationZ) = -1;

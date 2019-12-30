@@ -1,0 +1,5 @@
+<map id="Mackey/MultiplicationGraph.h" name="Mackey/MultiplicationGraph.h">
+<area shape="rect" id="node2" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="11,80,194,121"/>
+<area shape="rect" id="node3" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="23,169,182,196"/>
+<area shape="rect" id="node4" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="31,244,174,271"/>
+</map>

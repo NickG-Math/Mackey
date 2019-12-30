@@ -14,6 +14,8 @@ The additive structure of the R\+O(\+G) homology of a point.
 \item 
 \hyperlink{classMackey_1_1AdditiveStructure_a6e6b98b9df433129320045abd5e50bab}{Additive\+Structure} (const std\+::vector$<$ int $>$ \&\hyperlink{classMackey_1_1AdditiveStructure_a1158af906d8bb5b9dcc7eed72367f25e}{minsphere}, const std\+::vector$<$ int $>$ \&\hyperlink{classMackey_1_1AdditiveStructure_a1d26ee2b19d9d66744ee4d79c302d9c4}{maxsphere})
 \begin{DoxyCompactList}\small\item\em Construct given the range of our spheres. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1AdditiveStructure_afd2b48da3942beba407b3add7ceb9b63}{Additive\+Structure} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for serealization. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename sphere\+\_\+t $>$ }\\std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1AdditiveStructure_ad18c28b9da58ec8b1c1579ace5953177}{get\+Mackey} (const sphere\+\_\+t \&) const
 \begin{DoxyCompactList}\small\item\em Retrieve the \hyperlink{namespaceMackey}{Mackey} functors in the homology of the given sphere. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename sphere\+\_\+t $>$ }\\\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1AdditiveStructure_a2638212adc9b1fdacf0a50d9fb23cf0d}{get\+Mackey} (int, const sphere\+\_\+t \&) const
@@ -33,6 +35,11 @@ std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1AdditiveStructure_a1158af906d
 \begin{DoxyCompactList}\small\item\em The lower bound on the range of our spheres. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1AdditiveStructure_a1d26ee2b19d9d66744ee4d79c302d9c4}{maxsphere}
 \begin{DoxyCompactList}\small\item\em The upper bound on the range of our spheres. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Archive , typename s\+\_\+rank\+\_\+t , typename s\+\_\+diff\+\_\+t $>$ }\\void \hyperlink{classMackey_1_1AdditiveStructure_ac693381dd6714e55f0307b9cea4a87cf}{serialize} (Archive \&, \hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure}$<$ s\+\_\+rank\+\_\+t, s\+\_\+diff\+\_\+t $>$ \&)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -45,7 +52,7 @@ The additive structure of the R\+O(\+G) homology of a point.
 \mbox{\Hypertarget{classMackey_1_1AdditiveStructure_a6e6b98b9df433129320045abd5e50bab}\label{classMackey_1_1AdditiveStructure_a6e6b98b9df433129320045abd5e50bab}} 
 \index{Mackey\+::\+Additive\+Structure@{Mackey\+::\+Additive\+Structure}!Additive\+Structure@{Additive\+Structure}}
 \index{Additive\+Structure@{Additive\+Structure}!Mackey\+::\+Additive\+Structure@{Mackey\+::\+Additive\+Structure}}
-\subsubsection{\texorpdfstring{Additive\+Structure()}{AdditiveStructure()}}
+\subsubsection{\texorpdfstring{Additive\+Structure()}{AdditiveStructure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
 \hyperlink{classMackey_1_1AdditiveStructure}{Mackey\+::\+Additive\+Structure}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -58,6 +65,24 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMackey_1_1AdditiveStructure_a6e6b98b9df433129320045abd5e50bab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1AdditiveStructure_afd2b48da3942beba407b3add7ceb9b63}\label{classMackey_1_1AdditiveStructure_afd2b48da3942beba407b3add7ceb9b63}} 
+\index{Mackey\+::\+Additive\+Structure@{Mackey\+::\+Additive\+Structure}!Additive\+Structure@{Additive\+Structure}}
+\index{Additive\+Structure@{Additive\+Structure}!Mackey\+::\+Additive\+Structure@{Mackey\+::\+Additive\+Structure}}
+\subsubsection{\texorpdfstring{Additive\+Structure()}{AdditiveStructure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1AdditiveStructure}{Mackey\+::\+Additive\+Structure}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for serealization. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1AdditiveStructure_afd2b48da3942beba407b3add7ceb9b63_icgraph}
 \end{center}
 \end{figure}
 
@@ -190,6 +215,17 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{classMackey_1_1AdditiveStructure_a6c68d66e89c3ad3a81dde8fd35837c3c_icgraph}
 \end{center}
 \end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1AdditiveStructure_ac693381dd6714e55f0307b9cea4a87cf}\label{classMackey_1_1AdditiveStructure_ac693381dd6714e55f0307b9cea4a87cf}} 
+\index{Mackey\+::\+Additive\+Structure@{Mackey\+::\+Additive\+Structure}!serialize@{serialize}}
+\index{serialize@{serialize}!Mackey\+::\+Additive\+Structure@{Mackey\+::\+Additive\+Structure}}
+\subsubsection{\texorpdfstring{serialize}{serialize}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+template$<$typename Archive , typename s\+\_\+rank\+\_\+t , typename s\+\_\+diff\+\_\+t $>$ \\
+void serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{,  }\item[{\hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure}$<$ s\+\_\+rank\+\_\+t, s\+\_\+diff\+\_\+t $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
 
 
 \subsection{Member Data Documentation}

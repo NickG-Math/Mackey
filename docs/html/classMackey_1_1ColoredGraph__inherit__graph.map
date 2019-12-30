@@ -1,6 +1,7 @@
 <map id="Mackey::ColoredGraph" name="Mackey::ColoredGraph">
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph. " alt="" coords="19,247,206,288"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="19,247,206,288"/>
 <area shape="rect" id="node2" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; ColoredGraph \&gt;" alt="" coords="5,95,220,121"/>
 <area shape="rect" id="node3" href="$classMackey_1_1Graph.html" title="A directed Graph. " alt="" coords="41,5,184,32"/>
-<area shape="rect" id="node5" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="37,337,188,379"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="19,337,206,379"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="37,428,188,469"/>
 </map>

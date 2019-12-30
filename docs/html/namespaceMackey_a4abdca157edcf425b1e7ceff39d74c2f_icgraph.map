@@ -1,6 +1,10 @@
 <map id="Mackey::order" name="Mackey::order">
 <area shape="rect" id="node2" href="$namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="175,13,345,39"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="167,64,353,105"/>
-<area shape="rect" id="node5" href="$classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Compute the homology from the given Junction. " alt="" coords="159,130,361,157"/>
-<area shape="rect" id="node3" href="$classMackey_1_1ChangeBasis.html#a036c1f54ffb4cf4115efa2fab60c354b" title="Constructs the change of basis matrices given two ranks. " alt="" coords="409,5,564,47"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Compute the homology from the given Junction. " alt="" coords="159,63,361,90"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a43e260f55a458bed50ab6a75aef7e666" title="Normalizes the element in a group to have minimal signs amongst its multiples. " alt="" coords="194,114,326,141"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#aef81f82c080c97bb31154524af52b62c" title="Finds if element a is a multiple of element b in the given finitely generated abelian group..." alt="" coords="195,165,325,191"/>
+<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]..." alt="" coords="409,196,596,237"/>
+<area shape="rect" id="node9" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="644,259,831,300"/>
+<area shape="rect" id="node3" href="$classMackey_1_1ChangeBasis.html#a036c1f54ffb4cf4115efa2fab60c354b" title="Constructs the change of basis matrices given two ranks. " alt="" coords="425,5,580,47"/>
+<area shape="rect" id="node8" href="$classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="662,193,813,235"/>
 </map>

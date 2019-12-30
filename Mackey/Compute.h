@@ -11,7 +11,7 @@ namespace Mackey {
 	///Reindexes the homological degree k=degree[0] so that it is always 0<=k<=dimension(sphere)
 	template <typename T>
 	inline T Reindex(T degree) {
-		auto sphere = tail(degree.data(), degree.size());
+		auto sphere = tail(degree.data(), degree.size(),1);
 		degree[0] = Reindex(degree[0], sphere);
 		return degree;
 	}

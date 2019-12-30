@@ -1,6 +1,6 @@
 <map id="Mackey/Homology.h" name="Mackey/Homology.h">
-<area shape="rect" id="node2" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="5,80,80,107"/>
-<area shape="rect" id="node4" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="105,80,183,107"/>
-<area shape="rect" id="node7" href="$Smith_8h.html" title="Contains the Smith normal form algorithm. " alt="" coords="208,80,275,107"/>
-<area shape="rect" id="node10" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="299,80,354,107"/>
+<area shape="rect" id="node2" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="81,80,155,107"/>
+<area shape="rect" id="node4" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="180,80,259,107"/>
+<area shape="rect" id="node8" href="$Smith_8h.html" title="Contains the Smith normal form algorithms. " alt="" coords="283,80,350,107"/>
+<area shape="rect" id="node10" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="375,80,429,107"/>
 </map>

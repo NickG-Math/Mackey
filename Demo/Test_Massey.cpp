@@ -1,5 +1,9 @@
 //#define EIGEN_USE_MKL_ALL
 
+#ifdef _MSC_VER
+#define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS //Eigen/cereal won't work otherwise.
+#endif
+
 #include <iostream>
 #include "C4_Implementation.h"
 #include "Mackey/Factorization.h"
@@ -19,40 +23,36 @@ void doMackey(Factorization<rank_t, diff_t>  F) {
 	omp_init_lock(&lock);
 
 	std::vector<std::array<int, 3>> tobedone;
-	std::vector<int> elementindex;
+	std::vector<std::vector<int>> degrees;
 
-	for (int i = 0; i < F.realsize; i++) {
-		for (int j = 0; j < F.realsize; j++) {
-			for (int k = 0; k < F.realsize; k++) {
+	for (int i = 0; i < F.number_of_generators; i++) {
+		for (int j = 0; j < F.number_of_generators; j++) {
+			for (int k = 0; k < F.number_of_generators; k++) {
 				auto deg = F.getdegree(i) + F.getdegree(j) + F.getdegree(k);
 				deg[0] += 1;
 				if (deg[0] != 0 || deg[1] != 0 || deg[2] != 0)
 					continue;
-				auto u = F.getdegreeindex(deg);
-				if (u == -1)
-					continue;
-				auto element = F.getelement(u, 0, 1);
-				if (element == -1)
-					continue;
 				tobedone.push_back({ i,j,k });
-				elementindex.push_back(element);
+				degrees.push_back(deg);
 			}
 		}
 	}
-	std::cout << "Computing " << tobedone.size() << " many Massey products";
+	std::cout << "Computing " << tobedone.size() << " many Massey products \n";
+	rank_t one(1);
+	one << 1;
 #pragma omp parallel for num_threads(12) schedule(guided, 1)
 	for (int e=0; e<tobedone.size(); e++)
 	{
 		int i = tobedone[e][0];
 		int j = tobedone[e][1];
 		int k = tobedone[e][2];
-		int element = elementindex[e];
-		auto a = ROMassey<rank_t, diff_t, std::vector<int>>(2, F.getdegree(i), F.getdegree(j), F.getdegree(k), F.getposition(i), F.getposition(j), F.getposition(k));
+		auto deg = degrees[e];
+		auto a = ROMassey<rank_t, diff_t, std::vector<int>>(2, F.getdegree(i), F.getdegree(j), F.getdegree(k), find(F.getelement(i), 1), find(F.getelement(j), 1), find(F.getelement(k), 1));
 
 		omp_set_lock(&lock);
 
 		if (a.exists && a.noIndeterminacy && a.basis.size() == 1 && a.basis[0] != 0) {
-			std::cout << "[" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "] = " << (int)a.normalBasis[0] << " * " << F.getname(element) << "\n";
+			std::cout << "[" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "] = " << (int)a.normalBasis[0] << " * " << F.getelementindex(deg,one) << "\n";
 		}
 		else if (a.exists && a.noIndeterminacy) {
 			std::cout << "[" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "] = " << 0 << "\n";

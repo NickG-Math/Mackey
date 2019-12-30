@@ -1,3 +1,7 @@
 <map id="Mackey::MultiplicationTable::MultiplicationTable" name="Mackey::MultiplicationTable::MultiplicationTable">
 <area shape="rect" id="node2" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector. " alt="" coords="237,5,421,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="469,5,653,47"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraphIdentify.html#a87d94678c5d050a9b36ffe6323076375" title="Uses triple box products to possibly identify the disconnected generators if identification failed be..." alt="" coords="701,5,888,47"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Factorization.html#a02cb54dbcb5a79d1c5e8871dc0599093" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="936,5,1087,47"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="1135,5,1285,47"/>
 </map>

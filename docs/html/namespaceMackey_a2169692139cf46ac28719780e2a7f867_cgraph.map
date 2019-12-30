@@ -1,6 +1,6 @@
 <map id="Mackey::action" name="Mackey::action">
 <area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="164,5,339,32"/>
 <area shape="rect" id="node4" href="$namespaceMackey.html#aa515b26c0fbc7f19b36cee7d826f07b9" title="Compute the Weyl group action on a generator given the rank of the group it lives in..." alt="" coords="196,56,307,83"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="395,5,529,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="395,5,529,32"/>
 <area shape="rect" id="node5" href="$namespaceMackey.html#aab8a6292210a3b71960cb03b79d218e6" title="Mackey::shiftsegment" alt="" coords="387,56,537,83"/>
 </map>

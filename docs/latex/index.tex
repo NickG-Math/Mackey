@@ -4,14 +4,14 @@ This is a C++ header only library devoted to numerically computing the $RO(G)$ h
 For a quick demonstration in the case of $G=C_4$ you can use one of the available binaries \href{https://github.com/NickG-Math/Mackey/tree/master/bin}{\tt here}.\hypertarget{index_req}{}\section{Requirements}\label{index_req}
 
 \begin{DoxyItemize}
-\item C++17 and the standard library.
+\item C++17.
 \item \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page}{\tt Eigen}, a header only library for matrix manipulation. I\textquotesingle{}ve tested the code with \hyperlink{namespaceEigen}{Eigen} 3.\+3.\+7 though newer versions shouldn\textquotesingle{}t break compatibility.
 \end{DoxyItemize}
 
 Optionally\+:
 \begin{DoxyItemize}
 \item For improved performance you can use the Intel M\+KL with \hyperlink{namespaceEigen}{Eigen} and further combine with Open\+MP for multithreading.
-\item For serialization we support the \href{https://uscilab.github.io/cereal}{\tt Cereal} library.
+\item For serialization there is integrated support of the \href{https://uscilab.github.io/cereal}{\tt Cereal} library.
 \item To draw the multiplication graphs you can use \href{https://www.graphviz.org}{\tt Graphviz}.
 \end{DoxyItemize}\hypertarget{index_install}{}\section{Installation}\label{index_install}
 

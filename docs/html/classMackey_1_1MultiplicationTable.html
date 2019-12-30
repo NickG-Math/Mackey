@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.5</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('classMackey_1_1MultiplicationTable.htm
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classMackey_1_1MultiplicationTable-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Mackey::MultiplicationTable&lt; rank_t, diff_t &gt; Class Template Reference</div>  </div>
@@ -108,8 +109,9 @@ Inheritance diagram for Mackey::MultiplicationTable&lt; rank_t, diff_t &gt;:</di
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MultiplicationTable__inherit__graph.png" border="0" usemap="#Mackey_1_1MultiplicationTable_3_01rank__t_00_01diff__t_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="Mackey_1_1MultiplicationTable_3_01rank__t_00_01diff__t_01_4_inherit__map" id="Mackey_1_1MultiplicationTable_3_01rank__t_00_01diff__t_01_4_inherit__map">
-<area shape="rect" id="node2" href="classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph. " alt="" coords="5,95,192,136"/>
-<area shape="rect" id="node3" href="classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="23,184,174,225"/>
+<area shape="rect" id="node2" href="classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="5,95,192,136"/>
+<area shape="rect" id="node3" href="classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="5,184,192,225"/>
+<area shape="rect" id="node4" href="classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="23,273,174,315"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -118,6 +120,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8530e27d8d2c3c755eb5041a2ee8c35b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b">MultiplicationTable</a> (int, const std::vector&lt; int &gt; &amp;, const std::vector&lt; int &gt; &amp;, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;)</td></tr>
 <tr class="memdesc:a8530e27d8d2c3c755eb5041a2ee8c35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles.  <a href="#a8530e27d8d2c3c755eb5041a2ee8c35b">More...</a><br /></td></tr>
 <tr class="separator:a8530e27d8d2c3c755eb5041a2ee8c35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4371e6ba8a058073c005e636979b7230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#a4371e6ba8a058073c005e636979b7230">extend</a> (const std::vector&lt; int &gt; &amp;, const std::vector&lt; int &gt; &amp;)</td></tr>
+<tr class="memdesc:a4371e6ba8a058073c005e636979b7230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends multiplication table using the larger range provided.  <a href="#a4371e6ba8a058073c005e636979b7230">More...</a><br /></td></tr>
+<tr class="separator:a4371e6ba8a058073c005e636979b7230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3bc2d09599a994b2b159def52484bae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#ac3bc2d09599a994b2b159def52484bae">MultiplicationTable</a> ()</td></tr>
+<tr class="memdesc:ac3bc2d09599a994b2b159def52484bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor needed for loading archive.  <a href="#ac3bc2d09599a994b2b159def52484bae">More...</a><br /></td></tr>
+<tr class="separator:ac3bc2d09599a994b2b159def52484bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -128,8 +136,11 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad4245f4a8122f0661f969498ef53f999"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999">getsphere</a> (const std::vector&lt; int &gt; &amp;deg)</td></tr>
-<tr class="memdesc:ad4245f4a8122f0661f969498ef53f999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Isolate sphere from the degree vector.  <a href="#ad4245f4a8122f0661f969498ef53f999">More...</a><br /></td></tr>
+<tr class="memdesc:ad4245f4a8122f0661f969498ef53f999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Isolate sphere from the degree vector (i.e. get everything but first entry)  <a href="#ad4245f4a8122f0661f969498ef53f999">More...</a><br /></td></tr>
 <tr class="separator:ad4245f4a8122f0661f969498ef53f999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2801cd35f426f10c89ab8addb75f829"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829">triple_product</a> (int, int, int)</td></tr>
+<tr class="memdesc:ae2801cd35f426f10c89ab8addb75f829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies the given index with two basic irreducibles. Only used by <a class="el" href="classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. ">MultiplicationGraphIdentify</a> when all other identification techniques fail.  <a href="#ae2801cd35f426f10c89ab8addb75f829">More...</a><br /></td></tr>
+<tr class="separator:ae2801cd35f426f10c89ab8addb75f829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -142,6 +153,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ac5749155e5531a3c728d8227caed63eb"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::vector&lt; int &gt;, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#ac5749155e5531a3c728d8227caed63eb">antidegree</a></td></tr>
 <tr class="memdesc:ac5749155e5531a3c728d8227caed63eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps each degree to the corresponding index of NonZeroHomology.  <a href="#ac5749155e5531a3c728d8227caed63eb">More...</a><br /></td></tr>
 <tr class="separator:ac5749155e5531a3c728d8227caed63eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a89961f82ad9fd2b1ae41b912ef434"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix&lt; int, -1, -1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#a83a89961f82ad9fd2b1ae41b912ef434">index_product</a></td></tr>
+<tr class="memdesc:a83a89961f82ad9fd2b1ae41b912ef434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps each index and irreducible to the index of their product.  <a href="#a83a89961f82ad9fd2b1ae41b912ef434">More...</a><br /></td></tr>
+<tr class="separator:a83a89961f82ad9fd2b1ae41b912ef434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a071f7d7c6cd1c75836b64ea8e9923b49"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#a071f7d7c6cd1c75836b64ea8e9923b49">minsphere</a></td></tr>
 <tr class="memdesc:a071f7d7c6cd1c75836b64ea8e9923b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lower bound on the range of our spheres.  <a href="#a071f7d7c6cd1c75836b64ea8e9923b49">More...</a><br /></td></tr>
 <tr class="separator:a071f7d7c6cd1c75836b64ea8e9923b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,9 +168,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a2a87b9a2f25f4e99c903c8f874fad4fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#a2a87b9a2f25f4e99c903c8f874fad4fb">number_of_irreducibles</a></td></tr>
 <tr class="memdesc:a2a87b9a2f25f4e99c903c8f874fad4fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of basic irreducibles.  <a href="#a2a87b9a2f25f4e99c903c8f874fad4fb">More...</a><br /></td></tr>
 <tr class="separator:a2a87b9a2f25f4e99c903c8f874fad4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a045f3f5912a6fe634b1763367725f81f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="classMackey_1_1Green.html">Green</a>&lt; rank_t, diff_t &gt;, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#a045f3f5912a6fe634b1763367725f81f">Greens</a></td></tr>
-<tr class="memdesc:a045f3f5912a6fe634b1763367725f81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of the multiplication table.  <a href="#a045f3f5912a6fe634b1763367725f81f">More...</a><br /></td></tr>
-<tr class="separator:a045f3f5912a6fe634b1763367725f81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a42c7d9c520844c0d1c91051ae750e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="classMackey_1_1Green.html">Green</a>&lt; rank_t, diff_t &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#ac9a42c7d9c520844c0d1c91051ae750e">Greens</a></td></tr>
+<tr class="memdesc:ac9a42c7d9c520844c0d1c91051ae750e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Each entry in the multiplication table.  <a href="#ac9a42c7d9c520844c0d1c91051ae750e">More...</a><br /></td></tr>
+<tr class="separator:ac9a42c7d9c520844c0d1c91051ae750e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b2afae20bd4a120e9792d1a9dce837"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::array&lt; int, 3 &gt;, <a class="el" href="classMackey_1_1Green.html">Green</a>&lt; rank_t, diff_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#af6b2afae20bd4a120e9792d1a9dce837">tripleGreens</a></td></tr>
+<tr class="memdesc:af6b2afae20bd4a120e9792d1a9dce837"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tripleGreens are set and used by triple_product.  <a href="#af6b2afae20bd4a120e9792d1a9dce837">More...</a><br /></td></tr>
+<tr class="separator:af6b2afae20bd4a120e9792d1a9dce837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a2b1db64d5f5749a0a14483ef730b755c"><td class="memTemplParams" colspan="2">template&lt;typename Archive , typename s_rank , typename s_diff &gt; </td></tr>
+<tr class="memitem:a2b1db64d5f5749a0a14483ef730b755c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#a2b1db64d5f5749a0a14483ef730b755c">serialize</a> (Archive &amp;, <a class="el" href="classMackey_1_1MultiplicationTable.html">MultiplicationTable</a>&lt; s_rank, s_diff &gt; &amp;)</td></tr>
+<tr class="separator:a2b1db64d5f5749a0a14483ef730b755c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
@@ -165,7 +188,7 @@ class Mackey::MultiplicationTable&lt; rank_t, diff_t &gt;</h3>
 <p>The Multiplication Table. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8530e27d8d2c3c755eb5041a2ee8c35b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8530e27d8d2c3c755eb5041a2ee8c35b">&#9670;&nbsp;</a></span>MultiplicationTable()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8530e27d8d2c3c755eb5041a2ee8c35b">&#9670;&nbsp;</a></span>MultiplicationTable() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,29 +233,90 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph" alt=""/></div>
 <map name="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph" id="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector. " alt="" coords="241,23,425,65"/>
-<area shape="rect" id="node6" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="237,89,429,116"/>
-<area shape="rect" id="node7" href="namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa" title="Compute the dimension of a representation sphere. " alt="" coords="266,241,401,268"/>
-<area shape="rect" id="node9" href="namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="263,140,404,167"/>
-<area shape="rect" id="node10" href="namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="271,191,395,217"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="501,140,594,167"/>
-<area shape="rect" id="node4" href="namespaceMackey.html#ac78e550c9949977ed71367fb21892e93" title="IDGenerator cerealize. " alt="" coords="485,5,609,32"/>
-<area shape="rect" id="node5" href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd" title="Hash vector given minimum and maximum values of its entries. " alt="" coords="477,56,617,83"/>
-<area shape="rect" id="node8" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="526,241,569,268"/>
+<area shape="rect" id="node2" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="241,5,425,47"/>
+<area shape="rect" id="node7" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="237,71,429,98"/>
+<area shape="rect" id="node8" href="namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa" title="Compute the dimension of a representation sphere. " alt="" coords="266,122,401,149"/>
+<area shape="rect" id="node10" href="namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="499,173,640,199"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="881,34,975,61"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="477,31,661,72"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="709,34,833,61"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="722,85,821,111"/>
+<area shape="rect" id="node9" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="548,122,591,149"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="ac3bc2d09599a994b2b159def52484bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3bc2d09599a994b2b159def52484bae">&#9670;&nbsp;</a></span>MultiplicationTable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMackey_1_1MultiplicationTable.html">Mackey::MultiplicationTable</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1MultiplicationTable.html">MultiplicationTable</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor needed for loading archive. </p>
 <div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_icgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_icgraph" alt=""/></div>
-<map name="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_icgraph" id="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector. " alt="" coords="237,5,421,47"/>
+<div class="center"><img src="classMackey_1_1MultiplicationTable_ac3bc2d09599a994b2b159def52484bae_cgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_ac3bc2d09599a994b2b159def52484bae_cgraph" alt=""/></div>
+<map name="classMackey_1_1MultiplicationTable_ac3bc2d09599a994b2b159def52484bae_cgraph" id="classMackey_1_1MultiplicationTable_ac3bc2d09599a994b2b159def52484bae_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd" title="Hash vector given minimum and maximum values of its entries. " alt="" coords="237,13,377,39"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4371e6ba8a058073c005e636979b7230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4371e6ba8a058073c005e636979b7230">&#9670;&nbsp;</a></span>extend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename diff_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMackey_1_1MultiplicationTable.html">Mackey::MultiplicationTable</a>&lt; rank_t, diff_t &gt;::extend </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extends multiplication table using the larger range provided. </p>
+
+</div>
+</div>
 <a id="ad4245f4a8122f0661f969498ef53f999"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4245f4a8122f0661f969498ef53f999">&#9670;&nbsp;</a></span>getsphere()</h2>
 
@@ -259,21 +343,16 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Isolate sphere from the degree vector. </p>
+<p>Isolate sphere from the degree vector (i.e. get everything but first entry) </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_cgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_cgraph" alt=""/></div>
 <map name="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_cgraph" id="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="709,93,803,119"/>
-<area shape="rect" id="node3" href="classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="237,85,421,127"/>
-<area shape="rect" id="node9" href="namespaceMackey.html#ac78e550c9949977ed71367fb21892e93" title="IDGenerator cerealize. " alt="" coords="267,151,391,178"/>
-<area shape="rect" id="node10" href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd" title="Hash vector given minimum and maximum values of its entries. " alt="" coords="259,202,399,229"/>
-<area shape="rect" id="node4" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="469,42,661,69"/>
-<area shape="rect" id="node5" href="namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa" title="Compute the dimension of a representation sphere. " alt="" coords="498,194,633,221"/>
-<area shape="rect" id="node7" href="namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="495,93,636,119"/>
-<area shape="rect" id="node8" href="namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="503,143,627,170"/>
-<area shape="rect" id="node6" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="735,194,777,221"/>
+<area shape="rect" id="node2" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="641,5,735,32"/>
+<area shape="rect" id="node3" href="classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="237,31,421,73"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="469,31,593,57"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="482,81,581,108"/>
 </map>
 </div>
 <div class="dynheader">
@@ -282,8 +361,120 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph" alt=""/></div>
 <map name="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph" id="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph">
 <area shape="rect" id="node2" href="classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="237,5,421,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="237,71,421,112"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="469,63,656,119"/>
+<area shape="rect" id="node5" href="classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="704,71,855,112"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="ae2801cd35f426f10c89ab8addb75f829"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2801cd35f426f10c89ab8addb75f829">&#9670;&nbsp;</a></span>triple_product()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename diff_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMackey_1_1MultiplicationTable.html">Mackey::MultiplicationTable</a>&lt; rank_t, diff_t &gt;::triple_product </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiplies the given index with two basic irreducibles. Only used by <a class="el" href="classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. ">MultiplicationGraphIdentify</a> when all other identification techniques fail. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_cgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_cgraph" alt=""/></div>
+<map name="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_cgraph" id="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="267,5,391,32"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="237,57,421,98"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="280,123,379,149"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="469,35,563,61"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_icgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_icgraph" alt=""/></div>
+<map name="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_icgraph" id="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="237,5,424,61"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="239,86,423,127"/>
+<area shape="rect" id="node3" href="classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="489,13,639,54"/>
+<area shape="rect" id="node5" href="classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="472,86,656,127"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a2b1db64d5f5749a0a14483ef730b755c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1db64d5f5749a0a14483ef730b755c">&#9670;&nbsp;</a></span>serialize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename Archive , typename s_rank , typename s_diff &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void serialize </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMackey_1_1MultiplicationTable.html">MultiplicationTable</a>&lt; s_rank, s_diff &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -366,8 +557,8 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 
 </div>
 </div>
-<a id="a045f3f5912a6fe634b1763367725f81f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a045f3f5912a6fe634b1763367725f81f">&#9670;&nbsp;</a></span>Greens</h2>
+<a id="ac9a42c7d9c520844c0d1c91051ae750e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a42c7d9c520844c0d1c91051ae750e">&#9670;&nbsp;</a></span>Greens</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,7 +569,7 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="classMackey_1_1Green.html">Green</a>&lt;rank_t, diff_t&gt;, int&gt; &gt; <a class="el" href="classMackey_1_1MultiplicationTable.html">Mackey::MultiplicationTable</a>&lt; rank_t, diff_t &gt;::Greens</td>
+          <td class="memname">std::vector&lt;std::vector&lt;<a class="el" href="classMackey_1_1Green.html">Green</a>&lt;rank_t, diff_t&gt; &gt; &gt; <a class="el" href="classMackey_1_1MultiplicationTable.html">Mackey::MultiplicationTable</a>&lt; rank_t, diff_t &gt;::Greens</td>
         </tr>
       </table>
   </td>
@@ -388,7 +579,33 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The result of the multiplication table. </p>
+<p>Each entry in the multiplication table. </p>
+
+</div>
+</div>
+<a id="a83a89961f82ad9fd2b1ae41b912ef434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a89961f82ad9fd2b1ae41b912ef434">&#9670;&nbsp;</a></span>index_product</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix&lt;int, -1, -1&gt; <a class="el" href="classMackey_1_1MultiplicationTable.html">Mackey::MultiplicationTable</a>&lt; rank_t, diff_t &gt;::index_product</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maps each index and irreducible to the index of their product. </p>
 
 </div>
 </div>
@@ -512,6 +729,32 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 </div><div class="memdoc">
 
 <p>The number of basic irreducibles. </p>
+
+</div>
+</div>
+<a id="af6b2afae20bd4a120e9792d1a9dce837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6b2afae20bd4a120e9792d1a9dce837">&#9670;&nbsp;</a></span>tripleGreens</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::array&lt;int, 3&gt;, <a class="el" href="classMackey_1_1Green.html">Green</a>&lt;rank_t, diff_t&gt; &gt; <a class="el" href="classMackey_1_1MultiplicationTable.html">Mackey::MultiplicationTable</a>&lt; rank_t, diff_t &gt;::tripleGreens</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The tripleGreens are set and used by triple_product. </p>
 
 </div>
 </div>

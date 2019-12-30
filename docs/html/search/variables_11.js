@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['weighteddistance',['weightedDistance',['../classMackey_1_1Graph.html#ab14d4c1bcbe1a994d28a6c590b27ba8b',1,'Mackey::Graph']]],
-  ['weyl',['Weyl',['../classMackey_1_1MackeyFunctor.html#a0b2f1a52b0a49f7544ba1025bbe95319',1,'Mackey::MackeyFunctor']]]
+  ['x',['x',['../classZ.html#a81f004f23dff9772403dd7a4452ad3c6',1,'Z::x()'],['../classZ_3_012_01_4.html#ae753e180f5d8aa55370a497e2c86fbb8',1,'Z&lt; 2 &gt;::x()']]]
 ];

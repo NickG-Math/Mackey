@@ -119,12 +119,11 @@ namespace Mackey
 	void MackeyFunctor<rank_t>::normalizeMackey()
 	{
 		for (int i = 0; i < Tr.size(); i++)
-			normalize(Tr[i], Groups[i + 1], 1);
+			normalize(Tr[i], Groups[i + 1]);
 		for (int i = 0; i < Res.size(); i++) {
-			normalize(Res[i], Groups[i], 1);
-			normalize(Weyl[i], Groups[i], 0);
+			normalize(Res[i], Groups[i]);
+			normalize_minus(Weyl[i], Groups[i]);
 		}
-
 	}
 
 	template<typename rank_t>
@@ -288,19 +287,19 @@ namespace Mackey
 		for (int i = 0; i < Tr.size(); i++) {
 			if (Tr[i].size() != 0) {
 				N.Tr[i] = iso[i + 1] * Tr[i] * isoinv[i];
-				normalize(N.Tr[i], Groups[i + 1], 1);
+				normalize(N.Tr[i], Groups[i + 1]);
 			}
 		}
 		for (int i = 0; i < Res.size(); i++) {
 			if (Res[i].size() != 0) {
 				N.Res[i] = iso[i] * Res[i] * isoinv[i + 1];
-				normalize(N.Res[i], Groups[i], 1);
+				normalize(N.Res[i], Groups[i]);
 			}
 		}
 		for (int i = 0; i < Weyl.size(); i++) {
 			if (Weyl[i].size() != 0) {
 				N.Weyl[i] = iso[i] * Weyl[i] * isoinv[i];
-				normalize(N.Weyl[i], Groups[i], 0);
+				normalize(N.Weyl[i], Groups[i]); //maybe normalize_minus?
 			}
 		}
 		return N;

@@ -1,6 +1,5 @@
 <map id="Mackey::invReindex" name="Mackey::invReindex">
 <area shape="rect" id="node2" href="$classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa" title="Print the Mackey functors for each degree. " alt="" coords="199,5,375,47"/>
 <area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="195,71,379,112"/>
-<area shape="rect" id="node3" href="$classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="431,5,607,47"/>
-<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector. " alt="" coords="427,71,611,112"/>
+<area shape="rect" id="node3" href="$classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="427,5,603,47"/>
 </map>

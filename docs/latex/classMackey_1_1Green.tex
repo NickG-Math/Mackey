@@ -16,8 +16,14 @@ The result of multiplying generators in a \hyperlink{classMackey_1_1Green}{Green
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1Green_a614ae228cc8c5cccddcf562923f06f3a}{Green} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, int, int, int)
 \begin{DoxyCompactList}\small\item\em Computes the product of generators given chains, degrees and level. \end{DoxyCompactList}\item 
-int \hyperlink{classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def}{select} (int, int) const
-\begin{DoxyCompactList}\small\item\em Selects the desired generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename T , typename S $>$ }\\rank\+\_\+t \hyperlink{classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84}{get\+Normal\+Basis} (const T \&, const S \&) const
+\begin{DoxyCompactList}\small\item\em Returns the (normalized) product of the given two elements (not necessarily generators) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T  = int, typename S $>$ }\\rank\+\_\+t \hyperlink{classMackey_1_1Green_a257e9f34318b5e2dbbe668b4e237a6c3}{get\+Normal\+Basis} (int i, const S \&b) const
+\begin{DoxyCompactList}\small\item\em Returns the (normalized) product of the selected generator with another element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename S  = int$>$ }\\rank\+\_\+t \hyperlink{classMackey_1_1Green_a7e2d97abb22044ec3abbe91bc9c33ee9}{get\+Normal\+Basis} (const T \&a, int j) const
+\begin{DoxyCompactList}\small\item\em Returns the (normalized) product of the given element with the selected generator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T  = int, typename S  = int$>$ }\\rank\+\_\+t \hyperlink{classMackey_1_1Green_a3f7f1f3a020f23a00fae372956f50827}{get\+Normal\+Basis} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Returns the (normalized) product of the selected generators. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,16 +31,15 @@ rank\+\_\+t \hyperlink{classMackey_1_1Green_acfa5ea708949024bd24f1c1e21399cbc}{G
 \begin{DoxyCompactList}\small\item\em The homology group the product lives in. \end{DoxyCompactList}\item 
 bool \hyperlink{classMackey_1_1Green_a12a01a6d1715538af0bdc6b34fad6b85}{is\+Zero}
 \begin{DoxyCompactList}\small\item\em 1 if the homology group the product lives in is 0. \end{DoxyCompactList}\item 
-std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1Green_a9cfc633ccb548d2d516450399c108174}{basis}
-\begin{DoxyCompactList}\small\item\em Expresses the product of two generators as a linear combination of the generators of the box product. \end{DoxyCompactList}\item 
-std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1Green_a18135b4b1a4aceb387519832a487206a}{normal\+Basis}
-\begin{DoxyCompactList}\small\item\em Same as basis, now normalized. \end{DoxyCompactList}\item 
-int \hyperlink{classMackey_1_1Green_a18ba76e7f7b71c1e5fca23bc71accf86}{first\+\_\+number\+\_\+selections}
-\begin{DoxyCompactList}\small\item\em The number of selections of generators for the first factor. \end{DoxyCompactList}\item 
-int \hyperlink{classMackey_1_1Green_a1240acdc0e901e496597eab2d0ef27f2}{second\+\_\+number\+\_\+selections}
-\begin{DoxyCompactList}\small\item\em The number of selections of generators for the second factor. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1Green_aea166896ebdaa17b3c5d21b2ae936e0d}{box\+ID}
 \begin{DoxyCompactList}\small\item\em Identifies the generators of the homology group the product lives in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename s\+\_\+rank\+\_\+t , typename s\+\_\+diff\+\_\+t $>$ }\\class \hyperlink{classMackey_1_1Green_aa7a5b52d9d87397db413615120f34df7}{internal\+::\+Green\+Compute}
+\item 
+{\footnotesize template$<$typename Archive , typename s\+\_\+rank , typename s\+\_\+diff $>$ }\\void \hyperlink{classMackey_1_1Green_aeb72946219f32efa8f0a45f5f8872c8a}{serialize} (Archive \&, \hyperlink{classMackey_1_1Green}{Green}$<$ s\+\_\+rank, s\+\_\+diff $>$ \&)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -55,13 +60,6 @@ The result of multiplying generators in a \hyperlink{classMackey_1_1Green}{Green
 
 Default constructor. 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=348pt]{classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Green_a614ae228cc8c5cccddcf562923f06f3a}\label{classMackey_1_1Green_a614ae228cc8c5cccddcf562923f06f3a}} 
 \index{Mackey\+::\+Green@{Mackey\+::\+Green}!Green@{Green}}
 \index{Green@{Green}!Mackey\+::\+Green@{Mackey\+::\+Green}}
@@ -76,39 +74,98 @@ Computes the product of generators given chains, degrees and level.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def}\label{classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def}} 
-\index{Mackey\+::\+Green@{Mackey\+::\+Green}!select@{select}}
-\index{select@{select}!Mackey\+::\+Green@{Mackey\+::\+Green}}
-\subsubsection{\texorpdfstring{select()}{select()}}
+\mbox{\Hypertarget{classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84}\label{classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84}} 
+\index{Mackey\+::\+Green@{Mackey\+::\+Green}!get\+Normal\+Basis@{get\+Normal\+Basis}}
+\index{get\+Normal\+Basis@{get\+Normal\+Basis}!Mackey\+::\+Green@{Mackey\+::\+Green}}
+\subsubsection{\texorpdfstring{get\+Normal\+Basis()}{getNormalBasis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-int \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::select (\begin{DoxyParamCaption}\item[{int}]{select\+\_\+first,  }\item[{int}]{select\+\_\+second }\end{DoxyParamCaption}) const}
+template$<$typename T , typename S $>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::get\+Normal\+Basis (\begin{DoxyParamCaption}\item[{const T \&}]{c,  }\item[{const S \&}]{d }\end{DoxyParamCaption}) const}
 
 
 
-Selects the desired generator. 
+Returns the (normalized) product of the given two elements (not necessarily generators) 
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph}
+\includegraphics[width=350pt]{classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1Green_a257e9f34318b5e2dbbe668b4e237a6c3}\label{classMackey_1_1Green_a257e9f34318b5e2dbbe668b4e237a6c3}} 
+\index{Mackey\+::\+Green@{Mackey\+::\+Green}!get\+Normal\+Basis@{get\+Normal\+Basis}}
+\index{get\+Normal\+Basis@{get\+Normal\+Basis}!Mackey\+::\+Green@{Mackey\+::\+Green}}
+\subsubsection{\texorpdfstring{get\+Normal\+Basis()}{getNormalBasis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+template$<$typename T  = int, typename S $>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::get\+Normal\+Basis (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{const S \&}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the (normalized) product of the selected generator with another element. 
+
+\mbox{\Hypertarget{classMackey_1_1Green_a7e2d97abb22044ec3abbe91bc9c33ee9}\label{classMackey_1_1Green_a7e2d97abb22044ec3abbe91bc9c33ee9}} 
+\index{Mackey\+::\+Green@{Mackey\+::\+Green}!get\+Normal\+Basis@{get\+Normal\+Basis}}
+\index{get\+Normal\+Basis@{get\+Normal\+Basis}!Mackey\+::\+Green@{Mackey\+::\+Green}}
+\subsubsection{\texorpdfstring{get\+Normal\+Basis()}{getNormalBasis()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+template$<$typename T , typename S  = int$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::get\+Normal\+Basis (\begin{DoxyParamCaption}\item[{const T \&}]{a,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the (normalized) product of the given element with the selected generator. 
+
+\mbox{\Hypertarget{classMackey_1_1Green_a3f7f1f3a020f23a00fae372956f50827}\label{classMackey_1_1Green_a3f7f1f3a020f23a00fae372956f50827}} 
+\index{Mackey\+::\+Green@{Mackey\+::\+Green}!get\+Normal\+Basis@{get\+Normal\+Basis}}
+\index{get\+Normal\+Basis@{get\+Normal\+Basis}!Mackey\+::\+Green@{Mackey\+::\+Green}}
+\subsubsection{\texorpdfstring{get\+Normal\+Basis()}{getNormalBasis()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+template$<$typename T  = int, typename S  = int$>$ \\
+rank\+\_\+t \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::get\+Normal\+Basis (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the (normalized) product of the selected generators. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classMackey_1_1Green_a3f7f1f3a020f23a00fae372956f50827_cgraph}
 \end{center}
 \end{figure}
 
 
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{classMackey_1_1Green_a9cfc633ccb548d2d516450399c108174}\label{classMackey_1_1Green_a9cfc633ccb548d2d516450399c108174}} 
-\index{Mackey\+::\+Green@{Mackey\+::\+Green}!basis@{basis}}
-\index{basis@{basis}!Mackey\+::\+Green@{Mackey\+::\+Green}}
-\subsubsection{\texorpdfstring{basis}{basis}}
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1Green_aa7a5b52d9d87397db413615120f34df7}\label{classMackey_1_1Green_aa7a5b52d9d87397db413615120f34df7}} 
+\index{Mackey\+::\+Green@{Mackey\+::\+Green}!internal\+::\+Green\+Compute@{internal\+::\+Green\+Compute}}
+\index{internal\+::\+Green\+Compute@{internal\+::\+Green\+Compute}!Mackey\+::\+Green@{Mackey\+::\+Green}}
+\subsubsection{\texorpdfstring{internal\+::\+Green\+Compute}{internal::GreenCompute}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basis}
+template$<$typename s\+\_\+rank\+\_\+t , typename s\+\_\+diff\+\_\+t $>$ \\
+friend class \hyperlink{classMackey_1_1internal_1_1GreenCompute}{internal\+::\+Green\+Compute}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classMackey_1_1Green_aeb72946219f32efa8f0a45f5f8872c8a}\label{classMackey_1_1Green_aeb72946219f32efa8f0a45f5f8872c8a}} 
+\index{Mackey\+::\+Green@{Mackey\+::\+Green}!serialize@{serialize}}
+\index{serialize@{serialize}!Mackey\+::\+Green@{Mackey\+::\+Green}}
+\subsubsection{\texorpdfstring{serialize}{serialize}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+template$<$typename Archive , typename s\+\_\+rank , typename s\+\_\+diff $>$ \\
+void serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{,  }\item[{\hyperlink{classMackey_1_1Green}{Green}$<$ s\+\_\+rank, s\+\_\+diff $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
-Expresses the product of two generators as a linear combination of the generators of the box product. 
-
-For each selection of generators we have an array expressing the product as a linear combination of generators in the degree of the product \mbox{\Hypertarget{classMackey_1_1Green_aea166896ebdaa17b3c5d21b2ae936e0d}\label{classMackey_1_1Green_aea166896ebdaa17b3c5d21b2ae936e0d}} 
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1Green_aea166896ebdaa17b3c5d21b2ae936e0d}\label{classMackey_1_1Green_aea166896ebdaa17b3c5d21b2ae936e0d}} 
 \index{Mackey\+::\+Green@{Mackey\+::\+Green}!box\+ID@{box\+ID}}
 \index{box\+ID@{box\+ID}!Mackey\+::\+Green@{Mackey\+::\+Green}}
 \subsubsection{\texorpdfstring{box\+ID}{boxID}}
@@ -118,17 +175,6 @@ For each selection of generators we have an array expressing the product as a li
 
 
 Identifies the generators of the homology group the product lives in. 
-
-\mbox{\Hypertarget{classMackey_1_1Green_a18ba76e7f7b71c1e5fca23bc71accf86}\label{classMackey_1_1Green_a18ba76e7f7b71c1e5fca23bc71accf86}} 
-\index{Mackey\+::\+Green@{Mackey\+::\+Green}!first\+\_\+number\+\_\+selections@{first\+\_\+number\+\_\+selections}}
-\index{first\+\_\+number\+\_\+selections@{first\+\_\+number\+\_\+selections}!Mackey\+::\+Green@{Mackey\+::\+Green}}
-\subsubsection{\texorpdfstring{first\+\_\+number\+\_\+selections}{first\_number\_selections}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-int \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::first\+\_\+number\+\_\+selections}
-
-
-
-The number of selections of generators for the first factor. 
 
 \mbox{\Hypertarget{classMackey_1_1Green_acfa5ea708949024bd24f1c1e21399cbc}\label{classMackey_1_1Green_acfa5ea708949024bd24f1c1e21399cbc}} 
 \index{Mackey\+::\+Green@{Mackey\+::\+Green}!Groups@{Groups}}
@@ -151,28 +197,6 @@ bool \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\
 
 
 1 if the homology group the product lives in is 0. 
-
-\mbox{\Hypertarget{classMackey_1_1Green_a18135b4b1a4aceb387519832a487206a}\label{classMackey_1_1Green_a18135b4b1a4aceb387519832a487206a}} 
-\index{Mackey\+::\+Green@{Mackey\+::\+Green}!normal\+Basis@{normal\+Basis}}
-\index{normal\+Basis@{normal\+Basis}!Mackey\+::\+Green@{Mackey\+::\+Green}}
-\subsubsection{\texorpdfstring{normal\+Basis}{normalBasis}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::normal\+Basis}
-
-
-
-Same as basis, now normalized. 
-
-\mbox{\Hypertarget{classMackey_1_1Green_a1240acdc0e901e496597eab2d0ef27f2}\label{classMackey_1_1Green_a1240acdc0e901e496597eab2d0ef27f2}} 
-\index{Mackey\+::\+Green@{Mackey\+::\+Green}!second\+\_\+number\+\_\+selections@{second\+\_\+number\+\_\+selections}}
-\index{second\+\_\+number\+\_\+selections@{second\+\_\+number\+\_\+selections}!Mackey\+::\+Green@{Mackey\+::\+Green}}
-\subsubsection{\texorpdfstring{second\+\_\+number\+\_\+selections}{second\_number\_selections}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-int \hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::second\+\_\+number\+\_\+selections}
-
-
-
-The number of selections of generators for the second factor. 
 
 
 

@@ -1,0 +1,8 @@
+<map id="Mackey::Green::getNormalBasis" name="Mackey::Green::getNormalBasis">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title="Mackey::multiply" alt="" coords="265,31,386,57"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="232,82,419,123"/>
+<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="232,148,419,204"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="477,5,607,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a2eca4cc709501ad3fc20b82fe4bcbd33" title="Mackey::multiply" alt="" coords="481,56,603,83"/>
+<area shape="rect" id="node7" href="$classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="467,155,617,197"/>
+</map>

@@ -7,12 +7,18 @@ var hierarchy =
     ] ],
     [ "Mackey::internal::ChainsLevelGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ChainsLevelGen.html", null ],
     [ "Mackey::ChangeBasis< rank_t >", "classMackey_1_1ChangeBasis.html", null ],
+    [ "Mackey::CommonSmith< S_t, R_t, C_t >", "classMackey_1_1CommonSmith.html", [
+      [ "Mackey::Smith< S_t, R_t, C_t, impl >", "classMackey_1_1Smith.html", null ],
+      [ "Mackey::Smith< S_t, R_t, C_t, decltype(S_t::Scalar::order, void())>", "classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4.html", null ]
+    ] ],
     [ "GroupSpecific::Function< rank_t, diff_t, deg_t >", "classGroupSpecific_1_1Function.html", null ],
     [ "Mackey::Graph< T >", "classMackey_1_1Graph.html", null ],
     [ "Mackey::Graph< ColoredGraph >", "classMackey_1_1Graph.html", [
       [ "Mackey::ColoredGraph", "classMackey_1_1ColoredGraph.html", [
         [ "Mackey::MultiplicationGraph< rank_t, diff_t >", "classMackey_1_1MultiplicationGraph.html", [
-          [ "Mackey::Factorization< rank_t, diff_t >", "classMackey_1_1Factorization.html", null ]
+          [ "Mackey::MultiplicationGraphIdentify< rank_t, diff_t >", "classMackey_1_1MultiplicationGraphIdentify.html", [
+            [ "Mackey::Factorization< rank_t, diff_t >", "classMackey_1_1Factorization.html", null ]
+          ] ]
         ] ]
       ] ]
     ] ],
@@ -29,7 +35,6 @@ var hierarchy =
     ] ],
     [ "Mackey::Levels< T >", "classMackey_1_1Levels.html", null ],
     [ "Mackey::MackeyFunctor< rank_t >", "classMackey_1_1MackeyFunctor.html", null ],
-    [ "GroupSpecificOptional::MackeyList< rank_t, diff_t >", "classGroupSpecificOptional_1_1MackeyList.html", null ],
     [ "Mackey::Massey< rank_t, diff_t >", "classMackey_1_1Massey.html", null ],
     [ "Mackey::internal::MasseyCompute< rank_t, diff_t >", "classMackey_1_1internal_1_1MasseyCompute.html", null ],
     [ "Mackey::MultiplicationTable< rank_t, diff_t >", "classMackey_1_1MultiplicationTable.html", [
@@ -38,7 +43,6 @@ var hierarchy =
     [ "Eigen::NumTraits< Z< N > >", "structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html", null ],
     [ "Mackey::Polynomial< T >", "classMackey_1_1Polynomial.html", null ],
     [ "Mackey::internal::ProductGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ProductGen.html", null ],
-    [ "Mackey::Smith< smithS_t, smithR_t, smithC_t >", "classMackey_1_1Smith.html", null ],
     [ "GroupSpecific::Variables", "classGroupSpecific_1_1Variables.html", null ],
     [ "Z< N >", "classZ.html", null ],
     [ "Z< 2 >", "classZ_3_012_01_4.html", null ]

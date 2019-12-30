@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['can_5fdo_5fmore',['can_do_more',['../classMackey_1_1MultiplicationGraphIdentify.html#a8356b59250ebac1ac30ebc7407bd352b',1,'Mackey::MultiplicationGraphIdentify']]],
   ['cereal',['cereal',['../namespacecereal.html',1,'']]],
   ['cerealize',['CEREALIZE',['../Cerealizer_8h.html#ae992826773eebd83b70cb50907f8f3db',1,'Cerealizer.h']]],
   ['cerealizer_2eh',['Cerealizer.h',['../Cerealizer_8h.html',1,'']]],
@@ -13,6 +14,7 @@ var searchData=
   ['coloredgraph',['ColoredGraph',['../classMackey_1_1ColoredGraph.html',1,'Mackey::ColoredGraph'],['../classMackey_1_1ColoredGraph.html#a367055b4a615119cc767a738f6e9e719',1,'Mackey::ColoredGraph::ColoredGraph()'],['../classMackey_1_1ColoredGraph.html#adada856cdbfc508b2df15919f45a1808',1,'Mackey::ColoredGraph::ColoredGraph(std::vector&lt; std::vector&lt; int &gt;&gt; &amp;edges, std::vector&lt; std::vector&lt; char &gt;&gt; &amp;colors)']]],
   ['colors',['colors',['../classMackey_1_1ColoredGraph.html#a29fbdcaf9f94f0f5d48e5390ba49b338',1,'Mackey::ColoredGraph']]],
   ['combinations',['combinations',['../namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61',1,'Mackey']]],
+  ['commonsmith',['CommonSmith',['../classMackey_1_1CommonSmith.html',1,'Mackey']]],
   ['compare',['compare',['../classMackey_1_1MackeyFunctor.html#a001f4a56e79e68ca3fef808e6b0ccca4',1,'Mackey::MackeyFunctor']]],
   ['compute_2eh',['Compute.h',['../Compute_8h.html',1,'']]],
   ['compute_5fwith_5fsources',['compute_with_sources',['../classMackey_1_1Factorization.html#a2e135a37687fc3d69cd16a8729dd19eb',1,'Mackey::Factorization']]],

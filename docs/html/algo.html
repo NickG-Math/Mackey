@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.5</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -101,7 +101,12 @@ $(document).ready(function(){initNavTree('algo.html','');});
 </div>
 <div class="textblock"><h1><a class="anchor" id="smith"></a>
 Smith Normal Form</h1>
-<p>The Smith Normal Form is difficult to compute for integer matrices as its entries (and especially the entries of the coefficient matrices) can be much larger than those of the original matrix. We implement the usual row/column elimination algorithm that checks for the minimum in each iteration and uses it as a pivot to clear rows and columns. There is another implementation that forgoes the slow min computation and instead uses the first nonzero element as pivot. For our matrices this is usually (much) faster than the other implementation, as for any two entries one divides the other. The problem is that for matrices appearing in the multiplicative structure (two box products), this elimination can use pivots other than the min elements and result in unboundedly large entries exceeding the given precision. So for safety we have chosen to keep the slower implementation.</p>
+<p>The Smith Normal Form is difficult to compute for integer matrices as its entries (and especially the entries of the coefficient matrices) can be much larger than those of the original matrix, leading to potential overflow. We have implemented two versions of the usual row/column elimination</p>
+<ul>
+<li>The safe version checks for the minimum (amongst the nonzero entries and in absolute value) in each iteration and uses it as a pivot to clear rows and columns.</li>
+<li>The fast version forgoes the inefficient min computation and instead uses the first nonzero element it finds as pivot.</li>
+</ul>
+<p>Using a SFINAE trick, the safe implementation is automatically used for general coefficients (eg \(\mathbb Z\)) while the fast version is used for finite coefficients, when a certain member <code>order</code> exists in the coefficients (eg \(\mathbb F_p\)).</p>
 <h1><a class="anchor" id="cob"></a>
 Change of Basis</h1>
 <p>If we have bases for modules \(A,B\) then \(A\otimes B\) can be canonically given two lexicographical bases, that we call left and right convenient bases. But if \(A,B\) are the bottom levels of free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors then they have equivariant bases and the tensor product also gets an equivariant basis, called the canonical one. The left and right convenient bases are used to write the left and right differentials in a simple manner (hence their designation as convenient). The canonical bases are used to transfer. To get the change of basis matrix, we are reduced to computing the permutation \(a^{-1}b\) where \(a,b\) are two permutations of the same set.</p>

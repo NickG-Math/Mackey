@@ -1,3 +1,6 @@
 <map id="Mackey::MultiplicationTable::getsphere" name="Mackey::MultiplicationTable::getsphere">
 <area shape="rect" id="node2" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="237,5,421,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="237,71,421,112"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="469,63,656,119"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="704,71,855,112"/>
 </map>

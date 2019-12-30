@@ -20,7 +20,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=316pt]{Identify_8h__dep__incl}
+\includegraphics[height=550pt]{Identify_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -41,7 +41,9 @@ class \hyperlink{classMackey_1_1internal_1_1IDGeneratorCompute}{Mackey\+::intern
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a83ac78e6d1695af40d0fa58af5255e84}{Mackey\+::id\+\_\+candidates} (const rank\+\_\+t \&basis, const I\+D\+Generators$<$ rank\+\_\+t $>$ \&Id\+\_\+first, const I\+D\+Generators$<$ rank\+\_\+t $>$ \&Id\+\_\+second)
-\begin{DoxyCompactList}\small\item\em Use the ID data to identify all possible candidates for an element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Use the ID data to identify all possible candidates for an element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\bool \hyperlink{namespaceMackey_a281b9be315d7d51c7e691d4c733ac0c9}{Mackey\+::distinguish} (const std\+::vector$<$ rank\+\_\+t $>$ \&elements, const I\+D\+Generators$<$ rank\+\_\+t $>$ \&Id)
+\begin{DoxyCompactList}\small\item\em Find if given elements can all be distinguished i.\+e. they have pairwise disjoint candidate sets. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

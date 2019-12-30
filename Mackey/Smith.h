@@ -5,30 +5,22 @@
 #include <type_traits>
 
 ///@file
-///@brief Contains the Smith normal form algorithm
+///@brief Contains the Smith normal form algorithms. 
+///
+///There's two of them, one fast but can overflow (good for finite coefficients) and one slow but reliable (good for infinite coefficients)
+///We use SFINAE to detect coefficient type
 
 namespace {
 
 	template<typename Scalar>
-	inline Scalar mod(Scalar x, Scalar y) {
-		if constexpr (std::is_floating_point_v<Scalar>) {
-			return std::fmod(x, y);
-		}
-		else {
-			return x % y;
-		}
-	}
-
-	template<typename Scalar>
 	inline Scalar customfloor(Scalar x) {
-		if constexpr (std::is_floating_point_v<Scalar>) {
+		if constexpr (std::is_floating_point_v<Scalar>)
 			return floor(x);
-		}
-		else {
+		else
 			return x;
-		}
 	}
 
+	///Produces the transpositions that sort a given vector of pairs
 	template<typename T>
 	std::vector<int> transpositions(std::vector<std::pair<T, int>> a) {
 		std::vector<int> transpositions;
@@ -47,70 +39,54 @@ namespace {
 		}
 		return transpositions;
 	}
-
-
 }
 
 namespace Mackey {
-	/// The Smith Normal Form
-	template <typename smithS_t, typename smithR_t, typename smithC_t>
-	class Smith {
-	public:
-		smithS_t S;		///< The Smith Normal Form.
-		smithR_t P;		///< One of the coefficient matrices (S=P*A*Q). Should be row major for best performance
-		smithR_t Qi;	///< One of the coefficient matrices (A=Pi*S*Qi). Should be row major for best performance
-		smithC_t Q;		///< One of the coefficient matrices (S=P*A*Q). Should be column major for best performance
-		smithC_t Pi;	///< One of the coefficient matrices (A=Pi*S*Qi). Should be column major for best performance
-		Eigen::Matrix<typename smithS_t::Scalar, 1, -1> diagonal; ///<The diagonal of the Smith normal form
+
+
+	/// The common variables and methods for the two Smith Normal Form implementations
+	template <typename S_t, typename R_t, typename C_t>
+	class CommonSmith {
+		S_t S;		///< The Smith Normal Form of a matrix A.
+		R_t P;		///< One of the coefficient matrices (S=P*A*Q). Should be row major for best performance
+		R_t Qi;	///< One of the coefficient matrices (A=Pi*S*Qi). Should be row major for best performance
+		C_t Q;		///< One of the coefficient matrices (S=P*A*Q). Should be column major for best performance
+		C_t Pi;	///< One of the coefficient matrices (A=Pi*S*Qi). Should be column major for best performance
+		Eigen::Matrix<typename S_t::Scalar, 1, -1> diagonal; ///<The diagonal of the Smith normal form
 		const int L;	///< The length of the diagonal of the Smith normal form.
 
-		/////////////////////////////////////////////////
-		/// Given a matrix A compute a diagonal matrix S and invertible matrices P,Q,Pi,Qi such that S=P*A*Q and A=Pi*S*Qi
 
-		///The Pi,Qi are the inverses of P,Q. If wantP=1 then P,Pi are computed and if wantQ=1 then Q,Qi are computed.
-		///If sort=1 the diagonal matrix S has decreasing entries, otherwise the order is not specified
-		/////////////////////////////////////////////////
-		Smith(const smithS_t&, bool, bool, bool);
+		/// Initialization of the Smith Normal Form. Refer to the derived class Smith for the implementation
+		CommonSmith(const S_t&, bool, bool);
 
-		///Same as the other constructor, but don't sort
-		Smith(const smithS_t& A, bool wantP, bool wantQ) : Smith(A, wantP, wantQ, 0) {}
-
-	private:
 		const int M, N;
 		const bool wantP, wantQ;
-		void SmithIt();
-		void workRow(int);
-		void workCol(int);
-		bool pivot(int);
-		bool find(int, int&, int&);
-		void sorter();
 
+		/// Sorts the Smith normal form so that it has decreasing entries (with the exception of entries 1,-1) 
+		void sorter();
+		
+		///The implementation of the Smith Normal Form
+		template <typename sS_t, typename sR_t, typename sC_t, typename FastOrSlow>
+		friend class Smith;
 	};
 
-
-
-	template<typename smithS_t, typename smithR_t, typename smithC_t>
-	Smith<smithS_t, smithR_t, smithC_t> ::Smith(const smithS_t& Original, bool wantP, bool wantQ, bool sort)
-		: S(Original), L(std::min(S.rows(), S.cols())), M(S.rows()), N(S.cols()), wantP(wantP), wantQ(wantQ) {
+	template<typename S_t, typename R_t, typename C_t>
+	CommonSmith<S_t, R_t, C_t> ::CommonSmith(const S_t& A, bool wantP, bool wantQ)
+		: S(A), L(std::min(S.rows(), S.cols())), M(S.rows()), N(S.cols()), wantP(wantP), wantQ(wantQ) {
 		if (wantP) {
-			P = smithR_t::Identity(M, M);
-			Pi = smithC_t::Identity(M, M);
+			P = R_t::Identity(M, M);
+			Pi = C_t::Identity(M, M);
 		}
 		if (wantQ) {
-			Q = smithC_t::Identity(N, N);
-			Qi = smithR_t::Identity(N, N);
+			Q = C_t::Identity(N, N);
+			Qi = R_t::Identity(N, N);
 		}
 		diagonal.resize(L);
-		SmithIt();
-		if (sort)
-			sorter();
 	}
 
-
-
-	template<typename smithS_t, typename smithR_t, typename smithC_t>
-	void Smith<smithS_t, smithR_t, smithC_t> ::sorter() {
-		std::vector<std::pair<typename smithS_t::Scalar, int>> toBeSorted;
+	template<typename S_t, typename R_t, typename C_t>
+	void CommonSmith<S_t, R_t, C_t> ::sorter() {
+		std::vector<std::pair<typename S_t::Scalar, int>> toBeSorted;
 		toBeSorted.reserve(diagonal.size());
 		for (int i = 0; i < diagonal.size(); i++) {
 			if (abs(diagonal[i]) != 1)
@@ -137,70 +113,106 @@ namespace Mackey {
 			}
 		}
 	}
+}
 
 
-	template <typename smithS_t, typename smithR_t, typename smithC_t>
-	void Smith<smithS_t, smithR_t, smithC_t>::SmithIt() {
+namespace Mackey{
+
+	///The safe Smith Normal Form implementation for general coefficients
+	template <typename S_t, typename R_t, typename C_t, typename impl=void>
+	class Smith : public CommonSmith<S_t, R_t, C_t> {
+	public:
+
+		///Computes the Smith Normal Form and sorts if desired
+		Smith(const S_t& A, bool wantP, bool wantQ, bool sort) : CommonSmith<S_t, R_t, C_t>(A, wantP, wantQ) {
+			SmithIt();
+			if (sort)
+				this->sorter();
+		}
+		///Same as the other constructor, but don't sort
+		Smith(const S_t& A, bool wantP, bool wantQ) : Smith(A, wantP, wantQ, 0) {}
+
+		//so we don't have to write this-> all the time (and to get these public)
+		using CommonSmith<S_t, R_t, C_t>::S;
+		using CommonSmith<S_t, R_t, C_t>::P;
+		using CommonSmith<S_t, R_t, C_t>::Q;
+		using CommonSmith<S_t, R_t, C_t>::Pi;
+		using CommonSmith<S_t, R_t, C_t>::Qi;
+		using CommonSmith<S_t, R_t, C_t>::diagonal;
+		using CommonSmith<S_t, R_t, C_t>::L;
+
+	private:
+		void SmithIt();
+		void workRow(int);
+		void workCol(int);
+		void pivot(int);
+		void find(int, int&, int&);
+
+		using CommonSmith<S_t, R_t, C_t>::M;
+		using CommonSmith<S_t, R_t, C_t>::N;
+		using CommonSmith<S_t, R_t, C_t>::wantP;
+		using CommonSmith<S_t, R_t, C_t>::wantQ;
+	};
+
+	template <typename S_t, typename R_t, typename C_t, typename Slow>
+	void Smith<S_t, R_t, C_t, Slow>::SmithIt() {
 		bool rowZero, columnZero;
-		for (int start = 0; start < L; start++) {
+		for (int start = 0; start < this->L; start++) {
 			rowZero = S.row(start).tail(N - start - 1).isZero();
 			do {
 				if (!rowZero) {
-					if (!pivot(start))
-						return;	
+					pivot(start);
 					workRow(start);
 					rowZero = S.row(start).tail(N - start - 1).isZero();
 				}
 				columnZero = S.col(start).tail(M - start - 1).isZero();
 				if (!columnZero) {
-					if (!pivot(start))
-						return;	
+					pivot(start);
 					workCol(start);
 					rowZero = S.row(start).tail(N - start - 1).isZero();
 					columnZero = S.col(start).tail(M - start - 1).isZero();
 				}
 			} while (!rowZero || !columnZero);
-			diagonal[start] = S(start, start);
+			this->diagonal[start] = S(start, start);
 		}
 	}
 
-	template <typename smithS_t, typename smithR_t, typename smithC_t>
-	void Smith<smithS_t, smithR_t, smithC_t>::workRow(int start) {
+	template <typename S_t, typename R_t, typename C_t, typename Slow>
+	void Smith<S_t, R_t, C_t,Slow>::workRow(int start) {
 		for (int j = start + 1; j < N; j++) {
 			if (S(start, j) != 0) {
 				auto thequotient = customfloor(S(start, j) / S(start, start));
 				S.col(j).tail(M - start) -= thequotient * S.col(start).tail(M - start);
 				if (wantQ) {
-					Q.col(j) -= static_cast<typename smithC_t::Scalar>(thequotient)* Q.col(start);
-					Qi.row(start) += static_cast<typename smithR_t::Scalar>(thequotient)* Qi.row(j);
+					Q.col(j) -= static_cast<typename C_t::Scalar>(thequotient)* Q.col(start);
+					Qi.row(start) += static_cast<typename R_t::Scalar>(thequotient)* Qi.row(j);
 				}
 			}
 		}
 	}
 
-	template <typename smithS_t, typename smithR_t, typename smithC_t>
-	void Smith<smithS_t, smithR_t, smithC_t>::workCol(int start) {
+	template <typename S_t, typename R_t, typename C_t, typename Slow>
+	void Smith<S_t, R_t, C_t,Slow>::workCol(int start) {
 		for (int i = start + 1; i < M; i++) {
 			if (S(i, start) != 0) {
 				auto thequotient = customfloor(S(i, start) / S(start, start));
 				S.row(i).tail(N - start) -= thequotient * S.row(start).tail(N - start);
 				if (wantP) {
-					P.row(i) -= static_cast<typename smithR_t::Scalar>(thequotient)* P.row(start);
-					Pi.col(start) += static_cast<typename smithC_t::Scalar>(thequotient)* Pi.col(i);
+					P.row(i) -= static_cast<typename R_t::Scalar>(thequotient)* P.row(start);
+					Pi.col(start) += static_cast<typename C_t::Scalar>(thequotient)* Pi.col(i);
 				}
 			}
 		}
 	}
 
-	template <typename smithS_t, typename smithR_t, typename smithC_t>
-	bool Smith<smithS_t, smithR_t, smithC_t>::pivot(int start)
+	template <typename S_t, typename R_t, typename C_t, typename Slow>
+	void Smith<S_t, R_t, C_t, Slow>::pivot(int start)
 	{
 		if (abs(S(start, start)) == 1)
-			return 1;
+			return;
 		int s, t;
 		s = t = start;
-		if (!find(start, s, t))
-			return 0;
+		find(start, s, t);
 		//bring minimum to the start
 		if (t != start) {
 			S.col(start).tail(M - start).swap(S.col(t).tail(M - start));
@@ -216,13 +228,12 @@ namespace Mackey {
 				Pi.col(start).swap(Pi.col(s));
 			}
 		}
-		return 1;
 	}
 
-	template <typename smithS_t, typename smithR_t, typename smithC_t>
-	bool Smith<smithS_t, smithR_t, smithC_t>::find(int start, int& s, int& t)
+	template <typename S_t, typename R_t, typename C_t, typename Slow>
+	void Smith<S_t, R_t, C_t, Slow>::find(int start, int& s, int& t)
 	{
-		typename smithS_t::Scalar min = 0;
+		typename S_t::Scalar min = 0;
 		for (int j = start; j < S.cols();j++) {
 			for (int i = start; i < S.rows(); i++) {
 				if (S(i, j) != 0 && (min == 0 || abs(S(i, j)) < min)) {
@@ -230,12 +241,214 @@ namespace Mackey {
 					s = i;
 					t = j;
 					if (min == 1)
-						return 1;
+						return;
 				}
 			}
 		}
-		if (min == 0)
-			return 0;
-		return 1;
+	}
+}
+
+
+
+namespace Mackey {
+
+	///The fast Smith Normal Form implementation for finite coefficients that have a member "order"
+	template <typename S_t, typename R_t, typename C_t>
+	class Smith<S_t, R_t, C_t, decltype(S_t::Scalar::order, void())> : public CommonSmith<S_t, R_t, C_t> {
+	public:
+		///Computes the Smith Normal Form and sorts if desired
+		Smith(const S_t& A, bool wantP, bool wantQ, bool sort) : CommonSmith<S_t, R_t, C_t>(A, wantP, wantQ) {
+			SmithIt();
+			if (sort)
+				this->sorter();
+		}
+		///Same as the other constructor, but don't sort
+		Smith(const S_t& A, bool wantP, bool wantQ) : Smith(A, wantP, wantQ, 0) {}
+
+		//so we don't have to write this-> all the time (and to get these public)
+		using CommonSmith<S_t, R_t, C_t>::S;
+		using CommonSmith<S_t, R_t, C_t>::P;
+		using CommonSmith<S_t, R_t, C_t>::Q;
+		using CommonSmith<S_t, R_t, C_t>::Pi;
+		using CommonSmith<S_t, R_t, C_t>::Qi;
+		using CommonSmith<S_t, R_t, C_t>::diagonal;
+		using CommonSmith<S_t, R_t, C_t>::L;
+
+	private:
+		void SmithIt();
+		void workRow(const int&, int&, int&);
+		void searchRow(const int&, int&, int&);
+		void workCol(const int&, int&, int&);
+		void searchCol(const int&, int&, int&);
+
+		using CommonSmith<S_t, R_t, C_t>::M;
+		using CommonSmith<S_t, R_t, C_t>::N;
+		using CommonSmith<S_t, R_t, C_t>::wantP;
+		using CommonSmith<S_t, R_t, C_t>::wantQ;
+	};
+
+
+	template <typename S_t, typename R_t, typename C_t>
+	void Smith<S_t, R_t, C_t, decltype(S_t::Scalar::order, void())>::SmithIt() {
+		for (int start = 0; start < this->L; start++) {
+			auto i = start + 1;
+			auto j = start + 1;
+
+			while (i < M || j < N) {
+				searchCol(start, i, j);
+				while (i < M) {
+					workCol(start, i, j);
+					searchCol(start, i, j);
+				}
+				searchRow(start, i, j);
+				while (j < N) {
+					workRow(start, i, j);
+					searchRow(start, i, j);
+				}
+			}
+			this->diagonal[start] = S(start, start);
+		}
+	}
+
+	template <typename S_t, typename R_t, typename C_t>
+	void Smith<S_t, R_t, C_t, decltype(S_t::Scalar::order, void())>::workRow(const int& start, int& i, int& j) {
+		if (S(start, j) % S(start, start) == 0) {
+			auto thequotient = S(start, j) / S(start, start);
+			S.col(j).tail(M - start) += -thequotient * S.col(start).tail(M - start);
+			if (wantQ) {
+				Q.col(j) += -static_cast<typename C_t::Scalar>(thequotient)* Q.col(start);
+				Qi.row(start) += static_cast<typename R_t::Scalar>(thequotient)* Qi.row(j);
+			}
+			j++;
+		}
+		else if (S(start, start) % S(start, j) == 0) {
+			S.col(start).tail(M - start).swap(S.col(j).tail(M - start));
+			auto thequotient = S(start, j) / S(start, start);
+			S.col(j).tail(M - start) += -thequotient * S.col(start).tail(M - start);
+			if (wantQ) {
+				Q.col(start).swap(Q.col(j));
+				Q.col(j) += -static_cast<typename C_t::Scalar>(thequotient)* Q.col(start);
+				Qi.row(start).swap(Qi.row(j));
+				Qi.row(start) += static_cast<typename R_t::Scalar>(thequotient)* Qi.row(j);
+			}
+			j++;
+			i = start + 1;
+		}
+		else {
+			auto thequotient = customfloor(S(start, j) / S(start, start));
+			S.col(j).tail(M - start) += -thequotient * S.col(start).tail(M - start);
+			S.col(start).swap(S.col(j));
+			if (wantQ) {
+				Q.col(j) += -static_cast<typename C_t::Scalar>(thequotient)* Q.col(start);
+				Q.col(start).swap(Q.col(j));
+				Qi.row(start) += static_cast<typename R_t::Scalar>(thequotient)* Qi.row(j);
+				Qi.row(start).swap(Qi.row(j));
+			}
+			i = start + 1;
+		}
+	}
+
+	template <typename S_t, typename R_t, typename C_t>
+	void Smith<S_t, R_t, C_t, decltype(S_t::Scalar::order, void())>::workCol(const int& start, int& i, int& j) {
+		if (S(i, start) % S(start, start) == 0) {
+			auto thequotient = S(i, start) / S(start, start);
+			S.row(i).tail(N - start) += -thequotient * S.row(start).tail(N - start);
+			if (wantP) {
+				P.row(i) += -static_cast<typename R_t::Scalar>(thequotient)* P.row(start);
+				Pi.col(start) += static_cast<typename C_t::Scalar>(thequotient)* Pi.col(i);
+			}
+			i++;
+		}
+		else if (S(start, start) % S(i, start) == 0) {
+			S.row(start).tail(N - start).swap(S.row(i).tail(N - start));
+			auto thequotient = S(i, start) / S(start, start);
+			S.row(i).tail(N - start) += -thequotient * S.row(start).tail(N - start);
+			if (wantP) {
+				P.row(start).swap(P.row(i));
+				P.row(i) += -static_cast<typename R_t::Scalar>(thequotient)* P.row(start);
+				Pi.col(start).swap(Pi.col(i));
+				Pi.col(start) += static_cast<typename C_t::Scalar>(thequotient)* Pi.col(i);
+			}
+			i++;
+			j = start + 1;
+		}
+		else {
+			auto thequotient = customfloor(S(i, start) / S(start, start));
+			S.row(i).tail(N - start) += -thequotient * S.row(start).tail(N - start);
+			S.row(start).tail(N - start).swap(S.row(i).tail(N - start));
+			if (wantP) {
+				P.row(i) += -static_cast<typename R_t::Scalar>(thequotient)* P.row(start);
+				P.row(start).swap(P.row(i));
+				Pi.col(start) += static_cast<typename C_t::Scalar>(thequotient)* Pi.col(i);
+				Pi.col(start).swap(Pi.col(i));
+			}
+			j = start + 1;
+		}
+	}
+
+
+	template <typename S_t, typename R_t, typename C_t>
+	void Smith<S_t, R_t, C_t, decltype(S_t::Scalar::order, void())>::searchRow(const int& start, int& i, int& j)
+	{
+		if (S(start, start) == 0) {
+			bool found = 0;
+			for (int k = start + 1; k < N; k++) {
+				if (S(start, k) != 0) {
+					S.col(start).tail(M - start).swap(S.col(k).tail(M - start));
+					if (wantQ) {
+						Q.col(start).swap(Q.col(k));
+						Qi.row(start).swap(Qi.row(k));
+					}
+					j = k + 1;
+					i = start + 1;
+					found = 1;
+					break;
+				}
+			}
+			if (!found)
+				j = N;
+		}
+		if (j < N && S(start, j) == 0){
+			for (int k = j + 1; k < N; k++){
+				if (S(start, k) != 0){
+					j = k;
+					return;
+				}
+			}
+			j = N; 	/////If you made it here then row is zero outside of start
+		}
+	}
+
+
+	template <typename S_t, typename R_t, typename C_t>
+	void Smith<S_t, R_t, C_t, decltype(S_t::Scalar::order, void())>::searchCol(const int& start, int& i, int& j)
+	{
+		if (S(start, start) == 0) {
+			bool found = 0;
+			for (int k = start + 1; k < M; k++) {
+				if (S(k, start) != 0) {
+					S.row(start).tail(N - start).swap(S.row(k).tail(N - start));
+					if (wantP) {
+						P.row(start).swap(P.row(k));
+						Pi.col(start).swap(Pi.col(k));
+					}
+					i = k + 1;
+					j = start + 1;
+					found = 1;
+					break;
+				}
+			}
+			if (!found)
+				i = M;
+		}
+		if (i < M && S(i, start) == 0) {
+			for (int k = i + 1; k < M; k++) {
+				if (S(k, start) != 0) {
+					i = k;
+					return;
+				}
+			}
+			i = M; /////////If you made it here then column is zero outside of start
+		}
 	}
 }

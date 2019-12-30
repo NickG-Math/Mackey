@@ -1,5 +1,18 @@
 var searchData=
 [
-  ['junction',['Junction',['../classMackey_1_1Junction.html#a943b60d8e77594e4b19da7a5e40cb62e',1,'Mackey::Junction::Junction()'],['../classMackey_1_1Junction.html#ae6e36887e5bd3be8fe6175a501c749db',1,'Mackey::Junction::Junction(const Chains&lt; rank_t, diff_t &gt; &amp;, int)'],['../classMackey_1_1Junction.html#a62c85d26100ca5e561b3c9edf32b473f',1,'Mackey::Junction::Junction(const rank_t &amp;rank, const rank_t &amp;rankOut, const rank_t &amp;rankIn, const diff_t &amp;diffOut, const diff_t &amp;diffIn)']]],
-  ['junctionbox',['JunctionBox',['../classMackey_1_1JunctionBox.html#a6cc2a3bbcbf3e89d7079856b5d16cba4',1,'Mackey::JunctionBox::JunctionBox()'],['../classMackey_1_1JunctionBox.html#ad1847b0ee8aaa343521366f2ff85b7bf',1,'Mackey::JunctionBox::JunctionBox(const Chains&lt; rank_t, diff_t &gt; &amp;, const Chains&lt; rank_t, diff_t &gt; &amp;, int)'],['../classMackey_1_1JunctionBox.html#abd78f76fdc5f83906046e44c6901c54d',1,'Mackey::JunctionBox::JunctionBox(const ChainsBox&lt; rank_t, diff_t &gt; &amp;, int)']]]
+  ['id_5fcandidates',['id_candidates',['../namespaceMackey.html#a83ac78e6d1695af40d0fa58af5255e84',1,'Mackey']]],
+  ['identify',['identify',['../classMackey_1_1AdditiveStructure.html#a07887e78e182c1215fc7c8af3f385529',1,'Mackey::AdditiveStructure']]],
+  ['idgeneratorcompute',['IDGeneratorCompute',['../classMackey_1_1internal_1_1IDGeneratorCompute.html#a39700cf08ba57766c87498975b28ec62',1,'Mackey::internal::IDGeneratorCompute']]],
+  ['idgenerators',['IDGenerators',['../classMackey_1_1IDGenerators.html#ad4e041defebc49fb90c1e7d78b066cdf',1,'Mackey::IDGenerators']]],
+  ['intexp',['intexp',['../namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa',1,'Mackey']]],
+  ['intlog',['intlog',['../namespaceMackey.html#aa0cac9097035c5fe8448742e22e6f78b',1,'Mackey']]],
+  ['inverses',['inverses',['../namespaceMackey.html#ac8552763cbbe02f22cedc11c6f8434da',1,'Mackey']]],
+  ['invreindex',['invReindex',['../namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b',1,'Mackey::invReindex(T degree)'],['../namespaceMackey.html#a011b8e23bc2eedf751a9ce7bdc9e4cb9',1,'Mackey::invReindex(int k, const T &amp;sphere)']]],
+  ['invres',['invRes',['../namespaceMackey.html#a30b5667e411ff694aa989e95e394bb41',1,'Mackey']]],
+  ['is_5ffinite_5fcyclic',['is_finite_cyclic',['../namespaceMackey.html#afe8e1404c86fb9609734d3e0074ac7ed',1,'Mackey']]],
+  ['is_5fp_5fgroup',['is_p_group',['../namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7',1,'Mackey']]],
+  ['ismultiple',['isMultiple',['../classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f',1,'Mackey::MultiplicationGraph::isMultiple()'],['../namespaceMackey.html#aef81f82c080c97bb31154524af52b62c',1,'Mackey::isMultiple()']]],
+  ['isomorphic',['isomorphic',['../classMackey_1_1MackeyFunctor.html#a8cd5c9415c0c63c6d79dfa9b0067f416',1,'Mackey::MackeyFunctor::isomorphic(const std::vector&lt; MackeyFunctor&lt; rank_t &gt;&gt; &amp;isoclass) const'],['../classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8',1,'Mackey::MackeyFunctor::isomorphic(const MackeyFunctor&lt; rank_t &gt; &amp;)']]],
+  ['isomorphism_5fclass',['isomorphism_class',['../classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5',1,'Mackey::MackeyFunctor']]],
+  ['iszero',['isZero',['../namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79',1,'Mackey']]]
 ];

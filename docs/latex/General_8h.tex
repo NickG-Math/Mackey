@@ -8,11 +8,12 @@ Contains general functions and vector overloads independent of everything else.
 {\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
 {\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
 Include dependency graph for General.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=285pt]{General_8h__incl}
+\includegraphics[width=350pt]{General_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -30,25 +31,21 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename deg\+\_\+t $>$ }\\std\+::vector$<$ deg\+\_\+t $>$ \hyperlink{namespaceMackey_a49fef6f64b67ff118d35ac45b9c92972}{Mackey\+::\+Degree\+Construction} (const deg\+\_\+t \&minimum, const deg\+\_\+t \&maximum)
+{\footnotesize template$<$typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ }\\std\+::vector$<$ deg\+\_\+t $>$ \hyperlink{namespaceMackey_a49fef6f64b67ff118d35ac45b9c92972}{Mackey\+::\+Degree\+Construction} (const deg\+\_\+t \&minimum, const deg\+\_\+t \&maximum)
 \begin{DoxyCompactList}\small\item\em Given minimum and maximum degrees, constructs everything in between. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \hyperlink{namespaceMackey_a3a4b7761ed7274b145eed9a451b53e61}{Mackey\+::combinations} (const std\+::vector$<$ std\+::vector$<$ T $>$$>$ \&v)
 \begin{DoxyCompactList}\small\item\em Given a vector of vectors v form all combinations of the form \{v\mbox{[}0\mbox{]}\mbox{[}?\mbox{]},v\mbox{[}1\mbox{]}\mbox{[}?\mbox{]},...\} for varying ? \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_a1e4b11e9d2a5b70f8380af87cae31ef3}{Mackey\+::tail} (const T $\ast$const \&ptr, int size, int start)
 \begin{DoxyCompactList}\small\item\em Given vector or array returns vector starting from index start. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_a4403b34f0680dfccf2ab79111f832ba3}{Mackey\+::tail} (const T $\ast$const \&ptr, int size)
-\begin{DoxyCompactList}\small\item\em Given vector or array returns vector starting from index 1. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a74984d054f1f943ab61dd0415347f141}{Mackey\+::find} (const T \&v, int a)
+{\footnotesize template$<$typename T , typename S , std\+::enable\+\_\+if\+\_\+t$<$!is\+\_\+\+Eigen$<$ S $>$\+::value, int $>$  = 0$>$ }\\int \hyperlink{namespaceMackey_a91104eaef1ab349e68f0623cfaaf45c0}{Mackey\+::find} (const T \&v, const S \&a)
 \begin{DoxyCompactList}\small\item\em Find first instance of a in v. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename S $>$ }\\std\+::pair$<$ int, int $>$ \hyperlink{namespaceMackey_a1a7a26880f8c7c087503e2bc16168d3c}{Mackey\+::findcount} (const T \&v, S a)
-\begin{DoxyCompactList}\small\item\em Count the instances of a in v and return the last one. \end{DoxyCompactList}\item 
-std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_a86cc6cbaa708580f4e382b066bd0b7d4}{Mackey\+::basis\+Vector} (int total, int position, int multiple)
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_ac2e368bf7d802f2fc47e39a71a5a1630}{Mackey\+::basis\+Element} (int length, int position, int multiple)
 \begin{DoxyCompactList}\small\item\em Makes the multiple of the basis vector 0,...,multiple,...,0. \end{DoxyCompactList}\item 
-std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_ae3454eb9b2574a835a29e3f58cfc6ead}{Mackey\+::basis\+Vector} (int total, int position)
-\begin{DoxyCompactList}\small\item\em Makes the basis vector 0,...,1,...,0. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived , typename T $>$ }\\Derived \hyperlink{namespaceMackey_ae44b27dcf905a7ff976ebc79f197c579}{Mackey\+::\+Keep\+Row} (const Eigen\+::\+Dense\+Base$<$ Derived $>$ \&A, const std\+::vector$<$ T $>$ \&\hyperlink{classZ}{Z})
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_aa10c6cbea565e024a38b446139800b69}{Mackey\+::basis\+Element} (int length, int position)
+\begin{DoxyCompactList}\small\item\em Makes the the basis vector 0,...,1,...,0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Derived , typename T $>$ }\\Derived \hyperlink{namespaceMackey_abb970fabb37932c8d2084fb9cd1aff3f}{Mackey\+::\+Keep\+Row} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A, const T \&\hyperlink{classZ}{Z})
 \begin{DoxyCompactList}\small\item\em Makes a new matrix out of A keeping only its rows indicated by \hyperlink{classZ}{Z}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived , typename T $>$ }\\Derived \hyperlink{namespaceMackey_a782d9ce52543c3ae3520b4859dda3240}{Mackey\+::\+Keep\+Col} (const Eigen\+::\+Dense\+Base$<$ Derived $>$ \&A, const std\+::vector$<$ T $>$ \&\hyperlink{classZ}{Z})
+{\footnotesize template$<$typename Derived , typename T $>$ }\\Derived \hyperlink{namespaceMackey_a165eecd4244c7e736cd453016a80ec29}{Mackey\+::\+Keep\+Col} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A, const T \&\hyperlink{classZ}{Z})
 \begin{DoxyCompactList}\small\item\em Makes a new matrix out of A keeping only its columns indicated by \hyperlink{classZ}{Z}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived $>$ }\\int \hyperlink{namespaceMackey_a359aa27a035d2b1f1a3f2f8270fc9e52}{Mackey\+::summation} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Takes the sum of the entries of an \hyperlink{namespaceEigen}{Eigen} vector at higher precision than its inputs. \end{DoxyCompactList}\item 
@@ -65,7 +62,7 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_ae3454eb9b2574a835a29e3f58cf
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_a9d67cfe3e93ac3ef2301547372b48e15}{Mackey\+::operator-\/} (const std\+::vector$<$ T $>$ \&a)
 \begin{DoxyCompactList}\small\item\em Coordinate-\/wise opposite of vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_ae235ee5dd92dc1ca64388b8fbb1b4d75}{Mackey\+::operator$\ast$} (T a, const std\+::vector$<$ T $>$ \&b)
-\begin{DoxyCompactList}\small\item\em Coordinate-\/wise difference of vectors (up to the minimum of their lengths) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Product of element and vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \hyperlink{namespaceMackey_aa4da3e3b46b9cb20f3be57d7e5da2d5d}{Mackey\+::operator$<$$<$} (std\+::ostream \&out, const std\+::vector$<$ T $>$ \&a)
 \begin{DoxyCompactList}\small\item\em Printing a vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a5d8ae76ffb9440e27bfca124d26ee1b2}{Mackey\+::lcm} (const T \&v)

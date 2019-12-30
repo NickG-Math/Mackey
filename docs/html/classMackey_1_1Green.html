@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">1.5</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('classMackey_1_1Green.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classMackey_1_1Green-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Mackey::Green&lt; rank_t, diff_t &gt; Class Template Reference</div>  </div>
@@ -110,9 +111,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a614ae228cc8c5cccddcf562923f06f3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a614ae228cc8c5cccddcf562923f06f3a">Green</a> (const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;, const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;, int, int, int)</td></tr>
 <tr class="memdesc:a614ae228cc8c5cccddcf562923f06f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the product of generators given chains, degrees and level.  <a href="#a614ae228cc8c5cccddcf562923f06f3a">More...</a><br /></td></tr>
 <tr class="separator:a614ae228cc8c5cccddcf562923f06f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a094a394ff8e1f4801fb3a5f09e071def"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a094a394ff8e1f4801fb3a5f09e071def">select</a> (int, int) const</td></tr>
-<tr class="memdesc:a094a394ff8e1f4801fb3a5f09e071def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the desired generator.  <a href="#a094a394ff8e1f4801fb3a5f09e071def">More...</a><br /></td></tr>
-<tr class="separator:a094a394ff8e1f4801fb3a5f09e071def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35594da87192177ce4bb623ad1b30c84"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
+<tr class="memitem:a35594da87192177ce4bb623ad1b30c84"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84">getNormalBasis</a> (const T &amp;, const S &amp;) const</td></tr>
+<tr class="memdesc:a35594da87192177ce4bb623ad1b30c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (normalized) product of the given two elements (not necessarily generators)  <a href="#a35594da87192177ce4bb623ad1b30c84">More...</a><br /></td></tr>
+<tr class="separator:a35594da87192177ce4bb623ad1b30c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257e9f34318b5e2dbbe668b4e237a6c3"><td class="memTemplParams" colspan="2">template&lt;typename T  = int, typename S &gt; </td></tr>
+<tr class="memitem:a257e9f34318b5e2dbbe668b4e237a6c3"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a257e9f34318b5e2dbbe668b4e237a6c3">getNormalBasis</a> (int i, const S &amp;b) const</td></tr>
+<tr class="memdesc:a257e9f34318b5e2dbbe668b4e237a6c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (normalized) product of the selected generator with another element.  <a href="#a257e9f34318b5e2dbbe668b4e237a6c3">More...</a><br /></td></tr>
+<tr class="separator:a257e9f34318b5e2dbbe668b4e237a6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e2d97abb22044ec3abbe91bc9c33ee9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S  = int&gt; </td></tr>
+<tr class="memitem:a7e2d97abb22044ec3abbe91bc9c33ee9"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a7e2d97abb22044ec3abbe91bc9c33ee9">getNormalBasis</a> (const T &amp;a, int j) const</td></tr>
+<tr class="memdesc:a7e2d97abb22044ec3abbe91bc9c33ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (normalized) product of the given element with the selected generator.  <a href="#a7e2d97abb22044ec3abbe91bc9c33ee9">More...</a><br /></td></tr>
+<tr class="separator:a7e2d97abb22044ec3abbe91bc9c33ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7f1f3a020f23a00fae372956f50827"><td class="memTemplParams" colspan="2">template&lt;typename T  = int, typename S  = int&gt; </td></tr>
+<tr class="memitem:a3f7f1f3a020f23a00fae372956f50827"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a3f7f1f3a020f23a00fae372956f50827">getNormalBasis</a> (int i, int j) const</td></tr>
+<tr class="memdesc:a3f7f1f3a020f23a00fae372956f50827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (normalized) product of the selected generators.  <a href="#a3f7f1f3a020f23a00fae372956f50827">More...</a><br /></td></tr>
+<tr class="separator:a3f7f1f3a020f23a00fae372956f50827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -122,21 +136,18 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a12a01a6d1715538af0bdc6b34fad6b85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a12a01a6d1715538af0bdc6b34fad6b85">isZero</a></td></tr>
 <tr class="memdesc:a12a01a6d1715538af0bdc6b34fad6b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 if the homology group the product lives in is 0.  <a href="#a12a01a6d1715538af0bdc6b34fad6b85">More...</a><br /></td></tr>
 <tr class="separator:a12a01a6d1715538af0bdc6b34fad6b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cfc633ccb548d2d516450399c108174"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a9cfc633ccb548d2d516450399c108174">basis</a></td></tr>
-<tr class="memdesc:a9cfc633ccb548d2d516450399c108174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expresses the product of two generators as a linear combination of the generators of the box product.  <a href="#a9cfc633ccb548d2d516450399c108174">More...</a><br /></td></tr>
-<tr class="separator:a9cfc633ccb548d2d516450399c108174"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18135b4b1a4aceb387519832a487206a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a18135b4b1a4aceb387519832a487206a">normalBasis</a></td></tr>
-<tr class="memdesc:a18135b4b1a4aceb387519832a487206a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as basis, now normalized.  <a href="#a18135b4b1a4aceb387519832a487206a">More...</a><br /></td></tr>
-<tr class="separator:a18135b4b1a4aceb387519832a487206a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18ba76e7f7b71c1e5fca23bc71accf86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a18ba76e7f7b71c1e5fca23bc71accf86">first_number_selections</a></td></tr>
-<tr class="memdesc:a18ba76e7f7b71c1e5fca23bc71accf86"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of selections of generators for the first factor.  <a href="#a18ba76e7f7b71c1e5fca23bc71accf86">More...</a><br /></td></tr>
-<tr class="separator:a18ba76e7f7b71c1e5fca23bc71accf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1240acdc0e901e496597eab2d0ef27f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#a1240acdc0e901e496597eab2d0ef27f2">second_number_selections</a></td></tr>
-<tr class="memdesc:a1240acdc0e901e496597eab2d0ef27f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of selections of generators for the second factor.  <a href="#a1240acdc0e901e496597eab2d0ef27f2">More...</a><br /></td></tr>
-<tr class="separator:a1240acdc0e901e496597eab2d0ef27f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea166896ebdaa17b3c5d21b2ae936e0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1IDGenerators.html">IDGenerators</a>&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#aea166896ebdaa17b3c5d21b2ae936e0d">boxID</a></td></tr>
 <tr class="memdesc:aea166896ebdaa17b3c5d21b2ae936e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies the generators of the homology group the product lives in.  <a href="#aea166896ebdaa17b3c5d21b2ae936e0d">More...</a><br /></td></tr>
 <tr class="separator:aea166896ebdaa17b3c5d21b2ae936e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aa7a5b52d9d87397db413615120f34df7"><td class="memTemplParams" colspan="2">template&lt;typename s_rank_t , typename s_diff_t &gt; </td></tr>
+<tr class="memitem:aa7a5b52d9d87397db413615120f34df7"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#aa7a5b52d9d87397db413615120f34df7">internal::GreenCompute</a></td></tr>
+<tr class="separator:aa7a5b52d9d87397db413615120f34df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb72946219f32efa8f0a45f5f8872c8a"><td class="memTemplParams" colspan="2">template&lt;typename Archive , typename s_rank , typename s_diff &gt; </td></tr>
+<tr class="memitem:aeb72946219f32efa8f0a45f5f8872c8a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Green.html#aeb72946219f32efa8f0a45f5f8872c8a">serialize</a> (Archive &amp;, <a class="el" href="classMackey_1_1Green.html">Green</a>&lt; s_rank, s_diff &gt; &amp;)</td></tr>
+<tr class="separator:aeb72946219f32efa8f0a45f5f8872c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
@@ -170,14 +181,6 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Default constructor. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph.png" border="0" usemap="#classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph" alt=""/></div>
-<map name="classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph" id="classMackey_1_1Green_ad3bb0ba97c91a5db4fcf57687a571915_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1Green.html#a094a394ff8e1f4801fb3a5f09e071def" title="Selects the desired generator. " alt="" coords="208,5,363,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -232,25 +235,27 @@ template&lt;typename rank_t , typename diff_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a094a394ff8e1f4801fb3a5f09e071def"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a094a394ff8e1f4801fb3a5f09e071def">&#9670;&nbsp;</a></span>select()</h2>
+<a id="a35594da87192177ce4bb623ad1b30c84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35594da87192177ce4bb623ad1b30c84">&#9670;&nbsp;</a></span>getNormalBasis() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename rank_t , typename diff_t &gt; </div>
+<div class="memtemplate">
+template&lt;typename T , typename S &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::select </td>
+          <td class="memname">rank_t <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::getNormalBasis </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>select_first</em>, </td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>select_second</em>&#160;</td>
+          <td class="paramtype">const S &amp;&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -260,41 +265,234 @@ template&lt;typename rank_t , typename diff_t &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Selects the desired generator. </p>
+<p>Returns the (normalized) product of the given two elements (not necessarily generators) </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_cgraph.png" border="0" usemap="#classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_cgraph" alt=""/></div>
+<map name="classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_cgraph" id="classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero. " alt="" coords="242,5,354,32"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="232,56,364,83"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph.png" border="0" usemap="#classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph" alt=""/></div>
-<map name="classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph" id="classMackey_1_1Green_a094a394ff8e1f4801fb3a5f09e071def_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="208,5,395,47"/>
-<area shape="rect" id="node3" href="classMackey_1_1Green.html#ad3bb0ba97c91a5db4fcf57687a571915" title="Default constructor. " alt="" coords="224,71,379,98"/>
-<area shape="rect" id="node4" href="namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title="Mackey::multiply" alt="" coords="241,122,362,149"/>
-<area shape="rect" id="node5" href="namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="443,122,573,149"/>
+<div class="center"><img src="classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_icgraph.png" border="0" usemap="#classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_icgraph" alt=""/></div>
+<map name="classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_icgraph" id="classMackey_1_1Green_a35594da87192177ce4bb623ad1b30c84_icgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title="Mackey::multiply" alt="" coords="265,31,386,57"/>
+<area shape="rect" id="node5" href="classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="232,82,419,123"/>
+<area shape="rect" id="node6" href="classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="232,148,419,204"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="477,5,607,32"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a2eca4cc709501ad3fc20b82fe4bcbd33" title="Mackey::multiply" alt="" coords="481,56,603,83"/>
+<area shape="rect" id="node7" href="classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="467,155,617,197"/>
 </map>
 </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9cfc633ccb548d2d516450399c108174"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cfc633ccb548d2d516450399c108174">&#9670;&nbsp;</a></span>basis</h2>
+<a id="a257e9f34318b5e2dbbe668b4e237a6c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a257e9f34318b5e2dbbe668b4e237a6c3">&#9670;&nbsp;</a></span>getNormalBasis() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename rank_t, typename diff_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename T  = int, typename S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;rank_t&gt; <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::basis</td>
+          <td class="memname">rank_t <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::getNormalBasis </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const S &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Expresses the product of two generators as a linear combination of the generators of the box product. </p>
-<p>For each selection of generators we have an array expressing the product as a linear combination of generators in the degree of the product </p>
+<p>Returns the (normalized) product of the selected generator with another element. </p>
 
 </div>
 </div>
+<a id="a7e2d97abb22044ec3abbe91bc9c33ee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e2d97abb22044ec3abbe91bc9c33ee9">&#9670;&nbsp;</a></span>getNormalBasis() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename T , typename S  = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rank_t <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::getNormalBasis </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the (normalized) product of the given element with the selected generator. </p>
+
+</div>
+</div>
+<a id="a3f7f1f3a020f23a00fae372956f50827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7f1f3a020f23a00fae372956f50827">&#9670;&nbsp;</a></span>getNormalBasis() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename T  = int, typename S  = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rank_t <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::getNormalBasis </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the (normalized) product of the selected generators. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Green_a3f7f1f3a020f23a00fae372956f50827_cgraph.png" border="0" usemap="#classMackey_1_1Green_a3f7f1f3a020f23a00fae372956f50827_cgraph" alt=""/></div>
+<map name="classMackey_1_1Green_a3f7f1f3a020f23a00fae372956f50827_cgraph" id="classMackey_1_1Green_a3f7f1f3a020f23a00fae372956f50827_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="232,13,364,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="aa7a5b52d9d87397db413615120f34df7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7a5b52d9d87397db413615120f34df7">&#9670;&nbsp;</a></span>internal::GreenCompute</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename s_rank_t , typename s_diff_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classMackey_1_1internal_1_1GreenCompute.html">internal::GreenCompute</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb72946219f32efa8f0a45f5f8872c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb72946219f32efa8f0a45f5f8872c8a">&#9670;&nbsp;</a></span>serialize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename Archive , typename s_rank , typename s_diff &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void serialize </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMackey_1_1Green.html">Green</a>&lt; s_rank, s_diff &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a id="aea166896ebdaa17b3c5d21b2ae936e0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea166896ebdaa17b3c5d21b2ae936e0d">&#9670;&nbsp;</a></span>boxID</h2>
 
@@ -310,24 +508,6 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Identifies the generators of the homology group the product lives in. </p>
-
-</div>
-</div>
-<a id="a18ba76e7f7b71c1e5fca23bc71accf86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18ba76e7f7b71c1e5fca23bc71accf86">&#9670;&nbsp;</a></span>first_number_selections</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename rank_t, typename diff_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::first_number_selections</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The number of selections of generators for the first factor. </p>
 
 </div>
 </div>
@@ -364,42 +544,6 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 </div><div class="memdoc">
 
 <p>1 if the homology group the product lives in is 0. </p>
-
-</div>
-</div>
-<a id="a18135b4b1a4aceb387519832a487206a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18135b4b1a4aceb387519832a487206a">&#9670;&nbsp;</a></span>normalBasis</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename rank_t, typename diff_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;rank_t&gt; <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::normalBasis</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Same as basis, now normalized. </p>
-
-</div>
-</div>
-<a id="a1240acdc0e901e496597eab2d0ef27f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1240acdc0e901e496597eab2d0ef27f2">&#9670;&nbsp;</a></span>second_number_selections</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename rank_t, typename diff_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classMackey_1_1Green.html">Mackey::Green</a>&lt; rank_t, diff_t &gt;::second_number_selections</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The number of selections of generators for the second factor. </p>
 
 </div>
 </div>

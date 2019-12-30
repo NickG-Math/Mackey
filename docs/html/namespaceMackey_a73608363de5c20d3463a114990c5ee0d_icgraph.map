@@ -1,0 +1,8 @@
+<map id="Mackey::find" name="Mackey::find">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a281b9be315d7d51c7e691d4c733ac0c9" title="Find if given elements can all be distinguished i.e. they have pairwise disjoint candidate sets..." alt="" coords="175,5,313,32"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraphIdentify.html#a87d94678c5d050a9b36ffe6323076375" title="Uses triple box products to possibly identify the disconnected generators if identification failed be..." alt="" coords="385,23,572,65"/>
+<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="151,107,337,149"/>
+<area shape="rect" id="node7" href="$classMackey_1_1Smith.html#a612e73ee01325c7adf0b7102d007a915" title="Same as the other constructor, but don&#39;t sort. " alt="" coords="168,173,320,200"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#a02cb54dbcb5a79d1c5e8871dc0599093" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="620,23,771,65"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="819,23,969,65"/>
+</map>

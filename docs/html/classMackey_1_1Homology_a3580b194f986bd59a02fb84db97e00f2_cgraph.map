@@ -1,5 +1,5 @@
 <map id="Mackey::Homology::Homology" name="Mackey::Homology::Homology">
 <area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="267,5,441,32"/>
 <area shape="rect" id="node4" href="$classMackey_1_1Homology.html#a75a8814da8edd53320b0054a5f253d12" title="Given an x that is a boundary returns a y s.t. dy=x. " alt="" coords="256,56,452,83"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="500,31,633,57"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="500,31,633,57"/>
 </map>

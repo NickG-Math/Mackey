@@ -1,19 +1,11 @@
 var searchData=
 [
-  ['select_20implementation_20details',['Select Implementation Details',['../algo.html',1,'']]],
-  ['s',['S',['../classMackey_1_1Smith.html#a676606c4002b08a37f0ea11dc3686dbe',1,'Mackey::Smith']]],
-  ['save',['save',['../namespacecereal.html#afd0f4831f36c8d183e4ff80c96b6b9ed',1,'cereal']]],
-  ['saver',['saver',['../namespaceMackey.html#a1824d780ce15f1845e4f87bf056feec9',1,'Mackey']]],
-  ['scalar',['Scalar',['../classMackey_1_1MackeyFunctor.html#a124b4175216c4cf9a4b67acc78e9246d',1,'Mackey::MackeyFunctor']]],
-  ['second_5fnumber_5fselections',['second_number_selections',['../classMackey_1_1Green.html#a1240acdc0e901e496597eab2d0ef27f2',1,'Mackey::Green']]],
-  ['select',['select',['../classMackey_1_1Green.html#a094a394ff8e1f4801fb3a5f09e071def',1,'Mackey::Green']]],
-  ['serialize',['serialize',['../namespaceMackey.html#ac78e550c9949977ed71367fb21892e93',1,'Mackey::serialize(Archive &amp;archive, IDGenerators&lt; rank_t &gt; &amp;ID)'],['../namespaceMackey.html#aa1f463e9991b727f5c74e430eccee044',1,'Mackey::serialize(Archive &amp;archive, MackeyFunctor&lt; rank_t &gt; &amp;Mack)'],['../namespaceMackey.html#a73c4c78b9c9858acc875da9516535d4b',1,'Mackey::serialize(Archive &amp;archive, AdditiveStructure&lt; rank_t, diff_t &gt; &amp;A)'],['../namespaceMackey.html#ae6ccf7fecc4fc52a3c7b31876106ae2c',1,'Mackey::serialize(Archive &amp;archive, Green&lt; rank_t, diff_t &gt; &amp;G)'],['../namespaceMackey.html#ae5d73f6ab42eb8fe9ae441e3ffc4b3a5',1,'Mackey::serialize(Archive &amp;archive, MultiplicationTable&lt; rank_t, diff_t &gt; &amp;M)']]],
-  ['shiftsegment',['shiftsegment',['../namespaceMackey.html#aab8a6292210a3b71960cb03b79d218e6',1,'Mackey']]],
-  ['size',['size',['../classMackey_1_1Factorization.html#ab958c9491e2e63d0861d92599b0d237d',1,'Mackey::Factorization']]],
-  ['smith',['Smith',['../classMackey_1_1Smith.html',1,'Mackey::Smith&lt; smithS_t, smithR_t, smithC_t &gt;'],['../classMackey_1_1Smith.html#a534aaf0e0b2da7d312d80ad7d67ae794',1,'Mackey::Smith::Smith(const smithS_t &amp;, bool, bool, bool)'],['../classMackey_1_1Smith.html#a207e1221d2d15f9d9ab4ef36be67eb85',1,'Mackey::Smith::Smith(const smithS_t &amp;A, bool wantP, bool wantQ)']]],
-  ['smith_2eh',['Smith.h',['../Smith_8h.html',1,'']]],
-  ['source',['source',['../classMackey_1_1Graph.html#a43657a07a21a2dcf422876400360ed5b',1,'Mackey::Graph']]],
-  ['sphere_5fdimensions',['sphere_dimensions',['../classGroupSpecific_1_1Variables.html#a4746f16736abcf4c705dd8690ec12ca0',1,'GroupSpecific::Variables']]],
-  ['standardchains',['StandardChains',['../namespaceMackey.html#a425b988266cedec0299fb539d99179b1',1,'Mackey::StandardChains(const deg_t &amp;sphere)'],['../namespaceMackey.html#aac9deeccbe291d1dd17df46a3d7c1f2b',1,'Mackey::StandardChains(int i, const deg_t &amp;sphere)']]],
-  ['summation',['summation',['../namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52',1,'Mackey']]]
+  ['table_2eh',['Table.h',['../Table_8h.html',1,'']]],
+  ['tableinput',['TableInput',['../classMackey_1_1internal_1_1IDGeneratorCompute.html#aa9b93b7c7f692b237593457fa7dc78a8',1,'Mackey::internal::IDGeneratorCompute']]],
+  ['tail',['tail',['../namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3',1,'Mackey']]],
+  ['tr',['Tr',['../classMackey_1_1IDGenerators.html#a5aa6391d6fa79951f6d11e880c79081b',1,'Mackey::IDGenerators::Tr()'],['../classMackey_1_1MackeyFunctor.html#ae695013be3025f6841326e2ca0d03754',1,'Mackey::MackeyFunctor::Tr()']]],
+  ['tracker',['tracker',['../classMackey_1_1MultiplicationGraph.html#ac831b81d1936c4dd2202dabaa8e4e2fb',1,'Mackey::MultiplicationGraph']]],
+  ['transfer',['transfer',['../namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6',1,'Mackey::transfer(const Eigen::Matrix&lt; Scalar, 1, -1 &gt; &amp;rank, int level)'],['../namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12',1,'Mackey::transfer(const diff_t &amp;diff, const rank_t &amp;domain, rank_t &amp;domain_top, const rank_t &amp;range, rank_t &amp;range_top, int level)'],['../namespaceMackey.html#a914aba7f868e67ae3fd9da3995678660',1,'Mackey::transfer(const Junction&lt; rank_t, diff_t &gt; &amp;J, int level)'],['../namespaceMackey.html#a50837580391b5c6705e23c637d742b22',1,'Mackey::transfer(const Chains&lt; rank_t, diff_t &gt; &amp;C, int level)'],['../namespaceMackey.html#a0550bf97e47b3c319cb5e1bd81008d89',1,'Mackey::transfer(const Eigen::MatrixBase&lt; Derived &gt; &amp;generator, const rank_t &amp;domain, const rank_t &amp;range)'],['../namespaceMackey.html#a3f20cf0ccf7d280f6a6e308c381dc350',1,'Mackey::transfer(const Homology&lt; rank_t, diff_t &gt; &amp;low, const Homology&lt; rank_t, diff_t &gt; &amp;high, const rank_t &amp;rank_low, const rank_t &amp;rank_high)']]],
+  ['triple_5fproduct',['triple_product',['../classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829',1,'Mackey::MultiplicationTable']]],
+  ['triplegreens',['tripleGreens',['../classMackey_1_1MultiplicationTable.html#af6b2afae20bd4a120e9792d1a9dce837',1,'Mackey::MultiplicationTable']]]
 ];

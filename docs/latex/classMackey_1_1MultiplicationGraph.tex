@@ -2,12 +2,12 @@
 \label{classMackey_1_1MultiplicationGraph}\index{Mackey\+::\+Multiplication\+Graph$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Multiplication\+Graph$<$ rank\+\_\+t, diff\+\_\+t $>$}}
 
 
-The Multiplication \hyperlink{classMackey_1_1Graph}{Graph}.  
+The Multiplication \hyperlink{classMackey_1_1Graph}{Graph} created from the Multiplication Table.  
 
 
 
 
-{\ttfamily \#include $<$Factorization.\+h$>$}
+{\ttfamily \#include $<$Multiplication\+Graph.\+h$>$}
 
 
 
@@ -27,24 +27,36 @@ Collaboration diagram for Mackey\+:\+:Multiplication\+Graph$<$ rank\+\_\+t, diff
 \includegraphics[width=350pt]{classMackey_1_1MultiplicationGraph__coll__graph}
 \end{center}
 \end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classMackey_1_1MultiplicationGraph_a9fd088a706e8c2ffeae3db1584de9266}{number\+\_\+of\+\_\+generators}
+\begin{DoxyCompactList}\small\item\em The number of generators in the multiplication graph. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1MultiplicationGraph_aa0eb04947f664262233ed4cdf650371b}{edgeid}
+\begin{DoxyCompactList}\small\item\em The identity of each edge is the basic irreducible we multiply / divide by, recorded in this vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classMackey_1_1MultiplicationGraph_a3f974791242d9e13ddca520df4265aca}{Multiplication\+Graph} (int, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&)
-\begin{DoxyCompactList}\small\item\em Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles. \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1MultiplicationGraph_a6ac7e92d6ceb6bc146f855898916449f}{is\+Multiple} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Returns k if element\mbox{[}i\mbox{]}=k$\ast$element\mbox{[}j\mbox{]}. Returns 0 if element\mbox{[}a\mbox{]} is not a multiple of element\mbox{[}b\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1MultiplicationGraph_a62ff705e1f01b6ab2008765f10230e96}{Multiplication\+Graph} (\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M)
+\begin{DoxyCompactList}\small\item\em Constructs the multiplication graph given the multiplication table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{classMackey_1_1MultiplicationGraph_aa0eb04947f664262233ed4cdf650371b}{edgeid}
-\begin{DoxyCompactList}\small\item\em The identity of each edge is the basic irreducible we multiply/divide by, recorded in this vector. \end{DoxyCompactList}\item 
-int \hyperlink{classMackey_1_1MultiplicationGraph_a9fd088a706e8c2ffeae3db1584de9266}{number\+\_\+of\+\_\+generators}
-\begin{DoxyCompactList}\small\item\em The number of generators in the multiplication graph. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::array$<$ int, 2 $>$ $>$ \hyperlink{classMackey_1_1MultiplicationGraph_af2d7e83708b67fd4367b20755f2185e8}{element}
-\begin{DoxyCompactList}\small\item\em An element in each Non\+Zero\+Homology group. Stores position and multiple. \end{DoxyCompactList}\item 
+std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1MultiplicationGraph_a53fe65317d8cef485a93e3e516dd374f}{element}
+\begin{DoxyCompactList}\small\item\em An element (linear combination of generators) in each Non\+Zero\+Homology group of the table. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1MultiplicationGraph_ac831b81d1936c4dd2202dabaa8e4e2fb}{tracker}
 \begin{DoxyCompactList}\small\item\em Maps element index to degree index. \end{DoxyCompactList}\item 
-std\+::map$<$ std\+::array$<$ int, 3 $>$, int $>$ \hyperlink{classMackey_1_1MultiplicationGraph_ad0736e72169b51d410d5b61b0f921241}{antielement}
-\begin{DoxyCompactList}\small\item\em Maps degree index and the element to the element index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::map$<$ std\+::pair$<$ int, rank\+\_\+t $>$, int, compare\+Elements $>$ \hyperlink{classMackey_1_1MultiplicationGraph_a8a0d1354d01f29d4388142aab0248389}{antielement}
+\begin{DoxyCompactList}\small\item\em Maps (degree\+\_\+index, element)-\/$>$element\+\_\+index. The comparator first compares the degree\+\_\+index and if equal then compares the elements first to last entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename s\+\_\+rank\+\_\+t , typename s\+\_\+diff\+\_\+t $>$ }\\class \hyperlink{classMackey_1_1MultiplicationGraph_a3c44ae70fe9249e9662ab525f97dc1db}{Multiplication\+Graph\+Identify}
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -52,13 +64,15 @@ std\+::map$<$ std\+::array$<$ int, 3 $>$, int $>$ \hyperlink{classMackey_1_1Mult
 \subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
 class Mackey\+::\+Multiplication\+Graph$<$ rank\+\_\+t, diff\+\_\+t $>$}
 
-The Multiplication \hyperlink{classMackey_1_1Graph}{Graph}. 
+The Multiplication \hyperlink{classMackey_1_1Graph}{Graph} created from the Multiplication Table. 
+
+A node is an element in a nonzero homology group, a linear combination of the generators. At initialization we only use generators, but as products of generators might not be generators, after that initial stage we add multiples and linear combinations into the mix. We have a new index for the elements, and use various vectors and ordered maps to keep track of the element index and the degree index. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_a3f974791242d9e13ddca520df4265aca}\label{classMackey_1_1MultiplicationGraph_a3f974791242d9e13ddca520df4265aca}} 
 \index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!Multiplication\+Graph@{Multiplication\+Graph}}
 \index{Multiplication\+Graph@{Multiplication\+Graph}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
-\subsubsection{\texorpdfstring{Multiplication\+Graph()}{MultiplicationGraph()}}
+\subsubsection{\texorpdfstring{Multiplication\+Graph()}{MultiplicationGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
 \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1MultiplicationGraph}{Multiplication\+Graph} (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{basic\+Irreducibles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
@@ -73,48 +87,102 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{classMackey_1_1MultiplicationGraph_a3f974791242d9e13ddca520df4265aca_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_a62ff705e1f01b6ab2008765f10230e96}\label{classMackey_1_1MultiplicationGraph_a62ff705e1f01b6ab2008765f10230e96}} 
+\index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!Multiplication\+Graph@{Multiplication\+Graph}}
+\index{Multiplication\+Graph@{Multiplication\+Graph}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
+\subsubsection{\texorpdfstring{Multiplication\+Graph()}{MultiplicationGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+\hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1MultiplicationGraph}{Multiplication\+Graph} (\begin{DoxyParamCaption}\item[{\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{M }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructs the multiplication graph given the multiplication table. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_a6ac7e92d6ceb6bc146f855898916449f}\label{classMackey_1_1MultiplicationGraph_a6ac7e92d6ceb6bc146f855898916449f}} 
+\index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!is\+Multiple@{is\+Multiple}}
+\index{is\+Multiple@{is\+Multiple}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
+\subsubsection{\texorpdfstring{is\+Multiple()}{isMultiple()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::is\+Multiple (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Returns k if element\mbox{[}i\mbox{]}=k$\ast$element\mbox{[}j\mbox{]}. Returns 0 if element\mbox{[}a\mbox{]} is not a multiple of element\mbox{[}b\mbox{]}. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraph_a6ac7e92d6ceb6bc146f855898916449f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraph_a6ac7e92d6ceb6bc146f855898916449f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_a3c44ae70fe9249e9662ab525f97dc1db}\label{classMackey_1_1MultiplicationGraph_a3c44ae70fe9249e9662ab525f97dc1db}} 
+\index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!Multiplication\+Graph\+Identify@{Multiplication\+Graph\+Identify}}
+\index{Multiplication\+Graph\+Identify@{Multiplication\+Graph\+Identify}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
+\subsubsection{\texorpdfstring{Multiplication\+Graph\+Identify}{MultiplicationGraphIdentify}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+template$<$typename s\+\_\+rank\+\_\+t , typename s\+\_\+diff\+\_\+t $>$ \\
+friend class \hyperlink{classMackey_1_1MultiplicationGraphIdentify}{Multiplication\+Graph\+Identify}\hspace{0.3cm}{\ttfamily [friend]}}
+
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_ad0736e72169b51d410d5b61b0f921241}\label{classMackey_1_1MultiplicationGraph_ad0736e72169b51d410d5b61b0f921241}} 
+\mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_a8a0d1354d01f29d4388142aab0248389}\label{classMackey_1_1MultiplicationGraph_a8a0d1354d01f29d4388142aab0248389}} 
 \index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!antielement@{antielement}}
 \index{antielement@{antielement}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
 \subsubsection{\texorpdfstring{antielement}{antielement}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::map$<$std\+::array$<$int, 3$>$, int$>$ \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::antielement\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::map$<$std\+::pair$<$int, rank\+\_\+t$>$, int, compare\+Elements$>$ \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::antielement\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Maps degree index and the element to the element index. 
+Maps (degree\+\_\+index, element)-\/$>$element\+\_\+index. The comparator first compares the degree\+\_\+index and if equal then compares the elements first to last entry. 
 
 \mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_aa0eb04947f664262233ed4cdf650371b}\label{classMackey_1_1MultiplicationGraph_aa0eb04947f664262233ed4cdf650371b}} 
 \index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!edgeid@{edgeid}}
 \index{edgeid@{edgeid}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
 \subsubsection{\texorpdfstring{edgeid}{edgeid}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::edgeid\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$std\+::vector$<$int$>$ $>$ \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::edgeid}
 
 
 
-The identity of each edge is the basic irreducible we multiply/divide by, recorded in this vector. 
+The identity of each edge is the basic irreducible we multiply / divide by, recorded in this vector. 
 
-\mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_af2d7e83708b67fd4367b20755f2185e8}\label{classMackey_1_1MultiplicationGraph_af2d7e83708b67fd4367b20755f2185e8}} 
+edgeid\mbox{[}i\mbox{]}\mbox{[}s\mbox{]}=j$>$=0 means that edge\mbox{[}i\mbox{]}\mbox{[}s\mbox{]}=k connects i to k by multiplication by j.
+
+edgeid\mbox{[}i\mbox{]}\mbox{[}s\mbox{]}=-\/1 means that we have a multiple.
+
+edgeid\mbox{[}i\mbox{]}\mbox{[}s\mbox{]}=-\/2-\/j means that edge\mbox{[}i\mbox{]}\mbox{[}s\mbox{]}=k connects i to k by division by j. \mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_a53fe65317d8cef485a93e3e516dd374f}\label{classMackey_1_1MultiplicationGraph_a53fe65317d8cef485a93e3e516dd374f}} 
 \index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!element@{element}}
 \index{element@{element}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
 \subsubsection{\texorpdfstring{element}{element}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::vector$<$std\+::array$<$int, 2$>$ $>$ \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::element\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+std\+::vector$<$rank\+\_\+t$>$ \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::element\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-An element in each Non\+Zero\+Homology group. Stores position and multiple. 
+An element (linear combination of generators) in each Non\+Zero\+Homology group of the table. 
 
 \mbox{\Hypertarget{classMackey_1_1MultiplicationGraph_a9fd088a706e8c2ffeae3db1584de9266}\label{classMackey_1_1MultiplicationGraph_a9fd088a706e8c2ffeae3db1584de9266}} 
 \index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!number\+\_\+of\+\_\+generators@{number\+\_\+of\+\_\+generators}}
 \index{number\+\_\+of\+\_\+generators@{number\+\_\+of\+\_\+generators}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
 \subsubsection{\texorpdfstring{number\+\_\+of\+\_\+generators}{number\_of\_generators}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-int \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::number\+\_\+of\+\_\+generators\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+int \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::number\+\_\+of\+\_\+generators}
 
 
 
@@ -124,7 +192,7 @@ The number of generators in the multiplication graph.
 \index{Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}!tracker@{tracker}}
 \index{tracker@{tracker}!Mackey\+::\+Multiplication\+Graph@{Mackey\+::\+Multiplication\+Graph}}
 \subsubsection{\texorpdfstring{tracker}{tracker}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
 std\+::vector$<$int$>$ \hyperlink{classMackey_1_1MultiplicationGraph}{Mackey\+::\+Multiplication\+Graph}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::tracker\hspace{0.3cm}{\ttfamily [protected]}}
 
 
@@ -135,4 +203,4 @@ Maps element index to degree index.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Mackey/\hyperlink{Factorization_8h}{Factorization.\+h}\end{DoxyCompactItemize}
+Mackey/\hyperlink{MultiplicationGraph_8h}{Multiplication\+Graph.\+h}\end{DoxyCompactItemize}

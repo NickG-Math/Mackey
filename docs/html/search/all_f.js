@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['p',['P',['../classMackey_1_1Smith.html#a5a831316edd85dedc7394b39fda103a2',1,'Mackey::Smith::P()'],['../classMackey_1_1Polynomial.html#ac2784853ce2afbcc21860a9e54e15711',1,'Mackey::Polynomial::p()']]],
+  ['p',['p',['../classMackey_1_1Polynomial.html#ac2784853ce2afbcc21860a9e54e15711',1,'Mackey::Polynomial']]],
   ['pad',['pad',['../classMackey_1_1Polynomial.html#ad2981034fac81d4ad3f2751c757af5d3',1,'Mackey::Polynomial']]],
+  ['pass_5fall_5funidentified',['pass_all_unidentified',['../classMackey_1_1MultiplicationGraphIdentify.html#ab0b4e28dd9134d591305dde1c02b3da5',1,'Mackey::MultiplicationGraphIdentify']]],
+  ['pass_5fdisconnected',['pass_disconnected',['../classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa',1,'Mackey::Factorization::pass_disconnected(bool)'],['../classMackey_1_1Factorization.html#a28a789ea46909c33da8958bc1d17c127',1,'Mackey::Factorization::pass_disconnected()']]],
+  ['pass_5fdisconnected_5fdivision',['pass_disconnected_division',['../classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce',1,'Mackey::MultiplicationGraphIdentify']]],
+  ['pass_5fdisconnected_5fproduct',['pass_disconnected_product',['../classMackey_1_1MultiplicationGraphIdentify.html#a110991be3ba595dbf401ef4a769e4dec',1,'Mackey::MultiplicationGraphIdentify']]],
+  ['pass_5funidentified',['pass_unidentified',['../classMackey_1_1Factorization.html#a3302694fa01f5fe9182b18be30e0411d',1,'Mackey::Factorization']]],
   ['path',['path',['../classMackey_1_1Graph.html#a66fac95e623ca6e3e85ec33310755831',1,'Mackey::Graph']]],
   ['performance',['Performance',['../perf.html',1,'']]],
   ['permutation_5fblock',['permutation_block',['../namespaceMackey.html#ae54ebc8588d873a744541394ac5113f0',1,'Mackey']]],
-  ['pi',['Pi',['../classMackey_1_1Smith.html#a97f16eca1aa9f4f6c36c2680fdcf277e',1,'Mackey::Smith']]],
   ['polynomial',['Polynomial',['../classMackey_1_1Polynomial.html',1,'Mackey::Polynomial&lt; T &gt;'],['../classMackey_1_1Polynomial.html#a0e0bda8d8d0d5ade1cbb0b0cc79b8d56',1,'Mackey::Polynomial::Polynomial()'],['../classMackey_1_1Polynomial.html#ad14fdd66f2d9942af17e38fe8c6bb2c9',1,'Mackey::Polynomial::Polynomial(const std::vector&lt; T &gt; &amp;q)'],['../classMackey_1_1Polynomial.html#a61522f056a2334c51186f7ed0b35229f',1,'Mackey::Polynomial::Polynomial(T coeff, int power)'],['../classMackey_1_1Polynomial.html#a665435bc329352f11b1e424c126d914b',1,'Mackey::Polynomial::Polynomial(T coeff)']]],
   ['polynomial_2eh',['Polynomial.h',['../Polynomial_8h.html',1,'']]],
   ['positivechains',['PositiveChains',['../classGroupSpecific_1_1Function.html#a6d247b31d297f733e9cd6f68921a37cd',1,'GroupSpecific::Function']]],

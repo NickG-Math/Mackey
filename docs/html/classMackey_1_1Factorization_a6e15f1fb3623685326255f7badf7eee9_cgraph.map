@@ -1,0 +1,10 @@
+<map id="Mackey::Factorization::getelement" name="Mackey::Factorization::getelement">
+<area shape="rect" id="node2" href="$classMackey_1_1Factorization.html#a5217ad8ca4aaa13b900adda77893249b" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="211,5,361,47"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#af1b07ab5021c4e51698c4cd3fbb85422" title="Form the multiplication table and graph given the max and min spheres and the basic irreducibles..." alt="" coords="442,108,593,149"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Factorization.html#a2e135a37687fc3d69cd16a8729dd19eb" title="Compute the factorizations using the given sources for the multiplication graph and their given names..." alt="" coords="204,212,368,253"/>
+<area shape="rect" id="node7" href="$classMackey_1_1Factorization.html#a3302694fa01f5fe9182b18be30e0411d" title="Uses triple box products to possibly identify ALL instances where identification failed before..." alt="" coords="211,277,361,319"/>
+<area shape="rect" id="node9" href="$classMackey_1_1Factorization.html#a28a789ea46909c33da8958bc1d17c127" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="211,147,361,188"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#ab90f461af3418417970d4be8682e965d" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="442,5,593,47"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Graph.html#acda32cd8d144dcd1ec771bd8d2753321" title="A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations. " alt="" coords="416,212,619,253"/>
+<area shape="rect" id="node8" href="$classMackey_1_1MultiplicationGraphIdentify.html#ab0b4e28dd9134d591305dde1c02b3da5" title="Uses triple box products to possibly identify ALL instances where identification failed before..." alt="" coords="420,277,615,319"/>
+</map>

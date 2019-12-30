@@ -1,8 +1,9 @@
 var Homology_8h =
 [
     [ "Homology", "classMackey_1_1Homology.html", "classMackey_1_1Homology" ],
-    [ "findBasisElement", "Homology_8h.html#ab5bc349f95c14d448e42622de2d6a448", null ],
-    [ "isBasisElement", "Homology_8h.html#a69fa6a0eac2520c76251b0799fa9357f", null ],
-    [ "normalize", "Homology_8h.html#aa3ee3f5d387e24122f0e2865f742675f", null ],
+    [ "equals", "Homology_8h.html#a82dd9e46100ec78b6238a3b60a5b1b45", null ],
+    [ "isMultiple", "Homology_8h.html#aef81f82c080c97bb31154524af52b62c", null ],
+    [ "mod_normalize", "Homology_8h.html#a320b32b8fd44ee75d9f08aa0665c4ec7", null ],
+    [ "normalize", "Homology_8h.html#a43e260f55a458bed50ab6a75aef7e666", null ],
     [ "order", "Homology_8h.html#a4abdca157edcf425b1e7ceff39d74c2f", null ]
 ];

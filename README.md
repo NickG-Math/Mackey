@@ -12,9 +12,10 @@ You can also view a graph created by this library and drawn by graphviz  <a href
 What follows is a very brief installation guide taken from the more extensive <a href="https://nickg-math.github.io/Mackey/html/index.html">documentation</a>.
 
 # Requirements
-* C++17 and the standard library.
+* C++17.
 * <a href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. I've tested this project with Eigen 3.3.7
 * Optional: For improved performance you can use the Intel MKL with Eigen and further combine with OpenMP for multithreading.
+* Optional: To serialize the results of computations, you can use the  <a href="https://uscilab.github.io/cereal/">cereal</a> library.
 * Optional: To draw the multiplication graphs you will need Graphviz.
 
 # Installation

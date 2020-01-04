@@ -1,7 +1,9 @@
 var searchData=
 [
+  ['gcd',['gcd',['../namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be',1,'Mackey']]],
+  ['gen_5ft',['Gen_t',['../classMackey_1_1Homology.html#a9a8e354083ac094720820a5ff6bcff03',1,'Mackey::Homology::Gen_t()'],['../classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46',1,'Mackey::Homology::gen_t()'],['../namespaceMackey.html#a5048063727afe2ed842d6bff76cef28e',1,'Mackey::Gen_t()'],['../namespaceMackey.html#a6bb0b2796632ba6c7f8ea192f7aecffe',1,'Mackey::gen_t()']]],
   ['general_2eh',['General.h',['../General_8h.html',1,'']]],
-  ['generators',['Generators',['../classMackey_1_1Homology.html#afc375f3632f97e3fe3e24c06f1e18fa2',1,'Mackey::Homology']]],
+  ['generators',['Generators',['../classMackey_1_1Homology.html#af3eff7d2cb42b44a29f6a92172096b3d',1,'Mackey::Homology']]],
   ['geometric',['geometric',['../namespaceMackey.html#a2b9319a9af0a3cad8cfec47e9197dc82',1,'Mackey']]],
   ['getdegree',['getdegree',['../classMackey_1_1Factorization.html#a273e9318c0a5eacacd584474f93ffe4a',1,'Mackey::Factorization']]],
   ['getdegreeindex',['getdegreeindex',['../classMackey_1_1Factorization.html#ab90f461af3418417970d4be8682e965d',1,'Mackey::Factorization']]],
@@ -11,7 +13,7 @@ var searchData=
   ['getname',['getname',['../classMackey_1_1Factorization.html#ac5088227511baaaec1f62802b75d3a9e',1,'Mackey::Factorization']]],
   ['getnormalbasis',['getNormalBasis',['../classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84',1,'Mackey::Green::getNormalBasis(const T &amp;, const S &amp;) const'],['../classMackey_1_1Green.html#a257e9f34318b5e2dbbe668b4e237a6c3',1,'Mackey::Green::getNormalBasis(int i, const S &amp;b) const'],['../classMackey_1_1Green.html#a7e2d97abb22044ec3abbe91bc9c33ee9',1,'Mackey::Green::getNormalBasis(const T &amp;a, int j) const'],['../classMackey_1_1Green.html#a3f7f1f3a020f23a00fae372956f50827',1,'Mackey::Green::getNormalBasis(int i, int j) const']]],
   ['getsphere',['getsphere',['../classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999',1,'Mackey::MultiplicationTable']]],
-  ['graph',['Graph',['../classMackey_1_1Graph.html',1,'Mackey::Graph&lt; T &gt;'],['../classMackey_1_1Graph.html#a979aefd7d97cd0344637180c00e7db1b',1,'Mackey::Graph::Graph(std::vector&lt; std::vector&lt; int &gt;&gt; &amp;edges)'],['../classMackey_1_1Graph.html#a910e6687de1a1a90df5b656e3c850a01',1,'Mackey::Graph::Graph()']]],
+  ['graph',['Graph',['../classMackey_1_1Graph.html',1,'Mackey::Graph&lt; T &gt;'],['../classMackey_1_1Graph.html#a4f0ca7cec28645835bbad29b8c00992c',1,'Mackey::Graph::Graph(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;edges)'],['../classMackey_1_1Graph.html#a910e6687de1a1a90df5b656e3c850a01',1,'Mackey::Graph::Graph()']]],
   ['graph_2eh',['Graph.h',['../Graph_8h.html',1,'']]],
   ['graph_3c_20coloredgraph_20_3e',['Graph&lt; ColoredGraph &gt;',['../classMackey_1_1Graph.html',1,'Mackey::Graph&lt; ColoredGraph &gt;'],['../classMackey_1_1ColoredGraph.html#a2debfc8158c19d7b93550156a3e2676a',1,'Mackey::ColoredGraph::Graph&lt; ColoredGraph &gt;()']]],
   ['graph_3c_20weightedgraph_20_3e',['Graph&lt; WeightedGraph &gt;',['../classMackey_1_1Graph.html',1,'Mackey::Graph&lt; WeightedGraph &gt;'],['../classMackey_1_1WeightedGraph.html#aa4863e14b8d7dcd76942894cae55e453',1,'Mackey::WeightedGraph::Graph&lt; WeightedGraph &gt;()']]],

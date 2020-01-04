@@ -1,0 +1,5 @@
+<map id="Mackey::restriction" name="Mackey::restriction">
+<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a2e6fb6da3abdba934a1eb2f4236623cb" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="187,5,361,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="207,56,341,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="409,56,549,83"/>
+</map>

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['degreeconstruction',['DegreeConstruction',['../namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972',1,'Mackey']]],
+  ['diagonalize',['diagonalize',['../namespaceMackey.html#a276ffc8b4c9c52cfde39cd3da3c88cc9',1,'Mackey::diagonalize(const S_t &amp;A, bool wantP, bool wantQ, bool sort)'],['../namespaceMackey.html#a2f26791310db25c7e42bf5341fdfd48d',1,'Mackey::diagonalize(const S_t &amp;A, bool wantP, bool wantQ)']]],
   ['digits10',['digits10',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#ae5b24b565ec0c0945f74e62cb0546fad',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
   ['dimension',['dimension',['../namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa',1,'Mackey']]],
   ['distinguish',['distinguish',['../namespaceMackey.html#a281b9be315d7d51c7e691d4c733ac0c9',1,'Mackey']]],

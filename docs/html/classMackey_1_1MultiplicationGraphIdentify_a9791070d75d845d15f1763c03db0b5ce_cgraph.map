@@ -1,5 +1,5 @@
 <map id="Mackey::MultiplicationGraphIdentify::pass_disconnected_division" name="Mackey::MultiplicationGraphIdentify::pass_disconnected_division">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v. " alt="" coords="515,175,613,201"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="515,175,613,201"/>
 <area shape="rect" id="node3" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="240,57,424,98"/>
 <area shape="rect" id="node8" href="$namespaceMackey.html#a1824d780ce15f1845e4f87bf056feec9" title="Saves object to binary file of given name. Serialization is provided by cereal. " alt="" coords="278,173,386,200"/>
 <area shape="rect" id="node9" href="$classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84" title="Returns the (normalized) product of the given two elements (not necessarily generators) ..." alt="" coords="243,326,421,367"/>

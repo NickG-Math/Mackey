@@ -1,0 +1,58 @@
+\hypertarget{Smith__Base_8h}{}\section{Mackey/\+Smith\+\_\+\+Base.h File Reference}
+\label{Smith__Base_8h}\index{Mackey/\+Smith\+\_\+\+Base.\+h@{Mackey/\+Smith\+\_\+\+Base.\+h}}
+
+
+Contains the base class for all Smith implementations.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}Aliases.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+F\+I\+N\+A\+E.\+h\char`\"{}}\newline
+Include dependency graph for Smith\+\_\+\+Base.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Smith__Base_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Smith__Base_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMackey_1_1SmithMP}{Mackey\+::\+Smith\+M\+P$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em The dense \hyperlink{classMackey_1_1Smith}{Smith} Normal Form using the minimum (in absolute value) nonzero element as pivot. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1SmithFP}{Mackey\+::\+Smith\+F\+P$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em The dense \hyperlink{classMackey_1_1Smith}{Smith} Normal Form using the first nonzero element as pivot. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1SmithSP}{Mackey\+::\+Smith\+S\+P$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em The dense \hyperlink{classMackey_1_1Smith}{Smith} Normal Form selecting the pivot via a Markowitz metric. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1SmithSparse}{Mackey\+::\+Smith\+Sparse$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em The sparse \hyperlink{classMackey_1_1Smith}{Smith} Normal Form, choosing the pivot via a Markowitz metric. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form and its coefficient matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceMackey}{Mackey}
+\begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_aabed38680919594c4ba5eaa6730a7f82}{Mackey\+::swap} (T \&a, T \&b)
+\item 
+{\footnotesize template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ }\\Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$ \hyperlink{namespaceMackey_a276ffc8b4c9c52cfde39cd3da3c88cc9}{Mackey\+::diagonalize} (const S\+\_\+t \&A, bool wantP, bool wantQ, bool sort)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classMackey_1_1Smith}{Smith} Normal Form of a matrix, with the coefficient matrices and sorted if desired. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ }\\Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$ \hyperlink{namespaceMackey_a2f26791310db25c7e42bf5341fdfd48d}{Mackey\+::diagonalize} (const S\+\_\+t \&A, bool wantP, bool wantQ)
+\begin{DoxyCompactList}\small\item\em Returns the unsorted \hyperlink{classMackey_1_1Smith}{Smith} Normal Form of a matrix, with the coefficient matrices if desired. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the base class for all Smith implementations. 
+

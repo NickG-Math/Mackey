@@ -109,10 +109,17 @@ Include dependency graph for Homology.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Homology_8h__incl.png" border="0" usemap="#Mackey_2Homology_8h" alt=""/></div>
 <map name="Mackey_2Homology_8h" id="Mackey_2Homology_8h">
-<area shape="rect" id="node2" href="Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="81,80,155,107"/>
-<area shape="rect" id="node4" href="General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="180,80,259,107"/>
-<area shape="rect" id="node8" href="Smith_8h.html" title="Contains the Smith normal form algorithms. " alt="" coords="283,80,350,107"/>
-<area shape="rect" id="node10" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="375,80,429,107"/>
+<area shape="rect" id="node2" href="Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="65,229,140,256"/>
+<area shape="rect" id="node4" href="General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="161,80,239,107"/>
+<area shape="rect" id="node10" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="10,379,65,405"/>
+<area shape="rect" id="node12" href="Smith_8h.html" title="Includes all Smith implementations. " alt="" coords="475,80,541,107"/>
+<area shape="rect" id="node5" href="SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="209,304,292,331"/>
+<area shape="rect" id="node13" href="Smith__FirstPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the first nonzero as pivot..." alt="" coords="589,155,720,181"/>
+<area shape="rect" id="node17" href="Smith__MinPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the minimum as pivot. " alt="" coords="744,155,869,181"/>
+<area shape="rect" id="node18" href="Smith__SmartPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices where pivots are selected by a Markowitz ..." alt="" coords="288,155,427,181"/>
+<area shape="rect" id="node19" href="Smith__Sparse_8h.html" title="Contains the Smith normal form algorithm for sparse matrices. " alt="" coords="451,155,565,181"/>
+<area shape="rect" id="node14" href="Smith__Base_8h.html" title="Contains the base class for all Smith implementations. " alt="" coords="351,229,455,256"/>
+<area shape="rect" id="node16" href="Aliases_8h.html" title="Contains general template aliases. " alt="" coords="318,304,394,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -154,14 +161,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a4abdca157edcf425b1e7ceff39d74c2f"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f">Mackey::order</a> (const T &amp;element, const S &amp;group)</td></tr>
 <tr class="memdesc:a4abdca157edcf425b1e7ceff39d74c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite.  <a href="namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f">More...</a><br /></td></tr>
 <tr class="separator:a4abdca157edcf425b1e7ceff39d74c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a320b32b8fd44ee75d9f08aa0665c4ec7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a320b32b8fd44ee75d9f08aa0665c4ec7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a320b32b8fd44ee75d9f08aa0665c4ec7">Mackey::mod_normalize</a> (Eigen::Matrix&lt; T, 1, -1 &gt; &amp;element, const Eigen::Matrix&lt; T, 1, -1 &gt; &amp;group)</td></tr>
-<tr class="memdesc:a320b32b8fd44ee75d9f08aa0665c4ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1.  <a href="namespaceMackey.html#a320b32b8fd44ee75d9f08aa0665c4ec7">More...</a><br /></td></tr>
-<tr class="separator:a320b32b8fd44ee75d9f08aa0665c4ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43e260f55a458bed50ab6a75aef7e666"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a43e260f55a458bed50ab6a75aef7e666"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a43e260f55a458bed50ab6a75aef7e666">Mackey::normalize</a> (Eigen::Matrix&lt; T, 1, -1 &gt; &amp;element, const Eigen::Matrix&lt; T, 1, -1 &gt; &amp;group)</td></tr>
-<tr class="memdesc:a43e260f55a458bed50ab6a75aef7e666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the element in a group to have minimal signs amongst its multiples.  <a href="namespaceMackey.html#a43e260f55a458bed50ab6a75aef7e666">More...</a><br /></td></tr>
-<tr class="separator:a43e260f55a458bed50ab6a75aef7e666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257bcf5aabab2d73fdb13a23cb975d93"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a257bcf5aabab2d73fdb13a23cb975d93"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93">Mackey::mod_normalize</a> (T &amp;element, const T &amp;group)</td></tr>
+<tr class="memdesc:a257bcf5aabab2d73fdb13a23cb975d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1.  <a href="namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93">More...</a><br /></td></tr>
+<tr class="separator:a257bcf5aabab2d73fdb13a23cb975d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a635c87980358b97256fe159f0c59bb80"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a635c87980358b97256fe159f0c59bb80"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a635c87980358b97256fe159f0c59bb80">Mackey::normalize</a> (Eigen::Matrix&lt; T, 1,-1 &gt; &amp;element, const Eigen::Matrix&lt; T, 1, -1 &gt; &amp;group)</td></tr>
+<tr class="memdesc:a635c87980358b97256fe159f0c59bb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the element in a group to have minimal signs amongst its multiples.  <a href="namespaceMackey.html#a635c87980358b97256fe159f0c59bb80">More...</a><br /></td></tr>
+<tr class="separator:a635c87980358b97256fe159f0c59bb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82dd9e46100ec78b6238a3b60a5b1b45"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S , typename R &gt; </td></tr>
 <tr class="memitem:a82dd9e46100ec78b6238a3b60a5b1b45"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a82dd9e46100ec78b6238a3b60a5b1b45">Mackey::equals</a> (const T &amp;element1, const S &amp;element2, const R &amp;group)</td></tr>
 <tr class="memdesc:a82dd9e46100ec78b6238a3b60a5b1b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds if two elements are equal in the given finitely generated abelian group.  <a href="namespaceMackey.html#a82dd9e46100ec78b6238a3b60a5b1b45">More...</a><br /></td></tr>

@@ -16,7 +16,8 @@ Contains the methods for serializing the results of our computations (before the
 {\ttfamily \#include $<$cereal/types/string.\+hpp$>$}\newline
 {\ttfamily \#include \char`\"{}Additive.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Factorization.\+h\char`\"{}}\newline
-Include dependency graph for Cerealizer.\+h\+:\nopagebreak
+Include dependency graph for Cerealizer.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -43,6 +44,8 @@ Include dependency graph for Cerealizer.\+h\+:\nopagebreak
 {\footnotesize template$<$typename Archive , typename T , int Rows\+At\+Compile\+Time, int Cols\+At\+Compile\+Time, int Options, int Max\+Rows\+At\+Compile\+Time, int Max\+Cols\+At\+Compile\+Time$>$ }\\void \hyperlink{namespacecereal_a62dfe53ce43ad27c02ca954e9da31dc5}{cereal\+::load} (Archive \&archive, Eigen\+::\+Matrix$<$ T, Rows\+At\+Compile\+Time, Cols\+At\+Compile\+Time, Options, Max\+Rows\+At\+Compile\+Time, Max\+Cols\+At\+Compile\+Time $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Load \hyperlink{namespaceEigen}{Eigen} matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_a43cf712cb611ddbafa91b005a911436e}{Mackey\+::serialize} (Archive \&archive, Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1Chains}{Chains} cerealize. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_a1cb51476ba1b1022264da5ba324b73f5}{Mackey\+::serialize} (Archive \&archive, Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&H)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1Chains}{Chains} cerealize. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive , typename rank\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_ac78e550c9949977ed71367fb21892e93}{Mackey\+::serialize} (Archive \&archive, I\+D\+Generators$<$ rank\+\_\+t $>$ \&ID)
 \begin{DoxyCompactList}\small\item\em I\+D\+Generator cerealize. \end{DoxyCompactList}\item 

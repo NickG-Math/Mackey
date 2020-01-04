@@ -119,9 +119,9 @@ Inheritance diagram for Mackey::Graph&lt; T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a979aefd7d97cd0344637180c00e7db1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a979aefd7d97cd0344637180c00e7db1b">Graph</a> (std::vector&lt; std::vector&lt; int &gt;&gt; &amp;<a class="el" href="classMackey_1_1Graph.html#a729ec24b9f9e504f4c4e2d3f6e2cab83">edges</a>)</td></tr>
-<tr class="memdesc:a979aefd7d97cd0344637180c00e7db1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct given the edges of the graph.  <a href="#a979aefd7d97cd0344637180c00e7db1b">More...</a><br /></td></tr>
-<tr class="separator:a979aefd7d97cd0344637180c00e7db1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f0ca7cec28645835bbad29b8c00992c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a4f0ca7cec28645835bbad29b8c00992c">Graph</a> (const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;<a class="el" href="classMackey_1_1Graph.html#a729ec24b9f9e504f4c4e2d3f6e2cab83">edges</a>)</td></tr>
+<tr class="memdesc:a4f0ca7cec28645835bbad29b8c00992c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct given the edges of the graph.  <a href="#a4f0ca7cec28645835bbad29b8c00992c">More...</a><br /></td></tr>
+<tr class="separator:a4f0ca7cec28645835bbad29b8c00992c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acda32cd8d144dcd1ec771bd8d2753321"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#acda32cd8d144dcd1ec771bd8d2753321">computeWithSource</a> (int givensource)</td></tr>
 <tr class="memdesc:acda32cd8d144dcd1ec771bd8d2753321"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations.  <a href="#acda32cd8d144dcd1ec771bd8d2753321">More...</a><br /></td></tr>
 <tr class="separator:acda32cd8d144dcd1ec771bd8d2753321"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,26 +137,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a910e6687de1a1a90df5b656e3c850a01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a910e6687de1a1a90df5b656e3c850a01">Graph</a> ()</td></tr>
 <tr class="memdesc:a910e6687de1a1a90df5b656e3c850a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a910e6687de1a1a90df5b656e3c850a01">More...</a><br /></td></tr>
 <tr class="separator:a910e6687de1a1a90df5b656e3c850a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204323cc824bac6c4d393284900f152b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a204323cc824bac6c4d393284900f152b">computePath</a> ()</td></tr>
+<tr class="memdesc:a204323cc824bac6c4d393284900f152b"><td class="mdescLeft">&#160;</td><td class="mdescRight">General implementation for graphs.  <a href="#a204323cc824bac6c4d393284900f152b">More...</a><br /></td></tr>
+<tr class="separator:a204323cc824bac6c4d393284900f152b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6b275a20b0571d4b51fbfa3e596cd67a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a6b275a20b0571d4b51fbfa3e596cd67a">number_of_nodes</a></td></tr>
 <tr class="memdesc:a6b275a20b0571d4b51fbfa3e596cd67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of vertices.  <a href="#a6b275a20b0571d4b51fbfa3e596cd67a">More...</a><br /></td></tr>
 <tr class="separator:a6b275a20b0571d4b51fbfa3e596cd67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66fac95e623ca6e3e85ec33310755831"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a66fac95e623ca6e3e85ec33310755831">path</a></td></tr>
-<tr class="memdesc:a66fac95e623ca6e3e85ec33310755831"><td class="mdescLeft">&#160;</td><td class="mdescRight">The "shortest" path from a selected source to any other point.  <a href="#a66fac95e623ca6e3e85ec33310755831">More...</a><br /></td></tr>
-<tr class="separator:a66fac95e623ca6e3e85ec33310755831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14d4c1bcbe1a994d28a6c590b27ba8b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#ab14d4c1bcbe1a994d28a6c590b27ba8b">weightedDistance</a></td></tr>
-<tr class="memdesc:ab14d4c1bcbe1a994d28a6c590b27ba8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The weighted distance from a selected source to all points.  <a href="#ab14d4c1bcbe1a994d28a6c590b27ba8b">More...</a><br /></td></tr>
-<tr class="separator:ab14d4c1bcbe1a994d28a6c590b27ba8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a729ec24b9f9e504f4c4e2d3f6e2cab83"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a729ec24b9f9e504f4c4e2d3f6e2cab83">edges</a></td></tr>
 <tr class="memdesc:a729ec24b9f9e504f4c4e2d3f6e2cab83"><td class="mdescLeft">&#160;</td><td class="mdescRight">The edges of the graph.  <a href="#a729ec24b9f9e504f4c4e2d3f6e2cab83">More...</a><br /></td></tr>
 <tr class="separator:a729ec24b9f9e504f4c4e2d3f6e2cab83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66fac95e623ca6e3e85ec33310755831"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a66fac95e623ca6e3e85ec33310755831">path</a></td></tr>
+<tr class="memdesc:a66fac95e623ca6e3e85ec33310755831"><td class="mdescLeft">&#160;</td><td class="mdescRight">The "shortest" path from a selected source to any other point.  <a href="#a66fac95e623ca6e3e85ec33310755831">More...</a><br /></td></tr>
+<tr class="separator:a66fac95e623ca6e3e85ec33310755831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae704812b28d290b7d3742ea3745b5edf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#ae704812b28d290b7d3742ea3745b5edf">path_edges</a></td></tr>
+<tr class="memdesc:ae704812b28d290b7d3742ea3745b5edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as path, but using the procession of edges as opposed to nodes.  <a href="#ae704812b28d290b7d3742ea3745b5edf">More...</a><br /></td></tr>
+<tr class="separator:ae704812b28d290b7d3742ea3745b5edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14d4c1bcbe1a994d28a6c590b27ba8b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#ab14d4c1bcbe1a994d28a6c590b27ba8b">weightedDistance</a></td></tr>
+<tr class="memdesc:ab14d4c1bcbe1a994d28a6c590b27ba8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The weighted distance from a selected source to all points. -1 if disconnected.  <a href="#ab14d4c1bcbe1a994d28a6c590b27ba8b">More...</a><br /></td></tr>
+<tr class="separator:ab14d4c1bcbe1a994d28a6c590b27ba8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a43657a07a21a2dcf422876400360ed5b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Graph.html#a43657a07a21a2dcf422876400360ed5b">source</a></td></tr>
-<tr class="memdesc:a43657a07a21a2dcf422876400360ed5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The source of the graph.  <a href="#a43657a07a21a2dcf422876400360ed5b">More...</a><br /></td></tr>
+<tr class="memdesc:a43657a07a21a2dcf422876400360ed5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source of the graph.  <a href="#a43657a07a21a2dcf422876400360ed5b">More...</a><br /></td></tr>
 <tr class="separator:a43657a07a21a2dcf422876400360ed5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -166,8 +172,8 @@ class Mackey::Graph&lt; T &gt;</h3>
 <p>A directed <a class="el" href="classMackey_1_1Graph.html" title="A directed Graph. ">Graph</a>. </p>
 <p>This is a general class that can only be used by inheriting from it. T is the type of the graph eg weightedGraph or coloredGraph. It's used for the CRTP compile-time polymorphism. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a979aefd7d97cd0344637180c00e7db1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a979aefd7d97cd0344637180c00e7db1b">&#9670;&nbsp;</a></span>Graph() <span class="overload">[1/2]</span></h2>
+<a id="a4f0ca7cec28645835bbad29b8c00992c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0ca7cec28645835bbad29b8c00992c">&#9670;&nbsp;</a></span>Graph() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,7 +186,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classMackey_1_1Graph.html">Mackey::Graph</a>&lt; T &gt;::<a class="el" href="classMackey_1_1Graph.html">Graph</a> </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; int &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>edges</em></td><td>)</td>
           <td></td>
         </tr>
@@ -226,6 +232,38 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a204323cc824bac6c4d393284900f152b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a204323cc824bac6c4d393284900f152b">&#9670;&nbsp;</a></span>computePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classMackey_1_1Graph.html">Mackey::Graph</a>&lt; T &gt;::computePath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>General implementation for graphs. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1Graph_a204323cc824bac6c4d393284900f152b_icgraph.png" border="0" usemap="#classMackey_1_1Graph_a204323cc824bac6c4d393284900f152b_icgraph" alt=""/></div>
+<map name="classMackey_1_1Graph_a204323cc824bac6c4d393284900f152b_icgraph" id="classMackey_1_1Graph_a204323cc824bac6c4d393284900f152b_icgraph">
+<area shape="rect" id="node2" href="classMackey_1_1Graph.html#acda32cd8d144dcd1ec771bd8d2753321" title="A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations. " alt="" coords="249,5,452,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1Graph.html#a910e6687de1a1a90df5b656e3c850a01" title="Default constructor. " alt="" coords="249,71,452,112"/>
+<area shape="rect" id="node4" href="classMackey_1_1WeightedGraph.html#ad5932440f83ea50f802d96b44c2da5e3" title="Constructor from other graph and zero weights. " alt="" coords="267,136,434,177"/>
+<area shape="rect" id="node5" href="classMackey_1_1ColoredGraph.html#a2e2d70fa6163019d8bf0dd92b3d39342" title="Construct given Graph and colors. " alt="" coords="273,201,429,243"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="acda32cd8d144dcd1ec771bd8d2753321"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acda32cd8d144dcd1ec771bd8d2753321">&#9670;&nbsp;</a></span>computeWithSource()</h2>
 
@@ -318,7 +356,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classMackey_1_1Graph_ab88d38f2fa1822d415ce7dac272b32dc_icgraph.png" border="0" usemap="#classMackey_1_1Graph_ab88d38f2fa1822d415ce7dac272b32dc_icgraph" alt=""/></div>
 <map name="classMackey_1_1Graph_ab88d38f2fa1822d415ce7dac272b32dc_icgraph" id="classMackey_1_1Graph_ab88d38f2fa1822d415ce7dac272b32dc_icgraph">
 <area shape="rect" id="node2" href="classMackey_1_1Graph.html#a769966fd9422efb15a53db185a8be278" title="A general paradigm to compute the paths using the given source and a Dikjstra algorithm, overwritting any previous path computations. " alt="" coords="200,5,403,47"/>
-<area shape="rect" id="node3" href="classMackey_1_1ColoredGraph.html#adada856cdbfc508b2df15919f45a1808" title="Construct given the edges and colors. " alt="" coords="223,71,379,112"/>
+<area shape="rect" id="node3" href="classMackey_1_1ColoredGraph.html#a2e2d70fa6163019d8bf0dd92b3d39342" title="Construct given Graph and colors. " alt="" coords="223,71,379,112"/>
 </map>
 </div>
 
@@ -398,7 +436,25 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 
 <p>The "shortest" path from a selected source to any other point. </p>
-<p>The meaning of shortest is determined in the specializations of <a class="el" href="classMackey_1_1Graph.html" title="A directed Graph. ">Graph</a>. </p>
+<p>The meaning of shortest is determined in the specializations of <a class="el" href="classMackey_1_1Graph.html" title="A directed Graph. ">Graph</a>. The default by distance where each edge has weight 1. path[i] consists of the procession of nodes from i to source. </p>
+
+</div>
+</div>
+<a id="ae704812b28d290b7d3742ea3745b5edf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae704812b28d290b7d3742ea3745b5edf">&#9670;&nbsp;</a></span>path_edges</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;int&gt; &gt; <a class="el" href="classMackey_1_1Graph.html">Mackey::Graph</a>&lt; T &gt;::path_edges</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as path, but using the procession of edges as opposed to nodes. </p>
 
 </div>
 </div>
@@ -424,7 +480,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The source of the graph. </p>
+<p>A source of the graph. </p>
 
 </div>
 </div>
@@ -442,7 +498,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>The weighted distance from a selected source to all points. </p>
+<p>The weighted distance from a selected source to all points. -1 if disconnected. </p>
 <p>The type of weight will depend on the specialization of <a class="el" href="classMackey_1_1Graph.html" title="A directed Graph. ">Graph</a>. </p>
 
 </div>

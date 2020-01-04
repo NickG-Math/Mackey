@@ -8,7 +8,8 @@ Contains the methods for transfering, restricting and Weyl-\/group-\/acting.
 {\ttfamily \#include \char`\"{}Wrapper.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Homology.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}General.\+h\char`\"{}}\newline
-Include dependency graph for Levels.\+h\+:\nopagebreak
+Include dependency graph for Levels.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -53,11 +54,11 @@ class \hyperlink{classMackey_1_1Levels}{Mackey\+::\+Levels$<$ T $>$}
 \begin{DoxyCompactList}\small\item\em Compute the Weyl group action on a generator given the rank of the group it lives in. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ }\\gen\+\_\+t \hyperlink{namespaceMackey_a30b5667e411ff694aa989e95e394bb41}{Mackey\+::inv\+Res} (const gen\+\_\+t \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
 \item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar,-\/1,-\/1 $>$ \hyperlink{namespaceMackey_a3f20cf0ccf7d280f6a6e308c381dc350}{Mackey\+::transfer} (const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&low, const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&high, const rank\+\_\+t \&rank\+\_\+low, const rank\+\_\+t \&rank\+\_\+high)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\mat\+\_\+t$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_abd5b370902e8b53b32e3fd4e329f068d}{Mackey\+::transfer} (const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&low, const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&high, const rank\+\_\+t \&rank\+\_\+low, const rank\+\_\+t \&rank\+\_\+high)
 \begin{DoxyCompactList}\small\item\em Writing the transfer of each generator in terms of the generators in the image. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1 $>$ \hyperlink{namespaceMackey_a256b1e73e413a924ce2bf0e86551a928}{Mackey\+::restriction} (const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&high, const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&low, const rank\+\_\+t \&rank\+\_\+high, const rank\+\_\+t \&rank\+\_\+low)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\mat\+\_\+t$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a6818760aa9590810daace862e4c71f04}{Mackey\+::restriction} (const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&high, const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&low, const rank\+\_\+t \&rank\+\_\+high, const rank\+\_\+t \&rank\+\_\+low)
 \begin{DoxyCompactList}\small\item\em Writing the restriction of each generator in terms of the generators in the image. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1 $>$ \hyperlink{namespaceMackey_a2169692139cf46ac28719780e2a7f867}{Mackey\+::action} (const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&H, const rank\+\_\+t \&rank)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\mat\+\_\+t$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_aaa66c9857ba86a13949d1b1825ea20f7}{Mackey\+::action} (const Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&H, const rank\+\_\+t \&rank)
 \begin{DoxyCompactList}\small\item\em Writing the Weyl group action on each generator in terms of the other generators. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

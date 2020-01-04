@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['functype',['functype',['../classGroupSpecific_1_1Function.html#a73d984ea6bf824b9112d0cf978a46741',1,'GroupSpecific::Function']]]
+  ['col_5ft',['col_t',['../namespaceMackey.html#a3374980e3b5001f5ba9b206004180627',1,'Mackey']]]
 ];

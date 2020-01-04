@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['serialize',['serialize',['../classMackey_1_1AdditiveStructure.html#ac693381dd6714e55f0307b9cea4a87cf',1,'Mackey::AdditiveStructure::serialize()'],['../classMackey_1_1Green.html#aeb72946219f32efa8f0a45f5f8872c8a',1,'Mackey::Green::serialize()'],['../classMackey_1_1MultiplicationTable.html#a2b1db64d5f5749a0a14483ef730b755c',1,'Mackey::MultiplicationTable::serialize()']]],
-  ['smith',['Smith',['../classMackey_1_1CommonSmith.html#aa10f0f4c3408f3557b07883e86efc88a',1,'Mackey::CommonSmith']]]
+  ['green',['Green',['../classMackey_1_1internal_1_1GreenCompute.html#a1ab71a61751d67ece5b0504aaf9560f1',1,'Mackey::internal::GreenCompute']]],
+  ['massey',['Massey',['../classMackey_1_1internal_1_1MasseyCompute.html#a631db15cb61e8407e5ec0c5875905d39',1,'Mackey::internal::MasseyCompute']]],
+  ['masseycompute',['MasseyCompute',['../classMackey_1_1internal_1_1ChainsLevelGen.html#af259bfb9b4dced17104ac8fbb697355c',1,'Mackey::internal::ChainsLevelGen::MasseyCompute()'],['../classMackey_1_1internal_1_1ProductGen.html#af259bfb9b4dced17104ac8fbb697355c',1,'Mackey::internal::ProductGen::MasseyCompute()'],['../classMackey_1_1internal_1_1IDGeneratorCompute.html#af259bfb9b4dced17104ac8fbb697355c',1,'Mackey::internal::IDGeneratorCompute::MasseyCompute()']]],
+  ['multiplicationgraphidentify',['MultiplicationGraphIdentify',['../classMackey_1_1MultiplicationGraph.html#a3c44ae70fe9249e9662ab525f97dc1db',1,'Mackey::MultiplicationGraph']]]
 ];

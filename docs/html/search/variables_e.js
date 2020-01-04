@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tr',['Tr',['../classMackey_1_1IDGenerators.html#a5aa6391d6fa79951f6d11e880c79081b',1,'Mackey::IDGenerators::Tr()'],['../classMackey_1_1MackeyFunctor.html#ae695013be3025f6841326e2ca0d03754',1,'Mackey::MackeyFunctor::Tr()']]],
-  ['tracker',['tracker',['../classMackey_1_1MultiplicationGraph.html#ac831b81d1936c4dd2202dabaa8e4e2fb',1,'Mackey::MultiplicationGraph']]],
-  ['triplegreens',['tripleGreens',['../classMackey_1_1MultiplicationTable.html#af6b2afae20bd4a120e9792d1a9dce837',1,'Mackey::MultiplicationTable']]]
+  ['s',['S',['../classMackey_1_1Smith.html#a2c4e977af966b2956354dce7e40dd5e1',1,'Mackey::Smith']]],
+  ['source',['source',['../classMackey_1_1Graph.html#a43657a07a21a2dcf422876400360ed5b',1,'Mackey::Graph']]],
+  ['sphere_5fdimensions',['sphere_dimensions',['../classGroupSpecific_1_1Variables.html#a4746f16736abcf4c705dd8690ec12ca0',1,'GroupSpecific::Variables']]]
 ];

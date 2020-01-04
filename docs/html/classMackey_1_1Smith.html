@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mackey: Mackey::Smith&lt; S_t, R_t, C_t, impl &gt; Class Template Reference</title>
+<title>Mackey: Mackey::Smith&lt; S_t, R_t, C_t &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,62 +89,98 @@ $(document).ready(function(){initNavTree('classMackey_1_1Smith.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classMackey_1_1Smith-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Mackey::Smith&lt; S_t, R_t, C_t, impl &gt; Class Template Reference</div>  </div>
+<div class="title">Mackey::Smith&lt; S_t, R_t, C_t &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The safe <a class="el" href="classMackey_1_1Smith.html" title="The safe Smith Normal Form implementation for general coefficients. ">Smith</a> Normal Form implementation for general coefficients.  
+<p>The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. ">Smith</a> Normal Form and its coefficient matrices.  
  <a href="classMackey_1_1Smith.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Smith_8h_source.html">Smith.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Smith__Base_8h_source.html">Smith_Base.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for Mackey::Smith&lt; S_t, R_t, C_t, impl &gt;:</div>
+Inheritance diagram for Mackey::Smith&lt; S_t, R_t, C_t &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Smith__inherit__graph.png" border="0" usemap="#Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_inherit__map" id="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_inherit__map">
-<area shape="rect" id="node2" href="classMackey_1_1CommonSmith.html" title="The common variables and methods for the two Smith Normal Form implementations. " alt="" coords="5,5,168,47"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Mackey::Smith&lt; S_t, R_t, C_t, impl &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Smith__coll__graph.png" border="0" usemap="#Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_coll__map" id="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01impl_01_4_coll__map">
-<area shape="rect" id="node2" href="classMackey_1_1CommonSmith.html" title="The common variables and methods for the two Smith Normal Form implementations. " alt="" coords="5,5,168,47"/>
+<div class="center"><img src="classMackey_1_1Smith__inherit__graph.png" border="0" usemap="#Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_01_4_inherit__map" id="Mackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_01_4_inherit__map">
+<area shape="rect" id="node2" href="classMackey_1_1SmithFP.html" title="The dense Smith Normal Form using the first nonzero element as pivot. " alt="" coords="201,5,349,47"/>
+<area shape="rect" id="node3" href="classMackey_1_1SmithMP.html" title="The dense Smith Normal Form using the minimum (in absolute value) nonzero element as pivot..." alt="" coords="200,71,351,112"/>
+<area shape="rect" id="node4" href="classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. " alt="" coords="201,136,350,177"/>
+<area shape="rect" id="node5" href="classMackey_1_1SmithSparse.html" title="The sparse Smith Normal Form, choosing the pivot via a Markowitz metric. " alt="" coords="200,201,351,243"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a7923aafcefe7b2b12245dfb6f0700743"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a7923aafcefe7b2b12245dfb6f0700743">Smith</a> (const S_t &amp;A, bool wantP, bool wantQ, bool sort)</td></tr>
-<tr class="memdesc:a7923aafcefe7b2b12245dfb6f0700743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the <a class="el" href="classMackey_1_1Smith.html" title="The safe Smith Normal Form implementation for general coefficients. ">Smith</a> Normal Form and sorts if desired.  <a href="#a7923aafcefe7b2b12245dfb6f0700743">More...</a><br /></td></tr>
-<tr class="separator:a7923aafcefe7b2b12245dfb6f0700743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a612e73ee01325c7adf0b7102d007a915"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a612e73ee01325c7adf0b7102d007a915">Smith</a> (const S_t &amp;A, bool wantP, bool wantQ)</td></tr>
-<tr class="memdesc:a612e73ee01325c7adf0b7102d007a915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as the other constructor, but don't sort.  <a href="#a612e73ee01325c7adf0b7102d007a915">More...</a><br /></td></tr>
-<tr class="separator:a612e73ee01325c7adf0b7102d007a915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4d7f709505152b53130018e46f9e8411"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceMackey.html#a6d37801553e585770ca7d1243ab3b213">row_t</a>&lt; S_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a4d7f709505152b53130018e46f9e8411">diagonal</a></td></tr>
+<tr class="memdesc:a4d7f709505152b53130018e46f9e8411"><td class="mdescLeft">&#160;</td><td class="mdescRight">The diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. ">Smith</a> normal form.  <a href="#a4d7f709505152b53130018e46f9e8411">More...</a><br /></td></tr>
+<tr class="separator:a4d7f709505152b53130018e46f9e8411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a711a1726ec0da22e9233aa269d66bf73"><td class="memItemLeft" align="right" valign="top">R_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a711a1726ec0da22e9233aa269d66bf73">P</a></td></tr>
+<tr class="memdesc:a711a1726ec0da22e9233aa269d66bf73"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (S=P*A*Q)  <a href="#a711a1726ec0da22e9233aa269d66bf73">More...</a><br /></td></tr>
+<tr class="separator:a711a1726ec0da22e9233aa269d66bf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8446d6e35feabbdc233e2a15efde4930"><td class="memItemLeft" align="right" valign="top">R_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a8446d6e35feabbdc233e2a15efde4930">Qi</a></td></tr>
+<tr class="memdesc:a8446d6e35feabbdc233e2a15efde4930"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (A=Pi*S*Qi)  <a href="#a8446d6e35feabbdc233e2a15efde4930">More...</a><br /></td></tr>
+<tr class="separator:a8446d6e35feabbdc233e2a15efde4930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba53f81430955d8cf7f7ce4677486214"><td class="memItemLeft" align="right" valign="top">C_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#aba53f81430955d8cf7f7ce4677486214">Q</a></td></tr>
+<tr class="memdesc:aba53f81430955d8cf7f7ce4677486214"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (S=P*A*Q)  <a href="#aba53f81430955d8cf7f7ce4677486214">More...</a><br /></td></tr>
+<tr class="separator:aba53f81430955d8cf7f7ce4677486214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890f70fcd15554ee0c3b8469ffb55fde"><td class="memItemLeft" align="right" valign="top">C_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a890f70fcd15554ee0c3b8469ffb55fde">Pi</a></td></tr>
+<tr class="memdesc:a890f70fcd15554ee0c3b8469ffb55fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the coefficient matrices (A=Pi*S*Qi)  <a href="#a890f70fcd15554ee0c3b8469ffb55fde">More...</a><br /></td></tr>
+<tr class="separator:a890f70fcd15554ee0c3b8469ffb55fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ab366b0cccb7fe065521142c442a0dcd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#ab366b0cccb7fe065521142c442a0dcd3">Smith</a> (const S_t &amp;, bool, bool, bool)</td></tr>
+<tr class="memdesc:ab366b0cccb7fe065521142c442a0dcd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the member variables. Actual computation is done by the implementation classes.  <a href="#ab366b0cccb7fe065521142c442a0dcd3">More...</a><br /></td></tr>
+<tr class="separator:ab366b0cccb7fe065521142c442a0dcd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c76fbf9cb906c04908def480b0a321"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a30c76fbf9cb906c04908def480b0a321">sorter</a> ()</td></tr>
+<tr class="memdesc:a30c76fbf9cb906c04908def480b0a321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. ">Smith</a> Normal Form to have decreasing entries in absolute value (except +1,-1)  <a href="#a30c76fbf9cb906c04908def480b0a321">More...</a><br /></td></tr>
+<tr class="separator:a30c76fbf9cb906c04908def480b0a321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a2c4e977af966b2956354dce7e40dd5e1"><td class="memItemLeft" align="right" valign="top">S_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a2c4e977af966b2956354dce7e40dd5e1">S</a></td></tr>
+<tr class="memdesc:a2c4e977af966b2956354dce7e40dd5e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. ">Smith</a> Normal Form as a diagonal matrix.  <a href="#a2c4e977af966b2956354dce7e40dd5e1">More...</a><br /></td></tr>
+<tr class="separator:a2c4e977af966b2956354dce7e40dd5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa651a3c122566df7847bec70583a5f48"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#aa651a3c122566df7847bec70583a5f48">M</a></td></tr>
+<tr class="memdesc:aa651a3c122566df7847bec70583a5f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Row dimension of original matrix.  <a href="#aa651a3c122566df7847bec70583a5f48">More...</a><br /></td></tr>
+<tr class="separator:aa651a3c122566df7847bec70583a5f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a642b4538712abcdcee8beb3f0ff08b89"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a642b4538712abcdcee8beb3f0ff08b89">N</a></td></tr>
+<tr class="memdesc:a642b4538712abcdcee8beb3f0ff08b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Column dimension of original matrix.  <a href="#a642b4538712abcdcee8beb3f0ff08b89">More...</a><br /></td></tr>
+<tr class="separator:a642b4538712abcdcee8beb3f0ff08b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7033b338fda868e33f50950d2444ae75"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a7033b338fda868e33f50950d2444ae75">wantP</a></td></tr>
+<tr class="memdesc:a7033b338fda868e33f50950d2444ae75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether we want to compute the P and Pi coefficient matrices.  <a href="#a7033b338fda868e33f50950d2444ae75">More...</a><br /></td></tr>
+<tr class="separator:a7033b338fda868e33f50950d2444ae75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ec727132ca15eee9dac0522d617a50"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Smith.html#a10ec727132ca15eee9dac0522d617a50">wantQ</a></td></tr>
+<tr class="memdesc:a10ec727132ca15eee9dac0522d617a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether we want to compute the Q and Qi coefficient matrices.  <a href="#a10ec727132ca15eee9dac0522d617a50">More...</a><br /></td></tr>
+<tr class="separator:a10ec727132ca15eee9dac0522d617a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename S_t, typename R_t, typename C_t, typename impl = void&gt;<br />
-class Mackey::Smith&lt; S_t, R_t, C_t, impl &gt;</h3>
+<div class="textblock"><h3>template&lt;typename S_t, typename R_t, typename C_t&gt;<br />
+class Mackey::Smith&lt; S_t, R_t, C_t &gt;</h3>
 
-<p>The safe <a class="el" href="classMackey_1_1Smith.html" title="The safe Smith Normal Form implementation for general coefficients. ">Smith</a> Normal Form implementation for general coefficients. </p>
+<p>The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. ">Smith</a> Normal Form and its coefficient matrices. </p>
+<p>The SNF of A is a diagonal matrix S with invertible coefficient matrices P,Q,Pi,Qi s.t. P*A*Q=S and Pi*S*Qi=A</p>
+<p>P,Pi are inverses and so are Q,Qi and they are all computed through row-column elimination</p>
+<p>S_t is the type of the original matrix. R_t is S_t but row major for best performance (required for sprase) C_t is S_t but column major for best performance (required for sprase) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7923aafcefe7b2b12245dfb6f0700743"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7923aafcefe7b2b12245dfb6f0700743">&#9670;&nbsp;</a></span>Smith() <span class="overload">[1/2]</span></h2>
+<a id="ab366b0cccb7fe065521142c442a0dcd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab366b0cccb7fe065521142c442a0dcd3">&#9670;&nbsp;</a></span>Smith()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename S_t, typename R_t, typename C_t, typename impl = void&gt; </div>
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t, impl &gt;::<a class="el" href="classMackey_1_1Smith.html">Smith</a> </td>
+          <td class="memname"><a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::<a class="el" href="classMackey_1_1Smith.html">Smith</a> </td>
           <td>(</td>
           <td class="paramtype">const S_t &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -175,72 +211,277 @@ template&lt;typename S_t, typename R_t, typename C_t, typename impl = void&gt; <
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Computes the <a class="el" href="classMackey_1_1Smith.html" title="The safe Smith Normal Form implementation for general coefficients. ">Smith</a> Normal Form and sorts if desired. </p>
+<p>Initializes the member variables. Actual computation is done by the implementation classes. </p>
 
 </div>
 </div>
-<a id="a612e73ee01325c7adf0b7102d007a915"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a612e73ee01325c7adf0b7102d007a915">&#9670;&nbsp;</a></span>Smith() <span class="overload">[2/2]</span></h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a30c76fbf9cb906c04908def480b0a321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c76fbf9cb906c04908def480b0a321">&#9670;&nbsp;</a></span>sorter()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename S_t, typename R_t, typename C_t, typename impl = void&gt; </div>
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t, impl &gt;::<a class="el" href="classMackey_1_1Smith.html">Smith</a> </td>
+          <td class="memname">void <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::sorter </td>
           <td>(</td>
-          <td class="paramtype">const S_t &amp;&#160;</td>
-          <td class="paramname"><em>A</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>wantP</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>wantQ</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Same as the other constructor, but don't sort. </p>
+<p>Sorts the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. ">Smith</a> Normal Form to have decreasing entries in absolute value (except +1,-1) </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph.png" border="0" usemap="#classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph" alt=""/></div>
-<map name="classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph" id="classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v. " alt="" coords="205,5,303,32"/>
-<area shape="rect" id="node3" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="233,56,275,83"/>
+<div class="center"><img src="classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321_cgraph.png" border="0" usemap="#classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321_cgraph" alt=""/></div>
+<map name="classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321_cgraph" id="classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321_cgraph">
+<area shape="rect" id="node2" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="236,5,279,32"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#aabed38680919594c4ba5eaa6730a7f82" title="Mackey::swap" alt="" coords="204,56,311,83"/>
 </map>
 </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4d7f709505152b53130018e46f9e8411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d7f709505152b53130018e46f9e8411">&#9670;&nbsp;</a></span>diagonal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceMackey.html#a6d37801553e585770ca7d1243ab3b213">row_t</a>&lt;S_t&gt; <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::diagonal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The diagonal of the <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. ">Smith</a> normal form. </p>
+
+</div>
+</div>
+<a id="aa651a3c122566df7847bec70583a5f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa651a3c122566df7847bec70583a5f48">&#9670;&nbsp;</a></span>M</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::M</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Row dimension of original matrix. </p>
+
+</div>
+</div>
+<a id="a642b4538712abcdcee8beb3f0ff08b89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a642b4538712abcdcee8beb3f0ff08b89">&#9670;&nbsp;</a></span>N</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::N</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Column dimension of original matrix. </p>
+
+</div>
+</div>
+<a id="a711a1726ec0da22e9233aa269d66bf73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a711a1726ec0da22e9233aa269d66bf73">&#9670;&nbsp;</a></span>P</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">R_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::P</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>One of the coefficient matrices (S=P*A*Q) </p>
+
+</div>
+</div>
+<a id="a890f70fcd15554ee0c3b8469ffb55fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a890f70fcd15554ee0c3b8469ffb55fde">&#9670;&nbsp;</a></span>Pi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">C_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::Pi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>One of the coefficient matrices (A=Pi*S*Qi) </p>
+
+</div>
+</div>
+<a id="aba53f81430955d8cf7f7ce4677486214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba53f81430955d8cf7f7ce4677486214">&#9670;&nbsp;</a></span>Q</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">C_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::Q</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>One of the coefficient matrices (S=P*A*Q) </p>
+
+</div>
+</div>
+<a id="a8446d6e35feabbdc233e2a15efde4930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8446d6e35feabbdc233e2a15efde4930">&#9670;&nbsp;</a></span>Qi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">R_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::Qi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>One of the coefficient matrices (A=Pi*S*Qi) </p>
+
+</div>
+</div>
+<a id="a2c4e977af966b2956354dce7e40dd5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c4e977af966b2956354dce7e40dd5e1">&#9670;&nbsp;</a></span>S</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">S_t <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::S</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. ">Smith</a> Normal Form as a diagonal matrix. </p>
+
+</div>
+</div>
+<a id="a7033b338fda868e33f50950d2444ae75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7033b338fda868e33f50950d2444ae75">&#9670;&nbsp;</a></span>wantP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::wantP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether we want to compute the P and Pi coefficient matrices. </p>
+
+</div>
+</div>
+<a id="a10ec727132ca15eee9dac0522d617a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ec727132ca15eee9dac0522d617a50">&#9670;&nbsp;</a></span>wantQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S_t , typename R_t , typename C_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classMackey_1_1Smith.html">Mackey::Smith</a>&lt; S_t, R_t, C_t &gt;::wantQ</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether we want to compute the Q and Qi coefficient matrices. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Mackey/<a class="el" href="Smith_8h_source.html">Smith.h</a></li>
+<li>Mackey/<a class="el" href="Smith__Base_8h_source.html">Smith_Base.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

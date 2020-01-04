@@ -1,6 +1,6 @@
 <map id="Mackey::distinguish" name="Mackey::distinguish">
 <area shape="rect" id="node2" href="$namespaceMackey.html#a83ac78e6d1695af40d0fa58af5255e84" title="Use the ID data to identify all possible candidates for an element. " alt="" coords="192,42,348,69"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v. " alt="" coords="221,93,319,119"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="221,93,319,119"/>
 <area shape="rect" id="node3" href="$classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data. " alt="" coords="396,5,551,47"/>
 <area shape="rect" id="node5" href="$namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="407,71,539,98"/>
 <area shape="rect" id="node4" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables. " alt="" coords="599,5,765,47"/>

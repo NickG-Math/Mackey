@@ -10,7 +10,8 @@ Contains the Homology class and algorithms.
 {\ttfamily \#include \char`\"{}Smith.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Z\+\_\+n.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$numeric$>$}\newline
-Include dependency graph for Homology.\+h\+:\nopagebreak
+Include dependency graph for Homology.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -39,9 +40,9 @@ class \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology$<$ rank\+\_\+t, d
 \item 
 {\footnotesize template$<$typename T , typename S $>$ }\\int \hyperlink{namespaceMackey_a4abdca157edcf425b1e7ceff39d74c2f}{Mackey\+::order} (const T \&element, const S \&group)
 \begin{DoxyCompactList}\small\item\em Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a320b32b8fd44ee75d9f08aa0665c4ec7}{Mackey\+::mod\+\_\+normalize} (Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a257bcf5aabab2d73fdb13a23cb975d93}{Mackey\+::mod\+\_\+normalize} (T \&element, const T \&group)
 \begin{DoxyCompactList}\small\item\em Normalizes the element in a group so that 0$<$=element\mbox{[}i\mbox{]}$<$=group\mbox{[}i\mbox{]} if group\mbox{[}i\mbox{]}!=1. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a43e260f55a458bed50ab6a75aef7e666}{Mackey\+::normalize} (Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a635c87980358b97256fe159f0c59bb80}{Mackey\+::normalize} (Eigen\+::\+Matrix$<$ T, 1,-\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
 \begin{DoxyCompactList}\small\item\em Normalizes the element in a group to have minimal signs amongst its multiples. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename S , typename R $>$ }\\bool \hyperlink{namespaceMackey_a82dd9e46100ec78b6238a3b60a5b1b45}{Mackey\+::equals} (const T \&element1, const S \&element2, const R \&group)
 \begin{DoxyCompactList}\small\item\em Finds if two elements are equal in the given finitely generated abelian group. \end{DoxyCompactList}\item 

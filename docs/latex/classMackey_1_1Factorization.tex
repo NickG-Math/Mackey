@@ -44,11 +44,9 @@ int \hyperlink{classMackey_1_1Factorization_a5217ad8ca4aaa13b900adda77893249b}{g
 \begin{DoxyCompactList}\small\item\em Form the multiplication table and graph given the max and min spheres and the basic irreducibles. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
 \begin{DoxyCompactList}\small\item\em Compute the factorizations using the given sources for the multiplication graph and their given names. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1Factorization_a3302694fa01f5fe9182b18be30e0411d}{pass\+\_\+unidentified} (bool)
-\begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify A\+LL instances where identification failed before. Use with caution! If the boolean is 1 results for triples are saved after each pass. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1Factorization_a93ebe0edcc11f0cd962294b5b21c94aa}{pass\+\_\+disconnected} (bool)
-\begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the generators not connected to the sources. If the boolean is 1 results for triples are saved after each pass. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1Factorization_a28a789ea46909c33da8958bc1d17c127}{pass\+\_\+disconnected} ()
+void \hyperlink{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}{pass\+\_\+unidentified} (bool serialize\+\_\+each\+\_\+step)
+\begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify A\+LL instances where identification failed before. Use with caution! \end{DoxyCompactList}\item 
+void \hyperlink{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}{pass\+\_\+disconnected} (bool serialize\+\_\+each\+\_\+step)
 \begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the generators not connected to the sources. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}{Factorization} (\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M, const std\+::vector$<$ std\+::string $>$ \&\hyperlink{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}{basic\+Irr\+\_\+names})
 \begin{DoxyCompactList}\small\item\em Constructor given the multiplication table. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -82,7 +80,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422_icgraph}
+\includegraphics[width=342pt]{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}\label{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}} 
@@ -214,30 +212,12 @@ std\+::string \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization
 
 Retrieve the factorization of the i-\/th generator. 
 
-\mbox{\Hypertarget{classMackey_1_1Factorization_a93ebe0edcc11f0cd962294b5b21c94aa}\label{classMackey_1_1Factorization_a93ebe0edcc11f0cd962294b5b21c94aa}} 
+\mbox{\Hypertarget{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}\label{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass\+\_\+disconnected@{pass\+\_\+disconnected}}
 \index{pass\+\_\+disconnected@{pass\+\_\+disconnected}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{pass\+\_\+disconnected()}{pass\_disconnected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{pass\+\_\+disconnected()}{pass\_disconnected()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
 void \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+disconnected (\begin{DoxyParamCaption}\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})}
-
-
-
-Uses triple box products to possibly identify the generators not connected to the sources. If the boolean is 1 results for triples are saved after each pass. 
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_a93ebe0edcc11f0cd962294b5b21c94aa_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classMackey_1_1Factorization_a28a789ea46909c33da8958bc1d17c127}\label{classMackey_1_1Factorization_a28a789ea46909c33da8958bc1d17c127}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass\+\_\+disconnected@{pass\+\_\+disconnected}}
-\index{pass\+\_\+disconnected@{pass\+\_\+disconnected}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{pass\+\_\+disconnected()}{pass\_disconnected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-void \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+disconnected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -247,17 +227,17 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_a28a789ea46909c33da8958bc1d17c127_cgraph}
+\includegraphics[width=350pt]{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_a28a789ea46909c33da8958bc1d17c127_icgraph}
+\includegraphics[width=342pt]{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMackey_1_1Factorization_a3302694fa01f5fe9182b18be30e0411d}\label{classMackey_1_1Factorization_a3302694fa01f5fe9182b18be30e0411d}} 
+\mbox{\Hypertarget{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}\label{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass\+\_\+unidentified@{pass\+\_\+unidentified}}
 \index{pass\+\_\+unidentified@{pass\+\_\+unidentified}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
 \subsubsection{\texorpdfstring{pass\+\_\+unidentified()}{pass\_unidentified()}}
@@ -266,20 +246,20 @@ void \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank
 
 
 
-Uses triple box products to possibly identify A\+LL instances where identification failed before. Use with caution! If the boolean is 1 results for triples are saved after each pass. 
+Uses triple box products to possibly identify A\+LL instances where identification failed before. Use with caution! 
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_a3302694fa01f5fe9182b18be30e0411d_cgraph}
+\includegraphics[width=350pt]{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_a3302694fa01f5fe9182b18be30e0411d_icgraph}
+\includegraphics[width=342pt]{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4_icgraph}
 \end{center}
 \end{figure}
 

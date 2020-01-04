@@ -32,10 +32,12 @@ Collaboration diagram for Mackey\+:\+:Weighted\+Graph\+:\nopagebreak
 \item 
 \hyperlink{classMackey_1_1WeightedGraph_afed3bc23878489313a0bf8770898759a}{Weighted\+Graph} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1WeightedGraph_a3a86d17dbbdbf257f6b7388050eb3ff4}{Weighted\+Graph} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&\hyperlink{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}{edges})
-\begin{DoxyCompactList}\small\item\em Sets edges and 0 weights. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1WeightedGraph_a867c9d4e1291f3640f37b18a1a92ca7e}{Weighted\+Graph} (std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&\hyperlink{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}{edges}, std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&weights)
-\begin{DoxyCompactList}\small\item\em Sets edges and weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1WeightedGraph_a080db5a1861342bba8ba62c55a3bac95}{Weighted\+Graph} (\hyperlink{classMackey_1_1Graph}{Graph}$<$ T $>$ \&G, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ weights)
+\begin{DoxyCompactList}\small\item\em Constructor from given graph and weights. \end{DoxyCompactList}\item 
+\hyperlink{classMackey_1_1WeightedGraph_a962738a9a66a39f7fb2005411bf56818}{Weighted\+Graph} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&\hyperlink{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}{edges}, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ weights)
+\begin{DoxyCompactList}\small\item\em Constructor from given edges and weights. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1WeightedGraph_ad5932440f83ea50f802d96b44c2da5e3}{Weighted\+Graph} (\hyperlink{classMackey_1_1Graph}{Graph}$<$ T $>$ \&G)
+\begin{DoxyCompactList}\small\item\em Constructor from other graph and zero weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,33 +53,52 @@ A directed \hyperlink{classMackey_1_1Graph}{Graph} with weights.
 \mbox{\Hypertarget{classMackey_1_1WeightedGraph_afed3bc23878489313a0bf8770898759a}\label{classMackey_1_1WeightedGraph_afed3bc23878489313a0bf8770898759a}} 
 \index{Mackey\+::\+Weighted\+Graph@{Mackey\+::\+Weighted\+Graph}!Weighted\+Graph@{Weighted\+Graph}}
 \index{Weighted\+Graph@{Weighted\+Graph}!Mackey\+::\+Weighted\+Graph@{Mackey\+::\+Weighted\+Graph}}
-\subsubsection{\texorpdfstring{Weighted\+Graph()}{WeightedGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\subsubsection{\texorpdfstring{Weighted\+Graph()}{WeightedGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily Mackey\+::\+Weighted\+Graph\+::\+Weighted\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Default constructor. 
 
-\mbox{\Hypertarget{classMackey_1_1WeightedGraph_a3a86d17dbbdbf257f6b7388050eb3ff4}\label{classMackey_1_1WeightedGraph_a3a86d17dbbdbf257f6b7388050eb3ff4}} 
+\mbox{\Hypertarget{classMackey_1_1WeightedGraph_a080db5a1861342bba8ba62c55a3bac95}\label{classMackey_1_1WeightedGraph_a080db5a1861342bba8ba62c55a3bac95}} 
 \index{Mackey\+::\+Weighted\+Graph@{Mackey\+::\+Weighted\+Graph}!Weighted\+Graph@{Weighted\+Graph}}
 \index{Weighted\+Graph@{Weighted\+Graph}!Mackey\+::\+Weighted\+Graph@{Mackey\+::\+Weighted\+Graph}}
-\subsubsection{\texorpdfstring{Weighted\+Graph()}{WeightedGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Mackey\+::\+Weighted\+Graph\+::\+Weighted\+Graph (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{edges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{Weighted\+Graph()}{WeightedGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Mackey\+::\+Weighted\+Graph\+::\+Weighted\+Graph (\begin{DoxyParamCaption}\item[{\hyperlink{classMackey_1_1Graph}{Graph}$<$ T $>$ \&}]{G,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Sets edges and 0 weights. 
+Constructor from given graph and weights. 
 
-\mbox{\Hypertarget{classMackey_1_1WeightedGraph_a867c9d4e1291f3640f37b18a1a92ca7e}\label{classMackey_1_1WeightedGraph_a867c9d4e1291f3640f37b18a1a92ca7e}} 
+\mbox{\Hypertarget{classMackey_1_1WeightedGraph_a962738a9a66a39f7fb2005411bf56818}\label{classMackey_1_1WeightedGraph_a962738a9a66a39f7fb2005411bf56818}} 
 \index{Mackey\+::\+Weighted\+Graph@{Mackey\+::\+Weighted\+Graph}!Weighted\+Graph@{Weighted\+Graph}}
 \index{Weighted\+Graph@{Weighted\+Graph}!Mackey\+::\+Weighted\+Graph@{Mackey\+::\+Weighted\+Graph}}
-\subsubsection{\texorpdfstring{Weighted\+Graph()}{WeightedGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Mackey\+::\+Weighted\+Graph\+::\+Weighted\+Graph (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{edges,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{Weighted\+Graph()}{WeightedGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Mackey\+::\+Weighted\+Graph\+::\+Weighted\+Graph (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{edges,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$}]{weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Sets edges and weights. 
+Constructor from given edges and weights. 
 
+\mbox{\Hypertarget{classMackey_1_1WeightedGraph_ad5932440f83ea50f802d96b44c2da5e3}\label{classMackey_1_1WeightedGraph_ad5932440f83ea50f802d96b44c2da5e3}} 
+\index{Mackey\+::\+Weighted\+Graph@{Mackey\+::\+Weighted\+Graph}!Weighted\+Graph@{Weighted\+Graph}}
+\index{Weighted\+Graph@{Weighted\+Graph}!Mackey\+::\+Weighted\+Graph@{Mackey\+::\+Weighted\+Graph}}
+\subsubsection{\texorpdfstring{Weighted\+Graph()}{WeightedGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Mackey\+::\+Weighted\+Graph\+::\+Weighted\+Graph (\begin{DoxyParamCaption}\item[{\hyperlink{classMackey_1_1Graph}{Graph}$<$ T $>$ \&}]{G }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor from other graph and zero weights. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1WeightedGraph_ad5932440f83ea50f802d96b44c2da5e3_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Friends And Related Function Documentation}

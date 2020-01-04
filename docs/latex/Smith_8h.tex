@@ -2,14 +2,15 @@
 \label{Smith_8h}\index{Mackey/\+Smith.\+h@{Mackey/\+Smith.\+h}}
 
 
-Contains the Smith normal form algorithms.  
+Includes all Smith implementations.  
 
 
-{\ttfamily \#include $<$vector$>$}\newline
-{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
-{\ttfamily \#include $<$cmath$>$}\newline
-{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
-Include dependency graph for Smith.\+h\+:\nopagebreak
+{\ttfamily \#include \char`\"{}Smith\+\_\+\+First\+Pivot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Smith\+\_\+\+Min\+Pivot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Smith\+\_\+\+Smart\+Pivot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Smith\+\_\+\+Sparse.\+h\char`\"{}}\newline
+Include dependency graph for Smith.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,23 +24,8 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \includegraphics[height=550pt]{Smith_8h__dep__incl}
 \end{center}
 \end{figure}
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-class \hyperlink{classMackey_1_1CommonSmith}{Mackey\+::\+Common\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$}
-\begin{DoxyCompactList}\small\item\em The common variables and methods for the two \hyperlink{classMackey_1_1Smith}{Smith} Normal Form implementations. \end{DoxyCompactList}\item 
-class \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$}
-\begin{DoxyCompactList}\small\item\em The safe \hyperlink{classMackey_1_1Smith}{Smith} Normal Form implementation for general coefficients. \end{DoxyCompactList}\item 
-class \hyperlink{classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4}{Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, decltype(\+S\+\_\+t\+::\+Scalar\+::order, void())$>$}
-\begin{DoxyCompactList}\small\item\em The fast \hyperlink{classMackey_1_1Smith}{Smith} Normal Form implementation for finite coefficients that have a member \char`\"{}order\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
- \hyperlink{namespaceMackey}{Mackey}
-\begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Contains the Smith normal form algorithms. 
+Includes all Smith implementations. 
 
-There\textquotesingle{}s two of them, one fast but can overflow (good for finite coefficients) and one slow but reliable (good for infinite coefficients) We use S\+F\+I\+N\+AE to detect coefficient type 

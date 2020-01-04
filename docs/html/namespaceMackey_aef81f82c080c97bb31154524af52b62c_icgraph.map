@@ -1,5 +1,6 @@
 <map id="Mackey::isMultiple" name="Mackey::isMultiple">
 <area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]..." alt="" coords="184,39,371,80"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="437,5,587,47"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="419,71,605,112"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="437,5,587,47"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="419,71,605,112"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="653,5,804,47"/>
 </map>

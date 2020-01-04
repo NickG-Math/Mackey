@@ -1,7 +1,8 @@
 <map id="Mackey::Homology::Homology" name="Mackey::Homology::Homology">
-<area shape="rect" id="node2" href="$namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="256,5,389,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#ad6870101d4fd762100a3115abc4a15db" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="256,5,389,32"/>
 <area shape="rect" id="node3" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="301,56,344,83"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a165eecd4244c7e736cd453016a80ec29" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="259,107,386,133"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a9a8496759bc7bb14dcaa2284ae1d0491" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="259,107,386,133"/>
 <area shape="rect" id="node5" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="270,157,375,184"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="437,157,535,184"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="437,132,535,159"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="437,183,535,209"/>
 </map>

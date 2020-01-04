@@ -5,7 +5,6 @@ var Z__n_8h =
     [ "NumTraits< Z< N > >", "structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html", "structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4" ],
     [ "abs", "Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f", null ],
     [ "abs", "Z__n_8h.html#a4ec03a9c32c7eca6eaf985339dfc5fe6", null ],
-    [ "is_finite_cyclic", "Z__n_8h.html#afe8e1404c86fb9609734d3e0074ac7ed", null ],
     [ "operator*", "Z__n_8h.html#ab3391fa5020ce6c8d6b703b0916a85e5", null ],
     [ "operator*", "Z__n_8h.html#a1108bc22957ae83bd843218b814279a3", null ],
     [ "operator-", "Z__n_8h.html#a14586a95b3e3649821bac56ac4187b39", null ],

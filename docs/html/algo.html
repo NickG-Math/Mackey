@@ -101,12 +101,26 @@ $(document).ready(function(){initNavTree('algo.html','');});
 </div>
 <div class="textblock"><h1><a class="anchor" id="smith"></a>
 Smith Normal Form</h1>
-<p>The Smith Normal Form is difficult to compute for integer matrices as its entries (and especially the entries of the coefficient matrices) can be much larger than those of the original matrix, leading to potential overflow. We have implemented two versions of the usual row/column elimination</p>
+<p>There are multiple ways to compute the Smith Normal Form of a matrix, but since we want the coefficient matrices as well we employ the row/column elimination algorithm. To use the algorithm we need to be able to choose a pivot for our matrix each time we want to clear a row and column. We have the freedom to choose it and there are (at least) three ways to do it:</p>
 <ul>
-<li>The safe version checks for the minimum (amongst the nonzero entries and in absolute value) in each iteration and uses it as a pivot to clear rows and columns.</li>
-<li>The fast version forgoes the inefficient min computation and instead uses the first nonzero element it finds as pivot.</li>
+<li>Use the first nonzero element as pivot, and if a smaller nonzero element (in absolute value) appears during the elimination then switch to that.</li>
+<li>Use the minimum (in absolute value) nonzero elemenent as pivot. If there are multiple choices, pick the first one as we iterate through the matrix.</li>
+<li>As above, but instead of picking the first minimum, choose it so that it minimizes a certain norm function.</li>
 </ul>
-<p>Using a SFINAE trick, the safe implementation is automatically used for general coefficients (eg \(\mathbb Z\)) while the fast version is used for finite coefficients, when a certain member <code>order</code> exists in the coefficients (eg \(\mathbb F_p\)).</p>
+<p>This norm function, called a Markowitz metric, can be for example \(N(i,j)=\sum_s|a_{is}|+|a_{sj}|\)</p>
+<p>One reason we are considering multiple pivoting choices is coefficient explosion: Even if the entries of the matrix are small ( \(\pm 1\)), the entries of the Smith Normal Form (and especially those of the coefficient matrices) can easily overflow if we make the wrong choice of pivot. You can read more about this problem in <a href="https://arxiv.org/abs/math/9406205">Recognizing badly presented Z modules</a>.</p>
+<p>Of the three choices above, the first is most likely to result to overflow, but is usually the fastest when it doesn't. The second is a great option for smaller matrices (&lt;1000 rows and columns) while the third excells with very big matrices.</p>
+<p>But there is another reason to use the third option, and that's sparse matrices.</p>
+<p>When our matrices get large (7000 rows and columns) they are also very sparse (99.9% entries being 0) so we can make huge savings on memory (and potentially computational time) by using a sparse matrix format that only records the nonzero values.</p>
+<p>The usage of sparse matrices necessitates great care or performance will suffer: For example, insertions of nonzero elements and random access do not have constant complexity.</p>
+<p>As far as the Smith normal form is concerned, to have good performance with sparse matrices we need to minimize fill-in, which is the creation of nonzero elements from adding a row/column to another one. The Markowitz metric described above is used to very roughtly estimate the fill-in that we would get if the given element was used as pivot. There are many other choices as explained <a href="https://arxiv.org/abs/math/9406205">here</a>.</p>
+<p>Thus in total we have 4 Smith implementations:</p>
+<ul>
+<li><code><a class="el" href="classMackey_1_1SmithFP.html" title="The dense Smith Normal Form using the first nonzero element as pivot. ">Mackey::SmithFP</a></code> using the first nonzero element as pivot.</li>
+<li><code><a class="el" href="classMackey_1_1SmithMP.html" title="The dense Smith Normal Form using the minimum (in absolute value) nonzero element as pivot...">Mackey::SmithMP</a></code> using the minimum (in absolute value) nonzero elemenent as pivot (first instance).</li>
+<li><code><a class="el" href="classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. ">Mackey::SmithSP</a></code> using the instance of the minimum that also minimizes a norm function.</li>
+<li><code><a class="el" href="classMackey_1_1SmithSparse.html" title="The sparse Smith Normal Form, choosing the pivot via a Markowitz metric. ">Mackey::SmithSparse</a></code> which is the same as <code><a class="el" href="classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. ">Mackey::SmithSP</a></code> but using sparse matrices.</li>
+</ul>
 <h1><a class="anchor" id="cob"></a>
 Change of Basis</h1>
 <p>If we have bases for modules \(A,B\) then \(A\otimes B\) can be canonically given two lexicographical bases, that we call left and right convenient bases. But if \(A,B\) are the bottom levels of free <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors then they have equivariant bases and the tensor product also gets an equivariant basis, called the canonical one. The left and right convenient bases are used to write the left and right differentials in a simple manner (hence their designation as convenient). The canonical bases are used to transfer. To get the change of basis matrix, we are reduced to computing the permutation \(a^{-1}b\) where \(a,b\) are two permutations of the same set.</p>

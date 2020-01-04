@@ -1,7 +1,7 @@
 var classMackey_1_1ColoredGraph =
 [
     [ "ColoredGraph", "classMackey_1_1ColoredGraph.html#a367055b4a615119cc767a738f6e9e719", null ],
-    [ "ColoredGraph", "classMackey_1_1ColoredGraph.html#adada856cdbfc508b2df15919f45a1808", null ],
+    [ "ColoredGraph", "classMackey_1_1ColoredGraph.html#a2e2d70fa6163019d8bf0dd92b3d39342", null ],
     [ "draw", "classMackey_1_1ColoredGraph.html#a8ed05073805b34a0087a7ed94e889694", null ],
     [ "draw", "classMackey_1_1ColoredGraph.html#a912a6e5cb94386d9ff6510e968b41e7d", null ],
     [ "draw", "classMackey_1_1ColoredGraph.html#a88cde9e3cc3bfb72409142ac6705b474", null ],

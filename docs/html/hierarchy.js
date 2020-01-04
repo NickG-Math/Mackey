@@ -7,9 +7,14 @@ var hierarchy =
     ] ],
     [ "Mackey::internal::ChainsLevelGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ChainsLevelGen.html", null ],
     [ "Mackey::ChangeBasis< rank_t >", "classMackey_1_1ChangeBasis.html", null ],
-    [ "Mackey::CommonSmith< S_t, R_t, C_t >", "classMackey_1_1CommonSmith.html", [
-      [ "Mackey::Smith< S_t, R_t, C_t, impl >", "classMackey_1_1Smith.html", null ],
-      [ "Mackey::Smith< S_t, R_t, C_t, decltype(S_t::Scalar::order, void())>", "classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4.html", null ]
+    [ "declval", null, [
+      [ "Mackey::is_Dense< T >", "structMackey_1_1is__Dense.html", null ]
+    ] ],
+    [ "declval", null, [
+      [ "Mackey::is_Sparse< T >", "structMackey_1_1is__Sparse.html", null ]
+    ] ],
+    [ "declval", null, [
+      [ "Mackey::is_Finite_Cyclic< T >", "structMackey_1_1is__Finite__Cyclic.html", null ]
     ] ],
     [ "GroupSpecific::Function< rank_t, diff_t, deg_t >", "classGroupSpecific_1_1Function.html", null ],
     [ "Mackey::Graph< T >", "classMackey_1_1Graph.html", null ],
@@ -43,6 +48,12 @@ var hierarchy =
     [ "Eigen::NumTraits< Z< N > >", "structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html", null ],
     [ "Mackey::Polynomial< T >", "classMackey_1_1Polynomial.html", null ],
     [ "Mackey::internal::ProductGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ProductGen.html", null ],
+    [ "Mackey::Smith< S_t, R_t, C_t >", "classMackey_1_1Smith.html", [
+      [ "Mackey::SmithFP< S_t, R_t, C_t >", "classMackey_1_1SmithFP.html", null ],
+      [ "Mackey::SmithMP< S_t, R_t, C_t >", "classMackey_1_1SmithMP.html", null ],
+      [ "Mackey::SmithSP< S_t, R_t, C_t >", "classMackey_1_1SmithSP.html", null ],
+      [ "Mackey::SmithSparse< S_t, R_t, C_t >", "classMackey_1_1SmithSparse.html", null ]
+    ] ],
     [ "GroupSpecific::Variables", "classGroupSpecific_1_1Variables.html", null ],
     [ "Z< N >", "classZ.html", null ],
     [ "Z< 2 >", "classZ_3_012_01_4.html", null ]

@@ -3,7 +3,7 @@
 <area shape="rect" id="node11" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero. " alt="" coords="707,376,819,403"/>
 <area shape="rect" id="node17" href="$classMackey_1_1MultiplicationGraphIdentify.html#a110991be3ba595dbf401ef4a769e4dec" title="Uses triple box products to possibly identify the products of disconnected generators if identificati..." alt="" coords="204,299,391,355"/>
 <area shape="rect" id="node18" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]..." alt="" coords="204,457,391,498"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v. " alt="" coords="714,237,811,264"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="714,237,811,264"/>
 <area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="439,70,623,111"/>
 <area shape="rect" id="node9" href="$namespaceMackey.html#a1824d780ce15f1845e4f87bf056feec9" title="Saves object to binary file of given name. Serialization is provided by cereal. " alt="" coords="477,19,585,45"/>
 <area shape="rect" id="node10" href="$classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84" title="Returns the (normalized) product of the given two elements (not necessarily generators) ..." alt="" coords="441,339,620,381"/>
@@ -18,6 +18,7 @@
 <area shape="rect" id="node15" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables. " alt="" coords="1105,179,1272,221"/>
 <area shape="rect" id="node19" href="$namespaceMackey.html#aef81f82c080c97bb31154524af52b62c" title="Finds if element a is a multiple of element b in the given finitely generated abelian group..." alt="" coords="465,511,596,537"/>
 <area shape="rect" id="node20" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="710,460,815,487"/>
-<area shape="rect" id="node22" href="$namespaceMackey.html#a82dd9e46100ec78b6238a3b60a5b1b45" title="Finds if two elements are equal in the given finitely generated abelian group. " alt="" coords="705,511,820,537"/>
-<area shape="rect" id="node21" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="931,460,1029,487"/>
+<area shape="rect" id="node23" href="$namespaceMackey.html#a82dd9e46100ec78b6238a3b60a5b1b45" title="Finds if two elements are equal in the given finitely generated abelian group. " alt="" coords="705,511,820,537"/>
+<area shape="rect" id="node21" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="931,485,1029,512"/>
+<area shape="rect" id="node22" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="931,435,1029,461"/>
 </map>

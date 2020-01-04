@@ -8,8 +8,7 @@ var classMackey_1_1Factorization =
     [ "getelement", "classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9", null ],
     [ "getelementindex", "classMackey_1_1Factorization.html#a5217ad8ca4aaa13b900adda77893249b", null ],
     [ "getname", "classMackey_1_1Factorization.html#ac5088227511baaaec1f62802b75d3a9e", null ],
-    [ "pass_disconnected", "classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa", null ],
-    [ "pass_disconnected", "classMackey_1_1Factorization.html#a28a789ea46909c33da8958bc1d17c127", null ],
-    [ "pass_unidentified", "classMackey_1_1Factorization.html#a3302694fa01f5fe9182b18be30e0411d", null ],
+    [ "pass_disconnected", "classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00", null ],
+    [ "pass_unidentified", "classMackey_1_1Factorization.html#a0f1115a0af9f4fb294646aee85ebb2e4", null ],
     [ "basicIrr_names", "classMackey_1_1Factorization.html#aafee5aadae0d83b75741e0e8c2955625", null ]
 ];

@@ -86,8 +86,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Additive_8h.html",
-"classMackey_1_1Green.html#a7e2d97abb22044ec3abbe91bc9c33ee9",
-"namespaceMackey_1_1internal.html"
+"classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9",
+"functions_l.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

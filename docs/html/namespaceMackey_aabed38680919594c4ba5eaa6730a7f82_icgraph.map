@@ -1,0 +1,9 @@
+<map id="Mackey::swap" name="Mackey::swap">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a38a833de54971845cbdb8c96f830725b" title="Circularly rotates given V (an Eigen/std vector) " alt="" coords="181,5,290,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#aab8a6292210a3b71960cb03b79d218e6" title="Mackey::shiftsegment" alt="" coords="160,56,311,83"/>
+<area shape="rect" id="node8" href="$classMackey_1_1Smith.html#a30c76fbf9cb906c04908def480b0a321" title="Sorts the Smith Normal Form to have decreasing entries in absolute value (except +1,&#45;1) " alt="" coords="160,107,311,133"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a26a529f63caac9c5b4dc809e0e5831be" title="Creates a matrix of size m x n that alternates the given vector v. " alt="" coords="359,5,485,32"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#aa515b26c0fbc7f19b36cee7d826f07b9" title="Compute the Weyl group action on a generator given the rank of the group it lives in..." alt="" coords="367,56,477,83"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="533,31,707,57"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#aaa66c9857ba86a13949d1b1825ea20f7" title="Writing the Weyl group action on each generator in terms of the other generators. ..." alt="" coords="565,81,675,108"/>
+</map>

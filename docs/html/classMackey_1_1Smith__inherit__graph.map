@@ -1,3 +1,6 @@
-<map id="Mackey::Smith&lt; S_t, R_t, C_t, impl &gt;" name="Mackey::Smith&lt; S_t, R_t, C_t, impl &gt;">
-<area shape="rect" id="node2" href="$classMackey_1_1CommonSmith.html" title="The common variables and methods for the two Smith Normal Form implementations. " alt="" coords="5,5,168,47"/>
+<map id="Mackey::Smith&lt; S_t, R_t, C_t &gt;" name="Mackey::Smith&lt; S_t, R_t, C_t &gt;">
+<area shape="rect" id="node2" href="$classMackey_1_1SmithFP.html" title="The dense Smith Normal Form using the first nonzero element as pivot. " alt="" coords="201,5,349,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1SmithMP.html" title="The dense Smith Normal Form using the minimum (in absolute value) nonzero element as pivot..." alt="" coords="200,71,351,112"/>
+<area shape="rect" id="node4" href="$classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. " alt="" coords="201,136,350,177"/>
+<area shape="rect" id="node5" href="$classMackey_1_1SmithSparse.html" title="The sparse Smith Normal Form, choosing the pivot via a Markowitz metric. " alt="" coords="200,201,351,243"/>
 </map>

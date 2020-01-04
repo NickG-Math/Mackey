@@ -9,15 +9,6 @@ A \hyperlink{namespaceMackey}{Mackey} Functor.
 
 {\ttfamily \#include $<$Mackey\+Functor.\+h$>$}
 
-\subsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef rank\+\_\+t\+::\+Scalar \hyperlink{classMackey_1_1MackeyFunctor_a124b4175216c4cf9a4b67acc78e9246d}{Scalar}
-\item 
-typedef Eigen\+::\+Matrix$<$ \hyperlink{classMackey_1_1MackeyFunctor_a124b4175216c4cf9a4b67acc78e9246d}{Scalar},-\/1,-\/1 $>$ \hyperlink{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}{matrix\+\_\+t}
-\begin{DoxyCompactList}\small\item\em The type of transfer, restriction and Weyl action matrices. \end{DoxyCompactList}\item 
-typedef std\+::vector$<$ Eigen\+::\+Matrix$<$ \hyperlink{classMackey_1_1MackeyFunctor_a124b4175216c4cf9a4b67acc78e9246d}{Scalar},-\/1,-\/1 $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}{iso\+\_\+t}
-\begin{DoxyCompactList}\small\item\em The type of isomorphisms of \hyperlink{namespaceMackey}{Mackey} functors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -31,9 +22,9 @@ void \hyperlink{classMackey_1_1MackeyFunctor_a44d3104a47f23de5d8141b7800db6d11}{
 \begin{DoxyCompactList}\small\item\em When there is only one generator at each level we can use this convenient constructor. \end{DoxyCompactList}\item 
 bool \hyperlink{classMackey_1_1MackeyFunctor_a001f4a56e79e68ca3fef808e6b0ccca4}{compare} (const \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \&M) const
 \begin{DoxyCompactList}\small\item\em Compares two \hyperlink{namespaceMackey}{Mackey} and returns 1 if equal. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f}{apply} (const \hyperlink{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}{iso\+\_\+t} \&iso, const \hyperlink{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}{iso\+\_\+t} \&isoinv) const
+\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1MackeyFunctor_a6522cfe1071ccb92ff3db38d89e14687}{apply} (const iso\+\_\+t$<$ rank\+\_\+t $>$ \&iso, const iso\+\_\+t$<$ rank\+\_\+t $>$ \&isoinv) const
 \begin{DoxyCompactList}\small\item\em Applies isomorphism to \hyperlink{namespaceMackey}{Mackey} functor (its inverse is also needed) \end{DoxyCompactList}\item 
-std\+::pair$<$ std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}{iso\+\_\+t} $>$, std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}{iso\+\_\+t} $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1}{automorphisms} () const
+std\+::pair$<$ std\+::vector$<$ iso\+\_\+t$<$ rank\+\_\+t $>$ $>$, std\+::vector$<$ iso\+\_\+t$<$ rank\+\_\+t $>$ $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_ac7ef9ab9f3a13660a03c35e64dddd66b}{automorphisms} () const
 \begin{DoxyCompactList}\small\item\em Returns all automorphisms of a \hyperlink{namespaceMackey}{Mackey} Functor and their inverses. \end{DoxyCompactList}\item 
 std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_a71e081ee78f53fe74e8f65106865f4c5}{isomorphism\+\_\+class} () const
 \begin{DoxyCompactList}\small\item\em Returns the isomorphism class of a \hyperlink{namespaceMackey}{Mackey} Functor. \end{DoxyCompactList}\item 
@@ -50,11 +41,11 @@ void \hyperlink{classMackey_1_1MackeyFunctor_a2b333a786e44000c96ffd087a81a1d17}{
 \item 
 std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1MackeyFunctor_a4f8f5f7ac6267bdee2a67c8874bdd9a3}{Groups}
 \begin{DoxyCompactList}\small\item\em The Groups starting at level 0 (see \hyperlink{classMackey_1_1Homology}{Homology} for the labeling) \end{DoxyCompactList}\item 
-std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}{matrix\+\_\+t} $>$ \hyperlink{classMackey_1_1MackeyFunctor_ae695013be3025f6841326e2ca0d03754}{Tr}
+std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_aeb319977f08791ff220d647cbf460c6c}{Tr}
 \begin{DoxyCompactList}\small\item\em The transfers from level i to level i+1. They are encoded as matrices because the levels may be noncyclic. \end{DoxyCompactList}\item 
-std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}{matrix\+\_\+t} $>$ \hyperlink{classMackey_1_1MackeyFunctor_a2a659b146972121a5d180c8c38909780}{Res}
+std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_aa017d427a7ca062c2fe974c3930de6d8}{Res}
 \begin{DoxyCompactList}\small\item\em Same as transfers, but now using restrictions. \end{DoxyCompactList}\item 
-std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}{matrix\+\_\+t} $>$ \hyperlink{classMackey_1_1MackeyFunctor_a0b2f1a52b0a49f7544ba1025bbe95319}{Weyl}
+std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ rank\+\_\+t $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor_a22162c7320c3793b5cdaad62b063d057}{Weyl}
 \begin{DoxyCompactList}\small\item\em Same as transfers, but now using the Weyl group action. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classMackey_1_1MackeyFunctor_ae1d69a215249d8b1018ac810ecc63d56}{name}
 \begin{DoxyCompactList}\small\item\em The name of the \hyperlink{namespaceMackey}{Mackey} functor. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -65,38 +56,6 @@ std\+::string \hyperlink{classMackey_1_1MackeyFunctor_ae1d69a215249d8b1018ac810e
 class Mackey\+::\+Mackey\+Functor$<$ rank\+\_\+t $>$}
 
 A \hyperlink{namespaceMackey}{Mackey} Functor. 
-
-\subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}\label{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}} 
-\index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!iso\+\_\+t@{iso\+\_\+t}}
-\index{iso\+\_\+t@{iso\+\_\+t}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
-\subsubsection{\texorpdfstring{iso\+\_\+t}{iso\_t}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
-typedef std\+::vector$<$Eigen\+::\+Matrix$<$\hyperlink{classMackey_1_1MackeyFunctor_a124b4175216c4cf9a4b67acc78e9246d}{Scalar},-\/1,-\/1$>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::\hyperlink{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}{iso\+\_\+t}}
-
-
-
-The type of isomorphisms of \hyperlink{namespaceMackey}{Mackey} functors. 
-
-\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}\label{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}} 
-\index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!matrix\+\_\+t@{matrix\+\_\+t}}
-\index{matrix\+\_\+t@{matrix\+\_\+t}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
-\subsubsection{\texorpdfstring{matrix\+\_\+t}{matrix\_t}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
-typedef Eigen\+::\+Matrix$<$\hyperlink{classMackey_1_1MackeyFunctor_a124b4175216c4cf9a4b67acc78e9246d}{Scalar},-\/1,-\/1$>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::\hyperlink{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}{matrix\+\_\+t}}
-
-
-
-The type of transfer, restriction and Weyl action matrices. 
-
-\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a124b4175216c4cf9a4b67acc78e9246d}\label{classMackey_1_1MackeyFunctor_a124b4175216c4cf9a4b67acc78e9246d}} 
-\index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!Scalar@{Scalar}}
-\index{Scalar@{Scalar}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
-\subsubsection{\texorpdfstring{Scalar}{Scalar}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
-typedef rank\+\_\+t\+::\+Scalar \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::\hyperlink{classMackey_1_1MackeyFunctor_a124b4175216c4cf9a4b67acc78e9246d}{Scalar}}
-
-
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a075cd364217700d5f5c2459d4a988a93}\label{classMackey_1_1MackeyFunctor_a075cd364217700d5f5c2459d4a988a93}} 
@@ -138,12 +97,12 @@ Here is the call graph for this function\+:\nopagebreak
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f}\label{classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f}} 
+\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a6522cfe1071ccb92ff3db38d89e14687}\label{classMackey_1_1MackeyFunctor_a6522cfe1071ccb92ff3db38d89e14687}} 
 \index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!apply@{apply}}
 \index{apply@{apply}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
 \subsubsection{\texorpdfstring{apply()}{apply()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
-\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::apply (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}{iso\+\_\+t} \&}]{iso,  }\item[{const \hyperlink{classMackey_1_1MackeyFunctor_a53637e79f2502411ba085d2b2a61bb67}{iso\+\_\+t} \&}]{isoinv }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::apply (\begin{DoxyParamCaption}\item[{const iso\+\_\+t$<$ rank\+\_\+t $>$ \&}]{iso,  }\item[{const iso\+\_\+t$<$ rank\+\_\+t $>$ \&}]{isoinv }\end{DoxyParamCaption}) const}
 
 
 
@@ -153,22 +112,22 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=340pt]{classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_cgraph}
+\includegraphics[width=340pt]{classMackey_1_1MackeyFunctor_a6522cfe1071ccb92ff3db38d89e14687_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1MackeyFunctor_a24b7b8ce61be39ea51432d0d3737a55f_icgraph}
+\includegraphics[width=350pt]{classMackey_1_1MackeyFunctor_a6522cfe1071ccb92ff3db38d89e14687_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1}\label{classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1}} 
+\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_ac7ef9ab9f3a13660a03c35e64dddd66b}\label{classMackey_1_1MackeyFunctor_ac7ef9ab9f3a13660a03c35e64dddd66b}} 
 \index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!automorphisms@{automorphisms}}
 \index{automorphisms@{automorphisms}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
 \subsubsection{\texorpdfstring{automorphisms()}{automorphisms()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t $>$ \\
-std\+::pair$<$ std\+::vector$<$ std\+::vector$<$ Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1 $>$ $>$ $>$, std\+::vector$<$ std\+::vector$<$ Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1 $>$ $>$ $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::automorphisms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+std\+::pair$<$ std\+::vector$<$ iso\+\_\+t$<$ rank\+\_\+t $>$ $>$, std\+::vector$<$ iso\+\_\+t$<$ rank\+\_\+t $>$ $>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::automorphisms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -178,14 +137,14 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_cgraph}
+\includegraphics[width=350pt]{classMackey_1_1MackeyFunctor_ac7ef9ab9f3a13660a03c35e64dddd66b_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1MackeyFunctor_a454e5488d62aa1e8d5ff4df71aeecfa1_icgraph}
+\includegraphics[width=350pt]{classMackey_1_1MackeyFunctor_ac7ef9ab9f3a13660a03c35e64dddd66b_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a001f4a56e79e68ca3fef808e6b0ccca4}\label{classMackey_1_1MackeyFunctor_a001f4a56e79e68ca3fef808e6b0ccca4}} 
@@ -371,34 +330,34 @@ std\+::string \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Funct
 
 The name of the \hyperlink{namespaceMackey}{Mackey} functor. 
 
-\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a2a659b146972121a5d180c8c38909780}\label{classMackey_1_1MackeyFunctor_a2a659b146972121a5d180c8c38909780}} 
+\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_aa017d427a7ca062c2fe974c3930de6d8}\label{classMackey_1_1MackeyFunctor_aa017d427a7ca062c2fe974c3930de6d8}} 
 \index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!Res@{Res}}
 \index{Res@{Res}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
 \subsubsection{\texorpdfstring{Res}{Res}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
-std\+::vector$<$\hyperlink{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}{matrix\+\_\+t}$>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::Res}
+std\+::vector$<$\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$rank\+\_\+t$>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::Res}
 
 
 
 Same as transfers, but now using restrictions. 
 
-\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_ae695013be3025f6841326e2ca0d03754}\label{classMackey_1_1MackeyFunctor_ae695013be3025f6841326e2ca0d03754}} 
+\mbox{\Hypertarget{classMackey_1_1MackeyFunctor_aeb319977f08791ff220d647cbf460c6c}\label{classMackey_1_1MackeyFunctor_aeb319977f08791ff220d647cbf460c6c}} 
 \index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!Tr@{Tr}}
 \index{Tr@{Tr}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
 \subsubsection{\texorpdfstring{Tr}{Tr}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
-std\+::vector$<$\hyperlink{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}{matrix\+\_\+t}$>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::Tr}
+std\+::vector$<$\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$rank\+\_\+t$>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::Tr}
 
 
 
 The transfers from level i to level i+1. They are encoded as matrices because the levels may be noncyclic. 
 
-Example (C4)\+: If Tr\mbox{[}0\mbox{]}=\mbox{[}2\mbox{]} and Tr\mbox{[}1\mbox{]}=\mbox{[}1,2;1,3\mbox{]} then Tr\+\_\+0$^\wedge$2(gen)=2$\ast$gen and Tr\+\_\+2$^\wedge$4(gen0)=gen0+gen1 and Tr\+\_\+2$^\wedge$4(gen1)=2$\ast$gen0+3$\ast$gen1 \mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a0b2f1a52b0a49f7544ba1025bbe95319}\label{classMackey_1_1MackeyFunctor_a0b2f1a52b0a49f7544ba1025bbe95319}} 
+Example (C4)\+: If Tr\mbox{[}0\mbox{]}=\mbox{[}2\mbox{]} and Tr\mbox{[}1\mbox{]}=\mbox{[}1,2;1,3\mbox{]} then Tr\+\_\+0$^\wedge$2(gen)=2$\ast$gen and Tr\+\_\+2$^\wedge$4(gen0)=gen0+gen1 and Tr\+\_\+2$^\wedge$4(gen1)=2$\ast$gen0+3$\ast$gen1 \mbox{\Hypertarget{classMackey_1_1MackeyFunctor_a22162c7320c3793b5cdaad62b063d057}\label{classMackey_1_1MackeyFunctor_a22162c7320c3793b5cdaad62b063d057}} 
 \index{Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}!Weyl@{Weyl}}
 \index{Weyl@{Weyl}!Mackey\+::\+Mackey\+Functor@{Mackey\+::\+Mackey\+Functor}}
 \subsubsection{\texorpdfstring{Weyl}{Weyl}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t$>$ \\
-std\+::vector$<$\hyperlink{classMackey_1_1MackeyFunctor_a271550bc911da5c842bbc90d8bf87973}{matrix\+\_\+t}$>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::Weyl}
+std\+::vector$<$\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$rank\+\_\+t$>$ $>$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor}$<$ rank\+\_\+t $>$\+::Weyl}
 
 
 

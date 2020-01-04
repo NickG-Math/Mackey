@@ -1,0 +1,6 @@
+<map id="Mackey::Graph::computePath" name="Mackey::Graph::computePath">
+<area shape="rect" id="node2" href="$classMackey_1_1Graph.html#acda32cd8d144dcd1ec771bd8d2753321" title="A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations. " alt="" coords="249,5,452,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Graph.html#a910e6687de1a1a90df5b656e3c850a01" title="Default constructor. " alt="" coords="249,71,452,112"/>
+<area shape="rect" id="node4" href="$classMackey_1_1WeightedGraph.html#ad5932440f83ea50f802d96b44c2da5e3" title="Constructor from other graph and zero weights. " alt="" coords="267,136,434,177"/>
+<area shape="rect" id="node5" href="$classMackey_1_1ColoredGraph.html#a2e2d70fa6163019d8bf0dd92b3d39342" title="Construct given Graph and colors. " alt="" coords="273,201,429,243"/>
+</map>

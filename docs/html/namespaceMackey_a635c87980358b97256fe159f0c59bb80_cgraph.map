@@ -1,0 +1,6 @@
+<map id="Mackey::normalize" name="Mackey::normalize">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93" title="Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1. ..." alt="" coords="185,5,349,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="397,56,495,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="215,107,320,133"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="397,107,495,133"/>
+</map>

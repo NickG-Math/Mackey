@@ -25,8 +25,6 @@ class \hyperlink{classMackey_1_1ChangeBasis}{Change\+Basis}
 \begin{DoxyCompactList}\small\item\em The change of basis permutation matrices needed for the box product. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1ColoredGraph}{Colored\+Graph}
 \begin{DoxyCompactList}\small\item\em A directed \hyperlink{classMackey_1_1Graph}{Graph} with two colors. \end{DoxyCompactList}\item 
-class \hyperlink{classMackey_1_1CommonSmith}{Common\+Smith}
-\begin{DoxyCompactList}\small\item\em The common variables and methods for the two \hyperlink{classMackey_1_1Smith}{Smith} Normal Form implementations. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1Factorization}{Factorization}
 \begin{DoxyCompactList}\small\item\em Factorizes generators into the given basic irreducibles and sources. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1Graph}{Graph}
@@ -37,6 +35,12 @@ class \hyperlink{classMackey_1_1Homology}{Homology}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_1Junction}{Junction}. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}
 \begin{DoxyCompactList}\small\item\em Stores detailed identification data for the generators in non cyclic homology groups using the \hyperlink{namespaceMackey}{Mackey} functor structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structMackey_1_1is__Dense}{is\+\_\+\+Dense}
+\begin{DoxyCompactList}\small\item\em Detect \hyperlink{namespaceEigen}{Eigen} Dense matrices. \end{DoxyCompactList}\item 
+struct \hyperlink{structMackey_1_1is__Finite__Cyclic}{is\+\_\+\+Finite\+\_\+\+Cyclic}
+\begin{DoxyCompactList}\small\item\em Detects finite coefficients Z$<$\+N$>$ \end{DoxyCompactList}\item 
+struct \hyperlink{structMackey_1_1is__Sparse}{is\+\_\+\+Sparse}
+\begin{DoxyCompactList}\small\item\em Detect \hyperlink{namespaceEigen}{Eigen} Sparse matrices. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1Junction}{Junction}
 \begin{DoxyCompactList}\small\item\em The input for \hyperlink{classMackey_1_1Homology}{Homology}, consisting of an entering and an exiting differential. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1JunctionBox}{Junction\+Box}
@@ -56,14 +60,38 @@ class \hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}
 class \hyperlink{classMackey_1_1Polynomial}{Polynomial}
 \begin{DoxyCompactList}\small\item\em Formal polynomials with arbitrary coefficients. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1Smith}{Smith}
-\begin{DoxyCompactList}\small\item\em The safe \hyperlink{classMackey_1_1Smith}{Smith} Normal Form implementation for general coefficients. \end{DoxyCompactList}\item 
-class \hyperlink{classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4}{Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, decltype(\+S\+\_\+t\+::\+Scalar\+::order, void())$>$}
-\begin{DoxyCompactList}\small\item\em The fast \hyperlink{classMackey_1_1Smith}{Smith} Normal Form implementation for finite coefficients that have a member \char`\"{}order\char`\"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form and its coefficient matrices. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1SmithFP}{Smith\+FP}
+\begin{DoxyCompactList}\small\item\em The dense \hyperlink{classMackey_1_1Smith}{Smith} Normal Form using the first nonzero element as pivot. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1SmithMP}{Smith\+MP}
+\begin{DoxyCompactList}\small\item\em The dense \hyperlink{classMackey_1_1Smith}{Smith} Normal Form using the minimum (in absolute value) nonzero element as pivot. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1SmithSP}{Smith\+SP}
+\begin{DoxyCompactList}\small\item\em The dense \hyperlink{classMackey_1_1Smith}{Smith} Normal Form selecting the pivot via a Markowitz metric. \end{DoxyCompactList}\item 
+class \hyperlink{classMackey_1_1SmithSparse}{Smith\+Sparse}
+\begin{DoxyCompactList}\small\item\em The sparse \hyperlink{classMackey_1_1Smith}{Smith} Normal Form, choosing the pivot via a Markowitz metric. \end{DoxyCompactList}\item 
 class \hyperlink{classMackey_1_1WeightedGraph}{Weighted\+Graph}
 \begin{DoxyCompactList}\small\item\em A directed \hyperlink{classMackey_1_1Graph}{Graph} with weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t} = typename T\+::\+Scalar
+\begin{DoxyCompactList}\small\item\em Scalar of matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}{row\+\_\+t} = typename Eigen\+::\+Matrix$<$ \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$ T $>$, 1,-\/1 $>$
+\begin{DoxyCompactList}\small\item\em Row matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a3374980e3b5001f5ba9b206004180627}{col\+\_\+t} = typename Eigen\+::\+Matrix$<$ \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$ T $>$, -\/1, 1 $>$
+\begin{DoxyCompactList}\small\item\em Column matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t} = typename Eigen\+::\+Matrix$<$ \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$ T $>$,-\/1,-\/1 $>$
+\begin{DoxyCompactList}\small\item\em Column major. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_ac1c9f85957dda772ceaa564cb23494cb}{mat\+\_\+t\+\_\+r} = typename Eigen\+::\+Matrix$<$ \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$ T $>$, -\/1, -\/1, Eigen\+::\+Row\+Major $>$
+\begin{DoxyCompactList}\small\item\em Row major. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a6fae5aa6894681eabd63f02c387ac618}{spm\+\_\+t} = typename Eigen\+::\+Sparse\+Matrix$<$ \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$ T $>$, 0 $>$
+\begin{DoxyCompactList}\small\item\em Column major sparse. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a43f350029dd91403df428883f202a7b6}{spm\+\_\+t\+\_\+r} = typename Eigen\+::\+Sparse\+Matrix$<$ \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$ T $>$, 1 $>$
+\begin{DoxyCompactList}\small\item\em Row major sparse. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \hyperlink{namespaceMackey_a5048063727afe2ed842d6bff76cef28e}{Gen\+\_\+t} = typename \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{namespaceMackey_a5048063727afe2ed842d6bff76cef28e}{Gen\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Type of Generator matrices in homology. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} = typename \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Type of generators in homology. \end{DoxyCompactList}\item 
 typedef int \hyperlink{namespaceMackey_a4f147e328c520f568f5d3adf1c75f514}{p\+Scalar}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -75,16 +103,16 @@ typedef int \hyperlink{namespaceMackey_a4f147e328c520f568f5d3adf1c75f514}{p\+Sca
 \begin{DoxyCompactList}\small\item\em Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.) allowing negative entries. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename S $>$ }\\bool \hyperlink{namespaceMackey_aa96cf972d89b207ce6709e867f760f37}{check\+\_\+isomorphism\+\_\+p\+\_\+group} (int p, const T \&a, const S \&p\+Group)
 \begin{DoxyCompactList}\small\item\em Checks if integer matrix induces an isomorphism p\+Group-\/$>$p\+Group for finite abelian p-\/group. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Scalar $>$ }\\std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ $>$ \hyperlink{namespaceMackey_ab3832e52497b387d4553af06aa26ec99}{aut\+\_\+p\+\_\+group} (int p, const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&p\+Group)
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ T $>$ $>$ \hyperlink{namespaceMackey_a918f02198f6daadfd0c93109b63b2f1f}{aut\+\_\+p\+\_\+group} (int p, const T \&p\+Group)
 \begin{DoxyCompactList}\small\item\em Returns all automorphisms of finite abelian p-\/group. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Scalar $>$ }\\std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ $>$ \hyperlink{namespaceMackey_ac8552763cbbe02f22cedc11c6f8434da}{inverses} (const std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$$>$ \&isos, const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&Group)
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ T $>$ $>$ \hyperlink{namespaceMackey_a8c1525b210b4699780bbe05cb16f0e7b}{inverses} (const std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ T $>$$>$ \&isos, const T \&Group)
 \begin{DoxyCompactList}\small\item\em Returns the inverses of all the automorphisms Group-\/$>$Group. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_aa136aece9117704b3e5180d92484ed10}{primes} (int n)
 \begin{DoxyCompactList}\small\item\em Returns all primes up to n. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a2b6ac22efe0be546f2c3f8abc2ceb5b7}{is\+\_\+p\+\_\+group} (const T \&Group)
 \begin{DoxyCompactList}\small\item\em Finds if given abelian group is actually a p-\/group and returns the p if so (otherwise returns 0) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Scalar $>$ }\\std\+::pair$<$ std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ $>$, std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ $>$ $>$ \hyperlink{namespaceMackey_ac9020d176548a99b3119cd7bda15941d}{all\+\_\+automorphisms} (const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&Group)
-\begin{DoxyCompactList}\small\item\em Returns all automorphisms of a finitely generated abelian group together with their inverses. Currently only for p-\/groups and Z+p-\/groups (otherwise returns empty) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::pair$<$ std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ T $>$ $>$, std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ T $>$ $>$ $>$ \hyperlink{namespaceMackey_a2556e2a1f78783585df78de1c1b35eae}{all\+\_\+automorphisms} (const T \&Group)
+\item 
 {\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_aaa0ce7673970bf261628768fb11a1995}{rankmult} (const rank\+\_\+t \&A, const rank\+\_\+t \&B)
 \begin{DoxyCompactList}\small\item\em The tensor product of ranks of modules A,B. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\std\+::pair$<$ rank\+\_\+t, std\+::vector$<$ rank\+\_\+t $>$ $>$ \hyperlink{namespaceMackey_a1257ce64369e72438023fd4e261c7c83}{rank\+Box} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int i)
@@ -98,6 +126,8 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_aa136aece9117704b3e5180d9248
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\\hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a72abbe3708c4e77936c8cc42fbc6753a}{Box} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D)
 \begin{DoxyCompactList}\small\item\em Get the entire box product of C,D. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_a43cf712cb611ddbafa91b005a911436e}{serialize} (Archive \&archive, \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1Chains}{Chains} cerealize. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_a1cb51476ba1b1022264da5ba324b73f5}{serialize} (Archive \&archive, \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&H)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1Chains}{Chains} cerealize. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive , typename rank\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_ac78e550c9949977ed71367fb21892e93}{serialize} (Archive \&archive, \hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$ rank\+\_\+t $>$ \&ID)
 \begin{DoxyCompactList}\small\item\em I\+D\+Generator cerealize. \end{DoxyCompactList}\item 
@@ -131,13 +161,13 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_aa136aece9117704b3e5180d9248
 \begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classMackey_1_1Chains}{Chains} of any given given sphere. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a1c195484cc947abef84c726b534af5a5}{Homology\+Levels} (const \hyperlink{classMackey_1_1Levels}{Levels}$<$ \hyperlink{classMackey_1_1Junction}{Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$ $>$ \&J)
 \begin{DoxyCompactList}\small\item\em The \hyperlink{namespaceMackey}{Mackey} functor \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_1Junction}{Junction} of \hyperlink{namespaceMackey}{Mackey} functors. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ $>$ \hyperlink{namespaceMackey_a58708ee937b0c4172b7cde8e5f856504}{R\+O\+Homology} (const deg\+\_\+t \&sphere)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ }\\std\+::vector$<$ \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ $>$ \hyperlink{namespaceMackey_a58708ee937b0c4172b7cde8e5f856504}{R\+O\+Homology} (const deg\+\_\+t \&sphere)
 \begin{DoxyCompactList}\small\item\em Computes the \hyperlink{namespaceMackey}{Mackey} functor homology of the given sphere. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, int select\+First, int select\+Second)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, int select\+First, int select\+Second)
 \begin{DoxyCompactList}\small\item\em Computes the product of two generators in the R\+O(\+G) homology given their level, degrees and selections (if noncyclic) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a07d3b1e748c6cf2fd8a6e21b948a0afe}{R\+O\+Green} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a07d3b1e748c6cf2fd8a6e21b948a0afe}{R\+O\+Green} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second)
 \begin{DoxyCompactList}\small\item\em Computes the product of two generators in the R\+O(\+G) homology given their level, degrees and default 0,0 selections (if noncyclic) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\\hyperlink{classMackey_1_1Massey}{Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_ab75d7bcfa2d92d01bea0d5eef9f48398}{R\+O\+Massey} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, const deg\+\_\+t \&third, int select\+First, int select\+Second, int select\+Third)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ }\\\hyperlink{classMackey_1_1Massey}{Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_ab75d7bcfa2d92d01bea0d5eef9f48398}{R\+O\+Massey} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, const deg\+\_\+t \&third, int select\+First, int select\+Second, int select\+Third)
 \begin{DoxyCompactList}\small\item\em Computes the \hyperlink{classMackey_1_1Massey}{Massey} product of three generators in the R\+O(\+G) homology given their level, degrees and selections (if noncyclic) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\\hyperlink{classMackey_1_1Massey}{Massey}$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a7301f53f372c1dc670b4c10f878137a2}{R\+O\+Massey} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, const deg\+\_\+t \&third)
 \begin{DoxyCompactList}\small\item\em Computes the \hyperlink{classMackey_1_1Massey}{Massey} product of three generators in the R\+O(\+G) homology given their level, degrees and default 0,0,0 selections (if noncyclic) \end{DoxyCompactList}\item 
@@ -147,15 +177,15 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_aa136aece9117704b3e5180d9248
 \begin{DoxyCompactList}\small\item\em Given a vector of vectors v form all combinations of the form \{v\mbox{[}0\mbox{]}\mbox{[}?\mbox{]},v\mbox{[}1\mbox{]}\mbox{[}?\mbox{]},...\} for varying ? \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_a1e4b11e9d2a5b70f8380af87cae31ef3}{tail} (const T $\ast$const \&ptr, int size, int start)
 \begin{DoxyCompactList}\small\item\em Given vector or array returns vector starting from index start. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename S , std\+::enable\+\_\+if\+\_\+t$<$!is\+\_\+\+Eigen$<$ S $>$\+::value, int $>$  = 0$>$ }\\int \hyperlink{namespaceMackey_a91104eaef1ab349e68f0623cfaaf45c0}{find} (const T \&v, const S \&a)
-\begin{DoxyCompactList}\small\item\em Find first instance of a in v. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename S , std\+::enable\+\_\+if\+\_\+t$<$!is\+\_\+\+Dense$<$ S $>$\+::value, int $>$  = 0$>$ }\\int \hyperlink{namespaceMackey_a91104eaef1ab349e68f0623cfaaf45c0}{find} (const T \&v, const S \&a)
+\begin{DoxyCompactList}\small\item\em Find first instance of a in v for non \hyperlink{namespaceEigen}{Eigen} matrices. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_ac2e368bf7d802f2fc47e39a71a5a1630}{basis\+Element} (int length, int position, int multiple)
 \begin{DoxyCompactList}\small\item\em Makes the multiple of the basis vector 0,...,multiple,...,0. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_aa10c6cbea565e024a38b446139800b69}{basis\+Element} (int length, int position)
 \begin{DoxyCompactList}\small\item\em Makes the the basis vector 0,...,1,...,0. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived , typename T $>$ }\\Derived \hyperlink{namespaceMackey_abb970fabb37932c8d2084fb9cd1aff3f}{Keep\+Row} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A, const T \&\hyperlink{classZ}{Z})
+{\footnotesize template$<$typename T , typename S $>$ }\\T \hyperlink{namespaceMackey_ad6870101d4fd762100a3115abc4a15db}{Keep\+Row} (const T \&A, const S \&\hyperlink{classZ}{Z})
 \begin{DoxyCompactList}\small\item\em Makes a new matrix out of A keeping only its rows indicated by \hyperlink{classZ}{Z}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived , typename T $>$ }\\Derived \hyperlink{namespaceMackey_a165eecd4244c7e736cd453016a80ec29}{Keep\+Col} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A, const T \&\hyperlink{classZ}{Z})
+{\footnotesize template$<$typename T , typename S $>$ }\\T \hyperlink{namespaceMackey_a9a8496759bc7bb14dcaa2284ae1d0491}{Keep\+Col} (const T \&A, const S \&\hyperlink{classZ}{Z})
 \begin{DoxyCompactList}\small\item\em Makes a new matrix out of A keeping only its columns indicated by \hyperlink{classZ}{Z}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived $>$ }\\int \hyperlink{namespaceMackey_a359aa27a035d2b1f1a3f2f8270fc9e52}{summation} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Takes the sum of the entries of an \hyperlink{namespaceEigen}{Eigen} vector at higher precision than its inputs. \end{DoxyCompactList}\item 
@@ -177,6 +207,8 @@ std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_aa136aece9117704b3e5180d9248
 \begin{DoxyCompactList}\small\item\em Printing a vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a5d8ae76ffb9440e27bfca124d26ee1b2}{lcm} (const T \&v)
 \begin{DoxyCompactList}\small\item\em Least common multiple of vector of elements. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a9c9c2faea24be988cdfcd773360134be}{gcd} (const T \&v)
+\begin{DoxyCompactList}\small\item\em Least common multiple of vector of elements. \end{DoxyCompactList}\item 
 int \hyperlink{namespaceMackey_ae57418329a761aa68d26d68b637fe9dd}{hashvector} (const std\+::vector$<$ int $>$ \&deg, const std\+::vector$<$ int $>$ \&min, const std\+::vector$<$ int $>$ \&max)
 \begin{DoxyCompactList}\small\item\em Hash vector given minimum and maximum values of its entries. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_a80dbde3a859378ede596b48869ec50d9}{multiply} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int level, int degreeC, int degreeD, int selectC, int selectD)
@@ -185,9 +217,9 @@ int \hyperlink{namespaceMackey_ae57418329a761aa68d26d68b637fe9dd}{hashvector} (c
 \item 
 {\footnotesize template$<$typename T , typename S $>$ }\\int \hyperlink{namespaceMackey_a4abdca157edcf425b1e7ceff39d74c2f}{order} (const T \&element, const S \&group)
 \begin{DoxyCompactList}\small\item\em Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a320b32b8fd44ee75d9f08aa0665c4ec7}{mod\+\_\+normalize} (Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a257bcf5aabab2d73fdb13a23cb975d93}{mod\+\_\+normalize} (T \&element, const T \&group)
 \begin{DoxyCompactList}\small\item\em Normalizes the element in a group so that 0$<$=element\mbox{[}i\mbox{]}$<$=group\mbox{[}i\mbox{]} if group\mbox{[}i\mbox{]}!=1. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a43e260f55a458bed50ab6a75aef7e666}{normalize} (Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a635c87980358b97256fe159f0c59bb80}{normalize} (Eigen\+::\+Matrix$<$ T, 1,-\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
 \begin{DoxyCompactList}\small\item\em Normalizes the element in a group to have minimal signs amongst its multiples. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename S , typename R $>$ }\\bool \hyperlink{namespaceMackey_a82dd9e46100ec78b6238a3b60a5b1b45}{equals} (const T \&element1, const S \&element2, const R \&group)
 \begin{DoxyCompactList}\small\item\em Finds if two elements are equal in the given finitely generated abelian group. \end{DoxyCompactList}\item 
@@ -207,19 +239,19 @@ int \hyperlink{namespaceMackey_ae57418329a761aa68d26d68b637fe9dd}{hashvector} (c
 \begin{DoxyCompactList}\small\item\em Transfer \hyperlink{classMackey_1_1Chains}{Chains} to the desired level. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename Derived $>$ }\\Derived \hyperlink{namespaceMackey_a0550bf97e47b3c319cb5e1bd81008d89}{transfer} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
 \begin{DoxyCompactList}\small\item\em Transfer generator to level given the ranks at the original level (domain) and the target level (range). \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ }\\gen\+\_\+t \hyperlink{namespaceMackey_ad1e907ff76b07d4fc4c9d4bdf25918bd}{restriction} (const gen\+\_\+t \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
+{\footnotesize template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ }\\\hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} \hyperlink{namespaceMackey_ad1e907ff76b07d4fc4c9d4bdf25918bd}{restriction} (const \hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
 \begin{DoxyCompactList}\small\item\em Restrict generator to level given the ranks at the original level (domain) and the target level (range). \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Derived , typename T $>$ }\\void \hyperlink{namespaceMackey_aab8a6292210a3b71960cb03b79d218e6}{shiftsegment} (Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&V, int tracker, T rankvalue)
 \item 
 {\footnotesize template$<$typename rank\+\_\+t , typename Derived $>$ }\\Derived \hyperlink{namespaceMackey_aa515b26c0fbc7f19b36cee7d826f07b9}{action} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&generator, const rank\+\_\+t \&rank)
 \begin{DoxyCompactList}\small\item\em Compute the Weyl group action on a generator given the rank of the group it lives in. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ }\\gen\+\_\+t \hyperlink{namespaceMackey_a30b5667e411ff694aa989e95e394bb41}{inv\+Res} (const gen\+\_\+t \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
+{\footnotesize template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ }\\\hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} \hyperlink{namespaceMackey_a30b5667e411ff694aa989e95e394bb41}{inv\+Res} (const \hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} \&generator, const rank\+\_\+t \&domain, const rank\+\_\+t \&range)
 \item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar,-\/1,-\/1 $>$ \hyperlink{namespaceMackey_a3f20cf0ccf7d280f6a6e308c381dc350}{transfer} (const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&low, const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&high, const rank\+\_\+t \&rank\+\_\+low, const rank\+\_\+t \&rank\+\_\+high)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_abd5b370902e8b53b32e3fd4e329f068d}{transfer} (const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&low, const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&high, const rank\+\_\+t \&rank\+\_\+low, const rank\+\_\+t \&rank\+\_\+high)
 \begin{DoxyCompactList}\small\item\em Writing the transfer of each generator in terms of the generators in the image. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1 $>$ \hyperlink{namespaceMackey_a256b1e73e413a924ce2bf0e86551a928}{restriction} (const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&high, const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&low, const rank\+\_\+t \&rank\+\_\+high, const rank\+\_\+t \&rank\+\_\+low)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a6818760aa9590810daace862e4c71f04}{restriction} (const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&high, const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&low, const rank\+\_\+t \&rank\+\_\+high, const rank\+\_\+t \&rank\+\_\+low)
 \begin{DoxyCompactList}\small\item\em Writing the restriction of each generator in terms of the generators in the image. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Eigen\+::\+Matrix$<$ typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1 $>$ \hyperlink{namespaceMackey_a2169692139cf46ac28719780e2a7f867}{action} (const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&H, const rank\+\_\+t \&rank)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_aaa66c9857ba86a13949d1b1825ea20f7}{action} (const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&H, const rank\+\_\+t \&rank)
 \begin{DoxyCompactList}\small\item\em Writing the Weyl group action on each generator in terms of the other generators. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Matrix\+\_\+t $>$ }\\Matrix\+\_\+t \hyperlink{namespaceMackey_a6d2d912037da84c6884ac62db997cc0f}{blockdiag} (const Matrix\+\_\+t \&A, const Matrix\+\_\+t \&B, int domA, int ranA, int domB, int ranB)
 \begin{DoxyCompactList}\small\item\em The sum of two linear maps. We account for a map being empty if domain/range is 0 hence why the dimensions of domains and ranges are given. \end{DoxyCompactList}\item 
@@ -249,6 +281,12 @@ int \hyperlink{namespaceMackey_ae57418329a761aa68d26d68b637fe9dd}{hashvector} (c
 \item 
 {\footnotesize template$<$typename T $>$ }\\\hyperlink{classMackey_1_1Polynomial}{Polynomial}$<$ T $>$ \hyperlink{namespaceMackey_a2b9319a9af0a3cad8cfec47e9197dc82}{geometric} (int max)
 \begin{DoxyCompactList}\small\item\em Geometric sum 1+...+x$^\wedge$\{max\}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_aabed38680919594c4ba5eaa6730a7f82}{swap} (T \&a, T \&b)
+\item 
+{\footnotesize template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ }\\\hyperlink{classMackey_1_1Smith}{Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$ \hyperlink{namespaceMackey_a276ffc8b4c9c52cfde39cd3da3c88cc9}{diagonalize} (const S\+\_\+t \&A, bool wantP, bool wantQ, bool sort)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classMackey_1_1Smith}{Smith} Normal Form of a matrix, with the coefficient matrices and sorted if desired. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ }\\\hyperlink{classMackey_1_1Smith}{Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$ \hyperlink{namespaceMackey_a2f26791310db25c7e42bf5341fdfd48d}{diagonalize} (const S\+\_\+t \&A, bool wantP, bool wantQ)
+\begin{DoxyCompactList}\small\item\em Returns the unsorted \hyperlink{classMackey_1_1Smith}{Smith} Normal Form of a matrix, with the coefficient matrices if desired. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_a4904fdc0fdcf3c23d7f3b80f59b2eafa}{intexp} (const T exponent)
 \begin{DoxyCompactList}\small\item\em Raise power to given exponent. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_aa0cac9097035c5fe8448742e22e6f78b}{intlog} (const T exponentiated)
@@ -260,9 +298,7 @@ int \hyperlink{namespaceMackey_ae57418329a761aa68d26d68b637fe9dd}{hashvector} (c
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a011b8e23bc2eedf751a9ce7bdc9e4cb9}{inv\+Reindex} (int k, const T \&sphere)
 \begin{DoxyCompactList}\small\item\em Inverse of \hyperlink{namespaceMackey_a7da73ade3ee83c4ffd614e79242d7c04}{Reindex}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\\hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_aac9deeccbe291d1dd17df46a3d7c1f2b}{Standard\+Chains} (int i, const deg\+\_\+t \&sphere)
-\begin{DoxyCompactList}\small\item\em Returns the standard \hyperlink{classMackey_1_1Chains}{Chains} of the given sphere up to index i. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\constexpr bool \hyperlink{namespaceMackey_afe8e1404c86fb9609734d3e0074ac7ed}{is\+\_\+finite\+\_\+cyclic} ()
-\begin{DoxyCompactList}\small\item\em Detects if T=Z$<$\+N$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the standard \hyperlink{classMackey_1_1Chains}{Chains} of the given sphere up to index i. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -278,6 +314,61 @@ const auto \hyperlink{namespaceMackey_af282e8433677f2812cb242359f4cd0c1}{reps} =
 The namespace for everything that is group-\/independent. 
 
 \subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceMackey_a3374980e3b5001f5ba9b206004180627}\label{namespaceMackey_a3374980e3b5001f5ba9b206004180627}} 
+\index{Mackey@{Mackey}!col\+\_\+t@{col\+\_\+t}}
+\index{col\+\_\+t@{col\+\_\+t}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{col\+\_\+t}{col\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{namespaceMackey_a3374980e3b5001f5ba9b206004180627}{Mackey\+::col\+\_\+t} = typedef typename Eigen\+::\+Matrix$<$\hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$T$>$, -\/1, 1$>$}
+
+
+
+Column matrix. 
+
+\mbox{\Hypertarget{namespaceMackey_a5048063727afe2ed842d6bff76cef28e}\label{namespaceMackey_a5048063727afe2ed842d6bff76cef28e}} 
+\index{Mackey@{Mackey}!Gen\+\_\+t@{Gen\+\_\+t}}
+\index{Gen\+\_\+t@{Gen\+\_\+t}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{Gen\+\_\+t}{Gen\_t}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+using \hyperlink{namespaceMackey_a5048063727afe2ed842d6bff76cef28e}{Mackey\+::\+Gen\+\_\+t} = typedef typename \hyperlink{classMackey_1_1Homology}{Homology}$<$rank\+\_\+t, diff\+\_\+t$>$\+::\hyperlink{namespaceMackey_a5048063727afe2ed842d6bff76cef28e}{Gen\+\_\+t}}
+
+
+
+Type of Generator matrices in homology. 
+
+\mbox{\Hypertarget{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}\label{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}} 
+\index{Mackey@{Mackey}!gen\+\_\+t@{gen\+\_\+t}}
+\index{gen\+\_\+t@{gen\+\_\+t}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{gen\+\_\+t}{gen\_t}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+using \hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{Mackey\+::gen\+\_\+t} = typedef typename \hyperlink{classMackey_1_1Homology}{Homology}$<$rank\+\_\+t, diff\+\_\+t$>$\+::\hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t}}
+
+
+
+Type of generators in homology. 
+
+\mbox{\Hypertarget{namespaceMackey_a035386035757dade630f685e508e5cf9}\label{namespaceMackey_a035386035757dade630f685e508e5cf9}} 
+\index{Mackey@{Mackey}!mat\+\_\+t@{mat\+\_\+t}}
+\index{mat\+\_\+t@{mat\+\_\+t}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{mat\+\_\+t}{mat\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{Mackey\+::mat\+\_\+t} = typedef typename Eigen\+::\+Matrix$<$\hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$T$>$,-\/1,-\/1$>$}
+
+
+
+Column major. 
+
+\mbox{\Hypertarget{namespaceMackey_ac1c9f85957dda772ceaa564cb23494cb}\label{namespaceMackey_ac1c9f85957dda772ceaa564cb23494cb}} 
+\index{Mackey@{Mackey}!mat\+\_\+t\+\_\+r@{mat\+\_\+t\+\_\+r}}
+\index{mat\+\_\+t\+\_\+r@{mat\+\_\+t\+\_\+r}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{mat\+\_\+t\+\_\+r}{mat\_t\_r}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{namespaceMackey_ac1c9f85957dda772ceaa564cb23494cb}{Mackey\+::mat\+\_\+t\+\_\+r} = typedef typename Eigen\+::\+Matrix$<$\hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$T$>$, -\/1, -\/1, Eigen\+::\+Row\+Major$>$}
+
+
+
+Row major. 
+
 \mbox{\Hypertarget{namespaceMackey_a4f147e328c520f568f5d3adf1c75f514}\label{namespaceMackey_a4f147e328c520f568f5d3adf1c75f514}} 
 \index{Mackey@{Mackey}!p\+Scalar@{p\+Scalar}}
 \index{p\+Scalar@{p\+Scalar}!Mackey@{Mackey}}
@@ -286,7 +377,51 @@ The namespace for everything that is group-\/independent.
 
 The integer type for the permutation matrices.
 
-Int for everything (including \hyperlink{classMackey_1_1Massey}{Massey} products), short for everything else, char is only good for the additive structure. 
+Int for everything (including \hyperlink{classMackey_1_1Massey}{Massey} products), short for everything else, char is only good for the additive structure. \mbox{\Hypertarget{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}\label{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}} 
+\index{Mackey@{Mackey}!row\+\_\+t@{row\+\_\+t}}
+\index{row\+\_\+t@{row\+\_\+t}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{row\+\_\+t}{row\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}{Mackey\+::row\+\_\+t} = typedef typename Eigen\+::\+Matrix$<$\hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$T$>$,1,-\/1$>$}
+
+
+
+Row matrix. 
+
+\mbox{\Hypertarget{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}\label{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}} 
+\index{Mackey@{Mackey}!Scalar\+\_\+t@{Scalar\+\_\+t}}
+\index{Scalar\+\_\+t@{Scalar\+\_\+t}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{Scalar\+\_\+t}{Scalar\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Mackey\+::\+Scalar\+\_\+t} = typedef typename T\+::\+Scalar}
+
+
+
+Scalar of matrix. 
+
+\mbox{\Hypertarget{namespaceMackey_a6fae5aa6894681eabd63f02c387ac618}\label{namespaceMackey_a6fae5aa6894681eabd63f02c387ac618}} 
+\index{Mackey@{Mackey}!spm\+\_\+t@{spm\+\_\+t}}
+\index{spm\+\_\+t@{spm\+\_\+t}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{spm\+\_\+t}{spm\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{namespaceMackey_a6fae5aa6894681eabd63f02c387ac618}{Mackey\+::spm\+\_\+t} = typedef typename Eigen\+::\+Sparse\+Matrix$<$\hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$T$>$, 0$>$}
+
+
+
+Column major sparse. 
+
+\mbox{\Hypertarget{namespaceMackey_a43f350029dd91403df428883f202a7b6}\label{namespaceMackey_a43f350029dd91403df428883f202a7b6}} 
+\index{Mackey@{Mackey}!spm\+\_\+t\+\_\+r@{spm\+\_\+t\+\_\+r}}
+\index{spm\+\_\+t\+\_\+r@{spm\+\_\+t\+\_\+r}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{spm\+\_\+t\+\_\+r}{spm\_t\_r}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \hyperlink{namespaceMackey_a43f350029dd91403df428883f202a7b6}{Mackey\+::spm\+\_\+t\+\_\+r} = typedef typename Eigen\+::\+Sparse\+Matrix$<$\hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Scalar\+\_\+t}$<$T$>$, 1$>$}
+
+
+
+Row major sparse. 
+
+
 
 \subsection{Function Documentation}
 \mbox{\Hypertarget{namespaceMackey_aa515b26c0fbc7f19b36cee7d826f07b9}\label{namespaceMackey_aa515b26c0fbc7f19b36cee7d826f07b9}} 
@@ -304,7 +439,7 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=312pt]{namespaceMackey_aa515b26c0fbc7f19b36cee7d826f07b9_cgraph}
+\includegraphics[width=350pt]{namespaceMackey_aa515b26c0fbc7f19b36cee7d826f07b9_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
@@ -314,12 +449,12 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=329pt]{namespaceMackey_aa515b26c0fbc7f19b36cee7d826f07b9_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_a2169692139cf46ac28719780e2a7f867}\label{namespaceMackey_a2169692139cf46ac28719780e2a7f867}} 
+\mbox{\Hypertarget{namespaceMackey_aaa66c9857ba86a13949d1b1825ea20f7}\label{namespaceMackey_aaa66c9857ba86a13949d1b1825ea20f7}} 
 \index{Mackey@{Mackey}!action@{action}}
 \index{action@{action}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{action()}{action()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-Eigen\+::\+Matrix$<$typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1$>$ Mackey\+::action (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{H,  }\item[{const rank\+\_\+t \&}]{rank }\end{DoxyParamCaption})}
+\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$rank\+\_\+t$>$ Mackey\+::action (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{H,  }\item[{const rank\+\_\+t \&}]{rank }\end{DoxyParamCaption})}
 
 
 
@@ -329,32 +464,28 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_a2169692139cf46ac28719780e2a7f867_cgraph}
+\includegraphics[width=350pt]{namespaceMackey_aaa66c9857ba86a13949d1b1825ea20f7_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_ac9020d176548a99b3119cd7bda15941d}\label{namespaceMackey_ac9020d176548a99b3119cd7bda15941d}} 
+\mbox{\Hypertarget{namespaceMackey_a2556e2a1f78783585df78de1c1b35eae}\label{namespaceMackey_a2556e2a1f78783585df78de1c1b35eae}} 
 \index{Mackey@{Mackey}!all\+\_\+automorphisms@{all\+\_\+automorphisms}}
 \index{all\+\_\+automorphisms@{all\+\_\+automorphisms}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{all\+\_\+automorphisms()}{all\_automorphisms()}}
-{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
-std\+::pair$<$std\+::vector$<$Eigen\+::\+Matrix$<$Scalar, -\/1, -\/1$>$ $>$, std\+::vector$<$Eigen\+::\+Matrix$<$Scalar, -\/1, -\/1$>$ $>$ $>$ Mackey\+::all\+\_\+automorphisms (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&}]{Group }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::pair$<$std\+::vector$<$\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$T$>$ $>$, std\+::vector$<$\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$T$>$ $>$ $>$ Mackey\+::all\+\_\+automorphisms (\begin{DoxyParamCaption}\item[{const T \&}]{Group }\end{DoxyParamCaption})}
 
-
-
-Returns all automorphisms of a finitely generated abelian group together with their inverses. Currently only for p-\/groups and Z+p-\/groups (otherwise returns empty) 
-
-Here is the call graph for this function\+:\nopagebreak
+Returns all automorphisms of a finitely generated abelian group together with their inverses. Currently only for p-\/groups and Z+p-\/groups (otherwise returns empty) Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_ac9020d176548a99b3119cd7bda15941d_cgraph}
+\includegraphics[width=350pt]{namespaceMackey_a2556e2a1f78783585df78de1c1b35eae_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_ac9020d176548a99b3119cd7bda15941d_icgraph}
+\includegraphics[width=350pt]{namespaceMackey_a2556e2a1f78783585df78de1c1b35eae_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}\label{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}} 
@@ -372,15 +503,15 @@ Eg for m=2, n=2, v=\{a,b\} we get \{a,b // b,a\} Here is the call graph for this
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=293pt]{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be_cgraph}
+\includegraphics[width=350pt]{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_ab3832e52497b387d4553af06aa26ec99}\label{namespaceMackey_ab3832e52497b387d4553af06aa26ec99}} 
+\mbox{\Hypertarget{namespaceMackey_a918f02198f6daadfd0c93109b63b2f1f}\label{namespaceMackey_a918f02198f6daadfd0c93109b63b2f1f}} 
 \index{Mackey@{Mackey}!aut\+\_\+p\+\_\+group@{aut\+\_\+p\+\_\+group}}
 \index{aut\+\_\+p\+\_\+group@{aut\+\_\+p\+\_\+group}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{aut\+\_\+p\+\_\+group()}{aut\_p\_group()}}
-{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
-std\+::vector$<$Eigen\+::\+Matrix$<$Scalar, -\/1, -\/1$>$ $>$ Mackey\+::aut\+\_\+p\+\_\+group (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&}]{p\+Group }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$T$>$ $>$ Mackey\+::aut\+\_\+p\+\_\+group (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{const T \&}]{p\+Group }\end{DoxyParamCaption})}
 
 
 
@@ -390,14 +521,14 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_ab3832e52497b387d4553af06aa26ec99_cgraph}
+\includegraphics[width=350pt]{namespaceMackey_a918f02198f6daadfd0c93109b63b2f1f_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_ab3832e52497b387d4553af06aa26ec99_icgraph}
+\includegraphics[width=350pt]{namespaceMackey_a918f02198f6daadfd0c93109b63b2f1f_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_ac2e368bf7d802f2fc47e39a71a5a1630}\label{namespaceMackey_ac2e368bf7d802f2fc47e39a71a5a1630}} 
@@ -538,7 +669,7 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=292pt]{namespaceMackey_aa96cf972d89b207ce6709e867f760f37_cgraph}
+\includegraphics[width=333pt]{namespaceMackey_aa96cf972d89b207ce6709e867f760f37_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
@@ -584,6 +715,28 @@ For example if minimum=\{-\/1,-\/1\} and maximum=\{2,3\} then the result is \{\{
 \includegraphics[width=350pt]{namespaceMackey_a49fef6f64b67ff118d35ac45b9c92972_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{namespaceMackey_a276ffc8b4c9c52cfde39cd3da3c88cc9}\label{namespaceMackey_a276ffc8b4c9c52cfde39cd3da3c88cc9}} 
+\index{Mackey@{Mackey}!diagonalize@{diagonalize}}
+\index{diagonalize@{diagonalize}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{diagonalize()}{diagonalize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Smith}{Smith}$<$S\+\_\+t, R\+\_\+t, C\+\_\+t$>$ Mackey\+::diagonalize (\begin{DoxyParamCaption}\item[{const S\+\_\+t \&}]{A,  }\item[{bool}]{wantP,  }\item[{bool}]{wantQ,  }\item[{bool}]{sort }\end{DoxyParamCaption})}
+
+
+
+Returns the \hyperlink{classMackey_1_1Smith}{Smith} Normal Form of a matrix, with the coefficient matrices and sorted if desired. 
+
+\mbox{\Hypertarget{namespaceMackey_a2f26791310db25c7e42bf5341fdfd48d}\label{namespaceMackey_a2f26791310db25c7e42bf5341fdfd48d}} 
+\index{Mackey@{Mackey}!diagonalize@{diagonalize}}
+\index{diagonalize@{diagonalize}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{diagonalize()}{diagonalize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Smith}{Smith}$<$S\+\_\+t, R\+\_\+t, C\+\_\+t$>$ Mackey\+::diagonalize (\begin{DoxyParamCaption}\item[{const S\+\_\+t \&}]{A,  }\item[{bool}]{wantP,  }\item[{bool}]{wantQ }\end{DoxyParamCaption})}
+
+
+
+Returns the unsorted \hyperlink{classMackey_1_1Smith}{Smith} Normal Form of a matrix, with the coefficient matrices if desired. 
+
 \mbox{\Hypertarget{namespaceMackey_a6a5d40e69e5628ea84896ee43f4a91fa}\label{namespaceMackey_a6a5d40e69e5628ea84896ee43f4a91fa}} 
 \index{Mackey@{Mackey}!dimension@{dimension}}
 \index{dimension@{dimension}!Mackey@{Mackey}}
@@ -670,18 +823,36 @@ T,S,R are vectors or 1d \hyperlink{namespaceEigen}{Eigen} matrices Here is the c
 \index{Mackey@{Mackey}!find@{find}}
 \index{find@{find}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{find()}{find()}}
-{\footnotesize\ttfamily template$<$typename T , typename S , std\+::enable\+\_\+if\+\_\+t$<$!is\+\_\+\+Eigen$<$ S $>$\+::value, int $>$  = 0$>$ \\
+{\footnotesize\ttfamily template$<$typename T , typename S , std\+::enable\+\_\+if\+\_\+t$<$!is\+\_\+\+Dense$<$ S $>$\+::value, int $>$  = 0$>$ \\
 int Mackey\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{v,  }\item[{const S \&}]{a }\end{DoxyParamCaption})}
 
 
 
-Find first instance of a in v. 
+Find first instance of a in v for non \hyperlink{namespaceEigen}{Eigen} matrices. 
+
+Find first instance of a in v for \hyperlink{namespaceEigen}{Eigen} matrices. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceMackey_a91104eaef1ab349e68f0623cfaaf45c0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceMackey_a9c9c2faea24be988cdfcd773360134be}\label{namespaceMackey_a9c9c2faea24be988cdfcd773360134be}} 
+\index{Mackey@{Mackey}!gcd@{gcd}}
+\index{gcd@{gcd}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int Mackey\+::gcd (\begin{DoxyParamCaption}\item[{const T \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Least common multiple of vector of elements. 
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_a91104eaef1ab349e68f0623cfaaf45c0_icgraph}
+\includegraphics[width=350pt]{namespaceMackey_a9c9c2faea24be988cdfcd773360134be_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a2b9319a9af0a3cad8cfec47e9197dc82}\label{namespaceMackey_a2b9319a9af0a3cad8cfec47e9197dc82}} 
@@ -784,12 +955,12 @@ T Mackey\+::intlog (\begin{DoxyParamCaption}\item[{const T}]{exponentiated }\end
 
 Compute log(exponentiated) with base power. 
 
-\mbox{\Hypertarget{namespaceMackey_ac8552763cbbe02f22cedc11c6f8434da}\label{namespaceMackey_ac8552763cbbe02f22cedc11c6f8434da}} 
+\mbox{\Hypertarget{namespaceMackey_a8c1525b210b4699780bbe05cb16f0e7b}\label{namespaceMackey_a8c1525b210b4699780bbe05cb16f0e7b}} 
 \index{Mackey@{Mackey}!inverses@{inverses}}
 \index{inverses@{inverses}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{inverses()}{inverses()}}
-{\footnotesize\ttfamily template$<$typename Scalar $>$ \\
-std\+::vector$<$Eigen\+::\+Matrix$<$Scalar, -\/1, -\/1$>$ $>$ Mackey\+::inverses (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$$>$ \&}]{isos,  }\item[{const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&}]{Group }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$T$>$ $>$ Mackey\+::inverses (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$ T $>$$>$ \&}]{isos,  }\item[{const T \&}]{Group }\end{DoxyParamCaption})}
 
 
 
@@ -799,14 +970,14 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=309pt]{namespaceMackey_ac8552763cbbe02f22cedc11c6f8434da_cgraph}
+\includegraphics[width=309pt]{namespaceMackey_a8c1525b210b4699780bbe05cb16f0e7b_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_ac8552763cbbe02f22cedc11c6f8434da_icgraph}
+\includegraphics[width=350pt]{namespaceMackey_a8c1525b210b4699780bbe05cb16f0e7b_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a5efb3695c450e4e590b86f20700f726b}\label{namespaceMackey_a5efb3695c450e4e590b86f20700f726b}} 
@@ -850,7 +1021,7 @@ Inverse of \hyperlink{namespaceMackey_a7da73ade3ee83c4ffd614e79242d7c04}{Reindex
 \index{inv\+Res@{inv\+Res}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{inv\+Res()}{invRes()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ \\
-gen\+\_\+t Mackey\+::inv\+Res (\begin{DoxyParamCaption}\item[{const gen\+\_\+t \&}]{generator,  }\item[{const rank\+\_\+t \&}]{domain,  }\item[{const rank\+\_\+t \&}]{range }\end{DoxyParamCaption})}
+\hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} Mackey\+::inv\+Res (\begin{DoxyParamCaption}\item[{const \hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} \&}]{generator,  }\item[{const rank\+\_\+t \&}]{domain,  }\item[{const rank\+\_\+t \&}]{range }\end{DoxyParamCaption})}
 
 The inverse of the restriction function on a generator given the ranks at the original level (domain) and the target level (range).
 
@@ -861,17 +1032,6 @@ Recall that free \hyperlink{namespaceMackey}{Mackey} functors have injective res
 \includegraphics[width=309pt]{namespaceMackey_a30b5667e411ff694aa989e95e394bb41_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_afe8e1404c86fb9609734d3e0074ac7ed}\label{namespaceMackey_afe8e1404c86fb9609734d3e0074ac7ed}} 
-\index{Mackey@{Mackey}!is\+\_\+finite\+\_\+cyclic@{is\+\_\+finite\+\_\+cyclic}}
-\index{is\+\_\+finite\+\_\+cyclic@{is\+\_\+finite\+\_\+cyclic}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{is\+\_\+finite\+\_\+cyclic()}{is\_finite\_cyclic()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-constexpr bool Mackey\+::is\+\_\+finite\+\_\+cyclic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Detects if T=Z$<$\+N$>$ 
-
 \mbox{\Hypertarget{namespaceMackey_a2b6ac22efe0be546f2c3f8abc2ceb5b7}\label{namespaceMackey_a2b6ac22efe0be546f2c3f8abc2ceb5b7}} 
 \index{Mackey@{Mackey}!is\+\_\+p\+\_\+group@{is\+\_\+p\+\_\+group}}
 \index{is\+\_\+p\+\_\+group@{is\+\_\+p\+\_\+group}!Mackey@{Mackey}}
@@ -940,12 +1100,12 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{namespaceMackey_a4c3647777bc890a4649ae24b138bbb79_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_a165eecd4244c7e736cd453016a80ec29}\label{namespaceMackey_a165eecd4244c7e736cd453016a80ec29}} 
+\mbox{\Hypertarget{namespaceMackey_a9a8496759bc7bb14dcaa2284ae1d0491}\label{namespaceMackey_a9a8496759bc7bb14dcaa2284ae1d0491}} 
 \index{Mackey@{Mackey}!Keep\+Col@{Keep\+Col}}
 \index{Keep\+Col@{Keep\+Col}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{Keep\+Col()}{KeepCol()}}
-{\footnotesize\ttfamily template$<$typename Derived , typename T $>$ \\
-Derived Mackey\+::\+Keep\+Col (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&}]{A,  }\item[{const T \&}]{Z }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T , typename S $>$ \\
+T Mackey\+::\+Keep\+Col (\begin{DoxyParamCaption}\item[{const T \&}]{A,  }\item[{const S \&}]{Z }\end{DoxyParamCaption})}
 
 
 
@@ -955,15 +1115,15 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_a165eecd4244c7e736cd453016a80ec29_icgraph}
+\includegraphics[width=350pt]{namespaceMackey_a9a8496759bc7bb14dcaa2284ae1d0491_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_abb970fabb37932c8d2084fb9cd1aff3f}\label{namespaceMackey_abb970fabb37932c8d2084fb9cd1aff3f}} 
+\mbox{\Hypertarget{namespaceMackey_ad6870101d4fd762100a3115abc4a15db}\label{namespaceMackey_ad6870101d4fd762100a3115abc4a15db}} 
 \index{Mackey@{Mackey}!Keep\+Row@{Keep\+Row}}
 \index{Keep\+Row@{Keep\+Row}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{Keep\+Row()}{KeepRow()}}
-{\footnotesize\ttfamily template$<$typename Derived , typename T $>$ \\
-Derived Mackey\+::\+Keep\+Row (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&}]{A,  }\item[{const T \&}]{Z }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T , typename S $>$ \\
+T Mackey\+::\+Keep\+Row (\begin{DoxyParamCaption}\item[{const T \&}]{A,  }\item[{const S \&}]{Z }\end{DoxyParamCaption})}
 
 
 
@@ -973,7 +1133,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_abb970fabb37932c8d2084fb9cd1aff3f_icgraph}
+\includegraphics[width=350pt]{namespaceMackey_ad6870101d4fd762100a3115abc4a15db_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a5d8ae76ffb9440e27bfca124d26ee1b2}\label{namespaceMackey_a5d8ae76ffb9440e27bfca124d26ee1b2}} 
@@ -1041,12 +1201,12 @@ We utilize the observation that with the exception of \hyperlink{classMackey_1_1
 \includegraphics[width=342pt]{namespaceMackey_a70952d513d08b47bc282441a3e9d732c_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_a320b32b8fd44ee75d9f08aa0665c4ec7}\label{namespaceMackey_a320b32b8fd44ee75d9f08aa0665c4ec7}} 
+\mbox{\Hypertarget{namespaceMackey_a257bcf5aabab2d73fdb13a23cb975d93}\label{namespaceMackey_a257bcf5aabab2d73fdb13a23cb975d93}} 
 \index{Mackey@{Mackey}!mod\+\_\+normalize@{mod\+\_\+normalize}}
 \index{mod\+\_\+normalize@{mod\+\_\+normalize}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{mod\+\_\+normalize()}{mod\_normalize()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-void Mackey\+::mod\+\_\+normalize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&}]{element,  }\item[{const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&}]{group }\end{DoxyParamCaption})}
+void Mackey\+::mod\+\_\+normalize (\begin{DoxyParamCaption}\item[{T \&}]{element,  }\item[{const T \&}]{group }\end{DoxyParamCaption})}
 
 
 
@@ -1056,7 +1216,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=338pt]{namespaceMackey_a320b32b8fd44ee75d9f08aa0665c4ec7_icgraph}
+\includegraphics[width=338pt]{namespaceMackey_a257bcf5aabab2d73fdb13a23cb975d93_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a80dbde3a859378ede596b48869ec50d9}\label{namespaceMackey_a80dbde3a859378ede596b48869ec50d9}} 
@@ -1112,12 +1272,12 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{namespaceMackey_a40d5c8d3e43cd2ee3df09664bc8c56ea_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_a43e260f55a458bed50ab6a75aef7e666}\label{namespaceMackey_a43e260f55a458bed50ab6a75aef7e666}} 
+\mbox{\Hypertarget{namespaceMackey_a635c87980358b97256fe159f0c59bb80}\label{namespaceMackey_a635c87980358b97256fe159f0c59bb80}} 
 \index{Mackey@{Mackey}!normalize@{normalize}}
 \index{normalize@{normalize}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{normalize()}{normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-void Mackey\+::normalize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&}]{element,  }\item[{const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&}]{group }\end{DoxyParamCaption})}
+void Mackey\+::normalize (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix$<$ T, 1,-\/1 $>$ \&}]{element,  }\item[{const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&}]{group }\end{DoxyParamCaption})}
 
 
 
@@ -1127,7 +1287,7 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_a43e260f55a458bed50ab6a75aef7e666_cgraph}
+\includegraphics[width=350pt]{namespaceMackey_a635c87980358b97256fe159f0c59bb80_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a463bb762b4edc2f283e8d1c0c466aedf}\label{namespaceMackey_a463bb762b4edc2f283e8d1c0c466aedf}} 
@@ -1449,7 +1609,7 @@ Reindexes the homological degree k so that it is always 0$<$=k$<$=dimension(sphe
 \index{restriction@{restriction}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{restriction()}{restriction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename gen\+\_\+t $>$ \\
-gen\+\_\+t Mackey\+::restriction (\begin{DoxyParamCaption}\item[{const gen\+\_\+t \&}]{generator,  }\item[{const rank\+\_\+t \&}]{domain,  }\item[{const rank\+\_\+t \&}]{range }\end{DoxyParamCaption})}
+\hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} Mackey\+::restriction (\begin{DoxyParamCaption}\item[{const \hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{gen\+\_\+t} \&}]{generator,  }\item[{const rank\+\_\+t \&}]{domain,  }\item[{const rank\+\_\+t \&}]{range }\end{DoxyParamCaption})}
 
 
 
@@ -1469,12 +1629,12 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{namespaceMackey_ad1e907ff76b07d4fc4c9d4bdf25918bd_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_a256b1e73e413a924ce2bf0e86551a928}\label{namespaceMackey_a256b1e73e413a924ce2bf0e86551a928}} 
+\mbox{\Hypertarget{namespaceMackey_a6818760aa9590810daace862e4c71f04}\label{namespaceMackey_a6818760aa9590810daace862e4c71f04}} 
 \index{Mackey@{Mackey}!restriction@{restriction}}
 \index{restriction@{restriction}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{restriction()}{restriction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-Eigen\+::\+Matrix$<$typename rank\+\_\+t\+::\+Scalar, -\/1, -\/1$>$ Mackey\+::restriction (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{high,  }\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{low,  }\item[{const rank\+\_\+t \&}]{rank\+\_\+high,  }\item[{const rank\+\_\+t \&}]{rank\+\_\+low }\end{DoxyParamCaption})}
+\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$rank\+\_\+t$>$ Mackey\+::restriction (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{high,  }\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{low,  }\item[{const rank\+\_\+t \&}]{rank\+\_\+high,  }\item[{const rank\+\_\+t \&}]{rank\+\_\+low }\end{DoxyParamCaption})}
 
 
 
@@ -1484,7 +1644,7 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_a256b1e73e413a924ce2bf0e86551a928_cgraph}
+\includegraphics[width=350pt]{namespaceMackey_a6818760aa9590810daace862e4c71f04_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a08fd3743ffb625fceca454da757dfa5d}\label{namespaceMackey_a08fd3743ffb625fceca454da757dfa5d}} 
@@ -1520,7 +1680,7 @@ Here is the call graph for this function\+:\nopagebreak
 \index{Mackey@{Mackey}!R\+O\+Green@{R\+O\+Green}}
 \index{R\+O\+Green@{R\+O\+Green}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{R\+O\+Green()}{ROGreen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ \\
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ \\
 rank\+\_\+t Mackey\+::\+R\+O\+Green (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const deg\+\_\+t \&}]{first,  }\item[{const deg\+\_\+t \&}]{second,  }\item[{int}]{select\+First,  }\item[{int}]{select\+Second }\end{DoxyParamCaption})}
 
 
@@ -1538,7 +1698,7 @@ Here is the call graph for this function\+:\nopagebreak
 \index{Mackey@{Mackey}!R\+O\+Green@{R\+O\+Green}}
 \index{R\+O\+Green@{R\+O\+Green}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{R\+O\+Green()}{ROGreen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ \\
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ \\
 rank\+\_\+t Mackey\+::\+R\+O\+Green (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const deg\+\_\+t \&}]{first,  }\item[{const deg\+\_\+t \&}]{second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -1549,7 +1709,7 @@ Computes the product of two generators in the R\+O(\+G) homology given their lev
 \index{Mackey@{Mackey}!R\+O\+Homology@{R\+O\+Homology}}
 \index{R\+O\+Homology@{R\+O\+Homology}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{R\+O\+Homology()}{ROHomology()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ \\
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ \\
 std\+::vector$<$\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$rank\+\_\+t$>$ $>$ Mackey\+::\+R\+O\+Homology (\begin{DoxyParamCaption}\item[{const deg\+\_\+t \&}]{sphere }\end{DoxyParamCaption})}
 
 
@@ -1560,7 +1720,7 @@ Computes the \hyperlink{namespaceMackey}{Mackey} functor homology of the given s
 \index{Mackey@{Mackey}!R\+O\+Massey@{R\+O\+Massey}}
 \index{R\+O\+Massey@{R\+O\+Massey}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{R\+O\+Massey()}{ROMassey()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ \\
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ \\
 \hyperlink{classMackey_1_1Massey}{Massey}$<$rank\+\_\+t, diff\+\_\+t$>$ Mackey\+::\+R\+O\+Massey (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const deg\+\_\+t \&}]{first,  }\item[{const deg\+\_\+t \&}]{second,  }\item[{const deg\+\_\+t \&}]{third,  }\item[{int}]{select\+First,  }\item[{int}]{select\+Second,  }\item[{int}]{select\+Third }\end{DoxyParamCaption})}
 
 
@@ -1596,6 +1756,13 @@ void Mackey\+::rotate (\begin{DoxyParamCaption}\item[{T \&}]{V }\end{DoxyParamCa
 
 Circularly rotates given V (an Eigen/std vector) 
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{namespaceMackey_a38a833de54971845cbdb8c96f830725b_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -1624,9 +1791,20 @@ Here is the caller graph for this function\+:\nopagebreak
 \mbox{\Hypertarget{namespaceMackey_a43cf712cb611ddbafa91b005a911436e}\label{namespaceMackey_a43cf712cb611ddbafa91b005a911436e}} 
 \index{Mackey@{Mackey}!serialize@{serialize}}
 \index{serialize@{serialize}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
 void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  }\item[{\hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{C }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMackey_1_1Chains}{Chains} cerealize. 
+
+\mbox{\Hypertarget{namespaceMackey_a1cb51476ba1b1022264da5ba324b73f5}\label{namespaceMackey_a1cb51476ba1b1022264da5ba324b73f5}} 
+\index{Mackey@{Mackey}!serialize@{serialize}}
+\index{serialize@{serialize}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  }\item[{\hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{H }\end{DoxyParamCaption})}
 
 
 
@@ -1635,7 +1813,7 @@ void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  
 \mbox{\Hypertarget{namespaceMackey_ac78e550c9949977ed71367fb21892e93}\label{namespaceMackey_ac78e550c9949977ed71367fb21892e93}} 
 \index{Mackey@{Mackey}!serialize@{serialize}}
 \index{serialize@{serialize}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
 {\footnotesize\ttfamily template$<$typename Archive , typename rank\+\_\+t $>$ \\
 void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  }\item[{\hyperlink{classMackey_1_1IDGenerators}{I\+D\+Generators}$<$ rank\+\_\+t $>$ \&}]{ID }\end{DoxyParamCaption})}
 
@@ -1646,7 +1824,7 @@ I\+D\+Generator cerealize.
 \mbox{\Hypertarget{namespaceMackey_aa1f463e9991b727f5c74e430eccee044}\label{namespaceMackey_aa1f463e9991b727f5c74e430eccee044}} 
 \index{Mackey@{Mackey}!serialize@{serialize}}
 \index{serialize@{serialize}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
 {\footnotesize\ttfamily template$<$typename Archive , typename rank\+\_\+t $>$ \\
 void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  }\item[{\hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+Functor}$<$ rank\+\_\+t $>$ \&}]{Mack }\end{DoxyParamCaption})}
 
@@ -1657,7 +1835,7 @@ void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  
 \mbox{\Hypertarget{namespaceMackey_a73c4c78b9c9858acc875da9516535d4b}\label{namespaceMackey_a73c4c78b9c9858acc875da9516535d4b}} 
 \index{Mackey@{Mackey}!serialize@{serialize}}
 \index{serialize@{serialize}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
 {\footnotesize\ttfamily template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
 void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  }\item[{\hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{A }\end{DoxyParamCaption})}
 
@@ -1668,7 +1846,7 @@ void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  
 \mbox{\Hypertarget{namespaceMackey_ae6ccf7fecc4fc52a3c7b31876106ae2c}\label{namespaceMackey_ae6ccf7fecc4fc52a3c7b31876106ae2c}} 
 \index{Mackey@{Mackey}!serialize@{serialize}}
 \index{serialize@{serialize}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
 {\footnotesize\ttfamily template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
 void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  }\item[{\hyperlink{classMackey_1_1Green}{Green}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{G }\end{DoxyParamCaption})}
 
@@ -1679,7 +1857,7 @@ void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  
 \mbox{\Hypertarget{namespaceMackey_ae5d73f6ab42eb8fe9ae441e3ffc4b3a5}\label{namespaceMackey_ae5d73f6ab42eb8fe9ae441e3ffc4b3a5}} 
 \index{Mackey@{Mackey}!serialize@{serialize}}
 \index{serialize@{serialize}!Mackey@{Mackey}}
-\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
 void Mackey\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive,  }\item[{\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{M }\end{DoxyParamCaption})}
 
@@ -1696,7 +1874,14 @@ void Mackey\+::shiftsegment (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+B
 
 A variant of \hyperlink{namespaceMackey_a38a833de54971845cbdb8c96f830725b}{rotate} for segments of \hyperlink{namespaceEigen}{Eigen} vectors
 
-The reason we do shiftsegment(\+V,a,b) as opposed to rotate(V.\+segment(a,b)) is explained in \char`\"{}\+In which cases do functions taking a plain Matrix or Array argument fail?\char`\"{} of \hyperlink{namespaceEigen}{Eigen} documentation. The trick there results in segmentation faults... Here is the caller graph for this function\+:\nopagebreak
+The reason we do shiftsegment(\+V,a,b) as opposed to rotate(V.\+segment(a,b)) is explained in \char`\"{}\+In which cases do functions taking a plain Matrix or Array argument fail?\char`\"{} of \hyperlink{namespaceEigen}{Eigen} documentation. The trick there results in segmentation faults... Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{namespaceMackey_aab8a6292210a3b71960cb03b79d218e6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1755,6 +1940,20 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespaceMackey_a359aa27a035d2b1f1a3f2f8270fc9e52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceMackey_aabed38680919594c4ba5eaa6730a7f82}\label{namespaceMackey_aabed38680919594c4ba5eaa6730a7f82}} 
+\index{Mackey@{Mackey}!swap@{swap}}
+\index{swap@{swap}!Mackey@{Mackey}}
+\subsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Mackey\+::swap (\begin{DoxyParamCaption}\item[{T \&}]{a,  }\item[{T \&}]{b }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceMackey_aabed38680919594c4ba5eaa6730a7f82_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceMackey_a1e4b11e9d2a5b70f8380af87cae31ef3}\label{namespaceMackey_a1e4b11e9d2a5b70f8380af87cae31ef3}} 
@@ -1872,12 +2071,12 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=311pt]{namespaceMackey_a0550bf97e47b3c319cb5e1bd81008d89_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespaceMackey_a3f20cf0ccf7d280f6a6e308c381dc350}\label{namespaceMackey_a3f20cf0ccf7d280f6a6e308c381dc350}} 
+\mbox{\Hypertarget{namespaceMackey_abd5b370902e8b53b32e3fd4e329f068d}\label{namespaceMackey_abd5b370902e8b53b32e3fd4e329f068d}} 
 \index{Mackey@{Mackey}!transfer@{transfer}}
 \index{transfer@{transfer}!Mackey@{Mackey}}
 \subsubsection{\texorpdfstring{transfer()}{transfer()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-Eigen\+::\+Matrix$<$typename rank\+\_\+t\+::\+Scalar,-\/1,-\/1$>$ Mackey\+::transfer (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{low,  }\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{high,  }\item[{const rank\+\_\+t \&}]{rank\+\_\+low,  }\item[{const rank\+\_\+t \&}]{rank\+\_\+high }\end{DoxyParamCaption})}
+\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{mat\+\_\+t}$<$rank\+\_\+t$>$ Mackey\+::transfer (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{low,  }\item[{const \hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{high,  }\item[{const rank\+\_\+t \&}]{rank\+\_\+low,  }\item[{const rank\+\_\+t \&}]{rank\+\_\+high }\end{DoxyParamCaption})}
 
 
 
@@ -1887,7 +2086,7 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceMackey_a3f20cf0ccf7d280f6a6e308c381dc350_cgraph}
+\includegraphics[width=350pt]{namespaceMackey_abd5b370902e8b53b32e3fd4e329f068d_cgraph}
 \end{center}
 \end{figure}
 

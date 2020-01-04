@@ -99,13 +99,16 @@ $(document).ready(function(){initNavTree('General_8h.html','');});
 <p>Contains general functions and vector overloads independent of everything else.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;Eigen/Dense&gt;</code><br />
+<code>#include &quot;<a class="el" href="SFINAE_8h_source.html">SFINAE.h</a>&quot;</code><br />
 <code>#include &lt;numeric&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for General.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="General_8h__incl.png" border="0" usemap="#Mackey_2General_8h" alt=""/></div>
+<map name="Mackey_2General_8h" id="Mackey_2General_8h">
+<area shape="rect" id="node3" href="SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="116,80,199,107"/>
+<area shape="rect" id="node8" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="130,155,185,181"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -154,9 +157,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a1e4b11e9d2a5b70f8380af87cae31ef3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3">Mackey::tail</a> (const T *const &amp;ptr, int size, int start)</td></tr>
 <tr class="memdesc:a1e4b11e9d2a5b70f8380af87cae31ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given vector or array returns vector starting from index start.  <a href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3">More...</a><br /></td></tr>
 <tr class="separator:a1e4b11e9d2a5b70f8380af87cae31ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91104eaef1ab349e68f0623cfaaf45c0"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S , std::enable_if_t&lt;!is_Eigen&lt; S &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a91104eaef1ab349e68f0623cfaaf45c0"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S , std::enable_if_t&lt;!is_Dense&lt; S &gt;::value, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a91104eaef1ab349e68f0623cfaaf45c0"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0">Mackey::find</a> (const T &amp;v, const S &amp;a)</td></tr>
-<tr class="memdesc:a91104eaef1ab349e68f0623cfaaf45c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find first instance of a in v.  <a href="namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0">More...</a><br /></td></tr>
+<tr class="memdesc:a91104eaef1ab349e68f0623cfaaf45c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find first instance of a in v for non <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> matrices.  <a href="namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0">More...</a><br /></td></tr>
 <tr class="separator:a91104eaef1ab349e68f0623cfaaf45c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2e368bf7d802f2fc47e39a71a5a1630"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
 <tr class="memitem:ac2e368bf7d802f2fc47e39a71a5a1630"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ac2e368bf7d802f2fc47e39a71a5a1630">Mackey::basisElement</a> (int length, int position, int multiple)</td></tr>
@@ -166,14 +169,14 @@ Functions</h2></td></tr>
 <tr class="memitem:aa10c6cbea565e024a38b446139800b69"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aa10c6cbea565e024a38b446139800b69">Mackey::basisElement</a> (int length, int position)</td></tr>
 <tr class="memdesc:aa10c6cbea565e024a38b446139800b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes the the basis vector 0,...,1,...,0.  <a href="namespaceMackey.html#aa10c6cbea565e024a38b446139800b69">More...</a><br /></td></tr>
 <tr class="separator:aa10c6cbea565e024a38b446139800b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb970fabb37932c8d2084fb9cd1aff3f"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename T &gt; </td></tr>
-<tr class="memitem:abb970fabb37932c8d2084fb9cd1aff3f"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f">Mackey::KeepRow</a> (const Eigen::MatrixBase&lt; Derived &gt; &amp;A, const T &amp;<a class="el" href="classZ.html">Z</a>)</td></tr>
-<tr class="memdesc:abb970fabb37932c8d2084fb9cd1aff3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its rows indicated by <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>.  <a href="namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f">More...</a><br /></td></tr>
-<tr class="separator:abb970fabb37932c8d2084fb9cd1aff3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a165eecd4244c7e736cd453016a80ec29"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename T &gt; </td></tr>
-<tr class="memitem:a165eecd4244c7e736cd453016a80ec29"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a165eecd4244c7e736cd453016a80ec29">Mackey::KeepCol</a> (const Eigen::MatrixBase&lt; Derived &gt; &amp;A, const T &amp;<a class="el" href="classZ.html">Z</a>)</td></tr>
-<tr class="memdesc:a165eecd4244c7e736cd453016a80ec29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its columns indicated by <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>.  <a href="namespaceMackey.html#a165eecd4244c7e736cd453016a80ec29">More...</a><br /></td></tr>
-<tr class="separator:a165eecd4244c7e736cd453016a80ec29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6870101d4fd762100a3115abc4a15db"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
+<tr class="memitem:ad6870101d4fd762100a3115abc4a15db"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ad6870101d4fd762100a3115abc4a15db">Mackey::KeepRow</a> (const T &amp;A, const S &amp;<a class="el" href="classZ.html">Z</a>)</td></tr>
+<tr class="memdesc:ad6870101d4fd762100a3115abc4a15db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its rows indicated by <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>.  <a href="namespaceMackey.html#ad6870101d4fd762100a3115abc4a15db">More...</a><br /></td></tr>
+<tr class="separator:ad6870101d4fd762100a3115abc4a15db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a8496759bc7bb14dcaa2284ae1d0491"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
+<tr class="memitem:a9a8496759bc7bb14dcaa2284ae1d0491"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a9a8496759bc7bb14dcaa2284ae1d0491">Mackey::KeepCol</a> (const T &amp;A, const S &amp;<a class="el" href="classZ.html">Z</a>)</td></tr>
+<tr class="memdesc:a9a8496759bc7bb14dcaa2284ae1d0491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its columns indicated by <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>.  <a href="namespaceMackey.html#a9a8496759bc7bb14dcaa2284ae1d0491">More...</a><br /></td></tr>
+<tr class="separator:a9a8496759bc7bb14dcaa2284ae1d0491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="memTemplParams" colspan="2">template&lt;typename Derived &gt; </td></tr>
 <tr class="memitem:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52">Mackey::summation</a> (const Eigen::MatrixBase&lt; Derived &gt; &amp;A)</td></tr>
 <tr class="memdesc:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the sum of the entries of an <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> vector at higher precision than its inputs.  <a href="namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52">More...</a><br /></td></tr>
@@ -214,6 +217,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2">Mackey::lcm</a> (const T &amp;v)</td></tr>
 <tr class="memdesc:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Least common multiple of vector of elements.  <a href="namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2">More...</a><br /></td></tr>
 <tr class="separator:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9c2faea24be988cdfcd773360134be"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9c9c2faea24be988cdfcd773360134be"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be">Mackey::gcd</a> (const T &amp;v)</td></tr>
+<tr class="memdesc:a9c9c2faea24be988cdfcd773360134be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Least common multiple of vector of elements.  <a href="namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be">More...</a><br /></td></tr>
+<tr class="separator:a9c9c2faea24be988cdfcd773360134be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae57418329a761aa68d26d68b637fe9dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd">Mackey::hashvector</a> (const std::vector&lt; int &gt; &amp;deg, const std::vector&lt; int &gt; &amp;min, const std::vector&lt; int &gt; &amp;max)</td></tr>
 <tr class="memdesc:ae57418329a761aa68d26d68b637fe9dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash vector given minimum and maximum values of its entries.  <a href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd">More...</a><br /></td></tr>
 <tr class="separator:ae57418329a761aa68d26d68b637fe9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>

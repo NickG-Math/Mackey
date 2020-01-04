@@ -89,8 +89,10 @@ $(document).ready(function(){initNavTree('classMackey_1_1Homology.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classMackey_1_1Homology-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Mackey::Homology&lt; rank_t, diff_t &gt; Class Template Reference</div>  </div>
@@ -100,8 +102,17 @@ $(document).ready(function(){initNavTree('classMackey_1_1Homology.html','');});
 <p>The <a class="el" href="classMackey_1_1Homology.html" title="The Homology of a Junction. ">Homology</a> of a <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a>.  
  <a href="classMackey_1_1Homology.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Homology_8h_source.html">Homology.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Aliases_8h_source.html">Aliases.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a9a8e354083ac094720820a5ff6bcff03"><td class="memItemLeft" align="right" valign="top">typedef fdiff_t_C&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a9a8e354083ac094720820a5ff6bcff03">Gen_t</a></td></tr>
+<tr class="memdesc:a9a8e354083ac094720820a5ff6bcff03"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of our matrix of generators.  <a href="#a9a8e354083ac094720820a5ff6bcff03">More...</a><br /></td></tr>
+<tr class="separator:a9a8e354083ac094720820a5ff6bcff03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf81f4293a5feba94aa734fcc8c89a46"><td class="memItemLeft" align="right" valign="top">typedef fdiff_t_C_col&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46">gen_t</a></td></tr>
+<tr class="memdesc:adf81f4293a5feba94aa734fcc8c89a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of our generators (a column in the generator matrix)  <a href="#adf81f4293a5feba94aa734fcc8c89a46">More...</a><br /></td></tr>
+<tr class="separator:adf81f4293a5feba94aa734fcc8c89a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3580b194f986bd59a02fb84db97e00f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2">Homology</a> ()</td></tr>
@@ -113,33 +124,74 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af42f480509ef68df47308c0f506d44c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#af42f480509ef68df47308c0f506d44c8">Homology</a> (const <a class="el" href="classMackey_1_1Junction.html">Junction</a>&lt; rank_t, diff_t &gt; &amp;, bool)</td></tr>
 <tr class="memdesc:af42f480509ef68df47308c0f506d44c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the homology from the given <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a> with an extra computation of a coefficient matrix needed for boundaries (if getQ=1)  <a href="#af42f480509ef68df47308c0f506d44c8">More...</a><br /></td></tr>
 <tr class="separator:af42f480509ef68df47308c0f506d44c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2887ea74253108f9daff515536538920"><td class="memTemplParams" colspan="2">template&lt;typename gen_t &gt; </td></tr>
-<tr class="memitem:a2887ea74253108f9daff515536538920"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920">basis</a> (const gen_t &amp;) const</td></tr>
-<tr class="memdesc:a2887ea74253108f9daff515536538920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an element in homology, write it as a linear combination of the generators of the homology.  <a href="#a2887ea74253108f9daff515536538920">More...</a><br /></td></tr>
-<tr class="separator:a2887ea74253108f9daff515536538920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75a8814da8edd53320b0054a5f253d12"><td class="memTemplParams" colspan="2">template&lt;typename gen_t &gt; </td></tr>
-<tr class="memitem:a75a8814da8edd53320b0054a5f253d12"><td class="memTemplItemLeft" align="right" valign="top">gen_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a75a8814da8edd53320b0054a5f253d12">boundary</a> (const gen_t &amp;) const</td></tr>
-<tr class="memdesc:a75a8814da8edd53320b0054a5f253d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an x that is a boundary returns a y s.t. dy=x.  <a href="#a75a8814da8edd53320b0054a5f253d12">More...</a><br /></td></tr>
-<tr class="separator:a75a8814da8edd53320b0054a5f253d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6fb6da3abdba934a1eb2f4236623cb"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#a2e6fb6da3abdba934a1eb2f4236623cb">basis</a> (const <a class="el" href="classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46">gen_t</a> &amp;) const</td></tr>
+<tr class="memdesc:a2e6fb6da3abdba934a1eb2f4236623cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an element in homology, write it as a linear combination of the generators of the homology.  <a href="#a2e6fb6da3abdba934a1eb2f4236623cb">More...</a><br /></td></tr>
+<tr class="separator:a2e6fb6da3abdba934a1eb2f4236623cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3cbf5cc7cb166e8e0a552dda57d05b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46">gen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#aeb3cbf5cc7cb166e8e0a552dda57d05b">boundary</a> (const <a class="el" href="classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46">gen_t</a> &amp;) const</td></tr>
+<tr class="memdesc:aeb3cbf5cc7cb166e8e0a552dda57d05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an x that is a boundary returns a y s.t. dy=x.  <a href="#aeb3cbf5cc7cb166e8e0a552dda57d05b">More...</a><br /></td></tr>
+<tr class="separator:aeb3cbf5cc7cb166e8e0a552dda57d05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aaae78e6463ce6e60e7f4c5861304bc5b"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#aaae78e6463ce6e60e7f4c5861304bc5b">Groups</a></td></tr>
 <tr class="memdesc:aaae78e6463ce6e60e7f4c5861304bc5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3.  <a href="#aaae78e6463ce6e60e7f4c5861304bc5b">More...</a><br /></td></tr>
 <tr class="separator:aaae78e6463ce6e60e7f4c5861304bc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc375f3632f97e3fe3e24c06f1e18fa2"><td class="memItemLeft" align="right" valign="top">diff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#afc375f3632f97e3fe3e24c06f1e18fa2">Generators</a></td></tr>
-<tr class="memdesc:afc375f3632f97e3fe3e24c06f1e18fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i].  <a href="#afc375f3632f97e3fe3e24c06f1e18fa2">More...</a><br /></td></tr>
-<tr class="separator:afc375f3632f97e3fe3e24c06f1e18fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3eff7d2cb42b44a29f6a92172096b3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMackey_1_1Homology.html#a9a8e354083ac094720820a5ff6bcff03">Gen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#af3eff7d2cb42b44a29f6a92172096b3d">Generators</a></td></tr>
+<tr class="memdesc:af3eff7d2cb42b44a29f6a92172096b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i].  <a href="#af3eff7d2cb42b44a29f6a92172096b3d">More...</a><br /></td></tr>
+<tr class="separator:af3eff7d2cb42b44a29f6a92172096b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3bb3781bab2b5884295e04a8fddf36e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#ae3bb3781bab2b5884295e04a8fddf36e">isZero</a></td></tr>
 <tr class="memdesc:ae3bb3781bab2b5884295e04a8fddf36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 if the homology is trivial  <a href="#ae3bb3781bab2b5884295e04a8fddf36e">More...</a><br /></td></tr>
 <tr class="separator:ae3bb3781bab2b5884295e04a8fddf36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:afe2aae7d5b96af426bfe7a7898459cb6"><td class="memTemplParams" colspan="2">template&lt;typename Archive , typename srank_t , typename sdiff_t &gt; </td></tr>
+<tr class="memitem:afe2aae7d5b96af426bfe7a7898459cb6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1Homology.html#afe2aae7d5b96af426bfe7a7898459cb6">serialize</a> (Archive &amp;, <a class="el" href="classMackey_1_1Homology.html">Homology</a>&lt; srank_t, sdiff_t &gt; &amp;)</td></tr>
+<tr class="separator:afe2aae7d5b96af426bfe7a7898459cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
 class Mackey::Homology&lt; rank_t, diff_t &gt;</h3>
 
 <p>The <a class="el" href="classMackey_1_1Homology.html" title="The Homology of a Junction. ">Homology</a> of a <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a>. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a9a8e354083ac094720820a5ff6bcff03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a8e354083ac094720820a5ff6bcff03">&#9670;&nbsp;</a></span>Gen_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef fdiff_t_C <a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1Homology.html#a9a8e354083ac094720820a5ff6bcff03">Gen_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type of our matrix of generators. </p>
+
+</div>
+</div>
+<a id="adf81f4293a5feba94aa734fcc8c89a46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf81f4293a5feba94aa734fcc8c89a46">&#9670;&nbsp;</a></span>gen_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef fdiff_t_C_col <a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46">gen_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type of our generators (a column in the generator matrix) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3580b194f986bd59a02fb84db97e00f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3580b194f986bd59a02fb84db97e00f2">&#9670;&nbsp;</a></span>Homology() <span class="overload">[1/3]</span></h2>
 
@@ -171,9 +223,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph" alt=""/></div>
 <map name="classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph" id="classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a2887ea74253108f9daff515536538920" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="267,5,441,32"/>
-<area shape="rect" id="node4" href="classMackey_1_1Homology.html#a75a8814da8edd53320b0054a5f253d12" title="Given an x that is a boundary returns a y s.t. dy=x. " alt="" coords="256,56,452,83"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="500,31,633,57"/>
+<area shape="rect" id="node2" href="classMackey_1_1Homology.html#a2e6fb6da3abdba934a1eb2f4236623cb" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="267,5,441,32"/>
+<area shape="rect" id="node3" href="classMackey_1_1Homology.html#aeb3cbf5cc7cb166e8e0a552dda57d05b" title="Given an x that is a boundary returns a y s.t. dy=x. " alt="" coords="256,56,452,83"/>
 </map>
 </div>
 
@@ -203,11 +254,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph" alt=""/></div>
 <map name="classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph" id="classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="256,5,389,32"/>
+<area shape="rect" id="node2" href="namespaceMackey.html#ad6870101d4fd762100a3115abc4a15db" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="256,5,389,32"/>
 <area shape="rect" id="node3" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="301,56,344,83"/>
-<area shape="rect" id="node4" href="namespaceMackey.html#a165eecd4244c7e736cd453016a80ec29" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="259,107,386,133"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a9a8496759bc7bb14dcaa2284ae1d0491" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="259,107,386,133"/>
 <area shape="rect" id="node5" href="namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="270,157,375,184"/>
-<area shape="rect" id="node6" href="namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="437,157,535,184"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="437,132,535,159"/>
+<area shape="rect" id="node7" href="namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="437,183,535,209"/>
 </map>
 </div>
 
@@ -254,20 +306,18 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2887ea74253108f9daff515536538920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2887ea74253108f9daff515536538920">&#9670;&nbsp;</a></span>basis()</h2>
+<a id="a2e6fb6da3abdba934a1eb2f4236623cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e6fb6da3abdba934a1eb2f4236623cb">&#9670;&nbsp;</a></span>basis()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename rank_t , typename diff_t &gt; </div>
-<div class="memtemplate">
-template&lt;typename gen_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">rank_t <a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::basis </td>
           <td>(</td>
-          <td class="paramtype">const gen_t &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46">gen_t</a> &amp;&#160;</td>
           <td class="paramname"><em>generator</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -277,41 +327,31 @@ template&lt;typename gen_t &gt; </div>
 <p>Given an element in homology, write it as a linear combination of the generators of the homology. </p>
 <p>The answer is encoded as follows: basis=[-1,0,3] means element=-gen[0]+3*gen[2] </p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph" alt=""/></div>
-<map name="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph" id="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="228,5,361,32"/>
-</map>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph.png" border="0" usemap="#classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph" alt=""/></div>
-<map name="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph" id="classMackey_1_1Homology_a2887ea74253108f9daff515536538920_icgraph">
+<div class="center"><img src="classMackey_1_1Homology_a2e6fb6da3abdba934a1eb2f4236623cb_icgraph.png" border="0" usemap="#classMackey_1_1Homology_a2e6fb6da3abdba934a1eb2f4236623cb_icgraph" alt=""/></div>
+<map name="classMackey_1_1Homology_a2e6fb6da3abdba934a1eb2f4236623cb_icgraph" id="classMackey_1_1Homology_a2e6fb6da3abdba934a1eb2f4236623cb_icgraph">
 <area shape="rect" id="node2" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="228,5,431,32"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#a3f20cf0ccf7d280f6a6e308c381dc350" title="Writing the transfer of each generator in terms of the generators in the image. " alt="" coords="269,56,389,83"/>
-<area shape="rect" id="node4" href="namespaceMackey.html#a256b1e73e413a924ce2bf0e86551a928" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="263,107,396,133"/>
-<area shape="rect" id="node5" href="namespaceMackey.html#a2169692139cf46ac28719780e2a7f867" title="Writing the Weyl group action on each generator in terms of the other generators. ..." alt="" coords="274,157,385,184"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#abd5b370902e8b53b32e3fd4e329f068d" title="Writing the transfer of each generator in terms of the generators in the image. " alt="" coords="269,56,389,83"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#a6818760aa9590810daace862e4c71f04" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="263,107,396,133"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#aaa66c9857ba86a13949d1b1825ea20f7" title="Writing the Weyl group action on each generator in terms of the other generators. ..." alt="" coords="274,157,385,184"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a75a8814da8edd53320b0054a5f253d12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75a8814da8edd53320b0054a5f253d12">&#9670;&nbsp;</a></span>boundary()</h2>
+<a id="aeb3cbf5cc7cb166e8e0a552dda57d05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3cbf5cc7cb166e8e0a552dda57d05b">&#9670;&nbsp;</a></span>boundary()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename rank_t , typename diff_t &gt; </div>
-<div class="memtemplate">
-template&lt;typename gen_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">gen_t <a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::boundary </td>
+          <td class="memname"><a class="el" href="classMackey_1_1Homology.html">Homology</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46">gen_t</a> <a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::boundary </td>
           <td>(</td>
-          <td class="paramtype">const gen_t &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46">gen_t</a> &amp;&#160;</td>
           <td class="paramname"><em>generator</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -320,27 +360,60 @@ template&lt;typename gen_t &gt; </div>
 
 <p>Given an x that is a boundary returns a y s.t. dy=x. </p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph.png" border="0" usemap="#classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph" alt=""/></div>
-<map name="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph" id="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#abb970fabb37932c8d2084fb9cd1aff3f" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="249,5,383,32"/>
-</map>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph.png" border="0" usemap="#classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph" alt=""/></div>
-<map name="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph" id="classMackey_1_1Homology_a75a8814da8edd53320b0054a5f253d12_icgraph">
+<div class="center"><img src="classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b_icgraph.png" border="0" usemap="#classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b_icgraph" alt=""/></div>
+<map name="classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b_icgraph" id="classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b_icgraph">
 <area shape="rect" id="node2" href="classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="249,5,452,32"/>
 </map>
 </div>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="afe2aae7d5b96af426bfe7a7898459cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe2aae7d5b96af426bfe7a7898459cb6">&#9670;&nbsp;</a></span>serialize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename Archive , typename srank_t , typename sdiff_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void serialize </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMackey_1_1Homology.html">Homology</a>&lt; srank_t, sdiff_t &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="afc375f3632f97e3fe3e24c06f1e18fa2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc375f3632f97e3fe3e24c06f1e18fa2">&#9670;&nbsp;</a></span>Generators</h2>
+<a id="af3eff7d2cb42b44a29f6a92172096b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3eff7d2cb42b44a29f6a92172096b3d">&#9670;&nbsp;</a></span>Generators</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,7 +421,7 @@ Here is the caller graph for this function:</div>
 template&lt;typename rank_t, typename diff_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">diff_t <a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::Generators</td>
+          <td class="memname"><a class="el" href="classMackey_1_1Homology.html#a9a8e354083ac094720820a5ff6bcff03">Gen_t</a> <a class="el" href="classMackey_1_1Homology.html">Mackey::Homology</a>&lt; rank_t, diff_t &gt;::Generators</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -393,7 +466,8 @@ template&lt;typename rank_t, typename diff_t&gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>Mackey/<a class="el" href="Aliases_8h_source.html">Aliases.h</a></li>
 <li>Mackey/<a class="el" href="Homology_8h_source.html">Homology.h</a></li>
 </ul>
 </div><!-- contents -->

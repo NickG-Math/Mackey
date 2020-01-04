@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_5ft',['matrix_t',['../classMackey_1_1IDGenerators.html#a6b4c91c53aa7fe61ae93a716e891832f',1,'Mackey::IDGenerators::matrix_t()'],['../classMackey_1_1MackeyFunctor.html#a271550bc911da5c842bbc90d8bf87973',1,'Mackey::MackeyFunctor::matrix_t()']]]
+  ['literal',['Literal',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#afc07a3fc65ced03bfc30de81355ac988',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['nested',['Nested',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#aadda945d9b822d2c43cddd141d895ab5',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
-  ['noninteger',['NonInteger',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a54a7b88f9d282c613909ac128476d3d1',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
+  ['mat_5ft',['mat_t',['../namespaceMackey.html#a035386035757dade630f685e508e5cf9',1,'Mackey']]],
+  ['mat_5ft_5fr',['mat_t_r',['../namespaceMackey.html#ac1c9f85957dda772ceaa564cb23494cb',1,'Mackey']]],
+  ['matrix_5ft',['matrix_t',['../classMackey_1_1IDGenerators.html#a6b4c91c53aa7fe61ae93a716e891832f',1,'Mackey::IDGenerators']]]
 ];

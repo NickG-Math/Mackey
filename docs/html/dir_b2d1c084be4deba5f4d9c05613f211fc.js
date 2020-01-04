@@ -3,6 +3,7 @@ var dir_b2d1c084be4deba5f4d9c05613f211fc =
     [ "Additive.h", "Additive_8h.html", [
       [ "AdditiveStructure", "classMackey_1_1AdditiveStructure.html", "classMackey_1_1AdditiveStructure" ]
     ] ],
+    [ "Aliases.h", "Aliases_8h.html", "Aliases_8h" ],
     [ "Automorphisms.h", "Automorphisms_8h.html", "Automorphisms_8h" ],
     [ "Box.h", "Box_8h.html", "Box_8h" ],
     [ "Cerealizer.h", "Cerealizer_8h.html", "Cerealizer_8h" ],
@@ -34,10 +35,24 @@ var dir_b2d1c084be4deba5f4d9c05613f211fc =
       [ "MultiplicationGraphIdentify", "classMackey_1_1MultiplicationGraphIdentify.html", "classMackey_1_1MultiplicationGraphIdentify" ]
     ] ],
     [ "Polynomial.h", "Polynomial_8h.html", "Polynomial_8h" ],
-    [ "Smith.h", "Smith_8h.html", [
-      [ "CommonSmith", "classMackey_1_1CommonSmith.html", "classMackey_1_1CommonSmith" ],
-      [ "Smith", "classMackey_1_1Smith.html", "classMackey_1_1Smith" ],
-      [ "Smith< S_t, R_t, C_t, decltype(S_t::Scalar::order, void())>", "classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4.html", "classMackey_1_1Smith_3_01S__t_00_01R__t_00_01C__t_00_01decltype_07S__t_1_1Scalar_1_1order_00_01void_07_08_08_4" ]
+    [ "SFINAE.h", "SFINAE_8h.html", [
+      [ "is_Dense", "structMackey_1_1is__Dense.html", null ],
+      [ "is_Sparse", "structMackey_1_1is__Sparse.html", null ],
+      [ "is_Finite_Cyclic", "structMackey_1_1is__Finite__Cyclic.html", null ]
+    ] ],
+    [ "Smith.h", "Smith_8h.html", null ],
+    [ "Smith_Base.h", "Smith__Base_8h.html", "Smith__Base_8h" ],
+    [ "Smith_FirstPivot.h", "Smith__FirstPivot_8h.html", [
+      [ "SmithFP", "classMackey_1_1SmithFP.html", "classMackey_1_1SmithFP" ]
+    ] ],
+    [ "Smith_MinPivot.h", "Smith__MinPivot_8h.html", [
+      [ "SmithMP", "classMackey_1_1SmithMP.html", "classMackey_1_1SmithMP" ]
+    ] ],
+    [ "Smith_SmartPivot.h", "Smith__SmartPivot_8h.html", [
+      [ "SmithSP", "classMackey_1_1SmithSP.html", "classMackey_1_1SmithSP" ]
+    ] ],
+    [ "Smith_Sparse.h", "Smith__Sparse_8h.html", [
+      [ "SmithSparse", "classMackey_1_1SmithSparse.html", "classMackey_1_1SmithSparse" ]
     ] ],
     [ "Table.h", "Table_8h.html", [
       [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html", "classMackey_1_1MultiplicationTable" ]

@@ -192,7 +192,7 @@ Massey products</h2>
 <p>For more details see the code in TestMassey.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder</p>
 <h2><a class="anchor" id="step1Cer"></a>
 Serialization</h2>
-<p>The results of the harder computations can all be serialized to binary, xml or json file using the <a href="https://uscilab.github.io/cereal">Cereal</a> library. We have provided a general interface to do that using the <a class="el" href="namespaceMackey.html#a1824d780ce15f1845e4f87bf056feec9">saver</a> and <a class="el" href="namespaceMackey.html#a735958355cdca12e0d312b7e604f28bc">loader</a> methods. For example, to serialize <code>AdditiveStructure&lt;rank_t,diff_t&gt; A;</code> to a binary use</p>
+<p>The results of the harder computations can all be serialized to binary, xml or json file using the <a href="https://uscilab.github.io/cereal">cereal</a> library. We have provided a general interface to do that using the <a class="el" href="namespaceMackey.html#a1824d780ce15f1845e4f87bf056feec9">saver</a> and <a class="el" href="namespaceMackey.html#a735958355cdca12e0d312b7e604f28bc">loader</a> methods. For example, to serialize <code>AdditiveStructure&lt;rank_t,diff_t&gt; A;</code> to a binary use</p>
 <p><code>saver(A, "filename.bin", "binary");</code></p>
 <p>To load use</p>
 <p><code>loader(A, "filename.bin", "binary");</code></p>

@@ -1,10 +1,11 @@
 <map id="Mackey::isZero" name="Mackey::isZero">
 <area shape="rect" id="node2" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="168,5,341,32"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#a93ebe0edcc11f0cd962294b5b21c94aa" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="627,82,777,123"/>
-<area shape="rect" id="node4" href="$classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84" title="Returns the (normalized) product of the given two elements (not necessarily generators) ..." alt="" coords="165,146,344,187"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title="Mackey::multiply" alt="" coords="425,187,546,213"/>
-<area shape="rect" id="node8" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="392,238,579,279"/>
-<area shape="rect" id="node9" href="$classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="392,107,579,163"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="637,235,767,261"/>
-<area shape="rect" id="node7" href="$namespaceMackey.html#a2eca4cc709501ad3fc20b82fe4bcbd33" title="Mackey::multiply" alt="" coords="641,184,763,211"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="627,82,777,123"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84" title="Returns the (normalized) product of the given two elements (not necessarily generators) ..." alt="" coords="165,146,344,187"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="825,82,976,123"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title="Mackey::multiply" alt="" coords="425,187,546,213"/>
+<area shape="rect" id="node9" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="392,238,579,279"/>
+<area shape="rect" id="node10" href="$classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="392,107,579,163"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="637,235,767,261"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#a2eca4cc709501ad3fc20b82fe4bcbd33" title="Mackey::multiply" alt="" coords="641,184,763,211"/>
 </map>

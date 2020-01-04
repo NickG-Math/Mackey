@@ -1,79 +1,218 @@
-\hypertarget{classMackey_1_1Smith}{}\section{Mackey\+:\+:Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$ Class Template Reference}
-\label{classMackey_1_1Smith}\index{Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$@{Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$}}
+\hypertarget{classMackey_1_1Smith}{}\section{Mackey\+:\+:Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1Smith}\index{Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$@{Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$}}
 
 
-The safe \hyperlink{classMackey_1_1Smith}{Smith} Normal Form implementation for general coefficients.  
-
-
-
-
-{\ttfamily \#include $<$Smith.\+h$>$}
+The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form and its coefficient matrices.  
 
 
 
-Inheritance diagram for Mackey\+:\+:Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$\+:\nopagebreak
+
+{\ttfamily \#include $<$Smith\+\_\+\+Base.\+h$>$}
+
+
+
+Inheritance diagram for Mackey\+:\+:Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{classMackey_1_1Smith__inherit__graph}
+\includegraphics[width=339pt]{classMackey_1_1Smith__inherit__graph}
 \end{center}
 \end{figure}
-
-
-Collaboration diagram for Mackey\+:\+:Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=202pt]{classMackey_1_1Smith__coll__graph}
-\end{center}
-\end{figure}
-\subsection*{Public Member Functions}
+\subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classMackey_1_1Smith_a7923aafcefe7b2b12245dfb6f0700743}{Smith} (const S\+\_\+t \&A, bool wantP, bool wantQ, bool sort)
-\begin{DoxyCompactList}\small\item\em Computes the \hyperlink{classMackey_1_1Smith}{Smith} Normal Form and sorts if desired. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915}{Smith} (const S\+\_\+t \&A, bool wantP, bool wantQ)
-\begin{DoxyCompactList}\small\item\em Same as the other constructor, but don\textquotesingle{}t sort. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}{row\+\_\+t}$<$ S\+\_\+t $>$ \hyperlink{classMackey_1_1Smith_a4d7f709505152b53130018e46f9e8411}{diagonal}
+\begin{DoxyCompactList}\small\item\em The diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. \end{DoxyCompactList}\item 
+R\+\_\+t \hyperlink{classMackey_1_1Smith_a711a1726ec0da22e9233aa269d66bf73}{P}
+\begin{DoxyCompactList}\small\item\em One of the coefficient matrices (S=P$\ast$\+A$\ast$Q) \end{DoxyCompactList}\item 
+R\+\_\+t \hyperlink{classMackey_1_1Smith_a8446d6e35feabbdc233e2a15efde4930}{Qi}
+\begin{DoxyCompactList}\small\item\em One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi) \end{DoxyCompactList}\item 
+C\+\_\+t \hyperlink{classMackey_1_1Smith_aba53f81430955d8cf7f7ce4677486214}{Q}
+\begin{DoxyCompactList}\small\item\em One of the coefficient matrices (S=P$\ast$\+A$\ast$Q) \end{DoxyCompactList}\item 
+C\+\_\+t \hyperlink{classMackey_1_1Smith_a890f70fcd15554ee0c3b8469ffb55fde}{Pi}
+\begin{DoxyCompactList}\small\item\em One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMackey_1_1Smith_ab366b0cccb7fe065521142c442a0dcd3}{Smith} (const S\+\_\+t \&, bool, bool, bool)
+\begin{DoxyCompactList}\small\item\em Initializes the member variables. Actual computation is done by the implementation classes. \end{DoxyCompactList}\item 
+void \hyperlink{classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321}{sorter} ()
+\begin{DoxyCompactList}\small\item\em Sorts the \hyperlink{classMackey_1_1Smith}{Smith} Normal Form to have decreasing entries in absolute value (except +1,-\/1) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+S\+\_\+t \hyperlink{classMackey_1_1Smith_a2c4e977af966b2956354dce7e40dd5e1}{S}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form as a diagonal matrix. \end{DoxyCompactList}\item 
+const int \hyperlink{classMackey_1_1Smith_aa651a3c122566df7847bec70583a5f48}{M}
+\begin{DoxyCompactList}\small\item\em Row dimension of original matrix. \end{DoxyCompactList}\item 
+const int \hyperlink{classMackey_1_1Smith_a642b4538712abcdcee8beb3f0ff08b89}{N}
+\begin{DoxyCompactList}\small\item\em Column dimension of original matrix. \end{DoxyCompactList}\item 
+const bool \hyperlink{classMackey_1_1Smith_a7033b338fda868e33f50950d2444ae75}{wantP}
+\begin{DoxyCompactList}\small\item\em Whether we want to compute the P and Pi coefficient matrices. \end{DoxyCompactList}\item 
+const bool \hyperlink{classMackey_1_1Smith_a10ec727132ca15eee9dac0522d617a50}{wantQ}
+\begin{DoxyCompactList}\small\item\em Whether we want to compute the Q and Qi coefficient matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename S\+\_\+t, typename R\+\_\+t, typename C\+\_\+t, typename impl = void$>$\newline
-class Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$}
+\subsubsection*{template$<$typename S\+\_\+t, typename R\+\_\+t, typename C\+\_\+t$>$\newline
+class Mackey\+::\+Smith$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$}
 
-The safe \hyperlink{classMackey_1_1Smith}{Smith} Normal Form implementation for general coefficients. 
+The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form and its coefficient matrices. 
+
+The S\+NF of A is a diagonal matrix S with invertible coefficient matrices P,Q,Pi,Qi s.\+t. P$\ast$\+A$\ast$Q=S and Pi$\ast$\+S$\ast$\+Qi=A
+
+P,Pi are inverses and so are Q,Qi and they are all computed through row-\/column elimination
+
+S\+\_\+t is the type of the original matrix. R\+\_\+t is S\+\_\+t but row major for best performance (required for sprase) C\+\_\+t is S\+\_\+t but column major for best performance (required for sprase) 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classMackey_1_1Smith_a7923aafcefe7b2b12245dfb6f0700743}\label{classMackey_1_1Smith_a7923aafcefe7b2b12245dfb6f0700743}} 
+\mbox{\Hypertarget{classMackey_1_1Smith_ab366b0cccb7fe065521142c442a0dcd3}\label{classMackey_1_1Smith_ab366b0cccb7fe065521142c442a0dcd3}} 
 \index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Smith@{Smith}}
 \index{Smith@{Smith}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
-\subsubsection{\texorpdfstring{Smith()}{Smith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename S\+\_\+t, typename R\+\_\+t, typename C\+\_\+t, typename impl = void$>$ \\
-\hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$\+::\hyperlink{classMackey_1_1Smith}{Smith} (\begin{DoxyParamCaption}\item[{const S\+\_\+t \&}]{A,  }\item[{bool}]{wantP,  }\item[{bool}]{wantQ,  }\item[{bool}]{sort }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{Smith()}{Smith()}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+\hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::\hyperlink{classMackey_1_1Smith}{Smith} (\begin{DoxyParamCaption}\item[{const S\+\_\+t \&}]{A,  }\item[{bool}]{wantP,  }\item[{bool}]{wantQ,  }\item[{bool}]{sort }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Computes the \hyperlink{classMackey_1_1Smith}{Smith} Normal Form and sorts if desired. 
-
-\mbox{\Hypertarget{classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915}\label{classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915}} 
-\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Smith@{Smith}}
-\index{Smith@{Smith}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
-\subsubsection{\texorpdfstring{Smith()}{Smith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename S\+\_\+t, typename R\+\_\+t, typename C\+\_\+t, typename impl = void$>$ \\
-\hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t, impl $>$\+::\hyperlink{classMackey_1_1Smith}{Smith} (\begin{DoxyParamCaption}\item[{const S\+\_\+t \&}]{A,  }\item[{bool}]{wantP,  }\item[{bool}]{wantQ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+Initializes the member variables. Actual computation is done by the implementation classes. 
 
 
 
-Same as the other constructor, but don\textquotesingle{}t sort. 
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321}\label{classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!sorter@{sorter}}
+\index{sorter@{sorter}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{sorter()}{sorter()}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+void \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::sorter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sorts the \hyperlink{classMackey_1_1Smith}{Smith} Normal Form to have decreasing entries in absolute value (except +1,-\/1) 
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=303pt]{classMackey_1_1Smith_a612e73ee01325c7adf0b7102d007a915_cgraph}
+\includegraphics[width=309pt]{classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321_cgraph}
 \end{center}
 \end{figure}
 
 
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMackey_1_1Smith_a4d7f709505152b53130018e46f9e8411}\label{classMackey_1_1Smith_a4d7f709505152b53130018e46f9e8411}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!diagonal@{diagonal}}
+\index{diagonal@{diagonal}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{diagonal}{diagonal}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+\hyperlink{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}{row\+\_\+t}$<$S\+\_\+t$>$ \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::diagonal}
+
+
+
+The diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_aa651a3c122566df7847bec70583a5f48}\label{classMackey_1_1Smith_aa651a3c122566df7847bec70583a5f48}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!M@{M}}
+\index{M@{M}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{M}{M}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+const int \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::M\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Row dimension of original matrix. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a642b4538712abcdcee8beb3f0ff08b89}\label{classMackey_1_1Smith_a642b4538712abcdcee8beb3f0ff08b89}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!N@{N}}
+\index{N@{N}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+const int \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::N\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Column dimension of original matrix. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a711a1726ec0da22e9233aa269d66bf73}\label{classMackey_1_1Smith_a711a1726ec0da22e9233aa269d66bf73}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!P@{P}}
+\index{P@{P}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{P}{P}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+R\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::P}
+
+
+
+One of the coefficient matrices (S=P$\ast$\+A$\ast$Q) 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a890f70fcd15554ee0c3b8469ffb55fde}\label{classMackey_1_1Smith_a890f70fcd15554ee0c3b8469ffb55fde}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Pi@{Pi}}
+\index{Pi@{Pi}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{Pi}{Pi}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+C\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::Pi}
+
+
+
+One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi) 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_aba53f81430955d8cf7f7ce4677486214}\label{classMackey_1_1Smith_aba53f81430955d8cf7f7ce4677486214}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Q@{Q}}
+\index{Q@{Q}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{Q}{Q}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+C\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::Q}
+
+
+
+One of the coefficient matrices (S=P$\ast$\+A$\ast$Q) 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a8446d6e35feabbdc233e2a15efde4930}\label{classMackey_1_1Smith_a8446d6e35feabbdc233e2a15efde4930}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!Qi@{Qi}}
+\index{Qi@{Qi}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{Qi}{Qi}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+R\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::Qi}
+
+
+
+One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi) 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a2c4e977af966b2956354dce7e40dd5e1}\label{classMackey_1_1Smith_a2c4e977af966b2956354dce7e40dd5e1}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!S@{S}}
+\index{S@{S}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{S}{S}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+S\+\_\+t \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::S\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form as a diagonal matrix. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a7033b338fda868e33f50950d2444ae75}\label{classMackey_1_1Smith_a7033b338fda868e33f50950d2444ae75}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!wantP@{wantP}}
+\index{wantP@{wantP}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{wantP}{wantP}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+const bool \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::wantP\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether we want to compute the P and Pi coefficient matrices. 
+
+\mbox{\Hypertarget{classMackey_1_1Smith_a10ec727132ca15eee9dac0522d617a50}\label{classMackey_1_1Smith_a10ec727132ca15eee9dac0522d617a50}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!wantQ@{wantQ}}
+\index{wantQ@{wantQ}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{wantQ}{wantQ}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+const bool \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::wantQ\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether we want to compute the Q and Qi coefficient matrices. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Mackey/\hyperlink{Smith_8h}{Smith.\+h}\end{DoxyCompactItemize}
+Mackey/\hyperlink{Smith__Base_8h}{Smith\+\_\+\+Base.\+h}\end{DoxyCompactItemize}

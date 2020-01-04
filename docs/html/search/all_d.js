@@ -1,12 +1,13 @@
 var searchData=
 [
+  ['n',['N',['../classMackey_1_1Smith.html#a642b4538712abcdcee8beb3f0ff08b89',1,'Mackey::Smith']]],
   ['name',['name',['../classMackey_1_1MackeyFunctor.html#ae1d69a215249d8b1018ac810ecc63d56',1,'Mackey::MackeyFunctor']]],
   ['nested',['Nested',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#aadda945d9b822d2c43cddd141d895ab5',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
   ['noindeterminacy',['noIndeterminacy',['../classMackey_1_1Massey.html#a4dbd74288447b094c8308f4d68bf8cff',1,'Mackey::Massey']]],
   ['noninteger',['NonInteger',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a54a7b88f9d282c613909ac128476d3d1',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
   ['nonzerohomology',['NonZeroHomology',['../classMackey_1_1MultiplicationTable.html#ad392b9570c511595a08642f5d54d20eb',1,'Mackey::MultiplicationTable']]],
   ['normalbasis',['normalBasis',['../classMackey_1_1Massey.html#a36e3aa9de7d7617feb243d886c5936c8',1,'Mackey::Massey']]],
-  ['normalize',['normalize',['../namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea',1,'Mackey::normalize(Eigen::Matrix&lt; Scalar, -1, -1 &gt; &amp;linmap, const Eigen::Matrix&lt; Scalar, 1, -1 &gt; &amp;range)'],['../namespaceMackey.html#a43e260f55a458bed50ab6a75aef7e666',1,'Mackey::normalize(Eigen::Matrix&lt; T, 1, -1 &gt; &amp;element, const Eigen::Matrix&lt; T, 1, -1 &gt; &amp;group)']]],
+  ['normalize',['normalize',['../namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea',1,'Mackey::normalize(Eigen::Matrix&lt; Scalar, -1, -1 &gt; &amp;linmap, const Eigen::Matrix&lt; Scalar, 1, -1 &gt; &amp;range)'],['../namespaceMackey.html#a635c87980358b97256fe159f0c59bb80',1,'Mackey::normalize(Eigen::Matrix&lt; T, 1,-1 &gt; &amp;element, const Eigen::Matrix&lt; T, 1, -1 &gt; &amp;group)']]],
   ['normalize_5fminus',['normalize_minus',['../namespaceMackey.html#a463bb762b4edc2f283e8d1c0c466aedf',1,'Mackey']]],
   ['normalizemackey',['normalizeMackey',['../classMackey_1_1MackeyFunctor.html#a08150b3655fc27a7298d68b1857d830f',1,'Mackey::MackeyFunctor']]],
   ['notation',['notation',['../classMackey_1_1MackeyFunctor.html#a2b333a786e44000c96ffd087a81a1d17',1,'Mackey::MackeyFunctor']]],

@@ -210,31 +210,3 @@ namespace Eigen {
 		static inline Z<N> dummy_precision() { return 0; }
 	};
 }
-
-
-//We use SFINAE to detect if a given type is Z<N>
-namespace {
-	template <typename T, typename = void>
-	struct SFINAE : std::false_type {	};
-
-	template <typename T>
-	struct SFINAE<T, decltype(T::order, void())> : std::true_type {	};
-
-	template <class T>
-	constexpr bool detector(std::false_type) {
-		return 0;
-	}
-
-	template <class T>
-	constexpr bool detector(std::true_type) {
-		return 1;
-	}
-}
-
-namespace Mackey {
-	///Detects if T=Z<N>
-	template <class T>
-	constexpr bool is_finite_cyclic() {
-		return detector<T>(SFINAE<T>{});
-	}
-}

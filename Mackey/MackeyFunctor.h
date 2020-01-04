@@ -37,16 +37,18 @@ namespace {
 
 namespace Mackey
 {
+	namespace {
+		///Isomorphism of Mackey Functors
+		template<typename rank_t>
+		using iso_t = std::vector<mat_t<rank_t>>;
+	}
+
 
 	///A Mackey Functor
 	template<typename rank_t>
 	class MackeyFunctor {
 	public:
-		typedef typename rank_t::Scalar Scalar;
-		///The type of transfer, restriction and Weyl action matrices
-		typedef typename Eigen::Matrix<Scalar,-1,-1> matrix_t;
-		///The type of isomorphisms of Mackey functors
-		typedef typename std::vector<Eigen::Matrix<Scalar,-1,-1>> iso_t;
+
 		std::vector<rank_t> Groups;///<The Groups starting at level 0 (see Homology for the labeling)
 
 		//////////////////////////////////////////////////////////////////////////////
@@ -54,10 +56,10 @@ namespace Mackey
 
 		///Example (C4): If Tr[0]=[2] and Tr[1]=[1,2;1,3] then Tr_0^2(gen)=2*gen and Tr_2^4(gen0)=gen0+gen1 and Tr_2^4(gen1)=2*gen0+3*gen1
 		//////////////////////////////////////////////////////////////////////////////
-		std::vector<matrix_t> Tr;
+		std::vector<mat_t<rank_t>> Tr;
 
-		std::vector<matrix_t> Res;///<Same as transfers, but now using restrictions
-		std::vector<matrix_t> Weyl;///<Same as transfers, but now using the Weyl group action
+		std::vector<mat_t<rank_t>> Res;///<Same as transfers, but now using restrictions
+		std::vector<mat_t<rank_t>> Weyl;///<Same as transfers, but now using the Weyl group action
 
 		std::string name; ///<The name of the Mackey functor
 
@@ -79,10 +81,10 @@ namespace Mackey
 		bool compare(const MackeyFunctor<rank_t>& M) const;
 			   
 		///Applies isomorphism to Mackey functor (its inverse is also needed)
-		MackeyFunctor<rank_t> apply(const iso_t& iso, const iso_t& isoinv) const;
+		MackeyFunctor<rank_t> apply(const iso_t<rank_t>& iso, const iso_t<rank_t>& isoinv) const;
 
 		///Returns all automorphisms of a Mackey Functor and their inverses
-		std::pair<std::vector<iso_t>, std::vector<iso_t>> automorphisms() const;
+		std::pair<std::vector<iso_t<rank_t>>, std::vector<iso_t<rank_t>>> automorphisms() const;
 
 		///Returns the isomorphism class of a Mackey Functor
 		std::vector<MackeyFunctor<rank_t>> isomorphism_class() const;
@@ -282,7 +284,7 @@ namespace Mackey
 	}
 
 	template<typename rank_t>
-	MackeyFunctor<rank_t> MackeyFunctor<rank_t>::apply(const std::vector<Eigen::Matrix<typename rank_t::Scalar, -1, -1>>& iso, const std::vector<Eigen::Matrix<typename rank_t::Scalar, -1, -1>>& isoinv) const {
+	MackeyFunctor<rank_t> MackeyFunctor<rank_t>::apply(const iso_t<rank_t>& iso, const iso_t<rank_t>& isoinv) const {
 		MackeyFunctor<rank_t> N = *this;
 		for (int i = 0; i < Tr.size(); i++) {
 			if (Tr[i].size() != 0) {
@@ -308,9 +310,8 @@ namespace Mackey
 
 
 	template<typename rank_t>
-	std::pair<std::vector<std::vector<Eigen::Matrix<typename rank_t::Scalar, -1, -1>>>, std::vector<std::vector<Eigen::Matrix<typename rank_t::Scalar, -1, -1>>>> MackeyFunctor<rank_t>::automorphisms() const {
-		typedef Eigen::Matrix<typename rank_t::Scalar, -1, -1> matrix_t;
-		std::vector<std::vector<matrix_t>> isosfirst, isossecond;
+	std::pair<std::vector<iso_t<rank_t>>, std::vector<iso_t<rank_t>>> MackeyFunctor<rank_t>::automorphisms() const {
+		std::vector<std::vector<mat_t<rank_t>>> isosfirst, isossecond;
 		isosfirst.reserve(Groups.size());
 		isossecond.reserve(Groups.size());
 		for (int i = 0; i < Groups.size(); i++) {

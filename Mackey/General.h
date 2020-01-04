@@ -1,21 +1,10 @@
 #pragma once
 #include <vector>
-#include <Eigen/Dense>
+#include "SFINAE.h"
 #include <numeric> //lcm
-#include <type_traits>
 
 ///@file
 ///@brief Contains general functions and vector overloads independent of everything else.
-
-namespace {
-	//SFINAE trick to detect Eigen matrices
-
-	std::false_type test_Eigen(...) { return std::false_type(); }
-	template <typename T>
-	std::true_type test_Eigen(Eigen::MatrixBase<T>) { return std::true_type(); }
-	template<typename T>
-	struct is_Eigen : public decltype(test_Eigen(std::declval<T>())) {};
-}
 
 ///The namespace for everything that is group-independent.
 namespace Mackey {
@@ -87,8 +76,8 @@ namespace Mackey {
 	}
 
 
-	///Find first instance of a in v
-	template<typename T, typename S, std::enable_if_t<!is_Eigen<S>::value,int> =0>
+	///Find first instance of a in v for non Eigen matrices
+	template<typename T, typename S, std::enable_if_t<!is_Dense<S>::value,int> =0>
 	int find(const T& v, const S & a) {
 		for (int i = 0; i < v.size(); i++) {
 			if (v[i]==a)
@@ -98,8 +87,8 @@ namespace Mackey {
 	}
 
 
-	///Find first instance of a in v
-	template<typename T, typename S, std::enable_if_t<is_Eigen<S>::value, int> =0>
+	///Find first instance of a in v for Eigen matrices
+	template<typename T, typename S, std::enable_if_t<is_Dense<S>::value, int> =0>
 	int find(const T& v, const S& a) {
 		for (int i = 0; i < v.size(); i++) {
 			if (v[i].rows()==a.rows() && v[i].cols()==a.cols() && v[i]==a) //otherwise static assert fails
@@ -123,9 +112,9 @@ namespace Mackey {
 	}
 
 	///Makes a new matrix out of A keeping only its rows indicated by Z
-	template<typename Derived, typename T>
-	Derived KeepRow(const Eigen::MatrixBase<Derived>& A, const T& Z) { //when the new stable version of Eigen releases this will be deprecated
-		Derived B(Z.size(), A.cols());
+	template<typename T, typename S>
+	T KeepRow(const T& A, const S& Z) { //when the new stable version of Eigen releases this will be deprecated
+		T B(Z.size(), A.cols());
 		int j = 0;
 		for (const auto& i : Z) {
 			B.row(j) = A.row(i);
@@ -135,9 +124,9 @@ namespace Mackey {
 	}
 
 	///Makes a new matrix out of A keeping only its columns indicated by Z
-	template<typename Derived, typename T>
-	Derived KeepCol(const Eigen::MatrixBase<Derived>& A, const T& Z) { //when the new stable version of Eigen releases this will be deprecated
-		Derived B(A.rows(), Z.size());
+	template<typename T, typename S>
+	T KeepCol(const T& A, const S& Z) { //when the new stable version of Eigen releases this will be deprecated
+		T B(A.rows(), Z.size());
 		int j = 0;
 		for (const auto& i : Z) {
 			B.col(j) = A.col(i);
@@ -251,6 +240,17 @@ namespace Mackey {
 		auto n=1;
 		for (const auto& i:v)
 			n = std::lcm(n, i);
+		return n;
+	}
+
+	///Least common multiple of vector of elements
+	template<typename T>
+	int gcd(const T& v) {
+		if (v.size() == 0)
+			return 0;
+		auto n = 1;
+		for (const auto& i : v)
+			n = std::gcd(n, i);
 		return n;
 	}
 

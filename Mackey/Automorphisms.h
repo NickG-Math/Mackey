@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <Eigen/Dense>
+#include "Aliases.h"
 #include <numeric>
 #include "General.h"
 
@@ -53,22 +53,21 @@ namespace Mackey
 	}
 
 	///Returns all automorphisms of finite abelian p-group
-	template<typename Scalar>
-	std::vector<Eigen::Matrix<Scalar, -1, -1>> aut_p_group(int p, const Eigen::Matrix<Scalar, 1, -1>& pGroup) {
-		typedef Eigen::Matrix<Scalar, -1, -1> matrix_t;
-		std::vector<matrix_t> isos;
-		std::vector<Scalar> maxelement;
+	template<typename T>
+	std::vector<mat_t<T>> aut_p_group(int p, const T& pGroup) {
+		std::vector<mat_t<T>> isos;
+		std::vector<Scalar_t<T>> maxelement;
 		maxelement.reserve(pGroup.size() * pGroup.size());
 		for (int i = 0; i < pGroup.size(); i++) {
 			for (int j = 0; j < pGroup.size(); j++) {
 				maxelement.push_back(pGroup[j] - 1);
 			}
 		}
-		std::vector<Scalar> minelement(pGroup.size() * pGroup.size());
+		std::vector<Scalar_t<T>> minelement(pGroup.size() * pGroup.size());
 		auto allelements = DegreeConstruction(minelement, maxelement);
 		isos.reserve(allelements.size());
 		for (const auto& i : allelements) {
-			matrix_t matrix = Eigen::Map<const matrix_t>(i.data(), pGroup.size(), pGroup.size());
+			mat_t<T> matrix = Eigen::Map<const mat_t<T>>(i.data(), pGroup.size(), pGroup.size());
 			if (check_isomorphism_p_group(p, matrix, pGroup))
 				isos.push_back(matrix);
 		}
@@ -77,15 +76,14 @@ namespace Mackey
 
 
 	///Returns the inverses of all the automorphisms Group->Group. 
-	template<typename Scalar>
-	std::vector<Eigen::Matrix<Scalar, -1, -1>> inverses(const std::vector<Eigen::Matrix<Scalar, -1, -1>>& isos, const Eigen::Matrix<Scalar, 1, -1>& Group) {
-		typedef Eigen::Matrix<Scalar, -1, -1> matrix_t;
-		matrix_t id = matrix_t::Identity(isos[0].rows(), isos[0].rows());
-		std::vector<matrix_t> inverse(isos.size());
+	template<typename T>
+	std::vector<mat_t<T>> inverses(const std::vector<mat_t<T>>& isos, const T& Group) {
+		mat_t<T> id = mat_t<T>::Identity(isos[0].rows(), isos[0].rows());
+		std::vector<mat_t<T>> inverse(isos.size());
 		for (int i = 0; i < isos.size(); i++) {
 			if (inverse[i].size() == 0) {
 				for (int j = i; j < isos.size(); j++) {
-					matrix_t product = isos[i] * isos[j];
+					mat_t<T> product = isos[i] * isos[j];
 					normalize(product, Group);
 					if (product == id) {
 						inverse[i] = isos[j];
@@ -146,14 +144,14 @@ namespace Mackey
 
 
 
-	///Returns all automorphisms of a finitely generated abelian group together with their inverses. Currently only for p-groups and Z+p-groups (otherwise returns empty)
-	template<typename Scalar>
-	std::pair <std::vector<Eigen::Matrix<Scalar, -1, -1>>, std::vector<Eigen::Matrix<Scalar, -1, -1>>> all_automorphisms(const Eigen::Matrix<Scalar, 1, -1>& Group) {
-		typedef Eigen::Matrix<Scalar, -1, -1> matrix_t;
-		std::vector<matrix_t> iso, inv;
+	///Returns all automorphisms of a finitely generated abelian group together with their inverses. 
+	///Currently only for p-groups and Z+p-groups (otherwise returns empty)
+	template<typename T>
+	std::pair <std::vector<mat_t<T>>, std::vector<mat_t<T>>> all_automorphisms(const T& Group) {
+		std::vector<mat_t<T>> iso, inv;
 		auto size = Group.size();
 		if (size == 0) { //trivial
-			matrix_t id = matrix_t::Identity(1, 1);
+			auto id = mat_t<T>::Identity(1, 1);
 			iso = inv = { id };
 		}
 		else {
@@ -165,7 +163,7 @@ namespace Mackey
 				}
 			}
 			else if (size == 1) { //Z
-				matrix_t id = matrix_t::Identity(1, 1);
+				mat_t<T> id = mat_t<T>::Identity(1, 1);
 				iso = inv = { id,-id };
 			}
 			else {
@@ -180,24 +178,24 @@ namespace Mackey
 					}
 				}
 				//finite+Z
-				Eigen::Matrix<Scalar, 1, -1> pGroup(1, size - 1);
+				T pGroup(1, size - 1);
 				pGroup << Group.head(locationZ), Group.tail(size - locationZ - 1);
 				auto p = is_p_group(pGroup);
 				if (p > 0) {
 					auto smalliso = aut_p_group(p, pGroup);
-					Eigen::Matrix<Scalar, 1, -1> onelower = Group - Eigen::Matrix<Scalar, 1, -1>::Constant(size, 1);
+					T onelower = Group - T::Constant(size, 1);
 
-					std::vector<Scalar> maxelement(onelower.data(), onelower.data() + onelower.size()); //the column corresponding to Z
-					std::vector<Scalar> minelement(size);
+					std::vector<Scalar_t<T>> maxelement(onelower.data(), onelower.data() + onelower.size()); //the column corresponding to Z
+					std::vector<Scalar_t<T>> minelement(size);
 					auto allcolumns = DegreeConstruction(minelement, maxelement);
 
 					iso.reserve(smalliso.size() * allcolumns.size());
 					for (const auto& i : smalliso) {
 						for (const auto& j : allcolumns) {
-							matrix_t matrix(size, size);
+							mat_t<T> matrix(size, size);
 							matrix.topLeftCorner(locationZ, locationZ) = i.topLeftCorner(locationZ, locationZ);
 							matrix.row(locationZ).setZero();
-							matrix.col(locationZ) = Eigen::Map<const Eigen::Matrix<Scalar, -1, 1>>(j.data(), j.size());
+							matrix.col(locationZ) = Eigen::Map<const col_t<T>>(j.data(), j.size());
 							matrix.bottomRightCorner(size - locationZ - 1, size - locationZ - 1) = i.bottomRightCorner(size - locationZ - 1, size - locationZ - 1);
 							matrix(locationZ, locationZ) = 1;
 							iso.push_back(matrix);

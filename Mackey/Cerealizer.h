@@ -50,6 +50,12 @@ namespace Mackey {
 		archive(CEREAL_NVP(C.maxindex), CEREAL_NVP(C.rank), CEREAL_NVP(C.diff));
 	}
 
+	///Chains cerealize
+	template<typename Archive, typename rank_t, typename diff_t>
+	void serialize(Archive& archive, Homology<rank_t, diff_t>& H) {
+		archive(CEREAL_NVP(H.Groups), CEREAL_NVP(H.Generators), CEREAL_NVP(H.isZero), CEREAL_NVP(H.nonZeroVectors), CEREAL_NVP(H.dontModOut), \
+			CEREAL_NVP(H.In_Q), CEREAL_NVP(H.Out_Qi), CEREAL_NVP(H.In_P_full), CEREAL_NVP(H.In_P_reduced));
+	}
 
 	///IDGenerator cerealize
 	template<typename Archive, typename rank_t>
@@ -79,7 +85,9 @@ namespace Mackey {
 	///MultiplicationTable cerealize
 	template<typename Archive, typename rank_t, typename diff_t>
 	void serialize(Archive& archive, MultiplicationTable<rank_t, diff_t>& M) {
-		archive(CEREAL_NVP(M.level), CEREAL_NVP(M.NonZeroHomology), CEREAL_NVP(M.degree), CEREAL_NVP(M.antidegree), CEREAL_NVP(M.index_product), CEREAL_NVP(M.minsphere), CEREAL_NVP(M.maxsphere), CEREAL_NVP(M.Greens), CEREAL_NVP(M.basicIrreducibles), CEREAL_NVP(M.number_of_irreducibles), CEREAL_NVP(M.basicChains), CEREAL_NVP(M.IndexedChains), CEREAL_NVP(M.tripleGreens));
+		archive(CEREAL_NVP(M.level), CEREAL_NVP(M.NonZeroHomology), CEREAL_NVP(M.degree), CEREAL_NVP(M.antidegree), CEREAL_NVP(M.index_product), \
+			CEREAL_NVP(M.minsphere), CEREAL_NVP(M.maxsphere), CEREAL_NVP(M.Greens), CEREAL_NVP(M.basicIrreducibles), CEREAL_NVP(M.number_of_irreducibles), \
+			CEREAL_NVP(M.basicChains), CEREAL_NVP(M.IndexedChains), CEREAL_NVP(M.tripleGreens));
 	}
 
 

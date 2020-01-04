@@ -51,11 +51,9 @@ namespace Mackey {
 			}
 			else {
 				for (int j = track; j < std::min(track + n, limit - n); j++) {
-					Eigen::Matrix<typename diff_t::Scalar, -1, 1> columnsum = reduceddiff.col(j);
-					for (int k = j + n; k < limit; k += n) {
-						columnsum += reduceddiff.col(k);
-					}
-					transfer.col(tracktransfer) = columnsum;
+					transfer.col(tracktransfer) = reduceddiff.col(j);
+					for (int k = j + n; k < limit; k += n)
+						transfer.col(tracktransfer) += reduceddiff.col(k);
 					tracktransfer++;
 				}
 			}
@@ -99,13 +97,11 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	Chains<rank_t, diff_t> transfer(const Chains<rank_t, diff_t>& C, int level) {
 		Chains<rank_t, diff_t> C_Level(C.rank.size());
-		for (const auto& i : C.rank) {
+		for (const auto& i : C.rank)
 			C_Level.rank.push_back(transfer(i, level));
-		}
 		C_Level.diff.resize(C.diff.size());
-		for (int i = 1; i <= C.maxindex; i++) {
+		for (int i = 1; i <= C.maxindex; i++)
 			C_Level.diff[i] = transfer(C.diff[i], C.rank[i], C_Level.rank[i], C.rank[i - 1], C_Level.rank[i - 1], level);
-		}
 		return C_Level;
 	}
 
@@ -118,9 +114,8 @@ namespace Mackey {
 		int trackran = 0;
 		for (int i = 0; i < domain.size(); i++)
 		{
-			if (domain(i) == range(i)) {
+			if (domain(i) == range(i))
 				transferred.segment(trackran, range(i)) = static_cast<typename Derived::Scalar>(prime) * generator.segment(trackdom, range(i));
-			}
 			else {
 				transferred.segment(trackran, range(i)) = generator.segment(trackdom, range(i));
 				for (int k = 1; k < domain(i) / range(i); k++) {
@@ -142,9 +137,8 @@ namespace Mackey {
 		int trackdom = 0;
 		int trackran = 0;
 		for (int i = 0; i < domain.size(); i++) {
-			for (int j = 0; j < range(i) / domain(i); j++) {
+			for (int j = 0; j < range(i) / domain(i); j++)
 				restricted.segment(trackran + j * domain(i), domain(i)) = generator.segment(trackdom, domain(i));
-			}
 			trackdom += domain(i);
 			trackran += range(i);
 		}
@@ -160,9 +154,8 @@ namespace Mackey {
 	template<typename Derived, typename T>
 	void shiftsegment(Eigen::MatrixBase<Derived>& V, int tracker, T rankvalue)
 	{
-		for (int i = tracker; i < tracker + rankvalue - 1; i++) {
+		for (int i = tracker; i < tracker + rankvalue - 1; i++)
 			std::swap(V(i), V(i + 1));
-		}
 	}
 
 	///Compute the Weyl group action on a generator given the rank of the group it lives in.
@@ -198,12 +191,10 @@ namespace Mackey {
 
 	///Writing the transfer of each generator in terms of the generators in the image.
 	template<typename rank_t, typename diff_t>
-	Eigen::Matrix<typename rank_t::Scalar,-1,-1> transfer(const Homology<rank_t, diff_t>& low, const Homology<rank_t, diff_t>& high, const rank_t& rank_low, const rank_t& rank_high) {
-		typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-		Eigen::Matrix<typename rank_t::Scalar, -1, -1> Tr;
-		Tr.resize(high.Groups.size(), low.Groups.size());
+	mat_t<rank_t> transfer(const Homology<rank_t, diff_t>& low, const Homology<rank_t, diff_t>& high, const rank_t& rank_low, const rank_t& rank_high) {
+		mat_t<rank_t> Tr(high.Groups.size(), low.Groups.size());
 		for (int i = 0; i < low.Generators.cols(); i++) {
-			gen_t generator = low.Generators.col(i);
+			gen_t<rank_t, diff_t> generator = low.Generators.col(i);
 			Tr.col(i)= high.basis(transfer(generator, rank_low, rank_high)).transpose();// Eigen::Map<Eigen::Matrix<typename rank_t::Scalar,-1,1>>(u.data(),u.size());
 		}
 		return Tr;
@@ -211,12 +202,10 @@ namespace Mackey {
 
 	///Writing the restriction of each generator in terms of the generators in the image.
 	template<typename rank_t, typename diff_t>
-	Eigen::Matrix<typename rank_t::Scalar, -1, -1> restriction(const Homology<rank_t, diff_t>& high, const Homology<rank_t, diff_t>& low, const rank_t& rank_high, const rank_t& rank_low) {
-		typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-		Eigen::Matrix<typename rank_t::Scalar, -1, -1> Res;
-		Res.resize(low.Groups.size(), high.Groups.size());
+	mat_t<rank_t> restriction(const Homology<rank_t, diff_t>& high, const Homology<rank_t, diff_t>& low, const rank_t& rank_high, const rank_t& rank_low) {
+		mat_t<rank_t> Res(low.Groups.size(), high.Groups.size());
 		for (int i = 0; i < high.Generators.cols(); i++) {
-			gen_t generator = high.Generators.col(i);
+			gen_t<rank_t, diff_t> generator = high.Generators.col(i);
 			Res.col(i)=low.basis(restriction(generator, rank_high, rank_low)).transpose();
 		}
 		return Res;
@@ -224,12 +213,10 @@ namespace Mackey {
 
 	///Writing the Weyl group action on each generator in terms of the other generators.
 	template<typename rank_t, typename diff_t>
-	Eigen::Matrix<typename rank_t::Scalar, -1, -1> action(const Homology<rank_t, diff_t>& H, const rank_t& rank) {
-		typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-		Eigen::Matrix<typename rank_t::Scalar, -1, -1> Weyl;
-		Weyl.resize(H.Groups.size(), H.Groups.size());
+	mat_t<rank_t> action(const Homology<rank_t, diff_t>& H, const rank_t& rank) {
+		mat_t<rank_t> Weyl(H.Groups.size(), H.Groups.size());
 		for (int i = 0; i < H.Generators.cols(); i++) {
-			gen_t generator = H.Generators.col(i);
+			gen_t<rank_t,diff_t> generator = H.Generators.col(i);
 			Weyl.col(i)=H.basis(action(generator, rank)).transpose();
 		}
 		return Weyl;

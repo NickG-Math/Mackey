@@ -72,7 +72,8 @@ namespace Mackey {
 	/// Extract the Junction C[i+1]->C[i]->C[i-1] from the Chains C.
 		Junction(const Chains<rank_t, diff_t>&, int);
 	/// Construct Junction by directly setting the elements
-		Junction(const rank_t& rank, const rank_t& rankOut, const rank_t& rankIn, const diff_t& diffOut, const diff_t& diffIn) : rank(rank), rankOut(rankOut), rankIn(rankIn), diffOut(diffOut), diffIn(diffIn) {}
+		Junction(const rank_t& rank, const rank_t& rankOut, const rank_t& rankIn, const diff_t& diffOut, const diff_t& diffIn) 
+		: rank(rank), rankOut(rankOut), rankIn(rankIn), diffOut(diffOut), diffIn(diffIn) {}
 	};
 
 

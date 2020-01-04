@@ -9,6 +9,7 @@
 
 namespace Mackey {
 
+
 	//////////////////////////////////////
 	/// A directed Graph
 
@@ -20,21 +21,32 @@ namespace Mackey {
 	public:
 		int number_of_nodes; ///<The number of vertices
 
+		
+		std::vector<std::vector<int>> edges; ///<The edges of the graph
+
+
 		//////////////////////////////////////
 		/// The "shortest" path from a selected source to any other point. 
 
-		/// The meaning of shortest is determined in the specializations of Graph.
+		/// The meaning of shortest is determined in the specializations of Graph. 
+		
+		///The default by distance where each edge has weight 1.
+	
+		///path[i] consists of the procession of nodes from i to source.
 		//////////////////////////////////////
 		std::vector<std::vector<int>> path;
 
+		/// Same as path, but using the procession of edges as opposed to nodes
+		std::vector<std::vector<int>> path_edges;
+		
 		/////////////////////////////////////
-		/// The weighted distance from a selected source to all points.
+		/// The weighted distance from a selected source to all points. -1 if disconnected
 
 		///The type of weight will depend on the specialization of Graph.
 		std::vector<int> weightedDistance;
-
+		
 		/// Construct given the edges of the graph
-		Graph(std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) {}
+		Graph(const std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) {}
 
 		/// A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations.
 		void computeWithSource(int givensource) {
@@ -54,23 +66,23 @@ namespace Mackey {
 			static_cast<T*>(this)->initialize();
 			computeWithSource(givensource);
 		};
-
+		
 		/// Writes a graph.dot file representing the graph. The nodes are unnamed.
 		void draw();
 		/// Writes a graph.dot file representing the graph using node names.
 		void draw(const std::vector<std::string>&);
-
-		std::vector<std::vector<int>> edges; ///<The edges of the graph
-
 		///Default constructor
 		Graph() {};
 
+		///General implementation for graphs 
+		void computePath();
+
 	protected:
-		int source; ///<The source of the graph
+		int source; ///<A source of the graph
 	private:
-		//These are defined in the inherited classes
+		//Default implementation
 		void initialize() {};
-		void computePath() {};
+
 	};
 
 	template<typename T>
@@ -107,20 +119,35 @@ namespace Mackey {
 	/// A directed Graph with weights
 	class WeightedGraph : public Graph<WeightedGraph> {
 	public:
+
 		///Default constructor
 		WeightedGraph() {};
 
-		/// Sets edges and 0 weights
-		WeightedGraph(std::vector<std::vector<int>>& edges) : Graph(edges), weights(zeroWeight(edges)) { initialize(); } //we must initalize here and not in a constructor of Graph because we can't static_cast(this) in a constructor
+		///Constructor from given graph and weights
+		template<typename T>
+		WeightedGraph(Graph<T>& G, const std::vector<std::vector<int>> weights): weights(weights){
+			static_cast<Graph<T>&>(*this) = G;
+			initialize(); 
+		}
 
-		/// Sets edges and weights
-		WeightedGraph(std::vector<std::vector<int>>& edges, std::vector<std::vector<int>>& weights) : Graph(edges), weights(weights) { initialize(); } //see above why this is here
+		///Constructor from given edges and weights
+		WeightedGraph(const std::vector<std::vector<int>> & edges, const std::vector<std::vector<int>> weights) : Graph<WeightedGraph>(edges), weights(weights) {
+			initialize();
+		}
+		
+		///Constructor from other graph and zero weights
+		template<typename T>
+		WeightedGraph(Graph<T>& G) : WeightedGraph(G, zeroWeights(G.edges)) { initialize(); }
+		
+	
 	private:
 		std::vector<std::vector<int>> weights;
+
+
 		std::vector<int> distance, closest;
 		std::vector<char> visited, reachable; //not bool for performance
 		std::priority_queue<std::pair<int, int>> next;
-		std::vector<std::vector<int>> zeroWeight(const std::vector<std::vector<int>>&);
+		auto zeroWeight(const std::vector<std::vector<int>>&);
 		void initialize();
 		void computePath();
 		void stepDistance(int);
@@ -131,7 +158,7 @@ namespace Mackey {
 
 
 
-	std::vector<std::vector<int>> WeightedGraph::zeroWeight(const std::vector<std::vector<int>>& e) {
+	auto WeightedGraph::zeroWeight(const std::vector<std::vector<int>>& e) {
 		std::vector<std::vector<int>> w;
 		w.resize(e.size());
 		for (size_t i = 0; i < e.size(); i++) {
@@ -193,7 +220,15 @@ namespace Mackey {
 				path[i].push_back(source);
 			}
 		}
+	}
 
+	
+
+	template<typename T>
+	void Graph<T>::computePath() {
+		WeightedGraph W(*this);
+		W.computePath();
+		*this=static_cast<Graph<T>&>(W);
 	}
 
 
@@ -205,8 +240,10 @@ namespace Mackey {
 		/// Default Constructor
 		ColoredGraph() {};
 
-		/// Construct given the edges and colors
-		ColoredGraph(std::vector<std::vector<int>>& edges, std::vector<std::vector<char>>& colors) : Graph(edges), colors(colors) {}
+		/// Construct given Graph and colors
+		template<typename T>
+		ColoredGraph(const Graph<T>& G, std::vector<std::vector<char>>& colors): colors(colors) {
+			static_cast<Graph<T>&>(*this) = G;}
 
 		/// Writes a graph.dot file representing the colored graph (using red and blue). The nodes are unnamed points.
 		void draw();
@@ -222,7 +259,7 @@ namespace Mackey {
 		std::vector<int> adjustpath(std::vector<int>& path);
 		WeightedGraph dual;
 
-		friend class  Graph<ColoredGraph>; ///<Used to set up the CRTP.
+		friend class Graph<ColoredGraph>; ///<Used to set up the CRTP.
 	};
 
 
@@ -237,36 +274,35 @@ namespace Mackey {
 		//the monochrome edges ending at i_red are only the red edges of the original graph (same for blue)
 		//the monochrome edges that alternate node colors are given weight one
 
-		auto number_of_colored_nodes = 2 * number_of_nodes;
-		std::vector<std::vector<int>> monochrome_edges, weights;
-		monochrome_edges.resize(number_of_colored_nodes);
-		weights.resize(number_of_colored_nodes);
+		std::vector<std::vector<int>> dual_edges;
+		std::vector<std::vector<int>> weights;
+		dual_edges.resize(2 * number_of_nodes);
+		weights.resize(2 * number_of_nodes);
 		for (int i = 0; i < number_of_nodes; i++) {
 
-			monochrome_edges[2 * i].reserve(edges[i].size());
+			dual_edges[2 * i].reserve(edges[i].size());
 			weights[2 * i].reserve(edges[i].size());
-			monochrome_edges[2 * i + 1].reserve(edges[i].size());
+			dual_edges[2 * i + 1].reserve(edges[i].size());
 			weights[2 * i + 1].reserve(edges[i].size());
 
 			for (std::vector<int>::size_type j = 0; j < edges[i].size(); j++) {
 				if (!colors[i][j]) {//red target
-					monochrome_edges[2 * i].push_back(2 * edges[i][j]); //red to red
+					dual_edges[2 * i].push_back(2 * edges[i][j]); //red to red
 					weights[2 * i].push_back(0);
 
-					monochrome_edges[2 * i + 1].push_back(2 * edges[i][j]); //blue to red
+					dual_edges[2 * i + 1].push_back(2 * edges[i][j]); //blue to red
 					weights[2 * i + 1].push_back(1);
 				}
 				else { //blue target
-					monochrome_edges[2 * i].push_back(2 * edges[i][j] + 1); //red to blue
+					dual_edges[2 * i].push_back(2 * edges[i][j] + 1); //red to blue
 					weights[2 * i].push_back(1);
 
-					monochrome_edges[2 * i + 1].push_back(2 * edges[i][j] + 1); //blue to blue
+					dual_edges[2 * i + 1].push_back(2 * edges[i][j] + 1); //blue to blue
 					weights[2 * i + 1].push_back(0);
 				}
-
 			}
 		}
-		dual=WeightedGraph(monochrome_edges, weights);
+		dual=WeightedGraph(dual_edges,weights);
 	}
 
 	void ColoredGraph::computePath() {

@@ -138,7 +138,8 @@ bool distinguish(const std::vector<rank_t>& elements, const IDGenerators<rank_t>
 		IDGeneratorCompute<rank_t, diff_t>::IDGeneratorCompute(int level, const Junction<rank_t, diff_t>& bottom, bool getQ) {
 			auto current = transfer(bottom, level);
 			rank_level = current.rank;
-			H_level = Homology<rank_t, diff_t>(current, getQ);
+			H_level = Homology<rank_t, diff_t>(current,getQ);
+
 			ID.group = H_level.Groups;
 			if (ID.group.size() <= 1)
 				return;

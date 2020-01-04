@@ -114,12 +114,13 @@ namespace Mackey {
 
 	namespace internal {
 
+
+
 		///Computes the homology at given level, the generators and their restrictions
 		template<typename rank_t, typename diff_t>
 		class ChainsLevelGen {
-			typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-			diff_t Gens;
-			gen_t gen, res_gen;
+			Gen_t<rank_t,diff_t> Gens;
+			gen_t<rank_t, diff_t> gen, res_gen;
 			rank_t rank_level;
 			bool isZero;
 			ChainsLevelGen(const Chains<rank_t, diff_t>& C, int level, int degree) {
@@ -155,8 +156,7 @@ namespace Mackey {
 		///Computes the product of generators at the bottom level
 		template<typename rank_t, typename diff_t>
 		class ProductGen {
-			typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-			gen_t product;
+			gen_t<rank_t,diff_t> product;
 			int padright, padleft;
 			const Chains<rank_t, diff_t>& C, D;
 			int degreeC, degreeD;
@@ -177,13 +177,13 @@ namespace Mackey {
 			}
 
 
-			void multiply(gen_t gen1, gen_t gen2) {
-				gen_t leftConvProduct(gen1.size() * gen2.size());
+			void multiply(gen_t<rank_t,diff_t> gen1, gen_t<rank_t, diff_t> gen2) {
+				gen_t<rank_t, diff_t> leftConvProduct(gen1.size() * gen2.size());
 				for (int i = 0; i < gen2.size(); i++) {
 					leftConvProduct.segment(i * gen1.size(), gen1.size()) = gen1 * gen2(i);
 				}
 				ChangeBasis<rank_t> permute(C.rank[degreeC], D.rank[degreeD]);
-				gen_t canonProduct = permute.LefttoCanon.inverse() * leftConvProduct;
+				gen_t<rank_t, diff_t> canonProduct = permute.LefttoCanon.inverse() * leftConvProduct;
 				product.resize(padleft + canonProduct.size() + padright);
 				product.setZero();
 				product.segment(padleft, canonProduct.size()) = canonProduct;
@@ -204,13 +204,9 @@ namespace Mackey {
 		class GreenCompute {
 
 			Green<rank_t, diff_t> G; ///<The answer of the computation
-
-			typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-			gen_t product;
-
-
+			gen_t<rank_t, diff_t> product;
 			const Chains<rank_t, diff_t>& C, D;
-			diff_t GenC, GenD;
+			Gen_t<rank_t, diff_t> GenC, GenD;
 			rank_t rank_bottom, rank_level;
 			const int level, degreeC, degreeD;
 			Homology<rank_t, diff_t> H_Level;
@@ -272,17 +268,15 @@ namespace Mackey {
 
 		template<typename rank_t, typename diff_t>
 		void GreenCompute<rank_t, diff_t>::compute() {
-
-			typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-			gen_t genC, genD;
+			gen_t<rank_t,diff_t> genC, genD;
 			auto combinations = GenC.cols() * GenD.cols();
 			G.basis.reserve(combinations);
 			for (int i = 0; i < GenC.cols(); i++) {
 				for (int j = 0; j < GenD.cols(); j++) {
 					genC = GenC.col(i);
 					genD = GenD.col(j);
-					gen_t resGenC = restriction(genC, C_Variables.rank_level, C.rank[degreeC]);
-					gen_t resGenD = restriction(genD, D_Variables.rank_level, D.rank[degreeD]);
+					auto resGenC = restriction(genC, C_Variables.rank_level, C.rank[degreeC]);
+					auto resGenD = restriction(genD, D_Variables.rank_level, D.rank[degreeD]);
 					Restricted.multiply(resGenC, resGenD);
 					product = invRes(Restricted.product, rank_bottom, rank_level);
 					rank_t basis = H_Level.basis(product);

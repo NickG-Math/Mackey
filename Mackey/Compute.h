@@ -90,7 +90,7 @@ namespace Mackey {
 	}
 
 	///Computes the Mackey functor homology of the given sphere
-	template<typename rank_t, typename diff_t, typename deg_t>
+	template<typename rank_t, typename diff_t, typename deg_t = std::vector<int>>
 	std::vector<MackeyFunctor<rank_t>> ROHomology(const deg_t& sphere)
 	{
 		std::vector<MackeyFunctor<rank_t>> M;
@@ -104,7 +104,7 @@ namespace Mackey {
 	}
 
 	///Computes the product of two generators in the RO(G) homology given their level, degrees and selections (if noncyclic)
-	template<typename rank_t, typename diff_t, typename deg_t>
+	template<typename rank_t, typename diff_t, typename deg_t = std::vector<int>>
 	rank_t ROGreen(int level, const deg_t& first, const deg_t& second, int selectFirst, int selectSecond) {
 		auto refirst = Reindex(first);
 		auto resecond = Reindex(second);
@@ -120,13 +120,13 @@ namespace Mackey {
 	}
 
 	///Computes the product of two generators in the RO(G) homology given their level, degrees and default 0,0 selections (if noncyclic)
-	template<typename rank_t, typename diff_t, typename deg_t>
+	template<typename rank_t, typename diff_t, typename deg_t=std::vector<int>>
 	inline rank_t ROGreen(int level, const deg_t& first, const deg_t& second) {
 		return ROGreen<rank_t, diff_t, deg_t>(level, first, second, 0, 0);
 	}
 
 	///Computes the Massey product of three generators in the RO(G) homology given their level, degrees and selections (if noncyclic)
-	template<typename rank_t, typename diff_t, typename deg_t>
+	template<typename rank_t, typename diff_t, typename deg_t = std::vector<int>>
 	Massey<rank_t, diff_t> ROMassey(int level, const deg_t& first, const deg_t& second, const deg_t& third, int selectFirst, int selectSecond, int selectThird) {
 		auto refirst = Reindex(first);
 		auto resecond = Reindex(second);

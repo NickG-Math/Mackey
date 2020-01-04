@@ -14,9 +14,23 @@ namespace Mackey {
 	///The Homology of a Junction
 	template<typename rank_t, typename diff_t>
 	class Homology {
-	public:	
+
+		///<Type used for Smith + product of matrices, either for performance (float/double) or to avoid overflow (long).
+		typedef typename std::conditional<is_Finite_Cyclic<Scalar_t<diff_t>>::value, Scalar_t<diff_t>, float>::type fScalar;
+		typedef typename std::conditional<is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1>, Eigen::SparseMatrix<fScalar, 0>>::type fdiff_t_C;	///<Column Major
+		typedef typename std::conditional<is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1, 1>, Eigen::SparseMatrix<fScalar, 1>>::type fdiff_t_R;	///<Row Major
+		typedef typename std::conditional<is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, 1>, Eigen::SparseVector<fScalar>>::type fdiff_t_C_col;	///<Column of column major
+	
+	public:
+
+		///The type of our matrix of generators
+		typedef fdiff_t_C Gen_t;
+		///The type of our generators (a column in the generator matrix)
+		typedef fdiff_t_C_col gen_t;
+
+
 		rank_t Groups;///<Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3
-		diff_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
+		Gen_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
 		bool isZero;///<1 if the homology is trivial
 		
 		///Default constructor
@@ -33,111 +47,90 @@ namespace Mackey {
 
 		///The answer is encoded as follows: basis=[-1,0,3] means element=-gen[0]+3*gen[2]
 		///////////////////////////////////////
-		template<typename gen_t>
 		rank_t basis(const gen_t&) const;
 
 		///Given an x that is a boundary returns a y s.t. dy=x
-		template<typename gen_t>
 		gen_t boundary(const gen_t&) const;
 
-	private:
-		typedef float fScalar;	///<The floating point type used when taking products of matrices (and for the Smith when using Z coefficients)
-		typedef Eigen::Matrix<fScalar, -1, -1> fdiff_t;	///<The type of our casted differentials
-
-		std::vector<int> nonZeroVectors;
+	public:
 		std::vector<int> dontModOut;
-		fdiff_t Out_Qi, In_P, In_Q;
-		Eigen::Matrix<typename diff_t::Scalar, 1, -1> diagonal;
+		fdiff_t_C In_Q;
+		fdiff_t_R Out_Qi, In_P_full, In_P_reduced;
+		row_t<fdiff_t_C> diagonal;
 		int M;
-		fdiff_t Kernel;
-		template<typename Derived>
-		void getKernel(const Eigen::MatrixBase<Derived>&);
-		template<typename Derived>
-		void KernelModImage(const Eigen::MatrixBase<Derived>&, bool);
+		fdiff_t_C getKernel(fdiff_t_C&);
+		void KernelModImage(fdiff_t_C&, fdiff_t_C&, bool);
+
+#ifdef CEREALIZE
+		template<typename Archive, typename srank_t, typename sdiff_t>
+		friend void serialize(Archive&, Homology<srank_t, sdiff_t>&);
+#endif
 	};
+
 
 	template<typename rank_t, typename diff_t>
 	Homology<rank_t, diff_t>::Homology(const Junction<rank_t, diff_t>& J, bool getQ) {
 		M = summation(J.rank);
-		diff_t In, Out;
-		if (J.diffIn.size() == 0 && J.diffOut.size() == 0) {
-			In = Eigen::MatrixBase<diff_t>::Zero(M, 1);
-			Out = Eigen::MatrixBase<diff_t>::Zero(1, M);
+		fdiff_t_C In, Out;
+		if (J.diffIn.size() == 0) {
+			In.resize(M, 1);
+			In.setZero();
 		}
-		else if (J.diffOut.size() == 0) {
-			Out = Eigen::MatrixBase<diff_t>::Zero(1, M);
-			In = J.diffIn;
+		else
+			In= J.diffIn.template cast<fScalar>();
+		if (J.diffOut.size() == 0) {
+			Out.resize(1,M);
+			Out.setZero();
 		}
-		else if (J.diffIn.size() == 0) {
-			In = Eigen::MatrixBase<diff_t>::Zero(M, 1);
-			Out = J.diffOut;
-		}
-		else {
-			Out = J.diffOut;
-			In = J.diffIn;
-		}
-
-		if constexpr (std::is_integral_v<typename diff_t::Scalar>) 
-			getKernel(static_cast<fdiff_t>(Out.template cast<fScalar>()));
 		else 
-			getKernel(Out);
+			Out = J.diffOut.template cast<fScalar>();
+		auto Kernel=getKernel(Out);
 		if (isZero)
 			return;
-		fdiff_t In_fScalar = Out_Qi * In.template cast<fScalar>();
-		if constexpr (!(std::is_integral_v<typename diff_t::Scalar>)) {
-			In = In_fScalar.template cast<typename diff_t::Scalar>();//we cast back if we are using non Z coefficients (F2 etc.). We mustn't do this for Z coefficients due to possible conversion errors.	
-			KernelModImage(In, getQ);
-		}
-		else {
-			KernelModImage(In_fScalar, getQ);
-		}
+		KernelModImage(In, Kernel, getQ);
 	}
 
 	template<typename rank_t, typename diff_t>
-	Homology<rank_t, diff_t>::Homology(const Junction<rank_t, diff_t>& J) : Homology(J, 0) {};
+	Homology<rank_t, diff_t>::Homology(const Junction<rank_t, diff_t>& J) :Homology(J, 0) {}
 
 	template<typename rank_t, typename diff_t>
-	template<typename Derived>
-	void Homology<rank_t, diff_t>::getKernel(const Eigen::MatrixBase<Derived>& Out) {
-
-		Smith<Derived, fdiff_t, fdiff_t> OUT(Out, 0, 1);
-		Out_Qi = std::move(OUT.Qi);
-		Kernel.resize(M,M);
+	typename Homology<rank_t, diff_t>::fdiff_t_C Homology<rank_t, diff_t>::getKernel(fdiff_t_C& Out) {
+		auto OUT = diagonalize<fdiff_t_C, fdiff_t_R, fdiff_t_C>(Out, 0, 1);
+		fdiff_t_C Kernel(M,M);
+		std::vector<int> nonZeroVectors;
 		nonZeroVectors.reserve(M);
 		isZero = 1;
 		int j = 0;
 		for (int i = 0; i < M;i++) {
-			if ( (i > OUT.L - 1) || (OUT.diagonal[i] == 0) ) {
-				//Remember that Q is invertible so it can't have zero columns
+			if (i >= OUT.diagonal.size() || OUT.diagonal[i] == 0) {
 				isZero = 0;
 				Kernel.col(j) = OUT.Q.col(i);
 				nonZeroVectors.push_back(i);
 				j++;
 			}
 		}
-		if (isZero)
-			return;
-		Kernel.conservativeResize(M, j);
+		Out_Qi = KeepRow(OUT.Qi, nonZeroVectors);
+		if (!isZero)
+			Kernel.conservativeResize(M, j);
+		return Kernel;
 	}
 
 	template<typename rank_t, typename diff_t>
-	template<typename Derived>
-	void Homology<rank_t, diff_t>::KernelModImage(const Eigen::MatrixBase<Derived>& In, bool getQ) {
-		Derived Inner = KeepRow(In, nonZeroVectors);
-		auto L = std::min(Inner.rows(), Inner.cols());
-	
-		Smith<Derived, fdiff_t, fdiff_t> IN(Inner, 1, getQ, 1);
-		In_P = std::move(IN.P); 
-		if (getQ)
-			In_Q = std::move(IN.Q);
-		Kernel = Kernel * IN.Pi;
-		Generators = Kernel.template cast<typename diff_t::Scalar>();
+	void Homology<rank_t, diff_t>::KernelModImage(fdiff_t_C& In, fdiff_t_C& Kernel, bool getQ) {
+		In = Out_Qi * In;
+		if constexpr (is_Sparse<diff_t>::value)
+			In.pruned();
+		auto L = std::min(In.rows(), In.cols());
+		auto IN=diagonalize<fdiff_t_C, fdiff_t_R, fdiff_t_C>(In, 1, getQ, 1);
+		Generators = Kernel * IN.Pi;
+		if constexpr (is_Sparse<diff_t>::value)
+			Generators.pruned();
 		auto maxsize = Generators.cols();
-		std::vector<typename rank_t::Scalar> groups;
+		std::vector<Scalar_t<rank_t>> groups;
 		groups.reserve(maxsize);
 		dontModOut.reserve(maxsize);
 		isZero = 1;
-		diagonal = IN.diagonal.template cast<typename diff_t::Scalar>();
+		diagonal = std::move(IN.diagonal);
 		for (int i = 0; i < maxsize;i++) {
 			if (i < L) {
 				if (abs(diagonal[i]) == 0) {
@@ -146,7 +139,7 @@ namespace Mackey {
 					dontModOut.push_back(i);
 				}
 				else if (abs(diagonal[i]) != 1) {
-					groups.push_back(static_cast<typename rank_t::Scalar>(abs(diagonal[i])));
+					groups.push_back(static_cast<Scalar_t<rank_t>>(abs(diagonal[i])));
 					isZero = 0;
 					dontModOut.push_back(i);
 				}
@@ -157,51 +150,42 @@ namespace Mackey {
 				dontModOut.push_back(i);
 			}
 		}
+		In_P_reduced = KeepRow(IN.P,dontModOut);
+		if (getQ) {
+			In_P_full = std::move(IN.P);
+			In_Q = std::move(IN.Q);
+		}
+
 		if (isZero) {
 			Generators.resize(0,0);
 			return;
 		}
-		Groups = Eigen::Map<Eigen::Matrix<typename rank_t::Scalar,1,-1>>(groups.data(), groups.size());
+		Groups = Eigen::Map<rank_t>(groups.data(), groups.size());
 		Generators = KeepCol(Generators, dontModOut);
 
 
 		//Check for non integer coefficients and replace the Z in Groups with Z/N
-		typedef typename diff_t::Scalar coeff;
-		if constexpr (is_finite_cyclic<typename diff_t::Scalar>()) {
-			constexpr int order = coeff::order;
+		if constexpr (is_Finite_Cyclic<Scalar_t<diff_t>>::value) {
+			constexpr int order = Scalar_t<diff_t>::order;
 			for (int i = 0; i < Groups.size(); i++) {
 				if (Groups[i] == 1)
-					Groups[i] = static_cast<typename rank_t::Scalar>(order);
+					Groups[i] = static_cast<Scalar_t<rank_t>>(order);
 			}
 		}
-
 	}
 
 
 	template<typename rank_t, typename diff_t>
-	template<typename gen_t>
 	rank_t Homology<rank_t, diff_t>::basis(const gen_t& generator) const {
 		if (isZero)
 			return rank_t();
 		rank_t basisArray(Groups.size());
-		Eigen::Matrix<fScalar,-1,1> element = generator.template cast<fScalar>();
-		element = Out_Qi * element;
-		element = KeepRow(element, nonZeroVectors);
-		element = In_P * element;
-		element = KeepRow(element, dontModOut);
-		Eigen::Matrix<long, -1, 1> longelement = element.template cast<long>(); //cast long here as it might be large; after that we modulo 
-
+		gen_t element = In_P_reduced * Out_Qi * generator;
 		for (int j = 0; j < Groups.size();j++) {
-			typename diff_t::Scalar coeff;
-			if (Groups(j) != 1) {
-				coeff = static_cast<typename diff_t::Scalar>(longelement(j) % Groups(j));//need to cast incase extra mod is applied by our coefficients. Useless for Z coefficients
-				basisArray(j) = (Groups(j) + static_cast<typename rank_t::Scalar>(coeff)) % Groups(j);
-				//This is needed due to C++ conventions for % take a symmetric range w.r.t. 0 instead of >=0. So we can't just do element(j)%Groups(j)
-			}
-			else {
-				coeff = static_cast<typename diff_t::Scalar>(longelement(j));//need to cast in case extra mod is applied by our coefficients. Useless for Z coefficients
-				basisArray(j) = static_cast<typename rank_t::Scalar>(coeff);
-			}
+			if (Groups[j] != 1)
+				basisArray[j] = static_cast<Scalar_t<rank_t>>((Groups[j] + (long)element[j] % Groups[j]) % Groups[j]);
+			else
+				basisArray[j] = static_cast<Scalar_t<rank_t>>(element[j]);
 		}
 		return basisArray;
 	}
@@ -209,26 +193,19 @@ namespace Mackey {
 
 
 	template<typename rank_t, typename diff_t>
-	template<typename gen_t>
-	gen_t Homology<rank_t, diff_t>::boundary(const gen_t& generator) const {
-		Eigen::Matrix<fScalar, -1, 1> element = generator.template cast<fScalar>();
-		element = Out_Qi * element;
-		element = KeepRow(element, nonZeroVectors);
-		element = In_P * element;
+	typename Homology<rank_t, diff_t>::gen_t Homology<rank_t, diff_t>::boundary(const gen_t& generator) const {
+		gen_t element = In_P_full * Out_Qi * generator;
 		for (const auto& i : dontModOut) {
-			if (element[i] != 0) { //the element is not 0 so it has no preimage
-				gen_t gen;
-				return gen;
-			}
+			if (element[i] != 0)  //the element is not 0 so it has no preimage
+				return gen_t();
 		}
-		Eigen::Matrix<fScalar, -1, 1> y(In_Q.rows()); //Sy=Px
+		gen_t y(In_Q.rows()); //Sy=Px
 		y.setZero();
 		for (int i = 0; i < y.size(); i++) {
 			if (i < diagonal.size() && diagonal[i] != 0)
 				y[i] = static_cast<fScalar>(element[i] / diagonal[i]);
 		}
-		element = In_Q * y;
-		return element.template cast<typename gen_t::Scalar>();
+		return In_Q * y;
 	}
 
 
@@ -254,7 +231,7 @@ namespace Mackey {
 
 	///Normalizes the element in a group so that 0<=element[i]<=group[i] if group[i]!=1
 	template<typename T>
-	void mod_normalize(Eigen::Matrix<T, 1, -1>& element, const Eigen::Matrix<T, 1, -1>& group) {
+	void mod_normalize(T& element, const T& group) {
 		for (int i = 0; i < group.size(); i++) {
 			if (group[i] != 1)
 				element[i] = (element[i] + group[i]) % group[i];
@@ -264,7 +241,7 @@ namespace Mackey {
 
 	///Normalizes the element in a group to have minimal signs amongst its multiples
 	template<typename T>
-	void normalize(Eigen::Matrix<T, 1, -1>& element, const Eigen::Matrix<T, 1, -1>& group) {
+	void normalize(Eigen::Matrix<T,1,-1>& element, const Eigen::Matrix<T, 1, -1>& group) {
 		if (element.isZero())
 			return;
 		mod_normalize(element,group);
@@ -356,7 +333,7 @@ namespace Mackey {
 		if ((oa == 0 && ob != 0) || (ob < oa))
 			return 0;
 		if (oa == 0) {
-			typename T::Scalar q = 0;
+			Scalar_t<T> q = 0;
 			for (int i = 0; i < a.size(); i++) {
 				if (group[i] == 1 && a[i] != 0) {
 					if (b[i] == 0)
@@ -372,11 +349,60 @@ namespace Mackey {
 			else
 				return 0;
 		}
-		for (typename T::Scalar i = 1; i < ob; i++) {
+		for (Scalar_t<T> i = 1; i < ob; i++) {
 			if (equals(a, i * b, group))
 				return i;
 		}
 		return 0;
 	}
+	
+
+	// //temp sparse implementation
+	// template<typename rank_t, typename diff_t>
+	// Homology<rank_t, diff_t>::Homology(const Junction<rank_t, diff_t>& J){
+		// Junction<rank_t, spm_t<diff_t>> Jnew(J.rank, J.rankOut, J.rankIn, J.diffOut.sparseView(), J.diffIn.sparseView());
+		// Homology<rank_t, spm_t<diff_t>> H(Jnew,0);
+		// Groups = H.Groups;
+		// isZero = H.isZero;
+		// Generators = H.Generators;
+		// Out_Qi = H.Out_Qi;
+		// In_P_reduced = H.In_P_reduced;
+	// };
+
+
+
+
+// untested
+//	////////////////////////////////////////////////////
+/////Finds if element a is a linear combination of other given elements in a finitely generated abelian group
+//
+/////T,S are vectors or 1d Eigen matrices
+/////////////////////////////////////////////////////
+//	template<typename T, typename S>
+//	bool inSpan(const T& a, const std::vector<T>& b, const S& group) {
+//		std::vector<int> minbasis(b.size());
+//		std::vector<int> maxbasis, tobegcded;
+//		maxbasis.reserve(b.size());
+//		for (int i=0; i<group.size(); i++){
+//			if (group[i]==0){
+//				for (const auto & j: b)
+//					tobegcded.push_back(j[i]);
+//				maxbasis.push_back(gcd(tobegcded));
+//			}
+//			else
+//				maxbasis.push_back(group[i]-1);
+//		}
+//		auto U=DegreeConstruction(minbasis,maxbasis);
+//		for (const auto & i:U){
+//			T element=i[0]*b[0];
+//			for (int j=1; j<b.size(); j++)
+//				element+=i[j]*b[j];
+//			normalize(element,group);
+//			if (a==element)
+//				return 1;
+//		}
+//		return 0;
+//	}
+
 
 }

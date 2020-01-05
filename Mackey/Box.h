@@ -171,16 +171,16 @@ namespace Mackey {
 		std::vector<diff_t> RightDiff(i + 1);
 
 		for (int j = lowlimit; j <= highlimit; j++) {
-			auto Domain = memoChangeBasis<rank_t>(C.rank[j], D.rank[i - j]);
+			auto Domain = ChangeBasis<int>(C.rank[j], D.rank[i - j]);
 			if (j >= 1) //We have a LeftDiff
 			{
-				auto RangeL = memoChangeBasis<rank_t>(C.rank[j - 1], D.rank[i - j]);
+				auto RangeL = ChangeBasis<int>(C.rank[j - 1], D.rank[i - j]);
 				LeftDiff[j] = permutation_block(RangeL.LefttoCanon, Domain.LefttoCanon, C.diff[j], summation(D.rank[i - j]));
 			}
 			if (i - j >= 1) //We have a RightDiff
 			{
 				typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
-				auto RangeR = memoChangeBasis<rank_t>(C.rank[j], D.rank[i - j - 1]);
+				auto RangeR = ChangeBasis<int>(C.rank[j], D.rank[i - j - 1]);
 				RightDiff[j] = permutation_block(RangeR.RighttoCanon, Domain.RighttoCanon, static_cast<diff_t>(sign * D.diff[i - j]), summation(C.rank[j]));
 			}
 		}

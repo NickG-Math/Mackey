@@ -14,7 +14,6 @@ namespace Mackey {
 		class GreenCompute;
 	}
 
-
 	/// The result of multiplying generators in a Green functor
 	template<typename rank_t, typename diff_t>
 	class Green {
@@ -77,9 +76,7 @@ namespace Mackey {
 		template<typename Archive, typename s_rank, typename s_diff>
 		friend void serialize(Archive&, Green<s_rank, s_diff>&);
 #endif
-
 	};
-
 
 	template<typename rank_t, typename diff_t>
 	int Green<rank_t, diff_t>::select(int select_first, int select_second) const {
@@ -110,11 +107,7 @@ namespace Mackey {
 		return result;
 	}
 
-
-
 	namespace internal {
-
-
 
 		///Computes the homology at given level, the generators and their restrictions
 		template<typename rank_t, typename diff_t>
@@ -182,7 +175,7 @@ namespace Mackey {
 				for (int i = 0; i < gen2.size(); i++) {
 					leftConvProduct.segment(i * gen1.size(), gen1.size()) = gen1 * gen2(i);
 				}
-				ChangeBasis<rank_t> permute(C.rank[degreeC], D.rank[degreeD]);
+				ChangeBasis<int> permute(C.rank[degreeC], D.rank[degreeD]);
 				gen_t<rank_t, diff_t> canonProduct = permute.LefttoCanon.inverse() * leftConvProduct;
 				product.resize(padleft + canonProduct.size() + padright);
 				product.setZero();

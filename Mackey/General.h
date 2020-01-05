@@ -77,7 +77,7 @@ namespace Mackey {
 
 
 	///Find first instance of a in v for non Eigen matrices
-	template<typename T, typename S, std::enable_if_t<!is_Dense<S>::value,int> =0>
+	template<typename T, typename S, std::enable_if_t<!SFINAE::is_Dense<S>::value,int> =0>
 	int find(const T& v, const S & a) {
 		for (int i = 0; i < v.size(); i++) {
 			if (v[i]==a)
@@ -88,7 +88,7 @@ namespace Mackey {
 
 
 	///Find first instance of a in v for Eigen matrices
-	template<typename T, typename S, std::enable_if_t<is_Dense<S>::value, int> =0>
+	template<typename T, typename S, std::enable_if_t<SFINAE::is_Dense<S>::value, int> =0>
 	int find(const T& v, const S& a) {
 		for (int i = 0; i < v.size(); i++) {
 			if (v[i].rows()==a.rows() && v[i].cols()==a.cols() && v[i]==a) //otherwise static assert fails

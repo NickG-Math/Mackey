@@ -172,10 +172,10 @@ namespace Mackey {
 	///Returns the Smith Normal Form of a matrix, with the coefficient matrices and sorted if desired
 	template <typename S_t, typename R_t, typename C_t>
 	Smith<S_t, R_t, C_t> diagonalize(const S_t& A, bool wantP, bool wantQ, bool sort) {
-		if constexpr (is_Sparse<S_t>::value)
+		if constexpr (SFINAE::is_Sparse<S_t>::value)
 			return SmithSparse<S_t, R_t, C_t>(A, wantP, wantQ, sort);
 		else {
-			if constexpr (is_Finite_Cyclic<Scalar_t<S_t>>::value)
+			if constexpr (SFINAE::is_finite_cyclic<Scalar_t<S_t>>::value)
 				return SmithFP<S_t, R_t, C_t>(A, wantP, wantQ, sort);
 			else {
 				if (A.rows() >0 && A.cols() >0)

@@ -11,9 +11,6 @@ namespace Mackey {
 	class MultiplicationGraphIdentify : public MultiplicationGraph<rank_t, diff_t> {
 	protected:
 
-		/// The disconnected generators i.e. those with empty paths (the paths are constructed in the Factorization class)
-		std::vector<int> disconnected;
-
 		/// Uses triple box products to possibly identify the products of disconnected generators if identification failed before on them
 		void pass_disconnected_product(bool serialize_each_step);
 
@@ -28,7 +25,6 @@ namespace Mackey {
 #ifdef CEREALIZE
 		///Uses the Multiplication Graph constructor
 		MultiplicationGraphIdentify(MultiplicationTable<rank_t, diff_t>& M) : MultiplicationGraph<rank_t, diff_t>(M) {
-			this->disconnected.reserve(this->number_of_generators);
 			triples_to_be_done.reserve(this->unidentified.size());
 			identified.reserve(this->unidentified.size());
 		}
@@ -36,7 +32,6 @@ namespace Mackey {
 		///Uses the Multiplication Graph constructor
 		MultiplicationGraphIdentify(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles)
 			: MultiplicationGraph<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles) {
-			this->disconnected.reserve(this->number_of_generators);
 			triples_to_be_done.reserve(this->unidentified.size());
 			identified.reserve(this->unidentified.size());
 		}
@@ -71,7 +66,7 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	void MultiplicationGraphIdentify<rank_t, diff_t>::pass_disconnected_product(bool serialize) {
 		can_do_more = 0;
-		for (const auto& i : disconnected) {
+		for (const auto& i : this->disconnected) {
 			for (int j = 0; j < this->number_of_irreducibles; j++) {
 				auto ij = std::make_pair(i, j);
 				if (find(this->unidentified, ij) != -1 && pass_triple(ij, 1)) { //we may be able to identify using one j so break
@@ -90,7 +85,7 @@ namespace Mackey {
 		can_do_more = 1;
 		for (const auto& pair : this->unidentified) {
 			auto deg = this->index_product(this->tracker[pair.first], pair.second);
-			for (const auto& i : disconnected) {
+			for (const auto& i : this->disconnected) {
 				if (this->tracker[i] == deg && pass_triple(pair, 1))
 					break;
 			}
@@ -159,10 +154,10 @@ namespace Mackey {
 		std::vector<rank_t> candidates = id_candidates(basis, G_ij1.boxID, this->NonZeroHomology[deg_ij1]);
 
 		for (const auto& cand : candidates) { //add all candidates and their edges
-			int i = this->find_and_add_element(deg_ij1, cand);
-			if (i != this->element.size() - 1) //nothing added
+			int t= this->find_and_add_element(deg_ij1, cand);
+			if (t != this->element.size() - 1) //nothing added
 				continue;
-			this->add_edges(i);
+			this->add_edges(t);
 		}
 
 		std::pair<int, std::vector<rank_t>> distinguished = distinguish(deg_ij1, candidates); //see if candidates can be distinguished from the edges out of them

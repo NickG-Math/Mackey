@@ -18,6 +18,9 @@ namespace Mackey
 		///Extends multiplication table using the larger range provided
 		void extend(const std::vector<int>&, const std::vector<int>&);
 
+		/// Retrieve the degree index of the given degree
+		int getdegreeindex(const std::vector<int>&) const;
+
 	protected:
 		///////////////////////////////////////
 		///The nonzero homology groups in our given range and level and their identification information (if non cyclic). 
@@ -78,6 +81,15 @@ namespace Mackey
 		number_of_irreducibles = basicIrreducibles.size();
 		make();
 	};
+
+	template<typename rank_t, typename diff_t>
+	inline int MultiplicationTable<rank_t, diff_t>::getdegreeindex(const std::vector<int>& degree) const {
+		auto iterator = this->antidegree.find(degree);
+		if (iterator == this->antidegree.end())
+			return -1;
+		else
+			return iterator->second;
+	}
 
 	///Set the basicChains given the basicIrreducibles
 	template<typename rank_t, typename diff_t>

@@ -55,6 +55,26 @@ namespace Mackey {
 		std::vector<std::vector<int>> edgeid;
 
 
+		/// Retrieve the degree of the i-th generator
+		std::vector<int> getdegree(int i) const {
+			return this->degree[this->tracker[i]];
+		}
+
+		/// Retrieve the element the i-th generator corresponds to. 
+		Eigen::Matrix<int, 1, -1> getelement(int i) const { 
+			return this->element[i].template cast<int>(); 
+		}
+
+		/// Retrieve the element index of the given degree and element
+		int getelementindex(const std::vector<int>& deg, const rank_t& elmnt) const {
+			auto deg_i = this->getdegreeindex(deg);
+			return this->antielement.find(std::make_pair(deg_i, elmnt));
+		}
+
+
+
+
+
 	protected:
 		///Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles.
 		MultiplicationGraph(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&);
@@ -112,6 +132,9 @@ namespace Mackey {
 
 		template<typename s_rank_t, typename s_diff_t>
 		friend class MultiplicationGraphIdentify;
+
+		template<typename s_rank_t, typename s_diff_t>
+		friend class MultiplicationGraphConnectivity;
 	};
 
 	template<typename rank_t, typename diff_t>

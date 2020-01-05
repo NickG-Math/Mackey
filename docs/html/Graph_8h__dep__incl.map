@@ -1,6 +1,7 @@
 <map id="Mackey/Graph.h" name="Mackey/Graph.h">
-<area shape="rect" id="node2" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph. " alt="" coords="5,80,200,107"/>
-<area shape="rect" id="node3" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="11,155,194,196"/>
-<area shape="rect" id="node4" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="23,244,182,271"/>
-<area shape="rect" id="node5" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="31,319,174,345"/>
+<area shape="rect" id="node2" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph. " alt="" coords="102,80,297,107"/>
+<area shape="rect" id="node3" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="5,155,188,196"/>
+<area shape="rect" id="node6" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="212,155,395,196"/>
+<area shape="rect" id="node4" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="120,244,279,271"/>
+<area shape="rect" id="node5" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="128,319,271,345"/>
 </map>

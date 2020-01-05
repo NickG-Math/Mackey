@@ -91,7 +91,6 @@ $(document).ready(function(){initNavTree('ChangeBasis_8h.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ChangeBasis.h File Reference</div>  </div>
@@ -119,12 +118,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node3" href="Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="85,155,203,181"/>
 <area shape="rect" id="node4" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="63,304,199,331"/>
 <area shape="rect" id="node7" href="Table_8h.html" title="Contains the class and methods to form the multiplication table. " alt="" coords="189,379,304,405"/>
-<area shape="rect" id="node11" href="Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="79,229,209,256"/>
+<area shape="rect" id="node12" href="Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="79,229,209,256"/>
 <area shape="rect" id="node5" href="Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology. " alt="" coords="5,453,136,480"/>
-<area shape="rect" id="node6" href="Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="86,692,229,719"/>
+<area shape="rect" id="node6" href="Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="63,692,206,719"/>
 <area shape="rect" id="node8" href="MultiplicationGraph_8h.html" title="Contains the multiplication graph. " alt="" coords="160,453,355,480"/>
-<area shape="rect" id="node9" href="MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="151,528,334,569"/>
-<area shape="rect" id="node10" href="Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="142,617,301,644"/>
+<area shape="rect" id="node9" href="MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="109,528,291,569"/>
+<area shape="rect" id="node11" href="MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="315,528,498,569"/>
+<area shape="rect" id="node10" href="Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="121,617,279,644"/>
 </map>
 </div>
 </div>
@@ -132,7 +132,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis&lt; rank_t &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis&lt; pScalar &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The change of basis permutation matrices needed for the box product.  <a href="classMackey_1_1ChangeBasis.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -142,25 +142,16 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceMackey"><td class="mdescLeft">&#160;</td><td class="mdescRight">The namespace for everything that is group-independent. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a4f147e328c520f568f5d3adf1c75f514"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a4f147e328c520f568f5d3adf1c75f514">Mackey::pScalar</a></td></tr>
-<tr class="separator:a4f147e328c520f568f5d3adf1c75f514"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acfe96d099f378714f3383db219c525ec"><td class="memTemplParams" colspan="2">template&lt;typename Scalar , typename T &gt; </td></tr>
-<tr class="memitem:acfe96d099f378714f3383db219c525ec"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; Scalar &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#acfe96d099f378714f3383db219c525ec">Mackey::changebasis</a> (const T &amp;A, const T &amp;B)</td></tr>
-<tr class="memdesc:acfe96d099f378714f3383db219c525ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the change of basis matrix (as a permutation) from basis A to basis B. A,B can be std::vector's.  <a href="namespaceMackey.html#acfe96d099f378714f3383db219c525ec">More...</a><br /></td></tr>
-<tr class="separator:acfe96d099f378714f3383db219c525ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90ea60504ffb74da3a53875368225f8f"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
-<tr class="memitem:a90ea60504ffb74da3a53875368225f8f"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; pScalar &gt;, std::vector&lt; pScalar &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f">Mackey::boxchangebasis</a> (const rank_t &amp;rankC, const rank_t &amp;rankD)</td></tr>
-<tr class="memdesc:a90ea60504ffb74da3a53875368225f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matrices (as permutations).  <a href="namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f">More...</a><br /></td></tr>
-<tr class="separator:a90ea60504ffb74da3a53875368225f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70952d513d08b47bc282441a3e9d732c"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
-<tr class="memitem:a70952d513d08b47bc282441a3e9d732c"><td class="memTemplItemLeft" align="right" valign="top">ChangeBasis&lt; rank_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a70952d513d08b47bc282441a3e9d732c">Mackey::memoChangeBasis</a> (const rank_t &amp;rank1, const rank_t &amp;rank2)</td></tr>
-<tr class="memdesc:a70952d513d08b47bc282441a3e9d732c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memoizing the <a class="el" href="classMackey_1_1ChangeBasis.html" title="The change of basis permutation matrices needed for the box product. ">ChangeBasis</a> constructor.  <a href="namespaceMackey.html#a70952d513d08b47bc282441a3e9d732c">More...</a><br /></td></tr>
-<tr class="separator:a70952d513d08b47bc282441a3e9d732c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2823da3a4b93dca63e00e50a6bc9fdf"><td class="memTemplParams" colspan="2">template&lt;typename pScalar , typename T &gt; </td></tr>
+<tr class="memitem:aa2823da3a4b93dca63e00e50a6bc9fdf"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; pScalar &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aa2823da3a4b93dca63e00e50a6bc9fdf">Mackey::changebasis</a> (const T &amp;A, const T &amp;B)</td></tr>
+<tr class="memdesc:aa2823da3a4b93dca63e00e50a6bc9fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the change of basis matrix (as a permutation) from basis A to basis B. A,B can be std::vector's.  <a href="namespaceMackey.html#aa2823da3a4b93dca63e00e50a6bc9fdf">More...</a><br /></td></tr>
+<tr class="separator:aa2823da3a4b93dca63e00e50a6bc9fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec14170f140793a5ef29eef799f217ce"><td class="memTemplParams" colspan="2">template&lt;typename pScalar , typename rank_t &gt; </td></tr>
+<tr class="memitem:aec14170f140793a5ef29eef799f217ce"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; pScalar &gt;, std::vector&lt; pScalar &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aec14170f140793a5ef29eef799f217ce">Mackey::boxchangebasis</a> (const rank_t &amp;rankC, const rank_t &amp;rankD)</td></tr>
+<tr class="memdesc:aec14170f140793a5ef29eef799f217ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matrices (as permutations).  <a href="namespaceMackey.html#aec14170f140793a5ef29eef799f217ce">More...</a><br /></td></tr>
+<tr class="separator:aec14170f140793a5ef29eef799f217ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the construction of the change of basis matrices. </p>

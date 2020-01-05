@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['p',['p',['../classMackey_1_1Polynomial.html#ac2784853ce2afbcc21860a9e54e15711',1,'Mackey::Polynomial::p()'],['../classMackey_1_1Smith.html#a711a1726ec0da22e9233aa269d66bf73',1,'Mackey::Smith::P()']]],
+  ['p',['P',['../classMackey_1_1Smith.html#a711a1726ec0da22e9233aa269d66bf73',1,'Mackey::Smith::P()'],['../classMackey_1_1Polynomial.html#ac2784853ce2afbcc21860a9e54e15711',1,'Mackey::Polynomial::p()']]],
   ['pad',['pad',['../classMackey_1_1Polynomial.html#ad2981034fac81d4ad3f2751c757af5d3',1,'Mackey::Polynomial']]],
   ['pass_5fall_5funidentified',['pass_all_unidentified',['../classMackey_1_1MultiplicationGraphIdentify.html#ab0b4e28dd9134d591305dde1c02b3da5',1,'Mackey::MultiplicationGraphIdentify']]],
   ['pass_5fdisconnected',['pass_disconnected',['../classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00',1,'Mackey::Factorization']]],
@@ -22,6 +22,5 @@ var searchData=
   ['print_5fanswer',['print_answer',['../classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa',1,'Mackey::AdditiveStructure']]],
   ['print_5funique',['print_unique',['../classMackey_1_1AdditiveStructure.html#a82ea44d284efe410fb5d43c6a41dd3ed',1,'Mackey::AdditiveStructure']]],
   ['print_5funknown',['print_unknown',['../classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c',1,'Mackey::AdditiveStructure']]],
-  ['productgen',['ProductGen',['../classMackey_1_1internal_1_1ProductGen.html',1,'Mackey::internal']]],
-  ['pscalar',['pScalar',['../namespaceMackey.html#a4f147e328c520f568f5d3adf1c75f514',1,'Mackey']]]
+  ['productgen',['ProductGen',['../classMackey_1_1internal_1_1ProductGen.html',1,'Mackey::internal']]]
 ];

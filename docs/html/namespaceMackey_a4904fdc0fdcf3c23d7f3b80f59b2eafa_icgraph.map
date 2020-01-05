@@ -1,8 +1,7 @@
 <map id="Mackey::intexp" name="Mackey::intexp">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a70952d513d08b47bc282441a3e9d732c" title="Memoizing the ChangeBasis constructor. " alt="" coords="164,43,355,69"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="199,93,319,120"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="419,5,593,32"/>
-<area shape="rect" id="node5" href="$classMackey_1_1internal_1_1IDGeneratorCompute.html#a39700cf08ba57766c87498975b28ec62" title="Computes the identification data. " alt="" coords="403,57,609,98"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="446,123,566,149"/>
-<area shape="rect" id="node7" href="$classMackey_1_1Levels.html#a450b9aba828f03dd340e89169a4bd9e0" title="Transfer the bottom and get all levels. " alt="" coords="426,173,586,200"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="164,93,284,120"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors. " alt="" coords="349,5,522,32"/>
+<area shape="rect" id="node4" href="$classMackey_1_1internal_1_1IDGeneratorCompute.html#a39700cf08ba57766c87498975b28ec62" title="Computes the identification data. " alt="" coords="332,57,539,98"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="375,123,495,149"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Levels.html#a450b9aba828f03dd340e89169a4bd9e0" title="Transfer the bottom and get all levels. " alt="" coords="355,173,515,200"/>
 </map>

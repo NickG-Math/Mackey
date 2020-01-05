@@ -1,3 +1,11 @@
 <map id="Mackey::Homology::Homology" name="Mackey::Homology::Homology">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="256,5,396,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="285,5,425,32"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Homology.html#a72296e393c6f22a526375b0169daab94" title="Mackey::Homology::getKernel" alt="" coords="256,56,455,83"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Homology.html#a902c8dfef7da8ad9f5e03d16eb60a423" title="Mackey::Homology::Kernel\lModImage" alt="" coords="265,107,445,149"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#ad6870101d4fd762100a3115abc4a15db" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="503,56,636,83"/>
+<area shape="rect" id="node6" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="548,107,591,133"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a9a8496759bc7bb14dcaa2284ae1d0491" title="Makes a new matrix out of A keeping only its columns indicated by Z. " alt="" coords="506,157,633,184"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="517,208,622,235"/>
+<area shape="rect" id="node9" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="684,183,781,209"/>
+<area shape="rect" id="node10" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="684,233,781,260"/>
 </map>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scalar_5ft',['Scalar_t',['../namespaceMackey.html#a93ba297573961f91101fb84bc84bbe95',1,'Mackey']]],
-  ['spm_5ft',['spm_t',['../namespaceMackey.html#a6fae5aa6894681eabd63f02c387ac618',1,'Mackey']]],
-  ['spm_5ft_5fr',['spm_t_r',['../namespaceMackey.html#a43f350029dd91403df428883f202a7b6',1,'Mackey']]]
+  ['real',['Real',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a44847690171e3535ea893e5d3742d5dc',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
+  ['row_5ft',['row_t',['../namespaceMackey.html#a6d37801553e585770ca7d1243ab3b213',1,'Mackey']]]
 ];

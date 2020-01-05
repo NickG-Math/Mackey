@@ -3,6 +3,7 @@ var classMackey_1_1MultiplicationTable =
     [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b", null ],
     [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html#ac3bc2d09599a994b2b159def52484bae", null ],
     [ "extend", "classMackey_1_1MultiplicationTable.html#a4371e6ba8a058073c005e636979b7230", null ],
+    [ "getdegreeindex", "classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c", null ],
     [ "getsphere", "classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999", null ],
     [ "triple_product", "classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829", null ],
     [ "serialize", "classMackey_1_1MultiplicationTable.html#a2b1db64d5f5749a0a14483ef730b755c", null ],

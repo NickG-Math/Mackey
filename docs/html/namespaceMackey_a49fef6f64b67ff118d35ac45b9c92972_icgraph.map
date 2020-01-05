@@ -3,7 +3,7 @@
 <area shape="rect" id="node3" href="$classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa" title="Print the Mackey functors for each degree. " alt="" coords="482,43,658,85"/>
 <area shape="rect" id="node4" href="$namespaceMackey.html#a918f02198f6daadfd0c93109b63b2f1f" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="264,97,411,124"/>
 <area shape="rect" id="node5" href="$namespaceMackey.html#a2556e2a1f78783585df78de1c1b35eae" title="Mackey::all_automorphisms" alt="" coords="477,131,663,157"/>
-<area shape="rect" id="node11" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="245,199,429,241"/>
+<area shape="rect" id="node11" href="$classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c" title="Retrieve the degree index of the given degree. " alt="" coords="245,199,429,241"/>
 <area shape="rect" id="node6" href="$classMackey_1_1MackeyFunctor.html#ac7ef9ab9f3a13660a03c35e64dddd66b" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="711,123,877,165"/>
 <area shape="rect" id="node7" href="$classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="1145,98,1311,139"/>
 <area shape="rect" id="node8" href="$classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="925,161,1092,202"/>

@@ -25,7 +25,9 @@ The global variables that need to be set are\+:
 We have automated this process for general $G=C_{2^n}$ in {\ttfamily C2n\+\_\+\+Implementation.\+h} using the recursion established in H\+H\+R17 pg 392. All that needs to be changed is the power variable.\hypertarget{use_next}{}\section{Step 1\+: Calling the library}\label{use_next}
 Once Step 0 is complete, you can include {\ttfamily $<$\hyperlink{Additive_8h}{Mackey/\+Additive.\+h}$>$} to access the methods relating to the additive structure and {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} to access the factorization methods. The multiplicative structure and Massey products are found in {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} but that\textquotesingle{}s already included in the other two headers.
 
-For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder together with the provided Implementation header file (Step 0).\hypertarget{use_coeff}{}\subsection{Coefficients and templates}\label{use_coeff}
+For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder together with the provided Implementation header file (Step 0).
+
+The namespace for all methods is {\ttfamily \hyperlink{namespaceMackey}{Mackey}}.\hypertarget{use_coeff}{}\subsection{Coefficients and templates}\label{use_coeff}
 There are two template arguments that always need to be specified, and their typenames are always {\ttfamily rank\+\_\+t,diff\+\_\+t}. These are the coefficients used for the rank arrays and differential matrices respectively.
 
 
@@ -73,7 +75,7 @@ The result of the computation {\ttfamily linear\+\_\+combination} is an \hyperli
 For convenience we normalize the basis to omit any signs and identify generators of the same cyclic groups (see \hyperlink{math_caveat}{A caveat}) but it\textquotesingle{}s also possible to get the nonnormalized version (\hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}).\hypertarget{use_step1fact}{}\subsection{Factorization}\label{use_step1fact}
 The file {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} exposes the class \hyperlink{classMackey_1_1Factorization}{Factorization} whose constructor creates the multiplication graph and the method \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources} that factorizes all generators using the given sources. First construct the multiplication graph via\+:
 
-{\ttfamily auto F= Factorization$<$rank\+\_\+t, diff\+\_\+t$>$ F(\{ -\/5,-\/5 \}, \{ 5,5 \}, \{ \{0,1,0\},\{2,2,0\},\{0,0,1\},\{2,0,1\} \}, \{ \char`\"{}asigma\char`\"{}, \char`\"{}u2sigma\char`\"{}, \char`\"{}alambda\char`\"{}, \char`\"{}ulambda\char`\"{} \});}
+{\ttfamily auto F= Factorization$<$rank\+\_\+t, diff\+\_\+t$>$(\{ -\/5,-\/5 \}, \{ 5,5 \}, \{ \{0,1,0\},\{2,2,0\},\{0,0,1\},\{2,0,1\} \}, \{ \char`\"{}asigma\char`\"{}, \char`\"{}u2sigma\char`\"{}, \char`\"{}alambda\char`\"{}, \char`\"{}ulambda\char`\"{} \});}
 
 This will work in the range from $S^{-5\sigma-5\lambda}$ to $S^{5\sigma+5\lambda}$ by multiplying all generators of $H_{\star}S$ with the basic irreducibles $ a_{\sigma}, u_{2\sigma}, a_{\lambda}, u_{\lambda}$ of degrees $[0,1,0],[2,2,0],[0,0,1],[2,0,1]$ respectively.
 
@@ -95,7 +97,17 @@ If you see a {\ttfamily N\+OT F\+O\+U\+ND...} then that may mean the basic ident
 
 {\ttfamily F.\+pass\+\_\+disconnected();}
 
-to try computing products involving disconnected generators using triple box products. This will be significantly more computationally expensive.\hypertarget{use_step1Mass}{}\subsection{Massey products}\label{use_step1Mass}
+to try redoing the identification now using triple box products. This will be significantly more computationally expensive.
+
+Finally, if only the connectivity of the Multiplication Graph is desired, as opposed to precise factorizations of the generators, you can instead and use
+
+{\ttfamily auto M= Multiplication\+Graph\+Connectivity$<$rank\+\_\+t, diff\+\_\+t$>$(\{ -\/5,-\/5 \}, \{ 5,5 \}, \{ \{0,1,0\},\{2,2,0\},\{0,0,1\},\{2,0,1\} \});}
+
+and then
+
+{\ttfamily M.\+compute\+\_\+with\+\_\+sources(\{\mbox{[}0,0,0\mbox{]}\});}
+
+The vector {\ttfamily M.\+trully\+\_\+disconnected} contains the indices of the generators that may not be connected to any sources. \hypertarget{use_step1Mass}{}\subsection{Massey products}\label{use_step1Mass}
 The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} finally exposes the method \hyperlink{namespaceMackey_ab75d7bcfa2d92d01bea0d5eef9f48398}{R\+O\+Massey} for (triple) Massey products in the Green functor $H_{\star}(S)$. Example\+: The code
 
 {\ttfamily auto Mass= \hyperlink{namespaceMackey_ab75d7bcfa2d92d01bea0d5eef9f48398}{Mackey\+::\+R\+O\+Massey$<$rank\+\_\+t,diff\+\_\+t$>$}(2,\{0,1,0\},\{-\/3,-\/3,0\},\{2,2,0\});}

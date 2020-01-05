@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classMackey_1_1Polynomial.html" title="Formal polynomials with arbitrary coefficients. " alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node1" href="$classMackey_1_1Smith.html" title="The Smith Normal Form and its coefficient matrices. " alt="" coords="5,104,152,145"/>
+<area shape="rect" id="node2" href="$classMackey_1_1SmithFP.html" title="The dense Smith Normal Form using the first nonzero element as pivot. " alt="" coords="201,5,349,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1SmithMP.html" title="The dense Smith Normal Form using the minimum (in absolute value) nonzero element as pivot..." alt="" coords="200,71,351,112"/>
+<area shape="rect" id="node4" href="$classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. " alt="" coords="201,136,350,177"/>
+<area shape="rect" id="node5" href="$classMackey_1_1SmithSparse.html" title="The sparse Smith Normal Form, choosing the pivot via a Markowitz metric. " alt="" coords="200,201,351,243"/>
 </map>

@@ -1,5 +1,4 @@
 <map id="Mackey::MultiplicationGraph::isMultiple" name="Mackey::MultiplicationGraph::isMultiple">
 <area shape="rect" id="node2" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="258,5,409,47"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="240,71,427,112"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="475,5,625,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="240,71,427,112"/>
 </map>

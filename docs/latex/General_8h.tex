@@ -36,7 +36,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Given a vector of vectors v form all combinations of the form \{v\mbox{[}0\mbox{]}\mbox{[}?\mbox{]},v\mbox{[}1\mbox{]}\mbox{[}?\mbox{]},...\} for varying ? \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespaceMackey_a1e4b11e9d2a5b70f8380af87cae31ef3}{Mackey\+::tail} (const T $\ast$const \&ptr, int size, int start)
 \begin{DoxyCompactList}\small\item\em Given vector or array returns vector starting from index start. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename S , std\+::enable\+\_\+if\+\_\+t$<$!is\+\_\+\+Dense$<$ S $>$\+::value, int $>$  = 0$>$ }\\int \hyperlink{namespaceMackey_a91104eaef1ab349e68f0623cfaaf45c0}{Mackey\+::find} (const T \&v, const S \&a)
+{\footnotesize template$<$typename T , typename S , std\+::enable\+\_\+if\+\_\+t$<$!\+S\+F\+I\+N\+A\+E\+::is\+\_\+\+Dense$<$ S $>$\+::value, int $>$  = 0$>$ }\\int \hyperlink{namespaceMackey_a91104eaef1ab349e68f0623cfaaf45c0}{Mackey\+::find} (const T \&v, const S \&a)
 \begin{DoxyCompactList}\small\item\em Find first instance of a in v for non \hyperlink{namespaceEigen}{Eigen} matrices. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_ac2e368bf7d802f2fc47e39a71a5a1630}{Mackey\+::basis\+Element} (int length, int position, int multiple)
 \begin{DoxyCompactList}\small\item\em Makes the multiple of the basis vector 0,...,multiple,...,0. \end{DoxyCompactList}\item 

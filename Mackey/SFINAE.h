@@ -8,11 +8,16 @@
 ///@file
 ///@brief Contains all the SFINAE tricks
 
+
 namespace Mackey {
 
-
+	
+	//////////////////
 	///SFINAE is used to detect types and existence of methods
-	class SFINAE {
+	
+	///The test functions shouldn't be public, but Clang complains otherwise for some reason.
+	//////////////////
+	struct SFINAE {
 
 
 		//Detect Eigen Dense matrices 
@@ -38,7 +43,7 @@ namespace Mackey {
 		static constexpr std::false_type test_computePath(...);
 
 		template<typename T>
-		static constexpr decltype(std::declval<T>().computePath(), std::true_type()) test_computePath();
+		static constexpr decltype(std::declval<T>().computePath(), std::true_type()) test_computePath(int);
 
 		//Detect implementation of initialize()
 
@@ -46,11 +51,9 @@ namespace Mackey {
 		static constexpr std::false_type test_initialize(...);
 
 		template<typename T>
-		static constexpr decltype(std::declval<T>().initialize(), std::true_type()) test_initialize();
+		static constexpr decltype(std::declval<T>().initialize(), std::true_type()) test_initialize(int);
 
-
-	public:
-
+		
 		///Tests if matrix is dense
 		template<typename T>
 		using is_Dense = decltype(test_Dense(std::declval<T>()));
@@ -65,11 +68,11 @@ namespace Mackey {
 
 		///Tests if T has member computePath()
 		template<typename T>
-		using has_computePath = decltype(test_computePath<T>());
+		using has_computePath = decltype(test_computePath<T>(0));
 
 		///Tests if T has member initialize()
 		template<typename T>
-		using has_initialize = decltype(test_initialize<T>());
+		using has_initialize = decltype(test_initialize<T>(0));
 
 	};
 

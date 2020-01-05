@@ -31,14 +31,15 @@ var dir_b2d1c084be4deba5f4d9c05613f211fc =
     [ "MultiplicationGraph.h", "MultiplicationGraph_8h.html", [
       [ "MultiplicationGraph", "classMackey_1_1MultiplicationGraph.html", "classMackey_1_1MultiplicationGraph" ]
     ] ],
+    [ "MultiplicationGraph_Connectivity.h", "MultiplicationGraph__Connectivity_8h.html", [
+      [ "MultiplicationGraphConnectivity", "classMackey_1_1MultiplicationGraphConnectivity.html", "classMackey_1_1MultiplicationGraphConnectivity" ]
+    ] ],
     [ "MultiplicationGraph_Identify.h", "MultiplicationGraph__Identify_8h.html", [
       [ "MultiplicationGraphIdentify", "classMackey_1_1MultiplicationGraphIdentify.html", "classMackey_1_1MultiplicationGraphIdentify" ]
     ] ],
     [ "Polynomial.h", "Polynomial_8h.html", "Polynomial_8h" ],
     [ "SFINAE.h", "SFINAE_8h.html", [
-      [ "is_Dense", "structMackey_1_1is__Dense.html", null ],
-      [ "is_Sparse", "structMackey_1_1is__Sparse.html", null ],
-      [ "is_Finite_Cyclic", "structMackey_1_1is__Finite__Cyclic.html", null ]
+      [ "SFINAE", "structMackey_1_1SFINAE.html", "structMackey_1_1SFINAE" ]
     ] ],
     [ "Smith.h", "Smith_8h.html", null ],
     [ "Smith_Base.h", "Smith__Base_8h.html", "Smith__Base_8h" ],

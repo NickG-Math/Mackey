@@ -6,27 +6,20 @@ var hierarchy =
       [ "Mackey::ChainsBox< rank_t, diff_t >", "classMackey_1_1ChainsBox.html", null ]
     ] ],
     [ "Mackey::internal::ChainsLevelGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ChainsLevelGen.html", null ],
-    [ "Mackey::ChangeBasis< rank_t >", "classMackey_1_1ChangeBasis.html", null ],
-    [ "declval", null, [
-      [ "Mackey::is_Dense< T >", "structMackey_1_1is__Dense.html", null ]
-    ] ],
-    [ "declval", null, [
-      [ "Mackey::is_Sparse< T >", "structMackey_1_1is__Sparse.html", null ]
-    ] ],
-    [ "declval", null, [
-      [ "Mackey::is_Finite_Cyclic< T >", "structMackey_1_1is__Finite__Cyclic.html", null ]
-    ] ],
+    [ "Mackey::ChangeBasis< pScalar >", "classMackey_1_1ChangeBasis.html", null ],
     [ "GroupSpecific::Function< rank_t, diff_t, deg_t >", "classGroupSpecific_1_1Function.html", null ],
     [ "Mackey::Graph< T >", "classMackey_1_1Graph.html", null ],
     [ "Mackey::Graph< ColoredGraph >", "classMackey_1_1Graph.html", [
       [ "Mackey::ColoredGraph", "classMackey_1_1ColoredGraph.html", [
         [ "Mackey::MultiplicationGraph< rank_t, diff_t >", "classMackey_1_1MultiplicationGraph.html", [
+          [ "Mackey::MultiplicationGraphConnectivity< rank_t, diff_t >", "classMackey_1_1MultiplicationGraphConnectivity.html", null ],
           [ "Mackey::MultiplicationGraphIdentify< rank_t, diff_t >", "classMackey_1_1MultiplicationGraphIdentify.html", [
             [ "Mackey::Factorization< rank_t, diff_t >", "classMackey_1_1Factorization.html", null ]
           ] ]
         ] ]
       ] ]
     ] ],
+    [ "Mackey::Graph< void >", "classMackey_1_1Graph.html", null ],
     [ "Mackey::Graph< WeightedGraph >", "classMackey_1_1Graph.html", [
       [ "Mackey::WeightedGraph", "classMackey_1_1WeightedGraph.html", null ]
     ] ],
@@ -48,6 +41,7 @@ var hierarchy =
     [ "Eigen::NumTraits< Z< N > >", "structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html", null ],
     [ "Mackey::Polynomial< T >", "classMackey_1_1Polynomial.html", null ],
     [ "Mackey::internal::ProductGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ProductGen.html", null ],
+    [ "Mackey::SFINAE", "structMackey_1_1SFINAE.html", null ],
     [ "Mackey::Smith< S_t, R_t, C_t >", "classMackey_1_1Smith.html", [
       [ "Mackey::SmithFP< S_t, R_t, C_t >", "classMackey_1_1SmithFP.html", null ],
       [ "Mackey::SmithMP< S_t, R_t, C_t >", "classMackey_1_1SmithMP.html", null ],

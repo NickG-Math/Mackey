@@ -7,7 +7,8 @@ First, two heuristic observations\+:
 \end{DoxyItemize}\hypertarget{perf_compoptions}{}\section{Compiler Options}\label{perf_compoptions}
 
 \begin{DoxyItemize}
-\item I recommend the following compiler options (G\+CC, Clang)\+: {\ttfamily -\/\+O3 --funroll-\/loops -\/march=native }
+\item I recommend the following compiler options (G\+CC, Clang)\+: {\ttfamily -\/\+O3 -\/funroll-\/loops -\/march=native }
+\item For safety you can use -\/fsanitize=signed-\/integer-\/overflow that checks for integer overflow at minimum performance cost. More generally -\/fsanitize=undefined can be used to check for all undefined behavior at a much greater performance hit (about 10x slower).
 \item With the Intel compiler \hyperlink{namespaceEigen}{Eigen} \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support}{\tt recommends} the {\ttfamily -\/inline-\/forceinline} option.
 \item If Open\+MP support is desired use {\ttfamily -\/fopenmp}.
 \end{DoxyItemize}\hypertarget{perf_thread}{}\section{Multithreading}\label{perf_thread}
@@ -17,8 +18,7 @@ First, two heuristic observations\+:
 \item There is one caveat\+: While the loop iterations are independent, they are not all equally computationally intensive. A sphere like $S^{2\sigma+\lambda}$ is cheaper to compute compared to $S^{6\sigma+8\lambda}$ which is in turn much cheaper compared to $S^{6\sigma-8\lambda}$ as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are even more expensive in run-\/time as they involve arbitrarily large permutation matrices.
 \item So it\textquotesingle{}s important to equally divide the work amongst the threads. Currently this has to be done manually on the user\textquotesingle{}s end.
 \end{DoxyItemize}\hypertarget{perf_intvsfloat}{}\section{Integers vs Floats}\label{perf_intvsfloat}
-I use integers (or indeed {\ttfamily char} and {\ttfamily short}) for the majority of the computations; that\textquotesingle{}s usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception\+: Matrix multiplication (and matrix determinant). \hyperlink{namespaceEigen}{Eigen} is much slower with integer matrix multiplication compared to floating points, and the Intel M\+KL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.\hypertarget{perf_memo}{}\section{Memoizing Change\+Basis}\label{perf_memo}
-To form the Box product of chains we need the change of basis matrices. These matrices only depend on the ranks of the given chains. But the ranks that actually come up in our computations always look like \mbox{[}?,order,...,order,?\mbox{]} where order is the order of the group and ? $\le$ order. This means that we very effectively memoize this function for improved performance.\hypertarget{perf_boxproducts}{}\section{Box Products}\label{perf_boxproducts}
+I use integers (or indeed {\ttfamily char} and {\ttfamily short}) for the majority of the computations; that\textquotesingle{}s usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception\+: Matrix multiplication (and matrix determinant). \hyperlink{namespaceEigen}{Eigen} is much slower with integer matrix multiplication compared to floating points, and the Intel M\+KL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.\hypertarget{perf_boxproducts}{}\section{Box Products}\label{perf_boxproducts}
 Box products involve some very large matrices, and the more iterated box products we use the higher that complexity.
 
 
@@ -33,11 +33,9 @@ where $V=V_{pos}-V_{neg}$
 
 \begin{DoxyItemize}
 \item For the multiplicative structure we need to take an extra box product, so up to three total when computing $ab$ for $a,b$ in the mixed homology.
-\item For factorization we would also need three box products. But by design, we are only multiplying with certain basic irreducibles (Euler and orientation classes) and hope everything else is obtained like this. By selecting them to be in the pure co/homology (which the Euler and orientation classes always are) we can reduce this to two box products total.
+\item For factorization we would also need three box products. But by design, we are only multiplying with certain basic irreducibles (Euler and orientation classes) and hope everything else is obtained like this. By selecting them to be in the pure co/homology (which the Euler and orientation classes always are) we can reduce this to two box products total. If extra identification needed then we do take triple box products, incurring a massive performance and memory cost.
 \item For Massey products we need an extra two box products, so up to five total then computing $\langle a,b,c\rangle $ for $a,b,c$ in the mixed homology. This is an extremely large number of box products and results in matrices of millions of rows and columns, thus consuming large amounts of memory. If we combine this with Open\+MP parallelization, then we can easily run out of memory using 12 threads even in a 24\+GB system, and get {\ttfamily std\+::bad\+\_\+alloc} errors. It might be a good idea to use sparse matrices in this case, but that hasn\textquotesingle{}t been implemented yet.
 \end{DoxyItemize}\hypertarget{perf_bottle}{}\section{Bottlenecks}\label{perf_bottle}
-Here are the bottlenecks in the multiplicative structure (for the additive structure only the last bottleneck appears, while Massey products dramatically increase the impact of all three).
-
 
 \begin{DoxyItemize}
 \item The biggest performance bottleneck is found in the multiplicative structure. That\textquotesingle{}s when we apply some large change of basis matrices through \hyperlink{namespaceEigen}{Eigen}\textquotesingle{}s permutation matrix product. This is mainly a memory bottleneck.

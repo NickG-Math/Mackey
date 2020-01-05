@@ -10,8 +10,7 @@ Contains the Homology class and algorithms.
 {\ttfamily \#include \char`\"{}Smith.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Z\+\_\+n.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$numeric$>$}\newline
-Include dependency graph for Homology.\+h\+:
-\nopagebreak
+Include dependency graph for Homology.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +21,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{Homology_8h__dep__incl}
+\includegraphics[width=350pt]{Homology_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -44,10 +43,12 @@ class \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology$<$ rank\+\_\+t, d
 \begin{DoxyCompactList}\small\item\em Normalizes the element in a group so that 0$<$=element\mbox{[}i\mbox{]}$<$=group\mbox{[}i\mbox{]} if group\mbox{[}i\mbox{]}!=1. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a635c87980358b97256fe159f0c59bb80}{Mackey\+::normalize} (Eigen\+::\+Matrix$<$ T, 1,-\/1 $>$ \&element, const Eigen\+::\+Matrix$<$ T, 1, -\/1 $>$ \&group)
 \begin{DoxyCompactList}\small\item\em Normalizes the element in a group to have minimal signs amongst its multiples. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename S , typename R $>$ }\\bool \hyperlink{namespaceMackey_a82dd9e46100ec78b6238a3b60a5b1b45}{Mackey\+::equals} (const T \&element1, const S \&element2, const R \&group)
-\begin{DoxyCompactList}\small\item\em Finds if two elements are equal in the given finitely generated abelian group. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename S $>$ }\\int \hyperlink{namespaceMackey_aef81f82c080c97bb31154524af52b62c}{Mackey\+::is\+Multiple} (const T \&a, const T \&b, const S \&group)
-\begin{DoxyCompactList}\small\item\em Finds if element a is a multiple of element b in the given finitely generated abelian group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename T $>$ }\\auto \hyperlink{namespaceMackey_a1b3e66989e89c8b97d113d8eec0b47b8}{Mackey\+::span} (const T \&a, const std\+::vector$<$ T $>$ \&b, const T \&group)
+\begin{DoxyCompactList}\small\item\em Expresses a as a linear combination of elements b\mbox{[}i\mbox{]} living in a finitely generated abelian group. If a is not in their span, returns empty matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{namespaceMackey_a1ff253bf7e043ad6455b5fea23a83f09}{Mackey\+::in\+Span} (const T \&a, const std\+::vector$<$ T $>$ \&b, const T \&group)
+\begin{DoxyCompactList}\small\item\em Finds if an element is in the span of other given elements in a finitely generated abelian group. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_af70b0c547f7121b8815885dfebde67d9}{Mackey\+::is\+Multiple} (const T \&a, const T \&b, const T \&group)
+\begin{DoxyCompactList}\small\item\em Returns k if a=k$\ast$b in group. Returns 0 if a is not a multiple of b (so make sure a!=0) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

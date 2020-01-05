@@ -1,7 +1,7 @@
 <map id="Mackey::MultiplicationGraph::isMultiple" name="Mackey::MultiplicationGraph::isMultiple">
-<area shape="rect" id="node2" href="$namespaceMackey.html#aef81f82c080c97bb31154524af52b62c" title="Finds if element a is a multiple of element b in the given finitely generated abelian group..." alt="" coords="240,81,371,108"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="423,31,529,57"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a82dd9e46100ec78b6238a3b60a5b1b45" title="Finds if two elements are equal in the given finitely generated abelian group. " alt="" coords="419,81,533,108"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="581,5,679,32"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="581,56,679,83"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#af70b0c547f7121b8815885dfebde67d9" title="Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!=0) ..." alt="" coords="240,5,371,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="253,56,358,83"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a1b3e66989e89c8b97d113d8eec0b47b8" title="Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group..." alt="" coords="419,5,523,32"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="422,56,519,83"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="422,107,519,133"/>
 </map>

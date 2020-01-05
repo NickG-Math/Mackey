@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['literal',['Literal',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#afc07a3fc65ced03bfc30de81355ac988',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
+  ['has_5fcomputepath',['has_computePath',['../structMackey_1_1SFINAE.html#a970286ad57992a30d8a82eb73c727dec',1,'Mackey::SFINAE']]],
+  ['has_5finitialize',['has_initialize',['../structMackey_1_1SFINAE.html#a9f27bd555a411026939195401277642d',1,'Mackey::SFINAE']]]
 ];

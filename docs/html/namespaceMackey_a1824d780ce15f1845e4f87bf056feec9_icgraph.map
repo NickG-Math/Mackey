@@ -1,5 +1,4 @@
 <map id="Mackey::saver" name="Mackey::saver">
 <area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="161,5,348,61"/>
 <area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="396,13,547,54"/>
-<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="595,13,745,54"/>
 </map>

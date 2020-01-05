@@ -109,9 +109,10 @@ Inheritance diagram for Mackey::MultiplicationTable&lt; rank_t, diff_t &gt;:</di
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MultiplicationTable__inherit__graph.png" border="0" usemap="#Mackey_1_1MultiplicationTable_3_01rank__t_00_01diff__t_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="Mackey_1_1MultiplicationTable_3_01rank__t_00_01diff__t_01_4_inherit__map" id="Mackey_1_1MultiplicationTable_3_01rank__t_00_01diff__t_01_4_inherit__map">
-<area shape="rect" id="node2" href="classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="5,95,192,136"/>
-<area shape="rect" id="node3" href="classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="5,184,192,225"/>
-<area shape="rect" id="node4" href="classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="23,273,174,315"/>
+<area shape="rect" id="node2" href="classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="237,39,424,80"/>
+<area shape="rect" id="node3" href="classMackey_1_1MultiplicationGraphConnectivity.html" title="Provides extra identification methods using triple box products. " alt="" coords="472,5,664,47"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="475,71,661,112"/>
+<area shape="rect" id="node5" href="classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="712,71,863,112"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -123,6 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4371e6ba8a058073c005e636979b7230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#a4371e6ba8a058073c005e636979b7230">extend</a> (const std::vector&lt; int &gt; &amp;, const std::vector&lt; int &gt; &amp;)</td></tr>
 <tr class="memdesc:a4371e6ba8a058073c005e636979b7230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends multiplication table using the larger range provided.  <a href="#a4371e6ba8a058073c005e636979b7230">More...</a><br /></td></tr>
 <tr class="separator:a4371e6ba8a058073c005e636979b7230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15f13c4a9d160226582e1970ef4b00c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c">getdegreeindex</a> (const std::vector&lt; int &gt; &amp;) const</td></tr>
+<tr class="memdesc:ac15f13c4a9d160226582e1970ef4b00c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the degree index of the given degree.  <a href="#ac15f13c4a9d160226582e1970ef4b00c">More...</a><br /></td></tr>
+<tr class="separator:ac15f13c4a9d160226582e1970ef4b00c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3bc2d09599a994b2b159def52484bae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1MultiplicationTable.html#ac3bc2d09599a994b2b159def52484bae">MultiplicationTable</a> ()</td></tr>
 <tr class="memdesc:ac3bc2d09599a994b2b159def52484bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor needed for loading archive.  <a href="#ac3bc2d09599a994b2b159def52484bae">More...</a><br /></td></tr>
 <tr class="separator:ac3bc2d09599a994b2b159def52484bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,22 +232,6 @@ template&lt;typename rank_t , typename diff_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph" alt=""/></div>
-<map name="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph" id="classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="241,5,425,47"/>
-<area shape="rect" id="node7" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="237,71,429,98"/>
-<area shape="rect" id="node8" href="namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa" title="Compute the dimension of a representation sphere. " alt="" coords="266,122,401,149"/>
-<area shape="rect" id="node10" href="namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="499,173,640,199"/>
-<area shape="rect" id="node3" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="881,34,975,61"/>
-<area shape="rect" id="node4" href="classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="477,31,661,72"/>
-<area shape="rect" id="node5" href="namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="709,34,833,61"/>
-<area shape="rect" id="node6" href="namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="722,85,821,111"/>
-<area shape="rect" id="node9" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="548,122,591,149"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -317,6 +305,52 @@ template&lt;typename rank_t , typename diff_t &gt; </div>
 
 </div>
 </div>
+<a id="ac15f13c4a9d160226582e1970ef4b00c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac15f13c4a9d160226582e1970ef4b00c">&#9670;&nbsp;</a></span>getdegreeindex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename diff_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classMackey_1_1MultiplicationTable.html">Mackey::MultiplicationTable</a>&lt; rank_t, diff_t &gt;::getdegreeindex </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>degree</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the degree index of the given degree. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c_cgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c_cgraph" alt=""/></div>
+<map name="classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c_cgraph" id="classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c_cgraph">
+<area shape="rect" id="node2" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="241,5,425,47"/>
+<area shape="rect" id="node7" href="namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="237,71,429,98"/>
+<area shape="rect" id="node8" href="namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa" title="Compute the dimension of a representation sphere. " alt="" coords="266,122,401,149"/>
+<area shape="rect" id="node10" href="namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="499,173,640,199"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="881,34,975,61"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="477,31,661,72"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="709,34,833,61"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="722,85,821,111"/>
+<area shape="rect" id="node9" href="Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="548,122,591,149"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ad4245f4a8122f0661f969498ef53f999"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4245f4a8122f0661f969498ef53f999">&#9670;&nbsp;</a></span>getsphere()</h2>
 
@@ -360,11 +394,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph" alt=""/></div>
 <map name="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph" id="classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999_icgraph">
-<area shape="rect" id="node2" href="classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="237,5,421,47"/>
+<area shape="rect" id="node2" href="classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c" title="Retrieve the degree index of the given degree. " alt="" coords="237,5,421,47"/>
 <area shape="rect" id="node3" href="classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="237,71,421,112"/>
 <area shape="rect" id="node4" href="classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="469,63,656,119"/>
 <area shape="rect" id="node5" href="classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="704,71,855,112"/>
-<area shape="rect" id="node6" href="classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="903,71,1053,112"/>
 </map>
 </div>
 
@@ -430,10 +463,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_icgraph.png" border="0" usemap="#classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_icgraph" alt=""/></div>
 <map name="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_icgraph" id="classMackey_1_1MultiplicationTable_ae2801cd35f426f10c89ab8addb75f829_icgraph">
 <area shape="rect" id="node2" href="classMackey_1_1MultiplicationGraphIdentify.html#a9791070d75d845d15f1763c03db0b5ce" title="Uses triple box products to possibly identify the products landing in degrees of disconnected generat..." alt="" coords="237,5,424,61"/>
-<area shape="rect" id="node5" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="239,86,423,127"/>
+<area shape="rect" id="node4" href="classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="239,86,423,127"/>
 <area shape="rect" id="node3" href="classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="489,13,639,54"/>
-<area shape="rect" id="node4" href="classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="704,13,855,54"/>
-<area shape="rect" id="node6" href="classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="472,86,656,127"/>
+<area shape="rect" id="node5" href="classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c" title="Retrieve the degree index of the given degree. " alt="" coords="472,86,656,127"/>
 </map>
 </div>
 

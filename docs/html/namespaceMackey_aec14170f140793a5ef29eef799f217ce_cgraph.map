@@ -1,0 +1,7 @@
+<map id="Mackey::boxchangebasis" name="Mackey::boxchangebasis">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="229,5,369,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="246,56,351,83"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#aa2823da3a4b93dca63e00e50a6bc9fdf" title="Returns the change of basis matrix (as a permutation) from basis A to basis B. A,B can be std::vector..." alt="" coords="224,107,373,133"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="421,31,519,57"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="421,81,519,108"/>
+</map>

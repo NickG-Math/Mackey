@@ -1,4 +1,4 @@
 <map id="Mackey::Factorization::pass_unidentified" name="Mackey::Factorization::pass_unidentified">
 <area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html#ab0b4e28dd9134d591305dde1c02b3da5" title="Uses triple box products to possibly identify ALL instances where identification failed before..." alt="" coords="208,5,403,47"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Graph.html#acda32cd8d144dcd1ec771bd8d2753321" title="A general paradigm to compute the paths using the given source and a Dikjstra algorithm. This does not rewrite any previous path computations. " alt="" coords="204,71,407,112"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Graph.html#acda32cd8d144dcd1ec771bd8d2753321" title="Compute all paths using the given source. " alt="" coords="204,71,407,112"/>
 </map>

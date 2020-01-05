@@ -96,7 +96,6 @@ $(document).ready(function(){initNavTree('perf.html','');});
 <ul><li class="level1"><a href="#compoptions">Compiler Options</a></li>
 <li class="level1"><a href="#thread">Multithreading</a></li>
 <li class="level1"><a href="#intvsfloat">Integers vs Floats</a></li>
-<li class="level1"><a href="#memo">Memoizing ChangeBasis</a></li>
 <li class="level1"><a href="#boxproducts">Box Products</a></li>
 <li class="level1"><a href="#bottle">Bottlenecks</a></li>
 </ul>
@@ -109,7 +108,8 @@ $(document).ready(function(){initNavTree('perf.html','');});
 <h1><a class="anchor" id="compoptions"></a>
 Compiler Options</h1>
 <ul>
-<li>I recommend the following compiler options (GCC, Clang): <code>-O3 &ndash;funroll-loops -march=native </code></li>
+<li>I recommend the following compiler options (GCC, Clang): <code>-O3 -funroll-loops -march=native </code></li>
+<li>For safety you can use -fsanitize=signed-integer-overflow that checks for integer overflow at minimum performance cost. More generally -fsanitize=undefined can be used to check for all undefined behavior at a much greater performance hit (about 10x slower).</li>
 <li>With the Intel compiler <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support">recommends</a> the <code>-inline-forceinline</code> option.</li>
 <li>If OpenMP support is desired use <code>-fopenmp</code>.</li>
 </ul>
@@ -123,9 +123,6 @@ Multithreading</h1>
 <h1><a class="anchor" id="intvsfloat"></a>
 Integers vs Floats</h1>
 <p>I use integers (or indeed <code>char</code> and <code>short</code>) for the majority of the computations; that's usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception: Matrix multiplication (and matrix determinant). <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> is much slower with integer matrix multiplication compared to floating points, and the Intel MKL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.</p>
-<h1><a class="anchor" id="memo"></a>
-Memoizing ChangeBasis</h1>
-<p>To form the Box product of chains we need the change of basis matrices. These matrices only depend on the ranks of the given chains. But the ranks that actually come up in our computations always look like [?,order,...,order,?] where order is the order of the group and ? \(\le\) order. This means that we very effectively memoize this function for improved performance.</p>
 <h1><a class="anchor" id="boxproducts"></a>
 Box Products</h1>
 <p>Box products involve some very large matrices, and the more iterated box products we use the higher that complexity.</p>
@@ -137,12 +134,11 @@ Box Products</h1>
 <p>where \(V=V_{pos}-V_{neg}\)</p>
 <ul>
 <li>For the multiplicative structure we need to take an extra box product, so up to three total when computing \(ab\) for \(a,b\) in the mixed homology.</li>
-<li>For factorization we would also need three box products. But by design, we are only multiplying with certain basic irreducibles (Euler and orientation classes) and hope everything else is obtained like this. By selecting them to be in the pure co/homology (which the Euler and orientation classes always are) we can reduce this to two box products total.</li>
+<li>For factorization we would also need three box products. But by design, we are only multiplying with certain basic irreducibles (Euler and orientation classes) and hope everything else is obtained like this. By selecting them to be in the pure co/homology (which the Euler and orientation classes always are) we can reduce this to two box products total. If extra identification needed then we do take triple box products, incurring a massive performance and memory cost.</li>
 <li>For Massey products we need an extra two box products, so up to five total then computing \(\langle a,b,c\rangle \) for \(a,b,c\) in the mixed homology. This is an extremely large number of box products and results in matrices of millions of rows and columns, thus consuming large amounts of memory. If we combine this with OpenMP parallelization, then we can easily run out of memory using 12 threads even in a 24GB system, and get <code>std::bad_alloc</code> errors. It might be a good idea to use sparse matrices in this case, but that hasn't been implemented yet.</li>
 </ul>
 <h1><a class="anchor" id="bottle"></a>
 Bottlenecks</h1>
-<p>Here are the bottlenecks in the multiplicative structure (for the additive structure only the last bottleneck appears, while Massey products dramatically increase the impact of all three).</p>
 <ul>
 <li>The biggest performance bottleneck is found in the multiplicative structure. That's when we apply some large change of basis matrices through <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a>'s permutation matrix product. This is mainly a memory bottleneck.</li>
 <li>The second biggest bottleneck lies in the transfering very large differentials. To transfer we need to delete certain rows of the matrix, and this is done by copying the remaining rows into a new matrix. This is another memory bottleneck.</li>

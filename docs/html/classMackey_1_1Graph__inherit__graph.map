@@ -1,9 +1,11 @@
 <map id="Mackey::Graph&lt; T &gt;" name="Mackey::Graph&lt; T &gt;">
-<area shape="rect" id="node2" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; WeightedGraph \&gt;" alt="" coords="5,95,231,121"/>
-<area shape="rect" id="node4" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; ColoredGraph \&gt;" alt="" coords="255,95,469,121"/>
-<area shape="rect" id="node3" href="$classMackey_1_1WeightedGraph.html" title="A directed Graph with weights. " alt="" coords="35,171,201,197"/>
-<area shape="rect" id="node5" href="$classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors. " alt="" coords="284,171,440,197"/>
-<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="269,247,455,288"/>
-<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="269,337,455,379"/>
-<area shape="rect" id="node8" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="287,428,437,469"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; WeightedGraph \&gt;" alt="" coords="315,5,540,32"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; void \&gt;" alt="" coords="348,56,507,83"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; ColoredGraph \&gt;" alt="" coords="320,107,535,133"/>
+<area shape="rect" id="node3" href="$classMackey_1_1WeightedGraph.html" title="A directed Graph with weights. " alt="" coords="589,5,756,32"/>
+<area shape="rect" id="node6" href="$classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors. " alt="" coords="595,107,751,133"/>
+<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="805,99,992,141"/>
+<area shape="rect" id="node8" href="$classMackey_1_1MultiplicationGraphConnectivity.html" title="Provides extra identification methods using triple box products. " alt="" coords="1041,66,1233,107"/>
+<area shape="rect" id="node9" href="$classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="1044,131,1231,173"/>
+<area shape="rect" id="node10" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="1283,131,1433,173"/>
 </map>

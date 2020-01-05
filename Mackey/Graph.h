@@ -33,7 +33,7 @@ namespace Mackey {
 		//////////////////////////////////////
 		std::vector<std::vector<int>> path;
 
-		/// Same as path, but using the procession of edges as opposed to nodes
+		/// Same as path, but using the procession of edges as opposed to nodes. Not currenltly used/set
 		std::vector<std::vector<int>> path_edges;
 		
 		/////////////////////////////////////
@@ -46,6 +46,9 @@ namespace Mackey {
 		/// The disconnected points from each source
 		std::vector<int> disconnected;
 
+		///Default constructor
+		Graph() {};
+		
 		/// Construct given the edges of the graph
 		Graph(const std::vector<std::vector<int>>& edges) : number_of_nodes(edges.size()), edges(edges) {}
 
@@ -64,8 +67,7 @@ namespace Mackey {
 		void draw();
 		/// Writes a graph.dot file representing the graph using node names.
 		void draw(const std::vector<std::string>&);
-		///Default constructor
-		Graph() {};
+
 
 		///Default implementation for graphs uses length=1 for all edges
 		void computePath_default();
@@ -154,32 +156,22 @@ namespace Mackey {
 
 		///Constructor from given graph and weights
 		template<typename T>
-		WeightedGraph(const Graph<T>& G, const std::vector<std::vector<int>> weights): weights(weights){
-			number_of_nodes = G.number_of_nodes;
-			edges = G.edges;
-			path = G.path;
-			distance = G.distance;
-			path_edges = G.path_edges;
-			disconnected = G.disconnected;
-			initialize(); 
-		}
+		WeightedGraph(const Graph<T>&, const std::vector<std::vector<int>>&);
 
 		///Constructor from given edges and weights
-		WeightedGraph(const std::vector<std::vector<int>> & edges, const std::vector<std::vector<int>> weights) : Graph<WeightedGraph>(edges), weights(weights) {
-			initialize();
-		}
+		WeightedGraph(const std::vector<std::vector<int>> & edges, const std::vector<std::vector<int>>& weights);
 		
-		///Constructor from other graph and zero weights
+		///Constructor from given graph and zero weights
 		template<typename T>
-		WeightedGraph(Graph<T>& G) : WeightedGraph(G, zeroWeight(G.edges)) { initialize(); }
+		WeightedGraph(Graph<T>& G);
 		
 	
-	public:
+	private:
 		std::vector<std::vector<int>> weights;
 		std::vector<int> unweighted_distance, closest;
 		std::vector<char> visited, reachable; //not bool for performance
 		std::priority_queue<std::pair<int, int>> next;
-		auto zeroWeight(const std::vector<std::vector<int>>&);
+		std::vector<std::vector<int>> zeroWeight(const std::vector<std::vector<int>>&);
 		void initialize();
 		void computePath();
 		void stepDistance(int);
@@ -191,7 +183,29 @@ namespace Mackey {
 
 
 
-	auto WeightedGraph::zeroWeight(const std::vector<std::vector<int>>& e) {
+		template<typename T>
+		WeightedGraph::WeightedGraph(const Graph<T>& G, const std::vector<std::vector<int>>& weights): weights(weights){
+			number_of_nodes = G.number_of_nodes;
+			edges = G.edges;
+			path = G.path;
+			distance = G.distance;
+			path_edges = G.path_edges;
+			disconnected = G.disconnected;
+			initialize(); 
+		}
+
+
+		WeightedGraph::WeightedGraph(const std::vector<std::vector<int>> & edges, const std::vector<std::vector<int>>& weights)
+		: Graph<WeightedGraph>(edges), weights(weights) {
+			initialize();
+		}
+		
+
+		template<typename T>
+		WeightedGraph::WeightedGraph(Graph<T>& G) : WeightedGraph(G, zeroWeight(G.edges)) { initialize(); }
+
+
+	std::vector<std::vector<int>> WeightedGraph::zeroWeight(const std::vector<std::vector<int>>& e) {
 		std::vector<std::vector<int>> w;
 		w.resize(e.size());
 		for (size_t i = 0; i < e.size(); i++) {
@@ -288,7 +302,7 @@ namespace Mackey {
 		/// Writes a graph.dot file representing the colored graph and named nodes and named edges
 		void draw(const std::vector<std::string>&, const std::vector<std::vector<int>>&, std::vector<std::string>&);
 
-	public:
+	private:
 		void computePath();
 		void constructDual();
 		std::vector<int> adjustpath(std::vector<int>& path);

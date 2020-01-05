@@ -32,14 +32,6 @@ Collaboration diagram for Mackey\+:\+:Factorization$<$ rank\+\_\+t, diff\+\_\+t 
 \item 
 std\+::string \hyperlink{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}{getname} (int)
 \begin{DoxyCompactList}\small\item\em Retrieve the factorization of the i-\/th generator. \end{DoxyCompactList}\item 
-std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1Factorization_a273e9318c0a5eacacd584474f93ffe4a}{getdegree} (int i) const
-\begin{DoxyCompactList}\small\item\em Retrieve the degree of the i-\/th generator. \end{DoxyCompactList}\item 
-int \hyperlink{classMackey_1_1Factorization_ab90f461af3418417970d4be8682e965d}{getdegreeindex} (const std\+::vector$<$ int $>$ \&) const
-\begin{DoxyCompactList}\small\item\em Retrieve the degree of the i-\/th generator. \end{DoxyCompactList}\item 
-Eigen\+::\+Matrix$<$ int, 1,-\/1 $>$ \hyperlink{classMackey_1_1Factorization_a6e15f1fb3623685326255f7badf7eee9}{getelement} (int i) const
-\begin{DoxyCompactList}\small\item\em Retrieve the degree of the i-\/th generator. \end{DoxyCompactList}\item 
-int \hyperlink{classMackey_1_1Factorization_a5217ad8ca4aaa13b900adda77893249b}{getelementindex} (const std\+::vector$<$ int $>$ \&, const rank\+\_\+t \&) const
-\begin{DoxyCompactList}\small\item\em Retrieve the degree of the i-\/th generator. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422}{Factorization} (int, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
 \begin{DoxyCompactList}\small\item\em Form the multiplication table and graph given the max and min spheres and the basic irreducibles. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
@@ -76,13 +68,6 @@ Factorizes generators into the given basic irreducibles and sources.
 
 Form the multiplication table and graph given the max and min spheres and the basic irreducibles. 
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}\label{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!Factorization@{Factorization}}
 \index{Factorization@{Factorization}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
@@ -115,92 +100,6 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classMackey_1_1Factorization_a273e9318c0a5eacacd584474f93ffe4a}\label{classMackey_1_1Factorization_a273e9318c0a5eacacd584474f93ffe4a}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getdegree@{getdegree}}
-\index{getdegree@{getdegree}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{getdegree()}{getdegree()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::vector$<$int$>$ \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getdegree (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Retrieve the degree of the i-\/th generator. 
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_a273e9318c0a5eacacd584474f93ffe4a_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classMackey_1_1Factorization_ab90f461af3418417970d4be8682e965d}\label{classMackey_1_1Factorization_ab90f461af3418417970d4be8682e965d}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getdegreeindex@{getdegreeindex}}
-\index{getdegreeindex@{getdegreeindex}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{getdegreeindex()}{getdegreeindex()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-int \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getdegreeindex (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{degree }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Retrieve the degree of the i-\/th generator. 
-
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_ab90f461af3418417970d4be8682e965d_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classMackey_1_1Factorization_a6e15f1fb3623685326255f7badf7eee9}\label{classMackey_1_1Factorization_a6e15f1fb3623685326255f7badf7eee9}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getelement@{getelement}}
-\index{getelement@{getelement}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{getelement()}{getelement()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-Eigen\+::\+Matrix$<$int,1,-\/1$>$ \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getelement (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Retrieve the degree of the i-\/th generator. 
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_a6e15f1fb3623685326255f7badf7eee9_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classMackey_1_1Factorization_a5217ad8ca4aaa13b900adda77893249b}\label{classMackey_1_1Factorization_a5217ad8ca4aaa13b900adda77893249b}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getelementindex@{getelementindex}}
-\index{getelementindex@{getelementindex}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{getelementindex()}{getelementindex()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-int \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getelementindex (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{degree,  }\item[{const rank\+\_\+t \&}]{basis }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Retrieve the degree of the i-\/th generator. 
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_a5217ad8ca4aaa13b900adda77893249b_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_a5217ad8ca4aaa13b900adda77893249b_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}\label{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getname@{getname}}
 \index{getname@{getname}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
@@ -230,13 +129,6 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}\label{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass\+\_\+unidentified@{pass\+\_\+unidentified}}
 \index{pass\+\_\+unidentified@{pass\+\_\+unidentified}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
@@ -253,13 +145,6 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=342pt]{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4_icgraph}
 \end{center}
 \end{figure}
 

@@ -18,7 +18,7 @@ namespace Mackey {
 		MultiplicationGraphConnectivity(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles)
 			: MultiplicationGraph<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles) {}
 
-	///The disconnected nodes
+	///The generators disconnected from the sources (element indices)
 	std::vector<int> trully_disconnected;
 
 	///Computes the nodes of the Multiplication Graph disconnected from the given sources

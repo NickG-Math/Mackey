@@ -1,4 +1,6 @@
 <map id="Mackey::KeepRow" name="Mackey::KeepRow">
-<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22" title="Compute the homology from the given Junction. " alt="" coords="187,5,389,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="228,56,348,83"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a72296e393c6f22a526375b0169daab94" title="Mackey::Homology::getKernel" alt="" coords="187,5,385,32"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Homology.html#a902c8dfef7da8ad9f5e03d16eb60a423" title="Mackey::Homology::Kernel\lModImage" alt="" coords="196,57,376,98"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="226,123,346,149"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Homology.html#af42f480509ef68df47308c0f506d44c8" title="Compute the homology from the given Junction with an extra computation of a coefficient matrix needed..." alt="" coords="433,35,636,61"/>
 </map>

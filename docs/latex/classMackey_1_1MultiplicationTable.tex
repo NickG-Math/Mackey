@@ -15,7 +15,7 @@ Inheritance diagram for Mackey\+:\+:Multiplication\+Table$<$ rank\+\_\+t, diff\+
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=220pt]{classMackey_1_1MultiplicationTable__inherit__graph}
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationTable__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -25,6 +25,8 @@ Inheritance diagram for Mackey\+:\+:Multiplication\+Table$<$ rank\+\_\+t, diff\+
 \begin{DoxyCompactList}\small\item\em Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1MultiplicationTable_a4371e6ba8a058073c005e636979b7230}{extend} (const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ int $>$ \&)
 \begin{DoxyCompactList}\small\item\em Extends multiplication table using the larger range provided. \end{DoxyCompactList}\item 
+int \hyperlink{classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c}{getdegreeindex} (const std\+::vector$<$ int $>$ \&) const
+\begin{DoxyCompactList}\small\item\em Retrieve the degree index of the given degree. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1MultiplicationTable_ac3bc2d09599a994b2b159def52484bae}{Multiplication\+Table} ()
 \begin{DoxyCompactList}\small\item\em Default constructor needed for loading archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
@@ -87,13 +89,6 @@ The Multiplication Table.
 
 Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles. 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1MultiplicationTable_a8530e27d8d2c3c755eb5041a2ee8c35b_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ac3bc2d09599a994b2b159def52484bae}\label{classMackey_1_1MultiplicationTable_ac3bc2d09599a994b2b159def52484bae}} 
 \index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!Multiplication\+Table@{Multiplication\+Table}}
 \index{Multiplication\+Table@{Multiplication\+Table}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
@@ -126,6 +121,24 @@ void \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+
 
 Extends multiplication table using the larger range provided. 
 
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c}\label{classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!getdegreeindex@{getdegreeindex}}
+\index{getdegreeindex@{getdegreeindex}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{getdegreeindex()}{getdegreeindex()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+int \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getdegreeindex (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{degree }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the degree index of the given degree. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999}\label{classMackey_1_1MultiplicationTable_ad4245f4a8122f0661f969498ef53f999}} 
 \index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!getsphere@{getsphere}}
 \index{getsphere@{getsphere}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}

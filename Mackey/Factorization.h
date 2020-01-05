@@ -1,5 +1,6 @@
 #pragma once
 #include "MultiplicationGraph_Identify.h"
+#include "MultiplicationGraph_Connectivity.h"
 #include <string>
 
 ///@file
@@ -16,21 +17,6 @@ namespace Mackey{
 
 		/// Retrieve the factorization of the i-th generator
 		std::string getname(int);
-
-		/// Retrieve the degree of the i-th generator
-		std::vector<int> getdegree(int i) const {
-			return this->degree[this->tracker[i]];
-		}
-
-		/// Retrieve the degree of the i-th generator
-		int getdegreeindex(const std::vector<int>&) const;
-
-		/// Retrieve the degree of the i-th generator
-		Eigen::Matrix<int,1,-1> getelement(int i) const { return this->element[i].template cast<int>(); }
-
-		/// Retrieve the degree of the i-th generator
-		int getelementindex(const std::vector<int>&, const rank_t&) const;
-
 
 		/// Form the multiplication table and graph given the max and min spheres and the basic irreducibles
 		Factorization(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&);
@@ -61,7 +47,7 @@ namespace Mackey{
 		std::vector<int> orderOfoperations, sources;
 		std::map<int, std::string> source_names;
 		void set_sources(const std::vector<std::vector<int>>&, const std::vector<std::string>&);
-		void find_disconnected();
+		void find_disconnected_generators();
 
 	};
 
@@ -75,28 +61,6 @@ namespace Mackey{
 		factorization.reserve(3);
 		orderOfoperations.reserve(3);
 	}
-
-	template<typename rank_t, typename diff_t>
-	inline int Factorization<rank_t, diff_t>::getdegreeindex(const std::vector<int>& degree) const {
-		auto iterator = this->antidegree.find(degree);
-		if (iterator == this->antidegree.end())
-			return -1;
-		else
-			return iterator->second;
-	}
-
-	template<typename rank_t, typename diff_t>
-	inline int Factorization<rank_t, diff_t>::getelementindex(const std::vector<int>& degree, const rank_t& basis) const {
-		auto i = getdegreeindex(degree);
-		if (i == -1)
-			return -1;
-		auto iterator = this->antielement.find(std::make_pair(i,basis));
-		if (iterator == this->antielement.end())
-			return -1;
-		else
-			return iterator->second;
-	}
-
 
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::set_sources(const std::vector<std::vector<int>>& given_sources, const std::vector<std::string>& names) {
@@ -118,18 +82,6 @@ namespace Mackey{
 	}
 
 
-
-	template<typename rank_t, typename diff_t>
-	void Factorization<rank_t, diff_t>::find_disconnected() {
-		for (const auto& i : sources)
-			this->computeWithSource(i);
-		this->disconnected.clear();
-		for (int i = 0; i < this->number_of_generators; i++) {
-			if (this->path[i].empty())
-				this->disconnected.push_back(i);
-		}
-	}
-
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::pass_unidentified(bool serialize_each_step) {
 		this->pass_all_unidentified(serialize_each_step);
@@ -139,12 +91,12 @@ namespace Mackey{
 	
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::pass_disconnected(bool serialize_each_step) {
-		find_disconnected();
+		find_disconnected_generators(); //find the disconnected generators
 		//first use division to identify
 		if (this->disconnected.size() > 0) {
 			do {
 				this->pass_disconnected_division(serialize_each_step);
-				find_disconnected();
+				find_disconnected_generators();
 			} 
 			while (this->disconnected.size() > 0 && this->can_do_more);
 		}
@@ -152,12 +104,18 @@ namespace Mackey{
 		if (this->disconnected.size() > 0) {
 			do {
 				this->pass_disconnected_product(serialize_each_step);
-				find_disconnected();
+				find_disconnected_generators();
 			}
 			while (this->can_do_more);
 		}
 	}
 
+	template<typename rank_t, typename diff_t>
+	void Factorization<rank_t, diff_t>::find_disconnected_generators() {
+		for (const auto& i : sources)
+			this->computeWithSource(i);
+		this->compute_disconnected(this->number_of_generators);
+	}
 
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::factorize(int i) {

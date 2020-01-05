@@ -178,7 +178,7 @@ namespace Mackey {
 			if constexpr (SFINAE::is_finite_cyclic<Scalar_t<S_t>>::value)
 				return SmithFP<S_t, R_t, C_t>(A, wantP, wantQ, sort);
 			else {
-				if (A.rows() >0 && A.cols() >0)
+				if (A.rows() > 1000 && A.cols() > 1000)
 					return SmithSP<S_t, R_t, C_t>(A, wantP, wantQ, sort);
 				else
 					return SmithMP<S_t, R_t, C_t>(A, wantP, wantQ, sort);

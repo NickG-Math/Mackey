@@ -16,10 +16,10 @@ namespace Mackey {
 	class Homology {
 
 		///<Type used for Smith + product of matrices, either for performance (float/double) or to avoid overflow (long).
-		typedef typename std::conditional<is_Finite_Cyclic<Scalar_t<diff_t>>::value, Scalar_t<diff_t>, float>::type fScalar;
-		typedef typename std::conditional<is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1>, Eigen::SparseMatrix<fScalar, 0>>::type fdiff_t_C;	///<Column Major
-		typedef typename std::conditional<is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1, 1>, Eigen::SparseMatrix<fScalar, 1>>::type fdiff_t_R;	///<Row Major
-		typedef typename std::conditional<is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, 1>, Eigen::SparseVector<fScalar>>::type fdiff_t_C_col;	///<Column of column major
+		typedef typename std::conditional<SFINAE::is_finite_cyclic<Scalar_t<diff_t>>::value, Scalar_t<diff_t>, float>::type fScalar;
+		typedef typename std::conditional<SFINAE::is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1>, Eigen::SparseMatrix<fScalar, 0>>::type fdiff_t_C;	///<Column Major
+		typedef typename std::conditional<SFINAE::is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1, 1>, Eigen::SparseMatrix<fScalar, 1>>::type fdiff_t_R;	///<Row Major
+		typedef typename std::conditional<SFINAE::is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, 1>, Eigen::SparseVector<fScalar>>::type fdiff_t_C_col;	///<Column of column major
 	
 	public:
 
@@ -118,12 +118,12 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	void Homology<rank_t, diff_t>::KernelModImage(fdiff_t_C& In, fdiff_t_C& Kernel, bool getQ) {
 		In = Out_Qi * In;
-		if constexpr (is_Sparse<diff_t>::value)
+		if constexpr (SFINAE::is_Sparse<diff_t>::value)
 			In.pruned();
 		auto L = std::min(In.rows(), In.cols());
 		auto IN=diagonalize<fdiff_t_C, fdiff_t_R, fdiff_t_C>(In, 1, getQ, 1);
 		Generators = Kernel * IN.Pi;
-		if constexpr (is_Sparse<diff_t>::value)
+		if constexpr (SFINAE::is_Sparse<diff_t>::value)
 			Generators.pruned();
 		auto maxsize = Generators.cols();
 		std::vector<Scalar_t<rank_t>> groups;
@@ -165,7 +165,7 @@ namespace Mackey {
 
 
 		//Check for non integer coefficients and replace the Z in Groups with Z/N
-		if constexpr (is_Finite_Cyclic<Scalar_t<diff_t>>::value) {
+		if constexpr (SFINAE::is_finite_cyclic<Scalar_t<diff_t>>::value) {
 			constexpr int order = Scalar_t<diff_t>::order;
 			for (int i = 0; i < Groups.size(); i++) {
 				if (Groups[i] == 1)
@@ -196,7 +196,7 @@ namespace Mackey {
 	typename Homology<rank_t, diff_t>::gen_t Homology<rank_t, diff_t>::boundary(const gen_t& generator) const {
 		gen_t element = In_P_full * Out_Qi * generator;
 		for (const auto& i : dontModOut) {
-			if (element[i] != 0)  //the element is not 0 so it has no preimage
+			if ((diagonal[i] != 0 && (long)element[i]%(long)diagonal[i] != 0) || (diagonal[i]==0 && element[i]!=0))  //the element is not 0 so it has no preimage
 				return gen_t();
 		}
 		gen_t y(In_Q.rows()); //Sy=Px
@@ -304,58 +304,61 @@ namespace Mackey {
 		}
 	}
 
-
-	////////////////////////////////////////////////////
-///Finds if two elements are equal in the given finitely generated abelian group
-
-///T,S,R are vectors or 1d Eigen matrices
-///////////////////////////////////////////////////
-	template<typename T, typename S, typename R>
-	bool equals(const T& element1, const S& element2, const R& group) {
+		////////////////////////////////////////////////////
+///Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group. If a is not in their span, returns empty matrix.
+	template<typename T>
+	auto span(const T& a, const std::vector<T>& b, const T& group) {
+		int count = 0;
 		for (int i = 0; i < group.size(); i++) {
-			if (group[i] == 1 && element1[i] != element2[i])
-				return 0;
-			if (group[i] != 1 && (((element1[i] - element2[i]) % group[i]) != 0))
-				return 0;
+			if (group[i] != 1)
+				count++;
 		}
-		return 1;
+		mat_t<T> relation(group.size(), count + b.size());
+		relation.setZero();
+		int j = 0;
+		for (int i = 0; i < group.size(); i++) {
+			if (group[i] != 1) {
+				relation(j, j) = group[i];
+				j++;
+			}
+		}
+		for (int i = 0; i < b.size(); i++)
+			relation.col(i + count) = b[i];
+		Junction<T, mat_t<T>> J;
+		J.rank = T::Constant(1, (int)group.size());
+		J.diffIn = relation;
+		Homology<T, mat_t<T>> H(J, 1);
+		gen_t<T, mat_t<T>> cast_a = a.template cast<Scalar_t<gen_t<T, mat_t<T>>>>();
+		auto v = H.boundary(cast_a);
+		if (v.size()==0)
+			return v;
+		decltype(v) z(b.size());
+		for (int i = 0; i < b.size(); i++)
+			z[i] = v[i+count];
+		return z;
 	}
 
 	////////////////////////////////////////////////////
-///Finds if element a is a multiple of element b in the given finitely generated abelian group
-
-///T,S,R are vectors or 1d Eigen matrices
-///////////////////////////////////////////////////
-	template<typename T, typename S>
-	int isMultiple(const T& a, const T& b, const S& group) {
-		auto oa = order(a, group);
-		auto ob = order(b, group);
-		if ((oa == 0 && ob != 0) || (ob < oa))
-			return 0;
-		if (oa == 0) {
-			Scalar_t<T> q = 0;
-			for (int i = 0; i < a.size(); i++) {
-				if (group[i] == 1 && a[i] != 0) {
-					if (b[i] == 0)
-						return 0;
-					else {
-						q = a[i] / b[i];
-						break;
-					}
-				}
-			}
-			if (equals(a, q * b, group))
-				return q;
-			else
-				return 0;
-		}
-		for (Scalar_t<T> i = 1; i < ob; i++) {
-			if (equals(a, i * b, group))
-				return i;
-		}
+///Finds if an element is in the span of other given elements in a finitely generated abelian group
+	template<typename T>
+	bool inSpan(const T& a, const std::vector<T>& b, const T& group) {
+		if (span(a, b, group).size() != 0)
+			return 1;
 		return 0;
 	}
-	
+
+
+	////////////////////////////////////////////////////
+///Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!=0)
+	template<typename T>
+	int isMultiple(const T& a, const T& b, const T& group) {
+		auto u = span(a, { b }, group);
+		if (u.size() == 0)
+			return 0;
+		return (int)u[0];
+	}
+
+
 
 	// //temp sparse implementation
 	// template<typename rank_t, typename diff_t>
@@ -368,41 +371,4 @@ namespace Mackey {
 		// Out_Qi = H.Out_Qi;
 		// In_P_reduced = H.In_P_reduced;
 	// };
-
-
-
-
-// untested
-//	////////////////////////////////////////////////////
-/////Finds if element a is a linear combination of other given elements in a finitely generated abelian group
-//
-/////T,S are vectors or 1d Eigen matrices
-/////////////////////////////////////////////////////
-//	template<typename T, typename S>
-//	bool inSpan(const T& a, const std::vector<T>& b, const S& group) {
-//		std::vector<int> minbasis(b.size());
-//		std::vector<int> maxbasis, tobegcded;
-//		maxbasis.reserve(b.size());
-//		for (int i=0; i<group.size(); i++){
-//			if (group[i]==0){
-//				for (const auto & j: b)
-//					tobegcded.push_back(j[i]);
-//				maxbasis.push_back(gcd(tobegcded));
-//			}
-//			else
-//				maxbasis.push_back(group[i]-1);
-//		}
-//		auto U=DegreeConstruction(minbasis,maxbasis);
-//		for (const auto & i:U){
-//			T element=i[0]*b[0];
-//			for (int j=1; j<b.size(); j++)
-//				element+=i[j]*b[j];
-//			normalize(element,group);
-//			if (a==element)
-//				return 1;
-//		}
-//		return 0;
-//	}
-
-
 }

@@ -9,7 +9,7 @@ var searchData=
   ['intlog',['intlog',['../namespaceMackey.html#aa0cac9097035c5fe8448742e22e6f78b',1,'Mackey']]],
   ['inverses',['inverses',['../namespaceMackey.html#a8c1525b210b4699780bbe05cb16f0e7b',1,'Mackey']]],
   ['invreindex',['invReindex',['../namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b',1,'Mackey::invReindex(T degree)'],['../namespaceMackey.html#a011b8e23bc2eedf751a9ce7bdc9e4cb9',1,'Mackey::invReindex(int k, const T &amp;sphere)']]],
-  ['invres',['invRes',['../namespaceMackey.html#a30b5667e411ff694aa989e95e394bb41',1,'Mackey']]],
+  ['invres',['invRes',['../namespaceMackey.html#af67f48d3d26f3dd700dc6989cb3506de',1,'Mackey']]],
   ['is_5fp_5fgroup',['is_p_group',['../namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7',1,'Mackey']]],
   ['ismultiple',['isMultiple',['../classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f',1,'Mackey::MultiplicationGraph::isMultiple()'],['../namespaceMackey.html#af70b0c547f7121b8815885dfebde67d9',1,'Mackey::isMultiple()']]],
   ['isomorphic',['isomorphic',['../classMackey_1_1MackeyFunctor.html#a8cd5c9415c0c63c6d79dfa9b0067f416',1,'Mackey::MackeyFunctor::isomorphic(const std::vector&lt; MackeyFunctor&lt; rank_t &gt;&gt; &amp;isoclass) const'],['../classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8',1,'Mackey::MackeyFunctor::isomorphic(const MackeyFunctor&lt; rank_t &gt; &amp;)']]],

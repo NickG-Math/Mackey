@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['gcd',['gcd',['../namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be',1,'Mackey']]],
   ['geometric',['geometric',['../namespaceMackey.html#a2b9319a9af0a3cad8cfec47e9197dc82',1,'Mackey']]],
   ['getdegree',['getdegree',['../classMackey_1_1MultiplicationGraph.html#a1616acd79b92c94994648835a7941753',1,'Mackey::MultiplicationGraph']]],
   ['getdegreeindex',['getdegreeindex',['../classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c',1,'Mackey::MultiplicationTable']]],

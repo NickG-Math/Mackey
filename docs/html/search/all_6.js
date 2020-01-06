@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['gcd',['gcd',['../namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be',1,'Mackey']]],
-  ['gen_5ft',['Gen_t',['../classMackey_1_1Homology.html#a9a8e354083ac094720820a5ff6bcff03',1,'Mackey::Homology::Gen_t()'],['../classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46',1,'Mackey::Homology::gen_t()'],['../namespaceMackey.html#a5048063727afe2ed842d6bff76cef28e',1,'Mackey::Gen_t()'],['../namespaceMackey.html#a6bb0b2796632ba6c7f8ea192f7aecffe',1,'Mackey::gen_t()']]],
+  ['gen_5ft',['gen_t',['../classMackey_1_1Homology.html#a0f7541ee6181c75cb7efa41f3b63f0a5',1,'Mackey::Homology::gen_t()'],['../namespaceMackey.html#a6bb0b2796632ba6c7f8ea192f7aecffe',1,'Mackey::gen_t()']]],
   ['general_2eh',['General.h',['../General_8h.html',1,'']]],
-  ['generators',['Generators',['../classMackey_1_1Homology.html#af3eff7d2cb42b44a29f6a92172096b3d',1,'Mackey::Homology']]],
+  ['generators',['Generators',['../classMackey_1_1Homology.html#abceae7827c633cec7a9892826240c9cd',1,'Mackey::Homology']]],
+  ['gens_5ft',['Gens_t',['../classMackey_1_1Homology.html#a986c3a6644aa52dc8279a26ade42fd64',1,'Mackey::Homology::Gens_t()'],['../namespaceMackey.html#ab2542005948b58de00ac4647ca2c7106',1,'Mackey::Gens_t()']]],
   ['geometric',['geometric',['../namespaceMackey.html#a2b9319a9af0a3cad8cfec47e9197dc82',1,'Mackey']]],
   ['getdegree',['getdegree',['../classMackey_1_1MultiplicationGraph.html#a1616acd79b92c94994648835a7941753',1,'Mackey::MultiplicationGraph']]],
   ['getdegreeindex',['getdegreeindex',['../classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c',1,'Mackey::MultiplicationTable']]],

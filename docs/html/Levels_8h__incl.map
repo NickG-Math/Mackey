@@ -1,17 +1,17 @@
 <map id="Mackey/Levels.h" name="Mackey/Levels.h">
-<area shape="rect" id="node2" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="292,80,375,107"/>
-<area shape="rect" id="node13" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="345,304,423,331"/>
-<area shape="rect" id="node17" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="529,80,621,107"/>
-<area shape="rect" id="node3" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="500,155,575,181"/>
-<area shape="rect" id="node5" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="60,155,183,181"/>
-<area shape="rect" id="node9" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="225,229,349,256"/>
-<area shape="rect" id="node10" href="$Aliases_8h.html" title="Contains general template aliases. " alt="" coords="545,379,621,405"/>
-<area shape="rect" id="node14" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="437,379,520,405"/>
-<area shape="rect" id="node16" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="641,453,695,480"/>
-<area shape="rect" id="node18" href="$Smith_8h.html" title="Includes all Smith implementations. " alt="" coords="784,155,851,181"/>
-<area shape="rect" id="node19" href="$Smith__FirstPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the first nonzero as pivot..." alt="" coords="600,229,731,256"/>
-<area shape="rect" id="node22" href="$Smith__MinPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the minimum as pivot. " alt="" coords="755,229,880,256"/>
-<area shape="rect" id="node23" href="$Smith__SmartPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices where pivots are selected by a Markowitz ..." alt="" coords="904,229,1043,256"/>
-<area shape="rect" id="node24" href="$Smith__Sparse_8h.html" title="Contains the Smith normal form algorithm for sparse matrices. " alt="" coords="1067,229,1181,256"/>
-<area shape="rect" id="node20" href="$Smith__Base_8h.html" title="Contains the base class for all Smith implementations. " alt="" coords="617,304,721,331"/>
+<area shape="rect" id="node2" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="213,80,296,107"/>
+<area shape="rect" id="node16" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="245,304,323,331"/>
+<area shape="rect" id="node17" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="422,80,514,107"/>
+<area shape="rect" id="node3" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="393,155,468,181"/>
+<area shape="rect" id="node5" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="95,155,217,181"/>
+<area shape="rect" id="node9" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="343,229,467,256"/>
+<area shape="rect" id="node10" href="$Aliases_8h.html" title="Contains general template aliases. " alt="" coords="567,379,643,405"/>
+<area shape="rect" id="node13" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="480,453,563,480"/>
+<area shape="rect" id="node15" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="679,528,734,555"/>
+<area shape="rect" id="node18" href="$Smith_8h.html" title="Includes all Smith implementations. " alt="" coords="780,155,847,181"/>
+<area shape="rect" id="node19" href="$Smith__FirstPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the first nonzero as pivot..." alt="" coords="895,229,1025,256"/>
+<area shape="rect" id="node22" href="$Smith__MinPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the minimum as pivot. " alt="" coords="1049,229,1175,256"/>
+<area shape="rect" id="node23" href="$Smith__SmartPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices where pivots are selected by a Markowitz ..." alt="" coords="593,229,732,256"/>
+<area shape="rect" id="node24" href="$Smith__Sparse_8h.html" title="Contains the Smith normal form algorithm for sparse matrices. " alt="" coords="756,229,871,256"/>
+<area shape="rect" id="node20" href="$Smith__Base_8h.html" title="Contains the base class for all Smith implementations. " alt="" coords="628,304,732,331"/>
 </map>

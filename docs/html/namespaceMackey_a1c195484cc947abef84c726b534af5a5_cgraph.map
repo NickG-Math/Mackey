@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables. " alt="" coords="227,5,393,47"/>
 <area shape="rect" id="node3" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero. " alt="" coords="254,71,366,98"/>
 <area shape="rect" id="node4" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="250,122,370,149"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="243,173,377,199"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="243,173,377,199"/>
 <area shape="rect" id="node8" href="$namespaceMackey.html#aa515b26c0fbc7f19b36cee7d826f07b9" title="Compute the Weyl group action on a generator given the rank of the group it lives in..." alt="" coords="255,223,365,250"/>
 <area shape="rect" id="node5" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="461,122,572,149"/>
 <area shape="rect" id="node7" href="$namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="447,173,587,199"/>

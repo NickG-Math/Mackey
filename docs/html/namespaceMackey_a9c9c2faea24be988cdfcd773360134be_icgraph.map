@@ -10,7 +10,7 @@
 <area shape="rect" id="node8" href="$classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="1305,71,1481,112"/>
 <area shape="rect" id="node10" href="$classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="1310,136,1477,177"/>
 <area shape="rect" id="node9" href="$classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="1529,71,1705,112"/>
-<area shape="rect" id="node12" href="$namespaceMackey.html#aec14170f140793a5ef29eef799f217ce" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="399,97,569,123"/>
+<area shape="rect" id="node12" href="$namespaceMackey.html#a232e85ca1fb9017788b33b7f6f2c269b" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="399,97,569,123"/>
 <area shape="rect" id="node13" href="$classMackey_1_1Homology.html#a902c8dfef7da8ad9f5e03d16eb60a423" title="Mackey::Homology::Kernel\lModImage" alt="" coords="394,148,574,189"/>
 <area shape="rect" id="node16" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]..." alt="" coords="391,213,577,255"/>
 <area shape="rect" id="node18" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="633,272,820,313"/>

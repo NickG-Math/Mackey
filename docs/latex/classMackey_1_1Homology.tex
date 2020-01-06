@@ -12,10 +12,10 @@ The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef fdiff\+\_\+t\+\_\+C \hyperlink{classMackey_1_1Homology_a9a8e354083ac094720820a5ff6bcff03}{Gen\+\_\+t}
+typedef fdiff\+\_\+t\+\_\+C \hyperlink{classMackey_1_1Homology_a986c3a6644aa52dc8279a26ade42fd64}{Gens\+\_\+t}
 \begin{DoxyCompactList}\small\item\em The type of our matrix of generators. \end{DoxyCompactList}\item 
-typedef fdiff\+\_\+t\+\_\+\+C\+\_\+col \hyperlink{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}{gen\+\_\+t}
-\begin{DoxyCompactList}\small\item\em The type of our generators (a column in the generator matrix) \end{DoxyCompactList}\end{DoxyCompactItemize}
+typedef \hyperlink{namespaceMackey_a3374980e3b5001f5ba9b206004180627}{col\+\_\+t}$<$ fdiff\+\_\+t\+\_\+C $>$ \hyperlink{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}{gen\+\_\+t}
+\begin{DoxyCompactList}\small\item\em The dense type of our generators (a column in the generator matrix, always dense for convenience) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,9 +25,9 @@ typedef fdiff\+\_\+t\+\_\+\+C\+\_\+col \hyperlink{classMackey_1_1Homology_adf81f
 \begin{DoxyCompactList}\small\item\em Compute the homology from the given \hyperlink{classMackey_1_1Junction}{Junction}. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1Homology_af42f480509ef68df47308c0f506d44c8}{Homology} (const \hyperlink{classMackey_1_1Junction}{Junction}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&, bool)
 \begin{DoxyCompactList}\small\item\em Compute the homology from the given \hyperlink{classMackey_1_1Junction}{Junction} with an extra computation of a coefficient matrix needed for boundaries (if getQ=1) \end{DoxyCompactList}\item 
-rank\+\_\+t \hyperlink{classMackey_1_1Homology_a2e6fb6da3abdba934a1eb2f4236623cb}{basis} (const \hyperlink{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}{gen\+\_\+t} \&) const
+rank\+\_\+t \hyperlink{classMackey_1_1Homology_a2e6fb6da3abdba934a1eb2f4236623cb}{basis} (const \hyperlink{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}{gen\+\_\+t} \&) const
 \begin{DoxyCompactList}\small\item\em Given an element in homology, write it as a linear combination of the generators of the homology. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}{gen\+\_\+t} \hyperlink{classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b}{boundary} (const \hyperlink{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}{gen\+\_\+t} \&) const
+\hyperlink{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}{gen\+\_\+t} \hyperlink{classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b}{boundary} (const \hyperlink{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}{gen\+\_\+t} \&) const
 \begin{DoxyCompactList}\small\item\em Given an x that is a boundary returns a y s.\+t. dy=x. \end{DoxyCompactList}\item 
 fdiff\+\_\+t\+\_\+C \hyperlink{classMackey_1_1Homology_a72296e393c6f22a526375b0169daab94}{get\+Kernel} (fdiff\+\_\+t\+\_\+C \&)
 \item 
@@ -38,7 +38,7 @@ void \hyperlink{classMackey_1_1Homology_a902c8dfef7da8ad9f5e03d16eb60a423}{Kerne
 \item 
 rank\+\_\+t \hyperlink{classMackey_1_1Homology_aaae78e6463ce6e60e7f4c5861304bc5b}{Groups}
 \begin{DoxyCompactList}\small\item\em Encodes the homology groups as follows\+: Groups=\mbox{[}1,2,3\mbox{]} means homology Z+\+Z/2+\+Z/3. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Homology_a9a8e354083ac094720820a5ff6bcff03}{Gen\+\_\+t} \hyperlink{classMackey_1_1Homology_af3eff7d2cb42b44a29f6a92172096b3d}{Generators}
+\hyperlink{classMackey_1_1Homology_a986c3a6644aa52dc8279a26ade42fd64}{Gens\+\_\+t} \hyperlink{classMackey_1_1Homology_abceae7827c633cec7a9892826240c9cd}{Generators}
 \begin{DoxyCompactList}\small\item\em Encodes the generators homology groups as follows\+: The i-\/th column corresponds to the generator for Groups\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
 bool \hyperlink{classMackey_1_1Homology_ae3bb3781bab2b5884295e04a8fddf36e}{is\+Zero}
 \begin{DoxyCompactList}\small\item\em 1 if the homology is trivial \end{DoxyCompactList}\item 
@@ -70,27 +70,27 @@ class Mackey\+::\+Homology$<$ rank\+\_\+t, diff\+\_\+t $>$}
 The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_1Junction}{Junction}. 
 
 \subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classMackey_1_1Homology_a9a8e354083ac094720820a5ff6bcff03}\label{classMackey_1_1Homology_a9a8e354083ac094720820a5ff6bcff03}} 
-\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Gen\+\_\+t@{Gen\+\_\+t}}
-\index{Gen\+\_\+t@{Gen\+\_\+t}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
-\subsubsection{\texorpdfstring{Gen\+\_\+t}{Gen\_t}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-typedef fdiff\+\_\+t\+\_\+C \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology_a9a8e354083ac094720820a5ff6bcff03}{Gen\+\_\+t}}
-
-
-
-The type of our matrix of generators. 
-
-\mbox{\Hypertarget{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}\label{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}} 
+\mbox{\Hypertarget{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}\label{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!gen\+\_\+t@{gen\+\_\+t}}
 \index{gen\+\_\+t@{gen\+\_\+t}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
 \subsubsection{\texorpdfstring{gen\+\_\+t}{gen\_t}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-typedef fdiff\+\_\+t\+\_\+\+C\+\_\+col \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}{gen\+\_\+t}}
+typedef \hyperlink{namespaceMackey_a3374980e3b5001f5ba9b206004180627}{col\+\_\+t}$<$fdiff\+\_\+t\+\_\+C$>$ \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}{gen\+\_\+t}}
 
 
 
-The type of our generators (a column in the generator matrix) 
+The dense type of our generators (a column in the generator matrix, always dense for convenience) 
+
+\mbox{\Hypertarget{classMackey_1_1Homology_a986c3a6644aa52dc8279a26ade42fd64}\label{classMackey_1_1Homology_a986c3a6644aa52dc8279a26ade42fd64}} 
+\index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Gens\+\_\+t@{Gens\+\_\+t}}
+\index{Gens\+\_\+t@{Gens\+\_\+t}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
+\subsubsection{\texorpdfstring{Gens\+\_\+t}{Gens\_t}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+typedef fdiff\+\_\+t\+\_\+C \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology_a986c3a6644aa52dc8279a26ade42fd64}{Gens\+\_\+t}}
+
+
+
+The type of our matrix of generators. 
 
 
 
@@ -150,7 +150,7 @@ Here is the call graph for this function\+:\nopagebreak
 \index{basis@{basis}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
 \subsubsection{\texorpdfstring{basis()}{basis()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-rank\+\_\+t \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basis (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}{gen\+\_\+t} \&}]{generator }\end{DoxyParamCaption}) const}
+rank\+\_\+t \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basis (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}{gen\+\_\+t} \&}]{generator }\end{DoxyParamCaption}) const}
 
 
 
@@ -168,7 +168,7 @@ The answer is encoded as follows\+: basis=\mbox{[}-\/1,0,3\mbox{]} means element
 \index{boundary@{boundary}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
 \subsubsection{\texorpdfstring{boundary()}{boundary()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-\hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}{gen\+\_\+t} \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::boundary (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology_adf81f4293a5feba94aa734fcc8c89a46}{gen\+\_\+t} \&}]{generator }\end{DoxyParamCaption}) const}
+\hyperlink{classMackey_1_1Homology}{Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}{gen\+\_\+t} \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::boundary (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Homology_a0f7541ee6181c75cb7efa41f3b63f0a5}{gen\+\_\+t} \&}]{generator }\end{DoxyParamCaption}) const}
 
 
 
@@ -251,12 +251,12 @@ void serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{,  }\item[{\hyperlin
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
 std\+::vector$<$int$>$ \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::dont\+Mod\+Out}
 
-\mbox{\Hypertarget{classMackey_1_1Homology_af3eff7d2cb42b44a29f6a92172096b3d}\label{classMackey_1_1Homology_af3eff7d2cb42b44a29f6a92172096b3d}} 
+\mbox{\Hypertarget{classMackey_1_1Homology_abceae7827c633cec7a9892826240c9cd}\label{classMackey_1_1Homology_abceae7827c633cec7a9892826240c9cd}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Generators@{Generators}}
 \index{Generators@{Generators}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
 \subsubsection{\texorpdfstring{Generators}{Generators}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-\hyperlink{classMackey_1_1Homology_a9a8e354083ac094720820a5ff6bcff03}{Gen\+\_\+t} \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Generators}
+\hyperlink{classMackey_1_1Homology_a986c3a6644aa52dc8279a26ade42fd64}{Gens\+\_\+t} \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Generators}
 
 
 

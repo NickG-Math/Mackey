@@ -50,7 +50,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Takes the sum of the entries of an \hyperlink{namespaceEigen}{Eigen} vector at higher precision than its inputs. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a38a833de54971845cbdb8c96f830725b}{Mackey\+::rotate} (T \&V)
 \begin{DoxyCompactList}\small\item\em Circularly rotates given V (an Eigen/std vector) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Matrix\+\_\+t $>$ }\\Matrix\+\_\+t \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{Mackey\+::altmatrix} (int m, int n, const std\+::vector$<$ typename Matrix\+\_\+t\+::\+Scalar $>$ \&v)
+{\footnotesize template$<$typename Matrix\+\_\+t , std\+::enable\+\_\+if\+\_\+t$<$ S\+F\+I\+N\+A\+E\+::is\+\_\+\+Dense$<$ Matrix\+\_\+t $>$\+::value, int $>$  = 0$>$ }\\Matrix\+\_\+t \hyperlink{namespaceMackey_aa2f105c9bcbec7f5c7524027174340a0}{Mackey\+::altmatrix} (int m, int n, const std\+::vector$<$ Scalar\+\_\+t$<$ Matrix\+\_\+t $>$$>$ \&v)
 \begin{DoxyCompactList}\small\item\em Creates a matrix of size m x n that alternates the given vector v. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\bool \hyperlink{namespaceMackey_a4c3647777bc890a4649ae24b138bbb79}{Mackey\+::is\+Zero} (const std\+::vector$<$ T $>$ \&a)
 \begin{DoxyCompactList}\small\item\em Tests if vector is zero. \end{DoxyCompactList}\item 
@@ -66,10 +66,12 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Printing a vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a5d8ae76ffb9440e27bfca124d26ee1b2}{Mackey\+::lcm} (const T \&v)
 \begin{DoxyCompactList}\small\item\em Least common multiple of vector of elements. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a9c9c2faea24be988cdfcd773360134be}{Mackey\+::gcd} (const T \&v)
-\begin{DoxyCompactList}\small\item\em Least common multiple of vector of elements. \end{DoxyCompactList}\item 
 int \hyperlink{namespaceMackey_ae57418329a761aa68d26d68b637fe9dd}{Mackey\+::hashvector} (const std\+::vector$<$ int $>$ \&deg, const std\+::vector$<$ int $>$ \&min, const std\+::vector$<$ int $>$ \&max)
-\begin{DoxyCompactList}\small\item\em Hash vector given minimum and maximum values of its entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Hash vector given minimum and maximum values of its entries. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\triplets$<$ T $>$ \hyperlink{namespaceMackey_ab10a5b78aaa27ff9623360c5343d0dc7}{Mackey\+::make\+\_\+triplets} (const Eigen\+::\+Matrix$<$ T, -\/1, -\/1 $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Turn dense matrix into a vector of \hyperlink{namespaceEigen}{Eigen} triplets. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , int Storage\+Order$>$ }\\triplets$<$ T $>$ \hyperlink{namespaceMackey_a1c6a7d6b8827fff4bf9ebde9300aa8c0}{Mackey\+::make\+\_\+triplets} (const Eigen\+::\+Sparse\+Matrix$<$ T, Storage\+Order $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Turn sparse matrix into a vector of \hyperlink{namespaceEigen}{Eigen} triplets. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

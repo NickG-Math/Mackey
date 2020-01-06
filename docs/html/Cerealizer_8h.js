@@ -2,8 +2,10 @@ var Cerealizer_8h =
 [
     [ "CEREALIZE", "Cerealizer_8h.html#ae992826773eebd83b70cb50907f8f3db", null ],
     [ "load", "Cerealizer_8h.html#a62dfe53ce43ad27c02ca954e9da31dc5", null ],
+    [ "load", "Cerealizer_8h.html#a6aff97cdc9835822d790cc0cec9ce12f", null ],
     [ "loader", "Cerealizer_8h.html#a735958355cdca12e0d312b7e604f28bc", null ],
     [ "save", "Cerealizer_8h.html#afd0f4831f36c8d183e4ff80c96b6b9ed", null ],
+    [ "save", "Cerealizer_8h.html#ad34bb4c1089438eff2040f675acc4855", null ],
     [ "saver", "Cerealizer_8h.html#a1824d780ce15f1845e4f87bf056feec9", null ],
     [ "serialize", "Cerealizer_8h.html#a43cf712cb611ddbafa91b005a911436e", null ],
     [ "serialize", "Cerealizer_8h.html#a1cb51476ba1b1022264da5ba324b73f5", null ],

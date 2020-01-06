@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('use.html','');});
 </div>
 <div class="textblock"><h1><a class="anchor" id="how"></a>
 Step 0: Setting the Group Parameters</h1>
-<p>For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example for \(G=C_4\) on how to set them in the file <code>C4_Implementation.h</code> available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. We also have a more general example for \(G=C_{2^n}\) implemented in <code>C2n_Implementation.h</code>.</p>
+<p>For every group there are certain parameters that need to be set for the library to work. We have included an example for \(G=C_4\) on how to set them in the file <code>C4_Implementation.h</code> available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. We also have a more general example for all \(G=C_{2^n}\) implemented in <code>C2n_Implementation.h</code>.</p>
 <p>These parameters all live in the <a class="el" href="namespaceGroupSpecific.html">GroupSpecific</a> namespace and we will go over them in more detail below.</p>
 <h2><a class="anchor" id="var"></a>
 Global variables</h2>
@@ -123,8 +123,8 @@ Global variables</h2>
 <h2><a class="anchor" id="fun"></a>
 The standard chains</h2>
 <ul>
-<li>There is one function that needs to be manually defined, the <a class="el" href="classGroupSpecific_1_1Function.html#a6d247b31d297f733e9cd6f68921a37cd">PositiveChains</a> computing the chains for actual representations. I have made the construction of these Chains as painless as possible, using the <a class="el" href="namespaceMackey.html#a26a529f63caac9c5b4dc809e0e5831be">altmatrix</a> function</li>
-<li><a class="el" href="namespaceMackey.html#a26a529f63caac9c5b4dc809e0e5831be">altmatrix</a> returns alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. An example: The matrix of size 4x4 with pattern \(a,b\) is <br />
+<li>There is one function that needs to be manually defined, the <a class="el" href="classGroupSpecific_1_1Function.html#a6d247b31d297f733e9cd6f68921a37cd">PositiveChains</a> computing the chains for actual representations. I have made the construction of these Chains as painless as possible, using the <a class="el" href="namespaceMackey.html#aa2f105c9bcbec7f5c7524027174340a0">altmatrix</a> function</li>
+<li><a class="el" href="namespaceMackey.html#aa2f105c9bcbec7f5c7524027174340a0">altmatrix</a> returns alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. An example: The matrix of size 4x4 with pattern \(a,b\) is <br />
  \(\begin{matrix} a&amp;b&amp;a&amp;b\\ b&amp;a&amp;b&amp;a\\ a&amp;b&amp;a&amp;b \\ b&amp;a&amp;b&amp;a \end{matrix}\) <br />
  If we use the pattern \(a,b,c,d\) instead we get <br />
  \(\begin{matrix} a&amp;b&amp;c&amp;d\\ b&amp;c&amp;d&amp;a\\ c&amp;d&amp;a&amp;b \\ d&amp;a&amp;b&amp;c \end{matrix}\) <br />
@@ -142,8 +142,9 @@ Coefficients and templates</h2>
 <p>There are two template arguments that always need to be specified, and their typenames are always <code>rank_t,diff_t</code>. These are the coefficients used for the rank arrays and differential matrices respectively.</p>
 <ul>
 <li><code>rank_t</code> can be set to <code>Eigen::Matrix&lt;char,1,-1&gt;</code> for groups of prime power order \(&lt;127\) and we can replace <code>char</code> by better precision integers for higher prime power orders.</li>
-<li><code>diff_t</code> depends on the desired coefficients: eg we can set it to <code>Eigen::Matrix&lt;char,-1,-1&gt;</code> for integer coefficients and groups of small power order, or <code><a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a>&lt;<a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>&lt;N&gt;,-1,-1&gt;</code> for \(\mathbb Z/n\mathbb Z\) coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file <code><a class="el" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. ">Z_n.h</a></code> where we define \(\mathbb Z/n\mathbb Z\) coefficients. Note that for the Smith normal form to work properly, \(n\) should be prime</li>
+<li><code>diff_t</code> depends on the desired coefficients: eg we can set it to <code>Eigen::Matrix&lt;char,-1,-1&gt;</code> for integer coefficients and groups of small power order, or <code><a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a>&lt;<a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>&lt;N&gt;,-1,-1&gt;</code> for \(\mathbb Z/n\mathbb Z\) coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file <code><a class="el" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. ">Z_n.h</a></code> where we define \(\mathbb Z/n\mathbb Z\) coefficients. Note that for the Smith normal form to work properly, \(n\) should be prime.</li>
 </ul>
+<p>Important note: <code>diff_t</code> can also be set to a sparse matrix <code>Eigen::SparseMatrix&lt;char&gt;</code>. See the <a class="el" href="perf.html">Performance</a> page for more information. </p>
 <h2><a class="anchor" id="step1add"></a>
 The additive structure</h2>
 <p>The file <code>&lt;<a class="el" href="Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology. ">Mackey/Additive.h</a>&gt;</code> exposes the class <a class="el" href="classMackey_1_1AdditiveStructure.html">AdditiveStructure</a> that computes the homology of all spheres in a given range as <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors. Example: The code</p>

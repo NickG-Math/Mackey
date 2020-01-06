@@ -1,6 +1,6 @@
 <map id="Mackey::internal::IDGeneratorCompute::IDGeneratorCompute" name="Mackey::internal::IDGeneratorCompute::IDGeneratorCompute">
 <area shape="rect" id="node2" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="267,5,387,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="260,56,393,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="260,56,393,83"/>
 <area shape="rect" id="node3" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="456,5,567,32"/>
 <area shape="rect" id="node5" href="$namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="441,56,581,83"/>
 </map>

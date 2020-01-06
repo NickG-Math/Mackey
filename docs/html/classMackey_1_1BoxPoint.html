@@ -89,7 +89,8 @@ $(document).ready(function(){initNavTree('classMackey_1_1BoxPoint.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#friends">Friends</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classMackey_1_1BoxPoint-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Mackey::BoxPoint&lt; rank_t, diff_t &gt; Class Template Reference</div>  </div>
@@ -101,77 +102,150 @@ $(document).ready(function(){initNavTree('classMackey_1_1BoxPoint.html','');});
 
 <p><code>#include &lt;<a class="el" href="Box_8h_source.html">Box.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:aa6b9506519f57502db8432843a492fd1"><td class="memTemplParams" colspan="2">template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </td></tr>
-<tr class="memitem:aa6b9506519f57502db8432843a492fd1"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#aa6b9506519f57502db8432843a492fd1">JunctionBox</a></td></tr>
-<tr class="memdesc:aa6b9506519f57502db8432843a492fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> as a <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a> in a desired degree.  <a href="#aa6b9506519f57502db8432843a492fd1">More...</a><br /></td></tr>
-<tr class="separator:aa6b9506519f57502db8432843a492fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5da7907baad1a7469bb064b08228610"><td class="memTemplParams" colspan="2">template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </td></tr>
-<tr class="memitem:ac5da7907baad1a7469bb064b08228610"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#ac5da7907baad1a7469bb064b08228610">ChainsBox</a></td></tr>
-<tr class="memdesc:ac5da7907baad1a7469bb064b08228610"><td class="mdescLeft">&#160;</td><td class="mdescRight">The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a>.  <a href="#ac5da7907baad1a7469bb064b08228610">More...</a><br /></td></tr>
-<tr class="separator:ac5da7907baad1a7469bb064b08228610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7d7864d6623adb228897cb2d42594900"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#a7d7864d6623adb228897cb2d42594900">BoxPoint</a> (const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;C, const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;D, int i)</td></tr>
+<tr class="memdesc:a7d7864d6623adb228897cb2d42594900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from chains C,D the boxpoint (C box D)_i-&gt;(C box D)_i-1.  <a href="#a7d7864d6623adb228897cb2d42594900">More...</a><br /></td></tr>
+<tr class="separator:a7d7864d6623adb228897cb2d42594900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a160dd950c1ffbed689d650f4d0fadbec"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#a160dd950c1ffbed689d650f4d0fadbec">rank_domain</a></td></tr>
+<tr class="memdesc:a160dd950c1ffbed689d650f4d0fadbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of the domain of the differential.  <a href="#a160dd950c1ffbed689d650f4d0fadbec">More...</a><br /></td></tr>
+<tr class="separator:a160dd950c1ffbed689d650f4d0fadbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab24bd5a38df100f88c8637d71dbdf608"><td class="memItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#ab24bd5a38df100f88c8637d71dbdf608">rank_range</a></td></tr>
+<tr class="memdesc:ab24bd5a38df100f88c8637d71dbdf608"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of the range of the differential.  <a href="#ab24bd5a38df100f88c8637d71dbdf608">More...</a><br /></td></tr>
+<tr class="separator:ab24bd5a38df100f88c8637d71dbdf608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affefee2b62f4168ed778d96dc219ef6f"><td class="memItemLeft" align="right" valign="top">diff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#affefee2b62f4168ed778d96dc219ef6f">diff</a></td></tr>
+<tr class="memdesc:affefee2b62f4168ed778d96dc219ef6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The differential.  <a href="#affefee2b62f4168ed778d96dc219ef6f">More...</a><br /></td></tr>
+<tr class="separator:affefee2b62f4168ed778d96dc219ef6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a8fb888221c014f19fe2f9a8d4b2fa3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1BoxPoint.html#a5a8fb888221c014f19fe2f9a8d4b2fa3">detailedrank</a></td></tr>
+<tr class="memdesc:a5a8fb888221c014f19fe2f9a8d4b2fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding)  <a href="#a5a8fb888221c014f19fe2f9a8d4b2fa3">More...</a><br /></td></tr>
+<tr class="separator:a5a8fb888221c014f19fe2f9a8d4b2fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename rank_t, typename diff_t&gt;<br />
 class Mackey::BoxPoint&lt; rank_t, diff_t &gt;</h3>
 
 <p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> at a single index. </p>
-<p>We only store a single differential and the ranks of its domain and range Use through <a class="el" href="classMackey_1_1JunctionBox.html" title="The box (tensor) product of Chains as a Junction in the given index. ">JunctionBox</a> or the friend function Box. </p>
-</div><h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="ac5da7907baad1a7469bb064b08228610"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5da7907baad1a7469bb064b08228610">&#9670;&nbsp;</a></span>ChainsBox</h2>
+<p>We only store a single differential and the ranks of its domain and range </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7d7864d6623adb228897cb2d42594900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d7864d6623adb228897cb2d42594900">&#9670;&nbsp;</a></span>BoxPoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename rank_t, typename diff_t&gt; </div>
-<div class="memtemplate">
-template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="classMackey_1_1ChainsBox.html">ChainsBox</a></td>
+          <td class="memname"><a class="el" href="classMackey_1_1BoxPoint.html">Mackey::BoxPoint</a>&lt; rank_t, diff_t &gt;::<a class="el" href="classMackey_1_1BoxPoint.html">BoxPoint</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMackey_1_1Chains.html">Chains</a>&lt; rank_t, diff_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a>. </p>
+<p>Construct from chains C,D the boxpoint (C box D)_i-&gt;(C box D)_i-1. </p>
 
 </div>
 </div>
-<a id="aa6b9506519f57502db8432843a492fd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6b9506519f57502db8432843a492fd1">&#9670;&nbsp;</a></span>JunctionBox</h2>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5a8fb888221c014f19fe2f9a8d4b2fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a8fb888221c014f19fe2f9a8d4b2fa3">&#9670;&nbsp;</a></span>detailedrank</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename rank_t, typename diff_t&gt; </div>
-<div class="memtemplate">
-template&lt;typename shadow_rank_t , typename shadow_diff_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="classMackey_1_1JunctionBox.html">JunctionBox</a></td>
+          <td class="memname">std::vector&lt;rank_t&gt; <a class="el" href="classMackey_1_1BoxPoint.html">Mackey::BoxPoint</a>&lt; rank_t, diff_t &gt;::detailedrank</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>The box (tensor) product of <a class="el" href="classMackey_1_1Chains.html" title="A Chain complex. ">Chains</a> as a <a class="el" href="classMackey_1_1Junction.html" title="The input for Homology, consisting of an entering and an exiting differential. ">Junction</a> in a desired degree. </p>
+<p>The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding) </p>
+
+</div>
+</div>
+<a id="affefee2b62f4168ed778d96dc219ef6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affefee2b62f4168ed778d96dc219ef6f">&#9670;&nbsp;</a></span>diff</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">diff_t <a class="el" href="classMackey_1_1BoxPoint.html">Mackey::BoxPoint</a>&lt; rank_t, diff_t &gt;::diff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The differential. </p>
+
+</div>
+</div>
+<a id="a160dd950c1ffbed689d650f4d0fadbec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a160dd950c1ffbed689d650f4d0fadbec">&#9670;&nbsp;</a></span>rank_domain</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">rank_t <a class="el" href="classMackey_1_1BoxPoint.html">Mackey::BoxPoint</a>&lt; rank_t, diff_t &gt;::rank_domain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The rank of the domain of the differential. </p>
+
+</div>
+</div>
+<a id="ab24bd5a38df100f88c8637d71dbdf608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24bd5a38df100f88c8637d71dbdf608">&#9670;&nbsp;</a></span>rank_range</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t, typename diff_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">rank_t <a class="el" href="classMackey_1_1BoxPoint.html">Mackey::BoxPoint</a>&lt; rank_t, diff_t &gt;::rank_range</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The rank of the range of the differential. </p>
 
 </div>
 </div>

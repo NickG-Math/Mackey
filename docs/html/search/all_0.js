@@ -7,7 +7,7 @@ var searchData=
   ['additivestructure',['AdditiveStructure',['../classMackey_1_1AdditiveStructure.html',1,'Mackey::AdditiveStructure&lt; rank_t, diff_t &gt;'],['../classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab',1,'Mackey::AdditiveStructure::AdditiveStructure(const std::vector&lt; int &gt; &amp;minsphere, const std::vector&lt; int &gt; &amp;maxsphere)'],['../classMackey_1_1AdditiveStructure.html#afd2b48da3942beba407b3add7ceb9b63',1,'Mackey::AdditiveStructure::AdditiveStructure()']]],
   ['aliases_2eh',['Aliases.h',['../Aliases_8h.html',1,'']]],
   ['all_5fautomorphisms',['all_automorphisms',['../namespaceMackey.html#a2556e2a1f78783585df78de1c1b35eae',1,'Mackey']]],
-  ['altmatrix',['altmatrix',['../namespaceMackey.html#a26a529f63caac9c5b4dc809e0e5831be',1,'Mackey']]],
+  ['altmatrix',['altmatrix',['../namespaceMackey.html#aa2f105c9bcbec7f5c7524027174340a0',1,'Mackey']]],
   ['antidegree',['antidegree',['../classMackey_1_1MultiplicationTable.html#ac5749155e5531a3c728d8227caed63eb',1,'Mackey::MultiplicationTable']]],
   ['antielement',['antielement',['../classMackey_1_1MultiplicationGraph.html#a8a0d1354d01f29d4388142aab0248389',1,'Mackey::MultiplicationGraph']]],
   ['apply',['apply',['../classMackey_1_1MackeyFunctor.html#a6522cfe1071ccb92ff3db38d89e14687',1,'Mackey::MackeyFunctor']]],

@@ -45,9 +45,9 @@ var NAVTREE =
     [ "Performance", "perf.html", [
       [ "Compiler Options", "perf.html#compoptions", null ],
       [ "Multithreading", "perf.html#thread", null ],
+      [ "Dense vs Sparse", "perf.html#densevssparse", null ],
       [ "Integers vs Floats", "perf.html#intvsfloat", null ],
-      [ "Box Products", "perf.html#boxproducts", null ],
-      [ "Bottlenecks", "perf.html#bottle", null ]
+      [ "Box Products", "perf.html#boxproducts", null ]
     ] ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
@@ -85,8 +85,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Additive_8h.html",
-"classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00",
-"classZ_3_012_01_4.html#ae753e180f5d8aa55370a497e2c86fbb8"
+"classMackey_1_1ColoredGraph.html#a367055b4a615119cc767a738f6e9e719",
+"classZ_3_012_01_4.html#a69f54f9228c40f6b086c9a86a9869c09"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

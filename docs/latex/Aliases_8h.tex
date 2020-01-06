@@ -7,11 +7,12 @@ Contains general template aliases.
 
 {\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
 {\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+{\ttfamily \#include \char`\"{}S\+F\+I\+N\+A\+E.\+h\char`\"{}}\newline
 Include dependency graph for Aliases.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=246pt]{Aliases_8h__incl}
+\includegraphics[width=350pt]{Aliases_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -48,7 +49,9 @@ class \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology$<$ rank\+\_\+t, d
 \begin{DoxyCompactList}\small\item\em Column major sparse. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a43f350029dd91403df428883f202a7b6}{Mackey\+::spm\+\_\+t\+\_\+r} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 1 $>$
 \begin{DoxyCompactList}\small\item\em Row major sparse. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \hyperlink{namespaceMackey_a5048063727afe2ed842d6bff76cef28e}{Mackey\+::\+Gen\+\_\+t} = typename Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Gen\+\_\+t
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a48661e728506f91066a28c199af56ff5}{Mackey\+::triplets} = std\+::vector$<$ Eigen\+::\+Triplet$<$ T $>$ $>$
+\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \hyperlink{namespaceMackey_ab2542005948b58de00ac4647ca2c7106}{Mackey\+::\+Gens\+\_\+t} = typename Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Gens\+\_\+t
 \begin{DoxyCompactList}\small\item\em Type of Generator matrices in homology. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{Mackey\+::gen\+\_\+t} = typename Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+::gen\+\_\+t
 \begin{DoxyCompactList}\small\item\em Type of generators in homology. \end{DoxyCompactList}\end{DoxyCompactItemize}

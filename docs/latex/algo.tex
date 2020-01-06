@@ -1,5 +1,5 @@
 \hypertarget{algo_smith}{}\section{Smith Normal Form}\label{algo_smith}
-There are multiple ways to compute the Smith Normal Form of a matrix, but since we want the coefficient matrices as well we employ the row/column elimination algorithm. To use the algorithm we need to be able to choose a pivot for our matrix each time we want to clear a row and column. We have the freedom to choose it and there are (at least) three ways to do it\+:
+There are multiple ways to compute the Smith Normal Form of a matrix, but since we are mostly interested in the coefficient matrices, we employ the row/column elimination algorithm. To use the algorithm we need to be able to choose a pivot for our matrix each time we want to clear a row and column. We have the freedom to choose it and there are (at least) three ways to do it\+:
 
 
 \begin{DoxyItemize}
@@ -26,10 +26,10 @@ Thus in total we have 4 Smith implementations\+:
 
 
 \begin{DoxyItemize}
-\item {\ttfamily \hyperlink{classMackey_1_1SmithFP}{Mackey\+::\+Smith\+FP}} using the first nonzero element as pivot.
-\item {\ttfamily \hyperlink{classMackey_1_1SmithMP}{Mackey\+::\+Smith\+MP}} using the minimum (in absolute value) nonzero elemenent as pivot (first instance).
-\item {\ttfamily \hyperlink{classMackey_1_1SmithSP}{Mackey\+::\+Smith\+SP}} using the instance of the minimum that also minimizes a norm function.
-\item {\ttfamily \hyperlink{classMackey_1_1SmithSparse}{Mackey\+::\+Smith\+Sparse}} which is the same as {\ttfamily \hyperlink{classMackey_1_1SmithSP}{Mackey\+::\+Smith\+SP}} but using sparse matrices.
+\item {\ttfamily \hyperlink{classMackey_1_1SmithFP}{Mackey\+::\+Smith\+FP}} using the first nonzero element as pivot. Called in the dense finite coefficient case.
+\item {\ttfamily \hyperlink{classMackey_1_1SmithMP}{Mackey\+::\+Smith\+MP}} using the minimum (in absolute value) nonzero elemenent as pivot (first instance). Called for dense matrices with at most 1000 rows and columns.
+\item {\ttfamily \hyperlink{classMackey_1_1SmithSP}{Mackey\+::\+Smith\+SP}} using the instance of the minimum that also minimizes a norm function. Called for dense matrices with above 1000 rows and columns.
+\item {\ttfamily \hyperlink{classMackey_1_1SmithSparse}{Mackey\+::\+Smith\+Sparse}} which is the same as {\ttfamily \hyperlink{classMackey_1_1SmithSP}{Mackey\+::\+Smith\+SP}} but using sparse matrices. Called for sparse matrices.
 \end{DoxyItemize}\hypertarget{algo_cob}{}\section{Change of Basis}\label{algo_cob}
 If we have bases for modules $A,B$ then $A\otimes B$ can be canonically given two lexicographical bases, that we call left and right convenient bases. But if $A,B$ are the bottom levels of free \hyperlink{namespaceMackey}{Mackey} functors then they have equivariant bases and the tensor product also gets an equivariant basis, called the canonical one. The left and right convenient bases are used to write the left and right differentials in a simple manner (hence their designation as convenient). The canonical bases are used to transfer. To get the change of basis matrix, we are reduced to computing the permutation $a^{-1}b$ where $a,b$ are two permutations of the same set.\hypertarget{algo_box}{}\section{Box product}\label{algo_box}
 Computing the tensor product of Chain complexes breaks down to computing the left and right differentials $L(x\otimes y)=dx\otimes y$ and $R(x\otimes y)=(-1)^{|x|}x\otimes dy$ respectively. If we use the convenient bases explained in the previous section, these are just block diagonal matrices with the blocks being the differential from the original chains $d$. To get $L,R$ w.\+r.\+t. the canonical bases, we need to apply the change of basis matrices. Once we do that the total differential of the tensor product is just $L+R$. To be more accurate, $L$ is not a single differential, but rather a sequence of them, one for each summand of the Box product; $(C\otimes D)_n\to (C\otimes D)_{n-1}$ is a map $C_n\otimes D_0\oplus\cdots \oplus C_0\otimes D_n\to C_0\otimes D_{n-1}\oplus\cdots\oplus C_{n-1}\otimes D_0$. Each summand of this map is computed separately into an $L$ and an $R$, and then these are mixed together to form the total differential. The mixing specifies that we start with a block $ L_0$, then place $ R_0$ directly below it, then $L_1$ adjecent to the right of $ R_0$ etc.\hypertarget{algo_graph}{}\section{Graphs}\label{algo_graph}

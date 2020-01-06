@@ -1,6 +1,5 @@
 <map id="Mackey::aut_p_group" name="Mackey::aut_p_group">
 <area shape="rect" id="node2" href="$namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="200,5,392,32"/>
 <area shape="rect" id="node3" href="$namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="200,57,392,98"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="440,39,537,65"/>
-<area shape="rect" id="node5" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="467,89,510,116"/>
+<area shape="rect" id="node4" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="440,64,483,91"/>
 </map>

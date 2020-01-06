@@ -1,5 +1,5 @@
 \hypertarget{use_how}{}\section{Step 0\+: Setting the Group Parameters}\label{use_how}
-For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example for $G=C_4$ on how to set them in the file {\ttfamily C4\+\_\+\+Implementation.\+h} available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. We also have a more general example for $G=C_{2^n}$ implemented in {\ttfamily C2n\+\_\+\+Implementation.\+h}.
+For every group there are certain parameters that need to be set for the library to work. We have included an example for $G=C_4$ on how to set them in the file {\ttfamily C4\+\_\+\+Implementation.\+h} available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. We also have a more general example for all $G=C_{2^n}$ implemented in {\ttfamily C2n\+\_\+\+Implementation.\+h}.
 
 These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.\hypertarget{use_var}{}\subsection{Global variables}\label{use_var}
 The global variables that need to be set are\+:
@@ -13,8 +13,8 @@ The global variables that need to be set are\+:
 \end{DoxyItemize}\hypertarget{use_fun}{}\subsection{The standard chains}\label{use_fun}
 
 \begin{DoxyItemize}
-\item There is one function that needs to be manually defined, the \hyperlink{classGroupSpecific_1_1Function_a6d247b31d297f733e9cd6f68921a37cd}{Positive\+Chains} computing the chains for actual representations. I have made the construction of these Chains as painless as possible, using the \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{altmatrix} function
-\item \hyperlink{namespaceMackey_a26a529f63caac9c5b4dc809e0e5831be}{altmatrix} returns alternating matrices of the desired size and the desired \char`\"{}pattern\char`\"{}. This pattern is repeated cyclically in the columns of the matrix. An example\+: The matrix of size 4x4 with pattern $a,b$ is ~\newline
+\item There is one function that needs to be manually defined, the \hyperlink{classGroupSpecific_1_1Function_a6d247b31d297f733e9cd6f68921a37cd}{Positive\+Chains} computing the chains for actual representations. I have made the construction of these Chains as painless as possible, using the \hyperlink{namespaceMackey_aa2f105c9bcbec7f5c7524027174340a0}{altmatrix} function
+\item \hyperlink{namespaceMackey_aa2f105c9bcbec7f5c7524027174340a0}{altmatrix} returns alternating matrices of the desired size and the desired \char`\"{}pattern\char`\"{}. This pattern is repeated cyclically in the columns of the matrix. An example\+: The matrix of size 4x4 with pattern $a,b$ is ~\newline
  $\begin{matrix} a&b&a&b\\ b&a&b&a\\ a&b&a&b \\ b&a&b&a \end{matrix}$ ~\newline
  If we use the pattern $a,b,c,d$ instead we get ~\newline
  $\begin{matrix} a&b&c&d\\ b&c&d&a\\ c&d&a&b \\ d&a&b&c \end{matrix}$ ~\newline
@@ -33,8 +33,10 @@ There are two template arguments that always need to be specified, and their typ
 
 \begin{DoxyItemize}
 \item {\ttfamily rank\+\_\+t} can be set to {\ttfamily Eigen\+::\+Matrix$<$char,1,-\/1$>$} for groups of prime power order $<127$ and we can replace {\ttfamily char} by better precision integers for higher prime power orders.
-\item {\ttfamily diff\+\_\+t} depends on the desired coefficients\+: eg we can set it to {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} for integer coefficients and groups of small power order, or {\ttfamily \hyperlink{namespaceEigen}{Eigen}$<$\hyperlink{classZ}{Z}$<$N$>$,-\/1,-\/1$>$} for $\mathbb Z/n\mathbb Z$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file {\ttfamily \hyperlink{Z__n_8h}{Z\+\_\+n.\+h}} where we define $\mathbb Z/n\mathbb Z$ coefficients. Note that for the Smith normal form to work properly, $n$ should be prime
-\end{DoxyItemize}\hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
+\item {\ttfamily diff\+\_\+t} depends on the desired coefficients\+: eg we can set it to {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} for integer coefficients and groups of small power order, or {\ttfamily \hyperlink{namespaceEigen}{Eigen}$<$\hyperlink{classZ}{Z}$<$N$>$,-\/1,-\/1$>$} for $\mathbb Z/n\mathbb Z$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file {\ttfamily \hyperlink{Z__n_8h}{Z\+\_\+n.\+h}} where we define $\mathbb Z/n\mathbb Z$ coefficients. Note that for the Smith normal form to work properly, $n$ should be prime.
+\end{DoxyItemize}
+
+Important note\+: {\ttfamily diff\+\_\+t} can also be set to a sparse matrix {\ttfamily Eigen\+::\+Sparse\+Matrix$<$char$>$}. See the \hyperlink{perf}{Performance} page for more information. \hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
 The file {\ttfamily $<$\hyperlink{Additive_8h}{Mackey/\+Additive.\+h}$>$} exposes the class \hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure} that computes the homology of all spheres in a given range as \hyperlink{namespaceMackey}{Mackey} functors. Example\+: The code
 
 {\ttfamily  Additive\+Structure$<$rank\+\_\+t,diff\+\_\+t$>$ A(\{-\/3,-\/4\},\{5,6\}); }

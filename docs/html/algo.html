@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('algo.html','');});
 </div>
 <div class="textblock"><h1><a class="anchor" id="smith"></a>
 Smith Normal Form</h1>
-<p>There are multiple ways to compute the Smith Normal Form of a matrix, but since we want the coefficient matrices as well we employ the row/column elimination algorithm. To use the algorithm we need to be able to choose a pivot for our matrix each time we want to clear a row and column. We have the freedom to choose it and there are (at least) three ways to do it:</p>
+<p>There are multiple ways to compute the Smith Normal Form of a matrix, but since we are mostly interested in the coefficient matrices, we employ the row/column elimination algorithm. To use the algorithm we need to be able to choose a pivot for our matrix each time we want to clear a row and column. We have the freedom to choose it and there are (at least) three ways to do it:</p>
 <ul>
 <li>Use the first nonzero element as pivot, and if a smaller nonzero element (in absolute value) appears during the elimination then switch to that.</li>
 <li>Use the minimum (in absolute value) nonzero elemenent as pivot. If there are multiple choices, pick the first one as we iterate through the matrix.</li>
@@ -116,10 +116,10 @@ Smith Normal Form</h1>
 <p>As far as the Smith normal form is concerned, to have good performance with sparse matrices we need to minimize fill-in, which is the creation of nonzero elements from adding a row/column to another one. The Markowitz metric described above is used to very roughtly estimate the fill-in that we would get if the given element was used as pivot. There are many other choices as explained <a href="https://arxiv.org/abs/math/9406205">here</a>.</p>
 <p>Thus in total we have 4 Smith implementations:</p>
 <ul>
-<li><code><a class="el" href="classMackey_1_1SmithFP.html" title="The dense Smith Normal Form using the first nonzero element as pivot. ">Mackey::SmithFP</a></code> using the first nonzero element as pivot.</li>
-<li><code><a class="el" href="classMackey_1_1SmithMP.html" title="The dense Smith Normal Form using the minimum (in absolute value) nonzero element as pivot...">Mackey::SmithMP</a></code> using the minimum (in absolute value) nonzero elemenent as pivot (first instance).</li>
-<li><code><a class="el" href="classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. ">Mackey::SmithSP</a></code> using the instance of the minimum that also minimizes a norm function.</li>
-<li><code><a class="el" href="classMackey_1_1SmithSparse.html" title="The sparse Smith Normal Form, choosing the pivot via a Markowitz metric. ">Mackey::SmithSparse</a></code> which is the same as <code><a class="el" href="classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. ">Mackey::SmithSP</a></code> but using sparse matrices.</li>
+<li><code><a class="el" href="classMackey_1_1SmithFP.html" title="The dense Smith Normal Form using the first nonzero element as pivot. ">Mackey::SmithFP</a></code> using the first nonzero element as pivot. Called in the dense finite coefficient case.</li>
+<li><code><a class="el" href="classMackey_1_1SmithMP.html" title="The dense Smith Normal Form using the minimum (in absolute value) nonzero element as pivot...">Mackey::SmithMP</a></code> using the minimum (in absolute value) nonzero elemenent as pivot (first instance). Called for dense matrices with at most 1000 rows and columns.</li>
+<li><code><a class="el" href="classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. ">Mackey::SmithSP</a></code> using the instance of the minimum that also minimizes a norm function. Called for dense matrices with above 1000 rows and columns.</li>
+<li><code><a class="el" href="classMackey_1_1SmithSparse.html" title="The sparse Smith Normal Form, choosing the pivot via a Markowitz metric. ">Mackey::SmithSparse</a></code> which is the same as <code><a class="el" href="classMackey_1_1SmithSP.html" title="The dense Smith Normal Form selecting the pivot via a Markowitz metric. ">Mackey::SmithSP</a></code> but using sparse matrices. Called for sparse matrices.</li>
 </ul>
 <h1><a class="anchor" id="cob"></a>
 Change of Basis</h1>

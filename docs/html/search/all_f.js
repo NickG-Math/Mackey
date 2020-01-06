@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['p',['P',['../classMackey_1_1Smith.html#a711a1726ec0da22e9233aa269d66bf73',1,'Mackey::Smith::P()'],['../classMackey_1_1Polynomial.html#ac2784853ce2afbcc21860a9e54e15711',1,'Mackey::Polynomial::p()']]],
+  ['p',['p',['../classMackey_1_1Polynomial.html#ac2784853ce2afbcc21860a9e54e15711',1,'Mackey::Polynomial::p()'],['../classMackey_1_1Smith.html#a711a1726ec0da22e9233aa269d66bf73',1,'Mackey::Smith::P()']]],
   ['pad',['pad',['../classMackey_1_1Polynomial.html#ad2981034fac81d4ad3f2751c757af5d3',1,'Mackey::Polynomial']]],
   ['pass_5fall_5funidentified',['pass_all_unidentified',['../classMackey_1_1MultiplicationGraphIdentify.html#ab0b4e28dd9134d591305dde1c02b3da5',1,'Mackey::MultiplicationGraphIdentify']]],
   ['pass_5fdisconnected',['pass_disconnected',['../classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00',1,'Mackey::Factorization']]],

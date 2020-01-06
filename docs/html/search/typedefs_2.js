@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gen_5ft',['Gen_t',['../classMackey_1_1Homology.html#a9a8e354083ac094720820a5ff6bcff03',1,'Mackey::Homology::Gen_t()'],['../classMackey_1_1Homology.html#adf81f4293a5feba94aa734fcc8c89a46',1,'Mackey::Homology::gen_t()'],['../namespaceMackey.html#a5048063727afe2ed842d6bff76cef28e',1,'Mackey::Gen_t()'],['../namespaceMackey.html#a6bb0b2796632ba6c7f8ea192f7aecffe',1,'Mackey::gen_t()']]]
+  ['gen_5ft',['gen_t',['../classMackey_1_1Homology.html#a0f7541ee6181c75cb7efa41f3b63f0a5',1,'Mackey::Homology::gen_t()'],['../namespaceMackey.html#a6bb0b2796632ba6c7f8ea192f7aecffe',1,'Mackey::gen_t()']]],
+  ['gens_5ft',['Gens_t',['../classMackey_1_1Homology.html#a986c3a6644aa52dc8279a26ade42fd64',1,'Mackey::Homology::Gens_t()'],['../namespaceMackey.html#ab2542005948b58de00ac4647ca2c7106',1,'Mackey::Gens_t()']]]
 ];

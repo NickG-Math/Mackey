@@ -5,6 +5,7 @@ var structMackey_1_1SFINAE =
     [ "is_Dense", "structMackey_1_1SFINAE.html#a1cea78d0d105adaafa9a77d13a77b790", null ],
     [ "is_finite_cyclic", "structMackey_1_1SFINAE.html#ac37cce8f1f1220e29653dbcc5f0b7090", null ],
     [ "is_Sparse", "structMackey_1_1SFINAE.html#ab4f05241219d560e2e7cee5215cc37a5", null ],
+    [ "is_sparse_row_major", "structMackey_1_1SFINAE.html#a65dd52a3c2ee8f112260288e6d2f8391", null ],
     [ "test_computePath", "structMackey_1_1SFINAE.html#aa8d24c8b8818ab4d1613a127ad14f758", null ],
     [ "test_computePath", "structMackey_1_1SFINAE.html#acf66cc5b3fd626fc1c6d4fa80832c152", null ],
     [ "test_Dense", "structMackey_1_1SFINAE.html#a1b75937bad3b6d9d0eaff8bd81a03b16", null ],
@@ -14,5 +15,7 @@ var structMackey_1_1SFINAE =
     [ "test_initialize", "structMackey_1_1SFINAE.html#a1734bf7c631d052255bd1d5f96fb0b21", null ],
     [ "test_initialize", "structMackey_1_1SFINAE.html#a70818a71f0e6cead8c7f588600186701", null ],
     [ "test_Sparse", "structMackey_1_1SFINAE.html#a822455b3ae1980be0801f1ca334b5765", null ],
-    [ "test_Sparse", "structMackey_1_1SFINAE.html#a933fbb1ee190a80299401705a474a677", null ]
+    [ "test_Sparse", "structMackey_1_1SFINAE.html#a933fbb1ee190a80299401705a474a677", null ],
+    [ "test_SRM", "structMackey_1_1SFINAE.html#affbe05b9e94c425333fef47202fd19fc", null ],
+    [ "test_SRM", "structMackey_1_1SFINAE.html#ad1aecc9a9a8af9287b17695cbfe1bffb", null ]
 ];

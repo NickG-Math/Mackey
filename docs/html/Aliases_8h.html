@@ -101,10 +101,15 @@ $(document).ready(function(){initNavTree('Aliases_8h.html','');});
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Eigen/Dense&gt;</code><br />
 <code>#include &lt;Eigen/Sparse&gt;</code><br />
+<code>#include &quot;<a class="el" href="SFINAE_8h_source.html">SFINAE.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Aliases.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Aliases_8h__incl.png" border="0" usemap="#Mackey_2Aliases_8h" alt=""/></div>
+<map name="Mackey_2Aliases_8h" id="Mackey_2Aliases_8h">
+<area shape="rect" id="node4" href="SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="192,80,275,107"/>
+<area shape="rect" id="node7" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="312,155,366,181"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -180,10 +185,13 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a43f350029dd91403df428883f202a7b6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a43f350029dd91403df428883f202a7b6">Mackey::spm_t_r</a> = typename Eigen::SparseMatrix&lt; Scalar_t&lt; T &gt;, 1 &gt;</td></tr>
 <tr class="memdesc:a43f350029dd91403df428883f202a7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Row major sparse.  <a href="namespaceMackey.html#a43f350029dd91403df428883f202a7b6">More...</a><br /></td></tr>
 <tr class="separator:a43f350029dd91403df428883f202a7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5048063727afe2ed842d6bff76cef28e"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t &gt; </td></tr>
-<tr class="memitem:a5048063727afe2ed842d6bff76cef28e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a5048063727afe2ed842d6bff76cef28e">Mackey::Gen_t</a> = typename Homology&lt; rank_t, diff_t &gt;::Gen_t</td></tr>
-<tr class="memdesc:a5048063727afe2ed842d6bff76cef28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of Generator matrices in homology.  <a href="namespaceMackey.html#a5048063727afe2ed842d6bff76cef28e">More...</a><br /></td></tr>
-<tr class="separator:a5048063727afe2ed842d6bff76cef28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48661e728506f91066a28c199af56ff5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a48661e728506f91066a28c199af56ff5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a48661e728506f91066a28c199af56ff5">Mackey::triplets</a> = std::vector&lt; Eigen::Triplet&lt; T &gt; &gt;</td></tr>
+<tr class="separator:a48661e728506f91066a28c199af56ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2542005948b58de00ac4647ca2c7106"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t &gt; </td></tr>
+<tr class="memitem:ab2542005948b58de00ac4647ca2c7106"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ab2542005948b58de00ac4647ca2c7106">Mackey::Gens_t</a> = typename Homology&lt; rank_t, diff_t &gt;::Gens_t</td></tr>
+<tr class="memdesc:ab2542005948b58de00ac4647ca2c7106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of Generator matrices in homology.  <a href="namespaceMackey.html#ab2542005948b58de00ac4647ca2c7106">More...</a><br /></td></tr>
+<tr class="separator:ab2542005948b58de00ac4647ca2c7106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bb0b2796632ba6c7f8ea192f7aecffe"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t &gt; </td></tr>
 <tr class="memitem:a6bb0b2796632ba6c7f8ea192f7aecffe"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a6bb0b2796632ba6c7f8ea192f7aecffe">Mackey::gen_t</a> = typename Homology&lt; rank_t, diff_t &gt;::gen_t</td></tr>
 <tr class="memdesc:a6bb0b2796632ba6c7f8ea192f7aecffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of generators in homology.  <a href="namespaceMackey.html#a6bb0b2796632ba6c7f8ea192f7aecffe">More...</a><br /></td></tr>

@@ -9,7 +9,8 @@ var searchData=
   ['box',['Box',['../namespaceMackey.html#add5b60c8e734df2be261106e0c719f82',1,'Mackey::Box(const Chains&lt; rank_t, diff_t &gt; &amp;C, const Chains&lt; rank_t, diff_t &gt; &amp;D, int i)'],['../namespaceMackey.html#a72abbe3708c4e77936c8cc42fbc6753a',1,'Mackey::Box(const Chains&lt; rank_t, diff_t &gt; &amp;C, const Chains&lt; rank_t, diff_t &gt; &amp;D)']]],
   ['box_2eh',['Box.h',['../Box_8h.html',1,'']]],
   ['box_5fpermutation',['box_permutation',['../namespaceMackey_1_1internal.html#a32720f4fc1f6777a8e13a2e0db0bd2da',1,'Mackey::internal']]],
-  ['boxchangebasis',['boxchangebasis',['../namespaceMackey.html#aec14170f140793a5ef29eef799f217ce',1,'Mackey']]],
+  ['box_5fsparse',['box_sparse',['../namespaceMackey.html#a62d8e5c141fbd3776a4c8317498c5824',1,'Mackey']]],
+  ['boxchangebasis',['boxchangebasis',['../namespaceMackey.html#a232e85ca1fb9017788b33b7f6f2c269b',1,'Mackey']]],
   ['boxid',['boxID',['../classMackey_1_1Green.html#aea166896ebdaa17b3c5d21b2ae936e0d',1,'Mackey::Green::boxID()'],['../classMackey_1_1Massey.html#ae105b04a17ced9c6fd8fef94a9b56aa2',1,'Mackey::Massey::boxID()']]],
-  ['boxpoint',['BoxPoint',['../classMackey_1_1BoxPoint.html',1,'Mackey']]]
+  ['boxpoint',['BoxPoint',['../classMackey_1_1BoxPoint.html',1,'Mackey::BoxPoint&lt; rank_t, diff_t &gt;'],['../classMackey_1_1BoxPoint.html#a7d7864d6623adb228897cb2d42594900',1,'Mackey::BoxPoint::BoxPoint()']]]
 ];

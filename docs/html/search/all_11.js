@@ -1,6 +1,8 @@
 var searchData=
 [
   ['rank',['rank',['../classMackey_1_1Chains.html#ad041dff6f210ae5be4de0a3b076a4d95',1,'Mackey::Chains::rank()'],['../classMackey_1_1Junction.html#a70d63a0f6ad20b052210ab0009815a9e',1,'Mackey::Junction::rank()']]],
+  ['rank_5fdomain',['rank_domain',['../classMackey_1_1BoxPoint.html#a160dd950c1ffbed689d650f4d0fadbec',1,'Mackey::BoxPoint']]],
+  ['rank_5frange',['rank_range',['../classMackey_1_1BoxPoint.html#ab24bd5a38df100f88c8637d71dbdf608',1,'Mackey::BoxPoint']]],
   ['rankbox',['rankBox',['../namespaceMackey.html#a1257ce64369e72438023fd4e261c7c83',1,'Mackey']]],
   ['rankin',['rankIn',['../classMackey_1_1Junction.html#a6174a3bef929f4b5b892d3b7ccb20528',1,'Mackey::Junction']]],
   ['rankmult',['rankmult',['../namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995',1,'Mackey']]],
@@ -12,7 +14,7 @@ var searchData=
   ['requireinitialization',['RequireInitialization',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a1d8939bd585b60ec61e806fc7746335ead6dcd36369e8ba30de5940b21c1eeebd',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
   ['res',['Res',['../classMackey_1_1IDGenerators.html#a8512fc6a9becb6261a703e6131225e3f',1,'Mackey::IDGenerators::Res()'],['../classMackey_1_1MackeyFunctor.html#aa017d427a7ca062c2fe974c3930de6d8',1,'Mackey::MackeyFunctor::Res()']]],
   ['resize',['resize',['../classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11',1,'Mackey::MackeyFunctor']]],
-  ['restriction',['restriction',['../namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd',1,'Mackey::restriction(const gen_t &amp;generator, const rank_t &amp;domain, const rank_t &amp;range)'],['../namespaceMackey.html#a6818760aa9590810daace862e4c71f04',1,'Mackey::restriction(const Homology&lt; rank_t, diff_t &gt; &amp;high, const Homology&lt; rank_t, diff_t &gt; &amp;low, const rank_t &amp;rank_high, const rank_t &amp;rank_low)']]],
+  ['restriction',['restriction',['../namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e',1,'Mackey::restriction(const Eigen::MatrixBase&lt; Derived &gt; &amp;generator, const rank_t &amp;domain, const rank_t &amp;range)'],['../namespaceMackey.html#a6818760aa9590810daace862e4c71f04',1,'Mackey::restriction(const Homology&lt; rank_t, diff_t &gt; &amp;high, const Homology&lt; rank_t, diff_t &gt; &amp;low, const rank_t &amp;rank_high, const rank_t &amp;rank_low)']]],
   ['righttocanon',['RighttoCanon',['../classMackey_1_1ChangeBasis.html#aa169c2e7937437ea2102de1c3072194c',1,'Mackey::ChangeBasis']]],
   ['rochains',['ROChains',['../namespaceMackey.html#a08fd3743ffb625fceca454da757dfa5d',1,'Mackey::ROChains(int i, const deg_t &amp;sphere)'],['../namespaceMackey.html#abd3c2e12c91baa573c6dbaa37eeb0518',1,'Mackey::ROChains(const deg_t &amp;sphere)']]],
   ['rogreen',['ROGreen',['../namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77',1,'Mackey::ROGreen(int level, const deg_t &amp;first, const deg_t &amp;second, int selectFirst, int selectSecond)'],['../namespaceMackey.html#a07d3b1e748c6cf2fd8a6e21b948a0afe',1,'Mackey::ROGreen(int level, const deg_t &amp;first, const deg_t &amp;second)']]],

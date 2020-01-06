@@ -2,23 +2,28 @@ First, two heuristic observations\+:
 
 
 \begin{DoxyItemize}
-\item The Linux binary runs measurably faster than the Windows one.
-\item Out of all compilers on Linux, Clang seems to produce marginally faster code.
+\item The Linux binaries runs measurably faster than the Windows one.
+\item Out of the three compilers on Linux tested (G\+CC, Clang, I\+CC), Clang seems to produce faster code.
 \end{DoxyItemize}\hypertarget{perf_compoptions}{}\section{Compiler Options}\label{perf_compoptions}
 
 \begin{DoxyItemize}
 \item I recommend the following compiler options (G\+CC, Clang)\+: {\ttfamily -\/\+O3 -\/funroll-\/loops -\/march=native }
 \item For safety you can use -\/fsanitize=signed-\/integer-\/overflow that checks for integer overflow at minimum performance cost. More generally -\/fsanitize=undefined can be used to check for all undefined behavior at a much greater performance hit (about 10x slower).
-\item With the Intel compiler \hyperlink{namespaceEigen}{Eigen} \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support}{\tt recommends} the {\ttfamily -\/inline-\/forceinline} option.
+\item See this \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support}{\tt page} for compiler options regarding \hyperlink{namespaceEigen}{Eigen}.
 \item If Open\+MP support is desired use {\ttfamily -\/fopenmp}.
 \end{DoxyItemize}\hypertarget{perf_thread}{}\section{Multithreading}\label{perf_thread}
 
 \begin{DoxyItemize}
-\item While the provided \href{https://github.com/NickG-Math/Mackey/tree/master/bin}{\tt binaries} are all single-\/threaded, the most (by far) computationally intensive calculations can be multithreaded extemelly easily and efficiently. This is as simple as adding a {\ttfamily \#pragma omp parallel for} before the loops that compute the additive/multiplicative structure in a range. There is no need to lock anything.
+\item The main algorithms of the program are single-\/threaded, with the idea being that they will be performed in loops, computing the answer in a range (which is required for the identification algorithms to then work). Multithreading these loop iterations with open\+MP is turned on by default in the {\ttfamily Additive\+Structure} and {\ttfamily Factorization} code, using the maximum amount of threads available. But note that other parts of the library (using {\ttfamily std\+::map}) are not thread-\/safe and need to be locked; thankfully these have almost no bearing on performance.
 \item There is one caveat\+: While the loop iterations are independent, they are not all equally computationally intensive. A sphere like $S^{2\sigma+\lambda}$ is cheaper to compute compared to $S^{6\sigma+8\lambda}$ which is in turn much cheaper compared to $S^{6\sigma-8\lambda}$ as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are even more expensive in run-\/time as they involve arbitrarily large permutation matrices.
-\item So it\textquotesingle{}s important to equally divide the work amongst the threads. Currently this has to be done manually on the user\textquotesingle{}s end.
+\item So it\textquotesingle{}s important to equally divide the work among the threads. Currently this has to be done manually on the user\textquotesingle{}s end.
+\end{DoxyItemize}\hypertarget{perf_densevssparse}{}\section{Dense vs Sparse}\label{perf_densevssparse}
+
+\begin{DoxyItemize}
+\item Dense matrices are usually faster than sparse matrices, as long as they don\textquotesingle{}t get too large. For the few instances where matrix multiplication is used, linking against the Intel M\+KL can also drastically improve performance with floating points (see below).
+\item When matrices do get large, sparse matrices not only offer better performance, but exremely significant savings in memory (30x and above). When triple box products are used combined with dense matrices and multithreading, memory usage can go up to 60\+GB, hitting the swap file making the program slow to a crawl. In that case we can see up to 20x speedup when using sparse matrices. The Intel M\+KL is not any faster than \hyperlink{namespaceEigen}{Eigen} for sparse matrix multiplication.
 \end{DoxyItemize}\hypertarget{perf_intvsfloat}{}\section{Integers vs Floats}\label{perf_intvsfloat}
-I use integers (or indeed {\ttfamily char} and {\ttfamily short}) for the majority of the computations; that\textquotesingle{}s usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception\+: Matrix multiplication (and matrix determinant). \hyperlink{namespaceEigen}{Eigen} is much slower with integer matrix multiplication compared to floating points, and the Intel M\+KL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.\hypertarget{perf_boxproducts}{}\section{Box Products}\label{perf_boxproducts}
+I use integers (or indeed {\ttfamily char} and {\ttfamily short}) for the majority of the computations; that\textquotesingle{}s usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception\+: Dense matrix multiplication (and to a lesser extent matrix determinant). \hyperlink{namespaceEigen}{Eigen} is much slower with integer matrix multiplication compared to floating points, and the Intel M\+KL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.\hypertarget{perf_boxproducts}{}\section{Box Products}\label{perf_boxproducts}
 Box products involve some very large matrices, and the more iterated box products we use the higher that complexity.
 
 
@@ -34,11 +39,5 @@ where $V=V_{pos}-V_{neg}$
 \begin{DoxyItemize}
 \item For the multiplicative structure we need to take an extra box product, so up to three total when computing $ab$ for $a,b$ in the mixed homology.
 \item For factorization we would also need three box products. But by design, we are only multiplying with certain basic irreducibles (Euler and orientation classes) and hope everything else is obtained like this. By selecting them to be in the pure co/homology (which the Euler and orientation classes always are) we can reduce this to two box products total. If extra identification needed then we do take triple box products, incurring a massive performance and memory cost.
-\item For Massey products we need an extra two box products, so up to five total then computing $\langle a,b,c\rangle $ for $a,b,c$ in the mixed homology. This is an extremely large number of box products and results in matrices of millions of rows and columns, thus consuming large amounts of memory. If we combine this with Open\+MP parallelization, then we can easily run out of memory using 12 threads even in a 24\+GB system, and get {\ttfamily std\+::bad\+\_\+alloc} errors. It might be a good idea to use sparse matrices in this case, but that hasn\textquotesingle{}t been implemented yet.
-\end{DoxyItemize}\hypertarget{perf_bottle}{}\section{Bottlenecks}\label{perf_bottle}
-
-\begin{DoxyItemize}
-\item The biggest performance bottleneck is found in the multiplicative structure. That\textquotesingle{}s when we apply some large change of basis matrices through \hyperlink{namespaceEigen}{Eigen}\textquotesingle{}s permutation matrix product. This is mainly a memory bottleneck.
-\item The second biggest bottleneck lies in the transfering very large differentials. To transfer we need to delete certain rows of the matrix, and this is done by copying the remaining rows into a new matrix. This is another memory bottleneck.
-\item A third somewhat more minor bottleneck is the Smith normal form computation. The problem is that it involves going through our matrix both by rows and by columns, which is not ideal for cache locality. The S\+NF is both memory and core bound. 
+\item For Massey products we need an extra two box products, so up to five total then computing $\langle a,b,c\rangle $ for $a,b,c$ in the mixed homology. 
 \end{DoxyItemize}

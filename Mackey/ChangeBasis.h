@@ -10,7 +10,7 @@
 ///@brief Contains the construction of the change of basis matrices.
 namespace Mackey {
 
-	///Returns the change of basis matrix (as a permutation) from basis A to basis B. A,B can be std::vector's
+	///Returns the change of basis matrix (as a permutation) from basis A to basis B. 
 	template<typename pScalar, typename T>
 	std::vector<pScalar> changebasis(const T& A, const T& B)
 	{
@@ -28,7 +28,7 @@ namespace Mackey {
 
 	///Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matrices (as permutations).
 	template<typename pScalar, typename rank_t>
-	std::pair<std::vector<pScalar>, std::vector<pScalar>> boxchangebasis(const rank_t& rankC, const rank_t& rankD) {
+	std::pair<std::vector<pScalar>, std::vector<pScalar>> boxchangebasis(const rank_t& rankC, const rank_t& rankD, bool convtocanon) {
 
 		typedef long ScalarInternal; //Max accuracy for the ScalarInternal with 0 cost anyway
 
@@ -84,7 +84,10 @@ namespace Mackey {
 				}
 			}
 		}
-		return std::make_pair(changebasis<pScalar, std::vector<ScalarInternal>>(leftconv, canonical), changebasis<pScalar, std::vector<ScalarInternal>>(rightconv, canonical));
+		if (convtocanon)
+			return std::make_pair(changebasis<pScalar, std::vector<ScalarInternal>>(leftconv, canonical), changebasis<pScalar, std::vector<ScalarInternal>>(rightconv, canonical));
+		return std::make_pair(changebasis<pScalar, std::vector<ScalarInternal>>(canonical, leftconv), changebasis<pScalar, std::vector<ScalarInternal>>(canonical, rightconv));
+
 	}
 
 
@@ -95,29 +98,34 @@ namespace Mackey {
 		Eigen::PermutationMatrix<-1, -1, pScalar> LefttoCanon; 	///<The change of basis matrix from the left convenient basis to the canonical basis
 		Eigen::PermutationMatrix<-1, -1, pScalar> RighttoCanon;	///<The change of basis matrix from the right convenient basis to the canonical basis
 
-		///Default Constructor
+		///Default constructor
 		ChangeBasis() {};
 
-		/// Constructs the change of basis matrices given two ranks
+		/// Constructs the change of basis matrices given two ranks. The boolean variable determines whether we go from the convenient to canonical or the opposite
 		template<typename rank_t>
-		ChangeBasis(const rank_t& rank1, const rank_t& rank2) {
+		ChangeBasis(const rank_t& rank1, const rank_t& rank2, bool convtocanon) {
 			typedef Eigen::Matrix<pScalar, -1, 1> vector_t;
-			auto A = boxchangebasis<pScalar,rank_t>(rank1, rank2);
+			auto A = boxchangebasis<pScalar,rank_t>(rank1, rank2, convtocanon);
 			//now just wrap into Eigen permutation matrices
 			LefttoCanon = Eigen::PermutationMatrix<-1, -1, pScalar>(Eigen::Map<vector_t>(A.first.data(), A.first.size()));
 			RighttoCanon = Eigen::PermutationMatrix<-1, -1, pScalar>(Eigen::Map<vector_t>(A.second.data(), A.second.size()));
 		}
+
+		/// Constructs the change of basis matrices given two ranks, from the convenient bases to the canonical one.
+		template<typename rank_t>
+		ChangeBasis(const rank_t& rank1, const rank_t& rank2) : ChangeBasis(rank1, rank2, 1) {}
+
 	};
 
 //	////////////////////////////////////////////////////////////
-///// Memoizing the ChangeBasis constructor. Not thread safe hence why it's not currently used
+///// Memoizing the ChangeBasis constructor. Not thread safe hence why we lock!
 //
 ///// We utilize the observation that the ranks appearing usually look like ?,prime^power,...,prime^power,?. So we only need store the ?'s and total length
 /////////////////////////////////////////////////////////////
 //	template<typename rank_t>
-//	ChangeBasis<rank_t> memoChangeBasis(const rank_t& rank1, const rank_t& rank2) {
-//		static std::map<std::array<int, 6>, ChangeBasis<rank_t>> memoizer;
-//		const std::array<int, 6> key = { static_cast<int>(rank2.size()), rank2[0], rank2[rank2.size() - 1], rank1[0], rank1[rank1.size() - 1], static_cast<int>(rank1.size()) };
+//	ChangeBasis<int> memoChangeBasis(const rank_t& rank1, const rank_t& rank2, bool convtocanon) {
+//		static std::map<std::array<int, 7>, ChangeBasis<int>> memoizer;
+//		const std::array<int, 7> key = { static_cast<int>(rank2.size()), rank2[0], rank2[rank2.size() - 1], rank1[0], rank1[rank1.size() - 1], static_cast<int>(rank1.size()), convtocanon };
 //		bool notadmissible = 0;
 //		for (int i = 1; i < rank1.size() - 1; i++) {
 //			if (rank1[i] != intexp(power)) {
@@ -132,17 +140,35 @@ namespace Mackey {
 //			}
 //		}
 //		if (notadmissible)
-//			return ChangeBasis<rank_t>(rank1, rank2);
+//			return ChangeBasis<int>(rank1, rank2, convtocanon);
+//		ChangeBasis<int> change;
+//
+//#ifdef PARALLELIZE
+//		omp_set_lock(&Mackeylocker);
+//#endif
 //		const auto iterator = memoizer.find(key);
 //		if (iterator == memoizer.end()) {
-//			ChangeBasis<rank_t> newchange(rank1, rank2);
-//			memoizer[key] = newchange;
-//			return newchange;
+//			change=ChangeBasis<int>(rank1, rank2, convtocanon);
+//			memoizer[key] = change;
 //		}
 //		else
-//			return iterator->second;
+//			change=iterator->second;
+//#ifdef PARALLELIZE
+//		omp_unset_lock(&Mackeylocker);
+//#endif
+//		return change;
 //	}
-
+//
+//
+//	////////////////////////////////////////////////////////////
+///// Memoizing the ChangeBasis constructor. Not thread safe hence why we lock!
+//
+///// We utilize the observation that the ranks appearing usually look like ?,prime^power,...,prime^power,?. So we only need store the ?'s and total length
+/////////////////////////////////////////////////////////////
+//	template<typename rank_t>
+//	ChangeBasis<int> memoChangeBasis(const rank_t& rank1, const rank_t& rank2) {
+//		return memoChangeBasis(rank1, rank2, 1);
+//	}
 
 	//A slower memoizer
 	//template<typename rank_t, typename pScalar>

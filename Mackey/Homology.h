@@ -10,15 +10,51 @@
 
 namespace Mackey {
 	
+	namespace {
+		//to avoid too many std conditionals
+
+		template<typename, typename = void>
+		struct Quicktypedefs;
+
+		template<typename T>
+		struct Quicktypedefs<T, typename std::enable_if_t<SFINAE::is_Dense<T>::value && SFINAE::is_finite_cyclic<Scalar_t<T>>::value>> {
+			typedef Scalar_t<T> Scalar;
+			typedef Eigen::Matrix<Scalar, -1, -1> col;
+			typedef Eigen::Matrix<Scalar, -1, -1, 1> row;
+		};
+
+		template<typename T>
+		struct Quicktypedefs<T, typename std::enable_if_t<SFINAE::is_Sparse<T>::value && SFINAE::is_finite_cyclic<Scalar_t<T>>::value>> {
+			typedef Scalar_t<T> Scalar;
+			typedef Eigen::SparseMatrix<Scalar, 0> col;
+			typedef Eigen::SparseMatrix<Scalar, 1> row;
+		};
+
+		template<typename T>
+		struct Quicktypedefs<T, typename std::enable_if_t<SFINAE::is_Dense<T>::value && !SFINAE::is_finite_cyclic<Scalar_t<T>>::value>> {
+			typedef float Scalar;
+			typedef Eigen::Matrix<Scalar, -1, -1> col;
+			typedef Eigen::Matrix<Scalar, -1, -1, 1> row;
+		};
+
+		template<typename T>
+		struct Quicktypedefs<T, typename std::enable_if_t<SFINAE::is_Sparse<T>::value && !SFINAE::is_finite_cyclic<Scalar_t<T>>::value>> {
+			typedef int Scalar;
+			typedef Eigen::SparseMatrix<Scalar, 0> col;
+			typedef Eigen::SparseMatrix<Scalar, 1> row;
+		};
+
+
+	}
 
 	///The Homology of a Junction
 	template<typename rank_t, typename diff_t>
 	class Homology {
 
 		///<Type used for Smith + product of matrices, either for performance (float/double) or to avoid overflow (long).
-		typedef typename std::conditional<SFINAE::is_finite_cyclic<Scalar_t<diff_t>>::value, Scalar_t<diff_t>, float>::type fScalar;
-		typedef typename std::conditional<SFINAE::is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1>, Eigen::SparseMatrix<fScalar, 0>>::type fdiff_t_C;	///<Column Major
-		typedef typename std::conditional<SFINAE::is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1, 1>, Eigen::SparseMatrix<fScalar, 1>>::type fdiff_t_R;	///<Row Major
+		typedef typename Quicktypedefs<diff_t>::Scalar fScalar;
+		typedef typename Quicktypedefs<diff_t>::col fdiff_t_C;	///<Column Major
+		typedef typename Quicktypedefs<diff_t>::row fdiff_t_R;	///<Row Major
 	
 	public:
 

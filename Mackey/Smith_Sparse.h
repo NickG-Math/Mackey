@@ -34,11 +34,11 @@ namespace Mackey {
 		typedef Eigen::SparseMatrix<Scalar_t<S_t>, 1> S_t_r;
 
 		Scalar_t<S_t> pivot;						///< The pivot used each turn
-		std::vector<long> Rnorm, Cnorm;				
+		std::vector<int> Rnorm, Cnorm;				
 		int current;								 
 		Eigen::SparseMatrix<Scalar_t<S_t>, 1> S_row; 
 
-		long metric(int, int);
+		int metric(int, int);
 		void SmithIt();
 		void workRow(int);
 		void workCol(int);
@@ -55,8 +55,8 @@ namespace Mackey {
 
 	///The Markowitz metric
 	template <typename S_t, typename R_t, typename C_t>
-	long SmithSparse<S_t, R_t, C_t>::metric(int i, int j) {
-		return Rnorm[i] + Cnorm[j]; //Can be changed
+	int SmithSparse<S_t, R_t, C_t>::metric(int i, int j) {
+		return Rnorm[i]*Cnorm[j]; //Can be changed
 	}
 
 
@@ -64,19 +64,17 @@ namespace Mackey {
 	void SmithSparse<S_t, R_t, C_t>::initialize_norms() {
 		Rnorm.resize(M);
 		Cnorm.resize(N);
-		for (int k = 0; k < S.outerSize(); k++) {
-			for (typename S_t::InnerIterator it(S, k); it; ++it) {
-				Rnorm[it.row()] += abs(it.value());
-				Cnorm[it.col()] += abs(it.value());
-			}
-		}
+		for (int i = 0; i < S_row.outerSize(); i++)
+			Rnorm[i] = S_row.innerVector(i).nonZeros();
+		for (int j = 0; j < S.outerSize(); j++)
+			Cnorm[j] = S.innerVector(j).nonZeros();
 	}
 
 
 	template <typename S_t, typename R_t, typename C_t>
 	void SmithSparse<S_t, R_t, C_t>::SmithIt() {
-		initialize_norms();
 		S_row = S;
+		initialize_norms();
 		current = 0;
 		for (int start = 0; start < std::min(M, N); start++) {
 			if (S.nonZeros() == start) {
@@ -87,8 +85,8 @@ namespace Mackey {
 			pivoting(start);
 			bool flagR, flagC;
 			flagR = flagC = 0;
-			while (Rnorm[start] != abs(pivot) || Cnorm[start] != abs(pivot)) {
-				while (Rnorm[start] != abs(pivot)) {
+			while (Rnorm[start] != 1 || Cnorm[start] != 1) {
+				while (Rnorm[start] != 1) {
 					if (flagR) {
 						flagC = 1;
 						pivotingRow(start);
@@ -96,7 +94,7 @@ namespace Mackey {
 					workRow(start);
 					flagR = 1;
 				}
-				while (Cnorm[start] != abs(pivot)) {
+				while (Cnorm[start] != 1) {
 					if (flagC) {
 						flagR = 1;
 						pivotingCol(start);
@@ -119,14 +117,12 @@ namespace Mackey {
 				Scalar_t<S_t> thequotient = floor_division(it.value(), pivot);
 
 				for (typename S_t::InnerIterator it2(S, j); it2; ++it2)
-					Rnorm[it2.row()] -= abs(it2.value());
+					Rnorm[it2.row()] -= 1;
 
 				S.col(j) = (S.col(j) - thequotient * S.col(start)).pruned();
-				Cnorm[j] = 0;
-				for (typename S_t::InnerIterator it2(S, j); it2; ++it2) {
-					Cnorm[j] += abs(it2.value());
-					Rnorm[it2.row()] += abs(it2.value());
-				}
+				Cnorm[j] = S.innerVector(j).nonZeros();
+				for (typename S_t::InnerIterator it2(S, j); it2; ++it2) 
+					Rnorm[it2.row()] += 1;
 				if (wantQ) {
 					Q.col(j) = (Q.col(j) - static_cast<Scalar_t<C_t>>(thequotient)* Q.col(start)).pruned();
 					Qi.row(start) = (Qi.row(start) + static_cast<Scalar_t<R_t>>(thequotient)* Q.row(j)).pruned();
@@ -145,14 +141,12 @@ namespace Mackey {
 				Scalar_t<S_t> thequotient = floor_division(it.value(), pivot);
 
 				for (typename S_t_r::InnerIterator it2(S_row, i); it2; ++it2)
-					Cnorm[it2.col()] -= abs(it2.value());
+					Cnorm[it2.col()] -= 1;
 
 				S_row.row(i) = (S_row.row(i) - thequotient * S_row.row(start)).pruned();
-				Rnorm[i] = 0;
-				for (typename S_t_r::InnerIterator it2(S_row, i); it2; ++it2) {
-					Rnorm[i] += abs(it2.value());
-					Cnorm[it2.col()] += abs(it2.value());
-				}
+				Rnorm[i] = S_row.innerVector(i).nonZeros();				
+				for (typename S_t_r::InnerIterator it2(S_row, i); it2; ++it2)
+					Cnorm[it2.col()] += 1;
 				if (wantP) {
 					P.row(i) = (P.row(i) - static_cast<Scalar_t<R_t>>(thequotient) * P.row(start)).pruned();
 					Pi.col(start) = (Pi.col(start) + static_cast<Scalar_t<C_t>>(thequotient)* Pi.col(i)).pruned();

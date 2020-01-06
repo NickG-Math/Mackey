@@ -20,8 +20,8 @@
 
 ///Consult the Cereal documentation for this
 namespace cereal
-{
-	///Save Eigen matrix
+
+{	///Save Eigen dense matrix
 	template<typename Archive, typename T, int RowsAtCompileTime, int ColsAtCompileTime, int Options, int MaxRowsAtCompileTime, int MaxColsAtCompileTime>
 	void save(Archive& archive, const Eigen::Matrix<T, RowsAtCompileTime, ColsAtCompileTime, Options, MaxRowsAtCompileTime, MaxColsAtCompileTime>& A)
 	{
@@ -31,7 +31,8 @@ namespace cereal
 		archive(CEREAL_NVP(rows), CEREAL_NVP(cols), CEREAL_NVP(vec));
 	}
 
-	///Load Eigen matrix
+
+	///Load Eigen dense matrix
 	template<typename Archive, typename T, int RowsAtCompileTime, int ColsAtCompileTime, int Options, int MaxRowsAtCompileTime, int MaxColsAtCompileTime>
 	void load(Archive& archive, Eigen::Matrix<T, RowsAtCompileTime, ColsAtCompileTime, Options, MaxRowsAtCompileTime, MaxColsAtCompileTime>& A)
 	{
@@ -39,6 +40,26 @@ namespace cereal
 		std::vector<T> vec;
 		archive(CEREAL_NVP(rows), CEREAL_NVP(cols), CEREAL_NVP(vec));
 		A = Eigen::Map<Eigen::Matrix<T, RowsAtCompileTime, ColsAtCompileTime, Options, MaxRowsAtCompileTime, MaxColsAtCompileTime>>(vec.data(), rows, cols);
+	}
+
+
+
+	///Save Eigen sparse matrix
+	template<typename Archive, typename T, int StorageOrder>
+	void save(Archive& archive, const Eigen::SparseMatrix<T, StorageOrder>& A)
+	{
+		Eigen::Matrix<T, -1, -1, StorageOrder> B = A;
+		archive(CEREAL_NVP(B));
+	}
+
+
+	///Load Eigen sparse matrix
+	template<typename Archive, typename T, int StorageOrder>
+	void load(Archive& archive, Eigen::SparseMatrix<T, StorageOrder>& A)
+	{
+		Eigen::Matrix<T, -1, -1, StorageOrder> B;
+		archive(CEREAL_NVP(B));
+		A = B.sparseView();
 	}
 
 }

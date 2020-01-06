@@ -11,7 +11,6 @@ For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the avai
  * <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. I've tested the code with Eigen 3.3.7 though newer versions shouldn't break compatibility.
 
 Optionally:
- * For improved performance you can use the Intel MKL with Eigen and further combine with OpenMP for multithreading.
  * For serialization there is integrated support of the <a href="https://uscilab.github.io/cereal">cereal</a> library.
  * To draw the multiplication graphs you can use <a href="https://www.graphviz.org">Graphviz</a>.
  
@@ -21,7 +20,7 @@ Optionally:
 
 * See the page \ref use for a tutorial on using the library.
 
-* As for compiler support, the latest version of the code is always tested with the latest versions of Clang (Linux) and MSVC (Windows). Much less frequently, testing is performed with GCC 9.2 (Linux), Clang (MacOS) and the Intel Compiler (Linux and Windows). Remember to use the option ```-std=c++17```. For more information on compiler options, see the \ref perf page.
+* As for compiler support, the latest version of the code is always tested with the latest versions of Clang (Linux) and MSVC (Windows). Much less frequently, testing is performed with GCC (Linux), Clang on MacOS and the Intel Compiler (Linux and Windows). Remember to use the option ```-std=c++17```. For more information on compiler options, see the \ref perf page.
 
 \section status Current Status
 
@@ -201,8 +200,8 @@ answer is \f$x\f$ or \f$x+y\f$: in both cases, \f$a\f$ is also connected to the 
 \tableofcontents
 \section how Step 0: Setting the Group Parameters
 
-For every group there are certain mandatory parameters that need to be set for the library to work. We have included an example for \f$G=C_4\f$ on how to set them in the file  ```C4_Implementation.h``` available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. 
-We also have a more general example for \f$G=C_{2^n}\f$ implemented in ```C2n_Implementation.h```.
+For every group there are certain parameters that need to be set for the library to work. We have included an example for \f$G=C_4\f$ on how to set them in the file  ```C4_Implementation.h``` available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. 
+We also have a more general example for all \f$G=C_{2^n}\f$ implemented in ```C2n_Implementation.h```.
 
 These parameters all live in the \ref GroupSpecific "GroupSpecific" namespace and we will go over them in more detail below.
 
@@ -244,9 +243,10 @@ There are two template arguments that always need to be specified, and their typ
 * ```rank_t``` can be set to ```Eigen::Matrix<char,1,-1>``` for groups of prime power order \f$<127\f$ and we can replace ```char``` by better precision integers for higher prime power orders.
 
 * ```diff_t``` depends on the desired coefficients: eg we can set it to ```Eigen::Matrix<char,-1,-1>``` for integer coefficients and groups of small power order, or ```Eigen<Z<N>,-1,-1>``` for \f$\mathbb Z/n\mathbb Z\f$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is 
-contained in the file ```Z_n.h``` where we define \f$\mathbb Z/n\mathbb Z\f$ coefficients. Note that for the Smith normal form to work properly, \f$n\f$ should be prime
+contained in the file ```Z_n.h``` where we define \f$\mathbb Z/n\mathbb Z\f$ coefficients. Note that for the Smith normal form to work properly, \f$n\f$ should be prime.
 
 
+Important note: ```diff_t``` can also be set to a sparse matrix ```Eigen::SparseMatrix<char>```. See the  \ref perf page for more information.
 \subsection step1add The additive structure
 
 The file ```<Mackey/Additive.h>``` exposes the class \ref Mackey::AdditiveStructure "AdditiveStructure" that computes the homology of all spheres in a given range as Mackey functors. Example: The code
@@ -376,7 +376,7 @@ If ```xml``` serialization is desired use "file.xml" and "xml" instead and simil
 
 \section smith Smith Normal Form
 
-There are multiple ways to compute the Smith Normal Form of a matrix, but since we want the coefficient matrices as well we employ the
+There are multiple ways to compute the Smith Normal Form of a matrix, but since we are mostly interested in the coefficient matrices, we employ the
 row/column elimination algorithm. To use the algorithm we need to be able to choose a pivot for our matrix each time we want to clear a row and column.
 We have the freedom to choose it and there are (at least) three ways to do it:
 
@@ -409,10 +409,10 @@ choices as explained  <a href="https://arxiv.org/abs/math/9406205">here</a>.
 
 Thus in total we have 4 Smith implementations:
 
-* ```Mackey::SmithFP``` using the first nonzero element as pivot.
-* ```Mackey::SmithMP``` using the minimum (in absolute value) nonzero elemenent as pivot (first instance).
-* ```Mackey::SmithSP``` using the instance of the minimum that also minimizes a norm function.
-* ```Mackey::SmithSparse``` which is the same as ```Mackey::SmithSP``` but using sparse matrices.
+* ```Mackey::SmithFP``` using the first nonzero element as pivot. Called in the dense finite coefficient case.
+* ```Mackey::SmithMP``` using the minimum (in absolute value) nonzero elemenent as pivot (first instance). Called for dense matrices with at most 1000 rows and columns.
+* ```Mackey::SmithSP``` using the instance of the minimum that also minimizes a norm function. Called for dense matrices with above 1000 rows and columns.
+* ```Mackey::SmithSparse``` which is the same as ```Mackey::SmithSP``` but using sparse matrices. Called for sparse matrices.
 
 
 
@@ -441,29 +441,36 @@ After that, find the red and blue paths starting from a red/blue source and endi
 
 First, two heuristic observations:
 
-* The Linux binary runs measurably faster than the Windows one.
-* Out of all compilers on Linux, Clang seems to produce marginally faster code. 
+* The Linux binaries runs measurably faster than the Windows one.
+* Out of the three compilers on Linux tested (GCC, Clang, ICC), Clang seems to produce faster code. 
 
 \section compoptions Compiler Options
 
 
 * I recommend the following compiler options (GCC, Clang): <CODE>-O3 -funroll-loops -march=native </CODE>
 * For safety you can use -fsanitize=signed-integer-overflow that checks for integer overflow at minimum performance cost. More generally -fsanitize=undefined can be used to check for all undefined behavior at a much greater performance hit (about 10x slower).
-* With the Intel compiler Eigen <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support">recommends</a> the <CODE>-inline-forceinline</CODE> option.
+* See this <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support">page</a> for compiler options regarding Eigen.
 * If OpenMP support is desired use ```-fopenmp```.
 
 \section thread Multithreading
 
-* While the provided <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">binaries</a> are all single-threaded, the most (by far) computationally intensive calculations can be multithreaded extemelly easily and efficiently. This is as simple as adding a ```#pragma omp parallel for``` before the loops that compute the additive/multiplicative structure in a range. There is no need to lock anything.
+* The main algorithms of the program are single-threaded, with the idea being that they will be performed in loops, computing the answer in a range (which is required for the identification algorithms to then work). Multithreading these loop iterations with openMP is turned on by default in the ```AdditiveStructure``` and ```Factorization``` code, using the maximum amount of threads available. But note that other parts of the library (using ```std::map```) are not thread-safe and need to be locked; thankfully these have almost no bearing on performance. 
 
 * There is one caveat: While the loop iterations are independent, they are not all equally computationally intensive. A sphere like \f$S^{2\sigma+\lambda}\f$ is cheaper to compute compared to \f$S^{6\sigma+8\lambda}\f$ which is in turn much cheaper compared to \f$S^{6\sigma-8\lambda}\f$ as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are even more expensive in run-time as they involve arbitrarily large permutation matrices.
 
-* So it's important to equally divide the work amongst the threads. Currently this has to be done manually on the user's end.
+* So it's important to equally divide the work among the threads. Currently this has to be done manually on the user's end.
+
+\section densevssparse Dense vs Sparse
+
+* Dense matrices are usually faster than sparse matrices, as long as they don't get too large. For the few instances where matrix multiplication is used, linking against the 
+Intel MKL can also drastically improve performance with floating points (see below). 
+
+* When matrices do get large, sparse matrices not only offer better performance, but exremely significant savings in memory (30x and above). When triple box products are used combined with dense matrices and multithreading, memory usage can go up to 60GB, hitting the swap file making the program slow to a crawl. In that case we can see up to 20x speedup when using sparse matrices. The Intel MKL is not any faster than Eigen for sparse matrix multiplication.
 
 \section intvsfloat Integers vs Floats
 
 I use integers (or indeed ```char``` and ```short```) for the majority of the computations; that's usually the fastest method and makes the most sense (as all numbers appearing are actually integers).
-There is one important exception: Matrix multiplication (and matrix determinant). Eigen is much slower with integer matrix multiplication compared to floating points, and the Intel MKL does not even support integer matrix multiplication.
+There is one important exception: Dense matrix multiplication (and to a lesser extent matrix determinant). Eigen is much slower with integer matrix multiplication compared to floating points, and the Intel MKL does not even support integer matrix multiplication.
 So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.
 
 
@@ -481,11 +488,4 @@ where \f$V=V_{pos}-V_{neg}\f$
 
 * For factorization we would also need three box products. But by design, we are only multiplying with certain basic irreducibles (Euler and orientation classes) and hope everything else is obtained like this. By selecting them to be in the pure co/homology (which the Euler and orientation classes always are) we can reduce this to two box products total. If extra identification needed then we do take triple box products, incurring a massive performance and memory cost.
 
-* For Massey products we need an extra two box products, so up to five total then computing \f$\langle a,b,c\rangle \f$ for \f$a,b,c\f$ in the mixed homology. This is an extremely
-large number of box products and results in matrices of millions of rows and columns, thus consuming large amounts of memory. If we combine this with OpenMP parallelization, then we can easily run out of memory using 12 threads even in a 24GB system, and get ```std::bad_alloc``` errors. It might be a good idea to use sparse matrices in this case, but that hasn't been implemented yet.
-
-\section bottle Bottlenecks
-
-* The biggest performance bottleneck is found in the multiplicative structure. That's when we apply some large change of basis matrices through Eigen's permutation matrix product. This is mainly a memory bottleneck.
-* The second biggest bottleneck lies in the transfering very large differentials. To transfer we need to delete certain rows of the matrix, and this is done by copying the remaining rows into a new matrix.  This is another memory bottleneck.
-* A third somewhat more minor bottleneck is the Smith normal form computation. The problem is that it involves going through our matrix both by rows and by columns, which is not ideal for cache locality. The SNF is both memory and core bound.
+* For Massey products we need an extra two box products, so up to five total then computing \f$\langle a,b,c\rangle \f$ for \f$a,b,c\f$ in the mixed homology.

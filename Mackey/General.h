@@ -154,12 +154,11 @@ namespace Mackey {
 
 	///Eg for m=2, n=2, v={a,b} we get {a,b // b,a}
 	//////////////////////////////////////////////////////////////
-	template<typename Matrix_t>
-	Matrix_t altmatrix(int m, int n, const std::vector<typename Matrix_t::Scalar>& v) {
-		typedef Eigen::Matrix<typename Matrix_t::Scalar, -1, 1> vector_t;
+	template<typename Matrix_t, std::enable_if_t<SFINAE::is_Dense<Matrix_t>::value, int> = 0 >
+	Matrix_t altmatrix(int m, int n, const std::vector<Scalar_t<Matrix_t>>& v) {
 		Matrix_t matrix(m, n);
-		vector_t alt = Eigen::Map<const vector_t>(v.data(), v.size());
-		vector_t column(m);
+		col_t<Matrix_t> alt = Eigen::Map<const col_t<Matrix_t>>(v.data(), v.size());
+		col_t<Matrix_t> column(m);
 		for (int i = 0; i < m; i += alt.size())
 			column.segment(i, alt.size()) = alt;
 		for (int j = n-1; j>=0; j--) {
@@ -167,6 +166,14 @@ namespace Mackey {
 			matrix.col(j)=column;
 		}
 		return matrix;
+	}
+
+
+	///Sparse version of altmatrix
+	template<typename Matrix_t, std::enable_if_t<SFINAE::is_Sparse<Matrix_t>::value, int> = 0 >
+	Matrix_t altmatrix(int m, int n, const std::vector<Scalar_t<Matrix_t>>& v) {
+		auto dense=altmatrix<mat_t<Matrix_t>>(m, n, v);
+		return dense.sparseView();
 	}
 	   	  
 	///Tests if vector is zero
@@ -243,16 +250,6 @@ namespace Mackey {
 		return n;
 	}
 
-	///Least common multiple of vector of elements
-	template<typename T>
-	int gcd(const T& v) {
-		if (v.size() == 0)
-			return 0;
-		auto n = 1;
-		for (const auto& i : v)
-			n = std::gcd(n, i);
-		return n;
-	}
 
 	///Hash vector given minimum and maximum values of its entries.
 	int hashvector(const std::vector<int>& deg, const std::vector<int>& min, const std::vector<int>& max) {
@@ -263,6 +260,33 @@ namespace Mackey {
 			prod *= max[i] - min[i] + 1;
 		}
 		return hash;
+	}
+
+
+	///Turn dense matrix into a vector of Eigen triplets
+	template<typename T>
+	triplets<T> make_triplets(const Eigen::Matrix<T, -1, -1>& a) {
+		triplets<T> b;
+		b.reserve(a.size());
+		for (int j = 0; j < a.cols(); j++) {
+			for (int i = 0; i < a.rows(); i++) {
+				if (a(i, j) != 0)
+					b.push_back(Eigen::Triplet<T>(i, j, a(i, j)));
+			}
+		}
+		return b;
+	}
+
+	///Turn sparse matrix into a vector of Eigen triplets
+	template<typename T, int StorageOrder>
+	triplets<T> make_triplets(const Eigen::SparseMatrix<T, StorageOrder>& a) {
+		triplets<T> b;
+		b.reserve(a.nonZeros());
+		for (int k = 0; k < a.outerSize(); k++) {
+			for (typename Eigen::SparseMatrix<T, StorageOrder>::InnerIterator it(a, k); it; ++it)
+				b.push_back(Eigen::Triplet<T>(it.row(), it.col(), it.value()));
+		}
+		return b;
 	}
 
 }

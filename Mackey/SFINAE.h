@@ -32,6 +32,13 @@ namespace Mackey {
 		template <typename T>
 		static constexpr std::true_type test_Sparse(Eigen::SparseMatrixBase<T>);
 
+		//Detect Eigen Sparse Row Major matrices
+		static constexpr	std::false_type test_SRM(...);
+
+		template <typename T>
+		static constexpr std::true_type test_SRM(Eigen::SparseMatrix<T,1>);
+
+
 		//Detect if T=Z<N>
 		static constexpr std::false_type test_finite_cyclic(...);
 
@@ -65,6 +72,11 @@ namespace Mackey {
 		///Tests if T=Z<N>
 		template<typename T>
 		using is_finite_cyclic = decltype(test_finite_cyclic(std::declval<T>()));
+
+		///Tests if matrix is sparse row major
+		template<typename T>
+		using is_sparse_row_major = decltype(test_SRM(std::declval<T>()));
+
 
 		///Tests if T has member computePath()
 		template<typename T>

@@ -75,13 +75,13 @@ namespace {
 
 namespace Mackey {
 
-		template <typename sS_t, typename sR_t, typename sC_t>
+		template <typename, typename, typename>
 		class SmithMP;
-		template <typename sS_t, typename sR_t, typename sC_t>
+		template <typename, typename, typename>
 		class SmithFP;
-		template <typename sS_t, typename sR_t, typename sC_t>
+		template <typename, typename, typename>
 		class SmithSP;
-		template <typename sS_t, typename sR_t, typename sC_t>
+		template <typename, typename, typename>
 		class SmithSparse;
 
 

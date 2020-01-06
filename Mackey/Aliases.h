@@ -1,6 +1,7 @@
 #pragma once
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
+#include "SFINAE.h"
 
 ///@file
 ///@brief Contains general template aliases. 
@@ -36,13 +37,17 @@ namespace Mackey {
 	template<typename T>
 	using spm_t_r = typename Eigen::SparseMatrix<Scalar_t<T>, 1>;
 
+	template<typename T>
+	using triplets = std::vector<Eigen::Triplet<T>>;
+
+
 	template<typename, typename>
 	class Homology;
 
 
 	///Type of Generator matrices in homology
 	template<typename rank_t, typename diff_t>
-	using Gen_t = typename Homology<rank_t, diff_t>::Gen_t;
+	using Gens_t = typename Homology<rank_t, diff_t>::Gens_t;
 
 	///Type of generators in homology
 	template<typename rank_t, typename diff_t>

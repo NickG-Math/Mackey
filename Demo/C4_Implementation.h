@@ -19,6 +19,7 @@ Chains<rank_t, diff_t> myfunction(int k, const deg_t& sphere) {
 
 
 	//A list of all the matrices appearing for convenience/small performance gain. Alternatively just define them directly in what follows
+
 	const static std::array<diff_t, 10> diffList = \
 	{ altmatrix<diff_t>(2, 2, { 1,-1 }), altmatrix<diff_t>(2, 4, { 1,-1 }), altmatrix<diff_t>(4, 4, { 1,0,0,-1 }), altmatrix<diff_t>(4, 4, { 1,-1 }), \
 		altmatrix<diff_t>(1, 2, { 1 }), altmatrix<diff_t>(1, 4, { 1 }), altmatrix<diff_t>(2, 2, { 1 }), altmatrix<diff_t>(2, 4, { 1 }), altmatrix<diff_t>(4, 4, { 1 }), altmatrix<diff_t>(4, 4, { 1,0,0,1 }) };
@@ -72,7 +73,7 @@ Chains<rank_t, diff_t> myfunction(int k, const deg_t& sphere) {
 				diff[i] = diffList[9];
 			}
 		}
-		rank[i] = Eigen::MatrixBase<rank_t>::Constant(1, 1, diff[i].cols()); //the number of columns of the differential
+		rank[i] = rank_t::Constant(1, 1, diff[i].cols()); //the number of columns of the differential
 	}
 	return Chains<rank_t,diff_t>(rank, diff);
 }

@@ -12,33 +12,30 @@ namespace Mackey {
 	/// The box (tensor) product of Chains at a single index
 
 	/// We only store a single differential and the ranks of its domain and range
-	/// Use through JunctionBox or the friend function Box.
 	//////////////////////////////////////////////
 	template<typename rank_t, typename diff_t>
 	class BoxPoint {
-		rank_t rank_domain, rank_range;
-		diff_t diff;
+	public:
+		rank_t rank_domain;		///<The rank of the domain of the differential.
+		rank_t rank_range;	///<The rank of the range of the differential.
+		diff_t diff; ///<The differential.
 
 		/// The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding)
 		std::vector<rank_t> detailedrank;
 
+		///Construct from chains C,D the boxpoint (C box D)_i->(C box D)_i-1
 		BoxPoint(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i)
-			: C(C), D(D), i(i), lowlimit(std::max(0, i - D.maxindex)), highlimit(std::min(i, C.maxindex)) {}
+			: C(C), D(D), i(i), lowlimit(std::max(0, i - D.maxindex)), highlimit(std::min(i, C.maxindex)) {
+			getranks();
+			if (rank_domain.size() != 0 && rank_range.size() != 0)
+				getdiff();
+		}
+
+	private:
 		const Chains<rank_t, diff_t>& C, D;
 		const int i, lowlimit, highlimit;
 		void getranks();
-		void getdomainrank();
-		void getrangerank();
 		void getdiff();
-
-		/// The box (tensor) product of Chains as a Junction in a desired degree
-		template<typename shadow_rank_t, typename shadow_diff_t>
-		friend class JunctionBox;
-
-		/// The box (tensor) product of Chains
-		template<typename shadow_rank_t, typename shadow_diff_t>
-		friend class ChainsBox;
-
 	};
 
 
@@ -86,23 +83,13 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	void BoxPoint<rank_t, diff_t> ::getranks() {
-		getdomainrank();
-		if (i > 0) {
-			getrangerank();
-		}
-	}
-
-	template<typename rank_t, typename diff_t>
-	void BoxPoint<rank_t, diff_t> ::getdomainrank() {
 		auto Ranks = rankBox(C, D, i);
 		rank_domain = Ranks.first;
 		detailedrank = Ranks.second;
-	}
-
-	template<typename rank_t, typename diff_t>
-	void BoxPoint<rank_t, diff_t> ::getrangerank() {
-		auto RanksLower = rankBox(C, D, i - 1);
-		rank_range = RanksLower.first;
+		if (i > 0) {
+			auto RanksLower = rankBox(C, D, i - 1);
+			rank_range = RanksLower.first;
+		}
 	}
 
 	///////////////////////////////////////////////////////////////////////
@@ -132,17 +119,9 @@ namespace Mackey {
 ///The mixing is L[0], then R[0] directly to the right, then L[1] directly below then...
 ///It's assumed that L,R have consistent dimensions for the blocks to fit coherently.
 ////////////////////////////////////////////////////////////////////////////
-	template<typename Derived>
-	Derived MatrixMixer(std::vector<Derived>& L, std::vector<Derived>& R) {
-		auto rows = L[0].rows();
-		auto cols = std::max(L[0].cols(), R[0].cols());
-		for (size_t i = 0; i < L.size() - 1; i++) {
-			rows += std::max(L[i + 1].rows(), R[i].rows());
-			cols += std::max(L[i + 1].cols(), R[i + 1].cols());
-		}
-		rows += R[R.size() - 1].rows();
-
-		Derived mixed;
+	template<typename T>
+	T MatrixMixer(std::vector<T>& L, std::vector<T>& R, int rows, int cols) {
+		T mixed;
 		mixed.setZero(rows, cols);
 		int horz = 0, vert = 0;
 		for (size_t i = 0;i < L.size();i++) {
@@ -164,27 +143,81 @@ namespace Mackey {
 	}
 
 
+	///Does permutation_block and matrix mixing in one step for sparse matrices, using the triplets format.
+	template<typename T, typename S>
+	triplets<T> box_sparse(S& left, S& right, const triplets<T>& a, int rows, int cols, int copies, int h_offset, int v_offset) {
+		triplets<T> b;
+		b.reserve(a.size() * copies);
+		for (const auto& V : a) {
+			auto i = V.row();
+			auto j = V.col();
+			while (i < rows * copies && j < cols * copies) {
+				b.push_back(Eigen::Triplet<T>(left.indices()[i] + v_offset, right.indices()[j] + h_offset, V.value()));
+				i += rows;
+				j += cols;
+			}
+		}
+		return b;
+	}
+
 
 	template<typename rank_t, typename diff_t>
 	void BoxPoint<rank_t, diff_t> ::getdiff() {
-		std::vector<diff_t> LeftDiff(i + 1);
-		std::vector<diff_t> RightDiff(i + 1);
 
-		for (int j = lowlimit; j <= highlimit; j++) {
-			auto Domain = ChangeBasis<int>(C.rank[j], D.rank[i - j]);
-			if (j >= 1) //We have a LeftDiff
-			{
-				auto RangeL = ChangeBasis<int>(C.rank[j - 1], D.rank[i - j]);
-				LeftDiff[j] = permutation_block(RangeL.LefttoCanon, Domain.LefttoCanon, C.diff[j], summation(D.rank[i - j]));
+		if constexpr (SFINAE::is_Dense<diff_t>::value) {//dense implementation
+
+			std::vector<diff_t> LeftDiff(i + 1);
+			std::vector<diff_t> RightDiff(i + 1);
+			for (int j = lowlimit; j <= highlimit; j++) {
+				auto Domain = ChangeBasis<int>(C.rank[j], D.rank[i - j]);
+				if (j >= 1) //We have a LeftDiff
+				{
+					auto RangeL = ChangeBasis<int>(C.rank[j - 1], D.rank[i - j]);
+					LeftDiff[j] = permutation_block(RangeL.LefttoCanon, Domain.LefttoCanon, C.diff[j], summation(D.rank[i - j]));
+				}
+				if (i - j >= 1) //We have a RightDiff
+				{
+					typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
+					auto RangeR = ChangeBasis<int>(C.rank[j], D.rank[i - j - 1]);
+					RightDiff[j] = permutation_block(RangeR.RighttoCanon, Domain.RighttoCanon, static_cast<diff_t>(sign * D.diff[i - j]), summation(C.rank[j]));
+				}
 			}
-			if (i - j >= 1) //We have a RightDiff
-			{
-				typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
-				auto RangeR = ChangeBasis<int>(C.rank[j], D.rank[i - j - 1]);
-				RightDiff[j] = permutation_block(RangeR.RighttoCanon, Domain.RighttoCanon, static_cast<diff_t>(sign * D.diff[i - j]), summation(C.rank[j]));
-			}
+			diff = MatrixMixer(LeftDiff, RightDiff, summation(rank_range), summation(rank_domain));
+
 		}
-		diff = MatrixMixer(LeftDiff, RightDiff);
+		else {//sparse implementation
+
+			std::vector<triplets<Scalar_t<diff_t>>> all_triplets;
+			all_triplets.reserve(i + 1);
+			int totalsize, v_offset, h_offset;
+			totalsize = v_offset = h_offset = 0;
+			for (int j = lowlimit; j <= highlimit; j++) {
+				auto Domain = ChangeBasis<int>(C.rank[j], D.rank[i - j], 0);
+				if (j >= 1) //We have a LeftDiff
+				{
+					auto RangeL = ChangeBasis<int>(C.rank[j - 1], D.rank[i - j], 0);
+					auto u = box_sparse(RangeL.LefttoCanon, Domain.LefttoCanon, make_triplets(C.diff[j]), C.diff[j].rows(), C.diff[j].cols(), summation(D.rank[i - j]), h_offset, v_offset);
+					totalsize += u.size();
+					all_triplets.push_back(u);
+					v_offset += C.diff[j].rows() * summation(D.rank[i - j]);
+				}
+				if (i - j >= 1) //We have a RightDiff
+				{
+					typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
+					auto RangeR = ChangeBasis<int>(C.rank[j], D.rank[i - j - 1], 0);
+					auto u = box_sparse(RangeR.RighttoCanon, Domain.RighttoCanon, make_triplets(static_cast<diff_t>(sign * D.diff[i - j])), D.diff[i - j].rows(), D.diff[i - j].cols(), summation(C.rank[j]), h_offset, v_offset);
+					totalsize += u.size();
+					all_triplets.push_back(u);
+					h_offset += D.diff[i - j].cols() * summation(C.rank[j]);
+				}
+			}
+			triplets<Scalar_t<diff_t>> mat;
+			mat.reserve(totalsize);
+			for (const auto& tr : all_triplets)
+				mat.insert(mat.end(), std::make_move_iterator(tr.begin()), std::make_move_iterator(tr.end()));
+			diff.resize(summation(rank_range), summation(rank_domain));
+			diff.setFromTriplets(mat.begin(), mat.end());
+		}
 	}
 
 	/// The box (tensor) product of Chains
@@ -221,8 +254,6 @@ namespace Mackey {
 		detailedrank.reserve(i + 1);
 		for (int j = 0; j <= i;j++) {
 			BoxPoint<rank_t, diff_t> BoxedAtPointj(C, D, j);
-			BoxedAtPointj.getdomainrank();
-			BoxedAtPointj.getdiff();
 			rank.push_back(BoxedAtPointj.rank_domain);
 			diff.push_back(BoxedAtPointj.diff);
 			detailedrank.push_back(BoxedAtPointj.detailedrank);
@@ -258,18 +289,14 @@ namespace Mackey {
 	JunctionBox<rank_t, diff_t>::JunctionBox(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i)
 	{
 		BoxPoint<rank_t, diff_t> OUT(C, D, i);
-		OUT.getranks();
 		detailedrank = OUT.detailedrank;
 		this->rank = OUT.rank_domain;
 		if (i > 0) {
-			OUT.getdiff();
 			this->rankOut = std::move(OUT.rank_range);
 			this->diffOut = std::move(OUT.diff);
 		}
 		if (i < C.maxindex + D.maxindex) {
 			BoxPoint<rank_t, diff_t> IN(C, D, i + 1);
-			IN.getdomainrank();
-			IN.getdiff();
 			this->rankIn = std::move(IN.rank_domain);
 			this->diffIn = std::move(IN.diff);
 		}

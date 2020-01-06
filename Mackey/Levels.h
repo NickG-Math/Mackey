@@ -24,7 +24,6 @@ namespace Mackey {
 		auto n = intexp(power - level);
 		if (diff.size() == 0)
 			return diff;
-		diff_t transfer(summation(range_top), summation(domain_top));
 		std::vector<int> keep;
 		keep.reserve(range.size() * n);
 		int sum = 0;
@@ -37,9 +36,15 @@ namespace Mackey {
 			}
 			sum += range(i);
 		}
-		diff_t reduceddiff = KeepRow(diff, keep);
+		typedef typename std::conditional<SFINAE::is_Sparse<diff_t>::value, spm_t<diff_t>, diff_t>::type coltype;
+		coltype reduceddiff;
+		if constexpr (SFINAE::is_Sparse<diff_t>::value&& ! SFINAE::is_sparse_row_major<diff_t>::value) 
+			reduceddiff = KeepRow(static_cast<spm_t_r<diff_t>>(diff), keep);
+		else
+			reduceddiff = KeepRow(diff, keep); 
 		int track = 0;
 		int tracktransfer = 0;
+		coltype transfer(summation(range_top), summation(domain_top));
 		for (int i = 0; i < domain.size(); i++)
 		{
 			auto limit = domain(i) + track;
@@ -52,14 +57,18 @@ namespace Mackey {
 			else {
 				for (int j = track; j < std::min(track + n, limit - n); j++) {
 					transfer.col(tracktransfer) = reduceddiff.col(j);
-					for (int k = j + n; k < limit; k += n)
-						transfer.col(tracktransfer) += reduceddiff.col(k);
+					for (int k = j + n; k < limit; k += n) {
+						if constexpr (SFINAE::is_Sparse<diff_t>::value)
+							transfer.col(tracktransfer) = (transfer.col(tracktransfer) + reduceddiff.col(k)).pruned();
+						else
+							transfer.col(tracktransfer) += reduceddiff.col(k);
+					}
 					tracktransfer++;
 				}
 			}
 			track += domain(i);
 		}
-		return transfer;
+		return static_cast<diff_t>(transfer);
 	}
 
 	/////////////////////////////////////////////////
@@ -84,11 +93,11 @@ namespace Mackey {
 	///Transfer Junction to the desired level.
 	template<typename rank_t, typename diff_t>
 	Junction<rank_t, diff_t> transfer(const Junction<rank_t, diff_t>& J, int level) {
-		rank_t rankIn_level = transfer(J.rankIn, level);
-		rank_t rank_level = transfer(J.rank, level);
-		rank_t rankOut_level = transfer(J.rankOut, level);
-		diff_t diffIn_level = transfer(J.diffIn, J.rankIn, rankIn_level, J.rank, rank_level, level);
-		diff_t diffOut_level = transfer(J.diffOut, J.rank, rank_level, J.rankOut, rankOut_level, level);
+		auto rankIn_level = transfer(J.rankIn, level);
+		auto rank_level = transfer(J.rank, level);
+		auto rankOut_level = transfer(J.rankOut, level);
+		auto diffIn_level = transfer(J.diffIn, J.rankIn, rankIn_level, J.rank, rank_level, level);
+		auto diffOut_level = transfer(J.diffOut, J.rank, rank_level, J.rankOut, rankOut_level, level);
 		Junction<rank_t, diff_t> J_Level(rank_level, rankOut_level, rankIn_level, diffOut_level, diffIn_level);
 		return J_Level;
 	}
@@ -115,12 +124,11 @@ namespace Mackey {
 		for (int i = 0; i < domain.size(); i++)
 		{
 			if (domain(i) == range(i))
-				transferred.segment(trackran, range(i)) = static_cast<typename Derived::Scalar>(prime) * generator.segment(trackdom, range(i));
+				transferred.segment(trackran, range(i)) = static_cast<Scalar_t<Derived>>(prime) * generator.segment(trackdom, range(i));
 			else {
 				transferred.segment(trackran, range(i)) = generator.segment(trackdom, range(i));
-				for (int k = 1; k < domain(i) / range(i); k++) {
+				for (int k = 1; k < domain(i) / range(i); k++)
 					transferred.segment(trackran, range(i)) += generator.segment(trackdom + k * range(i), range(i));
-				}
 			}
 			trackdom += domain(i);
 			trackran += range(i);
@@ -128,12 +136,11 @@ namespace Mackey {
 		return transferred;
 	}
 
-
 	///Restrict generator to level given the ranks at the original level (domain) and the target level (range).
-	template<typename rank_t, typename gen_t>
-	gen_t restriction(const gen_t& generator, const rank_t& domain, const rank_t& range)
+	template<typename rank_t, typename Derived>
+	Derived restriction(const Eigen::MatrixBase<Derived>& generator, const rank_t& domain, const rank_t& range)
 	{
-		gen_t restricted(summation(range));
+		Derived restricted(summation(range));
 		int trackdom = 0;
 		int trackran = 0;
 		for (int i = 0; i < domain.size(); i++) {
@@ -145,7 +152,6 @@ namespace Mackey {
 		return restricted;
 	}
 
-	
 	/////////////////////////////////////////////
 	///A variant of \ref rotate "rotate" for segments of Eigen vectors
 	///
@@ -171,13 +177,14 @@ namespace Mackey {
 		return Weyl;
 	}
 
+
 	///The inverse of the restriction function on a generator given the ranks at the original level (domain) and the target level (range).
 	///
 	/// Recall that free Mackey functors have injective restrictions, so we only need the generator to be in the image.
-	template<typename rank_t, typename gen_t>
-	gen_t invRes(const gen_t& generator, const rank_t& domain, const rank_t& range)
+	template<typename rank_t, typename Derived>
+	Derived invRes(const Eigen::MatrixBase<Derived>& generator, const rank_t& domain, const rank_t& range)
 	{
-		gen_t unrestricted(summation(range));
+		Derived unrestricted(summation(range));
 		int trackdom = 0, trackran = 0;
 		for (int i = 0; i < range.size(); i++) {
 			unrestricted.segment(trackran, range(i)) = generator.segment(trackdom, range(i));
@@ -188,14 +195,13 @@ namespace Mackey {
 	}
 
 
-
 	///Writing the transfer of each generator in terms of the generators in the image.
 	template<typename rank_t, typename diff_t>
 	mat_t<rank_t> transfer(const Homology<rank_t, diff_t>& low, const Homology<rank_t, diff_t>& high, const rank_t& rank_low, const rank_t& rank_high) {
 		mat_t<rank_t> Tr(high.Groups.size(), low.Groups.size());
 		for (int i = 0; i < low.Generators.cols(); i++) {
 			gen_t<rank_t, diff_t> generator = low.Generators.col(i);
-			Tr.col(i)= high.basis(transfer(generator, rank_low, rank_high)).transpose();// Eigen::Map<Eigen::Matrix<typename rank_t::Scalar,-1,1>>(u.data(),u.size());
+			Tr.col(i)= high.basis(transfer(generator, rank_low, rank_high)).transpose();
 		}
 		return Tr;
 	}

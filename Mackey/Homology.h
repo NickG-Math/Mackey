@@ -19,18 +19,17 @@ namespace Mackey {
 		typedef typename std::conditional<SFINAE::is_finite_cyclic<Scalar_t<diff_t>>::value, Scalar_t<diff_t>, float>::type fScalar;
 		typedef typename std::conditional<SFINAE::is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1>, Eigen::SparseMatrix<fScalar, 0>>::type fdiff_t_C;	///<Column Major
 		typedef typename std::conditional<SFINAE::is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, -1, 1>, Eigen::SparseMatrix<fScalar, 1>>::type fdiff_t_R;	///<Row Major
-		typedef typename std::conditional<SFINAE::is_Dense<diff_t>::value, Eigen::Matrix<fScalar, -1, 1>, Eigen::SparseVector<fScalar>>::type fdiff_t_C_col;	///<Column of column major
 	
 	public:
 
 		///The type of our matrix of generators
-		typedef fdiff_t_C Gen_t;
-		///The type of our generators (a column in the generator matrix)
-		typedef fdiff_t_C_col gen_t;
+		typedef fdiff_t_C Gens_t;
+		///The dense type of our generators (a column in the generator matrix, always dense for convenience)
+		typedef col_t<fdiff_t_C> gen_t;
 
 
 		rank_t Groups;///<Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3
-		Gen_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
+		Gens_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
 		bool isZero;///<1 if the homology is trivial
 		
 		///Default constructor
@@ -117,14 +116,16 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	void Homology<rank_t, diff_t>::KernelModImage(fdiff_t_C& In, fdiff_t_C& Kernel, bool getQ) {
-		In = Out_Qi * In;
 		if constexpr (SFINAE::is_Sparse<diff_t>::value)
-			In.pruned();
+			In = (Out_Qi * In).pruned();
+		else
+			In = Out_Qi * In;
 		auto L = std::min(In.rows(), In.cols());
 		auto IN=diagonalize<fdiff_t_C, fdiff_t_R, fdiff_t_C>(In, 1, getQ, 1);
-		Generators = Kernel * IN.Pi;
 		if constexpr (SFINAE::is_Sparse<diff_t>::value)
-			Generators.pruned();
+			Generators= (Kernel * IN.Pi).pruned();
+		else
+			Generators = Kernel * IN.Pi;
 		auto maxsize = Generators.cols();
 		std::vector<Scalar_t<rank_t>> groups;
 		groups.reserve(maxsize);
@@ -174,13 +175,13 @@ namespace Mackey {
 		}
 	}
 
-
 	template<typename rank_t, typename diff_t>
 	rank_t Homology<rank_t, diff_t>::basis(const gen_t& generator) const {
 		if (isZero)
 			return rank_t();
 		rank_t basisArray(Groups.size());
-		gen_t element = In_P_reduced * Out_Qi * generator;
+		gen_t element = Out_Qi * generator;
+		element = In_P_reduced * element;
 		for (int j = 0; j < Groups.size();j++) {
 			if (Groups[j] != 1)
 				basisArray[j] = static_cast<Scalar_t<rank_t>>((Groups[j] + (long)element[j] % Groups[j]) % Groups[j]);
@@ -189,8 +190,6 @@ namespace Mackey {
 		}
 		return basisArray;
 	}
-
-
 
 	template<typename rank_t, typename diff_t>
 	typename Homology<rank_t, diff_t>::gen_t Homology<rank_t, diff_t>::boundary(const gen_t& generator) const {
@@ -357,18 +356,4 @@ namespace Mackey {
 			return 0;
 		return (int)u[0];
 	}
-
-
-
-	// //temp sparse implementation
-	// template<typename rank_t, typename diff_t>
-	// Homology<rank_t, diff_t>::Homology(const Junction<rank_t, diff_t>& J){
-		// Junction<rank_t, spm_t<diff_t>> Jnew(J.rank, J.rankOut, J.rankIn, J.diffOut.sparseView(), J.diffIn.sparseView());
-		// Homology<rank_t, spm_t<diff_t>> H(Jnew,0);
-		// Groups = H.Groups;
-		// isZero = H.isZero;
-		// Generators = H.Generators;
-		// Out_Qi = H.Out_Qi;
-		// In_P_reduced = H.In_P_reduced;
-	// };
 }

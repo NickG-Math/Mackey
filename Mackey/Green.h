@@ -10,7 +10,7 @@
 namespace Mackey {
 	//forward declaration for Clang
 	namespace internal{
-		template<typename rank_t, typename diff_t>
+		template<typename, typename>
 		class GreenCompute;
 	}
 
@@ -68,7 +68,7 @@ namespace Mackey {
 		///Selects the corrent basis and normalBasis index given selections.
 		int select(int, int) const;
 
-		template<typename s_rank_t, typename s_diff_t>
+		template<typename, typename>
 		friend class internal::GreenCompute;
 
 #ifdef CEREALIZE
@@ -112,7 +112,7 @@ namespace Mackey {
 		///Computes the homology at given level, the generators and their restrictions
 		template<typename rank_t, typename diff_t>
 		class ChainsLevelGen {
-			Gen_t<rank_t,diff_t> Gens;
+			Gens_t<rank_t,diff_t> Gens;
 			gen_t<rank_t, diff_t> gen, res_gen;
 			rank_t rank_level;
 			bool isZero;
@@ -172,9 +172,8 @@ namespace Mackey {
 
 			void multiply(gen_t<rank_t,diff_t> gen1, gen_t<rank_t, diff_t> gen2) {
 				gen_t<rank_t, diff_t> leftConvProduct(gen1.size() * gen2.size());
-				for (int i = 0; i < gen2.size(); i++) {
+				for (int i = 0; i < gen2.size(); i++)
 					leftConvProduct.segment(i * gen1.size(), gen1.size()) = gen1 * gen2(i);
-				}
 				ChangeBasis<int> permute(C.rank[degreeC], D.rank[degreeD]);
 				gen_t<rank_t, diff_t> canonProduct = permute.LefttoCanon.inverse() * leftConvProduct;
 				product.resize(padleft + canonProduct.size() + padright);
@@ -183,11 +182,11 @@ namespace Mackey {
 			}
 
 			///Computes products
-			template<typename s_rank_t, typename s_diff_t>
+			template<typename, typename>
 			friend class GreenCompute;
 
 			///Computes Massey products
-			template<typename s_rank_t, typename s_diff_t>
+			template<typename, typename>
 			friend class MasseyCompute;
 
 		};
@@ -199,7 +198,7 @@ namespace Mackey {
 			Green<rank_t, diff_t> G; ///<The answer of the computation
 			gen_t<rank_t, diff_t> product;
 			const Chains<rank_t, diff_t>& C, D;
-			Gen_t<rank_t, diff_t> GenC, GenD;
+			Gens_t<rank_t, diff_t> GenC, GenD;
 			rank_t rank_bottom, rank_level;
 			const int level, degreeC, degreeD;
 			Homology<rank_t, diff_t> H_Level;
@@ -218,7 +217,7 @@ namespace Mackey {
 			void compute();
 
 			/// The result of multiplying generators in a Green functor
-			template<typename s_rank, typename s_diff>
+			template<typename, typename>
 			friend class Mackey::Green;
 		};
 

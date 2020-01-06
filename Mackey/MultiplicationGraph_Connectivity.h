@@ -100,8 +100,6 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	void MultiplicationGraphConnectivity<rank_t, diff_t>::force_connection(const Green<rank_t, diff_t>& G_ij, int i, int j, int deg_ij) {
-		if (i == 438)
-			std::cout << "Here";
 		rank_t basis = G_ij.getNormalBasis(0, this->element[i]);
 		std::vector<rank_t> candidates = id_candidates(basis, G_ij.boxID, this->NonZeroHomology[deg_ij]);
 		std::vector<rank_t> notconnected;

@@ -38,6 +38,9 @@ namespace Mackey {
 		int current;								 
 		Eigen::SparseMatrix<Scalar_t<S_t>, 1> S_row; 
 
+		std::vector<std::pair<Scalar_t<S_t>, std::array<int, 2>>> Pops, Qops;
+
+
 		int metric(int, int);
 		void SmithIt();
 		void workRow(int);
@@ -51,6 +54,8 @@ namespace Mackey {
 		void find_pivotCol(int, int&);
 		void update(int a);
 		void update();
+		void renderP();
+		void renderQ();
 	};
 
 	///The Markowitz metric
@@ -75,12 +80,17 @@ namespace Mackey {
 	void SmithSparse<S_t, R_t, C_t>::SmithIt() {
 		S_row = S;
 		initialize_norms();
+		if (wantP)
+			Pops.reserve(2 * M);
+		if (wantQ)
+			Qops.reserve(2 * N);
+
 		current = 0;
 		for (int start = 0; start < std::min(M, N); start++) {
 			if (S.nonZeros() == start) {
 				for (int i = start; i < std::min(M, N); i++)
 					diagonal[i] = 0;
-				return;
+				break;
 			}
 			pivoting(start);
 			bool flagR, flagC;
@@ -106,6 +116,10 @@ namespace Mackey {
 			update();
 			this->diagonal[start] = pivot;
 		}
+		if (wantP)
+			renderP();
+		if (wantQ)
+			renderQ();
 	}
 
 	template <typename S_t, typename R_t, typename C_t>
@@ -124,8 +138,8 @@ namespace Mackey {
 				for (typename S_t::InnerIterator it2(S, j); it2; ++it2) 
 					Rnorm[it2.row()] += 1;
 				if (wantQ) {
-					Q.col(j) = (Q.col(j) - static_cast<Scalar_t<C_t>>(thequotient)* Q.col(start)).pruned();
-					Qi.row(start) = (Qi.row(start) + static_cast<Scalar_t<R_t>>(thequotient)* Qi.row(j)).pruned();
+					std::array<int, 2> u = { start,j };
+					Qops.push_back(std::make_pair(thequotient, u));
 				}
 			}
 		}
@@ -148,8 +162,8 @@ namespace Mackey {
 				for (typename S_t_r::InnerIterator it2(S_row, i); it2; ++it2)
 					Cnorm[it2.col()] += 1;
 				if (wantP) {
-					P.row(i) = (P.row(i) - static_cast<Scalar_t<R_t>>(thequotient) * P.row(start)).pruned();
-					Pi.col(start) = (Pi.col(start) + static_cast<Scalar_t<C_t>>(thequotient)* Pi.col(i)).pruned();
+					std::array<int, 2> u = { start,i };
+					Pops.push_back(std::make_pair(thequotient, u));
 				}
 			}
 		}
@@ -165,10 +179,8 @@ namespace Mackey {
 		if (t != start) {
 			update(-1);
 			swapCol(S, start, t);
-			if (wantQ) {
-				swapCol(Q, start, t);
-				swapRow(Qi, start, t);
-			}
+			if (wantQ) 
+				Qops.push_back(std::make_pair<Scalar_t<S_t>, std::array<int, 2>>(0, { start, t }));
 			current = -1;
 			swap(Cnorm[start], Cnorm[t]);
 		}
@@ -177,10 +189,8 @@ namespace Mackey {
 			swapRow(S_row, start, s);
 			current = 1;
 			swap(Rnorm[start], Rnorm[s]);
-			if (wantP) {
-				swapRow(P, start, s);
-				swapCol(Pi, start, s);
-			}
+			if (wantP)
+				Pops.push_back(std::make_pair<Scalar_t<S_t>, std::array<int, 2>>(0, { start, s }));
 		}
 	}
 
@@ -195,10 +205,8 @@ namespace Mackey {
 			swapCol(S, start, t);
 			current = -1;
 			swap(Cnorm[start], Cnorm[t]);
-			if (wantQ) {
-				swapCol(Q, start, t);
-				swapRow(Qi, start, t);
-			}
+			if (wantQ)
+				Qops.push_back(std::make_pair<Scalar_t<S_t>, std::array<int, 2>>(0, { start, t }));
 		}
 	}
 
@@ -212,10 +220,8 @@ namespace Mackey {
 			swapRow(S_row, start, s);
 			current = 1;
 			swap(Rnorm[start], Rnorm[s]);
-			if (wantP) {
-				swapRow(P, start, s);
-				swapCol(Pi, start, s);
-			}
+			if (wantP)
+				Pops.push_back(std::make_pair<Scalar_t<S_t>, std::array<int, 2>>(0, { start, s }));
 		}
 	}
 
@@ -299,5 +305,61 @@ namespace Mackey {
 	void SmithSparse<S_t, R_t, C_t>::update() {
 		update(1);
 		update(-1);
+	}
+
+
+	template <typename S_t, typename R_t, typename C_t>
+	void SmithSparse<S_t, R_t, C_t>::renderQ() {
+
+		std::vector<int> counterQ(N, 1);
+		for (const auto& op : Qops) {
+			if (op.first == 0)
+				swap(counterQ[op.second[0]], counterQ[op.second[1]]);
+			else
+				counterQ[op.second[1]] += counterQ[op.second[0]];
+		}
+		Q.resize(N, N);
+		Qi.resize(N, N);
+		Q.reserve(counterQ);
+		Qi.reserve(counterQ);
+		Q.setIdentity();
+		Qi.setIdentity();
+		for (const auto& op : Qops) {
+			if (op.first == 0) {
+				swapCol(Q, op.second[0], op.second[1]);
+				swapRow(Qi, op.second[0], op.second[1]);
+			}
+			else {
+				Q.col(op.second[1]) = (Q.col(op.second[1]) - op.first * Q.col(op.second[0])).pruned();
+				Qi.row(op.second[0]) = (Qi.row(op.second[0]) + op.first * Qi.row(op.second[1])).pruned();
+			}
+		}
+	}
+
+	template <typename S_t, typename R_t, typename C_t>
+	void SmithSparse<S_t, R_t, C_t>::renderP() {
+		std::vector<int> counterP(M, 1);
+		for (const auto& op : Pops) {
+			if (op.first == 0)
+				swap(counterP[op.second[0]], counterP[op.second[1]]);
+			else
+				counterP[op.second[1]] += counterP[op.second[0]];
+		}
+		P.resize(M, M);
+		Pi.resize(M, M);
+		P.reserve(counterP);
+		Pi.reserve(counterP);
+		P.setIdentity();
+		Pi.setIdentity();
+		for (const auto& op : Pops) {
+			if (op.first == 0) {
+				swapRow(P, op.second[0], op.second[1]);
+				swapCol(Pi, op.second[0], op.second[1]);
+			}
+			else {
+				P.row(op.second[1]) = (P.row(op.second[1]) - op.first * P.row(op.second[0])).pruned();
+				Pi.col(op.second[0]) = (Pi.col(op.second[0]) + op.first * Pi.col(op.second[1])).pruned();
+			}
+		}
 	}
 }

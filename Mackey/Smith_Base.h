@@ -122,17 +122,19 @@ namespace Mackey {
 	template<typename S_t, typename R_t, typename C_t>
 	Smith<S_t, R_t, C_t> ::Smith(const S_t& A, bool wantP, bool wantQ, bool sort)
 		: S(A), M(S.rows()), N(S.cols()), wantP(wantP), wantQ(wantQ) {
-		if (wantP) {
-			P.resize(M, M);
-			Pi.resize(M, M);
-			P.setIdentity();
-			Pi.setIdentity();
-		}
-		if (wantQ) {
-			Q.resize(N, N);
-			Qi.resize(N, N);
-			Q.setIdentity();
-			Qi.setIdentity();
+		if constexpr (SFINAE::is_Dense<S_t>::value) { //for sparse initialization is handled directly in the inherited class, so as to reserve space for the columns
+			if (wantP) {
+				P.resize(M, M);
+				Pi.resize(M, M);
+				P.setIdentity();
+				Pi.setIdentity();
+			}
+			if (wantQ) {
+				Q.resize(N, N);
+				Qi.resize(N, N);
+				Q.setIdentity();
+				Qi.setIdentity();
+			}
 		}
 		diagonal.resize(std::min(M, N));
 	}

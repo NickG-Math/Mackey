@@ -125,7 +125,7 @@ namespace Mackey {
 					Rnorm[it2.row()] += 1;
 				if (wantQ) {
 					Q.col(j) = (Q.col(j) - static_cast<Scalar_t<C_t>>(thequotient)* Q.col(start)).pruned();
-					Qi.row(start) = (Qi.row(start) + static_cast<Scalar_t<R_t>>(thequotient)* Q.row(j)).pruned();
+					Qi.row(start) = (Qi.row(start) + static_cast<Scalar_t<R_t>>(thequotient)* Qi.row(j)).pruned();
 				}
 			}
 		}

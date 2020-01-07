@@ -118,7 +118,6 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	void MultiplicationGraphIdentify<rank_t, diff_t>::do_triples(bool serialize) {
 
-		std::cout << "Using " << omp_get_max_threads() << " threads for triple products \n";
 #pragma omp parallel for num_threads(omp_get_max_threads()) schedule(runtime)
 		for (int i = 0; i < triples_to_be_done.size(); i++)
 			this->triple_product(triples_to_be_done[i][0], triples_to_be_done[i][1], triples_to_be_done[i][2]);

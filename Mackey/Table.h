@@ -138,7 +138,6 @@ namespace Mackey
 		generators();
 		multiply_all_indices();
 
-		std::cout << "Using " << omp_get_max_threads() << " threads for box products \n";
 #pragma omp parallel for num_threads(omp_get_max_threads()) schedule(dynamic)
 		for (int i = 0; i < within_range.size(); i++) {
 			multiply(within_range[i].first, within_range[i].second);

@@ -42,13 +42,18 @@ namespace cereal
 		A = Eigen::Map<Eigen::Matrix<T, RowsAtCompileTime, ColsAtCompileTime, Options, MaxRowsAtCompileTime, MaxColsAtCompileTime>>(vec.data(), rows, cols);
 	}
 
-
+	///Load Eigen dense matrix
+	template<typename Archive, typename T>
+	void serialize(Archive& archive, Eigen::Triplet<T>& A)
+	{
+		archive(CEREAL_NVP(A.row()), CEREAL_NVP(A.col()), CEREAL_NVP(A.value()));
+	}
 
 	///Save Eigen sparse matrix
 	template<typename Archive, typename T, int StorageOrder>
 	void save(Archive& archive, const Eigen::SparseMatrix<T, StorageOrder>& A)
 	{
-		Eigen::Matrix<T, -1, -1, StorageOrder> B = A;
+		triplets<T> B = make_triplets(A);
 		archive(CEREAL_NVP(B));
 	}
 
@@ -57,9 +62,9 @@ namespace cereal
 	template<typename Archive, typename T, int StorageOrder>
 	void load(Archive& archive, Eigen::SparseMatrix<T, StorageOrder>& A)
 	{
-		Eigen::Matrix<T, -1, -1, StorageOrder> B;
+		triplets<T> B;
 		archive(CEREAL_NVP(B));
-		A = B.sparseView();
+		A.setFromTriplets(B);
 	}
 
 }

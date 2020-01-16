@@ -42,30 +42,47 @@ namespace cereal
 		A = Eigen::Map<Eigen::Matrix<T, RowsAtCompileTime, ColsAtCompileTime, Options, MaxRowsAtCompileTime, MaxColsAtCompileTime>>(vec.data(), rows, cols);
 	}
 
-	///Load Eigen dense matrix
-	template<typename Archive, typename T>
-	void serialize(Archive& archive, Eigen::Triplet<T>& A)
-	{
-		archive(CEREAL_NVP(A.row()), CEREAL_NVP(A.col()), CEREAL_NVP(A.value()));
-	}
 
-	///Save Eigen sparse matrix
-	template<typename Archive, typename T, int StorageOrder>
-	void save(Archive& archive, const Eigen::SparseMatrix<T, StorageOrder>& A)
-	{
-		triplets<T> B = make_triplets(A);
-		archive(CEREAL_NVP(B));
-	}
+	/////Serialize triplets
+	//template<typename Archive, typename T>
+	//void save(Archive& archive, const Eigen::Triplet<T>& A)
+	//{
+	//	int row = A.row();
+	//	int col = A.col();
+	//	T value = A.value();
+	//	archive(CEREAL_NVP(row), CEREAL_NVP(col), CEREAL_NVP(value));
+	//}
 
 
-	///Load Eigen sparse matrix
-	template<typename Archive, typename T, int StorageOrder>
-	void load(Archive& archive, Eigen::SparseMatrix<T, StorageOrder>& A)
-	{
-		triplets<T> B;
-		archive(CEREAL_NVP(B));
-		A.setFromTriplets(B);
-	}
+	/////Serialize triplets
+	//template<typename Archive, typename T>
+	//void load(Archive& archive, Eigen::Triplet<T>& A)
+	//{
+	//	int row, col;
+	//	T value;
+	//	archive(CEREAL_NVP(row), CEREAL_NVP(col), CEREAL_NVP(value));
+	//	A = Eigen::Triplet<T>(row, col, value);
+	//}
+
+
+
+	/////Save Eigen sparse matrix
+	//template<typename Archive, typename T, int StorageOrder>
+	//void save(Archive& archive, const Eigen::SparseMatrix<T, StorageOrder>& A)
+	//{
+	//	triplets<T> B = make_triplets(A);
+	//	archive(CEREAL_NVP(B));
+	//}
+
+
+	/////Load Eigen sparse matrix
+	//template<typename Archive, typename T, int StorageOrder>
+	//void load(Archive& archive, Eigen::SparseMatrix<T, StorageOrder>& A)
+	//{
+	//	triplets<T> B;
+	//	archive(CEREAL_NVP(B));
+	//	A.setFromTriplets(B.begin(), B.end());
+	//}
 
 }
 namespace Mackey {
@@ -110,10 +127,17 @@ namespace Mackey {
 
 	///MultiplicationTable cerealize
 	template<typename Archive, typename rank_t, typename diff_t>
-	void serialize(Archive& archive, MultiplicationTable<rank_t, diff_t>& M) {
+	void save(Archive& archive, const MultiplicationTable<rank_t, diff_t>& M) {
 		archive(CEREAL_NVP(M.level), CEREAL_NVP(M.NonZeroHomology), CEREAL_NVP(M.degree), CEREAL_NVP(M.antidegree), CEREAL_NVP(M.index_product), \
-			CEREAL_NVP(M.minsphere), CEREAL_NVP(M.maxsphere), CEREAL_NVP(M.Greens), CEREAL_NVP(M.basicIrreducibles), CEREAL_NVP(M.number_of_irreducibles), \
-			CEREAL_NVP(M.basicChains), CEREAL_NVP(M.IndexedChains), CEREAL_NVP(M.tripleGreens));
+			CEREAL_NVP(M.minsphere), CEREAL_NVP(M.maxsphere), CEREAL_NVP(M.Greens), CEREAL_NVP(M.basicIrreducibles), CEREAL_NVP(M.number_of_irreducibles), CEREAL_NVP(M.tripleGreens));
+	}
+
+	///MultiplicationTable cerealize
+	template<typename Archive, typename rank_t, typename diff_t>
+	void load(Archive& archive, MultiplicationTable<rank_t, diff_t>& M) {
+		archive(CEREAL_NVP(M.level), CEREAL_NVP(M.NonZeroHomology), CEREAL_NVP(M.degree), CEREAL_NVP(M.antidegree), CEREAL_NVP(M.index_product), \
+			CEREAL_NVP(M.minsphere), CEREAL_NVP(M.maxsphere), CEREAL_NVP(M.Greens), CEREAL_NVP(M.basicIrreducibles), CEREAL_NVP(M.number_of_irreducibles), CEREAL_NVP(M.tripleGreens));
+		M.getIrreducibleChains();
 	}
 
 

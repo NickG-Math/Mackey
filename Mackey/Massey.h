@@ -75,10 +75,7 @@ namespace Mackey {
 			Massey<rank_t, diff_t> Mass;
 
 			const Chains<rank_t, diff_t>& C, D, E;
-
-			typedef Eigen::Matrix<typename diff_t::Scalar, -1, 1> gen_t;
-
-			gen_t resgenC, resgenD, resgenE, boundaryCD, boundaryDE;
+			gen_t<rank_t, diff_t> resgenC, resgenD, resgenE, boundaryCD, boundaryDE;
 
 			ChainsBox<rank_t, diff_t> BoxCD, BoxDE;
 			JunctionBox<rank_t, diff_t> Box;
@@ -91,9 +88,9 @@ namespace Mackey {
 
 			Eigen::PermutationMatrix<-1, -1, int> BoxDE_to_BoxCD;
 
-			gen_t box_boundary(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const ChainsBox<rank_t, diff_t>&, const gen_t&, const gen_t&, int, int);
-			gen_t product_bottom(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const JunctionBox<rank_t, diff_t>&, const gen_t&, const gen_t&, int, int);
-			gen_t product_bottom(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const std::vector<rank_t>&, const gen_t&, const gen_t&, int, int);
+			gen_t<rank_t, diff_t> box_boundary(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const ChainsBox<rank_t, diff_t>&, const gen_t<rank_t, diff_t>&, const gen_t<rank_t, diff_t>&, int, int);
+			gen_t<rank_t, diff_t> product_bottom(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const JunctionBox<rank_t, diff_t>&, const gen_t<rank_t, diff_t>&, const gen_t<rank_t, diff_t>&, int, int);
+			gen_t<rank_t, diff_t> product_bottom(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const std::vector<rank_t>&, const gen_t<rank_t, diff_t>&, const gen_t<rank_t, diff_t>&, int, int);
 
 			MasseyCompute(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int, int, int, int, int, int, int);
 
@@ -123,13 +120,13 @@ namespace Mackey {
 		}
 
 		template<typename rank_t, typename diff_t>
-		typename MasseyCompute<rank_t, diff_t>::gen_t MasseyCompute<rank_t, diff_t>::box_boundary(const Chains<rank_t, diff_t>& C1, const Chains<rank_t, diff_t>& C2, const ChainsBox<rank_t, diff_t>& Box, const gen_t& r1, const gen_t& r2, int degree1, int degree2) {
+		gen_t<rank_t, diff_t> MasseyCompute<rank_t, diff_t>::box_boundary(const Chains<rank_t, diff_t>& C1, const Chains<rank_t, diff_t>& C2, const ChainsBox<rank_t, diff_t>& Box, const gen_t<rank_t, diff_t>& r1, const gen_t<rank_t, diff_t>& r2, int degree1, int degree2) {
 			JunctionBox<rank_t, diff_t> J_prod(Box, degree1 + degree2);
-			gen_t prod_bottom = product_bottom(C1, C2, J_prod, r1, r2, degree1, degree2);
+			auto prod_bottom = product_bottom(C1, C2, J_prod, r1, r2, degree1, degree2);
 			IDGeneratorCompute<rank_t, diff_t> ID(level, J_prod, 1);
-			gen_t prod_level = invRes(prod_bottom, J_prod.rank, ID.rank_level);
-			gen_t var = ID.H_level.boundary(prod_level);
-			gen_t var_bottom;
+			auto prod_level = invRes(prod_bottom, J_prod.rank, ID.rank_level);
+			auto var = ID.H_level.boundary(prod_level);
+			gen_t<rank_t,diff_t> var_bottom;
 			if (var.size() != 0)
 				var_bottom = restriction(var, transfer(Box.rank[degree1 + degree2 + 1], level), Box.rank[degree1 + degree2 + 1]);
 			return var_bottom;
@@ -137,12 +134,12 @@ namespace Mackey {
 
 
 		template<typename rank_t, typename diff_t>
-		typename MasseyCompute<rank_t, diff_t>::gen_t  MasseyCompute<rank_t, diff_t>::product_bottom(const Chains<rank_t, diff_t>& C1, const Chains<rank_t, diff_t>& C2, const JunctionBox<rank_t, diff_t>& Boxed, const gen_t& r1, const gen_t& r2, int degree1, int degree2) {
+		gen_t<rank_t, diff_t>  MasseyCompute<rank_t, diff_t>::product_bottom(const Chains<rank_t, diff_t>& C1, const Chains<rank_t, diff_t>& C2, const JunctionBox<rank_t, diff_t>& Boxed, const gen_t<rank_t, diff_t>& r1, const gen_t<rank_t, diff_t>& r2, int degree1, int degree2) {
 			return product_bottom(C1, C2, Boxed.detailedrank, r1, r2, degree1, degree2);
 		}
 
 		template<typename rank_t, typename diff_t>
-		typename MasseyCompute<rank_t, diff_t>::gen_t  MasseyCompute<rank_t, diff_t>::product_bottom(const Chains<rank_t, diff_t>& C1, const Chains<rank_t, diff_t>& C2, const std::vector<rank_t>& detailedrank, const gen_t& r1, const gen_t& r2, int degree1, int degree2) {
+		gen_t<rank_t, diff_t>  MasseyCompute<rank_t, diff_t>::product_bottom(const Chains<rank_t, diff_t>& C1, const Chains<rank_t, diff_t>& C2, const std::vector<rank_t>& detailedrank, const gen_t<rank_t, diff_t>& r1, const gen_t<rank_t, diff_t>& r2, int degree1, int degree2) {
 			ProductGen<rank_t, diff_t> Restricted(C1, C2, degree1, degree2);
 			Restricted.pad(detailedrank);
 			Restricted.multiply(r1, r2);
@@ -186,18 +183,18 @@ namespace Mackey {
 
 		template<typename rank_t, typename diff_t>
 		void MasseyCompute<rank_t, diff_t>::compute() {
-			gen_t factor1 = product_bottom(BoxCD, E, Box, boundaryCD, resgenE, degreeC + degreeD + 1, degreeE);
+			auto factor1 = product_bottom(BoxCD, E, Box, boundaryCD, resgenE, degreeC + degreeD + 1, degreeE);
 
 			C_DE_detailedrank = rankBox(C, BoxDE, degreeC + degreeD + degreeE + 1).second;
-			gen_t factor2 = BoxDE_to_BoxCD * product_bottom(C, BoxDE, C_DE_detailedrank, resgenC, boundaryDE, degreeC, degreeD + degreeE + 1);
+			gen_t<rank_t, diff_t> factor2 = BoxDE_to_BoxCD * product_bottom(C, BoxDE, C_DE_detailedrank, resgenC, boundaryDE, degreeC, degreeD + degreeE + 1);
 
 			typename diff_t::Scalar sign = (1 - 2 * ((degreeD + degreeE) % 2));
-			gen_t Masseyproduct_bottom = factor1 + sign * factor2;
+			gen_t<rank_t, diff_t> Masseyproduct_bottom = factor1 + sign * factor2;
 
 			ID=IDGeneratorCompute<rank_t, diff_t>(level, Box);
 			Mass.boxID = std::move(ID.ID);
 			Mass.isZero = ID.H_level.isZero;
-			gen_t Masseyproduct = invRes(Masseyproduct_bottom, Box.rank, ID.rank_level);
+			auto Masseyproduct = invRes(Masseyproduct_bottom, Box.rank, ID.rank_level);
 			Mass.basis = ID.H_level.basis(Masseyproduct);
 			Mass.isZero = Mass.basis.isZero();
 			Mass.normalBasis = Mass.basis;
@@ -214,9 +211,9 @@ namespace Mackey {
 			IDGeneratorCompute<rank_t, diff_t> ID_DE(level, J_DE);
 
 			for (int i = 0; i < ID_DE.H_level.Generators.cols(); i++) {
-				gen_t gen = ID_DE.H_level.Generators.col(i);
+				gen_t<rank_t, diff_t> gen = ID_DE.H_level.Generators.col(i);
 				auto resgen = restriction(gen, ID_DE.rank_level, J_DE.rank);
-				gen_t prod_bottom = BoxDE_to_BoxCD * product_bottom(C, BoxDE, C_DE_detailedrank, resgenC, resgen, degreeC, degreeD + degreeE + 1);
+				gen_t<rank_t, diff_t> prod_bottom = BoxDE_to_BoxCD * product_bottom(C, BoxDE, C_DE_detailedrank, resgenC, resgen, degreeC, degreeD + degreeE + 1);
 				auto prod_level = invRes(prod_bottom, Box.rank, ID.rank_level);
 				auto basis=ID.H_level.basis(prod_level);
 				if (basis.size() != 0 && !basis.isZero()) {
@@ -232,9 +229,9 @@ namespace Mackey {
 			IDGeneratorCompute<rank_t, diff_t> ID_CD(level, J_CD);
 
 			for (int i = 0; i < ID_CD.H_level.Generators.cols(); i++) {
-				gen_t gen = ID_CD.H_level.Generators.col(i);
+				gen_t<rank_t, diff_t> gen = ID_CD.H_level.Generators.col(i);
 				auto resgen = restriction(gen, ID_CD.rank_level, J_CD.rank);
-				gen_t prod_bottom = product_bottom(BoxCD, E, Box, resgen, resgenE, degreeC+degreeD+1, degreeE);
+				auto prod_bottom = product_bottom(BoxCD, E, Box, resgen, resgenE, degreeC+degreeD+1, degreeE);
 				auto prod_level = invRes(prod_bottom, Box.rank, ID.rank_level);
 				auto basis = ID.H_level.basis(prod_level);
 				if (basis.size() != 0 && !basis.isZero()) {

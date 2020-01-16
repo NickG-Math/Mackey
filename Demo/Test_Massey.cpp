@@ -5,8 +5,8 @@
 #endif
 
 #include <iostream>
+#include "Mackey/Cerealizer.h"
 #include "C4_Implementation.h"
-#include "Mackey/Factorization.h"
 #include "omp.h"
 
 #include <chrono>
@@ -14,7 +14,7 @@
 using namespace Mackey;
 
 typedef Eigen::Matrix<char, 1, -1> rank_t;
-typedef Eigen::Matrix<char, -1, -1> diff_t;
+typedef Eigen::SparseMatrix<char, 0> diff_t;
 
 
 void doMackey(Factorization<rank_t, diff_t>  F) {
@@ -30,7 +30,7 @@ void doMackey(Factorization<rank_t, diff_t>  F) {
 			for (int k = 0; k < F.number_of_generators; k++) {
 				auto deg = F.getdegree(i) + F.getdegree(j) + F.getdegree(k);
 				deg[0] += 1;
-				if (deg[0] != 0 || deg[1] != 0 || deg[2] != 0)
+				if (deg[0] != -3 || deg[1] != 0 || deg[2] != -2)
 					continue;
 				tobedone.push_back({ i,j,k });
 				degrees.push_back(deg);
@@ -52,7 +52,7 @@ void doMackey(Factorization<rank_t, diff_t>  F) {
 		omp_set_lock(&lock);
 
 		if (a.exists && a.noIndeterminacy && a.basis.size() == 1 && a.basis[0] != 0) {
-			std::cout << "[" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "] = " << (int)a.normalBasis[0] << " * " << F.getelementindex(deg,one) << "\n";
+			std::cout << "[" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "] = " << (int)a.normalBasis[0] << " * " << F.getname(F.getelementindex(deg,one)) << "\n";
 		}
 		else if (a.exists && a.noIndeterminacy) {
 			std::cout << "[" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "] = " << 0 << "\n";
@@ -88,5 +88,5 @@ int main() {
 
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << "ms" << std::endl;
-	return 0;
+                                                    	return 0;
 }

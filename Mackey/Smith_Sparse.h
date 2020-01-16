@@ -316,7 +316,7 @@ namespace Mackey {
 			if (op.first == 0)
 				swap(counterQ[op.second[0]], counterQ[op.second[1]]);
 			else
-				counterQ[op.second[1]] += counterQ[op.second[0]];
+				counterQ[op.second[1]] =std::min(N, counterQ[op.second[1]]+counterQ[op.second[0]]);
 		}
 		Q.resize(N, N);
 		Qi.resize(N, N);
@@ -343,7 +343,7 @@ namespace Mackey {
 			if (op.first == 0)
 				swap(counterP[op.second[0]], counterP[op.second[1]]);
 			else
-				counterP[op.second[1]] += counterP[op.second[0]];
+				counterP[op.second[1]] =std::min(M, counterP[op.second[1]] + counterP[op.second[0]]);
 		}
 		P.resize(M, M);
 		Pi.resize(M, M);

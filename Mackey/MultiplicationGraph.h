@@ -68,12 +68,11 @@ namespace Mackey {
 		/// Retrieve the element index of the given degree and element
 		int getelementindex(const std::vector<int>& deg, const rank_t& elmnt) const {
 			auto deg_i = this->getdegreeindex(deg);
-			return this->antielement.find(std::make_pair(deg_i, elmnt));
+			auto it = antielement.find(std::make_pair(deg_i, elmnt));
+			if (it == antielement.end())
+				return -1;
+			return it->second;
 		}
-
-
-
-
 
 	protected:
 		///Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles.

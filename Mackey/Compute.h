@@ -134,9 +134,9 @@ namespace Mackey {
 		auto degreeC = refirst[0];
 		auto degreeD = resecond[0];
 		auto degreeE = rethird[0];
-		auto firstsphere = tail(refirst.data(), refirst.size());
-		auto secondsphere = tail(resecond.data(), resecond.size());
-		auto thirdsphere = tail(rethird.data(), rethird.size());
+		auto firstsphere = tail(refirst.data(), refirst.size(),1);
+		auto secondsphere = tail(resecond.data(), resecond.size(),1);
+		auto thirdsphere = tail(rethird.data(), rethird.size(),1);
 		Chains<rank_t, diff_t> C = ROChains<rank_t, diff_t>(firstsphere);
 		Chains<rank_t, diff_t> D = ROChains<rank_t, diff_t>(secondsphere);
 		Chains<rank_t, diff_t> E = ROChains<rank_t, diff_t>(thirdsphere);

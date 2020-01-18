@@ -111,4 +111,17 @@ namespace Mackey {
 			return C.dualize(i);
 		}
 	}
+
+
+	int computeweight(const std::vector<int>& deg) {
+		int boxnumber = 0;
+		for (int i = 1; i < deg.size() - 1; i++)
+			if (deg[i] * deg[i + 1] < 0)
+				boxnumber++;
+		int weight=0;
+		for (int i = 1; i < deg.size(); i++)
+			weight += std::pow(abs(deg[i]), GroupSpecific::Variables::sphere_dimensions[i - 1]);
+		weight *= (abs(deg[0]) + 1);
+		return std::pow(weight, boxnumber+1);
+	}
 }

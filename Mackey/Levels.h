@@ -24,10 +24,10 @@ namespace Mackey {
 		auto n = intexp(power - level);
 		if (diff.size() == 0)
 			return diff;
-		std::vector<int> keep;
+		std::vector<typename diff_t::StorageIndex> keep;
 		keep.reserve(range.size() * n);
-		int sum = 0;
-		int j = 0;
+		typename diff_t::StorageIndex sum = 0;
+		typename diff_t::StorageIndex j = 0;
 		for (int i = 0; i < range.size(); i++) {
 			while (j < n + sum + range(i) && j < diff.rows()) {
 				if (!(n + sum <= j && j <= range(i) + sum - 1))
@@ -42,22 +42,22 @@ namespace Mackey {
 			reduceddiff = KeepRow(static_cast<spm_t_r<diff_t>>(diff), keep);
 		else
 			reduceddiff = KeepRow(diff, keep); 
-		int track = 0;
-		int tracktransfer = 0;
+		typename diff_t::StorageIndex track = 0;
+		typename diff_t::StorageIndex tracktransfer = 0;
 		coltype transfer(summation(range_top), summation(domain_top));
 		for (int i = 0; i < domain.size(); i++)
 		{
-			auto limit = domain(i) + track;
+			typename diff_t::StorageIndex limit = domain(i) + track;
 			if (limit - n < track + 1) {
-				for (int j = track; j < limit; j++) {
+				for (typename diff_t::StorageIndex j = track; j < limit; j++) {
 					transfer.col(tracktransfer) = reduceddiff.col(j);
 					tracktransfer++;
 				}
 			}
 			else {
-				for (int j = track; j < std::min(track + n, limit - n); j++) {
+				for (typename diff_t::StorageIndex j = track; j < std::min(track + n, limit - n); j++) {
 					transfer.col(tracktransfer) = reduceddiff.col(j);
-					for (int k = j + n; k < limit; k += n) {
+					for (typename diff_t::StorageIndex k = j + n; k < limit; k += n) {
 						if constexpr (SFINAE::is_Sparse<diff_t>::value)
 							transfer.col(tracktransfer) = (transfer.col(tracktransfer) + reduceddiff.col(k)).pruned();
 						else
@@ -68,7 +68,7 @@ namespace Mackey {
 			}
 			track += domain(i);
 		}
-		return static_cast<diff_t>(transfer);
+		return transfer;
 	}
 
 	/////////////////////////////////////////////////

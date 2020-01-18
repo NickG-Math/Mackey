@@ -83,8 +83,14 @@ namespace Mackey
 		for (int i = 0; i < isos.size(); i++) {
 			if (inverse[i].size() == 0) {
 				for (int j = i; j < isos.size(); j++) {
-					mat_t<T> product = isos[i] * isos[j];
-					normalize(product, Group);
+					Eigen::Matrix<long, -1, -1> a, b, c;
+					Eigen::Matrix<long, 1, -1> d;
+					a = isos[i].template cast<long>();
+					b = isos[j].template cast<long>();
+					c = a * b;
+					d = Group.template cast<long>();
+					normalize(c, d);
+					mat_t<T> product = c.template cast<typename T::Scalar>();
 					if (product == id) {
 						inverse[i] = isos[j];
 						inverse[j] = isos[i];

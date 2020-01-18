@@ -24,10 +24,6 @@ namespace Mackey {
 
 		///Compute Massey product given level, generator degrees and selections
 		Massey(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int, int, int, int, int, int, int);
-
-		///Compute Massey product given level, generator degrees and default 0,0,0 selections
-		Massey(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, int, int, int, int);
-
 	};
 
 	namespace internal 
@@ -85,7 +81,6 @@ namespace Mackey {
 			std::vector<rank_t> C_DE_detailedrank; //we only compute the CD_E box product and the C_DE_detailedrank
 
 			const int level, degreeC, degreeD, degreeE, selectC, selectD, selectE;
-
 			Eigen::PermutationMatrix<-1, -1, int> BoxDE_to_BoxCD;
 
 			gen_t<rank_t, diff_t> box_boundary(const Chains<rank_t, diff_t>&, const Chains<rank_t, diff_t>&, const ChainsBox<rank_t, diff_t>&, const gen_t<rank_t, diff_t>&, const gen_t<rank_t, diff_t>&, int, int);
@@ -115,7 +110,7 @@ namespace Mackey {
 			box();
 			if (!Mass.exists)
 				return;
-			compute();
+			compute(); //needs to happen before indeterminacy as it computes the homology in the triple box
 			indeterminacy();
 		}
 
@@ -178,19 +173,24 @@ namespace Mackey {
 			if (boundaryDE.size() == 0)
 				return;
 			Mass.exists = 1;
+			C_DE_detailedrank = rankBox(C, BoxDE, degreeC + degreeD + degreeE + 1).second;
 			Box = JunctionBox<rank_t, diff_t>(BoxCD, E, degreeC + degreeD + degreeE + 1);
 		}
 
 		template<typename rank_t, typename diff_t>
 		void MasseyCompute<rank_t, diff_t>::compute() {
 			auto factor1 = product_bottom(BoxCD, E, Box, boundaryCD, resgenE, degreeC + degreeD + 1, degreeE);
-
-			C_DE_detailedrank = rankBox(C, BoxDE, degreeC + degreeD + degreeE + 1).second;
 			gen_t<rank_t, diff_t> factor2 = BoxDE_to_BoxCD * product_bottom(C, BoxDE, C_DE_detailedrank, resgenC, boundaryDE, degreeC, degreeD + degreeE + 1);
-
-			typename diff_t::Scalar sign = (1 - 2 * ((degreeD + degreeE) % 2));
-			gen_t<rank_t, diff_t> Masseyproduct_bottom = factor1 + sign * factor2;
-
+			typename diff_t::Scalar sign1, sign2;
+			if (degreeC % 2)
+				sign1 = 1;
+			else
+				sign1 = -1;
+			if (degreeD % 2)
+				sign2 = 1;
+			else
+				sign2 = -1;
+			gen_t<rank_t, diff_t> Masseyproduct_bottom = sign1* factor1 + sign2 * factor2;
 			ID=IDGeneratorCompute<rank_t, diff_t>(level, Box);
 			Mass.boxID = std::move(ID.ID);
 			Mass.isZero = ID.H_level.isZero;
@@ -224,7 +224,7 @@ namespace Mackey {
 						indeterminacy_left.push_back(o);
 				}
 			}
-
+			Mass.noIndeterminacy = indeterminacy_left.empty();
 			Junction<rank_t, diff_t> J_CD(BoxCD, degreeC + degreeD + 1);
 			IDGeneratorCompute<rank_t, diff_t> ID_CD(level, J_CD);
 
@@ -242,9 +242,10 @@ namespace Mackey {
 						indeterminacy_right.push_back(o);
 				}
 			}
+
+			Mass.noIndeterminacy= Mass.noIndeterminacy && indeterminacy_right.empty();
 			Mass.indeterminacy[0] = Eigen::Map<rank_t>(indeterminacy_left.data(), indeterminacy_left.size());
 			Mass.indeterminacy[1] = Eigen::Map<rank_t>(indeterminacy_right.data(), indeterminacy_right.size());
-
 		}
 	}
 
@@ -252,11 +253,5 @@ namespace Mackey {
 	Massey<rank_t, diff_t>::Massey(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, const Chains<rank_t, diff_t>& E, int level, int degreeC, int degreeD, int degreeE, int selectC, int selectD, int selectE) {
 		internal::MasseyCompute Comp(C, D, E, level, degreeC, degreeD, degreeE, selectC, selectD, selectE);
 		*this = std::move(Comp.Mass); 
-		noIndeterminacy= (indeterminacy[0].size()==0 && indeterminacy[1].size() == 0);
 	}
-
-	template<typename rank_t, typename diff_t>
-	Massey<rank_t, diff_t>::Massey(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, const Chains<rank_t, diff_t>& E, int level, int degreeC, int degreeD, int degreeE)
-		: Massey(C, D, E, level, degreeC, degreeD, degreeE, 0, 0, 0) {}
-
 }

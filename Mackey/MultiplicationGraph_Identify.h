@@ -11,16 +11,15 @@ namespace Mackey {
 	class MultiplicationGraphIdentify : public MultiplicationGraph<rank_t, diff_t> {
 	protected:
 
+		/// Uses triple box products to possibly identify the products of disconnected generators if identification failed before on them
+		void pass_disconnected_product(bool serialize_each_step);
 
-		/// Uses triple box products to possibly identify the products of given generators if identification failed before on them
-		void pass_product(const std::vector<int>&, bool);
-
-		/// Uses triple box products to possibly identify the products landing in degrees of given generators if identification failed before on them
-		void pass_division(const std::vector<int>&,  bool);
+		/// Uses triple box products to possibly identify the products landing in degrees of disconnected generators if identification failed before on them
+		void pass_disconnected_division(bool serialize_each_step);
 
 
 		/// Uses triple box products to possibly identify ALL instances where identification failed before. Use with care
-		void pass_all_unidentified(bool);
+		void pass_all_unidentified(bool serialize_each_step);
 
 		bool can_do_more; ///<1 if there are more triple products that can be computed for the disconnected generators
 #ifdef CEREALIZE
@@ -64,11 +63,10 @@ namespace Mackey {
 		}
 	}
 
-
 	template<typename rank_t, typename diff_t>
-	void MultiplicationGraphIdentify<rank_t, diff_t>::pass_product(const std::vector<int>& desired_generators, bool serialize) {
+	void MultiplicationGraphIdentify<rank_t, diff_t>::pass_disconnected_product(bool serialize) {
 		can_do_more = 0;
-		for (const auto& i : desired_generators) {
+		for (const auto& i : this->disconnected) {
 			for (int j = 0; j < this->number_of_irreducibles; j++) {
 				auto ij = std::make_pair(i, j);
 				if (find(this->unidentified, ij) != -1 && pass_triple(ij, 1)) { //we may be able to identify using one j so break
@@ -83,11 +81,11 @@ namespace Mackey {
 
 
 	template<typename rank_t, typename diff_t>
-	void MultiplicationGraphIdentify<rank_t, diff_t>::pass_division(const std::vector<int>& desired_generators, bool serialize) {
+	void MultiplicationGraphIdentify<rank_t, diff_t>::pass_disconnected_division(bool serialize) {
 		can_do_more = 1;
 		for (const auto& pair : this->unidentified) {
 			auto deg = this->index_product(this->tracker[pair.first], pair.second);
-			for (const auto& i : desired_generators) {
+			for (const auto& i : this->disconnected) {
 				if (this->tracker[i] == deg && pass_triple(pair, 1))
 					break;
 			}

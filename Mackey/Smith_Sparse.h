@@ -7,7 +7,7 @@
 namespace Mackey {
 	///The sparse Smith Normal Form, choosing the pivot via a Markowitz metric 
 	template <typename S_t, typename R_t, typename C_t>
-	class SmithSparse : Smith<S_t, R_t, C_t> {
+	class SmithSparse : Smith<S_t,R_t,C_t> {
 
 		template<typename sS_t, typename sR_t, typename sC_t>
 		friend Smith<sS_t, sR_t, sC_t> diagonalize(const sS_t&, bool, bool, bool);
@@ -30,29 +30,28 @@ namespace Mackey {
 		using Smith<S_t, R_t, C_t>::wantP;
 		using Smith<S_t, R_t, C_t>::wantQ;
 
-		using typename Smith<S_t, R_t, C_t>::ind;
-
-
 		///same as S_t but row major
-		typedef spm_t_r<S_t> S_t_r;
+		typedef Eigen::SparseMatrix<Scalar_t<S_t>, 1> S_t_r;
 
 		Scalar_t<S_t> pivot;						///< The pivot used each turn
-		std::vector<int> Rnorm, Cnorm;
-		int current;
-		S_t_r S_row;
+		std::vector<int> Rnorm, Cnorm;				
+		int current;								 
+		Eigen::SparseMatrix<Scalar_t<S_t>, 1> S_row; 
 
-		std::vector<std::pair<Scalar_t<S_t>, std::array<ind, 2>>> Pops, Qops;
-		long metric(ind, ind);
+		std::vector<std::pair<Scalar_t<S_t>, std::array<int, 2>>> Pops, Qops;
+
+
+		int metric(int, int);
 		void SmithIt();
-		void workRow(ind);
-		void workCol(ind);
-		void pivoting(ind);
-		void pivotingRow(ind);
-		void pivotingCol(ind);
+		void workRow(int);
+		void workCol(int);
+		void pivoting(int);
+		void pivotingRow(int);
+		void pivotingCol(int);
 		void initialize_norms();
-		void find_pivot(ind, ind&, ind&);
-		void find_pivotRow(ind, ind&);
-		void find_pivotCol(ind, ind&);
+		void find_pivot(int, int&, int&);
+		void find_pivotRow(int, int&);
+		void find_pivotCol(int, int&);
 		void update(int a);
 		void update();
 		void renderP();
@@ -61,8 +60,8 @@ namespace Mackey {
 
 	///The Markowitz metric
 	template <typename S_t, typename R_t, typename C_t>
-	long SmithSparse<S_t, R_t, C_t>::metric(ind i, ind j) {
-		return Rnorm[i] * Cnorm[j]; //Can be changed
+	int SmithSparse<S_t, R_t, C_t>::metric(int i, int j) {
+		return Rnorm[i]*Cnorm[j]; //Can be changed
 	}
 
 
@@ -70,9 +69,9 @@ namespace Mackey {
 	void SmithSparse<S_t, R_t, C_t>::initialize_norms() {
 		Rnorm.resize(M);
 		Cnorm.resize(N);
-		for (ind i = 0; i < S_row.outerSize(); i++)
+		for (int i = 0; i < S_row.outerSize(); i++)
 			Rnorm[i] = S_row.innerVector(i).nonZeros();
-		for (ind j = 0; j < S.outerSize(); j++)
+		for (int j = 0; j < S.outerSize(); j++)
 			Cnorm[j] = S.innerVector(j).nonZeros();
 	}
 
@@ -87,17 +86,17 @@ namespace Mackey {
 			Qops.reserve(2 * N);
 
 		current = 0;
-		for (ind start = 0; start < std::min(M, N); start++) {
+		for (int start = 0; start < std::min(M, N); start++) {
 			if (S.nonZeros() == start) {
-				for (ind i = start; i < std::min(M, N); i++)
+				for (int i = start; i < std::min(M, N); i++)
 					diagonal[i] = 0;
 				break;
 			}
 			pivoting(start);
 			bool flagR, flagC;
 			flagR = flagC = 0;
-			while (Rnorm[start] > 1 || Cnorm[start] > 1) {
-				while (Rnorm[start] > 1) {
+			while (Rnorm[start] != 1 || Cnorm[start] != 1) {
+				while (Rnorm[start] != 1) {
 					if (flagR) {
 						flagC = 1;
 						pivotingRow(start);
@@ -105,7 +104,7 @@ namespace Mackey {
 					workRow(start);
 					flagR = 1;
 				}
-				while (Cnorm[start] > 1) {
+				while (Cnorm[start] != 1) {
 					if (flagC) {
 						flagR = 1;
 						pivotingCol(start);
@@ -124,7 +123,7 @@ namespace Mackey {
 	}
 
 	template <typename S_t, typename R_t, typename C_t>
-	void SmithSparse<S_t, R_t, C_t>::workRow(ind start) {
+	void SmithSparse<S_t, R_t, C_t>::workRow(int start) {
 		update();
 		for (typename S_t_r::InnerIterator it(S_row, start); it; ++it) {
 			if (it.col() != start) {
@@ -139,7 +138,7 @@ namespace Mackey {
 				for (typename S_t::InnerIterator it2(S, j); it2; ++it2) 
 					Rnorm[it2.row()] += 1;
 				if (wantQ) {
-					std::array<ind, 2> u = { start,j };
+					std::array<int, 2> u = { start,j };
 					Qops.push_back(std::make_pair(thequotient, u));
 				}
 			}
@@ -148,7 +147,7 @@ namespace Mackey {
 	}
 
 	template <typename S_t, typename R_t, typename C_t>
-	void SmithSparse<S_t, R_t, C_t>::workCol(ind start) {
+	void SmithSparse<S_t, R_t, C_t>::workCol(int start) {
 		update();
 		for (typename S_t::InnerIterator it(S, start); it; ++it) {
 			if (it.row() != start) {
@@ -159,11 +158,11 @@ namespace Mackey {
 					Cnorm[it2.col()] -= 1;
 
 				S_row.row(i) = (S_row.row(i) - thequotient * S_row.row(start)).pruned();
-				Rnorm[i] = S_row.innerVector(i).nonZeros();
+				Rnorm[i] = S_row.innerVector(i).nonZeros();				
 				for (typename S_t_r::InnerIterator it2(S_row, i); it2; ++it2)
 					Cnorm[it2.col()] += 1;
 				if (wantP) {
-					std::array<ind, 2> u = { start,i };
+					std::array<int, 2> u = { start,i };
 					Pops.push_back(std::make_pair(thequotient, u));
 				}
 			}
@@ -172,16 +171,16 @@ namespace Mackey {
 	}
 
 	template <typename S_t, typename R_t, typename C_t>
-	void SmithSparse<S_t, R_t, C_t>::pivoting(ind start)
+	void SmithSparse<S_t, R_t, C_t>::pivoting(int start)
 	{
-		ind s, t;
+		int s, t;
 		s = t = start;
 		find_pivot(start, s, t);
 		if (t != start) {
 			update(-1);
 			swapCol(S, start, t);
-			if (wantQ)
-				Qops.push_back(std::make_pair<Scalar_t<S_t>, std::array<ind, 2>>(0, { start, t }));
+			if (wantQ) 
+				Qops.push_back(std::make_pair<Scalar_t<S_t>, std::array<int, 2>>(0, { start, t }));
 			current = -1;
 			swap(Cnorm[start], Cnorm[t]);
 		}
@@ -191,15 +190,15 @@ namespace Mackey {
 			current = 1;
 			swap(Rnorm[start], Rnorm[s]);
 			if (wantP)
-				Pops.push_back(std::make_pair<Scalar_t<S_t>, std::array<ind, 2>>(0, { start, s }));
+				Pops.push_back(std::make_pair<Scalar_t<S_t>, std::array<int, 2>>(0, { start, s }));
 		}
 	}
 
 
 	template <typename S_t, typename R_t, typename C_t>
-	void SmithSparse<S_t, R_t, C_t>::pivotingRow(ind start)
+	void SmithSparse<S_t, R_t, C_t>::pivotingRow(int start)
 	{
-		ind t = start;
+		int t = start;
 		find_pivotRow(start, t);
 		if (t != start) {
 			update(-1);
@@ -207,14 +206,14 @@ namespace Mackey {
 			current = -1;
 			swap(Cnorm[start], Cnorm[t]);
 			if (wantQ)
-				Qops.push_back(std::make_pair<Scalar_t<S_t>, std::array<ind, 2>>(0, { start, t }));
+				Qops.push_back(std::make_pair<Scalar_t<S_t>, std::array<int, 2>>(0, { start, t }));
 		}
 	}
 
 	template <typename S_t, typename R_t, typename C_t>
-	void SmithSparse<S_t, R_t, C_t>::pivotingCol(ind start)
+	void SmithSparse<S_t, R_t, C_t>::pivotingCol(int start)
 	{
-		ind s = start;
+		int s = start;
 		find_pivotCol(start, s);
 		if (s != start) {
 			update(1);
@@ -222,35 +221,37 @@ namespace Mackey {
 			current = 1;
 			swap(Rnorm[start], Rnorm[s]);
 			if (wantP)
-				Pops.push_back(std::make_pair<Scalar_t<S_t>, std::array<ind, 2>>(0, { start, s }));
+				Pops.push_back(std::make_pair<Scalar_t<S_t>, std::array<int, 2>>(0, { start, s }));
 		}
 	}
 
 
 	template <typename S_t, typename R_t, typename C_t>
-	void SmithSparse<S_t, R_t, C_t>::find_pivot(ind start, ind& s, ind& t)
+	void SmithSparse<S_t, R_t, C_t>::find_pivot(int start, int& s, int& t)
 	{
 		update(-1);
 		Scalar_t<S_t> min;
 		long minNorm;
 		min = minNorm = 0;
-		for (ind k = start; k < S.outerSize(); k++) {
+		for (int k = start; k < S.outerSize(); k++) {
 			for (typename S_t::InnerIterator it(S, k); it; ++it) {
-				if (it.row() >= start && (((min == 0 || min > abs(it.value())) || (min == abs(it.value()) && minNorm > metric(it.row(), it.col()))))) {
+				if (it.row() >= start && (((min == 0 || min > abs(it.value())) || (min == abs(it.value()) && minNorm > metric(it.row(),it.col()) )))) {
 					min = abs(it.value());
 					pivot = it.value();
 					s = it.row();
 					t = it.col();
-					minNorm = metric(s, t);
+					minNorm = metric(s,t);
 					if (min == 1 && minNorm == 1)
 						return;
 				}
 			}
 		}
 	}
-	   
+
+
+
 	template <typename S_t, typename R_t, typename C_t>
-	void SmithSparse<S_t, R_t, C_t>::find_pivotRow(ind start, ind& t)
+	void SmithSparse<S_t, R_t, C_t>::find_pivotRow(int start, int& t)
 	{
 		update(1);
 		Scalar_t<S_t> min;
@@ -269,7 +270,7 @@ namespace Mackey {
 	}
 
 	template <typename S_t, typename R_t, typename C_t>
-	void SmithSparse<S_t, R_t, C_t>::find_pivotCol(ind start, ind& s)
+	void SmithSparse<S_t, R_t, C_t>::find_pivotCol(int start, int& s)
 	{
 		update(-1);
 		Scalar_t<S_t> min;
@@ -310,12 +311,12 @@ namespace Mackey {
 	template <typename S_t, typename R_t, typename C_t>
 	void SmithSparse<S_t, R_t, C_t>::renderQ() {
 
-		std::vector<ind> counterQ(N, 1);
+		std::vector<int> counterQ(N, 1);
 		for (const auto& op : Qops) {
 			if (op.first == 0)
 				swap(counterQ[op.second[0]], counterQ[op.second[1]]);
 			else
-				counterQ[op.second[1]] = std::min(N, counterQ[op.second[1]] + counterQ[op.second[0]]);
+				counterQ[op.second[1]] =std::min(N, counterQ[op.second[1]]+counterQ[op.second[0]]);
 		}
 		Q.resize(N, N);
 		Qi.resize(N, N);
@@ -337,12 +338,12 @@ namespace Mackey {
 
 	template <typename S_t, typename R_t, typename C_t>
 	void SmithSparse<S_t, R_t, C_t>::renderP() {
-		std::vector<ind> counterP(M, 1);
+		std::vector<int> counterP(M, 1);
 		for (const auto& op : Pops) {
 			if (op.first == 0)
 				swap(counterP[op.second[0]], counterP[op.second[1]]);
 			else
-				counterP[op.second[1]] = std::min(M, counterP[op.second[1]] + counterP[op.second[0]]);
+				counterP[op.second[1]] =std::min(M, counterP[op.second[1]] + counterP[op.second[0]]);
 		}
 		P.resize(M, M);
 		Pi.resize(M, M);

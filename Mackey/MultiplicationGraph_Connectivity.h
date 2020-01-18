@@ -21,6 +21,9 @@ namespace Mackey {
 	///The generators disconnected from the sources (element indices)
 	std::vector<int> trully_disconnected;
 
+	///The degrees of the trully_disconnected
+	std::vector<std::vector<int>> trully_disconnected_degrees;
+
 	///Computes the nodes of the Multiplication Graph disconnected from the given sources
 	void compute_with_sources(const std::vector<std::vector<int>>&);
 
@@ -72,6 +75,10 @@ namespace Mackey {
 
 		Wrong.compute_disconnected(this->number_of_generators);
 		trully_disconnected = Wrong.disconnected;
+
+		trully_disconnected_degrees.reserve(trully_disconnected.size());
+		for (const auto& i : trully_disconnected)
+			trully_disconnected_degrees.push_back(this->getdegree(i));
 	}
 
 	template<typename rank_t, typename diff_t>

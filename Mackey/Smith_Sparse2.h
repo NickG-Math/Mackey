@@ -30,19 +30,19 @@ namespace Mackey {
 		using Smith<S_t, R_t, C_t>::wantP;
 		using Smith<S_t, R_t, C_t>::wantQ;
 
-		using typename Smith<S_t, R_t, C_t>::ind;
-
-
 		///same as S_t but row major
 		typedef spm_t_r<S_t> S_t_r;
-
 		Scalar_t<S_t> pivot;						///< The pivot used each turn
 		std::vector<int> Rnorm, Cnorm;
 		int current;
 		S_t_r S_row;
 
 		std::vector<std::pair<Scalar_t<S_t>, std::array<ind, 2>>> Pops, Qops;
-		long metric(ind, ind);
+
+		bool isover;
+		bool pivotcolunit(ind);
+		void do_both(ind);
+		int metric(ind, ind);
 		void SmithIt();
 		void workRow(ind);
 		void workCol(ind);
@@ -61,7 +61,7 @@ namespace Mackey {
 
 	///The Markowitz metric
 	template <typename S_t, typename R_t, typename C_t>
-	long SmithSparse<S_t, R_t, C_t>::metric(ind i, ind j) {
+	int SmithSparse<S_t, R_t, C_t>::metric(ind i, ind j) {
 		return Rnorm[i] * Cnorm[j]; //Can be changed
 	}
 
@@ -70,52 +70,70 @@ namespace Mackey {
 	void SmithSparse<S_t, R_t, C_t>::initialize_norms() {
 		Rnorm.resize(M);
 		Cnorm.resize(N);
-		for (ind i = 0; i < S_row.outerSize(); i++)
-			Rnorm[i] = S_row.innerVector(i).nonZeros();
-		for (ind j = 0; j < S.outerSize(); j++)
+		for (int j = 0; j < S.outerSize(); j++) {
 			Cnorm[j] = S.innerVector(j).nonZeros();
+			for (typename S_t::InnerIterator it(S, j); it; ++it)
+				Rnorm[it.row()]++;
+		}
 	}
 
 
 	template <typename S_t, typename R_t, typename C_t>
+	bool SmithSparse<S_t, R_t, C_t>::pivotcolunit(ind start)
+	{
+		int min = 0;
+		ind t = start;
+		for (ind k = start; k < S.outerSize(); k++) {
+			for (typename S_t::InnerIterator it(S, k); it; ++it) {
+				if (it.row() == start && abs(it.value()) == 1 && (min == 0 || min > Cnorm[it.col()])) {
+					pivot = it.value();
+					min = Cnorm[it.col()];
+					t = it.col();
+				}
+			}
+		}
+		if (min == 0)
+			return 0;
+		if (start != t) {
+			swapCol(S, start, t);
+			swap(Cnorm[start], Cnorm[t]);
+			if (wantQ)
+				Qops.push_back(std::make_pair<Scalar_t<S_t>, std::array<ind, 2>>(0, { start, t }));
+		}
+		return 1;
+	}
+
+
+
+
+
+
+
+	template <typename S_t, typename R_t, typename C_t>
 	void SmithSparse<S_t, R_t, C_t>::SmithIt() {
-		S_row = S;
 		initialize_norms();
 		if (wantP)
 			Pops.reserve(2 * M);
 		if (wantQ)
 			Qops.reserve(2 * N);
-
-		current = 0;
-		for (ind start = 0; start < std::min(M, N); start++) {
-			if (S.nonZeros() == start) {
-				for (ind i = start; i < std::min(M, N); i++)
-					diagonal[i] = 0;
-				break;
-			}
-			pivoting(start);
-			bool flagR, flagC;
-			flagR = flagC = 0;
-			while (Rnorm[start] > 1 || Cnorm[start] > 1) {
-				while (Rnorm[start] > 1) {
-					if (flagR) {
-						flagC = 1;
-						pivotingRow(start);
-					}
+		current = -1;
+		for (int start = 0; start < std::min(M, N); start++) {
+			pivot = S.coeff(start, start);
+			if (Rnorm[start] > 1) {
+				auto u = pivotcolunit(start);
+				if (u) {	//this clears the entire row and the pivot is pm1 so we can proceed to next iteration. But remember to update Rnorm!
 					workRow(start);
-					flagR = 1;
+					for (typename S_t::InnerIterator it2(S, start); it2; ++it2)
+						if (it2.row() > start)
+							Rnorm[it2.row()] -= 1;
 				}
-				while (Cnorm[start] > 1) {
-					if (flagC) {
-						flagR = 1;
-						pivotingCol(start);
-					}
-					workCol(start);
-					flagC = 1;
-				}
+				else
+					do_both(start);
 			}
-			update();
+			if ((pivot == 0 && Cnorm[start] > 0) || (Cnorm[start] > 1 && abs(pivot) != 1))
+				do_both(start);
 			this->diagonal[start] = pivot;
+
 		}
 		if (wantP)
 			renderP();
@@ -123,29 +141,70 @@ namespace Mackey {
 			renderQ();
 	}
 
+
 	template <typename S_t, typename R_t, typename C_t>
 	void SmithSparse<S_t, R_t, C_t>::workRow(ind start) {
-		update();
-		for (typename S_t_r::InnerIterator it(S_row, start); it; ++it) {
-			if (it.col() != start) {
-				auto j = it.col();
-				Scalar_t<S_t> thequotient = floor_division(it.value(), pivot);
-
-				for (typename S_t::InnerIterator it2(S, j); it2; ++it2)
-					Rnorm[it2.row()] -= 1;
-
-				S.col(j) = (S.col(j) - thequotient * S.col(start)).pruned();
-				Cnorm[j] = S.innerVector(j).nonZeros();
-				for (typename S_t::InnerIterator it2(S, j); it2; ++it2) 
-					Rnorm[it2.row()] += 1;
-				if (wantQ) {
-					std::array<ind, 2> u = { start,j };
-					Qops.push_back(std::make_pair(thequotient, u));
-				}
+		update(-1);
+		std::vector<std::pair<int, typename S_t::Scalar>> nonZeros;
+		nonZeros.reserve(N - start);
+		for (int k = start + 1; k < S.outerSize(); k++) {
+			for (typename S_t::InnerIterator it(S, k); it; ++it) {
+				if (it.row() == start)
+					nonZeros.push_back(std::make_pair(it.col(), it.value()));
+			}
+		}
+		for (const auto& k : nonZeros) {
+			auto j = k.first;
+			Scalar_t<S_t> thequotient = floor_division(k.second, pivot);
+			for (typename S_t::InnerIterator it2(S, j); it2; ++it2)
+				Rnorm[it2.row()] -= 1;
+			S.col(j) = (S.col(j) - thequotient * S.col(start)).pruned();
+			Cnorm[j] = S.innerVector(j).nonZeros();
+			for (typename S_t::InnerIterator it2(S, j); it2; ++it2)
+				Rnorm[it2.row()] += 1;
+			if (wantQ) {
+				std::array<ind, 2> u = { start,j };
+				Qops.push_back(std::make_pair(thequotient, u));
 			}
 		}
 		current = -1;
 	}
+
+	template <typename S_t, typename R_t, typename C_t>
+	void SmithSparse<S_t, R_t, C_t>::do_both(ind start) {
+		update(1);
+		for (ind i = 0; i < start; i++) {
+			if (Cnorm[i] > 1) {
+				pivot = this->diagonal[i];
+				workCol(i);
+			}
+		}
+		update();
+		pivoting(start);
+		bool flagR, flagC;
+		flagR = flagC = 0;
+		while (Rnorm[start] > 1 || Cnorm[start] > 1) {
+			while (Rnorm[start] > 1) {
+				if (flagR) {
+					flagC = 1;
+					pivotingRow(start);
+				}
+				workRow(start);
+				flagR = 1;
+			}
+			while (Cnorm[start] > 1) {
+				if (flagC) {
+					flagR = 1;
+					pivotingCol(start);
+				}
+				workCol(start);
+				flagC = 1;
+			}
+		}
+		update();
+	}
+
+
 
 	template <typename S_t, typename R_t, typename C_t>
 	void SmithSparse<S_t, R_t, C_t>::workCol(ind start) {
@@ -248,7 +307,8 @@ namespace Mackey {
 			}
 		}
 	}
-	   
+
+
 	template <typename S_t, typename R_t, typename C_t>
 	void SmithSparse<S_t, R_t, C_t>::find_pivotRow(ind start, ind& t)
 	{
@@ -337,6 +397,12 @@ namespace Mackey {
 
 	template <typename S_t, typename R_t, typename C_t>
 	void SmithSparse<S_t, R_t, C_t>::renderP() {
+		for (ind i = 0; i < std::min(M, N); i++) {
+			if (Cnorm[i] > 1) {
+				pivot = this->diagonal[i];
+				workCol(i);
+			}
+		}
 		std::vector<ind> counterP(M, 1);
 		for (const auto& op : Pops) {
 			if (op.first == 0)
@@ -361,4 +427,5 @@ namespace Mackey {
 			}
 		}
 	}
+
 }

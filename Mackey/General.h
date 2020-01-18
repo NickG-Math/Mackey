@@ -75,7 +75,6 @@ namespace Mackey {
 		return std::vector<T>(ptr + start, ptr + size);
 	}
 
-
 	///Find first instance of a in v for non Eigen matrices
 	template<typename T, typename S, std::enable_if_t<!SFINAE::is_Dense<S>::value,int> =0>
 	int find(const T& v, const S & a) {
@@ -87,11 +86,11 @@ namespace Mackey {
 	}
 
 
-	///Find first instance of a in v for Eigen matrices
+	///Find first instance of a in v for dense Eigen matrices
 	template<typename T, typename S, std::enable_if_t<SFINAE::is_Dense<S>::value, int> =0>
 	int find(const T& v, const S& a) {
 		for (int i = 0; i < v.size(); i++) {
-			if (v[i].rows()==a.rows() && v[i].cols()==a.cols() && v[i]==a) //otherwise static assert fails
+			if (v[i].rows()==a.rows() && v[i].cols()==a.cols() && v[i]==a) //otherwise asserton fails
 				return i;
 		}
 		return -1;
@@ -115,7 +114,7 @@ namespace Mackey {
 	template<typename T, typename S>
 	T KeepRow(const T& A, const S& Z) { //when the new stable version of Eigen releases this will be deprecated
 		T B(Z.size(), A.cols());
-		int j = 0;
+		size_t j = 0;
 		for (const auto& i : Z) {
 			B.row(j) = A.row(i);
 			j++;
@@ -127,7 +126,7 @@ namespace Mackey {
 	template<typename T, typename S>
 	T KeepCol(const T& A, const S& Z) { //when the new stable version of Eigen releases this will be deprecated
 		T B(A.rows(), Z.size());
-		int j = 0;
+		size_t j = 0;
 		for (const auto& i : Z) {
 			B.col(j) = A.col(i);
 			j++;
@@ -138,8 +137,8 @@ namespace Mackey {
 	////////////////////////////////////////////////////////////
 	///Takes the sum of the entries of an Eigen vector at higher precision than its inputs.
 	template<typename Derived>
-	int summation(const Eigen::MatrixBase<Derived>& A) {
-		return A.template cast<int>().sum();
+	long summation(const Eigen::MatrixBase<Derived>& A) {
+		return A.template cast<long>().sum();
 	}
 
 	///Circularly rotates given V (an Eigen/std vector)
@@ -252,9 +251,9 @@ namespace Mackey {
 
 
 	///Hash vector given minimum and maximum values of its entries.
-	int hashvector(const std::vector<int>& deg, const std::vector<int>& min, const std::vector<int>& max) {
-		int hash = deg[0] - min[0];
-		int prod = max[0] - min[0] + 1;
+	long hashvector(const std::vector<int>& deg, const std::vector<int>& min, const std::vector<int>& max) {
+		long hash = deg[0] - min[0];
+		long prod = max[0] - min[0] + 1;
 		for (size_t i = 1; i < deg.size(); i++) {
 			hash += (deg[i] - min[i]) * prod;
 			prod *= max[i] - min[i] + 1;
@@ -264,8 +263,8 @@ namespace Mackey {
 
 
 	///Turn dense matrix into a vector of Eigen triplets
-	template<typename T>
-	triplets<T> make_triplets(const Eigen::Matrix<T, -1, -1>& a) {
+	template<typename T, typename storage>
+	triplets<T, storage> make_triplets(const Eigen::Matrix<T, -1, -1>& a) {
 		triplets<T> b;
 		b.reserve(a.size());
 		for (int j = 0; j < a.cols(); j++) {
@@ -278,15 +277,50 @@ namespace Mackey {
 	}
 
 	///Turn sparse matrix into a vector of Eigen triplets
-	template<typename T, int StorageOrder>
-	triplets<T> make_triplets(const Eigen::SparseMatrix<T, StorageOrder>& a) {
-		triplets<T> b;
+	template<typename T, int StorageOrder, typename storage>
+	triplets<T, storage> make_triplets(const Eigen::SparseMatrix<T, StorageOrder, storage>& a) {
+		triplets<T, storage> b;
 		b.reserve(a.nonZeros());
-		for (int k = 0; k < a.outerSize(); k++) {
-			for (typename Eigen::SparseMatrix<T, StorageOrder>::InnerIterator it(a, k); it; ++it)
-				b.push_back(Eigen::Triplet<T>(it.row(), it.col(), it.value()));
+		for (decltype(a.outerSize()) k = 0; k < a.outerSize(); k++) {
+			for (typename Eigen::SparseMatrix<T, StorageOrder, storage>::InnerIterator it(a, k); it; ++it)
+				b.push_back(Eigen::Triplet<T, storage>(it.row(), it.col(), it.value()));
 		}
 		return b;
+	}
+
+	template<typename T>
+	std::vector<std::vector<int>> equidistribute(const std::vector<int>& weights, const std::vector<T>& items, int no_teams) {
+		std::vector<T> equal;
+		equal.reserve(items.size());
+		std::vector<int> index(weights.size());
+		std::iota(index.begin(), index.end(), 0);
+		std::sort(index.begin(), index.end(), [&](const int& a, const int& b) {return (weights[a] > weights[b]);});
+		std::vector<int> teams_sum(no_teams, 0);
+		std::vector<std::vector<int>> teams;
+		teams.resize(no_teams);
+		for (auto& i : teams)
+			i.reserve(weights.size());
+		long sum = 0;
+		for (const auto& i : weights)
+			sum += (long)i;
+		long weightperteam = sum / no_teams;
+		for (const auto& i : index) {
+			bool flag = 0;
+			for (int j = 0; j < teams.size(); j++) {
+				if (teams_sum[j] + weights[i] < weightperteam) {
+					teams_sum[j] += weights[i];
+					teams[j].push_back(i);
+					flag = 1;
+					break;
+				}
+			}
+			if (!flag) { //if it wasn't assigned to any team, assign to the one with least weight
+				auto loc = std::min_element(teams_sum.begin(), teams_sum.end()) - teams_sum.begin();
+				teams_sum[loc] += weights[i];
+				teams[loc].push_back(i);
+			}
+		}
+		return teams;
 	}
 
 }

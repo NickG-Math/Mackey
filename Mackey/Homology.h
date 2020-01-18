@@ -39,9 +39,9 @@ namespace Mackey {
 
 		template<typename T>
 		struct Quicktypedefs<T, typename std::enable_if_t<SFINAE::is_Sparse<T>::value && !SFINAE::is_finite_cyclic<Scalar_t<T>>::value>> {
-			typedef long Scalar;
-			typedef Eigen::SparseMatrix<Scalar, 0, typename T::StorageIndex> col;
-			typedef Eigen::SparseMatrix<Scalar, 1, typename T::StorageIndex> row;
+			typedef int Scalar;
+			typedef Eigen::SparseMatrix<Scalar, 0> col;
+			typedef Eigen::SparseMatrix<Scalar, 1> row;
 		};
 
 
@@ -55,6 +55,7 @@ namespace Mackey {
 		typedef typename Quicktypedefs<diff_t>::Scalar fScalar;
 		typedef typename Quicktypedefs<diff_t>::col fdiff_t_C;	///<Column Major
 		typedef typename Quicktypedefs<diff_t>::row fdiff_t_R;	///<Row Major
+	
 	public:
 
 		///The type of our matrix of generators
@@ -87,11 +88,11 @@ namespace Mackey {
 		gen_t boundary(const gen_t&) const;
 
 	public:
-		std::vector<typename diff_t::StorageIndex> dontModOut;
+		std::vector<int> dontModOut;
 		fdiff_t_C In_Q;
 		fdiff_t_R Out_Qi, In_P_full, In_P_reduced;
 		row_t<fdiff_t_C> diagonal;
-		typename diff_t::StorageIndex M;
+		int M;
 		fdiff_t_C getKernel(fdiff_t_C&);
 		void KernelModImage(fdiff_t_C&, fdiff_t_C&, bool);
 
@@ -131,11 +132,11 @@ namespace Mackey {
 	typename Homology<rank_t, diff_t>::fdiff_t_C Homology<rank_t, diff_t>::getKernel(fdiff_t_C& Out) {
 		auto OUT = diagonalize<fdiff_t_C, fdiff_t_R, fdiff_t_C>(Out, 0, 1);
 		fdiff_t_C Kernel(M,M);
-		std::vector<typename diff_t::StorageIndex> nonZeroVectors;
+		std::vector<int> nonZeroVectors;
 		nonZeroVectors.reserve(M);
 		isZero = 1;
-		typename diff_t::StorageIndex j = 0;
-		for (typename diff_t::StorageIndex i = 0; i < M;i++) {
+		int j = 0;
+		for (int i = 0; i < M;i++) {
 			if (i >= OUT.diagonal.size() || OUT.diagonal[i] == 0) {
 				isZero = 0;
 				Kernel.col(j) = OUT.Q.col(i);
@@ -152,7 +153,7 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	void Homology<rank_t, diff_t>::KernelModImage(fdiff_t_C& In, fdiff_t_C& Kernel, bool getQ) {
 		if constexpr (SFINAE::is_Sparse<diff_t>::value)
-			In = (Out_Qi * In).pruned().eval();
+			In = (Out_Qi * In).pruned();
 		else
 			In = Out_Qi * In;
 		auto L = std::min(In.rows(), In.cols());
@@ -167,7 +168,7 @@ namespace Mackey {
 		dontModOut.reserve(maxsize);
 		isZero = 1;
 		diagonal = std::move(IN.diagonal);
-		for (typename diff_t::StorageIndex i = 0; i < maxsize;i++) {
+		for (int i = 0; i < maxsize;i++) {
 			if (i < L) {
 				if (abs(diagonal[i]) == 0) {
 					groups.push_back(1);
@@ -196,8 +197,8 @@ namespace Mackey {
 			Generators.resize(0,0);
 			return;
 		}
-		Generators = KeepCol(Generators, dontModOut);
 		Groups = Eigen::Map<rank_t>(groups.data(), groups.size());
+		Generators = KeepCol(Generators, dontModOut);
 
 
 		//Check for non integer coefficients and replace the Z in Groups with Z/N
@@ -216,7 +217,7 @@ namespace Mackey {
 			return rank_t();
 		rank_t basisArray(Groups.size());
 		gen_t element = Out_Qi * generator;
-		element = (In_P_reduced * element).eval();
+		element = In_P_reduced * element;
 		for (int j = 0; j < Groups.size();j++) {
 			if (Groups[j] != 1)
 				basisArray[j] = static_cast<Scalar_t<rank_t>>((Groups[j] + (long)element[j] % Groups[j]) % Groups[j]);
@@ -235,7 +236,7 @@ namespace Mackey {
 		}
 		gen_t y(In_Q.rows()); //Sy=Px
 		y.setZero();
-		for (typename gen_t::StorageIndex i = 0; i < y.size(); i++) {
+		for (int i = 0; i < y.size(); i++) {
 			if (i < diagonal.size() && diagonal[i] != 0)
 				y[i] = static_cast<fScalar>(element[i] / diagonal[i]);
 		}

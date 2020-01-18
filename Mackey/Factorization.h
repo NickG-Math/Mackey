@@ -6,7 +6,7 @@
 ///@file
 ///@brief Contains the multiplication graph and the methods for factorizing generators.
 
-namespace Mackey {
+namespace Mackey{
 
 	/// Factorizes generators into the given basic irreducibles and sources
 	template<typename rank_t, typename diff_t>
@@ -26,10 +26,6 @@ namespace Mackey {
 
 		/// Uses triple box products to possibly identify ALL instances where identification failed before. Use with caution!
 		void pass_unidentified(bool serialize_each_step);
-
-		/// Uses triple box products to possibly identify the given generators.
-		void pass(const std::vector<int>&, bool serialize_each_step);
-
 
 		/// Uses triple box products to possibly identify the generators not connected to the sources.
 		void pass_disconnected(bool serialize_each_step);
@@ -71,8 +67,8 @@ namespace Mackey {
 		sources.reserve(given_sources.size());
 		for (const auto& i : given_sources) {
 			auto deg = this->antidegree[i];
-			auto basis = basisElement<rank_t>(1, 0);
-			sources.push_back(this->antielement.at(std::make_pair(deg, basis)));
+			auto basis = basisElement<rank_t>(1,0);
+			sources.push_back(this->antielement[std::make_pair(deg, basis)]);
 		}
 		for (std::vector<int>::size_type i = 0; i < names.size(); i++)
 			source_names[sources[i]] = names[i];
@@ -92,37 +88,25 @@ namespace Mackey {
 		for (const auto& i : sources)
 			this->computeWithSource(i);
 	}
-
-
-	template<typename rank_t, typename diff_t>
-	void Factorization<rank_t, diff_t>::pass(const std::vector<int>& desired_generators, bool serialize_each_step) {
-		do
-			this->pass_division(desired_generators, serialize_each_step);
-		while (this->can_do_more);
-		do
-			this->pass_product(desired_generators, serialize_each_step);
-		while (this->can_do_more);
-	}
-
-
-
-
+	
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::pass_disconnected(bool serialize_each_step) {
 		find_disconnected_generators(); //find the disconnected generators
 		//first use division to identify
 		if (this->disconnected.size() > 0) {
 			do {
-				this->pass_division(this->disconnected, serialize_each_step);
+				this->pass_disconnected_division(serialize_each_step);
 				find_disconnected_generators();
-			} while (this->disconnected.size() > 0 && this->can_do_more);
+			} 
+			while (this->disconnected.size() > 0 && this->can_do_more);
 		}
 		//next use multiplication to identify
 		if (this->disconnected.size() > 0) {
 			do {
-				this->pass_product(this->disconnected, serialize_each_step);
+				this->pass_disconnected_product(serialize_each_step);
 				find_disconnected_generators();
-			} while (this->can_do_more);
+			}
+			while (this->can_do_more);
 		}
 	}
 

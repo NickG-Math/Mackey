@@ -144,29 +144,19 @@ namespace Mackey {
 
 
 	///Does permutation_block and matrix mixing in one step for sparse matrices, using the triplets format.
-	template<typename T, typename S, typename storage, typename U, typename V>
-	triplets<T, storage> box_sparse(S& left, S& right, const triplets<T, storage>& a, U rows, U cols, V copies, storage h_offset, storage v_offset) {
-		triplets<T, storage> b;
+	template<typename T, typename S>
+	triplets<T> box_sparse(S& left, S& right, const triplets<T>& a, int rows, int cols, int copies, int h_offset, int v_offset) {
+		triplets<T> b;
 		b.reserve(a.size() * copies);
-		for (storage k = 0; k < a.size(); k++) {
-			auto i = a[k].row();
-			auto j = a[k].col();
+		for (const auto& V : a) {
+			auto i = V.row();
+			auto j = V.col();
 			while (i < rows * copies && j < cols * copies) {
-				b.push_back(Eigen::Triplet<T, storage>(left.indices()[i] + v_offset, right.indices()[j] + h_offset, a[k].value()));
+				b.push_back(Eigen::Triplet<T>(left.indices()[i] + v_offset, right.indices()[j] + h_offset, V.value()));
 				i += rows;
 				j += cols;
 			}
 		}
-
-		//for (auto& V : a) {
-		//	auto i = V.row();
-		//	auto j = V.col();
-		//	while (i < rows * copies && j < cols * copies) {
-		//		b.push_back(Eigen::Triplet<T, storage>(left.indices()[i] + v_offset, right.indices()[j] + h_offset, V.value()));
-		//		i += rows;
-		//		j += cols;
-		//	}
-		//}
 		return b;
 	}
 
@@ -197,15 +187,15 @@ namespace Mackey {
 		}
 		else {//sparse implementation
 
-			std::vector<triplets<Scalar_t<diff_t>, typename diff_t::StorageIndex>> all_triplets;
+			std::vector<triplets<Scalar_t<diff_t>>> all_triplets;
 			all_triplets.reserve(i + 1);
-			typename diff_t::StorageIndex totalsize, v_offset, h_offset;
+			int totalsize, v_offset, h_offset;
 			totalsize = v_offset = h_offset = 0;
 			for (int j = lowlimit; j <= highlimit; j++) {
-				auto Domain = ChangeBasis<typename diff_t::StorageIndex>(C.rank[j], D.rank[i - j], 0);
+				auto Domain = ChangeBasis<int>(C.rank[j], D.rank[i - j], 0);
 				if (j >= 1) //We have a LeftDiff
 				{
-					auto RangeL = ChangeBasis<typename diff_t::StorageIndex>(C.rank[j - 1], D.rank[i - j], 0);
+					auto RangeL = ChangeBasis<int>(C.rank[j - 1], D.rank[i - j], 0);
 					auto u = box_sparse(RangeL.LefttoCanon, Domain.LefttoCanon, make_triplets(C.diff[j]), C.diff[j].rows(), C.diff[j].cols(), summation(D.rank[i - j]), h_offset, v_offset);
 					totalsize += u.size();
 					all_triplets.push_back(u);
@@ -214,14 +204,14 @@ namespace Mackey {
 				if (i - j >= 1) //We have a RightDiff
 				{
 					typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
-					auto RangeR = ChangeBasis<typename diff_t::StorageIndex>(C.rank[j], D.rank[i - j - 1], 0);
+					auto RangeR = ChangeBasis<int>(C.rank[j], D.rank[i - j - 1], 0);
 					auto u = box_sparse(RangeR.RighttoCanon, Domain.RighttoCanon, make_triplets(static_cast<diff_t>(sign * D.diff[i - j])), D.diff[i - j].rows(), D.diff[i - j].cols(), summation(C.rank[j]), h_offset, v_offset);
 					totalsize += u.size();
 					all_triplets.push_back(u);
 					h_offset += D.diff[i - j].cols() * summation(C.rank[j]);
 				}
 			}
-			triplets<Scalar_t<diff_t>, typename diff_t::StorageIndex> mat;
+			triplets<Scalar_t<diff_t>> mat;
 			mat.reserve(totalsize);
 			for (const auto& tr : all_triplets)
 				mat.insert(mat.end(), std::make_move_iterator(tr.begin()), std::make_move_iterator(tr.end()));

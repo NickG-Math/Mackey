@@ -21,7 +21,7 @@ namespace Mackey {
 		diff_t diff; ///<The differential.
 
 		/// The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding)
-		std::vector<rank_t> detailedrank;
+		std::vector<long> detailedrank;
 
 		///Construct from chains C,D the boxpoint (C box D)_i->(C box D)_i-1
 		BoxPoint(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i)
@@ -50,8 +50,8 @@ namespace Mackey {
 		}
 		rank_t C(sum);
 		int current = 0;
-		for (int i = 0; i < A.size(); i++) {
-			for (int j = 0; j < B.size(); j++) {
+		for (int j = 0; j < B.size(); j++) {
+			for (int i = 0; i < A.size(); i++) {
 				C.segment(current, std::min(A(i), B(j))).setConstant(std::max(A(i), B(j)));
 				current += std::min(A(i), B(j));
 			}
@@ -59,35 +59,50 @@ namespace Mackey {
 		return C;
 	}
 
-	///The rank of the i-th differential of the tensor product of chains C,D
-	template<typename rank_t, typename diff_t>
-	std::pair<rank_t, std::vector<rank_t>> rankBox(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int i) {
+	///The rank of (C box D)_i
+	template<typename rank_t>
+	std::pair<rank_t, std::vector<long>> rankBox(const std::vector<rank_t>& C, const std::vector<rank_t>& D, int i) {
 		rank_t rank;
-		std::vector<rank_t> detailedrank;
-		detailedrank.resize(i + 1);
-		auto lowlimit = std::max(0, i - D.maxindex);
-		auto highlimit = std::min(i, C.maxindex);
-		int sum = 0;
+		std::vector<long> detailedrank;
+		std::vector<rank_t> verydetailedrank;
+		detailedrank.reserve(i + 1);
+		verydetailedrank.resize(i + 1);
+		auto lowlimit = std::max(0, i - (int)D.size()+1);
+		auto highlimit = std::min(i, (int)C.size()-1);
+		long sum = 0;
 		for (int j = lowlimit; j <= highlimit; j++) {
-			detailedrank[j] = rankmult(C.rank[j], D.rank[i - j]);
-			sum += detailedrank[j].size();
+			verydetailedrank[j] = rankmult(C[j], D[i - j]);
+			sum += verydetailedrank[j].size();
 		}
 		rank.resize(sum);
-		int track = 0;
-		for (const auto& i : detailedrank) {
+		long track = 0;
+		for (const auto& i : verydetailedrank) {
 			rank.segment(track, i.size()) = i;
+			detailedrank.push_back(summation(i));
 			track += i.size();
 		}
 		return std::make_pair(rank, detailedrank);
 	}
 
+
+	///The rank of (C box D)
+	template<typename rank_t>
+	std::vector<rank_t> rankBox(const std::vector<rank_t>& C, const std::vector<rank_t>& D) {
+		std::vector<rank_t> rank;
+		rank.reserve(C.size() + D.size() - 1);
+		for (int i = 0; i<C.size()+D.size()-1; i++)
+			rank.push_back(rankBox(C,D,i).first);
+		return rank;
+	}
+
+
 	template<typename rank_t, typename diff_t>
 	void BoxPoint<rank_t, diff_t> ::getranks() {
-		auto Ranks = rankBox(C, D, i);
+		auto Ranks = rankBox(C.rank, D.rank, i);
 		rank_domain = Ranks.first;
 		detailedrank = Ranks.second;
 		if (i > 0) {
-			auto RanksLower = rankBox(C, D, i - 1);
+			auto RanksLower = rankBox(C.rank, D.rank, i - 1);
 			rank_range = RanksLower.first;
 		}
 	}
@@ -144,20 +159,17 @@ namespace Mackey {
 
 
 	///Does permutation_block and matrix mixing in one step for sparse matrices, using the triplets format.
-	template<typename T, typename S>
-	triplets<T> box_sparse(S& left, S& right, const triplets<T>& a, int rows, int cols, int copies, int h_offset, int v_offset) {
-		triplets<T> b;
-		b.reserve(a.size() * copies);
-		for (const auto& V : a) {
-			auto i = V.row();
-			auto j = V.col();
+	template<typename T, typename S, typename storage, typename U, typename V>
+	void box_sparse(triplets<T, storage>& trip, const S& left, const S& right, const triplets<T, storage>& a, U rows, U cols, V copies, storage h_offset, storage v_offset) {
+		for (storage k = 0; k < a.size(); k++) {
+			auto i = a[k].row();
+			auto j = a[k].col();
 			while (i < rows * copies && j < cols * copies) {
-				b.push_back(Eigen::Triplet<T>(left.indices()[i] + v_offset, right.indices()[j] + h_offset, V.value()));
+				trip.push_back(Eigen::Triplet<T, storage>(left.indices()[i] + v_offset, right.indices()[j] + h_offset, a[k].value()));
 				i += rows;
 				j += cols;
 			}
 		}
-		return b;
 	}
 
 
@@ -186,35 +198,38 @@ namespace Mackey {
 
 		}
 		else {//sparse implementation
-
-			std::vector<triplets<Scalar_t<diff_t>>> all_triplets;
-			all_triplets.reserve(i + 1);
-			int totalsize, v_offset, h_offset;
+			typename diff_t::StorageIndex totalsize, v_offset, h_offset;
 			totalsize = v_offset = h_offset = 0;
+
+			//first find the size of nonzeros
 			for (int j = lowlimit; j <= highlimit; j++) {
-				auto Domain = ChangeBasis<int>(C.rank[j], D.rank[i - j], 0);
+				if (j >= 1) 
+					totalsize += C.diff[j].nonZeros()* summation(D.rank[i - j]);
+				if (i - j >= 1) 
+					totalsize += D.diff[i - j].nonZeros() * summation(C.rank[j]);
+			}
+
+			triplets<Scalar_t<diff_t>, typename diff_t::StorageIndex> mat;
+			mat.reserve(totalsize);
+
+			//put the nonzeros in mat
+			for (int j = lowlimit; j <= highlimit; j++) {
+				auto Domain = ChangeBasis<typename diff_t::StorageIndex>(C.rank[j], D.rank[i - j], 0);
 				if (j >= 1) //We have a LeftDiff
 				{
-					auto RangeL = ChangeBasis<int>(C.rank[j - 1], D.rank[i - j], 0);
-					auto u = box_sparse(RangeL.LefttoCanon, Domain.LefttoCanon, make_triplets(C.diff[j]), C.diff[j].rows(), C.diff[j].cols(), summation(D.rank[i - j]), h_offset, v_offset);
-					totalsize += u.size();
-					all_triplets.push_back(u);
+					auto RangeL = ChangeBasis<typename diff_t::StorageIndex>(C.rank[j - 1], D.rank[i - j], 0);
+					box_sparse(mat, RangeL.LefttoCanon, Domain.LefttoCanon, make_triplets(C.diff[j]), C.diff[j].rows(), C.diff[j].cols(), summation(D.rank[i - j]), h_offset, v_offset);
 					v_offset += C.diff[j].rows() * summation(D.rank[i - j]);
 				}
 				if (i - j >= 1) //We have a RightDiff
 				{
 					typename diff_t::Scalar sign = (1 - 2 * (j % 2)); //(1 - 2 * (j % 2)) is(-1) ^ j
-					auto RangeR = ChangeBasis<int>(C.rank[j], D.rank[i - j - 1], 0);
-					auto u = box_sparse(RangeR.RighttoCanon, Domain.RighttoCanon, make_triplets(static_cast<diff_t>(sign * D.diff[i - j])), D.diff[i - j].rows(), D.diff[i - j].cols(), summation(C.rank[j]), h_offset, v_offset);
-					totalsize += u.size();
-					all_triplets.push_back(u);
+					auto RangeR = ChangeBasis<typename diff_t::StorageIndex>(C.rank[j], D.rank[i - j - 1], 0);
+					box_sparse(mat, RangeR.RighttoCanon, Domain.RighttoCanon, make_triplets(static_cast<diff_t>(sign * D.diff[i - j])), D.diff[i - j].rows(), D.diff[i - j].cols(), summation(C.rank[j]), h_offset, v_offset);
 					h_offset += D.diff[i - j].cols() * summation(C.rank[j]);
 				}
 			}
-			triplets<Scalar_t<diff_t>> mat;
-			mat.reserve(totalsize);
-			for (const auto& tr : all_triplets)
-				mat.insert(mat.end(), std::make_move_iterator(tr.begin()), std::make_move_iterator(tr.end()));
+			//turn mat to a matrix
 			diff.resize(summation(rank_range), summation(rank_domain));
 			diff.setFromTriplets(mat.begin(), mat.end());
 		}
@@ -226,13 +241,13 @@ namespace Mackey {
 	public:
 
 		/// The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding)
-		std::vector<std::vector<rank_t>> detailedrank;
+		std::vector<std::vector<long>> detailedrank;
 
 		///Default Constructor
 		ChainsBox() {};
 
 		/// Set the variables directly
-		ChainsBox(const std::vector<rank_t>& rank, const std::vector<diff_t>& diff, const std::vector<std::vector<rank_t>>& detailedrank)
+		ChainsBox(const std::vector<rank_t>& rank, const std::vector<diff_t>& diff, const std::vector<std::vector<long>>& detailedrank)
 			:Chains<rank_t, diff_t>(rank, diff), detailedrank(detailedrank) {}
 
 		/// Get C box D up to index i.
@@ -248,7 +263,7 @@ namespace Mackey {
 		i = std::min(i, C.maxindex + D.maxindex);
 		std::vector<rank_t> rank;
 		std::vector<diff_t> diff;
-		std::vector<std::vector<rank_t>> detailedrank;
+		std::vector<std::vector<long>> detailedrank;
 		rank.reserve(i + 1);
 		diff.reserve(i + 1);
 		detailedrank.reserve(i + 1);
@@ -272,7 +287,7 @@ namespace Mackey {
 	public:
 
 		/// The detailed rank retains the layout of the tensor product. That's used for forming products of generators (padding)
-		std::vector<rank_t> detailedrank;
+		std::vector<long> detailedrank;
 
 		///Default Constructor
 		JunctionBox() {};

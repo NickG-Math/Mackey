@@ -24,51 +24,95 @@ namespace Mackey {
 		auto n = intexp(power - level);
 		if (diff.size() == 0)
 			return diff;
-		std::vector<int> keep;
-		keep.reserve(range.size() * n);
-		int sum = 0;
-		int j = 0;
-		for (int i = 0; i < range.size(); i++) {
-			while (j < n + sum + range(i) && j < diff.rows()) {
-				if (!(n + sum <= j && j <= range(i) + sum - 1))
-					keep.push_back(j);
-				j++;
-			}
-			sum += range(i);
-		}
+
 		typedef typename std::conditional<SFINAE::is_Sparse<diff_t>::value, spm_t<diff_t>, diff_t>::type coltype;
 		coltype reduceddiff;
-		if constexpr (SFINAE::is_Sparse<diff_t>::value&& ! SFINAE::is_sparse_row_major<diff_t>::value) 
-			reduceddiff = KeepRow(static_cast<spm_t_r<diff_t>>(diff), keep);
-		else
-			reduceddiff = KeepRow(diff, keep); 
-		int track = 0;
-		int tracktransfer = 0;
+		typename diff_t::StorageIndex track = 0;
+		typename diff_t::StorageIndex tracktransfer = 0;
 		coltype transfer(summation(range_top), summation(domain_top));
+
+		if constexpr (SFINAE::is_Sparse<diff_t>::value) {
+			std::vector<typename diff_t::StorageIndex> keep(diff.rows(), -1);
+			typename diff_t::StorageIndex sum = 0;
+			typename diff_t::StorageIndex j = 0;
+			long counter = 0;
+			for (int i = 0; i < range.size(); i++) {
+				while (j < n + sum + range(i) && j < diff.rows())
+				{
+					if (!(n + sum <= j && j <= range(i) + sum - 1)) {
+						keep[j] = counter;
+						counter++;
+					}
+					j++;
+				}
+				sum += range(i);
+			}
+			auto u = keep_row_triplets(diff, keep);
+			reduceddiff.resize(counter, diff.cols());
+			reduceddiff.setFromTriplets(u.begin(), u.end());
+		}
+		else {
+			std::vector<typename diff_t::StorageIndex> keep;
+			keep.reserve(range.size() * n);
+			typename diff_t::StorageIndex sum = 0;
+			typename diff_t::StorageIndex j = 0;
+			for (int i = 0; i < range.size(); i++) {
+				while (j < n + sum + range(i) && j < diff.rows()) {
+					if (!(n + sum <= j && j <= range(i) + sum - 1))
+						keep.push_back(j);
+					j++;
+				}
+				sum += range(i);
+			}
+			reduceddiff = KeepRow(diff, keep);
+		}
+
+		if constexpr (SFINAE::is_Sparse<diff_t>::value) { //estimate the nonzero elements in each column
+			std::vector<long> cols;
+			cols.reserve(diff.cols());
+			for (int i = 0; i < domain.size(); i++)
+			{
+				auto limit = domain(i) + track;
+				if (limit - n < track + 1) {
+					for (auto j = track; j < limit; j++)
+						cols.push_back(reduceddiff.col(j).nonZeros());
+				}
+				else {
+					for (auto j = track; j < std::min(track + n, limit - n); j++) {
+						auto counter = reduceddiff.col(j).nonZeros();
+						for (auto k = j + n; k < limit; k += n)
+							counter += reduceddiff.col(j).nonZeros();
+						cols.push_back(counter);
+					}
+				}
+				track += domain(i);
+			}
+			track = 0;
+			transfer.reserve(cols);
+		}
+
 		for (int i = 0; i < domain.size(); i++)
 		{
 			auto limit = domain(i) + track;
 			if (limit - n < track + 1) {
-				for (int j = track; j < limit; j++) {
+				for (auto j = track; j < limit; j++) {
 					transfer.col(tracktransfer) = reduceddiff.col(j);
 					tracktransfer++;
 				}
 			}
 			else {
-				for (int j = track; j < std::min(track + n, limit - n); j++) {
+				for (auto j = track; j < std::min(track + n, limit - n); j++) {
 					transfer.col(tracktransfer) = reduceddiff.col(j);
-					for (int k = j + n; k < limit; k += n) {
-						if constexpr (SFINAE::is_Sparse<diff_t>::value)
-							transfer.col(tracktransfer) = (transfer.col(tracktransfer) + reduceddiff.col(k)).pruned();
-						else
-							transfer.col(tracktransfer) += reduceddiff.col(k);
-					}
+					for (auto k = j + n; k < limit; k += n)
+						transfer.col(tracktransfer) += reduceddiff.col(k);
 					tracktransfer++;
 				}
 			}
 			track += domain(i);
 		}
-		return static_cast<diff_t>(transfer);
+		if constexpr (SFINAE::is_Sparse<diff_t>::value) 
+			transfer.prune(0,0); //remove 0 elements
+		return transfer;
 	}
 
 	/////////////////////////////////////////////////
@@ -124,7 +168,7 @@ namespace Mackey {
 		for (int i = 0; i < domain.size(); i++)
 		{
 			if (domain(i) == range(i))
-				transferred.segment(trackran, range(i)) = static_cast<Scalar_t<Derived>>(prime) * generator.segment(trackdom, range(i));
+				transferred.segment(trackran, range(i)) = static_cast<Scalar_t<Derived>>(prime)* generator.segment(trackdom, range(i));
 			else {
 				transferred.segment(trackran, range(i)) = generator.segment(trackdom, range(i));
 				for (int k = 1; k < domain(i) / range(i); k++)
@@ -181,11 +225,11 @@ namespace Mackey {
 	///The inverse of the restriction function on a generator given the ranks at the original level (domain) and the target level (range).
 	///
 	/// Recall that free Mackey functors have injective restrictions, so we only need the generator to be in the image.
-	template<typename rank_t, typename Derived>
-	Derived invRes(const Eigen::MatrixBase<Derived>& generator, const rank_t& domain, const rank_t& range)
+	template<typename rank_t, typename T>
+	T invRes(const T& generator, const rank_t& domain, const rank_t& range)
 	{
-		Derived unrestricted(summation(range));
-		int trackdom = 0, trackran = 0;
+		T unrestricted(summation(range));
+		long trackdom = 0, trackran = 0;
 		for (int i = 0; i < range.size(); i++) {
 			unrestricted.segment(trackran, range(i)) = generator.segment(trackdom, range(i));
 			trackdom += domain(i);
@@ -199,9 +243,9 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	mat_t<rank_t> transfer(const Homology<rank_t, diff_t>& low, const Homology<rank_t, diff_t>& high, const rank_t& rank_low, const rank_t& rank_high) {
 		mat_t<rank_t> Tr(high.Groups.size(), low.Groups.size());
-		for (int i = 0; i < low.Generators.cols(); i++) {
+		for (long i = 0; i < low.Generators.cols(); i++) {
 			gen_t<rank_t, diff_t> generator = low.Generators.col(i);
-			Tr.col(i)= high.basis(transfer(generator, rank_low, rank_high)).transpose();
+			Tr.col(i) = high.basis(transfer(generator, rank_low, rank_high)).transpose();
 		}
 		return Tr;
 	}
@@ -210,9 +254,9 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	mat_t<rank_t> restriction(const Homology<rank_t, diff_t>& high, const Homology<rank_t, diff_t>& low, const rank_t& rank_high, const rank_t& rank_low) {
 		mat_t<rank_t> Res(low.Groups.size(), high.Groups.size());
-		for (int i = 0; i < high.Generators.cols(); i++) {
+		for (long i = 0; i < high.Generators.cols(); i++) {
 			gen_t<rank_t, diff_t> generator = high.Generators.col(i);
-			Res.col(i)=low.basis(restriction(generator, rank_high, rank_low)).transpose();
+			Res.col(i) = low.basis(restriction(generator, rank_high, rank_low)).transpose();
 		}
 		return Res;
 	}
@@ -221,9 +265,9 @@ namespace Mackey {
 	template<typename rank_t, typename diff_t>
 	mat_t<rank_t> action(const Homology<rank_t, diff_t>& H, const rank_t& rank) {
 		mat_t<rank_t> Weyl(H.Groups.size(), H.Groups.size());
-		for (int i = 0; i < H.Generators.cols(); i++) {
-			gen_t<rank_t,diff_t> generator = H.Generators.col(i);
-			Weyl.col(i)=H.basis(action(generator, rank)).transpose();
+		for (long i = 0; i < H.Generators.cols(); i++) {
+			gen_t<rank_t, diff_t> generator = H.Generators.col(i);
+			Weyl.col(i) = H.basis(action(generator, rank)).transpose();
 		}
 		return Weyl;
 	}

@@ -3,8 +3,8 @@
 <area shape="rect" id="node4" href="$namespaceMackey.html#a918f02198f6daadfd0c93109b63b2f1f" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="239,107,385,133"/>
 <area shape="rect" id="node5" href="$namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="433,56,625,83"/>
 <area shape="rect" id="node8" href="$namespaceMackey.html#a8c1525b210b4699780bbe05cb16f0e7b" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group. " alt="" coords="249,165,375,192"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="472,5,587,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n (not optimized; n is usually very small) " alt="" coords="472,5,587,32"/>
 <area shape="rect" id="node6" href="$namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="433,107,625,149"/>
 <area shape="rect" id="node7" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="673,115,716,141"/>
-<area shape="rect" id="node9" href="$namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="463,173,595,200"/>
+<area shape="rect" id="node9" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="463,173,595,200"/>
 </map>

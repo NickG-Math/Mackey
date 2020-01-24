@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">V2.1</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -144,7 +144,7 @@ Coefficients and templates</h2>
 <li><code>rank_t</code> can be set to <code>Eigen::Matrix&lt;char,1,-1&gt;</code> for groups of prime power order \(&lt;127\) and we can replace <code>char</code> by better precision integers for higher prime power orders.</li>
 <li><code>diff_t</code> depends on the desired coefficients: eg we can set it to <code>Eigen::Matrix&lt;char,-1,-1&gt;</code> for integer coefficients and groups of small power order, or <code><a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a>&lt;<a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>&lt;N&gt;,-1,-1&gt;</code> for \(\mathbb Z/n\mathbb Z\) coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file <code><a class="el" href="Z__n_8h.html" title="Contains the class for Z/N coefficients. ">Z_n.h</a></code> where we define \(\mathbb Z/n\mathbb Z\) coefficients. Note that for the Smith normal form to work properly, \(n\) should be prime.</li>
 </ul>
-<p>Important note: <code>diff_t</code> can also be set to a sparse matrix <code>Eigen::SparseMatrix&lt;char&gt;</code>. See the <a class="el" href="perf.html">Performance</a> page for more information. </p>
+<p>Important note: <code>diff_t</code> can also be set to a sparse matrix format like <code>Eigen::SparseMatrix&lt;char&gt;</code> or <code>Eigen::SparseMatrix&lt;char,0,long&gt;</code> (using <code>long</code> storage type for matrix dimensions). See the <a class="el" href="perf.html">Performance</a> page for more information. </p>
 <h2><a class="anchor" id="step1add"></a>
 The additive structure</h2>
 <p>The file <code>&lt;<a class="el" href="Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology. ">Mackey/Additive.h</a>&gt;</code> exposes the class <a class="el" href="classMackey_1_1AdditiveStructure.html">AdditiveStructure</a> that computes the homology of all spheres in a given range as <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functors. Example: The code</p>
@@ -191,9 +191,9 @@ Factorization</h2>
 <p>The vector <code>M.trully_disconnected</code> contains the indices of the generators that may not be connected to any sources. </p>
 <h2><a class="anchor" id="step1Mass"></a>
 Massey products</h2>
-<p>The file <code>&lt;<a class="el" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. ">Mackey/Compute.h</a>&gt;</code> finally exposes the method <a class="el" href="namespaceMackey.html#ab75d7bcfa2d92d01bea0d5eef9f48398">ROMassey</a> for (triple) Massey products in the Green functor \(H_{\star}(S)\). Example: The code</p>
-<p><code>auto Mass= <a class="el" href="namespaceMackey.html#ab75d7bcfa2d92d01bea0d5eef9f48398" title="Computes the Massey product of three generators in the RO(G) homology given their level...">Mackey::ROMassey&lt;rank_t,diff_t&gt;</a>(2,{0,1,0},{-3,-3,0},{2,2,0});</code></p>
-<p>computes the Massey product \(\langle a_{\sigma},w_3,u_{2\sigma}\rangle \) and its indeterminacy. As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product, while the indeterminacy is expressed as two groups (left and right indeterminacy). If both are \(0\) then we have the member variable <code>noIndeterminacy=1</code>.</p>
+<p>The file <code>&lt;<a class="el" href="Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. ">Mackey/Compute.h</a>&gt;</code> finally exposes the method <a class="el" href="namespaceMackey.html#a9fcefe47f5a8a416b173517377a61bd0">ROMassey</a> for (triple) Massey products in the Green functor \(H_{\star}(S)\). Example: The code</p>
+<p><code>auto Mass= <a class="el" href="namespaceMackey.html#a9fcefe47f5a8a416b173517377a61bd0" title="Computes the Massey product of three generators in the RO(G) homology given their level...">Mackey::ROMassey&lt;rank_t,diff_t&gt;</a>(2,{0,1,0},{-3,-3,0},{2,2,0},1);</code></p>
+<p>computes the Massey product \(\langle a_{\sigma},w_3,u_{2\sigma}\rangle \) and its indeterminacy (if indeterminacy is not needed, use \(0\) as the last variable). As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product, while the indeterminacy is expressed as two groups (left and right indeterminacy). If both are \(0\) then we have the member variable <code>noIndeterminacy=1</code>.</p>
 <p>We can also provide three optional <code>int</code> arguments at the end for selections, see <a class="el" href="use.html#step1mult">The multiplicative structure</a> for what that does.</p>
 <p>Finally, <code>Mass</code> is of type <code><a class="el" href="classMackey_1_1Massey.html" title="Stores Massey products and their indeterminacy. ">Mackey::Massey</a></code> so read the documentation of that class to see how to extract the relevant data.</p>
 <p>For more details see the code in TestMassey.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder</p>

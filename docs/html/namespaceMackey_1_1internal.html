@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">V2.1</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -110,8 +110,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1internal_1_1IDGeneratorCompute.html">IDGeneratorCompute</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the homology at given level and the identification data coming from the <a class="el" href="namespaceMackey.html" title="The namespace for everything that is group-independent. ">Mackey</a> functor structure.  <a href="classMackey_1_1internal_1_1IDGeneratorCompute.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1internal_1_1MasseyCompute.html">MasseyCompute</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes <a class="el" href="classMackey_1_1Massey.html" title="Stores Massey products and their indeterminacy. ">Massey</a> products and their indeterminacy.  <a href="classMackey_1_1internal_1_1MasseyCompute.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMackey_1_1internal_1_1MasseyCompute.html">MasseyCompute</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes <a class="el" href="classMackey_1_1Massey.html" title="Stores Massey products and their indeterminacy. ">Massey</a> products and their indeterminacy.  <a href="structMackey_1_1internal_1_1MasseyCompute.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1internal_1_1ProductGen.html">ProductGen</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the product of generators at the bottom level.  <a href="classMackey_1_1internal_1_1ProductGen.html#details">More...</a><br /></td></tr>
@@ -119,16 +119,42 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a32720f4fc1f6777a8e13a2e0db0bd2da"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
-<tr class="memitem:a32720f4fc1f6777a8e13a2e0db0bd2da"><td class="memTemplItemLeft" align="right" valign="top">Eigen::PermutationMatrix&lt;-1, -1, int &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#a32720f4fc1f6777a8e13a2e0db0bd2da">box_permutation</a> (const std::vector&lt; rank_t &gt; &amp;C, const std::vector&lt; rank_t &gt; &amp;D, const std::vector&lt; rank_t &gt; &amp;E, int degree)</td></tr>
-<tr class="memdesc:a32720f4fc1f6777a8e13a2e0db0bd2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms the permutation allowing us to go from C box (D box E) to (C box D) box E.  <a href="#a32720f4fc1f6777a8e13a2e0db0bd2da">More...</a><br /></td></tr>
-<tr class="separator:a32720f4fc1f6777a8e13a2e0db0bd2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34dd271be1fcbda4ca21877094697796"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename T , typename S &gt; </td></tr>
+<tr class="memitem:a34dd271be1fcbda4ca21877094697796"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; T, S &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#a34dd271be1fcbda4ca21877094697796">general_canonical</a> (const rank_t &amp;first, const rank_t &amp;second, const std::vector&lt; T &gt; &amp;firstnames, const std::vector&lt; S &gt; &amp;secondnames)</td></tr>
+<tr class="memdesc:a34dd271be1fcbda4ca21877094697796"><td class="mdescLeft">&#160;</td><td class="mdescRight">General expression for the canonical basis for firstrank box secondrank using the provided names.  <a href="#a34dd271be1fcbda4ca21877094697796">More...</a><br /></td></tr>
+<tr class="separator:a34dd271be1fcbda4ca21877094697796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c420c10c78dcc4f9ae579bad1cd2e45"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename T , typename S &gt; </td></tr>
+<tr class="memitem:a2c420c10c78dcc4f9ae579bad1cd2e45"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::tuple&lt; T, S, int, int &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#a2c420c10c78dcc4f9ae579bad1cd2e45">general_canonical_box</a> (int degree, const std::vector&lt; rank_t &gt; &amp;first, const std::vector&lt; rank_t &gt; &amp;second, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;firstnames, const std::vector&lt; std::vector&lt; S &gt;&gt; &amp;secondnames)</td></tr>
+<tr class="memdesc:a2c420c10c78dcc4f9ae579bad1cd2e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">General expression for the canonical basis of (firstChain box secondChain)_i using the provided names.  <a href="#a2c420c10c78dcc4f9ae579bad1cd2e45">More...</a><br /></td></tr>
+<tr class="separator:a2c420c10c78dcc4f9ae579bad1cd2e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a780adcafc5fe040d6340557f88f052f2"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename T , typename S &gt; </td></tr>
+<tr class="memitem:a780adcafc5fe040d6340557f88f052f2"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::tuple&lt; T, S, int, int &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#a780adcafc5fe040d6340557f88f052f2">general_canonical_box</a> (const std::vector&lt; rank_t &gt; &amp;first, const std::vector&lt; rank_t &gt; &amp;second, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;firstnames, const std::vector&lt; std::vector&lt; S &gt;&gt; &amp;secondnames)</td></tr>
+<tr class="memdesc:a780adcafc5fe040d6340557f88f052f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">General expression for the canonical basis of firstChain box secondChain using the provided names.  <a href="#a780adcafc5fe040d6340557f88f052f2">More...</a><br /></td></tr>
+<tr class="separator:a780adcafc5fe040d6340557f88f052f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad5c7d43d4f8e63a3b6a8ec55f85dfa"><td class="memItemLeft" align="right" valign="top">std::array&lt; long, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#a3ad5c7d43d4f8e63a3b6a8ec55f85dfa">triple_box_appender</a> (const std::tuple&lt; std::tuple&lt; long, long, int, int &gt;, long, int, int &gt; &amp;a)</td></tr>
+<tr class="memdesc:a3ad5c7d43d4f8e63a3b6a8ec55f85dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a nicer version of general canonical when used for triple products.  <a href="#a3ad5c7d43d4f8e63a3b6a8ec55f85dfa">More...</a><br /></td></tr>
+<tr class="separator:a3ad5c7d43d4f8e63a3b6a8ec55f85dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c5122d0b7488b13f15bb6a7e03a9f8"><td class="memItemLeft" align="right" valign="top">std::array&lt; long, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#ac9c5122d0b7488b13f15bb6a7e03a9f8">triple_box_appender</a> (const std::tuple&lt; long, std::tuple&lt; long, long, int, int &gt;, int, int &gt; &amp;a)</td></tr>
+<tr class="memdesc:ac9c5122d0b7488b13f15bb6a7e03a9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a nicer version of general canonical when used for triple products.  <a href="#ac9c5122d0b7488b13f15bb6a7e03a9f8">More...</a><br /></td></tr>
+<tr class="separator:ac9c5122d0b7488b13f15bb6a7e03a9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2647c2357084142a1647364848db3205"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
+<tr class="memitem:a2647c2357084142a1647364848db3205"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#a2647c2357084142a1647364848db3205">triple_box_permutation</a> (const std::vector&lt; T &gt; &amp;a, const std::vector&lt; S &gt; &amp;b)</td></tr>
+<tr class="memdesc:a2647c2357084142a1647364848db3205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms the permutation from basis (C box D) box E to C box (D box E) using names provided by general_canonical.  <a href="#a2647c2357084142a1647364848db3205">More...</a><br /></td></tr>
+<tr class="separator:a2647c2357084142a1647364848db3205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3470eee0665ddd466ea1fc98adffd7c"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
+<tr class="memitem:ad3470eee0665ddd466ea1fc98adffd7c"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; long &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#ad3470eee0665ddd466ea1fc98adffd7c">equivariant_base_names</a> (const rank_t &amp;first)</td></tr>
+<tr class="memdesc:ad3470eee0665ddd466ea1fc98adffd7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the names for an equivariant basis.  <a href="#ad3470eee0665ddd466ea1fc98adffd7c">More...</a><br /></td></tr>
+<tr class="separator:ad3470eee0665ddd466ea1fc98adffd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b352efa632d7cfab147b728a0d39491"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
+<tr class="memitem:a4b352efa632d7cfab147b728a0d39491"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491">box_permutation</a> (const std::vector&lt; rank_t &gt; &amp;C, const std::vector&lt; rank_t &gt; &amp;D, const std::vector&lt; rank_t &gt; &amp;E, int degree)</td></tr>
+<tr class="memdesc:a4b352efa632d7cfab147b728a0d39491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms the permutation allowing us to go from C box (D box E) to (C box D) box E.  <a href="#a4b352efa632d7cfab147b728a0d39491">More...</a><br /></td></tr>
+<tr class="separator:a4b352efa632d7cfab147b728a0d39491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains classes and methods whose user interface is provided by the rest of the library. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a32720f4fc1f6777a8e13a2e0db0bd2da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32720f4fc1f6777a8e13a2e0db0bd2da">&#9670;&nbsp;</a></span>box_permutation()</h2>
+<a id="a4b352efa632d7cfab147b728a0d39491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b352efa632d7cfab147b728a0d39491">&#9670;&nbsp;</a></span>box_permutation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,7 +162,7 @@ Functions</h2></td></tr>
 template&lt;typename rank_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::PermutationMatrix&lt;-1, -1, int&gt; Mackey::internal::box_permutation </td>
+          <td class="memname">decltype(auto) Mackey::internal::box_permutation </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; rank_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>C</em>, </td>
@@ -171,9 +197,337 @@ template&lt;typename rank_t &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceMackey_1_1internal_a32720f4fc1f6777a8e13a2e0db0bd2da_cgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a32720f4fc1f6777a8e13a2e0db0bd2da_cgraph" alt=""/></div>
-<map name="namespaceMackey_1_1internal_a32720f4fc1f6777a8e13a2e0db0bd2da_cgraph" id="namespaceMackey_1_1internal_a32720f4fc1f6777a8e13a2e0db0bd2da_cgraph">
-<area shape="rect" id="node2" href="namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="200,13,340,39"/>
+<div class="center"><img src="namespaceMackey_1_1internal_a4b352efa632d7cfab147b728a0d39491_cgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a4b352efa632d7cfab147b728a0d39491_cgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_a4b352efa632d7cfab147b728a0d39491_cgraph" id="namespaceMackey_1_1internal_a4b352efa632d7cfab147b728a0d39491_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey_1_1internal.html#ad3470eee0665ddd466ea1fc98adffd7c" title="Returns the names for an equivariant basis. " alt="" coords="200,5,389,47"/>
+<area shape="rect" id="node4" href="namespaceMackey_1_1internal.html#a780adcafc5fe040d6340557f88f052f2" title="General expression for the canonical basis of firstChain box secondChain using the provided names..." alt="" coords="211,71,379,112"/>
+<area shape="rect" id="node5" href="namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i. " alt="" coords="233,137,357,163"/>
+<area shape="rect" id="node7" href="namespaceMackey_1_1internal.html#a2647c2357084142a1647364848db3205" title="Forms the permutation from basis (C box D) box E to C box (D box E) using names provided by general_c..." alt="" coords="217,188,372,229"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="445,50,585,77"/>
+<area shape="rect" id="node6" href="namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B. " alt="" coords="451,137,578,163"/>
+<area shape="rect" id="node8" href="namespaceMackey_1_1internal.html#ac9c5122d0b7488b13f15bb6a7e03a9f8" title="Produces a nicer version of general canonical when used for triple products. " alt="" coords="437,188,592,229"/>
+<area shape="rect" id="node9" href="namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="466,254,563,281"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_a4b352efa632d7cfab147b728a0d39491_icgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a4b352efa632d7cfab147b728a0d39491_icgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_a4b352efa632d7cfab147b728a0d39491_icgraph" id="namespaceMackey_1_1internal_a4b352efa632d7cfab147b728a0d39491_icgraph">
+<area shape="rect" id="node2" href="structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="200,5,383,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad3470eee0665ddd466ea1fc98adffd7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3470eee0665ddd466ea1fc98adffd7c">&#9670;&nbsp;</a></span>equivariant_base_names()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;long&gt; Mackey::internal::equivariant_base_names </td>
+          <td>(</td>
+          <td class="paramtype">const rank_t &amp;&#160;</td>
+          <td class="paramname"><em>first</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the names for an equivariant basis. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_ad3470eee0665ddd466ea1fc98adffd7c_cgraph.png" border="0" usemap="#namespaceMackey_1_1internal_ad3470eee0665ddd466ea1fc98adffd7c_cgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_ad3470eee0665ddd466ea1fc98adffd7c_cgraph" id="namespaceMackey_1_1internal_ad3470eee0665ddd466ea1fc98adffd7c_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="243,13,383,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_ad3470eee0665ddd466ea1fc98adffd7c_icgraph.png" border="0" usemap="#namespaceMackey_1_1internal_ad3470eee0665ddd466ea1fc98adffd7c_icgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_ad3470eee0665ddd466ea1fc98adffd7c_icgraph" id="namespaceMackey_1_1internal_ad3470eee0665ddd466ea1fc98adffd7c_icgraph">
+<area shape="rect" id="node2" href="namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="243,5,389,47"/>
+<area shape="rect" id="node3" href="structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="437,5,620,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a34dd271be1fcbda4ca21877094697796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34dd271be1fcbda4ca21877094697796">&#9670;&nbsp;</a></span>general_canonical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename T , typename S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;T, S&gt; &gt; Mackey::internal::general_canonical </td>
+          <td>(</td>
+          <td class="paramtype">const rank_t &amp;&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rank_t &amp;&#160;</td>
+          <td class="paramname"><em>second</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>firstnames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; S &gt; &amp;&#160;</td>
+          <td class="paramname"><em>secondnames</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>General expression for the canonical basis for firstrank box secondrank using the provided names. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_a34dd271be1fcbda4ca21877094697796_cgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a34dd271be1fcbda4ca21877094697796_cgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_a34dd271be1fcbda4ca21877094697796_cgraph" id="namespaceMackey_1_1internal_a34dd271be1fcbda4ca21877094697796_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="221,13,361,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_a34dd271be1fcbda4ca21877094697796_icgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a34dd271be1fcbda4ca21877094697796_icgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_a34dd271be1fcbda4ca21877094697796_icgraph" id="namespaceMackey_1_1internal_a34dd271be1fcbda4ca21877094697796_icgraph">
+<area shape="rect" id="node2" href="namespaceMackey_1_1internal.html#a2c420c10c78dcc4f9ae579bad1cd2e45" title="General expression for the canonical basis of (firstChain box secondChain)_i using the provided names..." alt="" coords="221,5,389,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2c420c10c78dcc4f9ae579bad1cd2e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c420c10c78dcc4f9ae579bad1cd2e45">&#9670;&nbsp;</a></span>general_canonical_box() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename T , typename S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::tuple&lt;T, S, int, int&gt; &gt; Mackey::internal::general_canonical_box </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>degree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; rank_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; rank_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>second</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>firstnames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; S &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>secondnames</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>General expression for the canonical basis of (firstChain box secondChain)_i using the provided names. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_a2c420c10c78dcc4f9ae579bad1cd2e45_cgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a2c420c10c78dcc4f9ae579bad1cd2e45_cgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_a2c420c10c78dcc4f9ae579bad1cd2e45_cgraph" id="namespaceMackey_1_1internal_a2c420c10c78dcc4f9ae579bad1cd2e45_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="437,33,577,59"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i. " alt="" coords="243,91,367,118"/>
+<area shape="rect" id="node5" href="namespaceMackey_1_1internal.html#a34dd271be1fcbda4ca21877094697796" title="General expression for the canonical basis for firstrank box secondrank using the provided names..." alt="" coords="221,25,389,67"/>
+<area shape="rect" id="node4" href="namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B. " alt="" coords="444,91,571,118"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a780adcafc5fe040d6340557f88f052f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780adcafc5fe040d6340557f88f052f2">&#9670;&nbsp;</a></span>general_canonical_box() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename rank_t , typename T , typename S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;std::tuple&lt;T, S, int, int&gt; &gt; &gt; Mackey::internal::general_canonical_box </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; rank_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; rank_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>second</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>firstnames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; S &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>secondnames</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>General expression for the canonical basis of firstChain box secondChain using the provided names. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_a780adcafc5fe040d6340557f88f052f2_icgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a780adcafc5fe040d6340557f88f052f2_icgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_a780adcafc5fe040d6340557f88f052f2_icgraph" id="namespaceMackey_1_1internal_a780adcafc5fe040d6340557f88f052f2_icgraph">
+<area shape="rect" id="node2" href="namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="221,5,368,47"/>
+<area shape="rect" id="node3" href="structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="416,5,599,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ad5c7d43d4f8e63a3b6a8ec55f85dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad5c7d43d4f8e63a3b6a8ec55f85dfa">&#9670;&nbsp;</a></span>triple_box_appender() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;long, 6&gt; Mackey::internal::triple_box_appender </td>
+          <td>(</td>
+          <td class="paramtype">const std::tuple&lt; std::tuple&lt; long, long, int, int &gt;, long, int, int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Produces a nicer version of general canonical when used for triple products. </p>
+
+</div>
+</div>
+<a id="ac9c5122d0b7488b13f15bb6a7e03a9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9c5122d0b7488b13f15bb6a7e03a9f8">&#9670;&nbsp;</a></span>triple_box_appender() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;long, 6&gt; Mackey::internal::triple_box_appender </td>
+          <td>(</td>
+          <td class="paramtype">const std::tuple&lt; long, std::tuple&lt; long, long, int, int &gt;, int, int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Produces a nicer version of general canonical when used for triple products. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_ac9c5122d0b7488b13f15bb6a7e03a9f8_icgraph.png" border="0" usemap="#namespaceMackey_1_1internal_ac9c5122d0b7488b13f15bb6a7e03a9f8_icgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_ac9c5122d0b7488b13f15bb6a7e03a9f8_icgraph" id="namespaceMackey_1_1internal_ac9c5122d0b7488b13f15bb6a7e03a9f8_icgraph">
+<area shape="rect" id="node2" href="namespaceMackey_1_1internal.html#a2647c2357084142a1647364848db3205" title="Forms the permutation from basis (C box D) box E to C box (D box E) using names provided by general_c..." alt="" coords="208,5,363,47"/>
+<area shape="rect" id="node3" href="namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="411,5,557,47"/>
+<area shape="rect" id="node4" href="structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="605,5,788,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2647c2357084142a1647364848db3205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2647c2357084142a1647364848db3205">&#9670;&nbsp;</a></span>triple_box_permutation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(auto) Mackey::internal::triple_box_permutation </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; S &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Forms the permutation from basis (C box D) box E to C box (D box E) using names provided by general_canonical. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_a2647c2357084142a1647364848db3205_cgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a2647c2357084142a1647364848db3205_cgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_a2647c2357084142a1647364848db3205_cgraph" id="namespaceMackey_1_1internal_a2647c2357084142a1647364848db3205_cgraph">
+<area shape="rect" id="node2" href="namespaceMackey_1_1internal.html#ac9c5122d0b7488b13f15bb6a7e03a9f8" title="Produces a nicer version of general canonical when used for triple products. " alt="" coords="208,5,363,47"/>
+<area shape="rect" id="node3" href="namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="237,71,334,98"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMackey_1_1internal_a2647c2357084142a1647364848db3205_icgraph.png" border="0" usemap="#namespaceMackey_1_1internal_a2647c2357084142a1647364848db3205_icgraph" alt=""/></div>
+<map name="namespaceMackey_1_1internal_a2647c2357084142a1647364848db3205_icgraph" id="namespaceMackey_1_1internal_a2647c2357084142a1647364848db3205_icgraph">
+<area shape="rect" id="node2" href="namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="208,5,355,47"/>
+<area shape="rect" id="node3" href="structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="403,5,585,47"/>
 </map>
 </div>
 

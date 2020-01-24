@@ -1,3 +1,3 @@
 <map id="Mackey::is_p_group" name="Mackey::is_p_group">
-<area shape="rect" id="node2" href="$namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="192,5,307,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n (not optimized; n is usually very small) " alt="" coords="192,5,307,32"/>
 </map>

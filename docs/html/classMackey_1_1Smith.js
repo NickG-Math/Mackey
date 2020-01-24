@@ -1,10 +1,11 @@
 var classMackey_1_1Smith =
 [
+    [ "ind", "classMackey_1_1Smith.html#acf2eec378d950576afd70dc941cad0c4", null ],
     [ "Smith", "classMackey_1_1Smith.html#ab366b0cccb7fe065521142c442a0dcd3", null ],
     [ "sorter", "classMackey_1_1Smith.html#a30c76fbf9cb906c04908def480b0a321", null ],
     [ "diagonal", "classMackey_1_1Smith.html#a4d7f709505152b53130018e46f9e8411", null ],
-    [ "M", "classMackey_1_1Smith.html#aa651a3c122566df7847bec70583a5f48", null ],
-    [ "N", "classMackey_1_1Smith.html#a642b4538712abcdcee8beb3f0ff08b89", null ],
+    [ "M", "classMackey_1_1Smith.html#aa4bddfb9796689478f536486bb5d5524", null ],
+    [ "N", "classMackey_1_1Smith.html#a9598fe3978cc86a83e4f3b03a418ad5c", null ],
     [ "P", "classMackey_1_1Smith.html#a711a1726ec0da22e9233aa269d66bf73", null ],
     [ "Pi", "classMackey_1_1Smith.html#a890f70fcd15554ee0c3b8469ffb55fde", null ],
     [ "Q", "classMackey_1_1Smith.html#aba53f81430955d8cf7f7ce4677486214", null ],

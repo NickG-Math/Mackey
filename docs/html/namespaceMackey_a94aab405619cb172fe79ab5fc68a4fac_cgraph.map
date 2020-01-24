@@ -1,0 +1,6 @@
+<map id="Mackey::box_sparse" name="Mackey::box_sparse">
+<area shape="rect" id="node2" href="$namespaceMackey.html#ae54ebc8588d873a744541394ac5113f0" title="Forms the block diagonal matrix with k many copies of a, and then applies the permutations left^{&#45;1} ..." alt="" coords="201,5,345,47"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="203,71,343,98"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a1c34295db9666bc7e86b2972c345d291" title="Mixes the left and right differentials to produce the differential for the box product. " alt="" coords="201,122,345,149"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a114f8d4069f6e5964f07c2fec3bdc9b7" title="Turn sparse matrix into a vector of Eigen triplets. " alt="" coords="196,173,351,199"/>
+</map>

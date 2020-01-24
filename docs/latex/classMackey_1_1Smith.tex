@@ -31,6 +31,11 @@ C\+\_\+t \hyperlink{classMackey_1_1Smith_aba53f81430955d8cf7f7ce4677486214}{Q}
 \begin{DoxyCompactList}\small\item\em One of the coefficient matrices (S=P$\ast$\+A$\ast$Q) \end{DoxyCompactList}\item 
 C\+\_\+t \hyperlink{classMackey_1_1Smith_a890f70fcd15554ee0c3b8469ffb55fde}{Pi}
 \begin{DoxyCompactList}\small\item\em One of the coefficient matrices (A=Pi$\ast$\+S$\ast$\+Qi) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef S\+\_\+t\+::\+Storage\+Index \hyperlink{classMackey_1_1Smith_acf2eec378d950576afd70dc941cad0c4}{ind}
+\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,9 +48,9 @@ void \hyperlink{classMackey_1_1Smith_a30c76fbf9cb906c04908def480b0a321}{sorter} 
 \item 
 S\+\_\+t \hyperlink{classMackey_1_1Smith_a2c4e977af966b2956354dce7e40dd5e1}{S}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Smith}{Smith} Normal Form as a diagonal matrix. \end{DoxyCompactList}\item 
-const int \hyperlink{classMackey_1_1Smith_aa651a3c122566df7847bec70583a5f48}{M}
+const \hyperlink{classMackey_1_1Smith_acf2eec378d950576afd70dc941cad0c4}{ind} \hyperlink{classMackey_1_1Smith_aa4bddfb9796689478f536486bb5d5524}{M}
 \begin{DoxyCompactList}\small\item\em Row dimension of original matrix. \end{DoxyCompactList}\item 
-const int \hyperlink{classMackey_1_1Smith_a642b4538712abcdcee8beb3f0ff08b89}{N}
+const \hyperlink{classMackey_1_1Smith_acf2eec378d950576afd70dc941cad0c4}{ind} \hyperlink{classMackey_1_1Smith_a9598fe3978cc86a83e4f3b03a418ad5c}{N}
 \begin{DoxyCompactList}\small\item\em Column dimension of original matrix. \end{DoxyCompactList}\item 
 const bool \hyperlink{classMackey_1_1Smith_a7033b338fda868e33f50950d2444ae75}{wantP}
 \begin{DoxyCompactList}\small\item\em Whether we want to compute the P and Pi coefficient matrices. \end{DoxyCompactList}\item 
@@ -64,6 +69,16 @@ The S\+NF of A is a diagonal matrix S with invertible coefficient matrices P,Q,P
 P,Pi are inverses and so are Q,Qi and they are all computed through row-\/column elimination
 
 S\+\_\+t is the type of the original matrix. R\+\_\+t is S\+\_\+t but row major for best performance (required for sprase) C\+\_\+t is S\+\_\+t but column major for best performance (required for sprase) 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classMackey_1_1Smith_acf2eec378d950576afd70dc941cad0c4}\label{classMackey_1_1Smith_acf2eec378d950576afd70dc941cad0c4}} 
+\index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!ind@{ind}}
+\index{ind@{ind}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
+\subsubsection{\texorpdfstring{ind}{ind}}
+{\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
+typedef S\+\_\+t\+::\+Storage\+Index \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::\hyperlink{classMackey_1_1Smith_acf2eec378d950576afd70dc941cad0c4}{ind}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classMackey_1_1Smith_ab366b0cccb7fe065521142c442a0dcd3}\label{classMackey_1_1Smith_ab366b0cccb7fe065521142c442a0dcd3}} 
@@ -112,23 +127,23 @@ Here is the call graph for this function\+:\nopagebreak
 
 The diagonal of the \hyperlink{classMackey_1_1Smith}{Smith} normal form. 
 
-\mbox{\Hypertarget{classMackey_1_1Smith_aa651a3c122566df7847bec70583a5f48}\label{classMackey_1_1Smith_aa651a3c122566df7847bec70583a5f48}} 
+\mbox{\Hypertarget{classMackey_1_1Smith_aa4bddfb9796689478f536486bb5d5524}\label{classMackey_1_1Smith_aa4bddfb9796689478f536486bb5d5524}} 
 \index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!M@{M}}
 \index{M@{M}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
 \subsubsection{\texorpdfstring{M}{M}}
 {\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
-const int \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::M\hspace{0.3cm}{\ttfamily [protected]}}
+const \hyperlink{classMackey_1_1Smith_acf2eec378d950576afd70dc941cad0c4}{ind} \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::M\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 Row dimension of original matrix. 
 
-\mbox{\Hypertarget{classMackey_1_1Smith_a642b4538712abcdcee8beb3f0ff08b89}\label{classMackey_1_1Smith_a642b4538712abcdcee8beb3f0ff08b89}} 
+\mbox{\Hypertarget{classMackey_1_1Smith_a9598fe3978cc86a83e4f3b03a418ad5c}\label{classMackey_1_1Smith_a9598fe3978cc86a83e4f3b03a418ad5c}} 
 \index{Mackey\+::\+Smith@{Mackey\+::\+Smith}!N@{N}}
 \index{N@{N}!Mackey\+::\+Smith@{Mackey\+::\+Smith}}
 \subsubsection{\texorpdfstring{N}{N}}
 {\footnotesize\ttfamily template$<$typename S\+\_\+t , typename R\+\_\+t , typename C\+\_\+t $>$ \\
-const int \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::N\hspace{0.3cm}{\ttfamily [protected]}}
+const \hyperlink{classMackey_1_1Smith_acf2eec378d950576afd70dc941cad0c4}{ind} \hyperlink{classMackey_1_1Smith}{Mackey\+::\+Smith}$<$ S\+\_\+t, R\+\_\+t, C\+\_\+t $>$\+::N\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

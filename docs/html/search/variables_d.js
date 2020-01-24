@@ -7,5 +7,8 @@ var searchData=
   ['rankout',['rankOut',['../classMackey_1_1Junction.html#afe400bc60b84966b933fd57c11400607',1,'Mackey::Junction']]],
   ['reps',['reps',['../classGroupSpecific_1_1Variables.html#a5504789b0b60050e6ea223fdeb84874a',1,'GroupSpecific::Variables::reps()'],['../namespaceMackey.html#af282e8433677f2812cb242359f4cd0c1',1,'Mackey::reps()']]],
   ['res',['Res',['../classMackey_1_1IDGenerators.html#a8512fc6a9becb6261a703e6131225e3f',1,'Mackey::IDGenerators::Res()'],['../classMackey_1_1MackeyFunctor.html#aa017d427a7ca062c2fe974c3930de6d8',1,'Mackey::MackeyFunctor::Res()']]],
+  ['resgenc',['resgenC',['../structMackey_1_1internal_1_1MasseyCompute.html#ad0e1acb8c1e9b5d8f7e7e23aa1eb6b72',1,'Mackey::internal::MasseyCompute']]],
+  ['resgend',['resgenD',['../structMackey_1_1internal_1_1MasseyCompute.html#ae86523a910e92c2aea2fee7243ba9bb2',1,'Mackey::internal::MasseyCompute']]],
+  ['resgene',['resgenE',['../structMackey_1_1internal_1_1MasseyCompute.html#a325c0dfc10b07a8c85a52a0b99087bd1',1,'Mackey::internal::MasseyCompute']]],
   ['righttocanon',['RighttoCanon',['../classMackey_1_1ChangeBasis.html#aa169c2e7937437ea2102de1c3072194c',1,'Mackey::ChangeBasis']]]
 ];

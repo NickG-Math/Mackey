@@ -1,14 +1,15 @@
 <map id="Mackey::MackeyFunctor::isomorphism_class" name="Mackey::MackeyFunctor::isomorphism_class">
 <area shape="rect" id="node2" href="$classMackey_1_1MackeyFunctor.html#ac7ef9ab9f3a13660a03c35e64dddd66b" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="220,135,387,177"/>
 <area shape="rect" id="node13" href="$classMackey_1_1MackeyFunctor.html#a6522cfe1071ccb92ff3db38d89e14687" title="Applies isomorphism to Mackey functor (its inverse is also needed) " alt="" coords="220,201,387,242"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a2556e2a1f78783585df78de1c1b35eae" title="Mackey::all_automorphisms" alt="" coords="435,100,620,127"/>
-<area shape="rect" id="node12" href="$namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ? " alt="" coords="451,151,604,177"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a2556e2a1f78783585df78de1c1b35eae" title="Mackey::all_automorphisms" alt="" coords="435,96,620,123"/>
+<area shape="rect" id="node12" href="$namespaceMackey.html#a3a4b7761ed7274b145eed9a451b53e61" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],...} for varying ? " alt="" coords="451,147,604,173"/>
 <area shape="rect" id="node4" href="$namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0) ..." alt="" coords="672,5,811,32"/>
 <area shape="rect" id="node6" href="$namespaceMackey.html#a918f02198f6daadfd0c93109b63b2f1f" title="Returns all automorphisms of finite abelian p&#45;group. " alt="" coords="668,107,815,133"/>
 <area shape="rect" id="node7" href="$namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="863,56,1055,83"/>
 <area shape="rect" id="node10" href="$namespaceMackey.html#a8c1525b210b4699780bbe05cb16f0e7b" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group. " alt="" coords="679,157,804,184"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n. " alt="" coords="901,5,1016,32"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n (not optimized; n is usually very small) " alt="" coords="901,5,1016,32"/>
 <area shape="rect" id="node8" href="$namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="863,107,1055,149"/>
 <area shape="rect" id="node9" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="1103,115,1145,141"/>
-<area shape="rect" id="node11" href="$namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="893,191,1025,217"/>
+<area shape="rect" id="node11" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="893,191,1025,217"/>
+<area shape="rect" id="node14" href="$namespaceMackey.html#a65dac6a38a02a4efc56d52292ea8cbd8" title="Given matrix and change of basis matrices, produces the matrix w.r.t. the new basis and normalizes it..." alt="" coords="451,201,604,242"/>
 </map>

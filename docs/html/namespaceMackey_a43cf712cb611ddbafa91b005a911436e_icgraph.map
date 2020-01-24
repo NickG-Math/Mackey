@@ -1,9 +1,5 @@
 <map id="Mackey::serialize" name="Mackey::serialize">
-<area shape="rect" id="node2" href="$classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="181,5,357,47"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector. " alt="" coords="177,71,361,112"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="409,37,593,79"/>
-<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="409,103,593,144"/>
-<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationGraphIdentify.html#a87d94678c5d050a9b36ffe6323076375" title="Uses triple box products to possibly identify the disconnected generators if identification failed be..." alt="" coords="641,103,828,144"/>
-<area shape="rect" id="node7" href="$classMackey_1_1Factorization.html#a02cb54dbcb5a79d1c5e8871dc0599093" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="876,103,1027,144"/>
-<area shape="rect" id="node8" href="$classMackey_1_1Factorization.html#a6e15f1fb3623685326255f7badf7eee9" title="Retrieve the degree of the i&#45;th generator. " alt="" coords="1075,103,1225,144"/>
+<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html#a5c945ebff968abe788e22b025b2455ed" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="177,39,364,80"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#a9828268663049b5ac2668d4eb0bdd4ff" title="Uses triple box products to possibly identify the given generators. " alt="" coords="412,5,563,47"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="412,71,563,112"/>
 </map>

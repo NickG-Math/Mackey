@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">V2.1</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -158,10 +158,14 @@ Functions</h2></td></tr>
 <tr class="memitem:aaa0ce7673970bf261628768fb11a1995"><td class="memTemplItemLeft" align="right" valign="top">rank_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995">Mackey::rankmult</a> (const rank_t &amp;A, const rank_t &amp;B)</td></tr>
 <tr class="memdesc:aaa0ce7673970bf261628768fb11a1995"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tensor product of ranks of modules A,B.  <a href="namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995">More...</a><br /></td></tr>
 <tr class="separator:aaa0ce7673970bf261628768fb11a1995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1257ce64369e72438023fd4e261c7c83"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t &gt; </td></tr>
-<tr class="memitem:a1257ce64369e72438023fd4e261c7c83"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; rank_t, std::vector&lt; rank_t &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a1257ce64369e72438023fd4e261c7c83">Mackey::rankBox</a> (const Chains&lt; rank_t, diff_t &gt; &amp;C, const Chains&lt; rank_t, diff_t &gt; &amp;D, int i)</td></tr>
-<tr class="memdesc:a1257ce64369e72438023fd4e261c7c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of the i-th differential of the tensor product of chains C,D.  <a href="namespaceMackey.html#a1257ce64369e72438023fd4e261c7c83">More...</a><br /></td></tr>
-<tr class="separator:a1257ce64369e72438023fd4e261c7c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3b4c6cc908044298e8e287298b9b99"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
+<tr class="memitem:a8a3b4c6cc908044298e8e287298b9b99"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; rank_t, std::vector&lt; long &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99">Mackey::rankBox</a> (const std::vector&lt; rank_t &gt; &amp;C, const std::vector&lt; rank_t &gt; &amp;D, int i)</td></tr>
+<tr class="memdesc:a8a3b4c6cc908044298e8e287298b9b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of (C box D)_i.  <a href="namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99">More...</a><br /></td></tr>
+<tr class="separator:a8a3b4c6cc908044298e8e287298b9b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ce409eccab63034e324323c1e528814"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
+<tr class="memitem:a6ce409eccab63034e324323c1e528814"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; rank_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a6ce409eccab63034e324323c1e528814">Mackey::rankBox</a> (const std::vector&lt; rank_t &gt; &amp;C, const std::vector&lt; rank_t &gt; &amp;D)</td></tr>
+<tr class="memdesc:a6ce409eccab63034e324323c1e528814"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of (C box D)  <a href="namespaceMackey.html#a6ce409eccab63034e324323c1e528814">More...</a><br /></td></tr>
+<tr class="separator:a6ce409eccab63034e324323c1e528814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae54ebc8588d873a744541394ac5113f0"><td class="memTemplParams" colspan="2">template&lt;typename Derived , typename S &gt; </td></tr>
 <tr class="memitem:ae54ebc8588d873a744541394ac5113f0"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae54ebc8588d873a744541394ac5113f0">Mackey::permutation_block</a> (const Eigen::PermutationMatrix&lt;-1, -1, S &gt; &amp;left, const Eigen::PermutationMatrix&lt;-1, -1, S &gt; &amp;right, const Eigen::MatrixBase&lt; Derived &gt; &amp;a, int k)</td></tr>
 <tr class="memdesc:ae54ebc8588d873a744541394ac5113f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms the block diagonal matrix with k many copies of a, and then applies the permutations left^{-1} * block *right.  <a href="namespaceMackey.html#ae54ebc8588d873a744541394ac5113f0">More...</a><br /></td></tr>
@@ -170,10 +174,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a1c34295db9666bc7e86b2972c345d291"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a1c34295db9666bc7e86b2972c345d291">Mackey::MatrixMixer</a> (std::vector&lt; T &gt; &amp;L, std::vector&lt; T &gt; &amp;R, int rows, int cols)</td></tr>
 <tr class="memdesc:a1c34295db9666bc7e86b2972c345d291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mixes the left and right differentials to produce the differential for the box product.  <a href="namespaceMackey.html#a1c34295db9666bc7e86b2972c345d291">More...</a><br /></td></tr>
 <tr class="separator:a1c34295db9666bc7e86b2972c345d291"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62d8e5c141fbd3776a4c8317498c5824"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
-<tr class="memitem:a62d8e5c141fbd3776a4c8317498c5824"><td class="memTemplItemLeft" align="right" valign="top">triplets&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a62d8e5c141fbd3776a4c8317498c5824">Mackey::box_sparse</a> (S &amp;left, S &amp;right, const triplets&lt; T &gt; &amp;a, int rows, int cols, int copies, int h_offset, int v_offset)</td></tr>
-<tr class="memdesc:a62d8e5c141fbd3776a4c8317498c5824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does permutation_block and matrix mixing in one step for sparse matrices, using the triplets format.  <a href="namespaceMackey.html#a62d8e5c141fbd3776a4c8317498c5824">More...</a><br /></td></tr>
-<tr class="separator:a62d8e5c141fbd3776a4c8317498c5824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94aab405619cb172fe79ab5fc68a4fac"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S , typename storage , typename U , typename V &gt; </td></tr>
+<tr class="memitem:a94aab405619cb172fe79ab5fc68a4fac"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a94aab405619cb172fe79ab5fc68a4fac">Mackey::box_sparse</a> (triplets&lt; T, storage &gt; &amp;trip, const S &amp;left, const S &amp;right, const triplets&lt; T, storage &gt; &amp;a, U rows, U cols, V copies, storage h_offset, storage v_offset)</td></tr>
+<tr class="memdesc:a94aab405619cb172fe79ab5fc68a4fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does permutation_block and matrix mixing in one step for sparse matrices, using the triplets format.  <a href="namespaceMackey.html#a94aab405619cb172fe79ab5fc68a4fac">More...</a><br /></td></tr>
+<tr class="separator:a94aab405619cb172fe79ab5fc68a4fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add5b60c8e734df2be261106e0c719f82"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename diff_t &gt; </td></tr>
 <tr class="memitem:add5b60c8e734df2be261106e0c719f82"><td class="memTemplItemLeft" align="right" valign="top">Chains&lt; rank_t, diff_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#add5b60c8e734df2be261106e0c719f82">Mackey::Box</a> (const Chains&lt; rank_t, diff_t &gt; &amp;C, const Chains&lt; rank_t, diff_t &gt; &amp;D, int i)</td></tr>
 <tr class="memdesc:add5b60c8e734df2be261106e0c719f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the box product of C,D up to index i.  <a href="namespaceMackey.html#add5b60c8e734df2be261106e0c719f82">More...</a><br /></td></tr>

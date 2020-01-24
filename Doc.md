@@ -246,7 +246,7 @@ There are two template arguments that always need to be specified, and their typ
 contained in the file ```Z_n.h``` where we define \f$\mathbb Z/n\mathbb Z\f$ coefficients. Note that for the Smith normal form to work properly, \f$n\f$ should be prime.
 
 
-Important note: ```diff_t``` can also be set to a sparse matrix ```Eigen::SparseMatrix<char>```. See the  \ref perf page for more information.
+Important note: ```diff_t``` can also be set to a sparse matrix format like ```Eigen::SparseMatrix<char>``` or ```Eigen::SparseMatrix<char,0,long>``` (using ```long``` storage type for matrix dimensions). See the  \ref perf page for more information.
 \subsection step1add The additive structure
 
 The file ```<Mackey/Additive.h>``` exposes the class \ref Mackey::AdditiveStructure "AdditiveStructure" that computes the homology of all spheres in a given range as Mackey functors. Example: The code
@@ -346,9 +346,9 @@ The vector <CODE>M.trully_disconnected</CODE> contains the indices of the genera
 The file ```<Mackey/Compute.h>``` finally exposes the method \ref Mackey::ROMassey "ROMassey" for (triple) Massey products in the Green functor \f$H_{\star}(S)\f$. Example: The code
 
 
-<CODE>auto Mass= Mackey::ROMassey<rank_t,diff_t>(2,{0,1,0},{-3,-3,0},{2,2,0});</CODE>
+<CODE>auto Mass= Mackey::ROMassey<rank_t,diff_t>(2,{0,1,0},{-3,-3,0},{2,2,0},1);</CODE>
 
-computes the Massey product \f$\langle a_{\sigma},w_3,u_{2\sigma}\rangle \f$ and its indeterminacy. As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product,
+computes the Massey product \f$\langle a_{\sigma},w_3,u_{2\sigma}\rangle \f$ and its indeterminacy (if indeterminacy is not needed, use \f$0\f$ as the last variable). As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product,
 while the indeterminacy is expressed as two groups (left and right indeterminacy). If both are \f$0\f$ then we have the member variable ```noIndeterminacy=1```. 
 
 We can also provide three optional ```int``` arguments at the end for selections, see \ref step1mult for what that does.
@@ -448,7 +448,7 @@ First, two heuristic observations:
 
 
 * I recommend the following compiler options (GCC, Clang): <CODE>-O3 -funroll-loops -march=native </CODE>
-* For safety you can use -fsanitize=signed-integer-overflow that checks for integer overflow at minimum performance cost. More generally -fsanitize=undefined can be used to check for all undefined behavior at a much greater performance hit (about 10x slower).
+* For safety you can use -fsanitize=signed-integer-overflow that checks for integer overflow at minimum performance cost. For extra safety, -fsanitize=integer checks all kinds of unwanted integer behavior (eg unsigned overflow) at a slightly higher cost. More generally -fsanitize=undefined can be used to check for all undefined behavior (and more) at a much greater performance hit (about 10x slower).
 * See this <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support">page</a> for compiler options regarding Eigen.
 * If OpenMP support is desired use ```-fopenmp```.
 

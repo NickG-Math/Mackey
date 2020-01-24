@@ -46,8 +46,10 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Makes a new matrix out of A keeping only its rows indicated by \hyperlink{classZ}{Z}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename S $>$ }\\T \hyperlink{namespaceMackey_a9a8496759bc7bb14dcaa2284ae1d0491}{Mackey\+::\+Keep\+Col} (const T \&A, const S \&\hyperlink{classZ}{Z})
 \begin{DoxyCompactList}\small\item\em Makes a new matrix out of A keeping only its columns indicated by \hyperlink{classZ}{Z}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived $>$ }\\int \hyperlink{namespaceMackey_a359aa27a035d2b1f1a3f2f8270fc9e52}{Mackey\+::summation} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A)
+{\footnotesize template$<$typename Derived $>$ }\\long \hyperlink{namespaceMackey_a654ed2652808daa206cdaa7ac0fce0e1}{Mackey\+::summation} (const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Takes the sum of the entries of an \hyperlink{namespaceEigen}{Eigen} vector at higher precision than its inputs. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\long \hyperlink{namespaceMackey_adf2e9770c170152b22ca8125f96df8d1}{Mackey\+::summation} (const rank\+\_\+t \&u, long limit)
+\item 
 {\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a38a833de54971845cbdb8c96f830725b}{Mackey\+::rotate} (T \&V)
 \begin{DoxyCompactList}\small\item\em Circularly rotates given V (an Eigen/std vector) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Matrix\+\_\+t , std\+::enable\+\_\+if\+\_\+t$<$ S\+F\+I\+N\+A\+E\+::is\+\_\+\+Dense$<$ Matrix\+\_\+t $>$\+::value, int $>$  = 0$>$ }\\Matrix\+\_\+t \hyperlink{namespaceMackey_aa2f105c9bcbec7f5c7524027174340a0}{Mackey\+::altmatrix} (int m, int n, const std\+::vector$<$ Scalar\+\_\+t$<$ Matrix\+\_\+t $>$$>$ \&v)
@@ -66,11 +68,11 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Printing a vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a5d8ae76ffb9440e27bfca124d26ee1b2}{Mackey\+::lcm} (const T \&v)
 \begin{DoxyCompactList}\small\item\em Least common multiple of vector of elements. \end{DoxyCompactList}\item 
-int \hyperlink{namespaceMackey_ae57418329a761aa68d26d68b637fe9dd}{Mackey\+::hashvector} (const std\+::vector$<$ int $>$ \&deg, const std\+::vector$<$ int $>$ \&min, const std\+::vector$<$ int $>$ \&max)
+{\footnotesize template$<$typename T $>$ }\\long \hyperlink{namespaceMackey_a3d23281b881eb1f166107b333fa98612}{Mackey\+::hashvector} (const T \&deg, const T \&min, const T \&max)
 \begin{DoxyCompactList}\small\item\em Hash vector given minimum and maximum values of its entries. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\triplets$<$ T $>$ \hyperlink{namespaceMackey_ab10a5b78aaa27ff9623360c5343d0dc7}{Mackey\+::make\+\_\+triplets} (const Eigen\+::\+Matrix$<$ T, -\/1, -\/1 $>$ \&a)
-\begin{DoxyCompactList}\small\item\em Turn dense matrix into a vector of \hyperlink{namespaceEigen}{Eigen} triplets. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , int Storage\+Order$>$ }\\triplets$<$ T $>$ \hyperlink{namespaceMackey_a1c6a7d6b8827fff4bf9ebde9300aa8c0}{Mackey\+::make\+\_\+triplets} (const Eigen\+::\+Sparse\+Matrix$<$ T, Storage\+Order $>$ \&a)
+{\footnotesize template$<$typename T , int Storage\+Order, typename storage $>$ }\\triplets$<$ T, storage $>$ \hyperlink{namespaceMackey_a114f8d4069f6e5964f07c2fec3bdc9b7}{Mackey\+::make\+\_\+triplets} (const Eigen\+::\+Sparse\+Matrix$<$ T, Storage\+Order, storage $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Turn sparse matrix into a vector of \hyperlink{namespaceEigen}{Eigen} triplets. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , int Storage\+Order, typename storage $>$ }\\triplets$<$ T, storage $>$ \hyperlink{namespaceMackey_a2c0a3d97e1d5617cf9b802d0cdcfebfc}{Mackey\+::keep\+\_\+row\+\_\+triplets} (const Eigen\+::\+Sparse\+Matrix$<$ T, Storage\+Order, storage $>$ \&a, const std\+::vector$<$ storage $>$ \&keep)
 \begin{DoxyCompactList}\small\item\em Turn sparse matrix into a vector of \hyperlink{namespaceEigen}{Eigen} triplets. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

@@ -36,7 +36,7 @@ There are two template arguments that always need to be specified, and their typ
 \item {\ttfamily diff\+\_\+t} depends on the desired coefficients\+: eg we can set it to {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} for integer coefficients and groups of small power order, or {\ttfamily \hyperlink{namespaceEigen}{Eigen}$<$\hyperlink{classZ}{Z}$<$N$>$,-\/1,-\/1$>$} for $\mathbb Z/n\mathbb Z$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file {\ttfamily \hyperlink{Z__n_8h}{Z\+\_\+n.\+h}} where we define $\mathbb Z/n\mathbb Z$ coefficients. Note that for the Smith normal form to work properly, $n$ should be prime.
 \end{DoxyItemize}
 
-Important note\+: {\ttfamily diff\+\_\+t} can also be set to a sparse matrix {\ttfamily Eigen\+::\+Sparse\+Matrix$<$char$>$}. See the \hyperlink{perf}{Performance} page for more information. \hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
+Important note\+: {\ttfamily diff\+\_\+t} can also be set to a sparse matrix format like {\ttfamily Eigen\+::\+Sparse\+Matrix$<$char$>$} or {\ttfamily Eigen\+::\+Sparse\+Matrix$<$char,0,long$>$} (using {\ttfamily long} storage type for matrix dimensions). See the \hyperlink{perf}{Performance} page for more information. \hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
 The file {\ttfamily $<$\hyperlink{Additive_8h}{Mackey/\+Additive.\+h}$>$} exposes the class \hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure} that computes the homology of all spheres in a given range as \hyperlink{namespaceMackey}{Mackey} functors. Example\+: The code
 
 {\ttfamily  Additive\+Structure$<$rank\+\_\+t,diff\+\_\+t$>$ A(\{-\/3,-\/4\},\{5,6\}); }
@@ -110,11 +110,11 @@ and then
 {\ttfamily M.\+compute\+\_\+with\+\_\+sources(\{\mbox{[}0,0,0\mbox{]}\});}
 
 The vector {\ttfamily M.\+trully\+\_\+disconnected} contains the indices of the generators that may not be connected to any sources. \hypertarget{use_step1Mass}{}\subsection{Massey products}\label{use_step1Mass}
-The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} finally exposes the method \hyperlink{namespaceMackey_ab75d7bcfa2d92d01bea0d5eef9f48398}{R\+O\+Massey} for (triple) Massey products in the Green functor $H_{\star}(S)$. Example\+: The code
+The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} finally exposes the method \hyperlink{namespaceMackey_a9fcefe47f5a8a416b173517377a61bd0}{R\+O\+Massey} for (triple) Massey products in the Green functor $H_{\star}(S)$. Example\+: The code
 
-{\ttfamily auto Mass= \hyperlink{namespaceMackey_ab75d7bcfa2d92d01bea0d5eef9f48398}{Mackey\+::\+R\+O\+Massey$<$rank\+\_\+t,diff\+\_\+t$>$}(2,\{0,1,0\},\{-\/3,-\/3,0\},\{2,2,0\});}
+{\ttfamily auto Mass= \hyperlink{namespaceMackey_a9fcefe47f5a8a416b173517377a61bd0}{Mackey\+::\+R\+O\+Massey$<$rank\+\_\+t,diff\+\_\+t$>$}(2,\{0,1,0\},\{-\/3,-\/3,0\},\{2,2,0\},1);}
 
-computes the Massey product $\langle a_{\sigma},w_3,u_{2\sigma}\rangle $ and its indeterminacy. As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product, while the indeterminacy is expressed as two groups (left and right indeterminacy). If both are $0$ then we have the member variable {\ttfamily no\+Indeterminacy=1}.
+computes the Massey product $\langle a_{\sigma},w_3,u_{2\sigma}\rangle $ and its indeterminacy (if indeterminacy is not needed, use $0$ as the last variable). As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product, while the indeterminacy is expressed as two groups (left and right indeterminacy). If both are $0$ then we have the member variable {\ttfamily no\+Indeterminacy=1}.
 
 We can also provide three optional {\ttfamily int} arguments at the end for selections, see \hyperlink{use_step1mult}{The multiplicative structure} for what that does.
 

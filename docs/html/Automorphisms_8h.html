@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">V2.1</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -145,10 +145,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a40d5c8d3e43cd2ee3df09664bc8c56ea"><td class="memTemplParams" colspan="2">template&lt;typename Scalar &gt; </td></tr>
-<tr class="memitem:a40d5c8d3e43cd2ee3df09664bc8c56ea"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea">Mackey::normalize</a> (Eigen::Matrix&lt; Scalar, -1, -1 &gt; &amp;linmap, const Eigen::Matrix&lt; Scalar, 1, -1 &gt; &amp;range)</td></tr>
-<tr class="memdesc:a40d5c8d3e43cd2ee3df09664bc8c56ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.).  <a href="namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea">More...</a><br /></td></tr>
-<tr class="separator:a40d5c8d3e43cd2ee3df09664bc8c56ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae32d04bca298d2d8735635ae45b971"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
+<tr class="memitem:a5ae32d04bca298d2d8735635ae45b971"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971">Mackey::normalize</a> (Eigen::Matrix&lt; T, -1, -1 &gt; &amp;linmap, const Eigen::Matrix&lt; S, 1, -1 &gt; &amp;range)</td></tr>
+<tr class="memdesc:a5ae32d04bca298d2d8735635ae45b971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.).  <a href="namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971">More...</a><br /></td></tr>
+<tr class="separator:a5ae32d04bca298d2d8735635ae45b971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a463bb762b4edc2f283e8d1c0c466aedf"><td class="memTemplParams" colspan="2">template&lt;typename Scalar &gt; </td></tr>
 <tr class="memitem:a463bb762b4edc2f283e8d1c0c466aedf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a463bb762b4edc2f283e8d1c0c466aedf">Mackey::normalize_minus</a> (Eigen::Matrix&lt; Scalar, -1, -1 &gt; &amp;linmap, const Eigen::Matrix&lt; Scalar, 1, -1 &gt; &amp;range, bool positive)</td></tr>
 <tr class="memdesc:a463bb762b4edc2f283e8d1c0c466aedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.) allowing negative entries.  <a href="namespaceMackey.html#a463bb762b4edc2f283e8d1c0c466aedf">More...</a><br /></td></tr>
@@ -166,7 +166,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a8c1525b210b4699780bbe05cb16f0e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverses of all the automorphisms Group-&gt;Group.  <a href="namespaceMackey.html#a8c1525b210b4699780bbe05cb16f0e7b">More...</a><br /></td></tr>
 <tr class="separator:a8c1525b210b4699780bbe05cb16f0e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa136aece9117704b3e5180d92484ed10"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10">Mackey::primes</a> (int n)</td></tr>
-<tr class="memdesc:aa136aece9117704b3e5180d92484ed10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all primes up to n.  <a href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10">More...</a><br /></td></tr>
+<tr class="memdesc:aa136aece9117704b3e5180d92484ed10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all primes up to n (not optimized; n is usually very small)  <a href="namespaceMackey.html#aa136aece9117704b3e5180d92484ed10">More...</a><br /></td></tr>
 <tr class="separator:aa136aece9117704b3e5180d92484ed10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b6ac22efe0be546f2c3f8abc2ceb5b7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a2b6ac22efe0be546f2c3f8abc2ceb5b7"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7">Mackey::is_p_group</a> (const T &amp;Group)</td></tr>

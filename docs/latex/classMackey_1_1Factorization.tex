@@ -38,6 +38,8 @@ void \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{
 \begin{DoxyCompactList}\small\item\em Compute the factorizations using the given sources for the multiplication graph and their given names. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}{pass\+\_\+unidentified} (bool serialize\+\_\+each\+\_\+step)
 \begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify A\+LL instances where identification failed before. Use with caution! \end{DoxyCompactList}\item 
+void \hyperlink{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff}{pass} (const std\+::vector$<$ int $>$ \&, bool serialize\+\_\+each\+\_\+step)
+\begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the given generators. \end{DoxyCompactList}\item 
 void \hyperlink{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}{pass\+\_\+disconnected} (bool serialize\+\_\+each\+\_\+step)
 \begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the generators not connected to the sources. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}{Factorization} (\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M, const std\+::vector$<$ std\+::string $>$ \&\hyperlink{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}{basic\+Irr\+\_\+names})
@@ -111,6 +113,24 @@ std\+::string \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization
 
 Retrieve the factorization of the i-\/th generator. 
 
+\mbox{\Hypertarget{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff}\label{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff}} 
+\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass@{pass}}
+\index{pass@{pass}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
+\subsubsection{\texorpdfstring{pass()}{pass()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+void \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{desired\+\_\+generators,  }\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})}
+
+
+
+Uses triple box products to possibly identify the given generators. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}\label{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}} 
 \index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass\+\_\+disconnected@{pass\+\_\+disconnected}}
 \index{pass\+\_\+disconnected@{pass\+\_\+disconnected}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}

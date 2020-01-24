@@ -1,10 +1,11 @@
 <map id="Mackey::lcm" name="Mackey::lcm">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="151,123,256,149"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="151,152,256,179"/>
 <area shape="rect" id="node3" href="$namespaceMackey.html#a232e85ca1fb9017788b33b7f6f2c269b" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="312,5,483,32"/>
 <area shape="rect" id="node4" href="$classMackey_1_1Homology.html#a902c8dfef7da8ad9f5e03d16eb60a423" title="Mackey::Homology::Kernel\lModImage" alt="" coords="307,57,487,98"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples. " alt="" coords="331,123,463,149"/>
-<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]..." alt="" coords="304,174,491,215"/>
-<area shape="rect" id="node9" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="547,233,733,274"/>
-<area shape="rect" id="node5" href="$classMackey_1_1Homology.html#af42f480509ef68df47308c0f506d44c8" title="Compute the homology from the given Junction with an extra computation of a coefficient matrix needed..." alt="" coords="539,64,741,91"/>
-<area shape="rect" id="node8" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="565,167,715,209"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples. " alt="" coords="331,123,463,149"/>
+<area shape="rect" id="node6" href="$structMackey_1_1internal_1_1MasseyCompute.html#a720436488adcfdf1d976b27be7d95b55" title="Mackey::internal::Massey\lCompute::indeterminacy" alt="" coords="311,174,483,215"/>
+<area shape="rect" id="node8" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]..." alt="" coords="304,239,491,281"/>
+<area shape="rect" id="node10" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="539,302,725,343"/>
+<area shape="rect" id="node7" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="541,171,723,213"/>
+<area shape="rect" id="node9" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="557,237,707,278"/>
 </map>

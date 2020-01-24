@@ -30,11 +30,11 @@ Collaboration diagram for Mackey\+:\+:Multiplication\+Graph\+Identify$<$ rank\+\
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classMackey_1_1MultiplicationGraphIdentify_a110991be3ba595dbf401ef4a769e4dec}{pass\+\_\+disconnected\+\_\+product} (bool serialize\+\_\+each\+\_\+step)
-\begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the products of disconnected generators if identification failed before on them. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1MultiplicationGraphIdentify_a9791070d75d845d15f1763c03db0b5ce}{pass\+\_\+disconnected\+\_\+division} (bool serialize\+\_\+each\+\_\+step)
-\begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the products landing in degrees of disconnected generators if identification failed before on them. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1MultiplicationGraphIdentify_ab0b4e28dd9134d591305dde1c02b3da5}{pass\+\_\+all\+\_\+unidentified} (bool serialize\+\_\+each\+\_\+step)
+void \hyperlink{classMackey_1_1MultiplicationGraphIdentify_af3019970f4431d1930f75418fb134441}{pass\+\_\+product} (const std\+::vector$<$ int $>$ \&, bool)
+\begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the products of given generators if identification failed before on them. \end{DoxyCompactList}\item 
+void \hyperlink{classMackey_1_1MultiplicationGraphIdentify_a5c945ebff968abe788e22b025b2455ed}{pass\+\_\+division} (const std\+::vector$<$ int $>$ \&, bool)
+\begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the products landing in degrees of given generators if identification failed before on them. \end{DoxyCompactList}\item 
+void \hyperlink{classMackey_1_1MultiplicationGraphIdentify_a0474299a4f315e6e58c8ad8dd0a66fb5}{pass\+\_\+all\+\_\+unidentified} (bool)
 \begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify A\+LL instances where identification failed before. Use with care. \end{DoxyCompactList}\item 
 \hyperlink{classMackey_1_1MultiplicationGraphIdentify_a14b3d3ea4be57324231fd206354fa627}{Multiplication\+Graph\+Identify} (\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M)
 \begin{DoxyCompactList}\small\item\em Uses the Multiplication \hyperlink{classMackey_1_1Graph}{Graph} constructor. \end{DoxyCompactList}\item 
@@ -80,12 +80,12 @@ Uses the Multiplication \hyperlink{classMackey_1_1Graph}{Graph} constructor.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classMackey_1_1MultiplicationGraphIdentify_ab0b4e28dd9134d591305dde1c02b3da5}\label{classMackey_1_1MultiplicationGraphIdentify_ab0b4e28dd9134d591305dde1c02b3da5}} 
+\mbox{\Hypertarget{classMackey_1_1MultiplicationGraphIdentify_a0474299a4f315e6e58c8ad8dd0a66fb5}\label{classMackey_1_1MultiplicationGraphIdentify_a0474299a4f315e6e58c8ad8dd0a66fb5}} 
 \index{Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}!pass\+\_\+all\+\_\+unidentified@{pass\+\_\+all\+\_\+unidentified}}
 \index{pass\+\_\+all\+\_\+unidentified@{pass\+\_\+all\+\_\+unidentified}!Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}}
 \subsubsection{\texorpdfstring{pass\+\_\+all\+\_\+unidentified()}{pass\_all\_unidentified()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-void \hyperlink{classMackey_1_1MultiplicationGraphIdentify}{Mackey\+::\+Multiplication\+Graph\+Identify}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+all\+\_\+unidentified (\begin{DoxyParamCaption}\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+void \hyperlink{classMackey_1_1MultiplicationGraphIdentify}{Mackey\+::\+Multiplication\+Graph\+Identify}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+all\+\_\+unidentified (\begin{DoxyParamCaption}\item[{bool}]{serialize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -95,57 +95,57 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraphIdentify_ab0b4e28dd9134d591305dde1c02b3da5_icgraph}
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraphIdentify_a0474299a4f315e6e58c8ad8dd0a66fb5_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMackey_1_1MultiplicationGraphIdentify_a9791070d75d845d15f1763c03db0b5ce}\label{classMackey_1_1MultiplicationGraphIdentify_a9791070d75d845d15f1763c03db0b5ce}} 
-\index{Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}!pass\+\_\+disconnected\+\_\+division@{pass\+\_\+disconnected\+\_\+division}}
-\index{pass\+\_\+disconnected\+\_\+division@{pass\+\_\+disconnected\+\_\+division}!Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}}
-\subsubsection{\texorpdfstring{pass\+\_\+disconnected\+\_\+division()}{pass\_disconnected\_division()}}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationGraphIdentify_a5c945ebff968abe788e22b025b2455ed}\label{classMackey_1_1MultiplicationGraphIdentify_a5c945ebff968abe788e22b025b2455ed}} 
+\index{Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}!pass\+\_\+division@{pass\+\_\+division}}
+\index{pass\+\_\+division@{pass\+\_\+division}!Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}}
+\subsubsection{\texorpdfstring{pass\+\_\+division()}{pass\_division()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-void \hyperlink{classMackey_1_1MultiplicationGraphIdentify}{Mackey\+::\+Multiplication\+Graph\+Identify}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+disconnected\+\_\+division (\begin{DoxyParamCaption}\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+void \hyperlink{classMackey_1_1MultiplicationGraphIdentify}{Mackey\+::\+Multiplication\+Graph\+Identify}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+division (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{desired\+\_\+generators,  }\item[{bool}]{serialize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Uses triple box products to possibly identify the products landing in degrees of disconnected generators if identification failed before on them. 
+Uses triple box products to possibly identify the products landing in degrees of given generators if identification failed before on them. 
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraphIdentify_a9791070d75d845d15f1763c03db0b5ce_cgraph}
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraphIdentify_a5c945ebff968abe788e22b025b2455ed_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraphIdentify_a9791070d75d845d15f1763c03db0b5ce_icgraph}
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraphIdentify_a5c945ebff968abe788e22b025b2455ed_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMackey_1_1MultiplicationGraphIdentify_a110991be3ba595dbf401ef4a769e4dec}\label{classMackey_1_1MultiplicationGraphIdentify_a110991be3ba595dbf401ef4a769e4dec}} 
-\index{Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}!pass\+\_\+disconnected\+\_\+product@{pass\+\_\+disconnected\+\_\+product}}
-\index{pass\+\_\+disconnected\+\_\+product@{pass\+\_\+disconnected\+\_\+product}!Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}}
-\subsubsection{\texorpdfstring{pass\+\_\+disconnected\+\_\+product()}{pass\_disconnected\_product()}}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationGraphIdentify_af3019970f4431d1930f75418fb134441}\label{classMackey_1_1MultiplicationGraphIdentify_af3019970f4431d1930f75418fb134441}} 
+\index{Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}!pass\+\_\+product@{pass\+\_\+product}}
+\index{pass\+\_\+product@{pass\+\_\+product}!Mackey\+::\+Multiplication\+Graph\+Identify@{Mackey\+::\+Multiplication\+Graph\+Identify}}
+\subsubsection{\texorpdfstring{pass\+\_\+product()}{pass\_product()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-void \hyperlink{classMackey_1_1MultiplicationGraphIdentify}{Mackey\+::\+Multiplication\+Graph\+Identify}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+disconnected\+\_\+product (\begin{DoxyParamCaption}\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+void \hyperlink{classMackey_1_1MultiplicationGraphIdentify}{Mackey\+::\+Multiplication\+Graph\+Identify}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+product (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{desired\+\_\+generators,  }\item[{bool}]{serialize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Uses triple box products to possibly identify the products of disconnected generators if identification failed before on them. 
+Uses triple box products to possibly identify the products of given generators if identification failed before on them. 
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=329pt]{classMackey_1_1MultiplicationGraphIdentify_a110991be3ba595dbf401ef4a769e4dec_cgraph}
+\includegraphics[width=329pt]{classMackey_1_1MultiplicationGraphIdentify_af3019970f4431d1930f75418fb134441_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraphIdentify_a110991be3ba595dbf401ef4a769e4dec_icgraph}
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationGraphIdentify_af3019970f4431d1930f75418fb134441_icgraph}
 \end{center}
 \end{figure}
 

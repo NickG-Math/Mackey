@@ -67,7 +67,9 @@ std\+::map$<$ std\+::array$<$ int, 3 $>$, \hyperlink{classMackey_1_1Green}{Green
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Archive , typename s\+\_\+rank , typename s\+\_\+diff $>$ }\\void \hyperlink{classMackey_1_1MultiplicationTable_a2b1db64d5f5749a0a14483ef730b755c}{serialize} (Archive \&, \hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ s\+\_\+rank, s\+\_\+diff $>$ \&)
+{\footnotesize template$<$typename Archive , typename s\+\_\+rank , typename s\+\_\+diff $>$ }\\void \hyperlink{classMackey_1_1MultiplicationTable_ab6423e67b6c7d46e94ebf021316713d6}{save} (Archive \&, const \hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ s\+\_\+rank, s\+\_\+diff $>$ \&)
+\item 
+{\footnotesize template$<$typename Archive , typename s\+\_\+rank , typename s\+\_\+diff $>$ }\\void \hyperlink{classMackey_1_1MultiplicationTable_afe48d7818a420930c571f57c9bae006a}{load} (Archive \&, \hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ s\+\_\+rank, s\+\_\+diff $>$ \&)
 \end{DoxyCompactItemize}
 
 
@@ -121,6 +123,13 @@ void \hyperlink{classMackey_1_1MultiplicationTable}{Mackey\+::\+Multiplication\+
 
 Extends multiplication table using the larger range provided. 
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1MultiplicationTable_a4371e6ba8a058073c005e636979b7230_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c}\label{classMackey_1_1MultiplicationTable_ac15f13c4a9d160226582e1970ef4b00c}} 
 \index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!getdegreeindex@{getdegreeindex}}
 \index{getdegreeindex@{getdegreeindex}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
@@ -192,13 +201,21 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 \subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_a2b1db64d5f5749a0a14483ef730b755c}\label{classMackey_1_1MultiplicationTable_a2b1db64d5f5749a0a14483ef730b755c}} 
-\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!serialize@{serialize}}
-\index{serialize@{serialize}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
-\subsubsection{\texorpdfstring{serialize}{serialize}}
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_afe48d7818a420930c571f57c9bae006a}\label{classMackey_1_1MultiplicationTable_afe48d7818a420930c571f57c9bae006a}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!load@{load}}
+\index{load@{load}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{load}{load}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
 template$<$typename Archive , typename s\+\_\+rank , typename s\+\_\+diff $>$ \\
-void serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{,  }\item[{\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ s\+\_\+rank, s\+\_\+diff $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+void load (\begin{DoxyParamCaption}\item[{Archive \&}]{,  }\item[{\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ s\+\_\+rank, s\+\_\+diff $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classMackey_1_1MultiplicationTable_ab6423e67b6c7d46e94ebf021316713d6}\label{classMackey_1_1MultiplicationTable_ab6423e67b6c7d46e94ebf021316713d6}} 
+\index{Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}!save@{save}}
+\index{save@{save}!Mackey\+::\+Multiplication\+Table@{Mackey\+::\+Multiplication\+Table}}
+\subsubsection{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
+template$<$typename Archive , typename s\+\_\+rank , typename s\+\_\+diff $>$ \\
+void save (\begin{DoxyParamCaption}\item[{Archive \&}]{,  }\item[{const \hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ s\+\_\+rank, s\+\_\+diff $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 

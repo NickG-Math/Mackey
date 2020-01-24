@@ -3,7 +3,7 @@ var Levels_8h =
     [ "Levels", "classMackey_1_1Levels.html", "classMackey_1_1Levels" ],
     [ "action", "Levels_8h.html#aa515b26c0fbc7f19b36cee7d826f07b9", null ],
     [ "action", "Levels_8h.html#aaa66c9857ba86a13949d1b1825ea20f7", null ],
-    [ "invRes", "Levels_8h.html#af67f48d3d26f3dd700dc6989cb3506de", null ],
+    [ "invRes", "Levels_8h.html#a8e17fb4ada60b950c8f4efe273b23783", null ],
     [ "restriction", "Levels_8h.html#a7defa0afa64fdb038a657493db47e13e", null ],
     [ "restriction", "Levels_8h.html#a6818760aa9590810daace862e4c71f04", null ],
     [ "shiftsegment", "Levels_8h.html#aab8a6292210a3b71960cb03b79d218e6", null ],

@@ -55,6 +55,9 @@ var dir_b2d1c084be4deba5f4d9c05613f211fc =
     [ "Smith_Sparse.h", "Smith__Sparse_8h.html", [
       [ "SmithSparse", "classMackey_1_1SmithSparse.html", "classMackey_1_1SmithSparse" ]
     ] ],
+    [ "Smith_Sparse2.h", "Smith__Sparse2_8h.html", [
+      [ "SmithSparse", "classMackey_1_1SmithSparse.html", "classMackey_1_1SmithSparse" ]
+    ] ],
     [ "Table.h", "Table_8h.html", [
       [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html", "classMackey_1_1MultiplicationTable" ]
     ] ],

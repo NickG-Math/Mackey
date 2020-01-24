@@ -1,3 +1,4 @@
 <map id="Mackey::MackeyFunctor::apply" name="Mackey::MackeyFunctor::apply">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a40d5c8d3e43cd2ee3df09664bc8c56ea" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="220,13,352,39"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a65dac6a38a02a4efc56d52292ea8cbd8" title="Given matrix and change of basis matrices, produces the matrix w.r.t. the new basis and normalizes it..." alt="" coords="220,5,373,47"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="421,13,553,39"/>
 </map>

@@ -1,6 +1,5 @@
 <map id="Mackey::Homology::basis" name="Mackey::Homology::basis">
-<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="228,5,431,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#abd5b370902e8b53b32e3fd4e329f068d" title="Writing the transfer of each generator in terms of the generators in the image. " alt="" coords="269,56,389,83"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a6818760aa9590810daace862e4c71f04" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="263,107,396,133"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#aaa66c9857ba86a13949d1b1825ea20f7" title="Writing the Weyl group action on each generator in terms of the other generators. ..." alt="" coords="274,157,385,184"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#abd5b370902e8b53b32e3fd4e329f068d" title="Writing the transfer of each generator in terms of the generators in the image. " alt="" coords="235,5,355,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a6818760aa9590810daace862e4c71f04" title="Writing the restriction of each generator in terms of the generators in the image. " alt="" coords="228,56,361,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#aaa66c9857ba86a13949d1b1825ea20f7" title="Writing the Weyl group action on each generator in terms of the other generators. ..." alt="" coords="239,107,350,133"/>
 </map>

@@ -1,8 +1,7 @@
 var classMackey_1_1Massey =
 [
     [ "Massey", "classMackey_1_1Massey.html#a9e48aaa79f409e96ae2051719710315c", null ],
-    [ "Massey", "classMackey_1_1Massey.html#aea86037b138dc1c2682f5522279e551e", null ],
-    [ "Massey", "classMackey_1_1Massey.html#a40730505997c03b7c5c05e022ea23f47", null ],
+    [ "Massey", "classMackey_1_1Massey.html#ab9dccd95db4477c103e1e790f6796735", null ],
     [ "basis", "classMackey_1_1Massey.html#ab738306412d735a31df4913c20948d65", null ],
     [ "boxID", "classMackey_1_1Massey.html#ae105b04a17ced9c6fd8fef94a9b56aa2", null ],
     [ "exists", "classMackey_1_1Massey.html#a7890eb54ac6d6c48576ba131a59e551f", null ],

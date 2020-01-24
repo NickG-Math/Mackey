@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">V2.1</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -178,10 +178,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a9a8496759bc7bb14dcaa2284ae1d0491"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a9a8496759bc7bb14dcaa2284ae1d0491">Mackey::KeepCol</a> (const T &amp;A, const S &amp;<a class="el" href="classZ.html">Z</a>)</td></tr>
 <tr class="memdesc:a9a8496759bc7bb14dcaa2284ae1d0491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a new matrix out of A keeping only its columns indicated by <a class="el" href="classZ.html" title="The class of Z/N coefficients. ">Z</a>.  <a href="namespaceMackey.html#a9a8496759bc7bb14dcaa2284ae1d0491">More...</a><br /></td></tr>
 <tr class="separator:a9a8496759bc7bb14dcaa2284ae1d0491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="memTemplParams" colspan="2">template&lt;typename Derived &gt; </td></tr>
-<tr class="memitem:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52">Mackey::summation</a> (const Eigen::MatrixBase&lt; Derived &gt; &amp;A)</td></tr>
-<tr class="memdesc:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the sum of the entries of an <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> vector at higher precision than its inputs.  <a href="namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52">More...</a><br /></td></tr>
-<tr class="separator:a359aa27a035d2b1f1a3f2f8270fc9e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654ed2652808daa206cdaa7ac0fce0e1"><td class="memTemplParams" colspan="2">template&lt;typename Derived &gt; </td></tr>
+<tr class="memitem:a654ed2652808daa206cdaa7ac0fce0e1"><td class="memTemplItemLeft" align="right" valign="top">long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1">Mackey::summation</a> (const Eigen::MatrixBase&lt; Derived &gt; &amp;A)</td></tr>
+<tr class="memdesc:a654ed2652808daa206cdaa7ac0fce0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes the sum of the entries of an <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> vector at higher precision than its inputs.  <a href="namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1">More...</a><br /></td></tr>
+<tr class="separator:a654ed2652808daa206cdaa7ac0fce0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2e9770c170152b22ca8125f96df8d1"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
+<tr class="memitem:adf2e9770c170152b22ca8125f96df8d1"><td class="memTemplItemLeft" align="right" valign="top">long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#adf2e9770c170152b22ca8125f96df8d1">Mackey::summation</a> (const rank_t &amp;u, long limit)</td></tr>
+<tr class="separator:adf2e9770c170152b22ca8125f96df8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38a833de54971845cbdb8c96f830725b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a38a833de54971845cbdb8c96f830725b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a38a833de54971845cbdb8c96f830725b">Mackey::rotate</a> (T &amp;V)</td></tr>
 <tr class="memdesc:a38a833de54971845cbdb8c96f830725b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circularly rotates given V (an Eigen/std vector)  <a href="namespaceMackey.html#a38a833de54971845cbdb8c96f830725b">More...</a><br /></td></tr>
@@ -218,17 +221,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2">Mackey::lcm</a> (const T &amp;v)</td></tr>
 <tr class="memdesc:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Least common multiple of vector of elements.  <a href="namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2">More...</a><br /></td></tr>
 <tr class="separator:a5d8ae76ffb9440e27bfca124d26ee1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae57418329a761aa68d26d68b637fe9dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd">Mackey::hashvector</a> (const std::vector&lt; int &gt; &amp;deg, const std::vector&lt; int &gt; &amp;min, const std::vector&lt; int &gt; &amp;max)</td></tr>
-<tr class="memdesc:ae57418329a761aa68d26d68b637fe9dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash vector given minimum and maximum values of its entries.  <a href="namespaceMackey.html#ae57418329a761aa68d26d68b637fe9dd">More...</a><br /></td></tr>
-<tr class="separator:ae57418329a761aa68d26d68b637fe9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab10a5b78aaa27ff9623360c5343d0dc7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab10a5b78aaa27ff9623360c5343d0dc7"><td class="memTemplItemLeft" align="right" valign="top">triplets&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#ab10a5b78aaa27ff9623360c5343d0dc7">Mackey::make_triplets</a> (const Eigen::Matrix&lt; T, -1, -1 &gt; &amp;a)</td></tr>
-<tr class="memdesc:ab10a5b78aaa27ff9623360c5343d0dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn dense matrix into a vector of <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> triplets.  <a href="namespaceMackey.html#ab10a5b78aaa27ff9623360c5343d0dc7">More...</a><br /></td></tr>
-<tr class="separator:ab10a5b78aaa27ff9623360c5343d0dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c6a7d6b8827fff4bf9ebde9300aa8c0"><td class="memTemplParams" colspan="2">template&lt;typename T , int StorageOrder&gt; </td></tr>
-<tr class="memitem:a1c6a7d6b8827fff4bf9ebde9300aa8c0"><td class="memTemplItemLeft" align="right" valign="top">triplets&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a1c6a7d6b8827fff4bf9ebde9300aa8c0">Mackey::make_triplets</a> (const Eigen::SparseMatrix&lt; T, StorageOrder &gt; &amp;a)</td></tr>
-<tr class="memdesc:a1c6a7d6b8827fff4bf9ebde9300aa8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn sparse matrix into a vector of <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> triplets.  <a href="namespaceMackey.html#a1c6a7d6b8827fff4bf9ebde9300aa8c0">More...</a><br /></td></tr>
-<tr class="separator:a1c6a7d6b8827fff4bf9ebde9300aa8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d23281b881eb1f166107b333fa98612"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3d23281b881eb1f166107b333fa98612"><td class="memTemplItemLeft" align="right" valign="top">long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a3d23281b881eb1f166107b333fa98612">Mackey::hashvector</a> (const T &amp;deg, const T &amp;min, const T &amp;max)</td></tr>
+<tr class="memdesc:a3d23281b881eb1f166107b333fa98612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash vector given minimum and maximum values of its entries.  <a href="namespaceMackey.html#a3d23281b881eb1f166107b333fa98612">More...</a><br /></td></tr>
+<tr class="separator:a3d23281b881eb1f166107b333fa98612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114f8d4069f6e5964f07c2fec3bdc9b7"><td class="memTemplParams" colspan="2">template&lt;typename T , int StorageOrder, typename storage &gt; </td></tr>
+<tr class="memitem:a114f8d4069f6e5964f07c2fec3bdc9b7"><td class="memTemplItemLeft" align="right" valign="top">triplets&lt; T, storage &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a114f8d4069f6e5964f07c2fec3bdc9b7">Mackey::make_triplets</a> (const Eigen::SparseMatrix&lt; T, StorageOrder, storage &gt; &amp;a)</td></tr>
+<tr class="memdesc:a114f8d4069f6e5964f07c2fec3bdc9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn sparse matrix into a vector of <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> triplets.  <a href="namespaceMackey.html#a114f8d4069f6e5964f07c2fec3bdc9b7">More...</a><br /></td></tr>
+<tr class="separator:a114f8d4069f6e5964f07c2fec3bdc9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c0a3d97e1d5617cf9b802d0cdcfebfc"><td class="memTemplParams" colspan="2">template&lt;typename T , int StorageOrder, typename storage &gt; </td></tr>
+<tr class="memitem:a2c0a3d97e1d5617cf9b802d0cdcfebfc"><td class="memTemplItemLeft" align="right" valign="top">triplets&lt; T, storage &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMackey.html#a2c0a3d97e1d5617cf9b802d0cdcfebfc">Mackey::keep_row_triplets</a> (const Eigen::SparseMatrix&lt; T, StorageOrder, storage &gt; &amp;a, const std::vector&lt; storage &gt; &amp;keep)</td></tr>
+<tr class="memdesc:a2c0a3d97e1d5617cf9b802d0cdcfebfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn sparse matrix into a vector of <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> triplets.  <a href="namespaceMackey.html#a2c0a3d97e1d5617cf9b802d0cdcfebfc">More...</a><br /></td></tr>
+<tr class="separator:a2c0a3d97e1d5617cf9b802d0cdcfebfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains general functions and vector overloads independent of everything else. </p>

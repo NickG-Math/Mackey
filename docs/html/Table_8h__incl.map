@@ -1,7 +1,7 @@
 <map id="Mackey/Table.h" name="Mackey/Table.h">
 <area shape="rect" id="node2" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="1022,80,1109,107"/>
 <area shape="rect" id="node16" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="1110,229,1178,256"/>
-<area shape="rect" id="node3" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="101,453,224,480"/>
+<area shape="rect" id="node3" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="103,453,225,480"/>
 <area shape="rect" id="node33" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="1002,155,1081,181"/>
 <area shape="rect" id="node7" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="931,528,1055,555"/>
 <area shape="rect" id="node9" href="$Aliases_8h.html" title="Contains general template aliases. " alt="" coords="571,677,647,704"/>

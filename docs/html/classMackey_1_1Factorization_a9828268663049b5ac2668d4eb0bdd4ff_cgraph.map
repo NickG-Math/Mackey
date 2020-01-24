@@ -1,0 +1,20 @@
+<map id="Mackey::Factorization::pass" name="Mackey::Factorization::pass">
+<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html#a5c945ebff968abe788e22b025b2455ed" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="204,267,391,309"/>
+<area shape="rect" id="node19" href="$classMackey_1_1MultiplicationGraphIdentify.html#af3019970f4431d1930f75418fb134441" title="Uses triple box products to possibly identify the products of given generators if identification fail..." alt="" coords="204,375,391,417"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a43cf712cb611ddbafa91b005a911436e" title="Chains cerealize. " alt="" coords="469,123,593,149"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="714,325,811,352"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="439,57,623,98"/>
+<area shape="rect" id="node10" href="$namespaceMackey.html#a1824d780ce15f1845e4f87bf056feec9" title="Saves object to binary file of given name. Serialization is provided by cereal. " alt="" coords="477,275,585,301"/>
+<area shape="rect" id="node11" href="$classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84" title="Returns the (normalized) product of the given two elements (not necessarily generators) ..." alt="" coords="441,478,620,519"/>
+<area shape="rect" id="node14" href="$namespaceMackey.html#a83ac78e6d1695af40d0fa58af5255e84" title="Use the ID data to identify all possible candidates for an element. " alt="" coords="685,224,841,251"/>
+<area shape="rect" id="node17" href="$classMackey_1_1Graph.html#a69d21bdddbb76aa562aa9f60a84c4b10" title="Clears distances and initializes. " alt="" coords="457,376,604,403"/>
+<area shape="rect" id="node18" href="$namespaceMackey.html#a281b9be315d7d51c7e691d4c733ac0c9" title="Find if given elements can all be distinguished i.e. they have pairwise disjoint candidate sets..." alt="" coords="461,224,600,251"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="701,123,825,149"/>
+<area shape="rect" id="node8" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="671,57,855,98"/>
+<area shape="rect" id="node9" href="$namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="713,5,812,32"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="933,93,1027,120"/>
+<area shape="rect" id="node12" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero. " alt="" coords="707,485,819,512"/>
+<area shape="rect" id="node13" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="914,344,1046,371"/>
+<area shape="rect" id="node15" href="$classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data. " alt="" coords="903,217,1057,258"/>
+<area shape="rect" id="node16" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables. " alt="" coords="1105,217,1272,258"/>
+</map>

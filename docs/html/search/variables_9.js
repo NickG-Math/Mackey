@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n',['N',['../classMackey_1_1Smith.html#a642b4538712abcdcee8beb3f0ff08b89',1,'Mackey::Smith']]],
+  ['n',['N',['../classMackey_1_1Smith.html#a9598fe3978cc86a83e4f3b03a418ad5c',1,'Mackey::Smith']]],
   ['name',['name',['../classMackey_1_1MackeyFunctor.html#ae1d69a215249d8b1018ac810ecc63d56',1,'Mackey::MackeyFunctor']]],
   ['noindeterminacy',['noIndeterminacy',['../classMackey_1_1Massey.html#a4dbd74288447b094c8308f4d68bf8cff',1,'Mackey::Massey']]],
   ['nonzerohomology',['NonZeroHomology',['../classMackey_1_1MultiplicationTable.html#ad392b9570c511595a08642f5d54d20eb',1,'Mackey::MultiplicationTable']]],

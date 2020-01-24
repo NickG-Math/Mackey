@@ -9,6 +9,15 @@ The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_
 
 {\ttfamily \#include $<$Aliases.\+h$>$}
 
+
+
+Collaboration diagram for Mackey\+:\+:Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classMackey_1_1Homology__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,19 +51,19 @@ rank\+\_\+t \hyperlink{classMackey_1_1Homology_aaae78e6463ce6e60e7f4c5861304bc5b
 \begin{DoxyCompactList}\small\item\em Encodes the generators homology groups as follows\+: The i-\/th column corresponds to the generator for Groups\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
 bool \hyperlink{classMackey_1_1Homology_ae3bb3781bab2b5884295e04a8fddf36e}{is\+Zero}
 \begin{DoxyCompactList}\small\item\em 1 if the homology is trivial \end{DoxyCompactList}\item 
-std\+::vector$<$ int $>$ \hyperlink{classMackey_1_1Homology_a21c18ecdeea401821a56c7c00569190b}{dont\+Mod\+Out}
-\item 
-fdiff\+\_\+t\+\_\+C \hyperlink{classMackey_1_1Homology_a451ad6ea31ffe0ed18111f102ec2e370}{In\+\_\+Q}
-\item 
 fdiff\+\_\+t\+\_\+R \hyperlink{classMackey_1_1Homology_a49fa2fbf9542e38b4000f4889f633f62}{Out\+\_\+\+Qi}
 \item 
 fdiff\+\_\+t\+\_\+R \hyperlink{classMackey_1_1Homology_ad2f8d8e87b9ee4f6c2db72558ab8b2a8}{In\+\_\+\+P\+\_\+full}
 \item 
 fdiff\+\_\+t\+\_\+R \hyperlink{classMackey_1_1Homology_ae00a8d4ac6bdfd2de79045576200c6d2}{In\+\_\+\+P\+\_\+reduced}
 \item 
+std\+::vector$<$ typename diff\+\_\+t\+::\+Storage\+Index $>$ \hyperlink{classMackey_1_1Homology_a12fe9d461d594721ad6985629e3f50f2}{dont\+Mod\+Out}
+\item 
+fdiff\+\_\+t\+\_\+C \hyperlink{classMackey_1_1Homology_a451ad6ea31ffe0ed18111f102ec2e370}{In\+\_\+Q}
+\item 
 \hyperlink{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}{row\+\_\+t}$<$ fdiff\+\_\+t\+\_\+C $>$ \hyperlink{classMackey_1_1Homology_acff409513ea412c16b84f304d097059b}{diagonal}
 \item 
-int \hyperlink{classMackey_1_1Homology_a94b43567580dee325fda104b9abf38e3}{M}
+diff\+\_\+t\+::\+Storage\+Index \hyperlink{classMackey_1_1Homology_a904d8b7e452d276930b19e592fe3cda5}{M}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -106,13 +115,6 @@ The type of our matrix of generators.
 
 Default constructor. 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Homology_a3580b194f986bd59a02fb84db97e00f2_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22}\label{classMackey_1_1Homology_a31e26f0fb8e1cd7f0506ae1dbc97ea22}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Homology@{Homology}}
 \index{Homology@{Homology}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
@@ -160,7 +162,7 @@ The answer is encoded as follows\+: basis=\mbox{[}-\/1,0,3\mbox{]} means element
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Homology_a2e6fb6da3abdba934a1eb2f4236623cb_icgraph}
+\includegraphics[width=347pt]{classMackey_1_1Homology_a2e6fb6da3abdba934a1eb2f4236623cb_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b}\label{classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b}} 
@@ -174,13 +176,6 @@ The answer is encoded as follows\+: basis=\mbox{[}-\/1,0,3\mbox{]} means element
 
 Given an x that is a boundary returns a y s.\+t. dy=x. 
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Homology_aeb3cbf5cc7cb166e8e0a552dda57d05b_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Homology_a72296e393c6f22a526375b0169daab94}\label{classMackey_1_1Homology_a72296e393c6f22a526375b0169daab94}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!get\+Kernel@{get\+Kernel}}
 \index{get\+Kernel@{get\+Kernel}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
@@ -195,13 +190,6 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{classMackey_1_1Homology_a72296e393c6f22a526375b0169daab94_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Homology_a72296e393c6f22a526375b0169daab94_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Homology_a902c8dfef7da8ad9f5e03d16eb60a423}\label{classMackey_1_1Homology_a902c8dfef7da8ad9f5e03d16eb60a423}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Kernel\+Mod\+Image@{Kernel\+Mod\+Image}}
 \index{Kernel\+Mod\+Image@{Kernel\+Mod\+Image}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
@@ -214,13 +202,6 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMackey_1_1Homology_a902c8dfef7da8ad9f5e03d16eb60a423_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Homology_a902c8dfef7da8ad9f5e03d16eb60a423_icgraph}
 \end{center}
 \end{figure}
 
@@ -244,12 +225,12 @@ void serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{,  }\item[{\hyperlin
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
 \hyperlink{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}{row\+\_\+t}$<$fdiff\+\_\+t\+\_\+C$>$ \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::diagonal}
 
-\mbox{\Hypertarget{classMackey_1_1Homology_a21c18ecdeea401821a56c7c00569190b}\label{classMackey_1_1Homology_a21c18ecdeea401821a56c7c00569190b}} 
+\mbox{\Hypertarget{classMackey_1_1Homology_a12fe9d461d594721ad6985629e3f50f2}\label{classMackey_1_1Homology_a12fe9d461d594721ad6985629e3f50f2}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!dont\+Mod\+Out@{dont\+Mod\+Out}}
 \index{dont\+Mod\+Out@{dont\+Mod\+Out}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
 \subsubsection{\texorpdfstring{dont\+Mod\+Out}{dontModOut}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-std\+::vector$<$int$>$ \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::dont\+Mod\+Out}
+std\+::vector$<$typename diff\+\_\+t\+::\+Storage\+Index$>$ \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::dont\+Mod\+Out}
 
 \mbox{\Hypertarget{classMackey_1_1Homology_abceae7827c633cec7a9892826240c9cd}\label{classMackey_1_1Homology_abceae7827c633cec7a9892826240c9cd}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Generators@{Generators}}
@@ -305,12 +286,12 @@ bool \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, d
 
 1 if the homology is trivial 
 
-\mbox{\Hypertarget{classMackey_1_1Homology_a94b43567580dee325fda104b9abf38e3}\label{classMackey_1_1Homology_a94b43567580dee325fda104b9abf38e3}} 
+\mbox{\Hypertarget{classMackey_1_1Homology_a904d8b7e452d276930b19e592fe3cda5}\label{classMackey_1_1Homology_a904d8b7e452d276930b19e592fe3cda5}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!M@{M}}
 \index{M@{M}!Mackey\+::\+Homology@{Mackey\+::\+Homology}}
 \subsubsection{\texorpdfstring{M}{M}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-int \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::M}
+diff\+\_\+t\+::\+Storage\+Index \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::M}
 
 \mbox{\Hypertarget{classMackey_1_1Homology_a49fa2fbf9542e38b4000f4889f633f62}\label{classMackey_1_1Homology_a49fa2fbf9542e38b4000f4889f633f62}} 
 \index{Mackey\+::\+Homology@{Mackey\+::\+Homology}!Out\+\_\+\+Qi@{Out\+\_\+\+Qi}}

@@ -7,8 +7,9 @@ var Compute_8h =
     [ "ROChains", "Compute_8h.html#abd3c2e12c91baa573c6dbaa37eeb0518", null ],
     [ "ROGreen", "Compute_8h.html#a2bd86833844ca62d76c47a54aeb0bb77", null ],
     [ "ROGreen", "Compute_8h.html#a07d3b1e748c6cf2fd8a6e21b948a0afe", null ],
+    [ "ROHomology", "Compute_8h.html#aa014e2177bd124bce2e8e7a4c1dc8d38", null ],
     [ "ROHomology", "Compute_8h.html#a58708ee937b0c4172b7cde8e5f856504", null ],
-    [ "ROMassey", "Compute_8h.html#ab75d7bcfa2d92d01bea0d5eef9f48398", null ],
-    [ "ROMassey", "Compute_8h.html#a7301f53f372c1dc670b4c10f878137a2", null ],
+    [ "ROMassey", "Compute_8h.html#a9fcefe47f5a8a416b173517377a61bd0", null ],
+    [ "ROMassey", "Compute_8h.html#afa8c8ea3bfdd5edbda71827e0b796fb1", null ],
     [ "StandardChains", "Compute_8h.html#a425b988266cedec0299fb539d99179b1", null ]
 ];

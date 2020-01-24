@@ -8,7 +8,7 @@ First, two heuristic observations\+:
 
 \begin{DoxyItemize}
 \item I recommend the following compiler options (G\+CC, Clang)\+: {\ttfamily -\/\+O3 -\/funroll-\/loops -\/march=native }
-\item For safety you can use -\/fsanitize=signed-\/integer-\/overflow that checks for integer overflow at minimum performance cost. More generally -\/fsanitize=undefined can be used to check for all undefined behavior at a much greater performance hit (about 10x slower).
+\item For safety you can use -\/fsanitize=signed-\/integer-\/overflow that checks for integer overflow at minimum performance cost. For extra safety, -\/fsanitize=integer checks all kinds of unwanted integer behavior (eg unsigned overflow) at a slightly higher cost. More generally -\/fsanitize=undefined can be used to check for all undefined behavior (and more) at a much greater performance hit (about 10x slower).
 \item See this \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support}{\tt page} for compiler options regarding \hyperlink{namespaceEigen}{Eigen}.
 \item If Open\+MP support is desired use {\ttfamily -\/fopenmp}.
 \end{DoxyItemize}\hypertarget{perf_thread}{}\section{Multithreading}\label{perf_thread}

@@ -1,3 +1,8 @@
 <map id="Mackey::rankmult" name="Mackey::rankmult">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a1257ce64369e72438023fd4e261c7c83" title="The rank of the i&#45;th differential of the tensor product of chains C,D. " alt="" coords="180,5,304,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i. " alt="" coords="180,97,304,124"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a6ce409eccab63034e324323c1e528814" title="The rank of (C box D) " alt="" coords="376,5,500,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey_1_1internal.html#a2c420c10c78dcc4f9ae579bad1cd2e45" title="General expression for the canonical basis of (firstChain box secondChain)_i using the provided names..." alt="" coords="354,57,522,98"/>
+<area shape="rect" id="node5" href="$namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="365,122,511,163"/>
+<area shape="rect" id="node7" href="$structMackey_1_1internal_1_1MasseyCompute.html#aff177659d2dbcd9c3fe9d644d55141ca" title="Mackey::internal::Massey\lCompute::box" alt="" coords="352,187,524,229"/>
+<area shape="rect" id="node6" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="572,155,755,197"/>
 </map>

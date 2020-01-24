@@ -1,0 +1,8 @@
+<map id="Mackey::internal::MasseyCompute::box_boundary" name="Mackey::internal::MasseyCompute::box_boundary">
+<area shape="rect" id="node2" href="$structMackey_1_1internal_1_1MasseyCompute.html#a2a7ff03cfeadb4f35c0798bf2a447a7e" title="Mackey::internal::Massey\lCompute::product_bottom" alt="" coords="225,5,399,47"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a8e17fb4ada60b950c8f4efe273b23783" title="Mackey::invRes" alt="" coords="253,71,371,98"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="245,122,379,149"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="252,173,372,199"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="447,97,587,123"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="461,173,572,199"/>
+</map>

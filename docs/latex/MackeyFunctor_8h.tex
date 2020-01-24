@@ -43,7 +43,9 @@ class \hyperlink{classMackey_1_1MackeyFunctor}{Mackey\+::\+Mackey\+Functor$<$ ra
 {\footnotesize template$<$typename rank\+\_\+t $>$ }\\Mackey\+Functor$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a738f2b46b7d0c37be203a17083801bbd}{Mackey\+::operator+} (const Mackey\+Functor$<$ rank\+\_\+t $>$ \&M, const Mackey\+Functor$<$ rank\+\_\+t $>$ \&N)
 \begin{DoxyCompactList}\small\item\em The sum of two \hyperlink{namespaceMackey}{Mackey} functors. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::ostream \& \hyperlink{namespaceMackey_aaf9e6d978fdb55a757223964390b2fc0}{Mackey\+::operator$<$$<$} (std\+::ostream \&out, const Mackey\+Functor$<$ rank\+\_\+t $>$ \&M)
-\end{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename S $>$ }\\T \hyperlink{namespaceMackey_a65dac6a38a02a4efc56d52292ea8cbd8}{Mackey\+::change\+\_\+base\+\_\+matrix\+\_\+normalize} (const T \&mat, const T \&P, const T \&Q, const S \&Group\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Given matrix and change of basis matrices, produces the matrix w.\+r.\+t. the new basis and normalizes it for the given group in the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

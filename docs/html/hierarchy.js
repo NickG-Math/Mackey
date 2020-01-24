@@ -34,7 +34,7 @@ var hierarchy =
     [ "Mackey::Levels< T >", "classMackey_1_1Levels.html", null ],
     [ "Mackey::MackeyFunctor< rank_t >", "classMackey_1_1MackeyFunctor.html", null ],
     [ "Mackey::Massey< rank_t, diff_t >", "classMackey_1_1Massey.html", null ],
-    [ "Mackey::internal::MasseyCompute< rank_t, diff_t >", "classMackey_1_1internal_1_1MasseyCompute.html", null ],
+    [ "Mackey::internal::MasseyCompute< rank_t, diff_t >", "structMackey_1_1internal_1_1MasseyCompute.html", null ],
     [ "Mackey::MultiplicationTable< rank_t, diff_t >", "classMackey_1_1MultiplicationTable.html", [
       [ "Mackey::MultiplicationGraph< rank_t, diff_t >", "classMackey_1_1MultiplicationGraph.html", null ]
     ] ],
@@ -46,6 +46,7 @@ var hierarchy =
       [ "Mackey::SmithFP< S_t, R_t, C_t >", "classMackey_1_1SmithFP.html", null ],
       [ "Mackey::SmithMP< S_t, R_t, C_t >", "classMackey_1_1SmithMP.html", null ],
       [ "Mackey::SmithSP< S_t, R_t, C_t >", "classMackey_1_1SmithSP.html", null ],
+      [ "Mackey::SmithSparse< S_t, R_t, C_t >", "classMackey_1_1SmithSparse.html", null ],
       [ "Mackey::SmithSparse< S_t, R_t, C_t >", "classMackey_1_1SmithSparse.html", null ]
     ] ],
     [ "GroupSpecific::Variables", "classGroupSpecific_1_1Variables.html", null ],

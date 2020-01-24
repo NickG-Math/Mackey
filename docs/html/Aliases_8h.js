@@ -8,7 +8,7 @@ var Aliases_8h =
     [ "mat_t_r", "Aliases_8h.html#ac1c9f85957dda772ceaa564cb23494cb", null ],
     [ "row_t", "Aliases_8h.html#a6d37801553e585770ca7d1243ab3b213", null ],
     [ "Scalar_t", "Aliases_8h.html#a93ba297573961f91101fb84bc84bbe95", null ],
-    [ "spm_t", "Aliases_8h.html#a6fae5aa6894681eabd63f02c387ac618", null ],
-    [ "spm_t_r", "Aliases_8h.html#a43f350029dd91403df428883f202a7b6", null ],
-    [ "triplets", "Aliases_8h.html#a48661e728506f91066a28c199af56ff5", null ]
+    [ "spm_t", "Aliases_8h.html#a3f5deb1be99876ac8c7d72f0f0cca3af", null ],
+    [ "spm_t_r", "Aliases_8h.html#acc7de57bf31af7089e6bc392c8b52e7e", null ],
+    [ "triplets", "Aliases_8h.html#a0b8cd52f81199d53fa1e93946d8115ef", null ]
 ];

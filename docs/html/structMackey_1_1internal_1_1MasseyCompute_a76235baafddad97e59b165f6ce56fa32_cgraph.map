@@ -1,0 +1,24 @@
+<map id="Mackey::internal::MasseyCompute::MasseyCompute" name="Mackey::internal::MasseyCompute::MasseyCompute">
+<area shape="rect" id="node2" href="$namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="249,176,395,217"/>
+<area shape="rect" id="node11" href="$structMackey_1_1internal_1_1MasseyCompute.html#ae7e9d0ea52c8e8373374535d41221dcb" title="Mackey::internal::Massey\lCompute::getGens" alt="" coords="236,508,408,549"/>
+<area shape="rect" id="node12" href="$structMackey_1_1internal_1_1MasseyCompute.html#aff177659d2dbcd9c3fe9d644d55141ca" title="Mackey::internal::Massey\lCompute::box" alt="" coords="236,336,408,377"/>
+<area shape="rect" id="node19" href="$structMackey_1_1internal_1_1MasseyCompute.html#a0dc26be60def312ab591b72b1e24144f" title="Mackey::internal::Massey\lCompute::compute" alt="" coords="465,481,637,523"/>
+<area shape="rect" id="node21" href="$structMackey_1_1internal_1_1MasseyCompute.html#a720436488adcfdf1d976b27be7d95b55" title="Mackey::internal::Massey\lCompute::indeterminacy" alt="" coords="465,401,637,443"/>
+<area shape="rect" id="node3" href="$namespaceMackey_1_1internal.html#ad3470eee0665ddd466ea1fc98adffd7c" title="Returns the names for an equivariant basis. " alt="" coords="456,176,645,217"/>
+<area shape="rect" id="node5" href="$namespaceMackey_1_1internal.html#a780adcafc5fe040d6340557f88f052f2" title="General expression for the canonical basis of firstChain box secondChain using the provided names..." alt="" coords="467,111,635,152"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i. " alt="" coords="489,242,613,269"/>
+<area shape="rect" id="node8" href="$namespaceMackey_1_1internal.html#a2647c2357084142a1647364848db3205" title="Forms the permutation from basis (C box D) box E to C box (D box E) using names provided by general_c..." alt="" coords="473,45,628,87"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="915,217,1055,243"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B. " alt="" coords="717,242,843,269"/>
+<area shape="rect" id="node9" href="$namespaceMackey_1_1internal.html#ac9c5122d0b7488b13f15bb6a7e03a9f8" title="Produces a nicer version of general canonical when used for triple products. " alt="" coords="703,5,857,47"/>
+<area shape="rect" id="node10" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="731,71,829,98"/>
+<area shape="rect" id="node13" href="$structMackey_1_1internal_1_1MasseyCompute.html#aa62c7436a98f7be7105e6ab0157cb431" title="Mackey::internal::Massey\lCompute::box_boundary" alt="" coords="465,336,637,377"/>
+<area shape="rect" id="node14" href="$structMackey_1_1internal_1_1MasseyCompute.html#a2a7ff03cfeadb4f35c0798bf2a447a7e" title="Mackey::internal::Massey\lCompute::product_bottom" alt="" coords="693,496,867,537"/>
+<area shape="rect" id="node15" href="$namespaceMackey.html#a8e17fb4ada60b950c8f4efe273b23783" title="Mackey::invRes" alt="" coords="721,394,839,421"/>
+<area shape="rect" id="node16" href="$namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="713,343,847,370"/>
+<area shape="rect" id="node17" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="720,293,840,319"/>
+<area shape="rect" id="node18" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="929,293,1040,319"/>
+<area shape="rect" id="node20" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="714,562,846,589"/>
+<area shape="rect" id="node22" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="727,445,833,471"/>
+<area shape="rect" id="node23" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="936,445,1033,471"/>
+</map>

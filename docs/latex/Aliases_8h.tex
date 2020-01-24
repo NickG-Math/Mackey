@@ -45,11 +45,11 @@ class \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology$<$ rank\+\_\+t, d
 \begin{DoxyCompactList}\small\item\em Column major. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_ac1c9f85957dda772ceaa564cb23494cb}{Mackey\+::mat\+\_\+t\+\_\+r} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, -\/1, -\/1, Eigen\+::\+Row\+Major $>$
 \begin{DoxyCompactList}\small\item\em Row major. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a6fae5aa6894681eabd63f02c387ac618}{Mackey\+::spm\+\_\+t} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 0 $>$
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a3f5deb1be99876ac8c7d72f0f0cca3af}{Mackey\+::spm\+\_\+t} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 0, typename T\+::\+Storage\+Index $>$
 \begin{DoxyCompactList}\small\item\em Column major sparse. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a43f350029dd91403df428883f202a7b6}{Mackey\+::spm\+\_\+t\+\_\+r} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 1 $>$
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_acc7de57bf31af7089e6bc392c8b52e7e}{Mackey\+::spm\+\_\+t\+\_\+r} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 1, typename T\+::\+Storage\+Index $>$
 \begin{DoxyCompactList}\small\item\em Row major sparse. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a48661e728506f91066a28c199af56ff5}{Mackey\+::triplets} = std\+::vector$<$ Eigen\+::\+Triplet$<$ T $>$ $>$
+{\footnotesize template$<$typename T , typename storage $>$ }\\using \hyperlink{namespaceMackey_a0b8cd52f81199d53fa1e93946d8115ef}{Mackey\+::triplets} = std\+::vector$<$ Eigen\+::\+Triplet$<$ T, storage $>$ $>$
 \item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \hyperlink{namespaceMackey_ab2542005948b58de00ac4647ca2c7106}{Mackey\+::\+Gens\+\_\+t} = typename Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Gens\+\_\+t
 \begin{DoxyCompactList}\small\item\em Type of Generator matrices in homology. \end{DoxyCompactList}\item 

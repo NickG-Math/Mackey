@@ -42,10 +42,6 @@ Include dependency graph for Cerealizer.\+h\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Save \hyperlink{namespaceEigen}{Eigen} dense matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive , typename T , int Rows\+At\+Compile\+Time, int Cols\+At\+Compile\+Time, int Options, int Max\+Rows\+At\+Compile\+Time, int Max\+Cols\+At\+Compile\+Time$>$ }\\void \hyperlink{namespacecereal_a62dfe53ce43ad27c02ca954e9da31dc5}{cereal\+::load} (Archive \&archive, Eigen\+::\+Matrix$<$ T, Rows\+At\+Compile\+Time, Cols\+At\+Compile\+Time, Options, Max\+Rows\+At\+Compile\+Time, Max\+Cols\+At\+Compile\+Time $>$ \&A)
 \begin{DoxyCompactList}\small\item\em Load \hyperlink{namespaceEigen}{Eigen} dense matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Archive , typename T , int Storage\+Order$>$ }\\void \hyperlink{namespacecereal_ad34bb4c1089438eff2040f675acc4855}{cereal\+::save} (Archive \&archive, const Eigen\+::\+Sparse\+Matrix$<$ T, Storage\+Order $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Save \hyperlink{namespaceEigen}{Eigen} sparse matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Archive , typename T , int Storage\+Order$>$ }\\void \hyperlink{namespacecereal_a6aff97cdc9835822d790cc0cec9ce12f}{cereal\+::load} (Archive \&archive, Eigen\+::\+Sparse\+Matrix$<$ T, Storage\+Order $>$ \&A)
-\begin{DoxyCompactList}\small\item\em Load \hyperlink{namespaceEigen}{Eigen} sparse matrix. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_a43cf712cb611ddbafa91b005a911436e}{Mackey\+::serialize} (Archive \&archive, Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1Chains}{Chains} cerealize. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_a1cb51476ba1b1022264da5ba324b73f5}{Mackey\+::serialize} (Archive \&archive, Homology$<$ rank\+\_\+t, diff\+\_\+t $>$ \&H)
@@ -58,7 +54,9 @@ Include dependency graph for Cerealizer.\+h\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure} cerealize. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_ae6ccf7fecc4fc52a3c7b31876106ae2c}{Mackey\+::serialize} (Archive \&archive, Green$<$ rank\+\_\+t, diff\+\_\+t $>$ \&G)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1Green}{Green} cerealize. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_ae5d73f6ab42eb8fe9ae441e3ffc4b3a5}{Mackey\+::serialize} (Archive \&archive, Multiplication\+Table$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M)
+{\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_aa0c6d96a072ff58e3ef99b4461ae219f}{Mackey\+::save} (Archive \&archive, const Multiplication\+Table$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table} cerealize. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive , typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\void \hyperlink{namespaceMackey_ac34d89121229145967593a1b6c30d7aa}{Mackey\+::load} (Archive \&archive, Multiplication\+Table$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table} cerealize. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \hyperlink{namespaceMackey_a1824d780ce15f1845e4f87bf056feec9}{Mackey\+::saver} (const T \&A, const std\+::string \&filename, const std\+::string \&type)
 \begin{DoxyCompactList}\small\item\em Saves object to binary file of given name. Serialization is provided by cereal. \end{DoxyCompactList}\item 

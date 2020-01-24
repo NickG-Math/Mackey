@@ -1,0 +1,11 @@
+<map id="Mackey::internal::MasseyCompute::box" name="Mackey::internal::MasseyCompute::box">
+<area shape="rect" id="node2" href="$structMackey_1_1internal_1_1MasseyCompute.html#aa62c7436a98f7be7105e6ab0157cb431" title="Mackey::internal::Massey\lCompute::box_boundary" alt="" coords="225,107,397,149"/>
+<area shape="rect" id="node9" href="$namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i. " alt="" coords="249,224,373,251"/>
+<area shape="rect" id="node3" href="$structMackey_1_1internal_1_1MasseyCompute.html#a2a7ff03cfeadb4f35c0798bf2a447a7e" title="Mackey::internal::Massey\lCompute::product_bottom" alt="" coords="445,107,619,149"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a8e17fb4ada60b950c8f4efe273b23783" title="Mackey::invRes" alt="" coords="473,173,591,200"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="465,56,599,83"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="472,5,592,32"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="667,173,807,200"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="681,5,792,32"/>
+<area shape="rect" id="node10" href="$namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B. " alt="" coords="469,275,595,301"/>
+</map>

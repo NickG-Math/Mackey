@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">V2.1</span>
    </div>
    <div id="projectbrief">A C++ library for computing the RO(G) homology of a point</div>
   </td>
@@ -108,20 +108,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a62dfe53ce43ad27c02ca954e9da31dc5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecereal.html#a62dfe53ce43ad27c02ca954e9da31dc5">load</a> (Archive &amp;archive, Eigen::Matrix&lt; T, RowsAtCompileTime, ColsAtCompileTime, Options, MaxRowsAtCompileTime, MaxColsAtCompileTime &gt; &amp;A)</td></tr>
 <tr class="memdesc:a62dfe53ce43ad27c02ca954e9da31dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> dense matrix.  <a href="#a62dfe53ce43ad27c02ca954e9da31dc5">More...</a><br /></td></tr>
 <tr class="separator:a62dfe53ce43ad27c02ca954e9da31dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad34bb4c1089438eff2040f675acc4855"><td class="memTemplParams" colspan="2">template&lt;typename Archive , typename T , int StorageOrder&gt; </td></tr>
-<tr class="memitem:ad34bb4c1089438eff2040f675acc4855"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecereal.html#ad34bb4c1089438eff2040f675acc4855">save</a> (Archive &amp;archive, const Eigen::SparseMatrix&lt; T, StorageOrder &gt; &amp;A)</td></tr>
-<tr class="memdesc:ad34bb4c1089438eff2040f675acc4855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> sparse matrix.  <a href="#ad34bb4c1089438eff2040f675acc4855">More...</a><br /></td></tr>
-<tr class="separator:ad34bb4c1089438eff2040f675acc4855"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6aff97cdc9835822d790cc0cec9ce12f"><td class="memTemplParams" colspan="2">template&lt;typename Archive , typename T , int StorageOrder&gt; </td></tr>
-<tr class="memitem:a6aff97cdc9835822d790cc0cec9ce12f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecereal.html#a6aff97cdc9835822d790cc0cec9ce12f">load</a> (Archive &amp;archive, Eigen::SparseMatrix&lt; T, StorageOrder &gt; &amp;A)</td></tr>
-<tr class="memdesc:a6aff97cdc9835822d790cc0cec9ce12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> sparse matrix.  <a href="#a6aff97cdc9835822d790cc0cec9ce12f">More...</a><br /></td></tr>
-<tr class="separator:a6aff97cdc9835822d790cc0cec9ce12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Consult the Cereal documentation for this. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a62dfe53ce43ad27c02ca954e9da31dc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62dfe53ce43ad27c02ca954e9da31dc5">&#9670;&nbsp;</a></span>load() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a62dfe53ce43ad27c02ca954e9da31dc5">&#9670;&nbsp;</a></span>load()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,40 +144,8 @@ template&lt;typename Archive , typename T , int RowsAtCompileTime, int ColsAtCom
 
 </div>
 </div>
-<a id="a6aff97cdc9835822d790cc0cec9ce12f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6aff97cdc9835822d790cc0cec9ce12f">&#9670;&nbsp;</a></span>load() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Archive , typename T , int StorageOrder&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void cereal::load </td>
-          <td>(</td>
-          <td class="paramtype">Archive &amp;&#160;</td>
-          <td class="paramname"><em>archive</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::SparseMatrix&lt; T, StorageOrder &gt; &amp;&#160;</td>
-          <td class="paramname"><em>A</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Load <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> sparse matrix. </p>
-
-</div>
-</div>
 <a id="afd0f4831f36c8d183e4ff80c96b6b9ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd0f4831f36c8d183e4ff80c96b6b9ed">&#9670;&nbsp;</a></span>save() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0f4831f36c8d183e4ff80c96b6b9ed">&#9670;&nbsp;</a></span>save()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,38 +173,6 @@ template&lt;typename Archive , typename T , int RowsAtCompileTime, int ColsAtCom
 </div><div class="memdoc">
 
 <p>Save <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> dense matrix. </p>
-
-</div>
-</div>
-<a id="ad34bb4c1089438eff2040f675acc4855"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad34bb4c1089438eff2040f675acc4855">&#9670;&nbsp;</a></span>save() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Archive , typename T , int StorageOrder&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void cereal::save </td>
-          <td>(</td>
-          <td class="paramtype">Archive &amp;&#160;</td>
-          <td class="paramname"><em>archive</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::SparseMatrix&lt; T, StorageOrder &gt; &amp;&#160;</td>
-          <td class="paramname"><em>A</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Save <a class="el" href="namespaceEigen.html" title="See the Eigen documentation for this. ">Eigen</a> sparse matrix. </p>
 
 </div>
 </div>

@@ -1,0 +1,7 @@
+<map id="Mackey::rankBox" name="Mackey::rankBox">
+<area shape="rect" id="node2" href="$namespaceMackey.html#a6ce409eccab63034e324323c1e528814" title="The rank of (C box D) " alt="" coords="201,5,325,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey_1_1internal.html#a2c420c10c78dcc4f9ae579bad1cd2e45" title="General expression for the canonical basis of (firstChain box secondChain)_i using the provided names..." alt="" coords="179,57,347,98"/>
+<area shape="rect" id="node4" href="$namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="190,122,337,163"/>
+<area shape="rect" id="node6" href="$structMackey_1_1internal_1_1MasseyCompute.html#aff177659d2dbcd9c3fe9d644d55141ca" title="Mackey::internal::Massey\lCompute::box" alt="" coords="177,187,349,229"/>
+<area shape="rect" id="node5" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="397,155,580,197"/>
+</map>

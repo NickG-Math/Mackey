@@ -31,14 +31,14 @@ namespace Mackey {
 
 	///Column major sparse
 	template<typename T>
-	using spm_t = typename Eigen::SparseMatrix<Scalar_t<T>, 0>;
+	using spm_t = typename Eigen::SparseMatrix<Scalar_t<T>, 0, typename T::StorageIndex>;
 
 	///Row major sparse
 	template<typename T>
-	using spm_t_r = typename Eigen::SparseMatrix<Scalar_t<T>, 1>;
+	using spm_t_r = typename Eigen::SparseMatrix<Scalar_t<T>, 1, typename T::StorageIndex>;
 
-	template<typename T>
-	using triplets = std::vector<Eigen::Triplet<T>>;
+	template<typename T, typename storage>
+	using triplets = std::vector<Eigen::Triplet<T, storage>>;
 
 
 	template<typename, typename>

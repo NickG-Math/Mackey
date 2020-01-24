@@ -283,27 +283,33 @@ namespace Mackey
 		return out;
 	}
 
+	///Given matrix and change of basis matrices, produces the matrix w.r.t. the new basis and normalizes it for the given group in the image
+	template<typename T, typename S>
+	T change_base_matrix_normalize(const T& mat, const T& P, const T& Q, const S& Group_image) {
+		if (mat.size() == 0)
+			return T(); 
+		//Cast for extended precision in matrix multiplication before normalizing. Usefull as T may well have Scalar type char
+		Eigen::Matrix<float, -1, -1> a, p, q, d;
+		Eigen::Matrix<int, -1, -1> e;
+		a = mat.template cast<float>();
+		p = P.template cast<float>();
+		q = Q.template cast<float>();
+		d = p * a * q;
+		e = d.template cast<int>();
+		normalize(e,Group_image);
+		//cast back
+		return e.template cast<typename T::Scalar>();
+	}
+
 	template<typename rank_t>
 	MackeyFunctor<rank_t> MackeyFunctor<rank_t>::apply(const iso_t<rank_t>& iso, const iso_t<rank_t>& isoinv) const {
 		MackeyFunctor<rank_t> N = *this;
-		for (int i = 0; i < Tr.size(); i++) {
-			if (Tr[i].size() != 0) {
-				N.Tr[i] = iso[i + 1] * Tr[i] * isoinv[i];
-				normalize(N.Tr[i], Groups[i + 1]);
-			}
-		}
-		for (int i = 0; i < Res.size(); i++) {
-			if (Res[i].size() != 0) {
-				N.Res[i] = iso[i] * Res[i] * isoinv[i + 1];
-				normalize(N.Res[i], Groups[i]);
-			}
-		}
-		for (int i = 0; i < Weyl.size(); i++) {
-			if (Weyl[i].size() != 0) {
-				N.Weyl[i] = iso[i] * Weyl[i] * isoinv[i];
-				normalize(N.Weyl[i], Groups[i]); //maybe normalize_minus?
-			}
-		}
+		for (int i = 0; i < Tr.size(); i++) 
+			N.Tr[i] = change_base_matrix_normalize(Tr[i], iso[i + 1], isoinv[i], Groups[i + 1]);
+		for (int i = 0; i < Res.size(); i++)
+			N.Res[i] = change_base_matrix_normalize(Res[i], iso[i], isoinv[i+1], Groups[i]);
+		for (int i = 0; i < Weyl.size(); i++)
+			N.Weyl[i] = change_base_matrix_normalize(Weyl[i], iso[i], isoinv[i], Groups[i]);
 		return N;
 	}
 

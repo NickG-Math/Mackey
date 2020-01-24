@@ -14,7 +14,7 @@ namespace Mackey {
 
 	///For example if minimum={-1,-1} and maximum={2,3} then the result is {{-1,-1},{0,-1},{1,-1},{2,-1},{-1,0},...,{2,3}}
 	///////////////////////////////////////////////////
-	template<typename deg_t=std::vector<int>>
+	template<typename deg_t = std::vector<int>>
 	std::vector<deg_t> DegreeConstruction(const deg_t& minimum, const deg_t& maximum) {
 		auto totallength = maximum[0] - minimum[0] + 1;
 		for (decltype(maximum.size()) i = 1; i < maximum.size(); i++) {
@@ -65,33 +65,32 @@ namespace Mackey {
 		return w;
 	}
 
-/////////////////////////////////////////////
-///Given vector or array returns vector starting from index start.
+	/////////////////////////////////////////////
+	///Given vector or array returns vector starting from index start.
 
-///Example: Given v apply as tail(v.data(),v.size(), start)
-////////////////////////////////////////////
+	///Example: Given v apply as tail(v.data(),v.size(), start)
+	////////////////////////////////////////////
 	template<typename T>
 	inline std::vector<T> tail(const T* const& ptr, int size, int start) {
 		return std::vector<T>(ptr + start, ptr + size);
 	}
 
-
 	///Find first instance of a in v for non Eigen matrices
-	template<typename T, typename S, std::enable_if_t<!SFINAE::is_Dense<S>::value,int> =0>
-	int find(const T& v, const S & a) {
+	template<typename T, typename S, std::enable_if_t<!SFINAE::is_Dense<S>::value, int> = 0>
+	int find(const T& v, const S& a) {
 		for (int i = 0; i < v.size(); i++) {
-			if (v[i]==a)
+			if (v[i] == a)
 				return i;
 		}
 		return -1;
 	}
 
 
-	///Find first instance of a in v for Eigen matrices
-	template<typename T, typename S, std::enable_if_t<SFINAE::is_Dense<S>::value, int> =0>
+	///Find first instance of a in v for dense Eigen matrices
+	template<typename T, typename S, std::enable_if_t<SFINAE::is_Dense<S>::value, int> = 0>
 	int find(const T& v, const S& a) {
 		for (int i = 0; i < v.size(); i++) {
-			if (v[i].rows()==a.rows() && v[i].cols()==a.cols() && v[i]==a) //otherwise static assert fails
+			if (v[i].rows() == a.rows() && v[i].cols() == a.cols() && v[i] == a) //otherwise asserton fails
 				return i;
 		}
 		return -1;
@@ -100,8 +99,8 @@ namespace Mackey {
 	///Makes the multiple of the basis vector 0,...,multiple,...,0
 	template<typename rank_t>
 	inline rank_t basisElement(int length, int position, int multiple) {
-		rank_t a=rank_t::Zero(length);
-		a[position]= multiple;
+		rank_t a = rank_t::Zero(length);
+		a[position] = multiple;
 		return a;
 	}
 
@@ -115,7 +114,7 @@ namespace Mackey {
 	template<typename T, typename S>
 	T KeepRow(const T& A, const S& Z) { //when the new stable version of Eigen releases this will be deprecated
 		T B(Z.size(), A.cols());
-		int j = 0;
+		size_t j = 0;
 		for (const auto& i : Z) {
 			B.row(j) = A.row(i);
 			j++;
@@ -127,7 +126,7 @@ namespace Mackey {
 	template<typename T, typename S>
 	T KeepCol(const T& A, const S& Z) { //when the new stable version of Eigen releases this will be deprecated
 		T B(A.rows(), Z.size());
-		int j = 0;
+		size_t j = 0;
 		for (const auto& i : Z) {
 			B.col(j) = A.col(i);
 			j++;
@@ -138,9 +137,19 @@ namespace Mackey {
 	////////////////////////////////////////////////////////////
 	///Takes the sum of the entries of an Eigen vector at higher precision than its inputs.
 	template<typename Derived>
-	int summation(const Eigen::MatrixBase<Derived>& A) {
-		return A.template cast<int>().sum();
+	long summation(const Eigen::MatrixBase<Derived>& A) {
+		return A.template cast<long>().sum();
 	}
+
+
+	template<typename rank_t>
+	long summation(const rank_t& u, long limit) {
+		long sum = 0;
+		for (long i = 0; i < limit; i++)
+			sum += u[i];
+		return sum;
+	}
+
 
 	///Circularly rotates given V (an Eigen/std vector)
 	template<typename T>
@@ -161,9 +170,9 @@ namespace Mackey {
 		col_t<Matrix_t> column(m);
 		for (int i = 0; i < m; i += alt.size())
 			column.segment(i, alt.size()) = alt;
-		for (int j = n-1; j>=0; j--) {
+		for (int j = n - 1; j >= 0; j--) {
 			rotate(column);
-			matrix.col(j)=column;
+			matrix.col(j) = column;
 		}
 		return matrix;
 	}
@@ -172,15 +181,15 @@ namespace Mackey {
 	///Sparse version of altmatrix
 	template<typename Matrix_t, std::enable_if_t<SFINAE::is_Sparse<Matrix_t>::value, int> = 0 >
 	Matrix_t altmatrix(int m, int n, const std::vector<Scalar_t<Matrix_t>>& v) {
-		auto dense=altmatrix<mat_t<Matrix_t>>(m, n, v);
+		auto dense = altmatrix<mat_t<Matrix_t>>(m, n, v);
 		return dense.sparseView();
 	}
-	   	  
+
 	///Tests if vector is zero
 	template <typename T>
 	bool isZero(const std::vector<T>& a)
 	{
-		for (const auto& i:a) {
+		for (const auto& i : a) {
 			if (i != 0)
 				return 0;
 		}
@@ -215,7 +224,7 @@ namespace Mackey {
 	{
 		std::vector<T> b;
 		b.reserve(a.size());
-		for (const auto & i:a)
+		for (const auto& i : a)
 			b.push_back(-i);
 		return b;
 	}
@@ -226,7 +235,7 @@ namespace Mackey {
 	{
 		std::vector<T> c;
 		c.reserve(b.size());
-		for (const auto & i: b)
+		for (const auto& i : b)
 			c.push_back(a * i);
 		return c;
 	}
@@ -234,7 +243,7 @@ namespace Mackey {
 	///Printing a vector
 	template<typename T>
 	std::ostream& operator<<(std::ostream& out, const std::vector<T>& a) {
-		for (const auto& i : a) 
+		for (const auto& i : a)
 			out << i << ",";
 		return out;
 	}
@@ -242,51 +251,50 @@ namespace Mackey {
 	///Least common multiple of vector of elements
 	template<typename T>
 	int lcm(const T& v) {
-		if (v.size()==0)
+		if (v.size() == 0)
 			return 0;
-		auto n=1;
-		for (const auto& i:v)
+		auto n = 1;
+		for (const auto& i : v)
 			n = std::lcm(n, i);
 		return n;
 	}
 
 
 	///Hash vector given minimum and maximum values of its entries.
-	int hashvector(const std::vector<int>& deg, const std::vector<int>& min, const std::vector<int>& max) {
-		int hash = deg[0] - min[0];
-		int prod = max[0] - min[0] + 1;
-		for (size_t i = 1; i < deg.size(); i++) {
+	template<typename T>
+	long hashvector(const T& deg, const T& min, const T& max) {
+		long hash = deg[0] - min[0];
+		long prod = max[0] - min[0] + 1;
+		for (long i = 1; i < deg.size(); i++) {
 			hash += (deg[i] - min[i]) * prod;
 			prod *= max[i] - min[i] + 1;
 		}
 		return hash;
 	}
 
-
-	///Turn dense matrix into a vector of Eigen triplets
-	template<typename T>
-	triplets<T> make_triplets(const Eigen::Matrix<T, -1, -1>& a) {
-		triplets<T> b;
-		b.reserve(a.size());
-		for (int j = 0; j < a.cols(); j++) {
-			for (int i = 0; i < a.rows(); i++) {
-				if (a(i, j) != 0)
-					b.push_back(Eigen::Triplet<T>(i, j, a(i, j)));
-			}
+	///Turn sparse matrix into a vector of Eigen triplets
+	template<typename T, int StorageOrder, typename storage>
+	triplets<T, storage> make_triplets(const Eigen::SparseMatrix<T, StorageOrder, storage>& a) {
+		triplets<T, storage> b;
+		b.reserve(a.nonZeros());
+		for (decltype(a.outerSize()) k = 0; k < a.outerSize(); k++) {
+			for (typename Eigen::SparseMatrix<T, StorageOrder, storage>::InnerIterator it(a, k); it; ++it)
+				b.push_back(Eigen::Triplet<T, storage>(it.row(), it.col(), it.value()));
 		}
 		return b;
 	}
+
 
 	///Turn sparse matrix into a vector of Eigen triplets
-	template<typename T, int StorageOrder>
-	triplets<T> make_triplets(const Eigen::SparseMatrix<T, StorageOrder>& a) {
-		triplets<T> b;
+	template<typename T, int StorageOrder, typename storage>
+	triplets<T, storage> keep_row_triplets(const Eigen::SparseMatrix<T, StorageOrder, storage>& a, const std::vector<storage>& keep) {
+		triplets<T, storage> b;
 		b.reserve(a.nonZeros());
-		for (int k = 0; k < a.outerSize(); k++) {
-			for (typename Eigen::SparseMatrix<T, StorageOrder>::InnerIterator it(a, k); it; ++it)
-				b.push_back(Eigen::Triplet<T>(it.row(), it.col(), it.value()));
+		for (decltype(a.outerSize()) k = 0; k < a.outerSize(); k++) {
+			for (typename Eigen::SparseMatrix<T, StorageOrder, storage>::InnerIterator it(a, k); it; ++it)
+				if (keep[it.row()] != -1)
+					b.push_back(Eigen::Triplet<T, storage>(keep[it.row()], it.col(), it.value()));
 		}
 		return b;
 	}
-
 }

@@ -3,19 +3,6 @@
 ///@file
 ///@brief Contains the Smith normal form algorithm for dense matrices where pivots are selected by a Markowitz metric 
 
-
-namespace {
-	template<typename T>
-	long absum(const T& a) {
-		long sum = abs(a[0]);
-		for (int i = 1;i < a.size(); i++) {
-			sum += (long)abs(a[i]);
-		}
-		return sum;
-	}
-}
-
-
 namespace Mackey {
 
 	///The dense Smith Normal Form selecting the pivot via a Markowitz metric
@@ -61,17 +48,19 @@ namespace Mackey {
 	///The Markowitz metric
 	template <typename S_t, typename R_t, typename C_t>
 	long SmithSP<S_t, R_t, C_t>::metric(int i, int j) {
-		return Rnorm[i] + Cnorm[j]; //Can be changed
+		return Rnorm[i] * Cnorm[j]; //Can be changed
 	}
 
 	template <typename S_t, typename R_t, typename C_t>
 	void SmithSP<S_t, R_t, C_t>::initialize_norms() {
-		Rnorm.reserve(M);
-		Cnorm.reserve(N);
-		for (int i = 0; i < M; i++)
-			Rnorm.push_back(absum(S.row(i)));
+		Rnorm.resize(M);
+		Cnorm.resize(N);
 		for (int j = 0; j < N; j++)
-			Cnorm.push_back(absum(S.col(j)));
+			for (int i = 0; i < M; i++)
+				if (S(i, j) != 0) {
+					Rnorm[i]++;
+					Cnorm[j]++;
+				}
 	}
 
 
@@ -82,8 +71,8 @@ namespace Mackey {
 			pivoting(start);
 			bool flagR, flagC;
 			flagR = flagC = 0;
-			while (Rnorm[start] != abs(S(start, start)) || Cnorm[start] != abs(S(start, start))) {
-				while (Rnorm[start] != abs(S(start, start))) {
+			while (Rnorm[start] > 1 || Cnorm[start] > 1) {
+				while (Rnorm[start] > 1) {
 					if (flagR) {
 						flagC = 1;
 						pivotingRow(start);
@@ -91,7 +80,7 @@ namespace Mackey {
 					workRow(start);
 					flagR = 1;
 				}
-				while (Cnorm[start] != abs(S(start, start))) {
+				while (Cnorm[start] > 1) {
 					if (flagC) {
 						flagR = 1;
 						pivotingCol(start);
@@ -110,11 +99,17 @@ namespace Mackey {
 			if (S(start, j) != 0) {
 				auto thequotient = floor_division(S(start, j), S(start, start));
 				for (int i = start; i < M; i++)
-					Rnorm[i] -= abs(S(i, j));
+					if (S(i, j) != 0)
+						Rnorm[i] -= 1;
 				S.col(j).tail(M - start) -= thequotient * S.col(start).tail(M - start);
-				Cnorm[j] = absum(S.col(j).tail(M - start));
+				Cnorm[j] = 0;
+				for (int i = start; i < M; i++) {
+					if (S(i, j) != 0)
+						Cnorm[j]++;
+				}
 				for (int i = start; i < M; i++)
-					Rnorm[i] += abs(S(i, j));
+					if (S(i, j) != 0)
+						Rnorm[i] += 1;
 				if (wantQ) {
 					Q.col(j) -= static_cast<Scalar_t<C_t>>(thequotient)* Q.col(start);
 					Qi.row(start) += static_cast<Scalar_t<R_t>>(thequotient)* Qi.row(j);
@@ -129,11 +124,17 @@ namespace Mackey {
 			if (S(i, start) != 0) {
 				auto thequotient = floor_division(S(i, start), S(start, start));
 				for (int j = start; j < N; j++)
-					Cnorm[j] -= abs(S(i, j));
+					if (S(i, j) != 0)
+						Cnorm[j] -= 1;
 				S.row(i).tail(N - start) -= thequotient * S.row(start).tail(N - start);
-				Rnorm[i] = absum(S.row(i).tail(N - start));
+				Rnorm[i] = 0;
+				for (int j = start; j < N; j++) {
+					if (S(i, j) != 0)
+						Rnorm[i]++;
+				}
 				for (int j = start; j < N; j++)
-					Cnorm[j] += abs(S(i, j));
+					if (S(i, j) != 0)
+						Cnorm[j] += 1;
 				if (wantP) {
 					P.row(i) -= static_cast<Scalar_t<R_t>>(thequotient)* P.row(start);
 					Pi.col(start) += static_cast<Scalar_t<C_t>>(thequotient)* Pi.col(i);

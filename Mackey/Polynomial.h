@@ -26,7 +26,7 @@ namespace Mackey {
 			while (!p.empty() && p.back() == 0) {
 				p.pop_back();
 			}
-			degree = p.size() - 1;
+			degree = (int)p.size() - 1; //avoid usigned underflow
 		}
 		
 		///Construct the monomial ax^n given a,n

@@ -11,8 +11,8 @@ namespace Mackey
 {
 
 	///Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.).
-	template<typename Scalar>
-	void normalize(Eigen::Matrix<Scalar, -1, -1>& linmap, const Eigen::Matrix<Scalar, 1, -1>& range) {
+	template<typename T, typename S>
+	void normalize(Eigen::Matrix<T, -1, -1>& linmap, const Eigen::Matrix<S, 1, -1>& range) {
 		for (int j = 0; j < linmap.cols(); j++) {
 			for (int i = 0; i < linmap.rows(); i++) {
 				if (range[i] != 1)
@@ -83,14 +83,14 @@ namespace Mackey
 		for (int i = 0; i < isos.size(); i++) {
 			if (inverse[i].size() == 0) {
 				for (int j = i; j < isos.size(); j++) {
-					Eigen::Matrix<long, -1, -1> a, b, c;
-					Eigen::Matrix<long, 1, -1> d;
-					a = isos[i].template cast<long>();
-					b = isos[j].template cast<long>();
+					Eigen::Matrix<float, -1, -1> a, b, c;
+					Eigen::Matrix<int, -1, -1> d;
+					a = isos[i].template cast<float>();
+					b = isos[j].template cast<float>();
 					c = a * b;
-					d = Group.template cast<long>();
-					normalize(c, d);
-					mat_t<T> product = c.template cast<typename T::Scalar>();
+					d = c.template cast<int>();
+					normalize(d, Group);
+					mat_t<T> product = d.template cast<typename T::Scalar>();
 					if (product == id) {
 						inverse[i] = isos[j];
 						inverse[j] = isos[i];
@@ -104,7 +104,7 @@ namespace Mackey
 
 
 
-	///Returns all primes up to n
+	///Returns all primes up to n (not optimized; n is usually very small)
 	std::vector<int> primes(int n) {
 		std::vector<int> list;
 		list.push_back(2);

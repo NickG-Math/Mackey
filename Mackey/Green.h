@@ -155,20 +155,19 @@ namespace Mackey {
 			int degreeC, degreeD;
 			ProductGen(const Chains<rank_t, diff_t>& C, const Chains<rank_t, diff_t>& D, int degreeC, int degreeD) : C(C), D(D), degreeC(degreeC), degreeD(degreeD) {}
 
+			void pad(const std::vector<long>& detailedrank) {
+				padleft = padright = 0;
+				for (int i = 0; i <= degreeC - 1; i++) {
+					padleft += detailedrank[i];
+				}
+				for (int i = degreeC + 1; i <= degreeC + degreeD; i++) {
+					padright += detailedrank[i];
+				}
+			}
+
 			void pad(const JunctionBox<rank_t, diff_t>& Boxed) {
 				pad(Boxed.detailedrank);
 			}
-
-			void pad(const std::vector<rank_t>& detailedrank) {
-				padleft = padright = 0;
-				for (int i = 0; i <= degreeC - 1; i++) {
-					padleft += summation(detailedrank[i]);
-				}
-				for (int i = degreeC + 1; i <= degreeC + degreeD; i++) {
-					padright += summation(detailedrank[i]);
-				}
-			}
-
 
 			void multiply(gen_t<rank_t,diff_t> gen1, gen_t<rank_t, diff_t> gen2) {
 				gen_t<rank_t, diff_t> leftConvProduct(gen1.size() * gen2.size());

@@ -25,14 +25,14 @@ namespace {
 	}
 
 	///Produces the transpositions that sort a given vector of pairs
-	template<typename T>
-	std::vector<int> transpositions(std::vector<std::pair<T, int>> a) {
-		std::vector<int> transpositions;
+	template<typename T, typename ind>
+	std::vector<ind> transpositions(std::vector<std::pair<T, ind>> a) {
+		std::vector<ind> transpositions;
 		if (a.size() <= 1)
 			return transpositions;
 		transpositions.reserve((a.size() - 1) * (a.size() - 1));
-		for (int j = 0; j < a.size() - 1; j++) {
-			for (int i = 0; i < a.size() - j - 1; i++) {
+		for (ind j = 0; j < a.size() - 1; j++) {
+			for (ind i = 0; i < a.size() - j - 1; i++) {
 				if (a[i].first < a[i + 1].first) {
 					transpositions.push_back(i);
 					auto temp = a[i];
@@ -45,18 +45,18 @@ namespace {
 	}
 
 
-	template<typename T>
-	void swapCol(Eigen::SparseMatrix<T, 0>& A, int i, int j) {
-		Eigen::SparseMatrix<T, 0> Ai = A.col(i);
-		Eigen::SparseMatrix<T, 0> Aj = A.col(j);
+	template<typename T, typename storage>
+	void swapCol(Eigen::SparseMatrix<T, 0, storage>& A, storage i, storage j) {
+		Eigen::SparseMatrix<T, 0, storage> Ai = A.col(i);
+		Eigen::SparseMatrix<T, 0, storage> Aj = A.col(j);
 		A.col(i) = Aj;
 		A.col(j) = Ai;
 	}
 
-	template<typename T>
-	void swapRow(Eigen::SparseMatrix<T, 1>& A, int i, int j) {
-		Eigen::SparseMatrix<T, 1> Ai = A.row(i);
-		Eigen::SparseMatrix<T, 1> Aj = A.row(j);
+	template<typename T, typename storage>
+	void swapRow(Eigen::SparseMatrix<T, 1, storage>& A, storage i, storage j) {
+		Eigen::SparseMatrix<T, 1, storage> Ai = A.row(i);
+		Eigen::SparseMatrix<T, 1, storage> Aj = A.row(j);
 		A.row(i) = Aj;
 		A.row(j) = Ai;
 	}
@@ -105,24 +105,25 @@ namespace Mackey {
 		R_t Qi;					///< One of the coefficient matrices (A=Pi*S*Qi)
 		C_t Q;					///< One of the coefficient matrices (S=P*A*Q)
 		C_t Pi;					///< One of the coefficient matrices (A=Pi*S*Qi)
-
 	protected:
+
+		typedef typename S_t::StorageIndex ind;
+
 		///Initializes the member variables. Actual computation is done by the implementation classes
 		Smith(const S_t&, bool, bool, bool);
 
 		S_t S;					///< The Smith Normal Form as a diagonal matrix
-		const int M; 				///< Row dimension of original matrix
-		const int N;				///< Column dimension of original matrix
+		const ind M; 				///< Row dimension of original matrix
+		const ind N;				///< Column dimension of original matrix
 		const bool wantP;			///< Whether we want to compute the P and Pi coefficient matrices
 		const bool wantQ;			///< Whether we want to compute the Q and Qi coefficient matrices
 		void sorter();				///< Sorts the Smith Normal Form to have decreasing entries in absolute value (except +1,-1)
-
 	};
 
 	template<typename S_t, typename R_t, typename C_t>
 	Smith<S_t, R_t, C_t> ::Smith(const S_t& A, bool wantP, bool wantQ, bool sort)
 		: S(A), M(S.rows()), N(S.cols()), wantP(wantP), wantQ(wantQ) {
-		if constexpr (SFINAE::is_Dense<S_t>::value) { //for sparse initialization is handled directly in the inherited class, so as to reserve space for the columns
+		if constexpr (SFINAE::is_Dense<S_t>::value) { //for sparse matrices, initialization is handled directly in the inherited class, so as to reserve space for the columns
 			if (wantP) {
 				P.resize(M, M);
 				Pi.resize(M, M);
@@ -149,9 +150,9 @@ namespace Mackey {
 
 	template<typename S_t, typename R_t, typename C_t>
 	void Smith<S_t, R_t, C_t> ::sorter() {
-		std::vector<std::pair<Scalar_t<S_t>, int>> toBeSorted;
+		std::vector<std::pair<Scalar_t<S_t>, ind>> toBeSorted;
 		toBeSorted.reserve(diagonal.size());
-		for (int i = 0; i < diagonal.size(); i++) {
+		for (ind i = 0; i < diagonal.size(); i++) {
 			if (abs(diagonal[i]) != 1)
 				toBeSorted.push_back(std::make_pair(abs(diagonal[i]), i));
 		}

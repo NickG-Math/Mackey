@@ -56,7 +56,7 @@ namespace Mackey {
 
 
 		/// Retrieve the degree of the i-th generator
-		std::vector<int> getdegree(int i) const {
+		inline std::vector<int> getdegree(int i) const {
 			return this->degree[this->tracker[i]];
 		}
 

@@ -1,4 +1,5 @@
 <map id="Mackey::multiply" name="Mackey::multiply">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="175,5,305,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a2eca4cc709501ad3fc20b82fe4bcbd33" title="Mackey::multiply" alt="" coords="179,56,301,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="191,31,324,57"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a2eca4cc709501ad3fc20b82fe4bcbd33" title=" " alt="" coords="7,5,141,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="5,56,143,83"/>
 </map>

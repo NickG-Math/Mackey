@@ -1,9 +1,17 @@
 <map id="Mackey/Wrapper.h" name="Mackey/Wrapper.h">
-<area shape="rect" id="node2" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes. " alt="" coords="359,80,434,107"/>
-<area shape="rect" id="node4" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="61,80,183,107"/>
-<area shape="rect" id="node15" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="260,229,339,256"/>
-<area shape="rect" id="node8" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="160,155,284,181"/>
-<area shape="rect" id="node9" href="$Aliases_8h.html" title="Contains general template aliases. " alt="" coords="437,229,513,256"/>
-<area shape="rect" id="node12" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="321,304,403,331"/>
-<area shape="rect" id="node14" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="211,379,265,405"/>
+<area shape="rect" id="node1" title="Wraps group&#45;specific implementations into a general interface." alt="" coords="267,5,409,32"/>
+<area shape="rect" id="node2" href="$Chains_8h.html" title="Contains Chains and Junction classes for using chain complexes." alt="" coords="376,80,455,107"/>
+<area shape="rect" id="node4" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors." alt="" coords="59,80,191,107"/>
+<area shape="rect" id="node15" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="269,229,354,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="247,304,309,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="29,155,87,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="135,453,215,480"/>
+<area shape="rect" id="node7" title=" " alt="" coords="13,304,87,331"/>
+<area shape="rect" id="node8" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="163,155,300,181"/>
+<area shape="rect" id="node9" href="$Aliases_8h.html" title="Contains general template aliases." alt="" coords="453,229,535,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="375,453,477,480"/>
+<area shape="rect" id="node11" title=" " alt="" coords="463,379,570,405"/>
+<area shape="rect" id="node12" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks." alt="" coords="333,304,415,331"/>
+<area shape="rect" id="node13" title=" " alt="" coords="296,379,388,405"/>
+<area shape="rect" id="node14" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients." alt="" coords="213,379,271,405"/>
 </map>

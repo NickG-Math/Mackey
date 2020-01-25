@@ -1,20 +1,21 @@
 <map id="Mackey/General.h" name="Mackey/General.h">
-<area shape="rect" id="node2" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="129,80,303,107"/>
-<area shape="rect" id="node12" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="265,229,397,256"/>
-<area shape="rect" id="node13" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="286,304,407,331"/>
-<area shape="rect" id="node17" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="254,155,397,181"/>
-<area shape="rect" id="node18" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="465,304,572,331"/>
-<area shape="rect" id="node19" href="$Polynomial_8h.html" title="Contains the class for formal polynomials in arbitrary coefficients. " alt="" coords="573,80,720,107"/>
-<area shape="rect" id="node3" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="5,155,179,181"/>
-<area shape="rect" id="node16" href="$Identify_8h.html" title="Contains the identification classes. " alt="" coords="114,229,241,256"/>
-<area shape="rect" id="node4" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="135,528,271,555"/>
-<area shape="rect" id="node5" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology. " alt="" coords="113,677,244,704"/>
-<area shape="rect" id="node7" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table. " alt="" coords="299,603,413,629"/>
-<area shape="rect" id="node6" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="171,916,314,943"/>
-<area shape="rect" id="node8" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph. " alt="" coords="268,677,463,704"/>
-<area shape="rect" id="node9" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="217,752,399,793"/>
-<area shape="rect" id="node11" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="423,752,606,793"/>
-<area shape="rect" id="node10" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="229,841,387,868"/>
-<area shape="rect" id="node14" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="258,379,377,405"/>
-<area shape="rect" id="node15" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="138,453,267,480"/>
+<area shape="rect" id="node1" title="Contains general functions and vector overloads independent of everything else." alt="" coords="415,5,553,32"/>
+<area shape="rect" id="node2" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="134,80,325,107"/>
+<area shape="rect" id="node12" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface." alt="" coords="278,229,421,256"/>
+<area shape="rect" id="node13" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="300,304,431,331"/>
+<area shape="rect" id="node17" href="$Homology_8h.html" title="Contains the Homology class and algorithms." alt="" coords="267,155,421,181"/>
+<area shape="rect" id="node18" href="$Box_8h.html" title="Contains the construction of box products of Chains." alt="" coords="487,304,601,331"/>
+<area shape="rect" id="node19" href="$Polynomial_8h.html" title="Contains the class for formal polynomials in arbitrary coefficients." alt="" coords="598,80,759,107"/>
+<area shape="rect" id="node3" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors." alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node16" href="$Identify_8h.html" title="Contains the identification classes." alt="" coords="117,229,253,256"/>
+<area shape="rect" id="node4" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors." alt="" coords="141,528,288,555"/>
+<area shape="rect" id="node5" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="107,677,250,704"/>
+<area shape="rect" id="node7" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table." alt="" coords="309,603,432,629"/>
+<area shape="rect" id="node6" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="171,916,325,943"/>
+<area shape="rect" id="node8" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="275,677,491,704"/>
+<area shape="rect" id="node9" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="217,752,421,793"/>
+<area shape="rect" id="node11" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="445,752,649,793"/>
+<area shape="rect" id="node10" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="233,841,405,868"/>
+<area shape="rect" id="node14" href="$Green_8h.html" title="Contains the class and methods for multiplying generators." alt="" coords="271,379,398,405"/>
+<area shape="rect" id="node15" href="$Massey_8h.html" title="Contains the class and methods for Massey Products." alt="" coords="147,453,283,480"/>
 </map>

@@ -1,5 +1,5 @@
-\hypertarget{classMackey_1_1Factorization}{}\section{Mackey\+:\+:Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
-\label{classMackey_1_1Factorization}\index{Mackey\+::\+Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\hypertarget{classMackey_1_1Factorization}{}\doxysection{Mackey\+::Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1Factorization}\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
 
 
 Factorizes generators into the given basic irreducibles and sources.  
@@ -11,7 +11,8 @@ Factorizes generators into the given basic irreducibles and sources.
 
 
 
-Inheritance diagram for Mackey\+:\+:Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$\+:\nopagebreak
+Inheritance diagram for Mackey\+::Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,62 +21,63 @@ Inheritance diagram for Mackey\+:\+:Factorization$<$ rank\+\_\+t, diff\+\_\+t $>
 \end{figure}
 
 
-Collaboration diagram for Mackey\+:\+:Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$\+:\nopagebreak
+Collaboration diagram for Mackey\+::Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMackey_1_1Factorization__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \hyperlink{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}{getname} (int)
+std\+::string \mbox{\hyperlink{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}{getname}} (int)
 \begin{DoxyCompactList}\small\item\em Retrieve the factorization of the i-\/th generator. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422}{Factorization} (int, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
+\mbox{\hyperlink{classMackey_1_1Factorization_a234e9ed2bf55a4a221908bd2650c61a6}{Factorization}} (int, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ int $>$ \&, const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&, int=0, bool=0)
 \begin{DoxyCompactList}\small\item\em Form the multiplication table and graph given the max and min spheres and the basic irreducibles. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
+void \mbox{\hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources}} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&, const std\+::vector$<$ std\+::string $>$ \&)
 \begin{DoxyCompactList}\small\item\em Compute the factorizations using the given sources for the multiplication graph and their given names. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}{pass\+\_\+unidentified} (bool serialize\+\_\+each\+\_\+step)
+void \mbox{\hyperlink{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}{pass\+\_\+unidentified}} (bool serialize\+\_\+each\+\_\+step)
 \begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify A\+LL instances where identification failed before. Use with caution! \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff}{pass} (const std\+::vector$<$ int $>$ \&, bool serialize\+\_\+each\+\_\+step)
+void \mbox{\hyperlink{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff}{pass}} (const std\+::vector$<$ int $>$ \&, bool serialize\+\_\+each\+\_\+step)
 \begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the given generators. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}{pass\+\_\+disconnected} (bool serialize\+\_\+each\+\_\+step)
+void \mbox{\hyperlink{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}{pass\+\_\+disconnected}} (bool serialize\+\_\+each\+\_\+step)
 \begin{DoxyCompactList}\small\item\em Uses triple box products to possibly identify the generators not connected to the sources. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}{Factorization} (\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M, const std\+::vector$<$ std\+::string $>$ \&\hyperlink{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}{basic\+Irr\+\_\+names})
+\mbox{\hyperlink{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}{Factorization}} (\mbox{\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&M, const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}{basic\+Irr\+\_\+names}})
 \begin{DoxyCompactList}\small\item\em Constructor given the multiplication table. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ std\+::string $>$ \hyperlink{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}{basic\+Irr\+\_\+names}
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}{basic\+Irr\+\_\+names}}
 \begin{DoxyCompactList}\small\item\em The names of the basic irreducibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\doxysubsection*{Additional Inherited Members}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
 class Mackey\+::\+Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$}
 
 Factorizes generators into the given basic irreducibles and sources. 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422}\label{classMackey_1_1Factorization_af1b07ab5021c4e51698c4cd3fbb85422}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!Factorization@{Factorization}}
-\index{Factorization@{Factorization}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{Factorization()}{Factorization()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1Factorization_a234e9ed2bf55a4a221908bd2650c61a6}\label{classMackey_1_1Factorization_a234e9ed2bf55a4a221908bd2650c61a6}} 
+\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}!Factorization@{Factorization}}
+\index{Factorization@{Factorization}!Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{Factorization()}{Factorization()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Factorization}{Factorization} (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{basic\+Irreducibles,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{basic\+Irr\+\_\+names }\end{DoxyParamCaption})}
+\mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}} (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const std\+::vector$<$ int $>$ \&}]{minsphere,  }\item[{const std\+::vector$<$ int $>$ \&}]{maxsphere,  }\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{basic\+Irreducibles,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{basic\+Irr\+\_\+names,  }\item[{int}]{number\+\_\+of\+\_\+teams = {\ttfamily 0},  }\item[{bool}]{serialize\+\_\+each\+\_\+step = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
 Form the multiplication table and graph given the max and min spheres and the basic irreducibles. 
 
 \mbox{\Hypertarget{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}\label{classMackey_1_1Factorization_a4d55bc1d6f94bdbcd365ed1bb0eaa2cb}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!Factorization@{Factorization}}
-\index{Factorization@{Factorization}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{Factorization()}{Factorization()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}!Factorization@{Factorization}}
+\index{Factorization@{Factorization}!Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{Factorization()}{Factorization()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1Factorization}{Factorization} (\begin{DoxyParamCaption}\item[{\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{M,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{basic\+Irr\+\_\+names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMackey_1_1MultiplicationTable}{Multiplication\+Table}}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{M,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{basic\+Irr\+\_\+names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -83,99 +85,71 @@ Constructor given the multiplication table.
 
 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}\label{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!compute\+\_\+with\+\_\+sources@{compute\+\_\+with\+\_\+sources}}
-\index{compute\+\_\+with\+\_\+sources@{compute\+\_\+with\+\_\+sources}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{compute\+\_\+with\+\_\+sources()}{compute\_with\_sources()}}
+\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}!compute\_with\_sources@{compute\_with\_sources}}
+\index{compute\_with\_sources@{compute\_with\_sources}!Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{compute\_with\_sources()}{compute\_with\_sources()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-void \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::compute\+\_\+with\+\_\+sources (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{given\+\_\+sources,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{names }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::compute\+\_\+with\+\_\+sources (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{given\+\_\+sources,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{names }\end{DoxyParamCaption})}
 
 
 
 Compute the factorizations using the given sources for the multiplication graph and their given names. 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}\label{classMackey_1_1Factorization_ac5088227511baaaec1f62802b75d3a9e}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!getname@{getname}}
-\index{getname@{getname}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{getname()}{getname()}}
+\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}!getname@{getname}}
+\index{getname@{getname}!Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{getname()}{getname()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::string \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getname (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+std\+::string \mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getname (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
 
 
 
 Retrieve the factorization of the i-\/th generator. 
 
 \mbox{\Hypertarget{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff}\label{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass@{pass}}
-\index{pass@{pass}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{pass()}{pass()}}
+\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}!pass@{pass}}
+\index{pass@{pass}!Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{pass()}{pass()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-void \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{desired\+\_\+generators,  }\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{desired\+\_\+generators,  }\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})}
 
 
 
 Uses triple box products to possibly identify the given generators. 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_a9828268663049b5ac2668d4eb0bdd4ff_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}\label{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass\+\_\+disconnected@{pass\+\_\+disconnected}}
-\index{pass\+\_\+disconnected@{pass\+\_\+disconnected}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{pass\+\_\+disconnected()}{pass\_disconnected()}}
+\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}!pass\_disconnected@{pass\_disconnected}}
+\index{pass\_disconnected@{pass\_disconnected}!Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{pass\_disconnected()}{pass\_disconnected()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-void \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+disconnected (\begin{DoxyParamCaption}\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+disconnected (\begin{DoxyParamCaption}\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})}
 
 
 
 Uses triple box products to possibly identify the generators not connected to the sources. 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_aad2d840b523d193f4c3554e9e3f7fb00_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}\label{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!pass\+\_\+unidentified@{pass\+\_\+unidentified}}
-\index{pass\+\_\+unidentified@{pass\+\_\+unidentified}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{pass\+\_\+unidentified()}{pass\_unidentified()}}
+\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}!pass\_unidentified@{pass\_unidentified}}
+\index{pass\_unidentified@{pass\_unidentified}!Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{pass\_unidentified()}{pass\_unidentified()}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-void \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+unidentified (\begin{DoxyParamCaption}\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::pass\+\_\+unidentified (\begin{DoxyParamCaption}\item[{bool}]{serialize\+\_\+each\+\_\+step }\end{DoxyParamCaption})}
 
 
 
 Uses triple box products to possibly identify A\+LL instances where identification failed before. Use with caution! 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMackey_1_1Factorization_a0f1115a0af9f4fb294646aee85ebb2e4_cgraph}
-\end{center}
-\end{figure}
 
 
-\subsection{Member Data Documentation}
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}\label{classMackey_1_1Factorization_aafee5aadae0d83b75741e0e8c2955625}} 
-\index{Mackey\+::\+Factorization@{Mackey\+::\+Factorization}!basic\+Irr\+\_\+names@{basic\+Irr\+\_\+names}}
-\index{basic\+Irr\+\_\+names@{basic\+Irr\+\_\+names}!Mackey\+::\+Factorization@{Mackey\+::\+Factorization}}
-\subsubsection{\texorpdfstring{basic\+Irr\+\_\+names}{basicIrr\_names}}
+\index{Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}!basicIrr\_names@{basicIrr\_names}}
+\index{basicIrr\_names@{basicIrr\_names}!Mackey::Factorization$<$ rank\_t, diff\_t $>$@{Mackey::Factorization$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{basicIrr\_names}{basicIrr\_names}}
 {\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
-std\+::vector$<$std\+::string$>$ \hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basic\+Irr\+\_\+names}
+std\+::vector$<$std\+::string$>$ \mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::basic\+Irr\+\_\+names}
 
 
 
@@ -185,4 +159,4 @@ The names of the basic irreducibles.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Mackey/\hyperlink{Factorization_8h}{Factorization.\+h}\end{DoxyCompactItemize}
+Mackey/\mbox{\hyperlink{Factorization_8h}{Factorization.\+h}}\end{DoxyCompactItemize}

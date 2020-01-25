@@ -1,0 +1,6 @@
+<map id="Mackey::internal::general_canonical_box" name="Mackey::internal::general_canonical_box">
+<area shape="rect" id="node1" title="General expression for the canonical basis of (firstChain box secondChain)_i using the provided names..." alt="" coords="487,39,673,80"/>
+<area shape="rect" id="node2" href="$namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E." alt="" coords="265,5,426,47"/>
+<area shape="rect" id="node4" href="$namespaceMackey_1_1internal.html#a780adcafc5fe040d6340557f88f052f2" title="General expression for the canonical basis of firstChain box secondChain using the provided names." alt="" coords="252,71,439,112"/>
+<area shape="rect" id="node3" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title=" " alt="" coords="5,5,204,47"/>
+</map>

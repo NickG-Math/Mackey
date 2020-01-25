@@ -1,47 +1,47 @@
-\hypertarget{classMackey_1_1BoxPoint}{}\section{Mackey\+:\+:Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
-\label{classMackey_1_1BoxPoint}\index{Mackey\+::\+Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$@{Mackey\+::\+Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\hypertarget{classMackey_1_1BoxPoint}{}\doxysection{Mackey\+::Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1BoxPoint}\index{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}}
 
 
-The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains} at a single index.  
+The box (tensor) product of \mbox{\hyperlink{classMackey_1_1Chains}{Chains}} at a single index.  
 
 
 
 
 {\ttfamily \#include $<$Box.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classMackey_1_1BoxPoint_a7d7864d6623adb228897cb2d42594900}{Box\+Point} (const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int i)
+\mbox{\hyperlink{classMackey_1_1BoxPoint_a7d7864d6623adb228897cb2d42594900}{Box\+Point}} (const \mbox{\hyperlink{classMackey_1_1Chains}{Chains}}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const \mbox{\hyperlink{classMackey_1_1Chains}{Chains}}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int i)
 \begin{DoxyCompactList}\small\item\em Construct from chains C,D the boxpoint (C box D)\+\_\+i-\/$>$(C box D)\+\_\+i-\/1. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-rank\+\_\+t \hyperlink{classMackey_1_1BoxPoint_a160dd950c1ffbed689d650f4d0fadbec}{rank\+\_\+domain}
+rank\+\_\+t \mbox{\hyperlink{classMackey_1_1BoxPoint_a160dd950c1ffbed689d650f4d0fadbec}{rank\+\_\+domain}}
 \begin{DoxyCompactList}\small\item\em The rank of the domain of the differential. \end{DoxyCompactList}\item 
-rank\+\_\+t \hyperlink{classMackey_1_1BoxPoint_ab24bd5a38df100f88c8637d71dbdf608}{rank\+\_\+range}
+rank\+\_\+t \mbox{\hyperlink{classMackey_1_1BoxPoint_ab24bd5a38df100f88c8637d71dbdf608}{rank\+\_\+range}}
 \begin{DoxyCompactList}\small\item\em The rank of the range of the differential. \end{DoxyCompactList}\item 
-diff\+\_\+t \hyperlink{classMackey_1_1BoxPoint_affefee2b62f4168ed778d96dc219ef6f}{diff}
+diff\+\_\+t \mbox{\hyperlink{classMackey_1_1BoxPoint_affefee2b62f4168ed778d96dc219ef6f}{diff}}
 \begin{DoxyCompactList}\small\item\em The differential. \end{DoxyCompactList}\item 
-std\+::vector$<$ long $>$ \hyperlink{classMackey_1_1BoxPoint_abe386801d835d806f74ee219070d2b80}{detailedrank}
+std\+::vector$<$ long $>$ \mbox{\hyperlink{classMackey_1_1BoxPoint_abe386801d835d806f74ee219070d2b80}{detailedrank}}
 \begin{DoxyCompactList}\small\item\em The detailed rank retains the layout of the tensor product. That\textquotesingle{}s used for forming products of generators (padding) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
 class Mackey\+::\+Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$}
 
-The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains} at a single index. 
+The box (tensor) product of \mbox{\hyperlink{classMackey_1_1Chains}{Chains}} at a single index. 
 
 We only store a single differential and the ranks of its domain and range 
 
-\subsection{Constructor \& Destructor Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classMackey_1_1BoxPoint_a7d7864d6623adb228897cb2d42594900}\label{classMackey_1_1BoxPoint_a7d7864d6623adb228897cb2d42594900}} 
-\index{Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}!Box\+Point@{Box\+Point}}
-\index{Box\+Point@{Box\+Point}!Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}}
-\subsubsection{\texorpdfstring{Box\+Point()}{BoxPoint()}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-\hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\hyperlink{classMackey_1_1BoxPoint}{Box\+Point} (\begin{DoxyParamCaption}\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{C,  }\item[{const \hyperlink{classMackey_1_1Chains}{Chains}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{D,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\index{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}!BoxPoint@{BoxPoint}}
+\index{BoxPoint@{BoxPoint}!Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{BoxPoint()}{BoxPoint()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\mbox{\hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\mbox{\hyperlink{classMackey_1_1BoxPoint}{Box\+Point}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMackey_1_1Chains}{Chains}}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{C,  }\item[{const \mbox{\hyperlink{classMackey_1_1Chains}{Chains}}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{D,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -49,46 +49,46 @@ Construct from chains C,D the boxpoint (C box D)\+\_\+i-\/$>$(C box D)\+\_\+i-\/
 
 
 
-\subsection{Member Data Documentation}
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classMackey_1_1BoxPoint_abe386801d835d806f74ee219070d2b80}\label{classMackey_1_1BoxPoint_abe386801d835d806f74ee219070d2b80}} 
-\index{Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}!detailedrank@{detailedrank}}
-\index{detailedrank@{detailedrank}!Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}}
-\subsubsection{\texorpdfstring{detailedrank}{detailedrank}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-std\+::vector$<$long$>$ \hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::detailedrank}
+\index{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}!detailedrank@{detailedrank}}
+\index{detailedrank@{detailedrank}!Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{detailedrank}{detailedrank}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+std\+::vector$<$long$>$ \mbox{\hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::detailedrank}
 
 
 
 The detailed rank retains the layout of the tensor product. That\textquotesingle{}s used for forming products of generators (padding) 
 
 \mbox{\Hypertarget{classMackey_1_1BoxPoint_affefee2b62f4168ed778d96dc219ef6f}\label{classMackey_1_1BoxPoint_affefee2b62f4168ed778d96dc219ef6f}} 
-\index{Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}!diff@{diff}}
-\index{diff@{diff}!Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}}
-\subsubsection{\texorpdfstring{diff}{diff}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-diff\+\_\+t \hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::diff}
+\index{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}!diff@{diff}}
+\index{diff@{diff}!Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{diff}{diff}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+diff\+\_\+t \mbox{\hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::diff}
 
 
 
 The differential. 
 
 \mbox{\Hypertarget{classMackey_1_1BoxPoint_a160dd950c1ffbed689d650f4d0fadbec}\label{classMackey_1_1BoxPoint_a160dd950c1ffbed689d650f4d0fadbec}} 
-\index{Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}!rank\+\_\+domain@{rank\+\_\+domain}}
-\index{rank\+\_\+domain@{rank\+\_\+domain}!Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}}
-\subsubsection{\texorpdfstring{rank\+\_\+domain}{rank\_domain}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-rank\+\_\+t \hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::rank\+\_\+domain}
+\index{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}!rank\_domain@{rank\_domain}}
+\index{rank\_domain@{rank\_domain}!Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{rank\_domain}{rank\_domain}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+rank\+\_\+t \mbox{\hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::rank\+\_\+domain}
 
 
 
 The rank of the domain of the differential. 
 
 \mbox{\Hypertarget{classMackey_1_1BoxPoint_ab24bd5a38df100f88c8637d71dbdf608}\label{classMackey_1_1BoxPoint_ab24bd5a38df100f88c8637d71dbdf608}} 
-\index{Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}!rank\+\_\+range@{rank\+\_\+range}}
-\index{rank\+\_\+range@{rank\+\_\+range}!Mackey\+::\+Box\+Point@{Mackey\+::\+Box\+Point}}
-\subsubsection{\texorpdfstring{rank\+\_\+range}{rank\_range}}
-{\footnotesize\ttfamily template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$ \\
-rank\+\_\+t \hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::rank\+\_\+range}
+\index{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}!rank\_range@{rank\_range}}
+\index{rank\_range@{rank\_range}!Mackey::BoxPoint$<$ rank\_t, diff\_t $>$@{Mackey::BoxPoint$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{rank\_range}{rank\_range}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+rank\+\_\+t \mbox{\hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::rank\+\_\+range}
 
 
 
@@ -98,4 +98,4 @@ The rank of the range of the differential.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Mackey/\hyperlink{Box_8h}{Box.\+h}\end{DoxyCompactItemize}
+Mackey/\mbox{\hyperlink{Box_8h}{Box.\+h}}\end{DoxyCompactItemize}

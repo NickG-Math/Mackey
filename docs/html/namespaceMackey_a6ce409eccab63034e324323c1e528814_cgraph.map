@@ -1,5 +1,6 @@
 <map id="Mackey::rankBox" name="Mackey::rankBox">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i. " alt="" coords="177,31,301,57"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B. " alt="" coords="356,5,483,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="349,56,489,83"/>
+<area shape="rect" id="node1" title="The rank of (C box D)" alt="" coords="5,31,139,57"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i." alt="" coords="187,31,320,57"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B." alt="" coords="375,5,514,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="368,56,521,83"/>
 </map>

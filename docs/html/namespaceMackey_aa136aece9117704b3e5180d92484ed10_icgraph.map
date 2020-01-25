@@ -1,10 +1,6 @@
 <map id="Mackey::primes" name="Mackey::primes">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0) ..." alt="" coords="168,46,307,73"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a2556e2a1f78783585df78de1c1b35eae" title="Mackey::all_automorphisms" alt="" coords="355,46,540,73"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MackeyFunctor.html#ac7ef9ab9f3a13660a03c35e64dddd66b" title="Returns all automorphisms of a Mackey Functor and their inverses. " alt="" coords="588,39,755,80"/>
-<area shape="rect" id="node5" href="$classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="1022,5,1189,47"/>
-<area shape="rect" id="node6" href="$classMackey_1_1MackeyFunctor.html#a71e081ee78f53fe74e8f65106865f4c5" title="Returns the isomorphism class of a Mackey Functor. " alt="" coords="803,68,969,109"/>
-<area shape="rect" id="node7" href="$classMackey_1_1AdditiveStructure.html#a6c68d66e89c3ad3a81dde8fd35837c3c" title="Print the unnamed Mackey functors that appear. " alt="" coords="1017,71,1193,112"/>
-<area shape="rect" id="node9" href="$classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="1022,136,1189,177"/>
-<area shape="rect" id="node8" href="$classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="1241,71,1417,112"/>
+<area shape="rect" id="node1" title="Returns all primes up to n (not optimized; n is usually very small)" alt="" coords="680,13,804,39"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0)" alt="" coords="483,13,632,39"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a2556e2a1f78783585df78de1c1b35eae" title=" " alt="" coords="231,13,435,39"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MackeyFunctor.html#ac7ef9ab9f3a13660a03c35e64dddd66b" title="Returns all automorphisms of a Mackey Functor and their inverses." alt="" coords="5,5,183,47"/>
 </map>

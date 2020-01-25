@@ -1,4 +1,5 @@
 <map id="Mackey::internal::triple_box_permutation" name="Mackey::internal::triple_box_permutation">
-<area shape="rect" id="node2" href="$namespaceMackey_1_1internal.html#ac9c5122d0b7488b13f15bb6a7e03a9f8" title="Produces a nicer version of general canonical when used for triple products. " alt="" coords="208,5,363,47"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="237,71,334,98"/>
+<area shape="rect" id="node1" title="Forms the permutation from basis (C box D) box E to C box (D box E) using names provided by general_c..." alt="" coords="5,27,176,69"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices." alt="" coords="257,5,361,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey_1_1internal.html#a3ad5c7d43d4f8e63a3b6a8ec55f85dfa" title="Produces a nicer version of general canonical when used for triple products." alt="" coords="224,57,395,98"/>
 </map>

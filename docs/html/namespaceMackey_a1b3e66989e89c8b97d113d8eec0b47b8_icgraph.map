@@ -1,8 +1,6 @@
 <map id="Mackey::span" name="Mackey::span">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a1ff253bf7e043ad6455b5fea23a83f09" title="Finds if an element is in the span of other given elements in a finitely generated abelian group..." alt="" coords="165,27,281,53"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#af70b0c547f7121b8815885dfebde67d9" title="Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!=0) ..." alt="" coords="157,83,288,109"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraphConnectivity.html#a81e8f3efb867ea951573a2a5ca5825ed" title="Computes the nodes of the Multiplication Graph disconnected from the given sources. " alt="" coords="336,5,523,61"/>
-<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]..." alt="" coords="336,86,523,127"/>
-<area shape="rect" id="node6" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="589,53,739,94"/>
-<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="571,118,757,159"/>
+<area shape="rect" id="node1" title="Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group...." alt="" coords="451,31,561,57"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a1ff253bf7e043ad6455b5fea23a83f09" title="Finds if an element is in the span of other given elements in a finitely generated abelian group." alt="" coords="270,5,393,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#af70b0c547f7121b8815885dfebde67d9" title="Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!..." alt="" coords="260,56,403,83"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]." alt="" coords="5,49,212,90"/>
 </map>

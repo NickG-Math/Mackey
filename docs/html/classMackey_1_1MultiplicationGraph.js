@@ -1,6 +1,6 @@
 var classMackey_1_1MultiplicationGraph =
 [
-    [ "MultiplicationGraph", "classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca", null ],
+    [ "MultiplicationGraph", "classMackey_1_1MultiplicationGraph.html#af3e0e6a26987b92475a5a2211a2875f9", null ],
     [ "MultiplicationGraph", "classMackey_1_1MultiplicationGraph.html#a62ff705e1f01b6ab2008765f10230e96", null ],
     [ "getdegree", "classMackey_1_1MultiplicationGraph.html#a1616acd79b92c94994648835a7941753", null ],
     [ "getelement", "classMackey_1_1MultiplicationGraph.html#acb5d06dd354041e4726a5aea5e11e847", null ],

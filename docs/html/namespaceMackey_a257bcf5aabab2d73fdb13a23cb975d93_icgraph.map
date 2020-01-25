@@ -1,3 +1,4 @@
 <map id="Mackey::mod_normalize" name="Mackey::mod_normalize">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples. " alt="" coords="217,5,349,32"/>
+<area shape="rect" id="node1" title="Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1." alt="" coords="197,5,377,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples." alt="" coords="5,5,149,32"/>
 </map>

@@ -1,5 +1,6 @@
 <map id="Mackey::AdditiveStructure::print_answer" name="Mackey::AdditiveStructure::print_answer">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="229,5,421,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="255,56,396,83"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="469,56,563,83"/>
+<area shape="rect" id="node1" title="Print the Mackey functors for each degree." alt="" coords="5,23,197,65"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between." alt="" coords="245,5,453,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex." alt="" coords="273,56,425,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start." alt="" coords="501,56,601,83"/>
 </map>

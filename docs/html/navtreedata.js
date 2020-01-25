@@ -1,3 +1,25 @@
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this file.
+
+Copyright (C) 1997-2019 by Dimitri van Heesch
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of version 2 of the GNU General Public License as published by
+the Free Software Foundation
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+@licend  The above is the entire license notice
+for the JavaScript code in this file
+*/
 var NAVTREE =
 [
   [ "Mackey", "index.html", [
@@ -49,8 +71,8 @@ var NAVTREE =
       [ "Integers vs Floats", "perf.html#intvsfloat", null ],
       [ "Box Products", "perf.html#boxproducts", null ]
     ] ],
-    [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.html", "namespaces" ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
@@ -71,8 +93,8 @@ var NAVTREE =
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
@@ -85,8 +107,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Additive_8h.html",
-"classMackey_1_1ChainsBox.html#aa5b4853612f378261b6d321da748f576",
-"classZ.html#ae97fcd6db1faa3170e7764670b3ea1a9"
+"classMackey_1_1ChainsBox.html#ab4db0344f896a00119783d479af44ed0",
+"classZ_3_012_01_4.html#a113854b6a1c2fec88ed352c117515c0e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

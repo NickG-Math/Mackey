@@ -1,8 +1,10 @@
 <map id="Mackey::rankmult" name="Mackey::rankmult">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i. " alt="" coords="180,97,304,124"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a6ce409eccab63034e324323c1e528814" title="The rank of (C box D) " alt="" coords="376,5,500,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey_1_1internal.html#a2c420c10c78dcc4f9ae579bad1cd2e45" title="General expression for the canonical basis of (firstChain box secondChain)_i using the provided names..." alt="" coords="354,57,522,98"/>
-<area shape="rect" id="node5" href="$namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E. " alt="" coords="365,122,511,163"/>
-<area shape="rect" id="node7" href="$structMackey_1_1internal_1_1MasseyCompute.html#aff177659d2dbcd9c3fe9d644d55141ca" title="Mackey::internal::Massey\lCompute::box" alt="" coords="352,187,524,229"/>
-<area shape="rect" id="node6" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title="Mackey::internal::Massey\lCompute::MasseyCompute" alt="" coords="572,155,755,197"/>
+<area shape="rect" id="node1" title="The tensor product of ranks of modules A,B." alt="" coords="903,103,1041,130"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i." alt="" coords="721,103,855,130"/>
+<area shape="rect" id="node3" href="$structMackey_1_1internal_1_1MasseyCompute.html#aff177659d2dbcd9c3fe9d644d55141ca" title=" " alt="" coords="252,5,439,47"/>
+<area shape="rect" id="node5" href="$namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E." alt="" coords="265,71,426,112"/>
+<area shape="rect" id="node6" href="$namespaceMackey_1_1internal.html#a2c420c10c78dcc4f9ae579bad1cd2e45" title="General expression for the canonical basis of (firstChain box secondChain)_i using the provided names..." alt="" coords="487,125,673,167"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#a6ce409eccab63034e324323c1e528814" title="The rank of (C box D)" alt="" coords="513,191,647,218"/>
+<area shape="rect" id="node4" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title=" " alt="" coords="5,39,204,80"/>
+<area shape="rect" id="node7" href="$namespaceMackey_1_1internal.html#a780adcafc5fe040d6340557f88f052f2" title="General expression for the canonical basis of firstChain box secondChain using the provided names." alt="" coords="252,136,439,177"/>
 </map>

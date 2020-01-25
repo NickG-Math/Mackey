@@ -1,4 +1,4 @@
 <map id="Mackey::WeightedGraph" name="Mackey::WeightedGraph">
-<area shape="rect" id="node2" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; WeightedGraph \&gt;" alt="" coords="5,95,231,121"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Graph.html" title="A directed Graph. " alt="" coords="47,5,189,32"/>
+<area shape="rect" id="node1" title="A directed Graph with weights." alt="" coords="40,80,220,107"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Graph.html" title="A directed Graph." alt="" coords="5,5,255,32"/>
 </map>

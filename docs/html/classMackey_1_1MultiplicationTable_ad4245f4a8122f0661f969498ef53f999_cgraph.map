@@ -1,6 +1,4 @@
 <map id="Mackey::MultiplicationTable::getsphere" name="Mackey::MultiplicationTable::getsphere">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="641,5,735,32"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="237,31,421,73"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="469,31,593,57"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="482,81,581,108"/>
+<area shape="rect" id="node1" title="Isolate sphere from the degree vector (i.e. get everything but first entry)" alt="" coords="5,5,208,47"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start." alt="" coords="256,13,356,39"/>
 </map>

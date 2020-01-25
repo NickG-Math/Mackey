@@ -1,5 +1,6 @@
 <map id="Mackey::aut_p_group" name="Mackey::aut_p_group">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="200,5,392,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group..." alt="" coords="200,57,392,98"/>
-<area shape="rect" id="node4" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="440,64,483,91"/>
+<area shape="rect" id="node1" title="Returns all automorphisms of finite abelian p&#45;group." alt="" coords="5,42,164,69"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#aa96cf972d89b207ce6709e867f760f37" title="Checks if integer matrix induces an isomorphism pGroup&#45;&gt;pGroup for finite abelian p&#45;group." alt="" coords="212,5,421,47"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between." alt="" coords="213,71,421,98"/>
+<area shape="rect" id="node3" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title=" " alt="" coords="469,13,515,39"/>
 </map>

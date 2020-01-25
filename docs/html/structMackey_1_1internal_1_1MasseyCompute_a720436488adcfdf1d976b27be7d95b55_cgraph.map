@@ -1,8 +1,9 @@
 <map id="Mackey::internal::MasseyCompute::indeterminacy" name="Mackey::internal::MasseyCompute::indeterminacy">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="245,5,379,32"/>
-<area shape="rect" id="node4" href="$structMackey_1_1internal_1_1MasseyCompute.html#a2a7ff03cfeadb4f35c0798bf2a447a7e" title="Mackey::internal::Massey\lCompute::product_bottom" alt="" coords="225,57,399,98"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a8e17fb4ada60b950c8f4efe273b23783" title="Mackey::invRes" alt="" coords="253,123,371,149"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="259,173,365,200"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="447,64,587,91"/>
-<area shape="rect" id="node7" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="468,173,565,200"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,74,192,115"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i." alt="" coords="261,5,365,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a8e17fb4ada60b950c8f4efe273b23783" title=" " alt="" coords="251,56,374,83"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="256,157,369,184"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="240,107,385,133"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="433,81,587,108"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="459,157,561,184"/>
 </map>

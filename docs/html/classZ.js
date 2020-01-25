@@ -1,9 +1,5 @@
 var classZ =
 [
-    [ "Z", "classZ.html#a21a5a03bc44e0a76607d1b89dc9e31cb", null ],
-    [ "Z", "classZ.html#aa6546d6135c97a5b8df9028068dfe0c1", null ],
-    [ "Z", "classZ.html#a55fa70d38bc723f35e27139239bf385a", null ],
-    [ "Z", "classZ.html#a32b7b05c9f2e161d1b9fc60dd1e7a27b", null ],
     [ "operator char", "classZ.html#ae97fcd6db1faa3170e7764670b3ea1a9", null ],
     [ "operator double", "classZ.html#a819290a913ce32272c6cdb7407846057", null ],
     [ "operator float", "classZ.html#a9bb3636d1ffd75dc1a221251f71d4781", null ],
@@ -14,8 +10,8 @@ var classZ =
     [ "operator%", "classZ.html#a4715a86eb00c00fce2be3d1c1bf24440", null ],
     [ "operator+", "classZ.html#a1a01f7aaa064fe201c2e0cc72da02960", null ],
     [ "operator+=", "classZ.html#a3b61b86ccc14f54010c58e8ff2745d91", null ],
-    [ "operator-", "classZ.html#ac4751d1ef56abaee7ed90f29939324f2", null ],
     [ "operator-", "classZ.html#a298e4392b981d2ce937823bb26cb7421", null ],
+    [ "operator-", "classZ.html#ac4751d1ef56abaee7ed90f29939324f2", null ],
     [ "operator-=", "classZ.html#ad7620de459cf2248f9f02e51fc5b5350", null ],
     [ "operator<", "classZ.html#ac9464cf14368b566bd4897b7a83d0861", null ],
     [ "operator<=", "classZ.html#a52b5a9afa8054c108b4967dfe2930642", null ],

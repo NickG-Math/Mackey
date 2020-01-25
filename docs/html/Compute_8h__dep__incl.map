@@ -1,9 +1,10 @@
 <map id="Mackey/Compute.h" name="Mackey/Compute.h">
-<area shape="rect" id="node2" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology. " alt="" coords="5,155,136,181"/>
-<area shape="rect" id="node4" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table. " alt="" coords="176,80,291,107"/>
-<area shape="rect" id="node3" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="63,393,206,420"/>
-<area shape="rect" id="node5" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph. " alt="" coords="160,155,355,181"/>
-<area shape="rect" id="node6" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="109,229,291,271"/>
-<area shape="rect" id="node8" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="315,229,498,271"/>
-<area shape="rect" id="node7" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="121,319,279,345"/>
+<area shape="rect" id="node1" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors." alt="" coords="105,5,251,32"/>
+<area shape="rect" id="node2" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="5,155,148,181"/>
+<area shape="rect" id="node4" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table." alt="" coords="193,80,315,107"/>
+<area shape="rect" id="node3" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="69,393,223,420"/>
+<area shape="rect" id="node5" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="173,155,389,181"/>
+<area shape="rect" id="node6" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="115,229,319,271"/>
+<area shape="rect" id="node8" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="343,229,547,271"/>
+<area shape="rect" id="node7" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="131,319,303,345"/>
 </map>

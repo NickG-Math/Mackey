@@ -1,5 +1,4 @@
 <map id="Mackey::Graph::computeWithSource" name="Mackey::Graph::computeWithSource">
-<area shape="rect" id="node2" href="$classMackey_1_1Graph.html#a4f0ca7cec28645835bbad29b8c00992c" title="Construct given the edges of the graph. " alt="" coords="249,5,452,47"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Graph.html#a61d5b1d08f8efc54fdc639c66b5aeb70" title="Default implementation for graphs uses length=1 for all edges. " alt="" coords="249,71,452,112"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraphConnectivity.html#a81e8f3efb867ea951573a2a5ca5825ed" title="Computes the nodes of the Multiplication Graph disconnected from the given sources. " alt="" coords="257,137,444,193"/>
+<area shape="rect" id="node1" title="Compute all paths using the given source." alt="" coords="276,5,489,47"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Graph.html#a61d5b1d08f8efc54fdc639c66b5aeb70" title="Default implementation for graphs uses length=1 for all edges." alt="" coords="5,5,228,47"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="Mackey::inSpan" name="Mackey::inSpan">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a1b3e66989e89c8b97d113d8eec0b47b8" title="Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group..." alt="" coords="169,5,273,32"/>
+<area shape="rect" id="node1" title="Finds if an element is in the span of other given elements in a finitely generated abelian group." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a1b3e66989e89c8b97d113d8eec0b47b8" title="Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group...." alt="" coords="176,5,287,32"/>
 </map>

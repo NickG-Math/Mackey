@@ -1,62 +1,66 @@
-\hypertarget{Aliases_8h}{}\section{Mackey/\+Aliases.h File Reference}
-\label{Aliases_8h}\index{Mackey/\+Aliases.\+h@{Mackey/\+Aliases.\+h}}
+\hypertarget{Aliases_8h}{}\doxysection{Mackey/\+Aliases.h File Reference}
+\label{Aliases_8h}\index{Mackey/Aliases.h@{Mackey/Aliases.h}}
 
 
-Contains general template aliases.  
+Contains general template aliases. ~\newline
+  
 
 
 {\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
 {\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
 {\ttfamily \#include \char`\"{}S\+F\+I\+N\+A\+E.\+h\char`\"{}}\newline
-Include dependency graph for Aliases.\+h\+:\nopagebreak
+Include dependency graph for Aliases.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{Aliases_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{Aliases_8h__dep__incl}
 \end{center}
 \end{figure}
-\subsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology$<$ rank\+\_\+t, diff\+\_\+t $>$}
-\begin{DoxyCompactList}\small\item\em The \hyperlink{classMackey_1_1Homology}{Homology} of a \hyperlink{classMackey_1_1Junction}{Junction}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Namespaces}
+class \mbox{\hyperlink{classMackey_1_1Homology}{Mackey\+::\+Homology$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classMackey_1_1Homology}{Homology}} of a \mbox{\hyperlink{classMackey_1_1Junction}{Junction}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespaceMackey}{Mackey}
+ \mbox{\hyperlink{namespaceMackey}{Mackey}}
 \begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Typedefs}
+\doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Mackey\+::\+Scalar\+\_\+t} = typename T\+::\+Scalar
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceMackey_a93ba297573961f91101fb84bc84bbe95}{Mackey\+::\+Scalar\+\_\+t}} = typename T\+::\+Scalar
 \begin{DoxyCompactList}\small\item\em Scalar of matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}{Mackey\+::row\+\_\+t} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 1,-\/1 $>$
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceMackey_a6d37801553e585770ca7d1243ab3b213}{Mackey\+::row\+\_\+t}} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 1,-\/1 $>$
 \begin{DoxyCompactList}\small\item\em Row matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a3374980e3b5001f5ba9b206004180627}{Mackey\+::col\+\_\+t} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, -\/1, 1 $>$
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceMackey_a3374980e3b5001f5ba9b206004180627}{Mackey\+::col\+\_\+t}} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, -\/1, 1 $>$
 \begin{DoxyCompactList}\small\item\em Column matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{Mackey\+::mat\+\_\+t} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$,-\/1,-\/1 $>$
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceMackey_a035386035757dade630f685e508e5cf9}{Mackey\+::mat\+\_\+t}} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$,-\/1,-\/1 $>$
 \begin{DoxyCompactList}\small\item\em Column major. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_ac1c9f85957dda772ceaa564cb23494cb}{Mackey\+::mat\+\_\+t\+\_\+r} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, -\/1, -\/1, Eigen\+::\+Row\+Major $>$
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceMackey_ac1c9f85957dda772ceaa564cb23494cb}{Mackey\+::mat\+\_\+t\+\_\+r}} = typename Eigen\+::\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, -\/1, -\/1, Eigen\+::\+Row\+Major $>$
 \begin{DoxyCompactList}\small\item\em Row major. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_a3f5deb1be99876ac8c7d72f0f0cca3af}{Mackey\+::spm\+\_\+t} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 0, typename T\+::\+Storage\+Index $>$
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceMackey_a3f5deb1be99876ac8c7d72f0f0cca3af}{Mackey\+::spm\+\_\+t}} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 0, typename T\+::\+Storage\+Index $>$
 \begin{DoxyCompactList}\small\item\em Column major sparse. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \hyperlink{namespaceMackey_acc7de57bf31af7089e6bc392c8b52e7e}{Mackey\+::spm\+\_\+t\+\_\+r} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 1, typename T\+::\+Storage\+Index $>$
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceMackey_acc7de57bf31af7089e6bc392c8b52e7e}{Mackey\+::spm\+\_\+t\+\_\+r}} = typename Eigen\+::\+Sparse\+Matrix$<$ Scalar\+\_\+t$<$ T $>$, 1, typename T\+::\+Storage\+Index $>$
 \begin{DoxyCompactList}\small\item\em Row major sparse. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename storage $>$ }\\using \hyperlink{namespaceMackey_a0b8cd52f81199d53fa1e93946d8115ef}{Mackey\+::triplets} = std\+::vector$<$ Eigen\+::\+Triplet$<$ T, storage $>$ $>$
+{\footnotesize template$<$typename T , typename storage $>$ }\\using \mbox{\hyperlink{namespaceMackey_a0b8cd52f81199d53fa1e93946d8115ef}{Mackey\+::triplets}} = std\+::vector$<$ Eigen\+::\+Triplet$<$ T, storage $>$ $>$
 \item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \hyperlink{namespaceMackey_ab2542005948b58de00ac4647ca2c7106}{Mackey\+::\+Gens\+\_\+t} = typename Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Gens\+\_\+t
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \mbox{\hyperlink{namespaceMackey_ab2542005948b58de00ac4647ca2c7106}{Mackey\+::\+Gens\+\_\+t}} = typename Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+::Gens\+\_\+t
 \begin{DoxyCompactList}\small\item\em Type of Generator matrices in homology. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{Mackey\+::gen\+\_\+t} = typename Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+::gen\+\_\+t
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\using \mbox{\hyperlink{namespaceMackey_a6bb0b2796632ba6c7f8ea192f7aecffe}{Mackey\+::gen\+\_\+t}} = typename Homology$<$ rank\+\_\+t, diff\+\_\+t $>$\+::gen\+\_\+t
 \begin{DoxyCompactList}\small\item\em Type of generators in homology. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Contains general template aliases. 
+\doxysubsection{Detailed Description}
+Contains general template aliases. ~\newline
+ 
 

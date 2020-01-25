@@ -1,7 +1,8 @@
 <map id="Mackey::transfer" name="Mackey::transfer">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="400,9,511,36"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="203,34,323,61"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="193,85,333,112"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a2c0a3d97e1d5617cf9b802d0cdcfebfc" title="Turn sparse matrix into a vector of Eigen triplets. " alt="" coords="173,136,352,162"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#ad6870101d4fd762100a3115abc4a15db" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="196,186,329,213"/>
+<area shape="rect" id="node1" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="5,87,136,114"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent." alt="" coords="427,87,547,114"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a2c0a3d97e1d5617cf9b802d0cdcfebfc" title="Turn sparse matrix into a vector of Eigen triplets." alt="" coords="184,37,379,63"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#ad6870101d4fd762100a3115abc4a15db" title="Makes a new matrix out of A keeping only its rows indicated by Z." alt="" coords="212,87,351,114"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="205,138,358,165"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level." alt="" coords="216,189,347,215"/>
 </map>

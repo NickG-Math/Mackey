@@ -1,0 +1,6 @@
+<map id="Mackey::Green::getNormalBasis" name="Mackey::Green::getNormalBasis">
+<area shape="rect" id="node1" title="Returns the (normalized) product of the selected generator with another element." alt="" coords="5,23,200,65"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84" title="Returns the (normalized) product of the given two elements (not necessarily generators)" alt="" coords="248,23,443,65"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero." alt="" coords="503,5,623,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="491,56,635,83"/>
+</map>

@@ -1,5 +1,6 @@
 <map id="Mackey::id_candidates" name="Mackey::id_candidates">
-<area shape="rect" id="node2" href="$classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data. " alt="" coords="209,5,364,47"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="221,71,353,98"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables. " alt="" coords="412,5,579,47"/>
+<area shape="rect" id="node1" title="Use the ID data to identify all possible candidates for an element." alt="" coords="5,42,175,69"/>
+<area shape="rect" id="node2" href="$classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data." alt="" coords="223,5,388,47"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="233,71,377,98"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables." alt="" coords="436,5,613,47"/>
 </map>

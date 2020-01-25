@@ -3,12 +3,12 @@ var Box_8h =
     [ "BoxPoint", "classMackey_1_1BoxPoint.html", "classMackey_1_1BoxPoint" ],
     [ "ChainsBox", "classMackey_1_1ChainsBox.html", "classMackey_1_1ChainsBox" ],
     [ "JunctionBox", "classMackey_1_1JunctionBox.html", "classMackey_1_1JunctionBox" ],
-    [ "Box", "Box_8h.html#add5b60c8e734df2be261106e0c719f82", null ],
     [ "Box", "Box_8h.html#a72abbe3708c4e77936c8cc42fbc6753a", null ],
+    [ "Box", "Box_8h.html#add5b60c8e734df2be261106e0c719f82", null ],
     [ "box_sparse", "Box_8h.html#a94aab405619cb172fe79ab5fc68a4fac", null ],
     [ "MatrixMixer", "Box_8h.html#a1c34295db9666bc7e86b2972c345d291", null ],
     [ "permutation_block", "Box_8h.html#ae54ebc8588d873a744541394ac5113f0", null ],
-    [ "rankBox", "Box_8h.html#a8a3b4c6cc908044298e8e287298b9b99", null ],
     [ "rankBox", "Box_8h.html#a6ce409eccab63034e324323c1e528814", null ],
+    [ "rankBox", "Box_8h.html#a8a3b4c6cc908044298e8e287298b9b99", null ],
     [ "rankmult", "Box_8h.html#aaa0ce7673970bf261628768fb11a1995", null ]
 ];

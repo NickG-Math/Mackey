@@ -1,10 +1,11 @@
 var General_8h =
 [
     [ "altmatrix", "General_8h.html#aa2f105c9bcbec7f5c7524027174340a0", null ],
-    [ "basisElement", "General_8h.html#ac2e368bf7d802f2fc47e39a71a5a1630", null ],
     [ "basisElement", "General_8h.html#aa10c6cbea565e024a38b446139800b69", null ],
+    [ "basisElement", "General_8h.html#ac2e368bf7d802f2fc47e39a71a5a1630", null ],
     [ "combinations", "General_8h.html#a3a4b7761ed7274b145eed9a451b53e61", null ],
     [ "DegreeConstruction", "General_8h.html#a49fef6f64b67ff118d35ac45b9c92972", null ],
+    [ "equidistribute", "General_8h.html#a55e12d500b5495a1949b212533c622be", null ],
     [ "find", "General_8h.html#a91104eaef1ab349e68f0623cfaaf45c0", null ],
     [ "hashvector", "General_8h.html#a3d23281b881eb1f166107b333fa98612", null ],
     [ "isZero", "General_8h.html#a4c3647777bc890a4649ae24b138bbb79", null ],
@@ -15,8 +16,8 @@ var General_8h =
     [ "make_triplets", "General_8h.html#a114f8d4069f6e5964f07c2fec3bdc9b7", null ],
     [ "operator*", "General_8h.html#ae235ee5dd92dc1ca64388b8fbb1b4d75", null ],
     [ "operator+", "General_8h.html#adb4974b5ffe533abb955ccb6b9096155", null ],
-    [ "operator-", "General_8h.html#ae86e49097ef9a09ebcd0173881e88786", null ],
     [ "operator-", "General_8h.html#a9d67cfe3e93ac3ef2301547372b48e15", null ],
+    [ "operator-", "General_8h.html#ae86e49097ef9a09ebcd0173881e88786", null ],
     [ "operator<<", "General_8h.html#aa4da3e3b46b9cb20f3be57d7e5da2d5d", null ],
     [ "rotate", "General_8h.html#a38a833de54971845cbdb8c96f830725b", null ],
     [ "summation", "General_8h.html#a654ed2652808daa206cdaa7ac0fce0e1", null ],

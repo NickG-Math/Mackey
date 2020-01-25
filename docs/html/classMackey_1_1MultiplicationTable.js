@@ -1,11 +1,11 @@
 var classMackey_1_1MultiplicationTable =
 [
-    [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html#a8530e27d8d2c3c755eb5041a2ee8c35b", null ],
+    [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html#a31f54647d0a22ebb1beb498711f703d1", null ],
     [ "MultiplicationTable", "classMackey_1_1MultiplicationTable.html#ac3bc2d09599a994b2b159def52484bae", null ],
-    [ "extend", "classMackey_1_1MultiplicationTable.html#a4371e6ba8a058073c005e636979b7230", null ],
+    [ "extend", "classMackey_1_1MultiplicationTable.html#acb7e34f9a14df48850627ca1e5c540b7", null ],
     [ "getdegreeindex", "classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c", null ],
     [ "getsphere", "classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999", null ],
-    [ "triple_product", "classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829", null ],
+    [ "triple_product", "classMackey_1_1MultiplicationTable.html#a9772a0a094c72d4bc9c1f676889ed9c0", null ],
     [ "load", "classMackey_1_1MultiplicationTable.html#afe48d7818a420930c571f57c9bae006a", null ],
     [ "save", "classMackey_1_1MultiplicationTable.html#ab6423e67b6c7d46e94ebf021316713d6", null ],
     [ "antidegree", "classMackey_1_1MultiplicationTable.html#ac5749155e5531a3c728d8227caed63eb", null ],

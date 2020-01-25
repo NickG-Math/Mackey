@@ -1,5 +1,6 @@
 <map id="Mackey::serialize" name="Mackey::serialize">
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html#a5c945ebff968abe788e22b025b2455ed" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="177,39,364,80"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#a9828268663049b5ac2668d4eb0bdd4ff" title="Uses triple box products to possibly identify the given generators. " alt="" coords="412,5,563,47"/>
-<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="412,71,563,112"/>
+<area shape="rect" id="node1" title="Chains cerealize." alt="" coords="271,78,405,105"/>
+<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html#a0474299a4f315e6e58c8ad8dd0a66fb5" title="Uses triple box products to possibly identify ALL instances where identification failed before...." alt="" coords="5,5,223,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraphIdentify.html#a5c945ebff968abe788e22b025b2455ed" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="11,71,217,112"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraphIdentify.html#af3019970f4431d1930f75418fb134441" title="Uses triple box products to possibly identify the products of given generators if identification fail..." alt="" coords="11,136,217,177"/>
 </map>

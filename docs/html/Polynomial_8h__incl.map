@@ -1,5 +1,12 @@
 <map id="Mackey/Polynomial.h" name="Mackey/Polynomial.h">
-<area shape="rect" id="node3" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="81,80,159,107"/>
-<area shape="rect" id="node4" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="181,155,264,181"/>
-<area shape="rect" id="node9" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="195,229,250,256"/>
+<area shape="rect" id="node1" title="Contains the class for formal polynomials in arbitrary coefficients." alt="" coords="5,5,167,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="8,155,71,181"/>
+<area shape="rect" id="node3" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="86,80,171,107"/>
+<area shape="rect" id="node4" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks." alt="" coords="195,155,276,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="95,155,170,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="121,304,201,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="89,229,181,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="259,304,361,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="289,229,395,256"/>
+<area shape="rect" id="node9" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients." alt="" coords="206,229,265,256"/>
 </map>

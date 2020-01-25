@@ -1,31 +1,31 @@
 <map id="Mackey/Z_n.h" name="Mackey/Z_n.h">
-<area shape="rect" id="node2" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="893,80,1025,107"/>
-<area shape="rect" id="node18" href="$Identify_8h.html" title="Contains the identification classes. " alt="" coords="1211,528,1337,555"/>
-<area shape="rect" id="node22" href="$Homology_8h.html" title="Contains the Homology class and algorithms. " alt="" coords="1093,453,1236,480"/>
-<area shape="rect" id="node3" href="$Aliases_8h.html" title="Contains general template aliases. " alt="" coords="896,155,1023,181"/>
-<area shape="rect" id="node19" href="$Smith__Base_8h.html" title="Contains the base class for all Smith implementations. " alt="" coords="711,229,866,256"/>
-<area shape="rect" id="node27" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else. " alt="" coords="1418,229,1546,256"/>
-<area shape="rect" id="node30" href="$Graph_8h.html" title="Contains weighted/colored graph classes and Dikjstra algorithms. " alt="" coords="1695,603,1813,629"/>
-<area shape="rect" id="node4" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups. " alt="" coords="1099,304,1273,331"/>
-<area shape="rect" id="node5" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors. " alt="" coords="1311,379,1485,405"/>
-<area shape="rect" id="node6" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors. " alt="" coords="1418,752,1554,779"/>
-<area shape="rect" id="node14" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface. " alt="" coords="1413,453,1545,480"/>
-<area shape="rect" id="node7" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology. " alt="" coords="1421,901,1551,928"/>
-<area shape="rect" id="node9" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table. " alt="" coords="1574,827,1689,853"/>
-<area shape="rect" id="node8" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="1479,1140,1621,1167"/>
-<area shape="rect" id="node10" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph. " alt="" coords="1602,901,1797,928"/>
-<area shape="rect" id="node11" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="1524,976,1707,1017"/>
-<area shape="rect" id="node13" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph. " alt="" coords="1731,976,1913,1017"/>
-<area shape="rect" id="node12" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators. " alt="" coords="1536,1065,1695,1092"/>
-<area shape="rect" id="node15" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting. " alt="" coords="1431,528,1552,555"/>
-<area shape="rect" id="node16" href="$Green_8h.html" title="Contains the class and methods for multiplying generators. " alt="" coords="1445,603,1564,629"/>
-<area shape="rect" id="node17" href="$Massey_8h.html" title="Contains the class and methods for Massey Products. " alt="" coords="1464,677,1593,704"/>
-<area shape="rect" id="node20" href="$Smith__FirstPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the first nonzero as pivot..." alt="" coords="699,304,879,331"/>
-<area shape="rect" id="node23" href="$Smith__MinPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the minimum as pivot. " alt="" coords="96,304,271,331"/>
-<area shape="rect" id="node24" href="$Smith__SmartPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices where pivots are selected by a Markowitz ..." alt="" coords="295,304,485,331"/>
-<area shape="rect" id="node25" href="$Smith__Sparse_8h.html" title="Contains the Smith normal form algorithm for sparse matrices. " alt="" coords="509,304,674,331"/>
-<area shape="rect" id="node26" href="$Smith__Sparse2_8h.html" title="Contains the Smith normal form algorithm for sparse matrices. " alt="" coords="903,304,1075,331"/>
-<area shape="rect" id="node21" href="$Smith_8h.html" title="Includes all Smith implementations. " alt="" coords="533,379,650,405"/>
-<area shape="rect" id="node28" href="$Box_8h.html" title="Contains the construction of box products of Chains. " alt="" coords="1621,379,1727,405"/>
-<area shape="rect" id="node29" href="$Polynomial_8h.html" title="Contains the class for formal polynomials in arbitrary coefficients. " alt="" coords="1298,304,1445,331"/>
+<area shape="rect" id="node1" title="Contains the class for Z/N coefficients." alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node2" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks." alt="" coords="705,80,839,107"/>
+<area shape="rect" id="node18" href="$Identify_8h.html" title="Contains the identification classes." alt="" coords="684,528,820,555"/>
+<area shape="rect" id="node22" href="$Homology_8h.html" title="Contains the Homology class and algorithms." alt="" coords="751,453,905,480"/>
+<area shape="rect" id="node3" href="$Aliases_8h.html" title="Contains general template aliases." alt="" coords="599,155,734,181"/>
+<area shape="rect" id="node19" href="$Smith__Base_8h.html" title="Contains the base class for all Smith implementations." alt="" coords="637,229,803,256"/>
+<area shape="rect" id="node26" href="$General_8h.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="1308,229,1447,256"/>
+<area shape="rect" id="node29" href="$Graph_8h.html" title="Contains weighted/colored graph classes and Dikjstra algorithms." alt="" coords="1479,603,1606,629"/>
+<area shape="rect" id="node4" href="$Automorphisms_8h.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="99,304,290,331"/>
+<area shape="rect" id="node5" href="$MackeyFunctor_8h.html" title="Contains the class describing Mackey Functors." alt="" coords="553,379,740,405"/>
+<area shape="rect" id="node6" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors." alt="" coords="1055,752,1201,779"/>
+<area shape="rect" id="node14" href="$Wrapper_8h.html" title="Wraps group&#45;specific implementations into a general interface." alt="" coords="1113,453,1255,480"/>
+<area shape="rect" id="node7" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="1057,901,1199,928"/>
+<area shape="rect" id="node9" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table." alt="" coords="1228,827,1351,853"/>
+<area shape="rect" id="node8" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="1120,1140,1275,1167"/>
+<area shape="rect" id="node10" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="1267,901,1483,928"/>
+<area shape="rect" id="node11" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="1166,976,1370,1017"/>
+<area shape="rect" id="node13" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="1394,976,1598,1017"/>
+<area shape="rect" id="node12" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="1182,1065,1354,1092"/>
+<area shape="rect" id="node15" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="1119,528,1249,555"/>
+<area shape="rect" id="node16" href="$Green_8h.html" title="Contains the class and methods for multiplying generators." alt="" coords="1121,603,1247,629"/>
+<area shape="rect" id="node17" href="$Massey_8h.html" title="Contains the class and methods for Massey Products." alt="" coords="1116,677,1252,704"/>
+<area shape="rect" id="node20" href="$Smith__FirstPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the first nonzero as pivot." alt="" coords="515,304,709,331"/>
+<area shape="rect" id="node23" href="$Smith__MinPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices using the minimum as pivot." alt="" coords="733,304,923,331"/>
+<area shape="rect" id="node24" href="$Smith__SmartPivot_8h.html" title="Contains the Smith normal form algorithm for dense matrices where pivots are selected by a Markowitz ..." alt="" coords="948,304,1153,331"/>
+<area shape="rect" id="node25" href="$Smith__Sparse_8h.html" title="Contains the Smith normal form algorithm for sparse matrices" alt="" coords="314,304,491,331"/>
+<area shape="rect" id="node21" href="$Smith_8h.html" title="Includes all Smith implementations." alt="" coords="765,379,891,405"/>
+<area shape="rect" id="node27" href="$Box_8h.html" title="Contains the construction of box products of Chains." alt="" coords="1517,379,1630,405"/>
+<area shape="rect" id="node28" href="$Polynomial_8h.html" title="Contains the class for formal polynomials in arbitrary coefficients." alt="" coords="1178,304,1339,331"/>
 </map>

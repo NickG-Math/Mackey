@@ -1,6 +1,7 @@
 <map id="Mackey::MultiplicationTable&lt; rank_t, diff_t &gt;" name="Mackey::MultiplicationTable&lt; rank_t, diff_t &gt;">
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table. " alt="" coords="237,39,424,80"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraphConnectivity.html" title="Provides extra identification methods using triple box products. " alt="" coords="472,5,664,47"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products. " alt="" coords="475,71,661,112"/>
-<area shape="rect" id="node5" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources. " alt="" coords="712,71,863,112"/>
+<area shape="rect" id="node1" title="The Multiplication Table." alt="" coords="5,39,208,80"/>
+<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table." alt="" coords="256,39,463,80"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraphConnectivity.html" title="Provides extra identification methods using triple box products." alt="" coords="511,5,728,47"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products." alt="" coords="516,71,723,112"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources." alt="" coords="776,71,939,112"/>
 </map>

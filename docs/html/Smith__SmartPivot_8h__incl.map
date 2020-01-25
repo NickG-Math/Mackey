@@ -1,6 +1,13 @@
 <map id="Mackey/Smith_SmartPivot.h" name="Mackey/Smith_SmartPivot.h">
-<area shape="rect" id="node2" href="$Smith__Base_8h.html" title="Contains the base class for all Smith implementations. " alt="" coords="111,80,215,107"/>
-<area shape="rect" id="node5" href="$Aliases_8h.html" title="Contains general template aliases. " alt="" coords="171,155,247,181"/>
-<area shape="rect" id="node8" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks. " alt="" coords="272,229,355,256"/>
-<area shape="rect" id="node11" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients. " alt="" coords="430,304,485,331"/>
+<area shape="rect" id="node1" title="Contains the Smith normal form algorithm for dense matrices where pivots are selected by a Markowitz ..." alt="" coords="69,5,274,32"/>
+<area shape="rect" id="node2" href="$Smith__Base_8h.html" title="Contains the base class for all Smith implementations." alt="" coords="116,80,227,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,68,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="92,155,155,181"/>
+<area shape="rect" id="node5" href="$Aliases_8h.html" title="Contains general template aliases." alt="" coords="179,155,260,181"/>
+<area shape="rect" id="node8" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks." alt="" coords="287,229,368,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="360,379,463,405"/>
+<area shape="rect" id="node7" title=" " alt="" coords="150,304,257,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="495,379,575,405"/>
+<area shape="rect" id="node10" title=" " alt="" coords="281,304,373,331"/>
+<area shape="rect" id="node11" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients." alt="" coords="449,304,507,331"/>
 </map>

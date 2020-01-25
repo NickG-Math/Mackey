@@ -1,4 +1,5 @@
 <map id="Mackey::ColoredGraph" name="Mackey::ColoredGraph">
-<area shape="rect" id="node2" href="$classMackey_1_1Graph.html" title="Mackey::Graph\&lt; ColoredGraph \&gt;" alt="" coords="5,95,220,121"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Graph.html" title="A directed Graph. " alt="" coords="41,5,184,32"/>
+<area shape="rect" id="node1" title="A directed Graph with two colors." alt="" coords="40,171,208,197"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Graph.html" title=" " alt="" coords="5,95,243,121"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Graph.html" title="A directed Graph." alt="" coords="46,5,202,32"/>
 </map>

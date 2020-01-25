@@ -1,6 +1,7 @@
 <map id="Mackey::multiply" name="Mackey::multiply">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title="Mackey::multiply" alt="" coords="175,31,296,57"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84" title="Returns the (normalized) product of the given two elements (not necessarily generators) ..." alt="" coords="344,23,523,65"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero. " alt="" coords="581,5,693,32"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc..." alt="" coords="571,56,703,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,139,57"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title=" " alt="" coords="187,31,320,57"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Green.html#a35594da87192177ce4bb623ad1b30c84" title="Returns the (normalized) product of the given two elements (not necessarily generators)" alt="" coords="368,23,563,65"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero." alt="" coords="623,5,743,32"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="611,56,755,83"/>
 </map>

@@ -4,26 +4,26 @@ First, two heuristic observations\+:
 \begin{DoxyItemize}
 \item The Linux binaries runs measurably faster than the Windows one.
 \item Out of the three compilers on Linux tested (G\+CC, Clang, I\+CC), Clang seems to produce faster code.
-\end{DoxyItemize}\hypertarget{perf_compoptions}{}\section{Compiler Options}\label{perf_compoptions}
+\end{DoxyItemize}\hypertarget{perf_compoptions}{}\doxysection{Compiler Options}\label{perf_compoptions}
 
 \begin{DoxyItemize}
-\item I recommend the following compiler options (G\+CC, Clang)\+: {\ttfamily -\/\+O3 -\/funroll-\/loops -\/march=native }
+\item I recommend the following compiler options (G\+CC, Clang)\+: {\ttfamily -\/O3 -\/funroll-\/loops -\/march=native }
 \item For safety you can use -\/fsanitize=signed-\/integer-\/overflow that checks for integer overflow at minimum performance cost. For extra safety, -\/fsanitize=integer checks all kinds of unwanted integer behavior (eg unsigned overflow) at a slightly higher cost. More generally -\/fsanitize=undefined can be used to check for all undefined behavior (and more) at a much greater performance hit (about 10x slower).
-\item See this \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page#Compiler_support}{\tt page} for compiler options regarding \hyperlink{namespaceEigen}{Eigen}.
+\item See this \href{ http://eigen.tuxfamily.org/index.php?title=Main_Page\#Compiler_support}{\texttt{ page}} for compiler options regarding \mbox{\hyperlink{namespaceEigen}{Eigen}}.
 \item If Open\+MP support is desired use {\ttfamily -\/fopenmp}.
-\end{DoxyItemize}\hypertarget{perf_thread}{}\section{Multithreading}\label{perf_thread}
+\end{DoxyItemize}\hypertarget{perf_thread}{}\doxysection{Multithreading}\label{perf_thread}
 
 \begin{DoxyItemize}
 \item The main algorithms of the program are single-\/threaded, with the idea being that they will be performed in loops, computing the answer in a range (which is required for the identification algorithms to then work). Multithreading these loop iterations with open\+MP is turned on by default in the {\ttfamily Additive\+Structure} and {\ttfamily Factorization} code, using the maximum amount of threads available. But note that other parts of the library (using {\ttfamily std\+::map}) are not thread-\/safe and need to be locked; thankfully these have almost no bearing on performance.
 \item There is one caveat\+: While the loop iterations are independent, they are not all equally computationally intensive. A sphere like $S^{2\sigma+\lambda}$ is cheaper to compute compared to $S^{6\sigma+8\lambda}$ which is in turn much cheaper compared to $S^{6\sigma-8\lambda}$ as the latter one involves a box product. In the multiplicative structure we may have to take double box products, and these are even more expensive in run-\/time as they involve arbitrarily large permutation matrices.
 \item So it\textquotesingle{}s important to equally divide the work among the threads. Currently this has to be done manually on the user\textquotesingle{}s end.
-\end{DoxyItemize}\hypertarget{perf_densevssparse}{}\section{Dense vs Sparse}\label{perf_densevssparse}
+\end{DoxyItemize}\hypertarget{perf_densevssparse}{}\doxysection{Dense vs Sparse}\label{perf_densevssparse}
 
 \begin{DoxyItemize}
 \item Dense matrices are usually faster than sparse matrices, as long as they don\textquotesingle{}t get too large. For the few instances where matrix multiplication is used, linking against the Intel M\+KL can also drastically improve performance with floating points (see below).
-\item When matrices do get large, sparse matrices not only offer better performance, but exremely significant savings in memory (30x and above). When triple box products are used combined with dense matrices and multithreading, memory usage can go up to 60\+GB, hitting the swap file making the program slow to a crawl. In that case we can see up to 20x speedup when using sparse matrices. The Intel M\+KL is not any faster than \hyperlink{namespaceEigen}{Eigen} for sparse matrix multiplication.
-\end{DoxyItemize}\hypertarget{perf_intvsfloat}{}\section{Integers vs Floats}\label{perf_intvsfloat}
-I use integers (or indeed {\ttfamily char} and {\ttfamily short}) for the majority of the computations; that\textquotesingle{}s usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception\+: Dense matrix multiplication (and to a lesser extent matrix determinant). \hyperlink{namespaceEigen}{Eigen} is much slower with integer matrix multiplication compared to floating points, and the Intel M\+KL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.\hypertarget{perf_boxproducts}{}\section{Box Products}\label{perf_boxproducts}
+\item When matrices do get large, sparse matrices not only offer better performance, but exremely significant savings in memory (30x and above). When triple box products are used combined with dense matrices and multithreading, memory usage can go up to 60GB, hitting the swap file making the program slow to a crawl. In that case we can see up to 20x speedup when using sparse matrices. The Intel M\+KL is not any faster than \mbox{\hyperlink{namespaceEigen}{Eigen}} for sparse matrix multiplication.
+\end{DoxyItemize}\hypertarget{perf_intvsfloat}{}\doxysection{Integers vs Floats}\label{perf_intvsfloat}
+I use integers (or indeed {\ttfamily char} and {\ttfamily short}) for the majority of the computations; that\textquotesingle{}s usually the fastest method and makes the most sense (as all numbers appearing are actually integers). There is one important exception\+: Dense matrix multiplication (and to a lesser extent matrix determinant). \mbox{\hyperlink{namespaceEigen}{Eigen}} is much slower with integer matrix multiplication compared to floating points, and the Intel M\+KL does not even support integer matrix multiplication. So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.\hypertarget{perf_boxproducts}{}\doxysection{Box Products}\label{perf_boxproducts}
 Box products involve some very large matrices, and the more iterated box products we use the higher that complexity.
 
 

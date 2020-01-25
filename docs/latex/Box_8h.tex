@@ -1,5 +1,5 @@
-\hypertarget{Box_8h}{}\section{Mackey/\+Box.h File Reference}
-\label{Box_8h}\index{Mackey/\+Box.\+h@{Mackey/\+Box.\+h}}
+\hypertarget{Box_8h}{}\doxysection{Mackey/\+Box.h File Reference}
+\label{Box_8h}\index{Mackey/Box.h@{Mackey/Box.h}}
 
 
 Contains the construction of box products of Chains.  
@@ -8,55 +8,57 @@ Contains the construction of box products of Chains.
 {\ttfamily \#include \char`\"{}General.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Chains.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Change\+Basis.\+h\char`\"{}}\newline
-Include dependency graph for Box.\+h\+:\nopagebreak
+Include dependency graph for Box.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{Box_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{Box_8h__dep__incl}
 \end{center}
 \end{figure}
-\subsection*{Classes}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$}
-\begin{DoxyCompactList}\small\item\em The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains} at a single index. \end{DoxyCompactList}\item 
-class \hyperlink{classMackey_1_1ChainsBox}{Mackey\+::\+Chains\+Box$<$ rank\+\_\+t, diff\+\_\+t $>$}
-\begin{DoxyCompactList}\small\item\em The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains}. \end{DoxyCompactList}\item 
-class \hyperlink{classMackey_1_1JunctionBox}{Mackey\+::\+Junction\+Box$<$ rank\+\_\+t, diff\+\_\+t $>$}
-\begin{DoxyCompactList}\small\item\em The box (tensor) product of \hyperlink{classMackey_1_1Chains}{Chains} as a \hyperlink{classMackey_1_1Junction}{Junction} in the given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Namespaces}
+class \mbox{\hyperlink{classMackey_1_1BoxPoint}{Mackey\+::\+Box\+Point$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\begin{DoxyCompactList}\small\item\em The box (tensor) product of \mbox{\hyperlink{classMackey_1_1Chains}{Chains}} at a single index. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMackey_1_1ChainsBox}{Mackey\+::\+Chains\+Box$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\begin{DoxyCompactList}\small\item\em The box (tensor) product of \mbox{\hyperlink{classMackey_1_1Chains}{Chains}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMackey_1_1JunctionBox}{Mackey\+::\+Junction\+Box$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\begin{DoxyCompactList}\small\item\em The box (tensor) product of \mbox{\hyperlink{classMackey_1_1Chains}{Chains}} as a \mbox{\hyperlink{classMackey_1_1Junction}{Junction}} in the given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespaceMackey}{Mackey}
+ \mbox{\hyperlink{namespaceMackey}{Mackey}}
 \begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \hyperlink{namespaceMackey_aaa0ce7673970bf261628768fb11a1995}{Mackey\+::rankmult} (const rank\+\_\+t \&A, const rank\+\_\+t \&B)
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\rank\+\_\+t \mbox{\hyperlink{namespaceMackey_aaa0ce7673970bf261628768fb11a1995}{Mackey\+::rankmult}} (const rank\+\_\+t \&A, const rank\+\_\+t \&B)
 \begin{DoxyCompactList}\small\item\em The tensor product of ranks of modules A,B. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::pair$<$ rank\+\_\+t, std\+::vector$<$ long $>$ $>$ \hyperlink{namespaceMackey_a8a3b4c6cc908044298e8e287298b9b99}{Mackey\+::rank\+Box} (const std\+::vector$<$ rank\+\_\+t $>$ \&C, const std\+::vector$<$ rank\+\_\+t $>$ \&D, int i)
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::pair$<$ rank\+\_\+t, std\+::vector$<$ long $>$ $>$ \mbox{\hyperlink{namespaceMackey_a8a3b4c6cc908044298e8e287298b9b99}{Mackey\+::rank\+Box}} (const std\+::vector$<$ rank\+\_\+t $>$ \&C, const std\+::vector$<$ rank\+\_\+t $>$ \&D, int i)
 \begin{DoxyCompactList}\small\item\em The rank of (C box D)\+\_\+i. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::vector$<$ rank\+\_\+t $>$ \hyperlink{namespaceMackey_a6ce409eccab63034e324323c1e528814}{Mackey\+::rank\+Box} (const std\+::vector$<$ rank\+\_\+t $>$ \&C, const std\+::vector$<$ rank\+\_\+t $>$ \&D)
+{\footnotesize template$<$typename rank\+\_\+t $>$ }\\std\+::vector$<$ rank\+\_\+t $>$ \mbox{\hyperlink{namespaceMackey_a6ce409eccab63034e324323c1e528814}{Mackey\+::rank\+Box}} (const std\+::vector$<$ rank\+\_\+t $>$ \&C, const std\+::vector$<$ rank\+\_\+t $>$ \&D)
 \begin{DoxyCompactList}\small\item\em The rank of (C box D) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Derived , typename S $>$ }\\Derived \hyperlink{namespaceMackey_ae54ebc8588d873a744541394ac5113f0}{Mackey\+::permutation\+\_\+block} (const Eigen\+::\+Permutation\+Matrix$<$-\/1, -\/1, S $>$ \&left, const Eigen\+::\+Permutation\+Matrix$<$-\/1, -\/1, S $>$ \&right, const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&a, int k)
+{\footnotesize template$<$typename Derived , typename S $>$ }\\Derived \mbox{\hyperlink{namespaceMackey_ae54ebc8588d873a744541394ac5113f0}{Mackey\+::permutation\+\_\+block}} (const Eigen\+::\+Permutation\+Matrix$<$-\/1, -\/1, S $>$ \&left, const Eigen\+::\+Permutation\+Matrix$<$-\/1, -\/1, S $>$ \&right, const Eigen\+::\+Matrix\+Base$<$ Derived $>$ \&a, int k)
 \begin{DoxyCompactList}\small\item\em Forms the block diagonal matrix with k many copies of a, and then applies the permutations left$^\wedge$\{-\/1\} $\ast$ block $\ast$right. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespaceMackey_a1c34295db9666bc7e86b2972c345d291}{Mackey\+::\+Matrix\+Mixer} (std\+::vector$<$ T $>$ \&L, std\+::vector$<$ T $>$ \&R, int rows, int cols)
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceMackey_a1c34295db9666bc7e86b2972c345d291}{Mackey\+::\+Matrix\+Mixer}} (std\+::vector$<$ T $>$ \&L, std\+::vector$<$ T $>$ \&R, int rows, int cols)
 \begin{DoxyCompactList}\small\item\em Mixes the left and right differentials to produce the differential for the box product. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename S , typename storage , typename U , typename V $>$ }\\void \hyperlink{namespaceMackey_a94aab405619cb172fe79ab5fc68a4fac}{Mackey\+::box\+\_\+sparse} (triplets$<$ T, storage $>$ \&trip, const S \&left, const S \&right, const triplets$<$ T, storage $>$ \&a, U rows, U cols, V copies, storage h\+\_\+offset, storage v\+\_\+offset)
+{\footnotesize template$<$typename T , typename S , typename storage , typename U , typename V $>$ }\\void \mbox{\hyperlink{namespaceMackey_a94aab405619cb172fe79ab5fc68a4fac}{Mackey\+::box\+\_\+sparse}} (triplets$<$ T, storage $>$ \&trip, const S \&left, const S \&right, const triplets$<$ T, storage $>$ \&a, U rows, U cols, V copies, storage h\+\_\+offset, storage v\+\_\+offset)
 \begin{DoxyCompactList}\small\item\em Does permutation\+\_\+block and matrix mixing in one step for sparse matrices, using the triplets format. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_add5b60c8e734df2be261106e0c719f82}{Mackey\+::\+Box} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int i)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \mbox{\hyperlink{namespaceMackey_add5b60c8e734df2be261106e0c719f82}{Mackey\+::\+Box}} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D, int i)
 \begin{DoxyCompactList}\small\item\em Get the box product of C,D up to index i. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \hyperlink{namespaceMackey_a72abbe3708c4e77936c8cc42fbc6753a}{Mackey\+::\+Box} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \mbox{\hyperlink{namespaceMackey_a72abbe3708c4e77936c8cc42fbc6753a}{Mackey\+::\+Box}} (const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&C, const Chains$<$ rank\+\_\+t, diff\+\_\+t $>$ \&D)
 \begin{DoxyCompactList}\small\item\em Get the entire box product of C,D. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Contains the construction of box products of Chains. 
 

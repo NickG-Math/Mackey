@@ -1,5 +1,5 @@
-\hypertarget{Automorphisms_8h}{}\section{Mackey/\+Automorphisms.h File Reference}
-\label{Automorphisms_8h}\index{Mackey/\+Automorphisms.\+h@{Mackey/\+Automorphisms.\+h}}
+\hypertarget{Automorphisms_8h}{}\doxysection{Mackey/\+Automorphisms.h File Reference}
+\label{Automorphisms_8h}\index{Mackey/Automorphisms.h@{Mackey/Automorphisms.h}}
 
 
 Contains the methods for finding the automorphisms of finitely generated abelian groups.  
@@ -9,46 +9,48 @@ Contains the methods for finding the automorphisms of finitely generated abelian
 {\ttfamily \#include \char`\"{}Aliases.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$numeric$>$}\newline
 {\ttfamily \#include \char`\"{}General.\+h\char`\"{}}\newline
-Include dependency graph for Automorphisms.\+h\+:\nopagebreak
+Include dependency graph for Automorphisms.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{Automorphisms_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{Automorphisms_8h__dep__incl}
+\includegraphics[width=350pt]{Automorphisms_8h__dep__incl}
 \end{center}
 \end{figure}
-\subsection*{Namespaces}
+\doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespaceMackey}{Mackey}
+ \mbox{\hyperlink{namespaceMackey}{Mackey}}
 \begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T , typename S $>$ }\\void \hyperlink{namespaceMackey_a5ae32d04bca298d2d8735635ae45b971}{Mackey\+::normalize} (Eigen\+::\+Matrix$<$ T, -\/1, -\/1 $>$ \&linmap, const Eigen\+::\+Matrix$<$ S, 1, -\/1 $>$ \&range)
+{\footnotesize template$<$typename T , typename S $>$ }\\void \mbox{\hyperlink{namespaceMackey_a5ae32d04bca298d2d8735635ae45b971}{Mackey\+::normalize}} (Eigen\+::\+Matrix$<$ T, -\/1, -\/1 $>$ \&linmap, const Eigen\+::\+Matrix$<$ S, 1, -\/1 $>$ \&range)
 \begin{DoxyCompactList}\small\item\em Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.). \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Scalar $>$ }\\void \hyperlink{namespaceMackey_a463bb762b4edc2f283e8d1c0c466aedf}{Mackey\+::normalize\+\_\+minus} (Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ \&linmap, const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&range, bool positive)
+{\footnotesize template$<$typename Scalar $>$ }\\void \mbox{\hyperlink{namespaceMackey_a463bb762b4edc2f283e8d1c0c466aedf}{Mackey\+::normalize\+\_\+minus}} (Eigen\+::\+Matrix$<$ Scalar, -\/1, -\/1 $>$ \&linmap, const Eigen\+::\+Matrix$<$ Scalar, 1, -\/1 $>$ \&range, bool positive)
 \begin{DoxyCompactList}\small\item\em Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc.) allowing negative entries. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename S $>$ }\\bool \hyperlink{namespaceMackey_aa96cf972d89b207ce6709e867f760f37}{Mackey\+::check\+\_\+isomorphism\+\_\+p\+\_\+group} (int p, const T \&a, const S \&p\+Group)
+{\footnotesize template$<$typename T , typename S $>$ }\\bool \mbox{\hyperlink{namespaceMackey_aa96cf972d89b207ce6709e867f760f37}{Mackey\+::check\+\_\+isomorphism\+\_\+p\+\_\+group}} (int p, const T \&a, const S \&p\+Group)
 \begin{DoxyCompactList}\small\item\em Checks if integer matrix induces an isomorphism p\+Group-\/$>$p\+Group for finite abelian p-\/group. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ mat\+\_\+t$<$ T $>$ $>$ \hyperlink{namespaceMackey_a918f02198f6daadfd0c93109b63b2f1f}{Mackey\+::aut\+\_\+p\+\_\+group} (int p, const T \&p\+Group)
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ mat\+\_\+t$<$ T $>$ $>$ \mbox{\hyperlink{namespaceMackey_a918f02198f6daadfd0c93109b63b2f1f}{Mackey\+::aut\+\_\+p\+\_\+group}} (int p, const T \&p\+Group)
 \begin{DoxyCompactList}\small\item\em Returns all automorphisms of finite abelian p-\/group. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ mat\+\_\+t$<$ T $>$ $>$ \hyperlink{namespaceMackey_a8c1525b210b4699780bbe05cb16f0e7b}{Mackey\+::inverses} (const std\+::vector$<$ mat\+\_\+t$<$ T $>$$>$ \&isos, const T \&Group)
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ mat\+\_\+t$<$ T $>$ $>$ \mbox{\hyperlink{namespaceMackey_a8c1525b210b4699780bbe05cb16f0e7b}{Mackey\+::inverses}} (const std\+::vector$<$ mat\+\_\+t$<$ T $>$$>$ \&isos, const T \&Group)
 \begin{DoxyCompactList}\small\item\em Returns the inverses of all the automorphisms Group-\/$>$Group. \end{DoxyCompactList}\item 
-std\+::vector$<$ int $>$ \hyperlink{namespaceMackey_aa136aece9117704b3e5180d92484ed10}{Mackey\+::primes} (int n)
+std\+::vector$<$ int $>$ \mbox{\hyperlink{namespaceMackey_aa136aece9117704b3e5180d92484ed10}{Mackey\+::primes}} (int n)
 \begin{DoxyCompactList}\small\item\em Returns all primes up to n (not optimized; n is usually very small) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespaceMackey_a2b6ac22efe0be546f2c3f8abc2ceb5b7}{Mackey\+::is\+\_\+p\+\_\+group} (const T \&Group)
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{namespaceMackey_a2b6ac22efe0be546f2c3f8abc2ceb5b7}{Mackey\+::is\+\_\+p\+\_\+group}} (const T \&Group)
 \begin{DoxyCompactList}\small\item\em Finds if given abelian group is actually a p-\/group and returns the p if so (otherwise returns 0) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\std\+::pair$<$ std\+::vector$<$ mat\+\_\+t$<$ T $>$ $>$, std\+::vector$<$ mat\+\_\+t$<$ T $>$ $>$ $>$ \hyperlink{namespaceMackey_a2556e2a1f78783585df78de1c1b35eae}{Mackey\+::all\+\_\+automorphisms} (const T \&Group)
+{\footnotesize template$<$typename T $>$ }\\std\+::pair$<$ std\+::vector$<$ mat\+\_\+t$<$ T $>$ $>$, std\+::vector$<$ mat\+\_\+t$<$ T $>$ $>$ $>$ \mbox{\hyperlink{namespaceMackey_a2556e2a1f78783585df78de1c1b35eae}{Mackey\+::all\+\_\+automorphisms}} (const T \&Group)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Contains the methods for finding the automorphisms of finitely generated abelian groups. 
 

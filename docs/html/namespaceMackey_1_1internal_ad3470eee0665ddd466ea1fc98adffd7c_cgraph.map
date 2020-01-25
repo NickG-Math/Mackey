@@ -1,3 +1,4 @@
 <map id="Mackey::internal::equivariant_base_names" name="Mackey::internal::equivariant_base_names">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="243,13,383,39"/>
+<area shape="rect" id="node1" title="Returns the names for an equivariant basis." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="264,13,417,39"/>
 </map>

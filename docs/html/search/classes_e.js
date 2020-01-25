@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weightedgraph',['WeightedGraph',['../classMackey_1_1WeightedGraph.html',1,'Mackey']]]
+  ['weightedgraph_394',['WeightedGraph',['../classMackey_1_1WeightedGraph.html',1,'Mackey']]]
 ];

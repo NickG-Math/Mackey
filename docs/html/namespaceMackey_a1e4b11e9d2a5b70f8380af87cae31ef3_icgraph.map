@@ -1,18 +1,12 @@
 <map id="Mackey::tail" name="Mackey::tail">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="155,198,279,225"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#aa014e2177bd124bce2e8e7a4c1dc8d38" title="Computes the homology for the given level and degree. " alt="" coords="351,22,505,49"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="363,257,493,283"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a9fcefe47f5a8a416b173517377a61bd0" title="Computes the Massey product of three generators in the RO(G) homology given their level..." alt="" coords="357,307,499,334"/>
-<area shape="rect" id="node12" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="569,196,753,237"/>
-<area shape="rect" id="node15" href="$namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="147,417,288,443"/>
-<area shape="rect" id="node3" href="$classMackey_1_1AdditiveStructure.html#a2638212adc9b1fdacf0a50d9fb23cf0d" title="Retrieve the Mackey functor for the given degree. " alt="" coords="340,73,516,115"/>
-<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationTable.html#a4371e6ba8a058073c005e636979b7230" title="Extends multiplication table using the larger range provided. " alt="" coords="803,136,987,177"/>
-<area shape="rect" id="node8" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="336,191,520,232"/>
-<area shape="rect" id="node9" href="$classMackey_1_1MultiplicationGraphIdentify.html#a5c945ebff968abe788e22b025b2455ed" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="568,71,755,112"/>
-<area shape="rect" id="node10" href="$classMackey_1_1Factorization.html#a9828268663049b5ac2668d4eb0bdd4ff" title="Uses triple box products to possibly identify the given generators. " alt="" coords="819,5,970,47"/>
-<area shape="rect" id="node11" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="819,71,970,112"/>
-<area shape="rect" id="node13" href="$classMackey_1_1MultiplicationTable.html#ac3bc2d09599a994b2b159def52484bae" title="Default constructor needed for loading archive. " alt="" coords="803,201,987,243"/>
-<area shape="rect" id="node14" href="$classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c" title="Retrieve the degree index of the given degree. " alt="" coords="803,365,987,407"/>
-<area shape="rect" id="node16" href="$classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa" title="Print the Mackey functors for each degree. " alt="" coords="340,409,516,451"/>
-<area shape="rect" id="node17" href="$classMackey_1_1AdditiveStructure.html#a6e6b98b9df433129320045abd5e50bab" title="Construct given the range of our spheres. " alt="" coords="573,409,749,451"/>
+<area shape="rect" id="node1" title="Given vector or array returns vector starting from index start." alt="" coords="507,170,607,197"/>
+<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry)" alt="" coords="256,28,459,69"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex." alt="" coords="281,94,433,121"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere)" alt="" coords="291,195,423,222"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="38,71,175,98"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#aa014e2177bd124bce2e8e7a4c1dc8d38" title="Computes the homology for the given level and degree." alt="" coords="24,254,189,281"/>
+<area shape="rect" id="node9" href="$namespaceMackey.html#a9fcefe47f5a8a416b173517377a61bd0" title="Computes the Massey product of three generators in the RO(G) homology given their level,..." alt="" coords="33,305,181,331"/>
+<area shape="rect" id="node4" href="$classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa" title="Print the Mackey functors for each degree." alt="" coords="11,5,203,47"/>
+<area shape="rect" id="node6" href="$classMackey_1_1AdditiveStructure.html#a2638212adc9b1fdacf0a50d9fb23cf0d" title="Retrieve the Mackey functor for the given degree." alt="" coords="11,123,203,164"/>
+<area shape="rect" id="node10" href="$classMackey_1_1MultiplicationTable.html#a9772a0a094c72d4bc9c1f676889ed9c0" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="5,188,208,229"/>
 </map>

@@ -1,5 +1,5 @@
-\hypertarget{classMackey_1_1Polynomial}{}\section{Mackey\+:\+:Polynomial$<$ T $>$ Class Template Reference}
-\label{classMackey_1_1Polynomial}\index{Mackey\+::\+Polynomial$<$ T $>$@{Mackey\+::\+Polynomial$<$ T $>$}}
+\hypertarget{classMackey_1_1Polynomial}{}\doxysection{Mackey\+::Polynomial$<$ T $>$ Class Template Reference}
+\label{classMackey_1_1Polynomial}\index{Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}}
 
 
 Formal polynomials with arbitrary coefficients.  
@@ -9,29 +9,29 @@ Formal polynomials with arbitrary coefficients.
 
 {\ttfamily \#include $<$Polynomial.\+h$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classMackey_1_1Polynomial_a0e0bda8d8d0d5ade1cbb0b0cc79b8d56}{Polynomial} ()
+\mbox{\hyperlink{classMackey_1_1Polynomial_a0e0bda8d8d0d5ade1cbb0b0cc79b8d56}{Polynomial}} ()
 \begin{DoxyCompactList}\small\item\em Default value 0. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Polynomial_ad14fdd66f2d9942af17e38fe8c6bb2c9}{Polynomial} (const std\+::vector$<$ T $>$ \&q)
+\mbox{\hyperlink{classMackey_1_1Polynomial_ad14fdd66f2d9942af17e38fe8c6bb2c9}{Polynomial}} (const std\+::vector$<$ T $>$ \&q)
 \begin{DoxyCompactList}\small\item\em Construct from vector v\+\_\+0,...,v\+\_\+n the polynomial v\+\_\+0+...+v\+\_\+nx$^\wedge$n. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Polynomial_a61522f056a2334c51186f7ed0b35229f}{Polynomial} (T coeff, int \hyperlink{namespaceMackey_aafdaaabd06dd9ceefe6fa4f26d13a60d}{power})
+\mbox{\hyperlink{classMackey_1_1Polynomial_a61522f056a2334c51186f7ed0b35229f}{Polynomial}} (T coeff, int \mbox{\hyperlink{namespaceMackey_aafdaaabd06dd9ceefe6fa4f26d13a60d}{power}})
 \begin{DoxyCompactList}\small\item\em Construct the monomial ax$^\wedge$n given a,n. \end{DoxyCompactList}\item 
-\hyperlink{classMackey_1_1Polynomial_a665435bc329352f11b1e424c126d914b}{Polynomial} (T coeff)
+\mbox{\hyperlink{classMackey_1_1Polynomial_a665435bc329352f11b1e424c126d914b}{Polynomial}} (T coeff)
 \begin{DoxyCompactList}\small\item\em Construct the constant a. \end{DoxyCompactList}\item 
-void \hyperlink{classMackey_1_1Polynomial_ad2981034fac81d4ad3f2751c757af5d3}{pad} (int m)
+void \mbox{\hyperlink{classMackey_1_1Polynomial_ad2981034fac81d4ad3f2751c757af5d3}{pad}} (int m)
 \begin{DoxyCompactList}\small\item\em Pad polynomial with extra zeros after the highest power. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ T $>$ \hyperlink{classMackey_1_1Polynomial_ac2784853ce2afbcc21860a9e54e15711}{p}
-\begin{DoxyCompactList}\small\item\em \hyperlink{classMackey_1_1Polynomial}{Polynomial} v\+\_\+0+...+v\+\_\+nx$^\wedge$n stored as vector (v\+\_\+0,...,v\+\_\+n) \end{DoxyCompactList}\item 
-int \hyperlink{classMackey_1_1Polynomial_a3f55b12a6eee67da2f55e87b97f06349}{degree}
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classMackey_1_1Polynomial_ac2784853ce2afbcc21860a9e54e15711}{p}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMackey_1_1Polynomial}{Polynomial}} v\+\_\+0+...+v\+\_\+nx$^\wedge$n stored as vector (v\+\_\+0,...,v\+\_\+n) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMackey_1_1Polynomial_a3f55b12a6eee67da2f55e87b97f06349}{degree}}
 \begin{DoxyCompactList}\small\item\em Degree of the polynomial. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename T$>$\newline
 class Mackey\+::\+Polynomial$<$ T $>$}
 
@@ -39,53 +39,46 @@ Formal polynomials with arbitrary coefficients.
 
 Currently only used for a recursion in C2n\+\_\+\+Implementation. The operators are self explanatory. 
 
-\subsection{Constructor \& Destructor Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classMackey_1_1Polynomial_a0e0bda8d8d0d5ade1cbb0b0cc79b8d56}\label{classMackey_1_1Polynomial_a0e0bda8d8d0d5ade1cbb0b0cc79b8d56}} 
-\index{Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}!Polynomial@{Polynomial}}
-\index{Polynomial@{Polynomial}!Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}}
-\subsubsection{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}$<$ T $>$\+::\hyperlink{classMackey_1_1Polynomial}{Polynomial} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\index{Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}!Polynomial@{Polynomial}}
+\index{Polynomial@{Polynomial}!Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}}$<$ T $>$\+::\mbox{\hyperlink{classMackey_1_1Polynomial}{Polynomial}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Default value 0. 
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=319pt]{classMackey_1_1Polynomial_a0e0bda8d8d0d5ade1cbb0b0cc79b8d56_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Polynomial_ad14fdd66f2d9942af17e38fe8c6bb2c9}\label{classMackey_1_1Polynomial_ad14fdd66f2d9942af17e38fe8c6bb2c9}} 
-\index{Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}!Polynomial@{Polynomial}}
-\index{Polynomial@{Polynomial}!Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}}
-\subsubsection{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}$<$ T $>$\+::\hyperlink{classMackey_1_1Polynomial}{Polynomial} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\index{Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}!Polynomial@{Polynomial}}
+\index{Polynomial@{Polynomial}!Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}}$<$ T $>$\+::\mbox{\hyperlink{classMackey_1_1Polynomial}{Polynomial}} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Construct from vector v\+\_\+0,...,v\+\_\+n the polynomial v\+\_\+0+...+v\+\_\+nx$^\wedge$n. 
 
 \mbox{\Hypertarget{classMackey_1_1Polynomial_a61522f056a2334c51186f7ed0b35229f}\label{classMackey_1_1Polynomial_a61522f056a2334c51186f7ed0b35229f}} 
-\index{Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}!Polynomial@{Polynomial}}
-\index{Polynomial@{Polynomial}!Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}}
-\subsubsection{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}$<$ T $>$\+::\hyperlink{classMackey_1_1Polynomial}{Polynomial} (\begin{DoxyParamCaption}\item[{T}]{coeff,  }\item[{int}]{power }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\index{Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}!Polynomial@{Polynomial}}
+\index{Polynomial@{Polynomial}!Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}}$<$ T $>$\+::\mbox{\hyperlink{classMackey_1_1Polynomial}{Polynomial}} (\begin{DoxyParamCaption}\item[{T}]{coeff,  }\item[{int}]{power }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Construct the monomial ax$^\wedge$n given a,n. 
 
 \mbox{\Hypertarget{classMackey_1_1Polynomial_a665435bc329352f11b1e424c126d914b}\label{classMackey_1_1Polynomial_a665435bc329352f11b1e424c126d914b}} 
-\index{Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}!Polynomial@{Polynomial}}
-\index{Polynomial@{Polynomial}!Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}}
-\subsubsection{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}$<$ T $>$\+::\hyperlink{classMackey_1_1Polynomial}{Polynomial} (\begin{DoxyParamCaption}\item[{T}]{coeff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\index{Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}!Polynomial@{Polynomial}}
+\index{Polynomial@{Polynomial}!Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}}$<$ T $>$\+::\mbox{\hyperlink{classMackey_1_1Polynomial}{Polynomial}} (\begin{DoxyParamCaption}\item[{T}]{coeff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -93,13 +86,13 @@ Construct the constant a.
 
 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classMackey_1_1Polynomial_ad2981034fac81d4ad3f2751c757af5d3}\label{classMackey_1_1Polynomial_ad2981034fac81d4ad3f2751c757af5d3}} 
-\index{Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}!pad@{pad}}
-\index{pad@{pad}!Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}}
-\subsubsection{\texorpdfstring{pad()}{pad()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-void \hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}$<$ T $>$\+::pad (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\index{Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}!pad@{pad}}
+\index{pad@{pad}!Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pad()}{pad()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}}$<$ T $>$\+::pad (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -107,31 +100,31 @@ Pad polynomial with extra zeros after the highest power.
 
 
 
-\subsection{Member Data Documentation}
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classMackey_1_1Polynomial_a3f55b12a6eee67da2f55e87b97f06349}\label{classMackey_1_1Polynomial_a3f55b12a6eee67da2f55e87b97f06349}} 
-\index{Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}!degree@{degree}}
-\index{degree@{degree}!Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}}
-\subsubsection{\texorpdfstring{degree}{degree}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-int \hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}$<$ T $>$\+::degree}
+\index{Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}!degree@{degree}}
+\index{degree@{degree}!Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{degree}{degree}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}}$<$ T $>$\+::degree}
 
 
 
 Degree of the polynomial. 
 
 \mbox{\Hypertarget{classMackey_1_1Polynomial_ac2784853ce2afbcc21860a9e54e15711}\label{classMackey_1_1Polynomial_ac2784853ce2afbcc21860a9e54e15711}} 
-\index{Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}!p@{p}}
-\index{p@{p}!Mackey\+::\+Polynomial@{Mackey\+::\+Polynomial}}
-\subsubsection{\texorpdfstring{p}{p}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-std\+::vector$<$T$>$ \hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}$<$ T $>$\+::p}
+\index{Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}!p@{p}}
+\index{p@{p}!Mackey::Polynomial$<$ T $>$@{Mackey::Polynomial$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$ \mbox{\hyperlink{classMackey_1_1Polynomial}{Mackey\+::\+Polynomial}}$<$ T $>$\+::p}
 
 
 
-\hyperlink{classMackey_1_1Polynomial}{Polynomial} v\+\_\+0+...+v\+\_\+nx$^\wedge$n stored as vector (v\+\_\+0,...,v\+\_\+n) 
+\mbox{\hyperlink{classMackey_1_1Polynomial}{Polynomial}} v\+\_\+0+...+v\+\_\+nx$^\wedge$n stored as vector (v\+\_\+0,...,v\+\_\+n) 
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Mackey/\hyperlink{Polynomial_8h}{Polynomial.\+h}\end{DoxyCompactItemize}
+Mackey/\mbox{\hyperlink{Polynomial_8h}{Polynomial.\+h}}\end{DoxyCompactItemize}

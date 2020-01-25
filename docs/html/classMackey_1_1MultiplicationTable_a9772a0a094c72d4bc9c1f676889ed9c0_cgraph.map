@@ -1,0 +1,6 @@
+<map id="Mackey::MultiplicationTable::triple_product" name="Mackey::MultiplicationTable::triple_product">
+<area shape="rect" id="node1" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="5,23,208,65"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i." alt="" coords="270,5,374,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere)" alt="" coords="256,56,388,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start." alt="" coords="436,56,536,83"/>
+</map>

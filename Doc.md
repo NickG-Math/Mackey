@@ -20,7 +20,7 @@ Optionally:
 
 * See the page \ref use for a tutorial on using the library.
 
-* As for compiler support, the latest version of the code is always tested with the latest versions of Clang (Linux) and MSVC (Windows). Much less frequently, testing is performed with GCC (Linux), Clang on MacOS and the Intel Compiler (Linux and Windows). Remember to use the option ```-std=c++17```. For more information on compiler options, see the \ref perf page.
+* As for compiler support, the latest version of the code is always tested with the latest stable versions of Clang (Linux) and MSVC (Windows). Much less frequently, testing is performed with GCC (Linux), Clang on MacOS and the Intel Compiler (Linux and Windows). Remember to use the option ```-std=c++17```. For more information on compiler options, see the \ref perf page.
 
 \section status Current Status
 

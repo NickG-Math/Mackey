@@ -1,6 +1,7 @@
 <map id="Mackey::boxchangebasis" name="Mackey::boxchangebasis">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="229,5,369,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="246,56,351,83"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#aa2823da3a4b93dca63e00e50a6bc9fdf" title="Returns the change of basis matrix (as a permutation) from basis A to basis B. " alt="" coords="224,107,373,133"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="421,56,519,83"/>
+<area shape="rect" id="node1" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="5,56,189,83"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#aa2823da3a4b93dca63e00e50a6bc9fdf" title="Returns the change of basis matrix (as a permutation) from basis A to basis B." alt="" coords="237,5,397,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="261,56,374,83"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="241,107,394,133"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="445,56,548,83"/>
 </map>

@@ -1,20 +1,20 @@
-\hypertarget{use_how}{}\section{Step 0\+: Setting the Group Parameters}\label{use_how}
-For every group there are certain parameters that need to be set for the library to work. We have included an example for $G=C_4$ on how to set them in the file {\ttfamily C4\+\_\+\+Implementation.\+h} available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder. We also have a more general example for all $G=C_{2^n}$ implemented in {\ttfamily C2n\+\_\+\+Implementation.\+h}.
+\hypertarget{use_how}{}\doxysection{Step 0\+: Setting the Group Parameters}\label{use_how}
+For every group there are certain parameters that need to be set for the library to work. We have included an example for $G=C_4$ on how to set them in the file {\ttfamily C4\+\_\+\+Implementation.\+h} available in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\texttt{ Demo}} folder. We also have a more general example for all $G=C_{2^n}$ implemented in {\ttfamily C2n\+\_\+\+Implementation.\+h}.
 
-These parameters all live in the \hyperlink{namespaceGroupSpecific}{Group\+Specific} namespace and we will go over them in more detail below.\hypertarget{use_var}{}\subsection{Global variables}\label{use_var}
+These parameters all live in the \mbox{\hyperlink{namespaceGroupSpecific}{Group\+Specific}} namespace and we will go over them in more detail below.\hypertarget{use_var}{}\doxysubsection{Global variables}\label{use_var}
 The global variables that need to be set are\+:
 
 
 \begin{DoxyItemize}
-\item \hyperlink{classGroupSpecific_1_1Variables_a38586ec998bcbfdf325e6cfc6598b54b}{prime} \+: the $p$ in $G=C_{p^n}$.
-\item \hyperlink{classGroupSpecific_1_1Variables_ac9bd6be19cc41e6877ee25a2d1c7be80}{power} \+: the $n$ in $G=C_{p^n}$.
-\item \hyperlink{classGroupSpecific_1_1Variables_a5504789b0b60050e6ea223fdeb84874a}{reps} \+: the number of nontrivial irreducible real representations of $G$ for our spheres.
-\item \hyperlink{classGroupSpecific_1_1Variables_a4746f16736abcf4c705dd8690ec12ca0}{sphere\+\_\+dimensions} \+: the array consisting of the dimensions of those representations (so we must fix an order for them beforehand).
-\end{DoxyItemize}\hypertarget{use_fun}{}\subsection{The standard chains}\label{use_fun}
+\item \mbox{\hyperlink{classGroupSpecific_1_1Variables_a83e4f2d6f5e57d3b9f24239926c5d0ea}{prime}} \+: the $p$ in $G=C_{p^n}$.
+\item \mbox{\hyperlink{classGroupSpecific_1_1Variables_adfcd813b0bf0b9ae5d09237923053ee1}{power}} \+: the $n$ in $G=C_{p^n}$.
+\item \mbox{\hyperlink{classGroupSpecific_1_1Variables_aea29a4214c25a2c3f2fdabe3da5c3141}{reps}} \+: the number of nontrivial irreducible real representations of $G$ for our spheres.
+\item \mbox{\hyperlink{classGroupSpecific_1_1Variables_a1ffa488249039e9e2a14187ac3246b09}{sphere\+\_\+dimensions}} \+: the array consisting of the dimensions of those representations (so we must fix an order for them beforehand).
+\end{DoxyItemize}\hypertarget{use_fun}{}\doxysubsection{The standard chains}\label{use_fun}
 
 \begin{DoxyItemize}
-\item There is one function that needs to be manually defined, the \hyperlink{classGroupSpecific_1_1Function_a6d247b31d297f733e9cd6f68921a37cd}{Positive\+Chains} computing the chains for actual representations. I have made the construction of these Chains as painless as possible, using the \hyperlink{namespaceMackey_aa2f105c9bcbec7f5c7524027174340a0}{altmatrix} function
-\item \hyperlink{namespaceMackey_aa2f105c9bcbec7f5c7524027174340a0}{altmatrix} returns alternating matrices of the desired size and the desired \char`\"{}pattern\char`\"{}. This pattern is repeated cyclically in the columns of the matrix. An example\+: The matrix of size 4x4 with pattern $a,b$ is ~\newline
+\item There is one function that needs to be manually defined, the \mbox{\hyperlink{classGroupSpecific_1_1Function_a3cc00b237f7caa6f87dfd2f344844ff8}{Positive\+Chains}} computing the chains for actual representations. I have made the construction of these Chains as painless as possible, using the \mbox{\hyperlink{namespaceMackey_aa2f105c9bcbec7f5c7524027174340a0}{altmatrix}} function
+\item \mbox{\hyperlink{namespaceMackey_aa2f105c9bcbec7f5c7524027174340a0}{altmatrix}} returns alternating matrices of the desired size and the desired \char`\"{}pattern\char`\"{}. This pattern is repeated cyclically in the columns of the matrix. An example\+: The matrix of size 4x4 with pattern $a,b$ is ~\newline
  $\begin{matrix} a&b&a&b\\ b&a&b&a\\ a&b&a&b \\ b&a&b&a \end{matrix}$ ~\newline
  If we use the pattern $a,b,c,d$ instead we get ~\newline
  $\begin{matrix} a&b&c&d\\ b&c&d&a\\ c&d&a&b \\ d&a&b&c \end{matrix}$ ~\newline
@@ -22,26 +22,26 @@ The global variables that need to be set are\+:
 \item The matrices appearing in the Standard Chains all look like this due to equivariance.
 \end{DoxyItemize}
 
-We have automated this process for general $G=C_{2^n}$ in {\ttfamily C2n\+\_\+\+Implementation.\+h} using the recursion established in H\+H\+R17 pg 392. All that needs to be changed is the power variable.\hypertarget{use_next}{}\section{Step 1\+: Calling the library}\label{use_next}
-Once Step 0 is complete, you can include {\ttfamily $<$\hyperlink{Additive_8h}{Mackey/\+Additive.\+h}$>$} to access the methods relating to the additive structure and {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} to access the factorization methods. The multiplicative structure and Massey products are found in {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} but that\textquotesingle{}s already included in the other two headers.
+We have automated this process for general $G=C_{2^n}$ in {\ttfamily C2n\+\_\+\+Implementation.\+h} using the recursion established in H\+H\+R17 pg 392. All that needs to be changed is the power variable.\hypertarget{use_next}{}\doxysection{Step 1\+: Calling the library}\label{use_next}
+Once Step 0 is complete, you can include {\ttfamily $<$\mbox{\hyperlink{Additive_8h}{Mackey/\+Additive.\+h}}$>$} to access the methods relating to the additive structure and {\ttfamily $<$\mbox{\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}}$>$} to access the factorization methods. The multiplicative structure and Massey products are found in {\ttfamily $<$\mbox{\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}}$>$} but that\textquotesingle{}s already included in the other two headers.
 
-For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder together with the provided Implementation header file (Step 0).
+For a demonstration you can use the cpp files included in the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\texttt{ Demo}} folder together with the provided Implementation header file (Step 0).
 
-The namespace for all methods is {\ttfamily \hyperlink{namespaceMackey}{Mackey}}.\hypertarget{use_coeff}{}\subsection{Coefficients and templates}\label{use_coeff}
+The namespace for all methods is {\ttfamily \mbox{\hyperlink{namespaceMackey}{Mackey}}}.\hypertarget{use_coeff}{}\doxysubsection{Coefficients and templates}\label{use_coeff}
 There are two template arguments that always need to be specified, and their typenames are always {\ttfamily rank\+\_\+t,diff\+\_\+t}. These are the coefficients used for the rank arrays and differential matrices respectively.
 
 
 \begin{DoxyItemize}
 \item {\ttfamily rank\+\_\+t} can be set to {\ttfamily Eigen\+::\+Matrix$<$char,1,-\/1$>$} for groups of prime power order $<127$ and we can replace {\ttfamily char} by better precision integers for higher prime power orders.
-\item {\ttfamily diff\+\_\+t} depends on the desired coefficients\+: eg we can set it to {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} for integer coefficients and groups of small power order, or {\ttfamily \hyperlink{namespaceEigen}{Eigen}$<$\hyperlink{classZ}{Z}$<$N$>$,-\/1,-\/1$>$} for $\mathbb Z/n\mathbb Z$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file {\ttfamily \hyperlink{Z__n_8h}{Z\+\_\+n.\+h}} where we define $\mathbb Z/n\mathbb Z$ coefficients. Note that for the Smith normal form to work properly, $n$ should be prime.
+\item {\ttfamily diff\+\_\+t} depends on the desired coefficients\+: eg we can set it to {\ttfamily Eigen\+::\+Matrix$<$char,-\/1,-\/1$>$} for integer coefficients and groups of small power order, or {\ttfamily \mbox{\hyperlink{namespaceEigen}{Eigen}}$<$\mbox{\hyperlink{classZ}{Z}}$<$N$>$,-\/1,-\/1$>$} for $\mathbb Z/n\mathbb Z$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is contained in the file {\ttfamily \mbox{\hyperlink{Z__n_8h}{Z\+\_\+n.\+h}}} where we define $\mathbb Z/n\mathbb Z$ coefficients. Note that for the Smith normal form to work properly, $n$ should be prime.
 \end{DoxyItemize}
 
-Important note\+: {\ttfamily diff\+\_\+t} can also be set to a sparse matrix format like {\ttfamily Eigen\+::\+Sparse\+Matrix$<$char$>$} or {\ttfamily Eigen\+::\+Sparse\+Matrix$<$char,0,long$>$} (using {\ttfamily long} storage type for matrix dimensions). See the \hyperlink{perf}{Performance} page for more information. \hypertarget{use_step1add}{}\subsection{The additive structure}\label{use_step1add}
-The file {\ttfamily $<$\hyperlink{Additive_8h}{Mackey/\+Additive.\+h}$>$} exposes the class \hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure} that computes the homology of all spheres in a given range as \hyperlink{namespaceMackey}{Mackey} functors. Example\+: The code
+Important note\+: {\ttfamily diff\+\_\+t} can also be set to a sparse matrix format like {\ttfamily Eigen\+::\+Sparse\+Matrix$<$char$>$} or {\ttfamily Eigen\+::\+Sparse\+Matrix$<$char,0,long$>$} (using {\ttfamily long} storage type for matrix dimensions). See the \mbox{\hyperlink{perf}{Performance}} page for more information. \hypertarget{use_step1add}{}\doxysubsection{The additive structure}\label{use_step1add}
+The file {\ttfamily $<$\mbox{\hyperlink{Additive_8h}{Mackey/\+Additive.\+h}}$>$} exposes the class \mbox{\hyperlink{classMackey_1_1AdditiveStructure}{Additive\+Structure}} that computes the homology of all spheres in a given range as \mbox{\hyperlink{namespaceMackey}{Mackey}} functors. Example\+: The code
 
 {\ttfamily  Additive\+Structure$<$rank\+\_\+t,diff\+\_\+t$>$ A(\{-\/3,-\/4\},\{5,6\}); }
 
-computes the homology of all spheres from $S^{-3\sigma-4\lambda}$ to $S^{5\sigma+6\lambda}$. To identify the \hyperlink{namespaceMackey}{Mackey} functors in the \char`\"{}standard\char`\"{} notation use
+computes the homology of all spheres from $S^{-3\sigma-4\lambda}$ to $S^{5\sigma+6\lambda}$. To identify the \mbox{\hyperlink{namespaceMackey}{Mackey}} functors in the \char`\"{}standard\char`\"{} notation use
 
 {\ttfamily  A.\+identify(); }
 
@@ -53,29 +53,29 @@ prints the answer in a user provided {\ttfamily stream}. The answer is of the fo
 
 {\ttfamily  The 2 homology of the 4,6 sphere is 002 }
 
-as long as the \hyperlink{namespaceMackey}{Mackey} Functor has been identified. You can survey the identified Mackeys by
+as long as the \mbox{\hyperlink{namespaceMackey}{Mackey}} Functor has been identified. You can survey the identified Mackeys by
 
 {\ttfamily  A.\+print\+\_\+unique(stream); }
 
-For {\ttfamily C\+\_\+8} there are three \hyperlink{namespaceMackey}{Mackey} functors not covered by our \char`\"{}universal notation\char`\"{} and are thus named \char`\"{}unknown 0,...\char`\"{}. To survey their \hyperlink{namespaceMackey}{Mackey} functor structure use
+For {\ttfamily C\+\_\+8} there are three \mbox{\hyperlink{namespaceMackey}{Mackey}} functors not covered by our \char`\"{}universal notation\char`\"{} and are thus named \char`\"{}unknown 0,...\char`\"{}. To survey their \mbox{\hyperlink{namespaceMackey}{Mackey}} functor structure use
 
-{\ttfamily  A.\+print\+\_\+unknown(stream); }\hypertarget{use_step1mult}{}\subsection{The multiplicative structure}\label{use_step1mult}
-The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} exposes the method \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} that multiplies two generators in the Green functor $H_{\star}(S)$. Example\+: The code
+{\ttfamily  A.\+print\+\_\+unknown(stream); }\hypertarget{use_step1mult}{}\doxysubsection{The multiplicative structure}\label{use_step1mult}
+The file {\ttfamily $<$\mbox{\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}}$>$} exposes the method \mbox{\hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green}} that multiplies two generators in the Green functor $H_{\star}(S)$. Example\+: The code
 
-{\ttfamily  auto linear\+\_\+combination= \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green$<$rank\+\_\+t,diff\+\_\+t$>$}(2,\{0,2,-\/2\},\{1,3,-\/4\}); }
+{\ttfamily  auto linear\+\_\+combination= \mbox{\hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green$<$rank\+\_\+t,diff\+\_\+t$>$}}(2,\{0,2,-\/2\},\{1,3,-\/4\}); }
 
 multiplies the generators of
 
 $ H_0^{C_4}(S^{2\sigma-2\lambda}) \otimes H_1^{C_4}(S^{3\sigma-4\lambda}) \to H_1^{C_4}(S^{5\sigma-6\lambda}) $ $ a\otimes b\mapsto ab$
 
-writing the answer as a linear combination of the generators in the box product. The first argument of \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green} indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for $C_4$, level=2 is the top level. The second and third entries are the degrees of the two generators.
+writing the answer as a linear combination of the generators in the box product. The first argument of \mbox{\hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{R\+O\+Green}} indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for $C_4$, level=2 is the top level. The second and third entries are the degrees of the two generators.
 
-If the homology in these degrees is not cyclic, then the generators are not determined by their degree and need to be selected. In that case we can provide an optional final 2 {\ttfamily int} arguments in {\ttfamily \hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green}} that perform the selection\+: eg $1,2$ selects the second and third generators of the noncyclic groups respectively (remember that in C++ counting starts from $0$). The default selection is $0,0$
+If the homology in these degrees is not cyclic, then the generators are not determined by their degree and need to be selected. In that case we can provide an optional final 2 {\ttfamily int} arguments in {\ttfamily \mbox{\hyperlink{namespaceMackey_a2bd86833844ca62d76c47a54aeb0bb77}{Mackey\+::\+R\+O\+Green}}} that perform the selection\+: eg $1,2$ selects the second and third generators of the noncyclic groups respectively (remember that in C++ counting starts from $0$). The default selection is $0,0$
 
-The result of the computation {\ttfamily linear\+\_\+combination} is an \hyperlink{namespaceEigen}{Eigen} row vector ({\ttfamily rank\+\_\+t}) that can be intrepreted as follows\+: if the result is $[t_1,...,t_n]$ then $ ab=\sum_it_ig_i$ where $g_i$ are the generators of the homology group the product lives in.
+The result of the computation {\ttfamily linear\+\_\+combination} is an \mbox{\hyperlink{namespaceEigen}{Eigen}} row vector ({\ttfamily rank\+\_\+t}) that can be intrepreted as follows\+: if the result is $[t_1,...,t_n]$ then $ ab=\sum_it_ig_i$ where $g_i$ are the generators of the homology group the product lives in.
 
-For convenience we normalize the basis to omit any signs and identify generators of the same cyclic groups (see \hyperlink{math_caveat}{A caveat}) but it\textquotesingle{}s also possible to get the nonnormalized version (\hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}).\hypertarget{use_step1fact}{}\subsection{Factorization}\label{use_step1fact}
-The file {\ttfamily $<$\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}$>$} exposes the class \hyperlink{classMackey_1_1Factorization}{Factorization} whose constructor creates the multiplication graph and the method \hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources} that factorizes all generators using the given sources. First construct the multiplication graph via\+:
+For convenience we normalize the basis to omit any signs and identify generators of the same cyclic groups (see \mbox{\hyperlink{math_caveat}{A caveat}}) but it\textquotesingle{}s also possible to get the nonnormalized version (\mbox{\hyperlink{classMackey_1_1Green}{Mackey\+::\+Green}}).\hypertarget{use_step1fact}{}\doxysubsection{Factorization}\label{use_step1fact}
+The file {\ttfamily $<$\mbox{\hyperlink{Factorization_8h}{Mackey/\+Factorization.\+h}}$>$} exposes the class \mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}} whose constructor creates the multiplication graph and the method \mbox{\hyperlink{classMackey_1_1Factorization_a2e135a37687fc3d69cd16a8729dd19eb}{compute\+\_\+with\+\_\+sources}} that factorizes all generators using the given sources. First construct the multiplication graph via\+:
 
 {\ttfamily auto F= Factorization$<$rank\+\_\+t, diff\+\_\+t$>$(\{ -\/5,-\/5 \}, \{ 5,5 \}, \{ \{0,1,0\},\{2,2,0\},\{0,0,1\},\{2,0,1\} \}, \{ \char`\"{}asigma\char`\"{}, \char`\"{}u2sigma\char`\"{}, \char`\"{}alambda\char`\"{}, \char`\"{}ulambda\char`\"{} \});}
 
@@ -109,19 +109,19 @@ and then
 
 {\ttfamily M.\+compute\+\_\+with\+\_\+sources(\{\mbox{[}0,0,0\mbox{]}\});}
 
-The vector {\ttfamily M.\+trully\+\_\+disconnected} contains the indices of the generators that may not be connected to any sources. \hypertarget{use_step1Mass}{}\subsection{Massey products}\label{use_step1Mass}
-The file {\ttfamily $<$\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}$>$} finally exposes the method \hyperlink{namespaceMackey_a9fcefe47f5a8a416b173517377a61bd0}{R\+O\+Massey} for (triple) Massey products in the Green functor $H_{\star}(S)$. Example\+: The code
+The vector {\ttfamily M.\+trully\+\_\+disconnected} contains the indices of the generators that may not be connected to any sources. \hypertarget{use_step1Mass}{}\doxysubsection{Massey products}\label{use_step1Mass}
+The file {\ttfamily $<$\mbox{\hyperlink{Compute_8h}{Mackey/\+Compute.\+h}}$>$} finally exposes the method \mbox{\hyperlink{namespaceMackey_a9fcefe47f5a8a416b173517377a61bd0}{R\+O\+Massey}} for (triple) Massey products in the Green functor $H_{\star}(S)$. Example\+: The code
 
-{\ttfamily auto Mass= \hyperlink{namespaceMackey_a9fcefe47f5a8a416b173517377a61bd0}{Mackey\+::\+R\+O\+Massey$<$rank\+\_\+t,diff\+\_\+t$>$}(2,\{0,1,0\},\{-\/3,-\/3,0\},\{2,2,0\},1);}
+{\ttfamily auto Mass= \mbox{\hyperlink{namespaceMackey_a9fcefe47f5a8a416b173517377a61bd0}{Mackey\+::\+R\+O\+Massey$<$rank\+\_\+t,diff\+\_\+t$>$}}(2,\{0,1,0\},\{-\/3,-\/3,0\},\{2,2,0\},1);}
 
 computes the Massey product $\langle a_{\sigma},w_3,u_{2\sigma}\rangle $ and its indeterminacy (if indeterminacy is not needed, use $0$ as the last variable). As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product, while the indeterminacy is expressed as two groups (left and right indeterminacy). If both are $0$ then we have the member variable {\ttfamily no\+Indeterminacy=1}.
 
-We can also provide three optional {\ttfamily int} arguments at the end for selections, see \hyperlink{use_step1mult}{The multiplicative structure} for what that does.
+We can also provide three optional {\ttfamily int} arguments at the end for selections, see \mbox{\hyperlink{use_step1mult}{The multiplicative structure}} for what that does.
 
-Finally, {\ttfamily Mass} is of type {\ttfamily \hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}} so read the documentation of that class to see how to extract the relevant data.
+Finally, {\ttfamily Mass} is of type {\ttfamily \mbox{\hyperlink{classMackey_1_1Massey}{Mackey\+::\+Massey}}} so read the documentation of that class to see how to extract the relevant data.
 
-For more details see the code in Test\+Massey.\+cpp of the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\tt Demo} folder\hypertarget{use_step1Cer}{}\subsection{Serialization}\label{use_step1Cer}
-The results of the harder computations can all be serialized to binary, xml or json file using the \href{https://uscilab.github.io/cereal}{\tt cereal} library. We have provided a general interface to do that using the \hyperlink{namespaceMackey_a1824d780ce15f1845e4f87bf056feec9}{saver} and \hyperlink{namespaceMackey_a735958355cdca12e0d312b7e604f28bc}{loader} methods. For example, to serialize {\ttfamily Additive\+Structure$<$rank\+\_\+t,diff\+\_\+t$>$ A;} to a binary use
+For more details see the code in Test\+Massey.\+cpp of the \href{https://github.com/NickG-Math/Mackey/tree/master/Demo}{\texttt{ Demo}} folder\hypertarget{use_step1Cer}{}\doxysubsection{Serialization}\label{use_step1Cer}
+The results of the harder computations can all be serialized to binary, xml or json file using the \href{https://uscilab.github.io/cereal}{\texttt{ cereal}} library. We have provided a general interface to do that using the \mbox{\hyperlink{namespaceMackey_a1824d780ce15f1845e4f87bf056feec9}{saver}} and \mbox{\hyperlink{namespaceMackey_a735958355cdca12e0d312b7e604f28bc}{loader}} methods. For example, to serialize {\ttfamily Additive\+Structure$<$rank\+\_\+t,diff\+\_\+t$>$ A;} to a binary use
 
 {\ttfamily saver(A, \char`\"{}filename.\+bin\char`\"{}, \char`\"{}binary\char`\"{});}
 

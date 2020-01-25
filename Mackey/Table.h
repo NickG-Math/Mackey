@@ -72,9 +72,9 @@ namespace Mackey
 		void getIrreducibleChains();
 		void multiply_all_indices();
 		void multiply(int, int);
-		void make(int,bool);
+		void make(int=0, bool=0);
 		void generators();
-		void compute(const std::vector<std::pair<int, int>>&, int, bool);
+		void compute(const std::vector<std::pair<int, int>>&, int=0, bool=0);
 
 
 
@@ -160,7 +160,7 @@ namespace Mackey
 
 	///Compute the products of all elements and irreducibles
 	template<typename rank_t, typename diff_t>
-	void MultiplicationTable<rank_t, diff_t>::make(int number_of_teams = 0, bool serialize_each_step = 0) {
+	void MultiplicationTable<rank_t, diff_t>::make(int number_of_teams, bool serialize_each_step) {
 
 		getIrreducibleChains();
 		generators();
@@ -217,7 +217,7 @@ namespace Mackey
 
 
 	template<typename rank_t, typename diff_t>
-	void MultiplicationTable<rank_t, diff_t>::compute(const std::vector<std::pair<int, int>>& pairs, int number_of_teams = 0, bool serialize_each_step = 0) {
+	void MultiplicationTable<rank_t, diff_t>::compute(const std::vector<std::pair<int, int>>& pairs, int number_of_teams, bool serialize_each_step) {
 
 		if (number_of_teams == 0) { //all in one go
 			for (const auto& i : pairs) {

@@ -109,7 +109,7 @@ namespace Mackey {
 
 		///Forms the permutation from basis (C box D) box E to C box (D box E) using names provided by general_canonical
 		template<typename T, typename S>
-		decltype(auto) triple_box_permutation(const std::vector<T>& a, const std::vector<S>& b) { //the usual algorithm with hashing is quite terrible here.
+		decltype(auto) triple_box_permutation(const std::vector<T>& a, const std::vector<S>& b) { 
 			std::vector<std::array<long, 6>> fixed_a, fixed_b;
 			fixed_a.reserve(a.size());
 			fixed_b.reserve(b.size());
@@ -117,11 +117,7 @@ namespace Mackey {
 				fixed_a.push_back(triple_box_appender(i));
 			for (const auto& i : b)
 				fixed_b.push_back(triple_box_appender(i));
-			std::vector<long> vec;
-			vec.reserve(a.size());
-			for (const auto& i : fixed_b)
-				vec.push_back(find(fixed_a,i));
-			return vec;
+			return changebasis<long>(fixed_a, fixed_b);
 		}
 
 

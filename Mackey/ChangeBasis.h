@@ -8,23 +8,42 @@
 
 ///@file
 ///@brief Contains the construction of the change of basis matrices.
+
+namespace {
+	template<typename, typename, typename = void>
+	struct inv_type;
+
+	template<typename pScalar, typename T>
+	struct inv_type<pScalar, T, typename std::enable_if_t<std::is_integral<T>::value>> {
+		typedef std::vector<pScalar> t;
+	};
+
+	template<typename pScalar, typename T>
+	struct inv_type<pScalar, T, typename std::enable_if_t<!std::is_integral<T>::value>> {
+		typedef std::map<T, pScalar> t;
+	};
+}
+
 namespace Mackey {
 
-	///Returns the change of basis matrix (as a permutation) from basis A to basis B. 
+	///Returns the change of basis matrix (as a permutation) from basis A to basis B.
 	template<typename pScalar, typename T>
-	std::vector<pScalar> changebasis(const T& A, const T& B)
+	std::vector<pScalar> changebasis(const std::vector<T>& A, const std::vector<T>& B)
 	{
-		pScalar size = A.size();
-		long max = *std::max_element(A.begin(), A.end());
-		std::vector<pScalar> C(max + 1); //The inverse of A
-		for (pScalar i = 0; i < size; i++)
-			C[A[i]] = i;
+		typename inv_type<pScalar,T>::t A_inverse; //The inverse of A
+		if constexpr (std::is_integral<T>::value) {
+			long max = *std::max_element(A.begin(), A.end());
+			A_inverse.resize(max + 1); 
+		}
+		for (pScalar i = 0; i <A.size(); i++)
+			A_inverse[A[i]] = i;
 		std::vector<pScalar> change;
-		change.reserve(size);
+		change.reserve(A.size());
 		for (const auto& i : B)
-			change.push_back(C[i]); //change[i]=C[B[i]]
+			change.push_back(A_inverse[i]); //change=A_inverse B
 		return change;
 	}
+
 
 	///Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matrices (as permutations).
 	template<typename pScalar, typename rank_t>
@@ -85,8 +104,8 @@ namespace Mackey {
 			}
 		}
 		if (convtocanon)
-			return std::make_pair(changebasis<pScalar, std::vector<ScalarInternal>>(leftconv, canonical), changebasis<pScalar, std::vector<ScalarInternal>>(rightconv, canonical));
-		return std::make_pair(changebasis<pScalar, std::vector<ScalarInternal>>(canonical, leftconv), changebasis<pScalar, std::vector<ScalarInternal>>(canonical, rightconv));
+			return std::make_pair(changebasis<pScalar>(leftconv, canonical), changebasis<pScalar>(rightconv, canonical));
+		return std::make_pair(changebasis<pScalar>(canonical, leftconv), changebasis<pScalar>(canonical, rightconv));
 
 	}
 

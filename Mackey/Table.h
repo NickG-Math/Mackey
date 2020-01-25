@@ -308,7 +308,7 @@ namespace Mackey
 		auto degreeD = Reindex(degree[i]).front();
 		auto C1 = basicChains[j1];
 		auto C2 = basicChains[j2];
-		auto D = ROChains<rank_t, diff_t>(getsphere(i));
+		auto D = ROChains<rank_t, diff_t>(getsphere(degree[i]));
 		auto Box1 = Box(C1, D, degreeC1 + degreeC2 + degreeD + 1);
 		return Green<rank_t, diff_t>(C2, Box1, level, degreeC2, degreeC1 + degreeD);
 	}

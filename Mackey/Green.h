@@ -71,6 +71,10 @@ namespace Mackey {
 		template<typename, typename>
 		friend class internal::GreenCompute;
 
+		template<typename T,typename S>
+		friend bool operator==(const Green<T, S>&, const Green<T, S>&);
+
+
 #ifdef CEREALIZE
 	public:
 		template<typename Archive, typename s_rank, typename s_diff>
@@ -106,6 +110,13 @@ namespace Mackey {
 		normalize(result, Groups);
 		return result;
 	}
+
+
+	template<typename rank_t, typename diff_t>
+	bool operator==(const Green<rank_t, diff_t>& G, const Green<rank_t, diff_t>& H) {
+		return G.isZero== H.isZero && G.Groups.size() == H.Groups.size() && G.Groups == H.Groups && G.basis.size() == H.basis.size() && G.basis==H.basis && G.boxID==H.boxID;
+	}
+
 
 	namespace internal {
 

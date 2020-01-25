@@ -297,4 +297,40 @@ namespace Mackey {
 		}
 		return b;
 	}
+
+	///Distribute evenly among teams as much as possible (greedy solution to partition problem)
+	template<typename T>
+	std::vector<std::vector<int>> equidistribute(const std::vector<int>& weights, const std::vector<T>& items, int no_teams) {
+		std::vector<T> equal;
+		equal.reserve(items.size());
+		std::vector<int> index(weights.size());
+		std::iota(index.begin(), index.end(), 0);
+		std::sort(index.begin(), index.end(), [&](const int& a, const int& b) {return (weights[a] > weights[b]);});
+		std::vector<int> teams_sum(no_teams, 0);
+		std::vector<std::vector<int>> teams;
+		teams.resize(no_teams);
+		for (auto& i : teams)
+			i.reserve(weights.size());
+		long sum = 0;
+		for (const auto& i : weights)
+			sum += (long)i;
+		long weightperteam = sum / no_teams;
+		for (const auto& i : index) {
+			bool flag = 0;
+			for (int j = 0; j < teams.size(); j++) {
+				if (teams_sum[j] + weights[i] < weightperteam) {
+					teams_sum[j] += weights[i];
+					teams[j].push_back(i);
+					flag = 1;
+					break;
+				}
+			}
+			if (!flag) { //if it wasn't assigned to any team, assign to the one with least weight
+				auto loc = std::min_element(teams_sum.begin(), teams_sum.end()) - teams_sum.begin();
+				teams_sum[loc] += weights[i];
+				teams[loc].push_back(i);
+			}
+		}
+		return teams;
+	}
 }

@@ -29,6 +29,13 @@ namespace Mackey {
 	};
 
 	template<typename rank_t>
+	bool operator==(const IDGenerators<rank_t>& I, const IDGenerators<rank_t>& J) {
+		return I.group.size() == J.group.size() && I.group == J.group && I.group_lower.size() == J.group_lower.size() && I.group_lower == J.group_lower && I.Tr == J.Tr && I.Res == J.Res;
+	}
+
+
+
+	template<typename rank_t>
 	MackeyFunctor<rank_t> IDGenerators<rank_t>::getMackey() const {
 		MackeyFunctor<rank_t> M;
 		M.resize(2);

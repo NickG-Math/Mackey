@@ -385,7 +385,7 @@ We have the freedom to choose it and there are (at least) three ways to do it:
 * As above, but instead of picking the first minimum, choose it so that it minimizes a certain norm function.
 
 This norm function, called a Markowitz metric, can be for example
-\f$N(i,j)=\sum_s|a_{is}|+|a_{sj}|\f$
+\f$N(i,j)=|\{a_{is}\neq 0: s\}| + |a_{sj}\neq 0:s|\f$
 
 One reason we are considering multiple pivoting choices is coefficient explosion: Even if the entries of the matrix are small (\f$\pm 1\f$),
 the entries of the Smith Normal Form (and especially those of the coefficient matrices) can easily overflow if we make the wrong choice of pivot.

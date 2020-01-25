@@ -15,8 +15,8 @@ namespace Mackey {
 		MultiplicationGraphConnectivity(MultiplicationTable<rank_t, diff_t>& M) : MultiplicationGraph<rank_t, diff_t>(M) {}
 #endif
 		///Uses the Multiplication Graph constructor
-		MultiplicationGraphConnectivity(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles)
-			: MultiplicationGraph<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles) {}
+		MultiplicationGraphConnectivity(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, int number_of_teams=0, bool serialize_each_step=0)
+			: MultiplicationGraph<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles, number_of_teams, serialize_each_step) {}
 
 	///The generators disconnected from the sources (element indices)
 	std::vector<int> trully_disconnected;

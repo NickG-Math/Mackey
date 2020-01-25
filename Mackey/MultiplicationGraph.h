@@ -76,7 +76,7 @@ namespace Mackey {
 
 	protected:
 		///Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles.
-		MultiplicationGraph(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&);
+		MultiplicationGraph(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, int, bool);
 
 		std::vector<rank_t> element; ///<An element (linear combination of generators) in each NonZeroHomology group of the table.
 		std::vector<int> tracker; ///< Maps element index to degree index
@@ -137,8 +137,8 @@ namespace Mackey {
 	};
 
 	template<typename rank_t, typename diff_t>
-	MultiplicationGraph<rank_t, diff_t>::MultiplicationGraph(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles)
-		: MultiplicationTable<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles) {
+	MultiplicationGraph<rank_t, diff_t>::MultiplicationGraph(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, int number_of_teams = 0, bool serialize_each_step = 0)
+		: MultiplicationTable<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles, number_of_teams, serialize_each_step) {
 		make();
 		}
 	

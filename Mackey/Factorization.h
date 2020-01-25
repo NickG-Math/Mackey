@@ -19,7 +19,7 @@ namespace Mackey {
 		std::string getname(int);
 
 		/// Form the multiplication table and graph given the max and min spheres and the basic irreducibles
-		Factorization(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&);
+		Factorization(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&, int = 0, bool = 0);
 
 		/// Compute the factorizations using the given sources for the multiplication graph and their given names.
 		void compute_with_sources(const std::vector<std::vector<int>>&, const std::vector<std::string>&);
@@ -57,8 +57,8 @@ namespace Mackey {
 
 
 	template<typename rank_t, typename diff_t>
-	Factorization<rank_t, diff_t>::Factorization(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, const std::vector<std::string>& basicIrr_names)
-		: MultiplicationGraphIdentify<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles), basicIrr_names(basicIrr_names) { initialize(); }
+	Factorization<rank_t, diff_t>::Factorization(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, const std::vector<std::string>& basicIrr_names, int number_of_teams, bool serialize_each_step)
+		: MultiplicationGraphIdentify<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles, number_of_teams, serialize_each_step), basicIrr_names(basicIrr_names) { initialize(); }
 
 	template<typename rank_t, typename diff_t>
 	void Factorization<rank_t, diff_t>::initialize() {

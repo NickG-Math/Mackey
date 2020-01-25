@@ -31,8 +31,8 @@ namespace Mackey {
 		}
 #endif
 		///Uses the Multiplication Graph constructor
-		MultiplicationGraphIdentify(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles)
-			: MultiplicationGraph<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles) {
+		MultiplicationGraphIdentify(int level, const std::vector<int>& minsphere, const std::vector<int>& maxsphere, const std::vector<std::vector<int>>& basicIrreducibles, int number_of_teams = 0, bool serialize_each_step = 0)
+			: MultiplicationGraph<rank_t, diff_t>(level, minsphere, maxsphere, basicIrreducibles, number_of_teams,serialize_each_step) {
 			triples_to_be_done.reserve(this->unidentified.size());
 			identified.reserve(this->unidentified.size());
 		}
@@ -119,10 +119,15 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	void MultiplicationGraphIdentify<rank_t, diff_t>::do_triples(bool serialize) {
-
+		omp_init_lock(&lock);
 #pragma omp parallel for num_threads(omp_get_max_threads()) schedule(runtime)
-		for (int i = 0; i < triples_to_be_done.size(); i++)
-			this->triple_product(triples_to_be_done[i][0], triples_to_be_done[i][1], triples_to_be_done[i][2]);
+		for (int i = 0; i < triples_to_be_done.size(); i++){
+			auto G = this->triple_product(triples_to_be_done[i][0], triples_to_be_done[i][1], triples_to_be_done[i][2]);
+			omp_set_lock(&lock);
+			tripleGreens[{triples_to_be_done[i][0], triples_to_be_done[i][1], triples_to_be_done[i][2]}]=G;
+			omp_unset_lock(&lock);
+		}
+		omp_destroy_lock(&lock);
 		triples_to_be_done.clear();
 #ifdef CEREALIZE
 		if (serialize)
@@ -173,7 +178,7 @@ namespace Mackey {
 		int deg_i = this->tracker[i];
 
 		if (collection_stage) {
-			if (this->tripleGreens.count({ deg_i,j1,j2 }) == 0 && find<std::vector<std::array<int, 3>>, std::array<int, 3>>(triples_to_be_done, { deg_i,j1,j2 }) == -1)
+			if (this->tripleGreens.count({ deg_i,j1,j2 }) == 0 && find(triples_to_be_done, std::array<int, 3>({ deg_i,j1,j2 })) == -1)
 				triples_to_be_done.push_back({ deg_i,j1,j2 });
 			return basis; //won't be used as this is collection stage, just need to return something nonempty
 		}

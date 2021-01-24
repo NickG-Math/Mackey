@@ -162,8 +162,14 @@ public:
 	inline bool operator <(const Z<2>& b) const {
 		return (x < b.x);
 	}
+	inline bool operator >(const Z<2>& b) const {
+		return (x > b.x);
+	}
 	inline bool operator <=(const Z<2>& b) const {
 		return (x <= b.x);
+	}
+	inline bool operator >=(const Z<2>& b) const {
+		return (x >= b.x);
 	}
 };
 

@@ -279,7 +279,7 @@ namespace Mackey {
 		b.reserve(a.nonZeros());
 		for (decltype(a.outerSize()) k = 0; k < a.outerSize(); k++) {
 			for (typename Eigen::SparseMatrix<T, StorageOrder, storage>::InnerIterator it(a, k); it; ++it)
-				b.push_back(Eigen::Triplet<T, storage>(it.row(), it.col(), it.value()));
+				b.emplace_back(Eigen::Triplet<T, storage>(it.row(), it.col(), it.value()));
 		}
 		return b;
 	}

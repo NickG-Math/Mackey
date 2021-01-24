@@ -21,9 +21,10 @@ namespace Mackey {
 	///Transfer the differential to given level. We need the ranks both at the original level and the given level, for both domain and range.
 	template<typename rank_t, typename diff_t>
 	diff_t transfer(const diff_t& diff, const rank_t& domain, rank_t& domain_top, const rank_t& range, rank_t& range_top, int level) {
-		auto n = intexp(power - level);
 		if (diff.size() == 0)
 			return diff;
+
+		auto n = intexp(power - level);
 
 		typedef typename std::conditional<SFINAE::is_Sparse<diff_t>::value, spm_t<diff_t>, diff_t>::type coltype;
 		coltype reduceddiff;

@@ -1,8 +1,6 @@
 #pragma once
-#include <vector>
-#include "Aliases.h"
-#include <numeric>
-#include "General.h"
+#include "Types/Aliases.h"
+#include "Utility/General.h"
 
 ///@file
 ///@brief Contains the methods for finding the automorphisms of finitely generated abelian groups.

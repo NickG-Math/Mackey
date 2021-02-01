@@ -12,10 +12,9 @@
 
 #include <iostream>
 #include <chrono>
-#include <Mackey/Cerealizer.h>
+#include <Cerealizer.h>
 #include "C4_Implementation.h"
 #include "C4Verify.h" //to verify
-#include <Mackey/Z_n.h>
 
 
 typedef Eigen::Matrix<char, 1, -1> rank_t;

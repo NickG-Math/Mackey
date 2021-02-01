@@ -1,5 +1,5 @@
 #pragma once
-#include <Mackey/Additive.h>
+#include <Additive.h>
 #include <iostream>
 
 ///@file

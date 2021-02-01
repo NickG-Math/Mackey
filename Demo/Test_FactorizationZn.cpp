@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include "C2n_Implementation.h"
-#include "Mackey/Factorization.h"
+#include "Factorization.h"
 #include <chrono>
 
 using namespace Mackey;
@@ -32,9 +32,9 @@ int main() {
 	F.compute_with_sources(true_sources, source_names); //computes the factorizations
 	std::vector<std::string> names;
 	std::vector<int> notfound;
-	names.reserve(F.size);
-	notfound.reserve(F.size);
-	for (int i = 0; i < F.size; i++) {
+	names.reserve(F.size());
+	notfound.reserve(F.size());
+	for (int i = 0; i < F.size(); i++) {
 		auto name = F.getname(i);
 		if (name == "") {
 			names.push_back("NOT FOUND");
@@ -46,7 +46,7 @@ int main() {
 		std::cout << names[i] << " at  " << F.getdegree(i)[0] << "," << F.getdegree(i)[1] << "," << F.getdegree(i)[2]  << "\n";
 	}
 	for (const auto &i :notfound) {
-		std::cout << " Not found " << F.getdegree(i)[0] << "," << F.getdegree(i)[1] << "," << F.getdegree(i)[2] << " and position " << F.getposition(i) << "\n";
+		std::cout << " Not found " << F.getdegree(i)[0] << "," << F.getdegree(i)[1] << "," << F.getdegree(i)[2] << " and element " << F.getelement(i) << "\n";
 	}
 	F.draw(names); //draws the graph
 

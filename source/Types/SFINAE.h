@@ -3,13 +3,17 @@
 #include <type_traits>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
-#include "Z_n.h"
+#include <Coefficients/Z_n.h>
 
 ///@file
 ///@brief Contains all the SFINAE tricks
 
 
 namespace Mackey {
+
+	//forward declaration for SFINAE
+	template<typename T>
+	class Graph;
 
 	
 	//////////////////
@@ -86,6 +90,18 @@ namespace Mackey {
 		template<typename T>
 		using has_initialize = decltype(test_initialize<T>(0));
 
+
+		///Detects graphs
+		static constexpr std::false_type is_graph(...);
+
+		template <typename T>
+		static constexpr std::true_type is_graph(Graph<T>);
+
+		///Tests if T is a graph type
+		template <typename T>
+		using is_graph_t = decltype(is_graph(std::declval<T>()));
+
 	};
+
 
 }

@@ -5,7 +5,7 @@
 #endif
 
 #include <iostream>
-#include "Mackey/Cerealizer.h"
+#include "Cerealizer.h"
 #include "C2n_Implementation.h"
 #include "omp.h"
 
@@ -302,7 +302,7 @@ int main() {/*
 	nonS.erase(nonS.begin() + 1);
 	nonS_names.erase(nonS_names.begin() + 1);
 
-	F.compute_with_sources(nonS, nonS_names); //computes the factorizations
+	F.compute_with_sources(true_sources, source_names); //computes the factorizations
 	auto begin = std::chrono::high_resolution_clock::now();
 
 	doMassey(F);

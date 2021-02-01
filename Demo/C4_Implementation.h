@@ -1,4 +1,4 @@
-#include <Mackey/Compute.h>
+#include <Compute.h>
 //Demo for a group specific implementation for C4
 
 //First set the variables
@@ -33,7 +33,7 @@ Chains<rank_t, diff_t> myfunction(int k, const deg_t& sphere) {
 		if (!(i % 2)) //even
 		{
 			if (i == 0) {
-				rank[0] = Eigen::MatrixBase<rank_t>::Constant(1,1,1); //constant 1
+				rank[0] = rank_t::Constant(1,1,1); //constant 1
 				continue;
 			}
 			else if (i <= n) {

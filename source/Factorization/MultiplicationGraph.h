@@ -1,6 +1,6 @@
 #pragma once
 #include "Table.h"
-#include "Graph.h"
+#include "Utility/Graph.h"
 #include <string>
 
 ///@file

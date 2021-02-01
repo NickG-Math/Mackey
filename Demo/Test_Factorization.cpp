@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include "C4_Implementation.h"
-#include "Mackey/Factorization.h"
+#include "Factorization.h"
 #include <chrono>
 
 using namespace Mackey;
@@ -65,7 +65,7 @@ int main() {
 
 
 
-	int maximum = 3;
+	int maximum = 5;
 	auto begin = std::chrono::high_resolution_clock::now();
 
 

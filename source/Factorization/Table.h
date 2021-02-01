@@ -1,6 +1,5 @@
 #pragma once
 #include "Compute.h"
-#include "Green.h"
 #include "omp.h"
 
 

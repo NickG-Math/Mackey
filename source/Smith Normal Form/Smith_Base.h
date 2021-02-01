@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
 #include <cmath>
-#include "Aliases.h"
-#include "SFINAE.h"
+#include "Types/Aliases.h"
+#include "Types/SFINAE.h"
 
 ///@file
 ///@brief Contains the base class for all Smith implementations. 

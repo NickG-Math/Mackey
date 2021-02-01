@@ -3,42 +3,47 @@
  \section intro Introduction
 This is a C++ header only library devoted to numerically computing the \f$RO(G)\f$ homology of a point. You can find the GitHub repository <a href="https://github.com/NickG-Math/Mackey">here</a>.
 
-For a quick demonstration in the case of \f$G=C_4\f$ you can use one of the available binaries <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">here</a>.
+For a quick demonstration in the case of \f$G=C_4\f$, use one of the available binaries <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">here</a>.
 
 
 \section req Requirements
  * C++17.
- * <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. I've tested the code with Eigen 3.3.7 though newer versions shouldn't break compatibility.
+ * <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. 
+ The code has been tested with Eigen 3.3.7 though newer versions shouldn't break compatibility.
 
 Optionally:
- * For serialization there is integrated support of the <a href="https://uscilab.github.io/cereal">cereal</a> library.
- * To draw the multiplication graphs you can use <a href="https://www.graphviz.org">Graphviz</a>.
+ * For serialization we have integrated support for the <a href="https://uscilab.github.io/cereal">cereal</a> library.
+ * To draw the multiplication graphs use <a href="https://www.graphviz.org">Graphviz</a>.
  
 \section install Installation
 
-* To install simply clone/download the <a href="https://github.com/NickG-Math/Mackey">repository</a> and include it in your path. You will also need to include Eigen and, if serialization is desired, cereal.
+* To install simply clone/download the <a href="https://github.com/NickG-Math/Mackey">repository</a> and include the folder called "source" in your path. 
+You will also need to include Eigen and, if serialization is desired, cereal.
 
 * See the page \ref use for a tutorial on using the library.
 
-* As for compiler support, the latest version of the code is always tested with the latest stable versions of Clang (Linux) and MSVC (Windows). Much less frequently, testing is performed with GCC (Linux), Clang on MacOS and the Intel Compiler (Linux and Windows). Remember to use the option ```-std=c++17```. For more information on compiler options, see the \ref perf page.
+* As for compiler support, the latest version of the code is always tested with the latest stable versions of Clang (Linux) and MSVC (Windows). 
+Much less frequently, testing is performed with GCC (Linux), Clang on MacOS and the Intel Compiler (Linux and Windows).
+Remember to use the option ```-std=c++17```. For more information on compiler options, see the \ref perf page.
 
 \section status Current Status
 
-* The project is almost complete for \f$G\f$ a cyclic group of prime power order. The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual representations; we call these "standard chains". 
+* The project is almost complete for \f$G\f$ a cyclic group of prime power order. 
+The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual (as opposed to virtual) representations; we call these "standard chains". 
 The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. We have implemented this for all groups \f$G=C_{2^n}\f$.
 
-* What hasn't been implemented for prime-power cyclic groups are Frobenius relations: 
-The multiplicative structure is computed levelwise, but this could be done more effectively using the Frobenius relations. 
+* Frobenius relations are yet to be implemented: The multiplicative structure is computed levelwise, but this could be done more effectively using the Frobenius relations. 
 
 * For general cyclic groups a few aspects that involve transferring need reworking. 
-The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, so care has to be taken to account for all these extra transfers and restrictions. 
+The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, 
+so care has to be taken to account for all these extra transfers and restrictions. 
 Ultimately this is the only part that needs changing.
 
 * The bulletpoint above also applies to general finite abelian groups. We also need to specify the order of the elements of the group and how they relate to the subgroup diagram to form our equivariant bases.
 
-* For non abelian groups we have the added complication of needing the real representation theory of our group. And of course we need the standard chains for these groups as well. 
+* For non abelian groups, the real representation theory of the group would also be needed together with the standard chains. 
 
-* For non constant coefficients a lot more things start to break, as transferring becomes more complicated when non cyclic modules are involved in the free Mackey functors.
+* Non constant coefficients are not supported (transferring becomes more complicated when non cyclic modules are involved in the free Mackey functors).
 
 \section doc Documentation
 
@@ -55,17 +60,25 @@ This documentation is organized in pages as follows:
 \tableofcontents
 \section Briefly
 
-There are three fundamental ideas that make the code work:
+There are three fundamental ideas the code is based on:
 
-* Homology of chain complexes of free \f$\mathbb Z\f$ modules can be algorithmically computed by turning the differentials into matrices and then diagonalizing them (Smith Normal Form). 
+* The homology of chain complexes of free modules can be algorithmically computed by turning the differentials into matrices and then diagonalizing them (Smith Normal Form). 
 
-* Free Mackey functors are determined by their bottom level groups. The higher levels are obtained by taking fixed points, and this can be done algorithmically on our matrices by writing them with respect to equivariant bases (an equivariant basis is an ordered basis in which elements in the same orbit are written consecutively).
+* Free Mackey functors (namely, free modules over a constant Mackey functor) are determined by their bottom level.
+The higher levels are obtained by taking fixed points under the Weyl group action, and this can be done algorithmically on our matrices by writing them with respect to equivariant bases 
+(an equivariant basis is an ordered basis in which elements in the same orbit are written consecutively).
 
-* Box products of Mackey functors are tensor products on the bottom level. This is not true for the higher levels, however using the bulletpoint above, higher levels are obtained by transferring. This is how box products of chain complexes of free Mackey functors are computed.
+* Box products of Mackey functors are tensor products on the bottom level. This is not true for the higher levels, however using the bulletpoint above, higher levels are obtained by transferring. 
+This is how box products of chain complexes of free Mackey functors are computed.
 
-These three ideas dictate our approach: We work primarily on the bottom level, before transferring to get the higher ones. Homology is computed in each level separately and transfers/restrictions/Weyl group actions on the generators can be computed on the chains. But the chains are always free, so we can also algorithmically compute the effect of these operations.
+These three ideas dictate our approach: 
+We start with the standard chains (the chains for spheres $S^V$ where $V$ is a non-virtual $G$-rep) on the bottom level, and box them to get the bottom levels of chains
+for any $S^V$ where $V$ is a virtual representation.
+Using the transfer we can get the higher level chains, from which the homology groups in every level are computed separately.
+Generators for these homology groups are lifted to the chain level, where we can compute the transfer/restriction/Weyl group action on them.
+Finally, by reducing to homology, the transfer/restriction/Weyl group action maps are computed on homology. This determines the Mackey functor structure of the homology of $S^V$.
 
-By converting all our differentials to matrices, using equivariant bases throughout, we can reduce our computations to pure linear algebra (over the integers), avoiding any symbolic math.
+By converting all our differentials to matrices, using equivariant bases throughout, we can reduce our computations to pure linear algebra (over the integers, or other coefficients).
 
 
 \section imd In more detail
@@ -74,37 +87,50 @@ Here's how the code works in more detail (for simplicity we specialize to the \f
 
 \subsection add The additive structure
 
-* The inputs are the bottom levels of the chains of the spheres \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$. We could do away with only \f$S^{\sigma},S^{\lambda}\f$, but this would result in taking arbitrarily many box products and devastate run-time performance. Instead, if we use the spheres  \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$ we only have to take double box products at worst, and that's only for part of the multiplicative structure.
+* The inputs are the bottom levels of the standard chains, namely the chains of the spheres \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$. It actually suffices to only use \f$S^{\sigma},S^{\lambda}\f$ as inputs and then obtain every other sphere
+as iterated smash products of these, but this would result in taking arbitrarily many box products and incur a huge performance penalty. 
+Instead, if we use the spheres  \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$ we only have to take double box products at worst, and that's only for part of the multiplicative structure (see below).
 
-* The data of a chain complex are the ranks and differentials. The differentials are stored as matrices, but the ranks are stored as integer arrays and not integers. This is crucial as for example \f$\mathbb Z[C_4]\f$ transfers completely differently from \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ even though they both have rank \f$4=2+2\f$ over \f$\mathbb Z\f$. 
+* The data of a chain complex are the ranks (dimensions of the free modules) and differentials of the each level. 
+The differentials are stored as matrices and the ranks are stored as integer arrays. Integer arrays and not integers are used in order to record the equivariant information: 
+For example \f$\mathbb Z[C_4]\f$ is different from \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ even though they both have rank \f$4=2+2\f$ over \f$\mathbb Z\f$. 
 With our conventions, \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ has rank \f$[2,2]\f$ while \f$\mathbb Z[C_4]\f$ has rank \f$4\f$.
 
-* We transfer both ranks and differentials to higher levels. While transferring ranks is straightforward, transferring differentials is quite a bit more complicated and requires to have already transferred the ranks of the domain and range of the differentials.
+* Starting with the bottom level chains, we transfer both ranks and differentials to get the higher level chains. 
+While transferring ranks is straightforward, transferring differentials is quite a bit more complicated and requires to have already transferred the ranks of the domain and range of the differentials.
 
-* Using the classical homology algorithm we compute the groups of the Mackey functor at every level. We also compute their generators (as elements in the chain complex)
+* Using the classical homology algorithm we compute the groups of the Mackey functor at every level. We also compute their generators (as elements in the chain complex).
 
-* We transfer/restrict and compute the Weyl group action on the group generators. This concludes the Mackey functor computation for the  \f$S^{n\sigma+m\lambda}\f$, \f$n,m\f$ having the same sign (if \f$n,m<0\f$ we take the dual chain complex, which has the effect of switching all differentials to their transposes).
+* We transfer/restrict and compute the Weyl group action on these generators. This concludes the Mackey functor computation for the  \f$S^{n\sigma+m\lambda}\f$, \f$n,m\f$ having the same sign 
+(if \f$n,m<0\f$ we take the dual chain complex, which has the effect of transposing all matrices for the differentials).
 
-* To obtain the chains of the rest of the spheres, we box the Chains we already have. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly. However the most convenient bases for tensoring are not equivariant, and in the end we have to change bases through permutation matrices.
+* To obtain the chains of any representation sphere, we box the standard chains. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly.
+However the most convenient bases for tensoring (lexicographical) are not equivariant, and in the end we have to change bases through permutation matrices.
 
-* We then perform the same procedure on these chains to get the entrire \f$RO(G)\f$ homology as a (graded) Mackey functor.
+* We then compute the homology of the boxed chains as above. 
 
-\subsection mack Recognizing Mackey Functors
+\subsection mack Universal Additive Notation
 
 While a Mackey functor is determined by the groups, transfers, restrictions and Weyl group actions, it is desirable to have a 
-"universal notation" to concisely describe them. Here's the notation we use:
+"universal notation" to concisely describe any Mackey functor. Here's the notation we use:
 
-* First assume all levels are cyclic groups, transfers are multiplication by 2 and corresponding
-restrictions are multiplication by 1 or vice-versa. Then the notation \f$a_1...a_n \sharp b_1...b_m\f$ means that the levels are \f$\mathbb Z/a_i\f$or \f$\mathbb Z\f$ if \f$a_i=1\f$ and the transfers at levels \f$b_i\f$ are multiplication by 1, and multiplication by 2 for the rest. The Weyl group action is then determined by the double coset formula.
+* First assume all levels are cyclic groups, and that in each transfer-restriction pair one map is multiplication by 2 and the other map is multiplication by 1.
+The notation \f$a_1...a_n \sharp b_1...b_m\f$ expresses a Mackey functor whose levels are \f$\mathbb Z/a_i\f$ if \f$a_i\neq 1\f$ and \f$\mathbb Z\f$ if \f$a_i=1\f$ and 
+whose transfers at levels \f$b_i\f$ are multiplication by 1 (the rest of the transfers are multiplication by \f$2\f$ by assumption). 
+The Weyl group action is then determined by the double coset formula.
 
-* For Mackey functors that are sums of Mackeys of this form we use the plus operator to concatenate the notations.
+* \f$a_1...a_n \sharp b_1...b_m + c_1\...c_n\sharp d_1...d_l\f$ corresponds to the sum of Mackey functors of the above form. This generalizes to sums of more than 2 Mackey functors.
 
-* For \f$C_4\f$ this notation suffices to describe every Mackey, but for \f$C_8\f$ there are three exceptional Mackey functors.
+* For \f$C_4\f$, every Mackey functor can be written as above. For \f$C_8\f$ there are three exceptional Mackey functors that don't fit in our "universal" notation and need special attention.
 
-For the second item, summing Mackey functors is straightforward (block diagonal matrices). The problem is showing that
-two Mackey functors are isomorphic (as opposed to equal). To do that, we collect all automorphisms of the groups in each level and apply them
-as a natural transformation to our Mackey functor and obtain its isomorphism class. So to check if two Mackey functors are isomorphic,
-we check if one is equal to a Mackey functor in the equivalence class of the other.
+\subsection iso Isomorphic Mackey Functors
+
+Isomorphic Mackey functors can have different forms in our universal notation above. 
+To find if two different notations correspond to isomorphic Mackey functors (and are thus equivalent), it suffices to compute all different notations in each isomorphism class.
+
+* Given a Mackey functor \f$M\f$ we compute its isomorphism class as follows: First, for each level \f$M(G/H)\f$ we find all its (group) automorphisms \f$Aut(M(G/H))\f$.
+Choosing one automorphism for each \f$H\f$ gives a single automorphism of \f$M\f$ (as long as the level-wise choices commute with restrictions/transfers/Weyl group actions). 
+In the end we get \f$Aut(M)\f$ and applying the automorphisms on \f$M\f$ returns the isomorphism class.
 
 * For finitely generated (abelian) groups with only one \f$\mathbb Z\f$ factor, there are only finitely many automorphisms and
 we can easily classify them all.
@@ -115,37 +141,41 @@ so the user must provide those that the program should use for the identificatio
 
 \subsection mult The multiplicative structure
 
-Once we have the additive structure (minus the recognition part), we can work on multiplying the additive generators. 
+Once we have the additive structure (the universal notation isn't needed for this), we can compute the product of two additive generators \f$a,b\f$ through the following process. 
 
-* First we restrict the generators to the bottom level.
+* First we restrict the generators \f$a,b\f$ to the bottom level to get \f$Res(a),Res(b)\f$ as elements of two chain complexes.
 
-* We then take the product of their restrictions as an element of the box product of chain complexes at bottom level.
+* We then compute \f$Res(a)Res(b)\f$ as an element of the box product of the two chain complexes on the bottom level.
 
-* The product of restrictions is a restriction and as we are working with free Mackey functors, restriction is an injection. By inverting it we can get the product of generators at a higher level as an element of the box product.
+* \f$Res(a)Res(b)\f$ is the restriction of a unique element, \f$ab\f$ (since chains are free Mackey functors). By inverting the restriction we can get \f$ab\f$ as an element of the box product.
 
-* We finally take homology of the resulting chains and write that product in terms of the generators of the homology.
+* We finally write \f$ab\f$ in terms of the generators of the homology of the box product.
 
 Once we know how to multiply any two additive generators, we have in effect determined the multiplicative structure (see \ref caveat for a catch).
 
 \subsection factor Factorization
 
-Even if we can multiply any two generators, that doesn't mean we can automatically write any element as a product of our preferred generators. Verifying that for example the generator of \f$H_{-2}S^{-2\sigma}\f$ is \f$2/u_{2\sigma}\f$, is simple enough; coming up with the expression of the generator is a lot more complicated. 
-This is done automatically by the factorization process:
+Even if we can multiply any two generators, that doesn't mean we can automatically write any element as a product of our preferred generators. 
+For example, it's easy to see that the generator of \f$H_{-2}S^{-2\sigma}\f$ is \f$2/u_{2\sigma}\f$ (multiply with \f$u_{2\sigma}\f$ and get result \f$1\f$).
+On the other hand, coming up with the expression \f$2/u_{2\sigma}\f$ of the generator is a lot more complicated. 
+The factorization process performs this automatically:
 
 * First we form a multiplication table, where all generators (in a range) are multiplied with the "basic irreducibles". These basic irreducibles can be the Euler and orientation classes.
 
-* Once we have the table we can draw a directed colored graph by drawing the edges \f$a\to ab\f$ for \f$b\f$ a basic irreducible; we color these edges red. If multiplication by \f$b\f$ is an isomorphism i.e. \f$a=(ab)/b\f$ then we also connect \f$ab\to a\f$; we color such edges blue.
+* We then get a directed colored graph by drawing \f$a\to ab\f$ for \f$b\f$ a basic irreducible; we color these edges red.
+ If multiplication by \f$b\f$ is an isomorphism i.e. \f$a=(ab)/b\f$ then we also draw \f$ab\to a\f$; we color such edges blue.
 
 * Since the product \f$ab\f$ may not be a generator, but rather a multiple of it, we need to allow nonzero multiples of generators as distinct nodes.
 
-* To obtain a factorization, we simply need to connect 1 with any node in the graph. For the most efficient factorizations, we want to minimize the number we alternate between blue and red edges in each path. 
+* To obtain a factorization, we simply need to connect 1 with any node in the graph. 
+For the most efficient factorizations, we want to minimize the number of times we alternate between blue and red edges in each path (eg we prefer \f$b^2\f$ to \f$a(b/a)b\f$). 
 This is done by a modified Dikjstra algorithm.
 
 * For the generators not connected to 1 (eg \f$s_3\f$) we need to perform the same process using different sources for our graph (eg using \f$s_3\f$ as the source for all paths).
 
 \subsection Mass Massey Products
 
-The chains based approach we use means that Massey products can be computed from definition. The only extra thing we need is the following:
+The chains-based approach we use means that Massey products can be computed from definition. The only extra thing we need is the following:
 
 * Given an element \f$x\f$ that vanishes in homology we can find a \f$y\f$ that bounds it: \f$dy=x\f$. This is part of our homology algorithm.
 
@@ -162,37 +192,46 @@ So Massey products work like this:
 \section caveat A caveat
 \subsection cyclic Cyclic Generators
 
-* The way we prove that say a transfer map is multiplication by \f$2\f$, is by computing the generators at the domain and target, computing the transfer of the domain generator and comparing with the target. 
+* The way we prove that a transfer map is (say) multiplication by \f$2\f$, is by computing the generators at the domain and target, computing the transfer of the domain generator and comparing with the target. 
 Of course, there are usually multiple choices of generators, but up to isomorphism we get the same Mackey functor. 
 
 * There is a catch however that appears when computing the multiplicative structure: If we prove that \f$ab\f$ and \f$cd\f$ are both generators of the same cyclic group, then we can't conclude that they are equal. 
-Eg if the group is \f$\mathbb Z/4\f$ or \f$\mathbb Z\f$ then they differ by a sign. Still, since we are interested in generating the \f$RO(G)\f$ homology, as opposed to finding exact relations, we don't have to distinguish between cyclic generators and we don't need to worry about this detail.
+Eg if the group is \f$\mathbb Z/4\f$ or \f$\mathbb Z\f$ then they may differ by a sign. 
+Still, since we are interested in generating the \f$RO(G)\f$ homology, as opposed to finding exact relations, we don't have to distinguish between cyclic generators so we don't need to worry about this detail.
 
 * If we are interested in exact relations, then are ways to resolve the ambiguity as we explain in the following subsection.
 
 
 \subsection noncycl Non cyclic generators
 
-* There is a situtation where the caveat above cannot be sidestepped and that's when we have non cyclic groups. A typical example: 
-If we have \f$\mathbb Z\oplus \mathbb Z/2\f$ with generators \f$x,y\f$ respectively then we can't automatically distinguish \f$x\f$ from \f$x+y\f$ as there is an automorphism of \f$\mathbb Z\oplus \mathbb Z/2\f$ exchanging them. 
-In that case the difference between \f$ab\f$ and \f$cd\f$ generating the same group can be much more severe than just an integer coprime to the group's order (or a sign).
+* There is a situtation where the caveat above cannot be worked-around and that's when we have non cyclic groups. A typical example: 
+If we have \f$\mathbb Z\oplus \mathbb Z/2\f$ with generators \f$x,y\f$ respectively then we can't distinguish \f$x\f$ from \f$x+y\f$ as there is an automorphism of \f$\mathbb Z\oplus \mathbb Z/2\f$ exchanging them. 
+In that case the difference between \f$ab\f$ and \f$cd\f$ generating the same group can be greater than just an integer coprime to the group's order (or a sign).
 
-* For another example, when computing the \f$RO(C_4)\f$ homology in \f$\mathbb F_2\f$ coefficients the group \f$\mathbb F_2\oplus \mathbb F_2\f$ tends to appear frequently; unfortunately the three generators cannot be distingusihed.
+* For another example, when computing the \f$RO(C_4)\f$ homology in \f$\mathbb F_2\f$ coefficients the group \f$\mathbb F_2\oplus \mathbb F_2\f$ tends to appear frequently; 
+unfortunately the three generators cannot be distingusihed.
 
-* One way out of this is to break down our box products further until they can be directly compared. This is difficult to program generally and comes at a very high performance cost as we need more iterated box products.
+* One way out of this is to break down our box products further until they can be directly compared. Eg we can compare the chains for \f$S^{2\sigma+\lambda}\wedge S^{-\lambda}\f$ with those for
+\f$S^{\sigma+\lambda}\wedge S^{\sigma -\lambda}\f$ by using the chains for \f$S^{\sigma}\wedge S^{\sigma}\wedge S^{\lambda}\wedge S^{-\lambda}\f$ as an intermediate. 
+This is difficult to program generally and comes at a very high performance cost as we need more iterated box products.
 
 * Another way is to use the fact that these noncyclic homology groups result from extensions of Mackey functors, not just group extensions. 
 So for example in \f$\mathbb Z\oplus \mathbb Z/2\f$ we can distinguish \f$x\f$ from \f$x+y\f$ using that \f$x\f$ is a transfer. 
 This doesn't always work: We can have a \f$\mathbb F_2\oplus \mathbb F_2\f$ generated by \f$x,y\f$  with \f$x\f$ having restriction \f$0\f$ while \f$y\f$ having restriction \f$1\f$ and no generator being a transfer;
 in this case we cannot distinguish between \f$y\f$ and \f$x+y\f$.
 
-* There is one final trick we can use to resolve this ambiguity as it appears the Factorization algorithm: Assume we have \f$ab=x\f$ or \f$ab=x+y\f$ using the notation in the bullet above. For each element \f$z\f$ we can compute the products \f$xz\f$ and \f$(x+y)z\f$. If for some \f$z\f$ they are different and can be distingusihed, then we can form \f$abz\f$ internally (triple box product) and compare the answer to \f$xz\f$ and \f$(x+y)z\f$; we then divide by \f$z\f$ to find what \f$ab\f$.
+* There is one final trick we can use to resolve this ambiguity as it appears the Factorization algorithm: Assume we have \f$ab\f$ in \f$\mathbb F_2\{x,y\}\f$ and we know \f$ab=x\f$ or \f$ab=x+y\f$.
+For each element \f$z\f$ we can compute the products \f$xz\f$ and \f$(x+y)z\f$. 
+If for some \f$z\f$ these products are different and can be distinguished, say \f$c,d\f$, then we can form \f$abz\f$ internally (triple box product) and compare the answer to \f$c\f$ and \f$d\f$; 
+if \f$abz=c\f$ then \f$ab=x\f$.
 
-In practice, for \f$\mathbb Z\f$ coefficients and \f$G=C_4\f$ we can choose to ignore the products we can't identify and make no statement as to the equality of \f$ab\f$ and \f$cd\f$ if they live in non cyclic groups. This gives us less data to work with, but at least in that case this is enough to write the factorization of any element. 
+In practice, for \f$\mathbb Z\f$ coefficients and \f$G=C_4\f$ we can choose to ignore the products we can't immediately identify and make no determination as to the equality of \f$ab\f$ and \f$cd\f$ if they live in non cyclic groups. 
+This gives us less data to work with, but it turns out to be sufficient in writing the factorization of any element. 
 
-For \f$G=C_8\f$ ignoring them won't work as we have many more instances of noncyclic groups. Instead we need to use all the bulletpoints above to identify our generators and factorize every element.
+That doesn't work for \f$\mathbb F_2\f$ coefficients and \f$G=C_4\f$, or \f$\mathbb Z\f$ coefficients and \f$G=C_8\f$, as there are simply too many instances of noncyclic groups. 
+Instead we need to use all the bulletpoints above to identify our generators and factorize every element.
 
-If we are only interested in the connectivity of the multiplication graph (everything being generated by Euler+orientation classes...) then we don't need to make all identifications:
+If we are only interested in the connectivity of the multiplication graph (whether or not everything being generated by Euler+orientation classes) then we don't need to make all identifications:
 If \f$ab\f$ is \f$x\f$ or \f$x+y\f$ and \f$x,y\f$ are connected to the source of the graph and multiplication by \f$b\f$ is an injection on \f$a\f$, then it doesn't matter if the
 answer is \f$x\f$ or \f$x+y\f$: in both cases, \f$a\f$ is also connected to the source. 
 
@@ -200,7 +239,8 @@ answer is \f$x\f$ or \f$x+y\f$: in both cases, \f$a\f$ is also connected to the 
 \tableofcontents
 \section how Step 0: Setting the Group Parameters
 
-For every group there are certain parameters that need to be set for the library to work. We have included an example for \f$G=C_4\f$ on how to set them in the file  ```C4_Implementation.h``` available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder. 
+For every group there are certain parameters that need to be set for the library to work. 
+We have included an example for \f$G=C_4\f$ on how to set them in the file  ```C4_Implementation.h``` available in the <a href="https://github.com/NickG-Math/Mackey/tree/master/demo">demo</a> folder. 
 We also have a more general example for all \f$G=C_{2^n}\f$ implemented in ```C2n_Implementation.h```.
 
 These parameters all live in the \ref GroupSpecific "GroupSpecific" namespace and we will go over them in more detail below.
@@ -216,10 +256,11 @@ The global variables that need to be set are:
 
 \subsection fun The standard chains
 
-* There is one function that needs to be manually defined, the \ref GroupSpecific::Function::PositiveChains "PositiveChains" computing the chains for actual representations. 
-I have made the construction of these Chains as painless as possible, using the \ref Mackey::altmatrix "altmatrix" function
+* There is one function that needs to be manually defined, the \ref GroupSpecific::Function::PositiveChains "PositiveChains" computing the chains for actual (as opposed to virtual) representation spheres. 
+The construction of these Chains is made as painless as possible, using the \ref Mackey::altmatrix "altmatrix" function
 
-* \ref Mackey::altmatrix "altmatrix" returns alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. An example: The matrix of size 4x4 with pattern \f$a,b\f$ is <br>
+* \ref Mackey::altmatrix "altmatrix" returns alternating matrices of the desired size and the desired "pattern". This pattern is repeated cyclically in the columns of the matrix. 
+An example: The matrix of size 4x4 with pattern \f$a,b\f$ is <br>
 \f$\begin{matrix} a&b&a&b\\ b&a&b&a\\ a&b&a&b \\  b&a&b&a \end{matrix}\f$ <br> 
 If we use the pattern \f$a,b,c,d\f$ instead we get <br>
 \f$\begin{matrix} a&b&c&d\\ b&c&d&a\\ c&d&a&b \\  d&a&b&c \end{matrix}\f$ <br> 
@@ -230,9 +271,10 @@ We have automated this process for general \f$G=C_{2^n}\f$ in ```C2n_Implementat
 
 \section next Step 1: Calling the library
 
-Once Step 0 is complete, you can include ```<Mackey/Additive.h>``` to access the methods relating to the additive structure and ```<Mackey/Factorization.h>``` to access the factorization methods. The multiplicative structure and Massey products are found in ```<Mackey/Compute.h>``` but that's already included in the other two headers.
+Once Step 0 is complete, you can include ```Additive.h``` to access the methods relating to the additive structure and ```Factorization.h``` to access the factorization methods. 
+The multiplicative structure and Massey products are found in ```Compute.h``` but that's already included in the other two headers.
 
-For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder together with the provided Implementation header file (Step 0).
+For a demonstration you can use the cpp files included in the <a href="https://github.com/NickG-Math/Mackey/tree/master/demo">demo</a> folder together with the provided Implementation header file (Step 0).
 
 The namespace for all methods is ```Mackey```.
 
@@ -243,13 +285,14 @@ There are two template arguments that always need to be specified, and their typ
 * ```rank_t``` can be set to ```Eigen::Matrix<char,1,-1>``` for groups of prime power order \f$<127\f$ and we can replace ```char``` by better precision integers for higher prime power orders.
 
 * ```diff_t``` depends on the desired coefficients: eg we can set it to ```Eigen::Matrix<char,-1,-1>``` for integer coefficients and groups of small power order, or ```Eigen<Z<N>,-1,-1>``` for \f$\mathbb Z/n\mathbb Z\f$ coefficients. The user can also define a class of coefficients and use that instead as well. An example of how this is done is 
-contained in the file ```Z_n.h``` where we define \f$\mathbb Z/n\mathbb Z\f$ coefficients. Note that for the Smith normal form to work properly, \f$n\f$ should be prime.
+contained in the file ```Z_n.h``` where we define \f$\mathbb Z/n\mathbb Z\f$ coefficients. Note that for the Smith normal form to work properly, \f$n\f$ should be a prime.
 
+Important note: ```diff_t``` can also be set to a sparse matrix format like ```Eigen::SparseMatrix<char>``` or ```Eigen::SparseMatrix<char,0,long>``` (using ```long``` storage type for matrix dimensions). 
+See the  \ref perf page for more information.
 
-Important note: ```diff_t``` can also be set to a sparse matrix format like ```Eigen::SparseMatrix<char>``` or ```Eigen::SparseMatrix<char,0,long>``` (using ```long``` storage type for matrix dimensions). See the  \ref perf page for more information.
 \subsection step1add The additive structure
 
-The file ```<Mackey/Additive.h>``` exposes the class \ref Mackey::AdditiveStructure "AdditiveStructure" that computes the homology of all spheres in a given range as Mackey functors. Example: The code
+The file ```Additive.h``` exposes the class \ref Mackey::AdditiveStructure "AdditiveStructure" that computes the homology of all spheres in a given range as Mackey functors. Example: The code
 
 <CODE> AdditiveStructure<rank_t,diff_t> A({-3,-4},{5,6}); </CODE>
 
@@ -262,7 +305,7 @@ After that,
 
 <CODE> A.print_answer(stream); </CODE>
 
-prints the answer in a user provided ```stream```. The answer is of the form
+prints the answer in a user provided ```stream``` (eg you may pass ```std::cout``` to ```print_answer```). The answer is of the form
 
 <CODE> The 2 homology of the 4,6 sphere is 002 </CODE>
 
@@ -283,18 +326,21 @@ A.print_unknown(stream);
  
 \subsection step1mult The multiplicative structure
 
-The file ```<Mackey/Compute.h>``` exposes the method \ref Mackey::ROGreen "ROGreen" that multiplies two generators in the Green functor \f$H_{\star}(S)\f$. Example: The code
+The file ```Compute.h``` exposes the method \ref Mackey::ROGreen "ROGreen" that multiplies two generators in the Green functor \f$H_{\star}(S)\f$. Example: The code
 
 <CODE> auto linear_combination= Mackey::ROGreen<rank_t,diff_t>(2,{0,2,-2},{1,3,-4}); </CODE>
 
-multiplies the generators of
+performs the operation
 
-\f$ H_0^{C_4}(S^{2\sigma-2\lambda}) \otimes H_1^{C_4}(S^{3\sigma-4\lambda}) \to H_1^{C_4}(S^{5\sigma-6\lambda})  \f$
-\f$ a\otimes b\mapsto ab\f$
+\f$ H_0^{C_4}(S^{2\sigma-2\lambda}) \otimes H_1^{C_4}(S^{3\sigma-4\lambda}) \to H_1^{C_4}(S^{5\sigma-6\lambda})  \f$, \f$ a\otimes b\mapsto ab\f$
 
-writing the answer as a linear combination of the generators in the box product. The first argument of \ref Mackey::ROGreen "ROGreen" indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for \f$C_4\f$, level=2 is the top level. The second and third entries are the degrees of the two generators.
+where \f$a,b\f$ are generators. The answer is written as a linear combination of the generators in the latter homology group. 
+The first argument of \ref Mackey::ROGreen "ROGreen" indicates the level the generators live in (level 0=bottom, level 1= one higher etc.) so for \f$C_4\f$, level=2 is the top level. 
+The second and third entries are the degrees of the two generators.
 
-If the homology in these degrees is not cyclic, then the generators are not determined by their degree and need to be selected. In that case we can provide an optional final 2 ```int``` arguments in ```Mackey::ROGreen``` that perform the selection: eg \f$1,2\f$ selects the second and third generators of the noncyclic groups respectively (remember that in C++ counting starts from \f$0\f$). The default selection is \f$0,0\f$
+If the homology in these degrees is not cyclic, then the generators are not determined by their degree and need to be selected. 
+In that case we can provide an optional final 2 ```int``` arguments in ```Mackey::ROGreen``` that perform the selection: eg \f$1,2\f$ selects the second and third generators of the noncyclic groups respectively.
+ The default selection is \f$0,0\f$.
 
 The result of the computation ```linear_combination``` is an Eigen row vector (```rank_t```) that can be intrepreted as follows: if the result is \f$[t_1,...,t_n]\f$ then 
 \f$ ab=\sum_it_ig_i\f$
@@ -305,23 +351,33 @@ For convenience we normalize the basis to omit any signs and identify generators
 
 \subsection step1fact Factorization
 
-The file ```<Mackey/Factorization.h>``` exposes the class \ref Mackey::Factorization "Factorization" whose constructor creates the multiplication graph and the method \ref Mackey::Factorization::compute_with_sources "compute_with_sources" that factorizes all generators using the given sources. First construct the multiplication graph via:
+The file ```Factorization.h``` exposes the class \ref Mackey::Factorization "Factorization" whose constructor creates the multiplication graph and the method 
+\ref Mackey::Factorization::compute_with_sources "compute_with_sources" that factorizes all generators using the given sources. First construct the multiplication graph via:
 
-<CODE>auto F= Factorization<rank_t, diff_t>({ -5,-5 }, { 5,5 }, { {0,1,0},{2,2,0},{0,0,1},{2,0,1} }, { "asigma", "u2sigma", "alambda", "ulambda" });</CODE>
+<CODE>auto F= Factorization<rank_t, diff_t>(2,{ -5,-5 }, { 5,5 }, { {0,1,0},{2,2,0},{0,0,1},{2,0,1} }, { "asigma", "u2sigma", "alambda", "ulambda" });</CODE>
 
-This will work in the range from \f$S^{-5\sigma-5\lambda}\f$ to \f$S^{5\sigma+5\lambda}\f$ by multiplying all generators of \f$H_{\star}S\f$ with the basic irreducibles \f$ a_{\sigma}, u_{2\sigma}, a_{\lambda}, u_{\lambda}\f$ of degrees \f$[0,1,0],[2,2,0],[0,0,1],[2,0,1]\f$ respectively.
+This will work on level \f$2\f$ (top level for \f$C_4\f$), in the range from \f$S^{-5\sigma-5\lambda}\f$ to \f$S^{5\sigma+5\lambda}\f$,
+by multiplying all generators of \f$H_{\star}S\f$ with the basic irreducibles \f$ a_{\sigma}, u_{2\sigma}, a_{\lambda}, u_{\lambda}\f$ of degrees \f$[0,1,0],[2,2,0],[0,0,1],[2,0,1]\f$ respectively.
 
-After that, to actually get the factorizations use
+Then 
 
-<CODE>F.compute_with_sources({[0,0,0]}, {"1"});</CODE>
+<CODE>F.compute_with_sources({{0,0,0}}, {"1"});</CODE>
 
-and 
+computes the factorizations by connecting every node in the multiplication graph to \f$1\f$ (if possible). To print the name of the \f$i\f$-th generator use:
 
 <CODE>std::cout<< F.getname(i) </CODE>
 
-to print the name of the ```i```-th generator. This name will be nonempty as long as the generator can be obtained by multiplying/dividing the basic irreducibles with ```1```. As such, it will fail for say ```s_3```. In that case instead use
+For example, to print all names of generators, use:
 
-<CODE>F.compute_with_sources({[0,0,0],[-3,0,-2]}, {"1","s3"});</CODE>
+<CODE>
+	for (int i = 0; i < F.size(); i++)
+		std::cout << F.getname(i) <<"\n";
+<CODE>
+
+
+This name will be nonempty as long as the generator can be obtained by multiplying/dividing the basic irreducibles with ```1```. As such, it will fail for say ```s_3```. In that case instead use
+
+<CODE>F.compute_with_sources({{0,0,0},{-3,0,-2}}, {"1","s3"});</CODE>
 
 where now both \f$1\f$ and \f$s_3\f$ are used as sources.
 
@@ -340,27 +396,29 @@ and then
 <CODE>M.compute_with_sources({[0,0,0]});</CODE>
 
 The vector <CODE>M.trully_disconnected</CODE> contains the indices of the generators that may not be connected to any sources.
+
 \subsection step1Mass Massey products
 
 
-The file ```<Mackey/Compute.h>``` finally exposes the method \ref Mackey::ROMassey "ROMassey" for (triple) Massey products in the Green functor \f$H_{\star}(S)\f$. Example: The code
+The file ```Compute.h``` finally exposes the method \ref Mackey::ROMassey "ROMassey" for (triple) Massey products in the Green functor \f$H_{\star}(S)\f$. Example: The code
 
 
 <CODE>auto Mass= Mackey::ROMassey<rank_t,diff_t>(2,{0,1,0},{-3,-3,0},{2,2,0},1);</CODE>
 
-computes the Massey product \f$\langle a_{\sigma},w_3,u_{2\sigma}\rangle \f$ and its indeterminacy (if indeterminacy is not needed, use \f$0\f$ as the last variable). As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product,
-while the indeterminacy is expressed as two groups (left and right indeterminacy). If both are \f$0\f$ then we have the member variable ```noIndeterminacy=1```. 
+computes the Massey product \f$\langle a_{\sigma},w_3,u_{2\sigma}\rangle \f$ and its indeterminacy (if indeterminacy is not needed, use \f$0\f$ as the last variable). 
+As with the multiplicative structure, the Massey product is expressed in terms of a linear combination of the basis in the homology of the box product,
+while the indeterminacy is expressed via two two groups (left and right indeterminacy). If both are \f$0\f$ then we have the member variable ```noIndeterminacy=1```. 
 
 We can also provide three optional ```int``` arguments at the end for selections, see \ref step1mult for what that does.
 
 Finally, ```Mass``` is of type ```Mackey::Massey``` so read the documentation of that class to see how to extract the relevant data.
 
-For more details see the code in TestMassey.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/Demo">Demo</a> folder
+For more details see the code in TestMassey.cpp of the <a href="https://github.com/NickG-Math/Mackey/tree/master/demo">demo</a> folder
 
 
 \subsection step1Cer Serialization
 
-The results of the harder computations can all be serialized to binary, xml or json file using the <a href="https://uscilab.github.io/cereal">cereal</a> library. We have provided a general 
+The results of the computationally expensive computations can all be serialized to binary, xml or json files using the <a href="https://uscilab.github.io/cereal">cereal</a> library. We have provided a general 
 interface to do that using the \ref Mackey::saver "saver" and \ref Mackey::loader "loader" methods. For example, to serialize ```AdditiveStructure<rank_t,diff_t> A;``` to a binary use
 
 <CODE>saver(A, "filename.bin", "binary");</CODE>

@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structMackey_1_1SFINAE.html" title="SFINAE is used to detect types and existence of methods." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node1" href="$classMackey_1_1Graph.html" title="A directed Graph." alt="" coords="5,17,161,43"/>
+<area shape="rect" id="node2" href="$classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors." alt="" coords="227,17,395,43"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraph.html" title="The Multiplication Graph created from the Multiplication Table." alt="" coords="460,39,667,80"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraphConnectivity.html" title="Provides extra identification methods using triple box products." alt="" coords="715,5,931,47"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products." alt="" coords="719,71,926,112"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources." alt="" coords="979,71,1141,112"/>
+<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationTable.html" title="The Multiplication Table." alt="" coords="209,68,412,109"/>
 </map>

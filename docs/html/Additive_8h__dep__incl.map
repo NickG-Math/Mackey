@@ -1,4 +1,4 @@
-<map id="Mackey/Additive.h" name="Mackey/Additive.h">
-<area shape="rect" id="node1" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="11,5,154,32"/>
-<area shape="rect" id="node2" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="5,80,160,107"/>
+<map id="source/Additive.h" name="source/Additive.h">
+<area shape="rect" id="node1" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="11,5,146,32"/>
+<area shape="rect" id="node2" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="5,80,152,107"/>
 </map>

@@ -1,5 +1,8 @@
 <map id="Mackey::MackeyFunctor::normalizeMackey" name="Mackey::MackeyFunctor::normalizeMackey">
-<area shape="rect" id="node1" title="Normalizes a Mackey Functor." alt="" coords="5,23,183,65"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="254,5,398,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a463bb762b4edc2f283e8d1c0c466aedf" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="231,56,421,83"/>
+<area shape="rect" id="node1" title="Normalizes a Mackey Functor." alt="" coords="5,49,183,90"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples." alt="" coords="254,31,398,57"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a463bb762b4edc2f283e8d1c0c466aedf" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="231,81,421,108"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93" title="Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1." alt="" coords="469,5,649,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="503,56,616,83"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="697,56,800,83"/>
 </map>

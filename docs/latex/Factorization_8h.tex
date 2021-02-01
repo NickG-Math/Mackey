@@ -1,39 +1,45 @@
-\hypertarget{Factorization_8h}{}\doxysection{Mackey/\+Factorization.h File Reference}
-\label{Factorization_8h}\index{Mackey/Factorization.h@{Mackey/Factorization.h}}
+\hypertarget{Factorization_8h}{}\doxysection{source/\+Factorization.h File Reference}
+\label{Factorization_8h}\index{source/Factorization.h@{source/Factorization.h}}
 
 
 Contains the multiplication graph and the methods for factorizing generators.  
 
 
-{\ttfamily \#include \char`\"{}Multiplication\+Graph\+\_\+\+Identify.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Multiplication\+Graph\+\_\+\+Connectivity.\+h\char`\"{}}\newline
-{\ttfamily \#include $<$string$>$}\newline
-Include dependency graph for Factorization.\+h\+:
-\nopagebreak
+{\ttfamily \#include \char`\"{}Factorization/\+Multiplication\+Graph\+\_\+\+Identify.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Factorization/\+Multiplication\+Graph\+\_\+\+Connectivity.\+h\char`\"{}}\newline
+Include dependency graph for Factorization.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{Factorization_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=209pt]{Factorization_8h__dep__incl}
+\includegraphics[width=203pt]{Factorization_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classMackey_1_1FactorizationPrinter}{Mackey\+::\+Factorization\+Printer$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\begin{DoxyCompactList}\small\item\em Class that facilitates printing of all factorizations produced by \mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classMackey_1_1Factorization}{Mackey\+::\+Factorization$<$ rank\+\_\+t, diff\+\_\+t $>$}}
-\begin{DoxyCompactList}\small\item\em Factorizes generators into the given basic irreducibles and sources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Factorizes generators into the given basic irreducibles and sources. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMackey_1_1FactorizationPrinter}{Mackey\+::\+Factorization\+Printer$<$ rank\+\_\+t, diff\+\_\+t $>$}}
+\begin{DoxyCompactList}\small\item\em Class that facilitates printing of all factorizations produced by \mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespaceMackey}{Mackey}}
 \begin{DoxyCompactList}\small\item\em The namespace for everything that is group-\/independent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespaceMackey_a4459d62150c04a8a525c5cac50a25618}{Mackey\+::operator$<$$<$}} (std\+::ostream \&os, const Factorization\+Printer$<$ rank\+\_\+t, diff\+\_\+t $>$ \&F)
+\begin{DoxyCompactList}\small\item\em Prints \mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

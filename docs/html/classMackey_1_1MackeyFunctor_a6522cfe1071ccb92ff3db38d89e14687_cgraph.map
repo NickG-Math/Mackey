@@ -1,5 +1,8 @@
 <map id="Mackey::MackeyFunctor::apply" name="Mackey::MackeyFunctor::apply">
-<area shape="rect" id="node1" title="Applies isomorphism to Mackey functor (its inverse is also needed)" alt="" coords="5,5,183,47"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a65dac6a38a02a4efc56d52292ea8cbd8" title="Given matrix and change of basis matrices, produces the matrix w.r.t. the new basis and normalizes it..." alt="" coords="231,5,395,47"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="443,13,587,39"/>
+<area shape="rect" id="node1" title="Applies isomorphism to Mackey functor (its inverse is also needed)" alt="" coords="5,23,183,65"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a65dac6a38a02a4efc56d52292ea8cbd8" title="Given matrix and change of basis matrices, produces the matrix w.r.t. the new basis and normalizes it..." alt="" coords="231,23,395,65"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples." alt="" coords="443,31,587,57"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93" title="Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1." alt="" coords="635,5,815,32"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="668,56,781,83"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="863,56,965,83"/>
 </map>

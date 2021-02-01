@@ -1,7 +1,10 @@
 var classZ_3_012_01_4 =
 [
+    [ "Z", "classZ_3_012_01_4.html#a2007d91fc07c751853ae945c0ece1c94", null ],
     [ "Z", "classZ_3_012_01_4.html#a42d7b146ce0e257ea7a7cc79e6140872", null ],
+    [ "Z", "classZ_3_012_01_4.html#af7537f8b8e6ba15f7715354a644fb9c6", null ],
     [ "Z", "classZ_3_012_01_4.html#aa57d3e40cabfe96ea16901ecda68a124", null ],
+    [ "Z", "classZ_3_012_01_4.html#a59bbd8b973581a967e8af5d3136ae439", null ],
     [ "operator char", "classZ_3_012_01_4.html#a3ecfc6d71107934335d39749dbf74b96", null ],
     [ "operator double", "classZ_3_012_01_4.html#afc37211cc313fbcf3577916c70661283", null ],
     [ "operator float", "classZ_3_012_01_4.html#a1445b41ddb6be805e59067adaaa45294", null ],
@@ -18,6 +21,8 @@ var classZ_3_012_01_4 =
     [ "operator<", "classZ_3_012_01_4.html#aec8e51a2935d539f11220270f35c1c31", null ],
     [ "operator<=", "classZ_3_012_01_4.html#a6e1b77419935d4f017ffab84df3ca520", null ],
     [ "operator==", "classZ_3_012_01_4.html#a98508d39c9695bdda292044170ef5718", null ],
+    [ "operator>", "classZ_3_012_01_4.html#a4e74f2c30cfa406d0a2250731af13912", null ],
+    [ "operator>=", "classZ_3_012_01_4.html#a4e3e38fa1efaac5fc42ab091b6c958f7", null ],
     [ "order", "classZ_3_012_01_4.html#a113854b6a1c2fec88ed352c117515c0e", null ],
     [ "x", "classZ_3_012_01_4.html#ae753e180f5d8aa55370a497e2c86fbb8", null ]
 ];

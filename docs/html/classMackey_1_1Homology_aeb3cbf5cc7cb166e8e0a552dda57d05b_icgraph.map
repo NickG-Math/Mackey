@@ -1,3 +1,7 @@
 <map id="Mackey::Homology::boundary" name="Mackey::Homology::boundary">
-<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2" title="Default constructor. " alt="" coords="249,5,452,32"/>
+<area shape="rect" id="node1" title="Given an x that is a boundary returns a y s.t. dy=x." alt="" coords="609,31,824,57"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a1b3e66989e89c8b97d113d8eec0b47b8" title="Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group...." alt="" coords="451,31,561,57"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a1ff253bf7e043ad6455b5fea23a83f09" title="Finds if an element is in the span of other given elements in a finitely generated abelian group." alt="" coords="270,5,393,32"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#af70b0c547f7121b8815885dfebde67d9" title="Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!..." alt="" coords="260,56,403,83"/>
+<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]." alt="" coords="5,49,212,90"/>
 </map>

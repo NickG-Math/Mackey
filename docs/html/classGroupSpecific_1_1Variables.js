@@ -1,7 +1,7 @@
 var classGroupSpecific_1_1Variables =
 [
-    [ "power", "classGroupSpecific_1_1Variables.html#adfcd813b0bf0b9ae5d09237923053ee1", null ],
-    [ "prime", "classGroupSpecific_1_1Variables.html#a83e4f2d6f5e57d3b9f24239926c5d0ea", null ],
-    [ "reps", "classGroupSpecific_1_1Variables.html#aea29a4214c25a2c3f2fdabe3da5c3141", null ],
-    [ "sphere_dimensions", "classGroupSpecific_1_1Variables.html#a1ffa488249039e9e2a14187ac3246b09", null ]
+    [ "power", "classGroupSpecific_1_1Variables.html#ac9bd6be19cc41e6877ee25a2d1c7be80", null ],
+    [ "prime", "classGroupSpecific_1_1Variables.html#a38586ec998bcbfdf325e6cfc6598b54b", null ],
+    [ "reps", "classGroupSpecific_1_1Variables.html#a5504789b0b60050e6ea223fdeb84874a", null ],
+    [ "sphere_dimensions", "classGroupSpecific_1_1Variables.html#a4746f16736abcf4c705dd8690ec12ca0", null ]
 ];

@@ -7,6 +7,5 @@
 <area shape="rect" id="node3" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="708,70,861,97"/>
 <area shape="rect" id="node5" href="$namespaceMackey_1_1internal.html#a34dd271be1fcbda4ca21877094697796" title="General expression for the canonical basis for firstrank box secondrank using the provided names." alt="" coords="473,92,660,133"/>
 <area shape="rect" id="node7" href="$namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B." alt="" coords="715,158,854,185"/>
-<area shape="rect" id="node9" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices." alt="" coords="515,213,619,239"/>
-<area shape="rect" id="node10" href="$namespaceMackey_1_1internal.html#a3ad5c7d43d4f8e63a3b6a8ec55f85dfa" title="Produces a nicer version of general canonical when used for triple products." alt="" coords="481,264,652,305"/>
+<area shape="rect" id="node9" href="$namespaceMackey_1_1internal.html#a3ad5c7d43d4f8e63a3b6a8ec55f85dfa" title="Produces a nicer version of general canonical when used for triple products." alt="" coords="481,209,652,251"/>
 </map>

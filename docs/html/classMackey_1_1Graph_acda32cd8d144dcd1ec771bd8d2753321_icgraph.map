@@ -1,4 +1,5 @@
 <map id="Mackey::Graph::computeWithSource" name="Mackey::Graph::computeWithSource">
-<area shape="rect" id="node1" title="Compute all paths using the given source." alt="" coords="276,5,489,47"/>
-<area shape="rect" id="node2" href="$classMackey_1_1Graph.html#a61d5b1d08f8efc54fdc639c66b5aeb70" title="Default implementation for graphs uses length=1 for all edges." alt="" coords="5,5,228,47"/>
+<area shape="rect" id="node1" title="Compute all paths using the given source." alt="" coords="264,35,477,76"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Graph.html#a61d5b1d08f8efc54fdc639c66b5aeb70" title="Default implementation for graphs uses length=1 for all edges." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a28ea49d917fa3784b3fb529932e2fede" title="Adjoins node names to graph to get it ready for printing." alt="" coords="33,71,189,98"/>
 </map>

@@ -1,5 +1,7 @@
 var classMackey_1_1Chains =
 [
+    [ "Chains", "classMackey_1_1Chains.html#ade226a800be59b53f1f1850e0753dbcb", null ],
+    [ "Chains", "classMackey_1_1Chains.html#a23e36ad0f810adeecad83b87b7034335", null ],
     [ "dualize", "classMackey_1_1Chains.html#a199843c84295e6755a41cf80ed0db7fd", null ],
     [ "dualize", "classMackey_1_1Chains.html#a9aa778859604adb53977935b03caa5a5", null ],
     [ "diff", "classMackey_1_1Chains.html#a9ccee2cbb3daa1e82bab920aeef59516", null ],

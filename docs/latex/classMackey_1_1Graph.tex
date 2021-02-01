@@ -7,12 +7,11 @@ A directed \mbox{\hyperlink{classMackey_1_1Graph}{Graph}}.
 
 
 
-{\ttfamily \#include $<$Graph.\+h$>$}
+{\ttfamily \#include $<$S\+F\+I\+N\+A\+E.\+h$>$}
 
 
 
-Inheritance diagram for Mackey\+::Graph$<$ T $>$\+:
-\nopagebreak
+Inheritance diagram for Mackey\+::Graph$<$ T $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,16 +25,14 @@ Inheritance diagram for Mackey\+::Graph$<$ T $>$\+:
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classMackey_1_1Graph_a4f0ca7cec28645835bbad29b8c00992c}{Graph}} (const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&\mbox{\hyperlink{classMackey_1_1Graph_a729ec24b9f9e504f4c4e2d3f6e2cab83}{edges}})
 \begin{DoxyCompactList}\small\item\em Construct given the edges of the graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename S $>$ }\\\mbox{\hyperlink{classMackey_1_1Graph_ac0ce100e64d094d785dec9d500761ac9}{Graph}} (const \mbox{\hyperlink{classMackey_1_1Graph}{Graph}}$<$ S $>$ \&G)
+\begin{DoxyCompactList}\small\item\em Construct from a graph with different template. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMackey_1_1Graph_acda32cd8d144dcd1ec771bd8d2753321}{compute\+With\+Source}} (int givensource)
 \begin{DoxyCompactList}\small\item\em Compute all paths using the given source. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMackey_1_1Graph_a939a62200b14892ba33a389363cd5f5e}{compute\+\_\+disconnected}} (int limit)
 \begin{DoxyCompactList}\small\item\em Compute the disconnected nodes up to a certain node. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMackey_1_1Graph_ab4042a555abac8c9c2009f07fbdbb4d5}{compute\+\_\+disconnected}} ()
 \begin{DoxyCompactList}\small\item\em Compute all disconnected nodes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classMackey_1_1Graph_ab88d38f2fa1822d415ce7dac272b32dc}{draw}} ()
-\begin{DoxyCompactList}\small\item\em Writes a graph.\+dot file representing the graph. The nodes are unnamed. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classMackey_1_1Graph_a63aa485ca7838f3dc66da1749e09cd84}{draw}} (const std\+::vector$<$ std\+::string $>$ \&)
-\begin{DoxyCompactList}\small\item\em Writes a graph.\+dot file representing the graph using node names. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMackey_1_1Graph_a61d5b1d08f8efc54fdc639c66b5aeb70}{compute\+Path\+\_\+default}} ()
 \begin{DoxyCompactList}\small\item\em Default implementation for graphs uses length=1 for all edges. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMackey_1_1Graph_a69d21bdddbb76aa562aa9f60a84c4b10}{clear}} ()
@@ -74,7 +71,7 @@ This is a general class that can only be used by inheriting from it. T is the ty
 \mbox{\Hypertarget{classMackey_1_1Graph_a910e6687de1a1a90df5b656e3c850a01}\label{classMackey_1_1Graph_a910e6687de1a1a90df5b656e3c850a01}} 
 \index{Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}!Graph@{Graph}}
 \index{Graph@{Graph}!Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename T  = void$>$ \\
 \mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::\mbox{\hyperlink{classMackey_1_1Graph}{Graph}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -85,13 +82,25 @@ Default constructor.
 \mbox{\Hypertarget{classMackey_1_1Graph_a4f0ca7cec28645835bbad29b8c00992c}\label{classMackey_1_1Graph_a4f0ca7cec28645835bbad29b8c00992c}} 
 \index{Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}!Graph@{Graph}}
 \index{Graph@{Graph}!Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename T  = void$>$ \\
 \mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::\mbox{\hyperlink{classMackey_1_1Graph}{Graph}} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{edges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Construct given the edges of the graph. 
+
+\mbox{\Hypertarget{classMackey_1_1Graph_ac0ce100e64d094d785dec9d500761ac9}\label{classMackey_1_1Graph_ac0ce100e64d094d785dec9d500761ac9}} 
+\index{Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}!Graph@{Graph}}
+\index{Graph@{Graph}!Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T  = void$>$ \\
+template$<$typename S $>$ \\
+\mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::\mbox{\hyperlink{classMackey_1_1Graph}{Graph}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMackey_1_1Graph}{Graph}}$<$ S $>$ \&}]{G }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct from a graph with different template. 
 
 
 
@@ -107,6 +116,13 @@ void \mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::clea
 
 Clears distances and initializes. 
 
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Graph_a69d21bdddbb76aa562aa9f60a84c4b10_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Graph_ab4042a555abac8c9c2009f07fbdbb4d5}\label{classMackey_1_1Graph_ab4042a555abac8c9c2009f07fbdbb4d5}} 
 \index{Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}!compute\_disconnected@{compute\_disconnected}}
 \index{compute\_disconnected@{compute\_disconnected}!Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}}
@@ -118,8 +134,7 @@ void \mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::comp
 
 Compute all disconnected nodes. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -148,6 +163,13 @@ void \mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::comp
 
 Default implementation for graphs uses length=1 for all edges. 
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1Graph_a61d5b1d08f8efc54fdc639c66b5aeb70_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMackey_1_1Graph_acda32cd8d144dcd1ec771bd8d2753321}\label{classMackey_1_1Graph_acda32cd8d144dcd1ec771bd8d2753321}} 
 \index{Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}!computeWithSource@{computeWithSource}}
 \index{computeWithSource@{computeWithSource}!Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}}
@@ -159,36 +181,13 @@ void \mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::comp
 
 Compute all paths using the given source. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMackey_1_1Graph_acda32cd8d144dcd1ec771bd8d2753321_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMackey_1_1Graph_ab88d38f2fa1822d415ce7dac272b32dc}\label{classMackey_1_1Graph_ab88d38f2fa1822d415ce7dac272b32dc}} 
-\index{Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}!draw@{draw}}
-\index{draw@{draw}!Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::draw}
-
-
-
-Writes a graph.\+dot file representing the graph. The nodes are unnamed. 
-
-\mbox{\Hypertarget{classMackey_1_1Graph_a63aa485ca7838f3dc66da1749e09cd84}\label{classMackey_1_1Graph_a63aa485ca7838f3dc66da1749e09cd84}} 
-\index{Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}!draw@{draw}}
-\index{draw@{draw}!Mackey::Graph$<$ T $>$@{Mackey::Graph$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classMackey_1_1Graph}{Mackey\+::\+Graph}}$<$ T $>$\+::draw (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{names }\end{DoxyParamCaption})}
-
-
-
-Writes a graph.\+dot file representing the graph using node names. 
-
 
 
 \doxysubsection{Member Data Documentation}
@@ -271,6 +270,7 @@ A source of the graph.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Mackey/\mbox{\hyperlink{Graph_8h}{Graph.\+h}}\end{DoxyCompactItemize}
+source/\+Types/\mbox{\hyperlink{SFINAE_8h}{S\+F\+I\+N\+A\+E.\+h}}\item 
+source/\+Utility/\mbox{\hyperlink{Graph_8h}{Graph.\+h}}\end{DoxyCompactItemize}

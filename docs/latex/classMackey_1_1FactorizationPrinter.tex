@@ -1,0 +1,111 @@
+\hypertarget{classMackey_1_1FactorizationPrinter}{}\doxysection{Mackey\+::Factorization\+Printer$<$ rank\+\_\+t, diff\+\_\+t $>$ Class Template Reference}
+\label{classMackey_1_1FactorizationPrinter}\index{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}}
+
+
+Class that facilitates printing of all factorizations produced by \mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}}.  
+
+
+
+
+{\ttfamily \#include $<$Factorization.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMackey_1_1FactorizationPrinter_a304b2cf9bd5b83dfffd1260336bc9602}{Factorization\+Printer}} (const \mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&F)
+\begin{DoxyCompactList}\small\item\em Constructor taking factorization object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMackey_1_1FactorizationPrinter_a154d537ab3dd931bec0466526d4e6e50}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns factorization of i-\/th generator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMackey_1_1FactorizationPrinter_ab2e2d7b95e330acac34d08d5bbcb916a}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of all generators. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classMackey_1_1FactorizationPrinter_ad3b6dea2c45c067d5f60c63dcdafee8e}{getdegree}} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns the degree of the i-\/th generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename rank\+\_\+t, typename diff\+\_\+t$>$\newline
+class Mackey\+::\+Factorization\+Printer$<$ rank\+\_\+t, diff\+\_\+t $>$}
+
+Class that facilitates printing of all factorizations produced by \mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMackey_1_1FactorizationPrinter_a304b2cf9bd5b83dfffd1260336bc9602}\label{classMackey_1_1FactorizationPrinter_a304b2cf9bd5b83dfffd1260336bc9602}} 
+\index{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}!FactorizationPrinter@{FactorizationPrinter}}
+\index{FactorizationPrinter@{FactorizationPrinter}!Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{FactorizationPrinter()}{FactorizationPrinter()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+\mbox{\hyperlink{classMackey_1_1FactorizationPrinter}{Mackey\+::\+Factorization\+Printer}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::\mbox{\hyperlink{classMackey_1_1FactorizationPrinter}{Factorization\+Printer}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMackey_1_1Factorization}{Factorization}}$<$ rank\+\_\+t, diff\+\_\+t $>$ \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor taking factorization object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMackey_1_1FactorizationPrinter_ad3b6dea2c45c067d5f60c63dcdafee8e}\label{classMackey_1_1FactorizationPrinter_ad3b6dea2c45c067d5f60c63dcdafee8e}} 
+\index{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}!getdegree@{getdegree}}
+\index{getdegree@{getdegree}!Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{getdegree()}{getdegree()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+std\+::vector$<$int$>$ \mbox{\hyperlink{classMackey_1_1FactorizationPrinter}{Mackey\+::\+Factorization\+Printer}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::getdegree (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the degree of the i-\/th generator. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1FactorizationPrinter_ad3b6dea2c45c067d5f60c63dcdafee8e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1FactorizationPrinter_ad3b6dea2c45c067d5f60c63dcdafee8e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1FactorizationPrinter_a154d537ab3dd931bec0466526d4e6e50}\label{classMackey_1_1FactorizationPrinter_a154d537ab3dd931bec0466526d4e6e50}} 
+\index{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+std\+::string \mbox{\hyperlink{classMackey_1_1FactorizationPrinter}{Mackey\+::\+Factorization\+Printer}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns factorization of i-\/th generator. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1FactorizationPrinter_a154d537ab3dd931bec0466526d4e6e50_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMackey_1_1FactorizationPrinter_ab2e2d7b95e330acac34d08d5bbcb916a}\label{classMackey_1_1FactorizationPrinter_ab2e2d7b95e330acac34d08d5bbcb916a}} 
+\index{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}!size@{size}}
+\index{size@{size}!Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$@{Mackey::FactorizationPrinter$<$ rank\_t, diff\_t $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename rank\+\_\+t , typename diff\+\_\+t $>$ \\
+int \mbox{\hyperlink{classMackey_1_1FactorizationPrinter}{Mackey\+::\+Factorization\+Printer}}$<$ rank\+\_\+t, diff\+\_\+t $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of all generators. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMackey_1_1FactorizationPrinter_ab2e2d7b95e330acac34d08d5bbcb916a_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/\mbox{\hyperlink{Factorization_8h}{Factorization.\+h}}\end{DoxyCompactItemize}

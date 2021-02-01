@@ -261,7 +261,7 @@ namespace Mackey {
 		return names;
 	}
 
-	///Class that facilitates printing of all factorizations
+	///Class that facilitates printing of all factorizations produced by Factorization
 	template<typename rank_t, typename diff_t>
 	class FactorizationPrinter {
 		const Factorization<rank_t, diff_t>& F; 

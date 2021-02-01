@@ -2,6 +2,9 @@
 <area shape="rect" id="node1" title=" " alt="" coords="5,49,192,90"/>
 <area shape="rect" id="node2" href="$namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i." alt="" coords="260,5,364,32"/>
 <area shape="rect" id="node3" href="$namespaceMackey.html#a8e17fb4ada60b950c8f4efe273b23783" title=" " alt="" coords="251,56,373,83"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="240,107,384,133"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="432,56,585,83"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples." alt="" coords="240,107,384,133"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="445,56,599,83"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93" title="Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1." alt="" coords="432,107,612,133"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="465,157,579,184"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="660,157,763,184"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="Mackey::id_candidates" name="Mackey::id_candidates">
 <area shape="rect" id="node1" title="Use the ID data to identify all possible candidates for an element." alt="" coords="5,42,175,69"/>
 <area shape="rect" id="node2" href="$classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data." alt="" coords="223,5,388,47"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="233,71,377,98"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables." alt="" coords="436,5,613,47"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples." alt="" coords="233,71,377,98"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables." alt="" coords="437,5,615,47"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93" title="Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1." alt="" coords="436,71,616,98"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="469,122,583,149"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="664,122,767,149"/>
 </map>

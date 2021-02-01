@@ -11,7 +11,7 @@
 
 ///Contains everything that's group specific and needs to be set manually by the user.
 namespace GroupSpecific {
-	///The global variables
+	///The global variables for the group.
 	class Variables {
 	public:
 		const static int prime; ///< If G=C_p^n then prime=p
@@ -20,7 +20,7 @@ namespace GroupSpecific {
 		const static std::vector<int> sphere_dimensions; ///< The dimensions of the representations of the group (the order has to be fixed beforehand)
 	};
 
-	///The function for the Chains up to a given index corresponding to non-virtual representations.
+	///The function computing the standard chains.
 	template<typename rank_t, typename diff_t, typename deg_t>
 	class Function {
 	public:

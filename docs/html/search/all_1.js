@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['basicirr_5fnames_14',['basicIrr_names',['../classMackey_1_1Factorization.html#aafee5aadae0d83b75741e0e8c2955625',1,'Mackey::Factorization']]],
+  ['basicirr_5fnames_14',['basicIrr_names',['../classMackey_1_1Factorization.html#a9b42ad832ad2b70f44d79cef15450244',1,'Mackey::Factorization']]],
   ['basicirreducibles_15',['basicIrreducibles',['../classMackey_1_1MultiplicationTable.html#af6896ea01c087e71533de423d7cf65ac',1,'Mackey::MultiplicationTable']]],
   ['basis_16',['basis',['../classMackey_1_1Massey.html#ab738306412d735a31df4913c20948d65',1,'Mackey::Massey::basis()'],['../classMackey_1_1Homology.html#a2e6fb6da3abdba934a1eb2f4236623cb',1,'Mackey::Homology::basis()']]],
   ['basiselement_17',['basisElement',['../namespaceMackey.html#ac2e368bf7d802f2fc47e39a71a5a1630',1,'Mackey::basisElement(int length, int position, int multiple)'],['../namespaceMackey.html#aa10c6cbea565e024a38b446139800b69',1,'Mackey::basisElement(int length, int position)']]],
@@ -8,7 +8,7 @@ var searchData=
   ['boundary_19',['boundary',['../classMackey_1_1Homology.html#aeb3cbf5cc7cb166e8e0a552dda57d05b',1,'Mackey::Homology']]],
   ['boundarycd_20',['boundaryCD',['../structMackey_1_1internal_1_1MasseyCompute.html#ae73d81de6ef0e42d6e99167b4b924066',1,'Mackey::internal::MasseyCompute']]],
   ['boundaryde_21',['boundaryDE',['../structMackey_1_1internal_1_1MasseyCompute.html#a67f05249c07ab70c3425ed3b2202a5f7',1,'Mackey::internal::MasseyCompute']]],
-  ['box_22',['Box',['../structMackey_1_1internal_1_1MasseyCompute.html#a3acf6b003570f2f6a7b35b960cdb349c',1,'Mackey::internal::MasseyCompute::Box()'],['../structMackey_1_1internal_1_1MasseyCompute.html#aff177659d2dbcd9c3fe9d644d55141ca',1,'Mackey::internal::MasseyCompute::box()'],['../namespaceMackey.html#add5b60c8e734df2be261106e0c719f82',1,'Mackey::Box(const Chains&lt; rank_t, diff_t &gt; &amp;C, const Chains&lt; rank_t, diff_t &gt; &amp;D, int i)'],['../namespaceMackey.html#a72abbe3708c4e77936c8cc42fbc6753a',1,'Mackey::Box(const Chains&lt; rank_t, diff_t &gt; &amp;C, const Chains&lt; rank_t, diff_t &gt; &amp;D)']]],
+  ['box_22',['box',['../structMackey_1_1internal_1_1MasseyCompute.html#aff177659d2dbcd9c3fe9d644d55141ca',1,'Mackey::internal::MasseyCompute::box()'],['../structMackey_1_1internal_1_1MasseyCompute.html#a3acf6b003570f2f6a7b35b960cdb349c',1,'Mackey::internal::MasseyCompute::Box()'],['../namespaceMackey.html#add5b60c8e734df2be261106e0c719f82',1,'Mackey::Box(const Chains&lt; rank_t, diff_t &gt; &amp;C, const Chains&lt; rank_t, diff_t &gt; &amp;D, int i)'],['../namespaceMackey.html#a72abbe3708c4e77936c8cc42fbc6753a',1,'Mackey::Box(const Chains&lt; rank_t, diff_t &gt; &amp;C, const Chains&lt; rank_t, diff_t &gt; &amp;D)']]],
   ['box_2eh_23',['Box.h',['../Box_8h.html',1,'']]],
   ['box_5fboundary_24',['box_boundary',['../structMackey_1_1internal_1_1MasseyCompute.html#aa62c7436a98f7be7105e6ab0157cb431',1,'Mackey::internal::MasseyCompute']]],
   ['box_5fpermutation_25',['box_permutation',['../namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491',1,'Mackey::internal']]],

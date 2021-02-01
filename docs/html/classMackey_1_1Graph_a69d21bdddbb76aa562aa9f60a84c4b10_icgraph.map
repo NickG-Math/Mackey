@@ -1,6 +1,4 @@
 <map id="Mackey::Graph::clear" name="Mackey::Graph::clear">
-<area shape="rect" id="node2" href="$classMackey_1_1Graph.html#ab4042a555abac8c9c2009f07fbdbb4d5" title="Compute all disconnected nodes. " alt="" coords="200,5,403,47"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MultiplicationGraphIdentify.html#a5c945ebff968abe788e22b025b2455ed" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="208,71,395,112"/>
-<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#a9828268663049b5ac2668d4eb0bdd4ff" title="Uses triple box products to possibly identify the given generators. " alt="" coords="451,37,601,79"/>
-<area shape="rect" id="node5" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="451,103,601,144"/>
+<area shape="rect" id="node1" title="Clears distances and initializes." alt="" coords="209,5,368,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a28ea49d917fa3784b3fb529932e2fede" title="Adjoins node names to graph to get it ready for printing." alt="" coords="5,5,161,32"/>
 </map>

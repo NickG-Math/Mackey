@@ -1,7 +1,7 @@
 var searchData=
 [
   ['d_59',['D',['../structMackey_1_1internal_1_1MasseyCompute.html#acbd4ef932d4b9e531bdd8036ee58a2da',1,'Mackey::internal::MasseyCompute']]],
-  ['degree_60',['degree',['../classMackey_1_1Polynomial.html#a3f55b12a6eee67da2f55e87b97f06349',1,'Mackey::Polynomial::degree()'],['../classMackey_1_1MultiplicationTable.html#a9a0d2a2d8561e378e08fcf4929df2cf6',1,'Mackey::MultiplicationTable::degree()']]],
+  ['degree_60',['degree',['../classMackey_1_1MultiplicationTable.html#a9a0d2a2d8561e378e08fcf4929df2cf6',1,'Mackey::MultiplicationTable']]],
   ['degreec_61',['degreeC',['../structMackey_1_1internal_1_1MasseyCompute.html#a781c9bcba41136ec6597416f3b6f07b5',1,'Mackey::internal::MasseyCompute']]],
   ['degreeconstruction_62',['DegreeConstruction',['../namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972',1,'Mackey']]],
   ['degreed_63',['degreeD',['../structMackey_1_1internal_1_1MasseyCompute.html#a7a7ca10ed59466e28fe8c164ff16e3dc',1,'Mackey::internal::MasseyCompute']]],
@@ -17,10 +17,8 @@ var searchData=
   ['disconnected_73',['disconnected',['../classMackey_1_1Graph.html#a1ac2413768ead078e79b8f1c96d815e5',1,'Mackey::Graph']]],
   ['distance_74',['distance',['../classMackey_1_1Graph.html#a0de605e2b229c560932e8cb5a2866339',1,'Mackey::Graph']]],
   ['distinguish_75',['distinguish',['../namespaceMackey.html#a281b9be315d7d51c7e691d4c733ac0c9',1,'Mackey']]],
-  ['divide_76',['divide',['../namespaceMackey.html#a04fadcf186ab504cafeb259178ee4827',1,'Mackey']]],
-  ['doc_2emd_77',['Doc.md',['../Doc_8md.html',1,'']]],
-  ['dontmodout_78',['dontModOut',['../classMackey_1_1Homology.html#a12fe9d461d594721ad6985629e3f50f2',1,'Mackey::Homology']]],
-  ['draw_79',['draw',['../classMackey_1_1Graph.html#ab88d38f2fa1822d415ce7dac272b32dc',1,'Mackey::Graph::draw()'],['../classMackey_1_1Graph.html#a63aa485ca7838f3dc66da1749e09cd84',1,'Mackey::Graph::draw(const std::vector&lt; std::string &gt; &amp;)'],['../classMackey_1_1ColoredGraph.html#a8ed05073805b34a0087a7ed94e889694',1,'Mackey::ColoredGraph::draw()'],['../classMackey_1_1ColoredGraph.html#a912a6e5cb94386d9ff6510e968b41e7d',1,'Mackey::ColoredGraph::draw(const std::vector&lt; std::string &gt; &amp;)'],['../classMackey_1_1ColoredGraph.html#a88cde9e3cc3bfb72409142ac6705b474',1,'Mackey::ColoredGraph::draw(const std::vector&lt; std::string &gt; &amp;, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;, std::vector&lt; std::string &gt; &amp;)']]],
-  ['dualize_80',['dualize',['../classMackey_1_1Chains.html#a9aa778859604adb53977935b03caa5a5',1,'Mackey::Chains::dualize(int k)'],['../classMackey_1_1Chains.html#a199843c84295e6755a41cf80ed0db7fd',1,'Mackey::Chains::dualize()']]],
-  ['dummy_5fprecision_81',['dummy_precision',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a75bda6fb36d6d253deba3310e9c5ed10',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
+  ['doc_2emd_76',['Doc.md',['../Doc_8md.html',1,'']]],
+  ['dontmodout_77',['dontModOut',['../classMackey_1_1Homology.html#a12fe9d461d594721ad6985629e3f50f2',1,'Mackey::Homology']]],
+  ['dualize_78',['dualize',['../classMackey_1_1Chains.html#a9aa778859604adb53977935b03caa5a5',1,'Mackey::Chains::dualize(int k)'],['../classMackey_1_1Chains.html#a199843c84295e6755a41cf80ed0db7fd',1,'Mackey::Chains::dualize()']]],
+  ['dummy_5fprecision_79',['dummy_precision',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a75bda6fb36d6d253deba3310e9c5ed10',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
 ];

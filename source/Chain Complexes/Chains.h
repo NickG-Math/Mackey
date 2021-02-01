@@ -7,7 +7,7 @@
 namespace Mackey {
 
 	/////////////////////////////////
-	/// A Chain complex.
+	/// A chain complex.
 
 	/// Our chain complexes are always indexed as C[maxindex]--->C[0].
 	/////////////////////////////////

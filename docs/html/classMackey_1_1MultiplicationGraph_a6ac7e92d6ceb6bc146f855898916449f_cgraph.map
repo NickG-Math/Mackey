@@ -2,4 +2,5 @@
 <area shape="rect" id="node1" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]." alt="" coords="5,5,212,47"/>
 <area shape="rect" id="node2" href="$namespaceMackey.html#af70b0c547f7121b8815885dfebde67d9" title="Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!..." alt="" coords="260,13,403,39"/>
 <area shape="rect" id="node3" href="$namespaceMackey.html#a1b3e66989e89c8b97d113d8eec0b47b8" title="Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group...." alt="" coords="451,13,561,39"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Homology.html#aeb3cbf5cc7cb166e8e0a552dda57d05b" title="Given an x that is a boundary returns a y s.t. dy=x." alt="" coords="609,13,824,39"/>
 </map>

@@ -348,7 +348,9 @@ namespace Mackey {
 	template<typename graph_t, typename node_names_t = void>
 	struct GraphPrinter {
 		const graph_t& graph; ///<Reference to the graph to be printed
-		const node_names_t* const node_names; ///<Pointer to the names of the nodes. This can be either nullptr with type void or not nullptr and not type void
+		const node_names_t* const node_names; ///<Pointer to the names of the nodes. This can be either nullptr with type void or not nullptr and type not void
+		
+		///Constructor with graph and optionally node names
 		GraphPrinter(const graph_t& graph, const node_names_t* const node_names = nullptr)
 			: graph(graph), node_names(node_names) {}
 	};
@@ -359,7 +361,7 @@ namespace Mackey {
 		return GraphPrinter<graph_t, node_names_t>(G, &node_names);
 	}
 
-	///Prints graph in graphviz format with named nodes if provided
+	///Prints graph in .dot format with named nodes if provided
 	template<typename graph_t, typename node_names_t >
 	std::ostream& operator<<(std::ostream& os, const GraphPrinter<graph_t, node_names_t>& GP) {
 		os << "digraph G{ \n";
@@ -382,7 +384,7 @@ namespace Mackey {
 		return os;
 	}
 
-	/// Prints the graph in the Graphviz format with unnamed nodes.
+	/// Prints the graph in .dot format with unnamed nodes.
 	template<typename graph_t>
 	typename std::enable_if_t<SFINAE::is_graph_t<graph_t>::value, std::ostream&> operator<<(std::ostream& os, const graph_t& G) {
 		os << GraphPrinter<graph_t>(G);

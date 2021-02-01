@@ -1,9 +1,9 @@
 \mainpage General Information
 \tableofcontents
  \section intro Introduction
-This is a C++ header only library devoted to numerically computing the \f$RO(G)\f$ homology of a point. You can find the GitHub repository <a href="https://github.com/NickG-Math/Mackey">here</a>.
+This is a C++ header only library devoted to numerically computing \f$RO(G)\f$ homology. You can find the GitHub repository <a href="https://github.com/NickG-Math/Mackey">here</a>.
 
-For a quick demonstration in the case of \f$G=C_4\f$, use one of the available binaries <a href="https://github.com/NickG-Math/Mackey/tree/master/bin">here</a>.
+For a quick demonstration in the case of \f$G=C_4\f$, use one of the available binaries in the "Releases" section of the repository
 
 
 \section req Requirements
@@ -22,20 +22,18 @@ You will also need to include Eigen and, if serialization is desired, cereal.
 
 * See the page \ref use for a tutorial on using the library.
 
-* As for compiler support, the latest version of the code is always tested with the latest stable versions of Clang (Linux) and MSVC (Windows). 
-Much less frequently, testing is performed with GCC (Linux), Clang on MacOS and the Intel Compiler (Linux and Windows).
+* As for compiler support, the latest version of the code is always tested with the latest stable versions of Clang, GCC (Linux) and MSVC (Windows). 
 Remember to use the option ```-std=c++17```. For more information on compiler options, see the \ref perf page.
 
 \section status Current Status
 
 * The project is almost complete for \f$G\f$ a cyclic group of prime power order. 
-The only input that's needed are the equivariant chains at the bottom level for the spheres corresponding to actual (as opposed to virtual) representations; we call these "standard chains". 
+The only input that's needed are the bottom level equivariant chains for the spheres corresponding to actual (as opposed to virtual) representations; we call these "standard chains". 
 The standard chains can be easily computed from geometric equivariant decompositions by hand, and then fed into the program as explained in \ref how. We have implemented this for all groups \f$G=C_{2^n}\f$.
 
 * Frobenius relations are yet to be implemented: The multiplicative structure is computed levelwise, but this could be done more effectively using the Frobenius relations. 
 
-* For general cyclic groups a few aspects that involve transferring need reworking. 
-The problem is that non prime-power cyclic groups the diagram of subgroups is not a vertical tower but a somewhat more complicated diagram, 
+* For general cyclic groups a few aspects that involve transferring need reworking. For non-prime-power cyclic groups, the subgroup diagram is not a vertical tower but a somewhat more complicated diagram, 
 so care has to be taken to account for all these extra transfers and restrictions. 
 Ultimately this is the only part that needs changing.
 
@@ -72,11 +70,10 @@ The higher levels are obtained by taking fixed points under the Weyl group actio
 This is how box products of chain complexes of free Mackey functors are computed.
 
 These three ideas dictate our approach: 
-We start with the standard chains (the chains for spheres $S^V$ where $V$ is a non-virtual $G$-rep) on the bottom level, and box them to get the bottom levels of chains
-for any $S^V$ where $V$ is a virtual representation.
-Using the transfer we can get the higher level chains, from which the homology groups in every level are computed separately.
-Generators for these homology groups are lifted to the chain level, where we can compute the transfer/restriction/Weyl group action on them.
-Finally, by reducing to homology, the transfer/restriction/Weyl group action maps are computed on homology. This determines the Mackey functor structure of the homology of $S^V$.
+We start with the standard chains (the chains for spheres \f$S^V\f$ where \f$V\f$ is an actual, as opposed to virtual, real \f$G\f$-rep) on the bottom level, and box them to get the bottom level chains
+for any \f$S^V\f$ where \f$V\f$ is any virtual representation.
+By transferring we get the higher level chains, from which the homology groups are computed level-wise.
+The generators for these homology groups are defined on the chain level, where we can compute the transfer/restriction/Weyl group action on them. This means that we can compute the transfer/restriction/Weyl group action maps on homology, thus determining the Mackey functor structure of \f$H_*(S^V)\f$.
 
 By converting all our differentials to matrices, using equivariant bases throughout, we can reduce our computations to pure linear algebra (over the integers, or other coefficients).
 
@@ -89,9 +86,9 @@ Here's how the code works in more detail (for simplicity we specialize to the \f
 
 * The inputs are the bottom levels of the standard chains, namely the chains of the spheres \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$. It actually suffices to only use \f$S^{\sigma},S^{\lambda}\f$ as inputs and then obtain every other sphere
 as iterated smash products of these, but this would result in taking arbitrarily many box products and incur a huge performance penalty. 
-Instead, if we use the spheres  \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$ we only have to take double box products at worst, and that's only for part of the multiplicative structure (see below).
+Instead, if we use the spheres  \f$S^{n\sigma+m\lambda}\f$ for \f$n,m\ge 0\f$ as inputs, we only have to take double box products at worst, and that's only for part of the multiplicative structure (see below).
 
-* The data of a chain complex are the ranks (dimensions of the free modules) and differentials of the each level. 
+* The data of a chain complex are the ranks of each \f$C_*\f$ and the differentials \f$d:C_*\to C_{*-1}\f$. 
 The differentials are stored as matrices and the ranks are stored as integer arrays. Integer arrays and not integers are used in order to record the equivariant information: 
 For example \f$\mathbb Z[C_4]\f$ is different from \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ even though they both have rank \f$4=2+2\f$ over \f$\mathbb Z\f$. 
 With our conventions, \f$\mathbb Z[C_2]\oplus \mathbb Z[C_2]\f$ has rank \f$[2,2]\f$ while \f$\mathbb Z[C_4]\f$ has rank \f$4\f$.
@@ -105,31 +102,30 @@ While transferring ranks is straightforward, transferring differentials is quite
 (if \f$n,m<0\f$ we take the dual chain complex, which has the effect of transposing all matrices for the differentials).
 
 * To obtain the chains of any representation sphere, we box the standard chains. Boxing is more complicated compared to just taking tensor products, as we have to use equivariant bases throughout to transfer properly.
-However the most convenient bases for tensoring (lexicographical) are not equivariant, and in the end we have to change bases through permutation matrices.
+However the most convenient bases for tensoring (the lexicographical ones) are not equivariant, and in the end we have to change bases through permutation matrices.
 
 * We then compute the homology of the boxed chains as above. 
 
-\subsection mack Universal Additive Notation
+\subsection mack "Universal" Additive Notation
 
 While a Mackey functor is determined by the groups, transfers, restrictions and Weyl group actions, it is desirable to have a 
-"universal notation" to concisely describe any Mackey functor. Here's the notation we use:
+"universal" notation to concisely describe any Mackey functor. Here's the notation we use:
 
-* First assume all levels are cyclic groups, and that in each transfer-restriction pair one map is multiplication by 2 and the other map is multiplication by 1.
-The notation \f$a_1...a_n \sharp b_1...b_m\f$ expresses a Mackey functor whose levels are \f$\mathbb Z/a_i\f$ if \f$a_i\neq 1\f$ and \f$\mathbb Z\f$ if \f$a_i=1\f$ and 
-whose transfers at levels \f$b_i\f$ are multiplication by 1 (the rest of the transfers are multiplication by \f$2\f$ by assumption). 
-The Weyl group action is then determined by the double coset formula.
+* First assume all levels are cyclic groups, and that in each transfer-restriction pair, one map is multiplication by 2 and the other map is multiplication by 1.
+The notation \f$a_1...a_n \sharp b_1...b_m\f$ expresses a Mackey functor whose levels are \f$\mathbb Z/a_i\f$ if \f$a_i\neq 1\f$ and \f$\mathbb Z\f$ if \f$a_i=1\f$, with the bottom level corresponding to \f$a_1\f$ and the top to \f$a_n\f$. Furthermore, the transfers between levels \f$b_i\to b_{i+1}\f$ are multiplication by 1 (the rest of the transfers are multiplication by \f$2\f$ by assumption). 
+The restrictions are computed by assumption, while the Weyl group actions are determined by the double coset formula.
 
-* \f$a_1...a_n \sharp b_1...b_m + c_1\...c_n\sharp d_1...d_l\f$ corresponds to the sum of Mackey functors of the above form. This generalizes to sums of more than 2 Mackey functors.
+* \f$a_1...a_n \sharp b_1...b_m + c_1...c_n\sharp d_1...d_l\f$ corresponds to the sum of Mackey functors of the above form. This generalizes to sums of more than 2 Mackey functors.
 
-* For \f$C_4\f$, every Mackey functor can be written as above. For \f$C_8\f$ there are three exceptional Mackey functors that don't fit in our "universal" notation and need special attention.
+* For \f$C_4\f$, every Mackey functor can be written as above. For \f$C_8\f$ and \f$\mathbb Z\f$ coefficients there are three exceptional Mackey functors that can't be expressed in our "universal" notation.
 
 \subsection iso Isomorphic Mackey Functors
 
-Isomorphic Mackey functors can have different forms in our universal notation above. 
+Isomorphic Mackey functors can have different "universal" notations. 
 To find if two different notations correspond to isomorphic Mackey functors (and are thus equivalent), it suffices to compute all different notations in each isomorphism class.
 
 * Given a Mackey functor \f$M\f$ we compute its isomorphism class as follows: First, for each level \f$M(G/H)\f$ we find all its (group) automorphisms \f$Aut(M(G/H))\f$.
-Choosing one automorphism for each \f$H\f$ gives a single automorphism of \f$M\f$ (as long as the level-wise choices commute with restrictions/transfers/Weyl group actions). 
+Choosing one automorphism for each \f$H\f$ gives a Mackey functor automorphism of \f$M\f$ (as long as the level-wise choices commute with restrictions/transfers/Weyl group actions). 
 In the end we get \f$Aut(M)\f$ and applying the automorphisms on \f$M\f$ returns the isomorphism class.
 
 * For finitely generated (abelian) groups with only one \f$\mathbb Z\f$ factor, there are only finitely many automorphisms and
@@ -147,7 +143,7 @@ Once we have the additive structure (the universal notation isn't needed for thi
 
 * We then compute \f$Res(a)Res(b)\f$ as an element of the box product of the two chain complexes on the bottom level.
 
-* \f$Res(a)Res(b)\f$ is the restriction of a unique element, \f$ab\f$ (since chains are free Mackey functors). By inverting the restriction we can get \f$ab\f$ as an element of the box product.
+* \f$Res(a)Res(b)\f$ is the restriction of a unique element, \f$ab\f$ (since our chains are free Mackey functors). By inverting the restriction we can get \f$ab\f$ as an element of the box product.
 
 * We finally write \f$ab\f$ in terms of the generators of the homology of the box product.
 
@@ -171,7 +167,7 @@ The factorization process performs this automatically:
 For the most efficient factorizations, we want to minimize the number of times we alternate between blue and red edges in each path (eg we prefer \f$b^2\f$ to \f$a(b/a)b\f$). 
 This is done by a modified Dikjstra algorithm.
 
-* For the generators not connected to 1 (eg \f$s_3\f$) we need to perform the same process using different sources for our graph (eg using \f$s_3\f$ as the source for all paths).
+* For the generators not connected to 1 (eg \f$s\f$) we need to perform the same process using different sources for our graph (eg using \f$s\f$ as the source for all paths).
 
 \subsection Mass Massey Products
 
@@ -209,7 +205,7 @@ If we have \f$\mathbb Z\oplus \mathbb Z/2\f$ with generators \f$x,y\f$ respectiv
 In that case the difference between \f$ab\f$ and \f$cd\f$ generating the same group can be greater than just an integer coprime to the group's order (or a sign).
 
 * For another example, when computing the \f$RO(C_4)\f$ homology in \f$\mathbb F_2\f$ coefficients the group \f$\mathbb F_2\oplus \mathbb F_2\f$ tends to appear frequently; 
-unfortunately the three generators cannot be distingusihed.
+unfortunately its three generators cannot be distingusihed.
 
 * One way out of this is to break down our box products further until they can be directly compared. Eg we can compare the chains for \f$S^{2\sigma+\lambda}\wedge S^{-\lambda}\f$ with those for
 \f$S^{\sigma+\lambda}\wedge S^{\sigma -\lambda}\f$ by using the chains for \f$S^{\sigma}\wedge S^{\sigma}\wedge S^{\lambda}\wedge S^{-\lambda}\f$ as an intermediate. 
@@ -296,7 +292,7 @@ The file ```Additive.h``` exposes the class \ref Mackey::AdditiveStructure "Addi
 
 <CODE> AdditiveStructure<rank_t,diff_t> A({-3,-4},{5,6}); </CODE>
 
-computes the homology of all spheres from \f$S^{-3\sigma-4\lambda}\f$ to \f$S^{5\sigma+6\lambda}\f$. To identify the Mackey functors in the "standard" notation
+computes the homology of all spheres from \f$S^{-3\sigma-4\lambda}\f$ to \f$S^{5\sigma+6\lambda}\f$. To identify the Mackey functors in the "universal" notation
 use
 
 <CODE> A.identify(); </CODE>
@@ -315,7 +311,7 @@ prints the answer in a user provided ```stream``` (eg you may pass ```std::cout`
 A.print_unique(stream);
  </CODE>
  
- For ```C_8``` there are three Mackey functors not covered by our "universal notation" and are thus named "unknown 0,...".
+ For \f$C_8\f$ there are three Mackey functors not covered by our "universal notation" and are thus named "unknown 0,...".
  To survey their Mackey functor structure use
  
   <CODE>
@@ -363,23 +359,29 @@ Then
 
 <CODE>F.compute_with_sources({{0,0,0}}, {"1"});</CODE>
 
-computes the factorizations by connecting every node in the multiplication graph to \f$1\f$ (if possible). To print the name of the \f$i\f$-th generator use:
+computes the factorizations by connecting every node in the multiplication graph to \f$1\f$ (if possible). To print the generator at degree \f$[3,1,0]\f$ use:
 
-<CODE>std::cout<< F.getname(i) </CODE>
+<CODE>std::cout<< F.getname({3,1,0}) </CODE>
 
-For example, to print all names of generators, use:
+To print the names of all generators use:
 
-<CODE>
-	for (int i = 0; i < F.size(); i++)
-		std::cout << F.getname(i) <<"\n";
-<CODE>
+<CODE>std::cout<< F.get_generators() </CODE>
 
+To print the multiplication graph to an ```std::ofstream file``` use:
 
-This name will be nonempty as long as the generator can be obtained by multiplying/dividing the basic irreducibles with ```1```. As such, it will fail for say ```s_3```. In that case instead use
+<CODE>file << F.getgraph() </CODE>
 
-<CODE>F.compute_with_sources({{0,0,0},{-3,0,-2}}, {"1","s3"});</CODE>
+or
 
-where now both \f$1\f$ and \f$s_3\f$ are used as sources.
+<CODE>file << (F.getgraph() << F.get_generators()) </CODE>
+
+if you want the generator names as labels for the nodes.
+
+Now a generator name will be nonempty (or not \f$?\f$) as long as the generator can be obtained by multiplying/dividing the basic irreducibles with ```1```. As such, it will fail for say ```s```. In that case instead use
+
+<CODE>F.compute_with_sources({{0,0,0},{-3,0,-2}}, {"1","s"});</CODE>
+
+where now both \f$1\f$ and \f$s\f$ are used as sources.
 
 If you see a ```NOT FOUND...``` then that may mean the basic identification was not enough to compute all products. You can then use
 
@@ -439,11 +441,11 @@ row/column elimination algorithm. To use the algorithm we need to be able to cho
 We have the freedom to choose it and there are (at least) three ways to do it:
 
 * Use the first nonzero element as pivot, and if a smaller nonzero element (in absolute value) appears during the elimination then switch to that.
-* Use the minimum (in absolute value) nonzero elemenent as pivot. If there are multiple choices, pick the first one as we iterate through the matrix.
+* Use the minimum (in absolute value) nonzero element as pivot. If there are multiple choices, pick the first one as we iterate through the matrix.
 * As above, but instead of picking the first minimum, choose it so that it minimizes a certain norm function.
 
 This norm function, called a Markowitz metric, can be for example
-\f$N(i,j)=|\{a_{is}\neq 0: s\}| + |a_{sj}\neq 0:s|\f$
+\f$N(i,j)=|\{a_{is}\neq 0: s\}| + |\{a_{sj}\neq 0:s\}|\f$
 
 One reason we are considering multiple pivoting choices is coefficient explosion: Even if the entries of the matrix are small (\f$\pm 1\f$),
 the entries of the Smith Normal Form (and especially those of the coefficient matrices) can easily overflow if we make the wrong choice of pivot.
@@ -457,7 +459,7 @@ But there is another reason to use the third option, and that's sparse matrices.
 When our matrices get large (7000 rows and columns) they are also very sparse (99.9% entries being 0) so we can make huge
 savings on memory (and potentially computational time) by using a sparse matrix format that only records the nonzero values.
 
-The usage of sparse matrices necessitates great care or performance will suffer:
+The usage of sparse matrices necessitates great care lest we incur severe performance costs :
 For example, insertions of nonzero elements and random access do not have constant complexity.
 
 As far as the Smith normal form is concerned, to have good performance with sparse matrices we need to minimize fill-in, which
@@ -478,20 +480,20 @@ Thus in total we have 4 Smith implementations:
 
 If we have bases for modules \f$A,B\f$ then \f$A\otimes B\f$ can be canonically given two lexicographical bases, that we call left and right convenient bases. 
 But if \f$A,B\f$ are the bottom levels of free Mackey functors then they have equivariant bases and the tensor product also gets an equivariant basis, called the canonical one. 
-The left and right convenient bases are used to write the left and right differentials in a simple manner (hence their designation as convenient). The canonical bases are used to transfer. To get the change of basis matrix, we are reduced to computing the permutation  \f$a^{-1}b\f$ where \f$a,b\f$ are two permutations of the same set.
+The left and right convenient bases are used to write the left and right differentials \f$L,R\f$ (see \ref box) in a simple manner (hence their designation as convenient). The canonical bases are needed to transfer however, so we compute the change of basis matrices from the convenient to the canonical bases. 
 
 \section box Box product
 
-Computing the tensor product of Chain complexes breaks down to computing the left and right differentials \f$L(x\otimes y)=dx\otimes y\f$ and \f$R(x\otimes y)=(-1)^{|x|}x\otimes dy\f$ respectively. If we use the convenient bases explained in the previous section, these are just block diagonal matrices with the blocks being the differential from the original chains \f$d\f$. To get \f$L,R\f$ w.r.t. the canonical bases, we need to apply the change of basis matrices. Once we do that the total differential of the tensor product is just \f$L+R\f$. To be more accurate, \f$L\f$ is not a single differential, but rather a sequence of them, one for each summand of the Box product; \f$(C\otimes D)_n\to (C\otimes D)_{n-1}\f$ is a map \f$C_n\otimes D_0\oplus\cdots \oplus C_0\otimes D_n\to C_0\otimes D_{n-1}\oplus\cdots\oplus C_{n-1}\otimes D_0\f$. Each summand of this map is computed separately into an \f$L\f$ and an \f$R\f$, and then these are mixed together to form the total differential. The mixing specifies that we start with a block \f$ L_0\f$, then place \f$ R_0\f$ directly below it, then \f$L_1\f$ adjecent to the right of \f$ R_0\f$ etc.
+Computing the tensor product of Chain complexes breaks down to computing the left and right differentials \f$L(x\otimes y)=dx\otimes y\f$ and \f$R(x\otimes y)=(-1)^{|x|}x\otimes dy\f$ respectively. If we use the convenient bases explained in the previous section, these are just block diagonal matrices with the blocks being the differentials \f$d,d'\f$ from the original chains. To get \f$L,R\f$ w.r.t. the canonical bases, we need to apply the change of basis matrices. Once we do that the total differential of the tensor product is just \f$L+R\f$. To be more accurate, \f$L\f$ is not a single differential, but rather a sequence of them, one for each summand of the Box product; \f$(C\otimes D)_n\to (C\otimes D)_{n-1}\f$ is a map \f$C_n\otimes D_0\oplus\cdots \oplus C_0\otimes D_n\to C_0\otimes D_{n-1}\oplus\cdots\oplus C_{n-1}\otimes D_0\f$. Each summand of this map is computed separately into an \f$L\f$ and an \f$R\f$, and then these are mixed together to form the total differential. The mixing specifies that we start with a block \f$ L_0\f$, then place \f$ R_0\f$ directly below it, then \f$L_1\f$ adjecent to the right of \f$ R_0\f$ etc.
 
 \section graph Graphs
 
-* For weighted graphs we want the shortest path from a given source to all other points. I use a straightforward implementation of Dikjstra's algorithm using std::priority_queue.
+* For weighted graphs we want the shortest path from a given source to all other points. That's done via a straightforward implementation of Dikjstra's algorithm using std::priority_queue.
 
 * For graphs of two colors, we are interested in the paths from the source to all points with the minimum numer of alternating colors (an alternation of colors means switching from division to multiplication and vice-versa). 
-This problem can be easily reduced to finding the shortest path for weighted graphs, by using a sort of "dual" graph where now the nodes are colored and the now monochrome edges between same colored nodes have weight 0, while for different colored nodes we get weight 1.
-To get the new graph simply duplicate the nodes of the original, color the originals by red and the new ones by blue, and quadruple the edges (so we using all combinations of colored nodes) and set the weights as I just explained.
-After that, find the red and blue paths starting from a red/blue source and ending to each point, compare them in length and choose the shortest one.
+This problem can be easily reduced to finding the shortest path for weighted graphs, by using a sort of "dual" graph where now the nodes are colored and the edges are monochrome. Edges between same colored nodes have weight 1, while for different colored nodes we get weight 2.
+To get the new graph simply duplicate the nodes of the original, color the originals by red and the new ones by blue, and quadruple the edges (so we are using all combinations of colored nodes) and set the weights as explained.
+After that, find the red and blue paths starting from a red/blue source and ending at each point, compare them in length and choose the shortest one.
 
 
 \page perf Performance
@@ -523,11 +525,11 @@ First, two heuristic observations:
 * Dense matrices are usually faster than sparse matrices, as long as they don't get too large. For the few instances where matrix multiplication is used, linking against the 
 Intel MKL can also drastically improve performance with floating points (see below). 
 
-* When matrices do get large, sparse matrices not only offer better performance, but exremely significant savings in memory (30x and above). When triple box products are used combined with dense matrices and multithreading, memory usage can go up to 60GB, hitting the swap file making the program slow to a crawl. In that case we can see up to 20x speedup when using sparse matrices. The Intel MKL is not any faster than Eigen for sparse matrix multiplication.
+* When matrices do get large, sparse matrices not only offer better performance, but exremely significant savings in memory (30x and above). When triple box products are used in combination with dense matrices and multithreading, memory usage can go up to 60GB, hitting the swap file and slowing the program to a crawl. In that case we can see up to 20x speedup when using sparse matrices. The Intel MKL is not any faster than Eigen for sparse matrix multiplication.
 
 \section intvsfloat Integers vs Floats
 
-I use integers (or indeed ```char``` and ```short```) for the majority of the computations; that's usually the fastest method and makes the most sense (as all numbers appearing are actually integers).
+Er use integers (or indeed ```char``` and ```short```) for the majority of the computations; that's usually the fastest method and makes the most sense (as all numbers appearing are actually integers).
 There is one important exception: Dense matrix multiplication (and to a lesser extent matrix determinant). Eigen is much slower with integer matrix multiplication compared to floating points, and the Intel MKL does not even support integer matrix multiplication.
 So when we need to multiply matrices we cast them to floats. This is only needed for the Homology algorithm, which is at the very end of the pipeline (together with the Smith Normal Form) so we can benefit from smaller integer types before casting.
 

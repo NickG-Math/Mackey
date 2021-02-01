@@ -7,11 +7,9 @@ var hierarchy =
     ] ],
     [ "Mackey::internal::ChainsLevelGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ChainsLevelGen.html", null ],
     [ "Mackey::ChangeBasis< pScalar >", "classMackey_1_1ChangeBasis.html", null ],
+    [ "Mackey::FactorizationPrinter< rank_t, diff_t >", "classMackey_1_1FactorizationPrinter.html", null ],
     [ "GroupSpecific::Function< rank_t, diff_t, deg_t >", "classGroupSpecific_1_1Function.html", null ],
     [ "Mackey::Graph< T >", "classMackey_1_1Graph.html", [
-      [ "Mackey::WeightedGraph", "classMackey_1_1WeightedGraph.html", null ]
-    ] ],
-    [ "Mackey::Graph< ColoredGraph >", "classMackey_1_1Graph.html", [
       [ "Mackey::ColoredGraph", "classMackey_1_1ColoredGraph.html", [
         [ "Mackey::MultiplicationGraph< rank_t, diff_t >", "classMackey_1_1MultiplicationGraph.html", [
           [ "Mackey::MultiplicationGraphConnectivity< rank_t, diff_t >", "classMackey_1_1MultiplicationGraphConnectivity.html", null ],
@@ -21,8 +19,12 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "Mackey::Graph< ColoredGraph >", "classMackey_1_1Graph.html", null ],
     [ "Mackey::Graph< void >", "classMackey_1_1Graph.html", null ],
-    [ "Mackey::Graph< WeightedGraph >", "classMackey_1_1Graph.html", null ],
+    [ "Mackey::Graph< WeightedGraph >", "classMackey_1_1Graph.html", [
+      [ "Mackey::WeightedGraph", "classMackey_1_1WeightedGraph.html", null ]
+    ] ],
+    [ "Mackey::GraphPrinter< graph_t, node_names_t >", "structMackey_1_1GraphPrinter.html", null ],
     [ "Mackey::Green< rank_t, diff_t >", "classMackey_1_1Green.html", null ],
     [ "Mackey::internal::GreenCompute< rank_t, diff_t >", "classMackey_1_1internal_1_1GreenCompute.html", null ],
     [ "Mackey::Homology< rank_t, diff_t >", "classMackey_1_1Homology.html", null ],
@@ -39,7 +41,6 @@ var hierarchy =
       [ "Mackey::MultiplicationGraph< rank_t, diff_t >", "classMackey_1_1MultiplicationGraph.html", null ]
     ] ],
     [ "Eigen::NumTraits< Z< N > >", "structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html", null ],
-    [ "Mackey::Polynomial< T >", "classMackey_1_1Polynomial.html", null ],
     [ "Mackey::internal::ProductGen< rank_t, diff_t >", "classMackey_1_1internal_1_1ProductGen.html", null ],
     [ "Mackey::SFINAE", "structMackey_1_1SFINAE.html", null ],
     [ "Mackey::Smith< S_t, R_t, C_t >", "classMackey_1_1Smith.html", null ],

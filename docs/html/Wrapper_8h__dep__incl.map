@@ -1,14 +1,14 @@
-<map id="Mackey/Wrapper.h" name="Mackey/Wrapper.h">
-<area shape="rect" id="node1" title="Wraps group&#45;specific implementations into a general interface." alt="" coords="92,5,235,32"/>
-<area shape="rect" id="node2" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="98,80,229,107"/>
-<area shape="rect" id="node3" href="$Green_8h.html" title="Contains the class and methods for multiplying generators." alt="" coords="100,155,227,181"/>
-<area shape="rect" id="node4" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors." alt="" coords="73,304,219,331"/>
-<area shape="rect" id="node7" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table." alt="" coords="207,379,330,405"/>
-<area shape="rect" id="node12" href="$Massey_8h.html" title="Contains the class and methods for Massey Products." alt="" coords="95,229,231,256"/>
-<area shape="rect" id="node5" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="5,453,148,480"/>
-<area shape="rect" id="node6" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="69,692,223,719"/>
-<area shape="rect" id="node8" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="173,453,389,480"/>
-<area shape="rect" id="node9" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="115,528,319,569"/>
-<area shape="rect" id="node11" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="343,528,547,569"/>
-<area shape="rect" id="node10" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="131,617,303,644"/>
+<map id="source/Wrapper.h" name="source/Wrapper.h">
+<area shape="rect" id="node1" title="Wraps group&#45;specific implementations into a general interface." alt="" coords="92,5,227,32"/>
+<area shape="rect" id="node2" href="$Levels_8h.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="70,80,249,121"/>
+<area shape="rect" id="node3" href="$Green_8h.html" title="Contains the class and methods for multiplying generators." alt="" coords="69,169,249,196"/>
+<area shape="rect" id="node4" href="$Massey_8h.html" title="Contains the class and methods for Massey Products." alt="" coords="65,244,254,271"/>
+<area shape="rect" id="node5" href="$Compute_8h.html" title="Contains the computations for RO(G) Chains and Homology as Mackey and Green functors." alt="" coords="89,319,229,345"/>
+<area shape="rect" id="node6" href="$Additive_8h.html" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="5,490,140,517"/>
+<area shape="rect" id="node8" href="$Table_8h.html" title="Contains the class and methods to form the multiplication table." alt="" coords="155,393,307,435"/>
+<area shape="rect" id="node7" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="59,751,206,777"/>
+<area shape="rect" id="node9" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="164,483,331,524"/>
+<area shape="rect" id="node10" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="113,572,267,628"/>
+<area shape="rect" id="node12" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="291,572,446,628"/>
+<area shape="rect" id="node11" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="111,676,275,703"/>
 </map>

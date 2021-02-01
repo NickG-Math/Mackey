@@ -1,8 +1,8 @@
-<map id="Mackey/Table.h" name="Mackey/Table.h">
-<area shape="rect" id="node1" title="Contains the class and methods to form the multiplication table." alt="" coords="159,5,282,32"/>
-<area shape="rect" id="node2" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="113,80,329,107"/>
-<area shape="rect" id="node3" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="5,155,209,196"/>
-<area shape="rect" id="node6" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="233,155,437,196"/>
-<area shape="rect" id="node4" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="135,244,307,271"/>
-<area shape="rect" id="node5" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="143,319,298,345"/>
+<map id="source/Factorization/Table.h" name="source/Factorization/Table.h">
+<area shape="rect" id="node1" title="Contains the class and methods to form the multiplication table." alt="" coords="96,5,248,47"/>
+<area shape="rect" id="node2" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="89,95,255,136"/>
+<area shape="rect" id="node3" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="5,184,160,240"/>
+<area shape="rect" id="node6" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="184,184,339,240"/>
+<area shape="rect" id="node4" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="90,288,254,315"/>
+<area shape="rect" id="node5" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="99,363,245,389"/>
 </map>

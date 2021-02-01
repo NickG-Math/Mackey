@@ -1,12 +1,12 @@
-<map id="Mackey/Smith_Base.h" name="Mackey/Smith_Base.h">
-<area shape="rect" id="node1" title="Contains the base class for all Smith implementations." alt="" coords="89,5,254,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,68,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="92,80,155,107"/>
-<area shape="rect" id="node4" href="$Aliases_8h.html" title="Contains general template aliases." alt="" coords="179,80,260,107"/>
-<area shape="rect" id="node7" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks." alt="" coords="287,155,368,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="360,304,463,331"/>
-<area shape="rect" id="node6" title=" " alt="" coords="150,229,257,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="495,304,575,331"/>
-<area shape="rect" id="node9" title=" " alt="" coords="281,229,373,256"/>
-<area shape="rect" id="node10" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients." alt="" coords="449,229,507,256"/>
+<map id="source/Smith Normal Form/Smith_Base.h" name="source/Smith Normal Form/Smith_Base.h">
+<area shape="rect" id="node1" title="Contains the base class for all Smith implementations." alt="" coords="103,5,261,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,68,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="92,95,155,121"/>
+<area shape="rect" id="node4" href="$Aliases_8h.html" title="Contains general template aliases." alt="" coords="179,95,302,121"/>
+<area shape="rect" id="node7" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks." alt="" coords="315,169,396,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="388,319,491,345"/>
+<area shape="rect" id="node6" title=" " alt="" coords="178,244,285,271"/>
+<area shape="rect" id="node8" title=" " alt="" coords="563,319,643,345"/>
+<area shape="rect" id="node9" title=" " alt="" coords="309,244,401,271"/>
+<area shape="rect" id="node10" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients." alt="" coords="477,244,615,271"/>
 </map>

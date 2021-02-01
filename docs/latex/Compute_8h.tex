@@ -1,24 +1,20 @@
-\hypertarget{Compute_8h}{}\doxysection{Mackey/\+Compute.h File Reference}
-\label{Compute_8h}\index{Mackey/Compute.h@{Mackey/Compute.h}}
+\hypertarget{Compute_8h}{}\doxysection{source/\+Compute.h File Reference}
+\label{Compute_8h}\index{source/Compute.h@{source/Compute.h}}
 
 
 Contains the computations for R\+O(\+G) Chains and Homology as \mbox{\hyperlink{namespaceMackey}{Mackey}} and Green functors. ~\newline
   
 
 
-{\ttfamily \#include \char`\"{}Mackey\+Functor.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Green.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Massey.\+h\char`\"{}}\newline
-Include dependency graph for Compute.\+h\+:
-\nopagebreak
+{\ttfamily \#include \char`\"{}Products/\+Massey.\+h\char`\"{}}\newline
+Include dependency graph for Compute.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{Compute_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -55,7 +51,7 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em Computes the product of two generators in the R\+O(\+G) homology given their level, degrees and default 0,0 selections (if noncyclic) \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ }\\Massey$<$ rank\+\_\+t, diff\+\_\+t $>$ \mbox{\hyperlink{namespaceMackey_a9fcefe47f5a8a416b173517377a61bd0}{Mackey\+::\+R\+O\+Massey}} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, const deg\+\_\+t \&third, int select\+First, int select\+Second, int select\+Third, bool do\+\_\+indeter)
 \begin{DoxyCompactList}\small\item\em Computes the \mbox{\hyperlink{classMackey_1_1Massey}{Massey}} product of three generators in the R\+O(\+G) homology given their level, degrees and selections (if noncyclic) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t $>$ }\\Massey$<$ rank\+\_\+t, diff\+\_\+t $>$ \mbox{\hyperlink{namespaceMackey_afa8c8ea3bfdd5edbda71827e0b796fb1}{Mackey\+::\+R\+O\+Massey}} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, const deg\+\_\+t \&third, bool do\+\_\+indeter)
+{\footnotesize template$<$typename rank\+\_\+t , typename diff\+\_\+t , typename deg\+\_\+t  = std\+::vector$<$int$>$$>$ }\\Massey$<$ rank\+\_\+t, diff\+\_\+t $>$ \mbox{\hyperlink{namespaceMackey_afa8c8ea3bfdd5edbda71827e0b796fb1}{Mackey\+::\+R\+O\+Massey}} (int level, const deg\+\_\+t \&first, const deg\+\_\+t \&second, const deg\+\_\+t \&third, bool do\+\_\+indeter)
 \begin{DoxyCompactList}\small\item\em Computes the \mbox{\hyperlink{classMackey_1_1Massey}{Massey}} product of three generators in the R\+O(\+G) homology given their level, degrees and default 0,0,0 selections (if noncyclic) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

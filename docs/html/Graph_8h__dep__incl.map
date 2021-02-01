@@ -1,8 +1,8 @@
-<map id="Mackey/Graph.h" name="Mackey/Graph.h">
-<area shape="rect" id="node1" title="Contains weighted/colored graph classes and Dikjstra algorithms." alt="" coords="157,5,284,32"/>
-<area shape="rect" id="node2" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="113,80,329,107"/>
-<area shape="rect" id="node3" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="5,155,209,196"/>
-<area shape="rect" id="node6" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="233,155,437,196"/>
-<area shape="rect" id="node4" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="135,244,307,271"/>
-<area shape="rect" id="node5" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="143,319,298,345"/>
+<map id="source/Utility/Graph.h" name="source/Utility/Graph.h">
+<area shape="rect" id="node1" title="Contains weighted/colored graph classes and Dikjstra algorithms." alt="" coords="90,5,254,32"/>
+<area shape="rect" id="node2" href="$MultiplicationGraph_8h.html" title="Contains the multiplication graph." alt="" coords="89,80,255,121"/>
+<area shape="rect" id="node3" href="$MultiplicationGraph__Identify_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="5,169,160,225"/>
+<area shape="rect" id="node6" href="$MultiplicationGraph__Connectivity_8h.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="184,169,339,225"/>
+<area shape="rect" id="node4" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="90,273,254,300"/>
+<area shape="rect" id="node5" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="99,348,245,375"/>
 </map>

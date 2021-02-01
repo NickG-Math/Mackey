@@ -1,4 +1,4 @@
-#include <Compute.h>
+#include "Compute.h"
 //Demo for a group specific implementation for C4
 
 //First set the variables

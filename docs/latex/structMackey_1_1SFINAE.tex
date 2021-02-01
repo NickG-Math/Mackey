@@ -23,7 +23,9 @@
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a970286ad57992a30d8a82eb73c727dec}{has\+\_\+compute\+Path}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_aa8d24c8b8818ab4d1613a127ad14f758}{test\+\_\+compute\+Path}}$<$ T $>$(0))
 \begin{DoxyCompactList}\small\item\em Tests if T has member compute\+Path() \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a9f27bd555a411026939195401277642d}{has\+\_\+initialize}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a1734bf7c631d052255bd1d5f96fb0b21}{test\+\_\+initialize}}$<$ T $>$(0))
-\begin{DoxyCompactList}\small\item\em Tests if T has member initialize() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tests if T has member initialize() \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a8d7c08b95cd45987c1494510c7879f72}{is\+\_\+graph\+\_\+t}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a5c51480d70f6bd184ff04b83a6c68c8a}{is\+\_\+graph}}(std\+::declval$<$ T $>$()))
+\begin{DoxyCompactList}\small\item\em Tests if T is a graph type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,6 +52,10 @@ static constexpr std\+::false\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_
 {\footnotesize template$<$typename T $>$ }\\static constexpr std\+::false\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a1734bf7c631d052255bd1d5f96fb0b21}{test\+\_\+initialize}} (...)
 \item 
 {\footnotesize template$<$typename T $>$ }\\static constexpr decltype(std\+::declval$<$ T $>$().initialize(), std\+::true\+\_\+type()) \mbox{\hyperlink{structMackey_1_1SFINAE_a5b2762a80158973f90857fd17b58c964}{test\+\_\+initialize}} (int)
+\item 
+static constexpr std\+::false\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a5c51480d70f6bd184ff04b83a6c68c8a}{is\+\_\+graph}} (...)
+\begin{DoxyCompactList}\small\item\em Detects graphs. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static constexpr std\+::true\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a5c92a4a64005cd5fa77d13ad41dcbf09}{is\+\_\+graph}} (\mbox{\hyperlink{classMackey_1_1Graph}{Graph}}$<$ T $>$)
 \end{DoxyCompactItemize}
 
 
@@ -103,6 +109,17 @@ using \mbox{\hyperlink{structMackey_1_1SFINAE_ac37cce8f1f1220e29653dbcc5f0b7090}
 
 Tests if T=Z$<$\+N$>$ 
 
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a8d7c08b95cd45987c1494510c7879f72}\label{structMackey_1_1SFINAE_a8d7c08b95cd45987c1494510c7879f72}} 
+\index{Mackey::SFINAE@{Mackey::SFINAE}!is\_graph\_t@{is\_graph\_t}}
+\index{is\_graph\_t@{is\_graph\_t}!Mackey::SFINAE@{Mackey::SFINAE}}
+\doxysubsubsection{\texorpdfstring{is\_graph\_t}{is\_graph\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{structMackey_1_1SFINAE_a8d7c08b95cd45987c1494510c7879f72}{Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+graph\+\_\+t}} =  decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a5c51480d70f6bd184ff04b83a6c68c8a}{is\+\_\+graph}}(std\+::declval$<$T$>$()))}
+
+
+
+Tests if T is a graph type. 
+
 \mbox{\Hypertarget{structMackey_1_1SFINAE_ab4f05241219d560e2e7cee5215cc37a5}\label{structMackey_1_1SFINAE_ab4f05241219d560e2e7cee5215cc37a5}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!is\_Sparse@{is\_Sparse}}
 \index{is\_Sparse@{is\_Sparse}!Mackey::SFINAE@{Mackey::SFINAE}}
@@ -128,6 +145,23 @@ Tests if matrix is sparse row major.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a5c51480d70f6bd184ff04b83a6c68c8a}\label{structMackey_1_1SFINAE_a5c51480d70f6bd184ff04b83a6c68c8a}} 
+\index{Mackey::SFINAE@{Mackey::SFINAE}!is\_graph@{is\_graph}}
+\index{is\_graph@{is\_graph}!Mackey::SFINAE@{Mackey::SFINAE}}
+\doxysubsubsection{\texorpdfstring{is\_graph()}{is\_graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static constexpr std\+::false\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Detects graphs. 
+
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a5c92a4a64005cd5fa77d13ad41dcbf09}\label{structMackey_1_1SFINAE_a5c92a4a64005cd5fa77d13ad41dcbf09}} 
+\index{Mackey::SFINAE@{Mackey::SFINAE}!is\_graph@{is\_graph}}
+\index{is\_graph@{is\_graph}!Mackey::SFINAE@{Mackey::SFINAE}}
+\doxysubsubsection{\texorpdfstring{is\_graph()}{is\_graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMackey_1_1Graph}{Graph}}$<$ T $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
 \mbox{\Hypertarget{structMackey_1_1SFINAE_aa8d24c8b8818ab4d1613a127ad14f758}\label{structMackey_1_1SFINAE_aa8d24c8b8818ab4d1613a127ad14f758}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!test\_computePath@{test\_computePath}}
 \index{test\_computePath@{test\_computePath}!Mackey::SFINAE@{Mackey::SFINAE}}
@@ -212,4 +246,4 @@ static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Mackey/\mbox{\hyperlink{SFINAE_8h}{S\+F\+I\+N\+A\+E.\+h}}\end{DoxyCompactItemize}
+source/\+Types/\mbox{\hyperlink{SFINAE_8h}{S\+F\+I\+N\+A\+E.\+h}}\end{DoxyCompactItemize}

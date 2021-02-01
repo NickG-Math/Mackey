@@ -1,5 +1,8 @@
 <map id="Mackey::Green::getNormalBasis" name="Mackey::Green::getNormalBasis">
 <area shape="rect" id="node1" title="Returns the (normalized) product of the given two elements (not necessarily generators)" alt="" coords="5,23,200,65"/>
 <area shape="rect" id="node2" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero." alt="" coords="260,5,380,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971" title="Normalize linear map if the range is finitely generated abelian (reduce n in Z/n to 0 etc...." alt="" coords="248,56,392,83"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples." alt="" coords="248,56,392,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93" title="Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1." alt="" coords="440,31,620,57"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="473,81,587,108"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="668,81,771,108"/>
 </map>

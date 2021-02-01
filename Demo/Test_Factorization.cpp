@@ -7,7 +7,6 @@
 #include <iostream>
 #include "C4_Implementation.h"
 #include "Factorization.h"
-#include <chrono>
 
 using namespace Mackey;
 
@@ -66,35 +65,14 @@ int main() {
 
 
 	int maximum = 5;
-	auto begin = std::chrono::high_resolution_clock::now();
-
-
 	Factorization<rank_t, diff_t> F(power, std::vector<int>(power, -maximum), std::vector<int>(power, maximum), basicIrreducibles, basicIrreducibles_names);
 	F.compute_with_sources(true_sources, source_names); //computes the factorizations
 	F.pass_disconnected(1);
 
-	std::vector<std::string> names;
-	std::vector<int> notfound;
-	names.reserve(F.number_of_nodes);
-	notfound.reserve(F.number_of_nodes);
-	for (int i = 0; i < F.number_of_nodes; i++) {
-		auto name = F.getname(i);
-		if (name == "") {
-			names.push_back("NOT FOUND");
-			notfound.push_back(i);
-		}
-		else {
-			names.push_back(name);
-		}
-		std::cout << i << " : " << names[i] << " at  " << F.getdegree(i)[0] << "," << F.getdegree(i)[1] << "," << F.getdegree(i)[2] << " and element: " << F.getelement(i) << "\n";
-	}
-	for (const auto& i : notfound) {
-		std::cout << " Not found " << i<< " : "<< F.getdegree(i)[0] << "," << F.getdegree(i)[1] << "," << F.getdegree(i)[2] << " and element: " << F.getelement(i) << "\n";
-	}
-
-	F.draw(names); //draws the graph, make sure all nodes have names
-	auto end = std::chrono::high_resolution_clock::now();
-	std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << "ms" << std::endl;
-
+	std::cout << F.generator_names();
+	std::ofstream file;
+	file.open("graph.dot");
+	file << F.getgraph();
+	file.close();
 	return 0;
 }

@@ -153,7 +153,6 @@ void doMassey(Factorization<rank_t, diff_t>& F) {
 			else
 				secondround.push_back(allrounds[e]);
 		}
-	//loader(firstround, "round1", "binary");
 	doround(F, firstround, 0);
 	doround(F, secondround,1);
 	//doround(F, thirdround);
@@ -161,88 +160,8 @@ void doMassey(Factorization<rank_t, diff_t>& F) {
 
 
 
-int main() {/*
+int main() {
 
-
-	MultiplicationTable<rank_t, diff_t> M570, M589;
-	loader(M570, "batch99_570", "binary");
-	loader(M589, "batch99_589", "binary");
-
-	bool a,b,c,d,e,s;
-	a = (M570.NonZeroHomology == M589.NonZeroHomology);
-	for (int i = 0; i < M570.degree.size(); i++)
-		if (M570.degree[i] != M589.degree[i])
-			std::cout << "H";
-	b = (M570.degree == M589.degree);
-	c = (M570.antidegree == M589.antidegree);
-	d = (M570.index_product == M589.index_product);
-	e = (M570.Greens == M589.Greens);
-*/
-
-
-	//std::vector<int> first = std::vector<int>{ -5, -3, -1 } ;
-	//std::vector<int> second = std::vector<int>{ 4, 2,1};
-	//std::vector<int> third = std::vector<int>{-3, 1, -2 };
-	//auto u = ROMassey<rank_t, diff_t, std::vector<int>>(power, first, second, third, 1);
-
-	////auto a = ROMassey<rank_t, diff_t, std::vector<int>>(power, { 0,-1,1}, { -2,0,-1}, { 0,-1,1 }, 1);
-
-
-	//Eigen::Matrix<float, -1, -1> Out;
-	//loader(Out, "problematic", "binary");
-	//auto OUT=diagonalize<decltype(Out), decltype(Out), decltype(Out)>(Out, 1, 1);
-	//std::cout << OUT.verify();
-
-	//std::vector<int> first = std::vector<int>{ -3, -1, -1 } -std::vector<int>{6,2, 2} ;
-	//std::vector<int> second = std::vector<int>{ 2, 2,0} +std::vector<int>{6, 2, 2};
-	//std::vector<int> third = std::vector<int>{ -3, -1, -1 };
-	//auto u = ROMassey<rank_t, diff_t, std::vector<int>>(power, first, second, third, 1);
-
-//	
-//	/*
-//	std::vector<int> first = std::vector<int>{ -7, -1, -1, -1, -1 } -std::vector<int>{14, 0, 2, 3, 2} +std::vector<int>{2, 0, 0, 1, 0};
-//	std::vector<int> second = std::vector<int>{ 10, 2, 2, 2, 0 } +std::vector<int>{14, 0, 2, 3, 2}-std::vector<int>{2, 0, 0, 1, 0};
-//	std::vector<int> third = std::vector<int>{ -7, -1, -1, -1, -1 };
-//
-//
-//	auto deg_l = first + second;
-//	deg_l = Reindex(deg_l);
-//	deg_l[0] += 1;
-//	deg_l = invReindex(deg_l);
-//	auto deg_r = second + third;
-//	deg_r = Reindex(deg_r);
-//	deg_r[0] += 1;
-//	deg_r = invReindex(deg_r);
-//
-//	auto ind_l = ROHomology<rank_t, diff_t>(power, deg_l);
-//	auto ind_r = ROHomology<rank_t, diff_t>(power, deg_r);
-//	if (ind_l.size() == 0 && ind_r.size() == 0)
-//		auto u = ROMassey<rank_t, diff_t, std::vector<int>>(4, first, second, third, 1);*/
-//	//std::vector<int> xover(power + 1,-2);
-//	//xover[0] = -4 * power + 3;
-//	//xover[1] = -1;
-//	//std::vector<int> xwith(power + 1);
-//	//xwith[0] = -5;
-//	//xwith[1] = -1;
-//	//xwith.back() = -2;
-//	//std::vector<int> prod(power + 1, 2);
-//	//prod[0] = 4 * power - 2;
-//	//auto u = ROMassey<rank_t, diff_t>(power, xover, xwith, prod, 1);
-//
-//
-//
-//	//std::vector<int> x(power + 1, -1);
-//	//x[0] = -2*power+1;
-//	//std::vector<int> xwith(power + 1);
-//	//xwith[0] = -5;
-//	//xwith[1] = -1;
-//	//xwith.back() = -2;
-//	//std::vector<int> prod(power + 1, 1);
-//	//prod[0] = 2*power;
-//	//prod[1] = 2;
-//	//std::cout << x + xwith + prod << "\n";
-//	//auto u=ROMassey<rank_t, diff_t>(power, x, xwith, prod, 1);
-//
 	std::vector<std::vector<int>> basicIrreducibles;
 	std::vector<std::string> basicIrreducibles_names;
 	basicIrreducibles.reserve(2 * power);
@@ -290,10 +209,6 @@ int main() {/*
 	int maximum = 5;
 
 	Factorization<rank_t, diff_t> F(power, std::vector<int>(power, -maximum), std::vector<int>(power, maximum), basicIrreducibles, basicIrreducibles_names);
-	//MultiplicationTable<rank_t, diff_t> M;
-	//loader(M, "batch99", "binary");
-	//Factorization<rank_t, diff_t> F(M, basicIrreducibles_names);
-
 	auto nonS = true_sources;
 	auto nonS_names = source_names;
 
@@ -303,13 +218,7 @@ int main() {/*
 	nonS_names.erase(nonS_names.begin() + 1);
 
 	F.compute_with_sources(true_sources, source_names); //computes the factorizations
-	auto begin = std::chrono::high_resolution_clock::now();
 
 	doMassey(F);
-
-
-
-	auto end = std::chrono::high_resolution_clock::now();
-	std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << "ms" << std::endl;
 	return 0;
 }

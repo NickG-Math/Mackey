@@ -59,7 +59,6 @@ namespace Mackey {
 			vec.reserve((summation(rankBox(first, second, degree).first)));
 			auto s = first.size();
 			auto t = second.size();
-			long sum = 0;
 			for (int i = 0; i < s; i++) {
 				int j = degree - i;
 				if (j >=0 && j <t){

@@ -119,16 +119,24 @@ namespace Mackey {
 
 	template<typename rank_t, typename diff_t>
 	void MultiplicationGraphIdentify<rank_t, diff_t>::do_triples(bool serialize) {
+#if defined(_OPENMP)
 		omp_lock_t lock;
 		omp_init_lock(&lock);
+#endif
 #pragma omp parallel for num_threads(omp_get_max_threads()) schedule(runtime)
 		for (int i = 0; i < triples_to_be_done.size(); i++){
 			auto G = this->triple_product(triples_to_be_done[i][0], triples_to_be_done[i][1], triples_to_be_done[i][2]);
+#if defined(_OPENMP)
 			omp_set_lock(&lock);
+#endif
 			this->tripleGreens[{triples_to_be_done[i][0], triples_to_be_done[i][1], triples_to_be_done[i][2]}]=G;
+#if defined(_OPENMP)
 			omp_unset_lock(&lock);
+#endif
 		}
+#if defined(_OPENMP)
 		omp_destroy_lock(&lock);
+#endif
 		triples_to_be_done.clear();
 #ifdef CEREALIZE
 		if (serialize)
@@ -143,7 +151,6 @@ namespace Mackey {
 		auto deg_i = this->tracker[i];
 		auto G = this->Greens[deg_i][j];
 		int deg_ij = this->index_product(deg_i, j); //can't be -1
-		auto size_now = identified.size();
 		auto v = determine_connection_identify(G, i, j, deg_ij, collection_stage);
 
 		if (collection_stage && v.size() != 0)

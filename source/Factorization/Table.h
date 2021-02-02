@@ -1,6 +1,6 @@
 #pragma once
 #include "Compute.h"
-#include "omp.h"
+#include "omp.h" 
 
 
 ///@file
@@ -118,11 +118,13 @@ namespace Mackey
 		auto spheres = DegreeConstruction(minsphere, maxsphere);
 		std::map<std::vector<int>, IDGenerators<rank_t>> Homologymap;
 		num_spheres = spheres.size();
-
+#if defined(_OPENMP)
+		//Make sure to lock if you enable multithreading here!
 		omp_lock_t lock;
 		omp_init_lock(&lock);
+#endif
+//#pragma omp parallel for num_threads(omp_get_max_threads()) schedule(dynamic)
 		//compute additive in parallel and save to map
-#pragma omp parallel for num_threads(omp_get_max_threads()) schedule(dynamic)
 		for (int i = 0; i < num_spheres; i++) {
 			auto C = ROChains<rank_t, diff_t>(spheres[i]);
 			std::vector<int> deg;
@@ -135,13 +137,19 @@ namespace Mackey
 					deg.push_back(invReindex(k, spheres[i]));
 					for (const auto& j : spheres[i])
 						deg.push_back(j);
+#if defined(_OPENMP)
 					omp_set_lock(&lock);
+#endif
 					Homologymap[deg] = ID.ID;
+#if defined(_OPENMP)
 					omp_unset_lock(&lock);
+#endif
 				}
 			}
 		}
+#if defined(_OPENMP)
 		omp_destroy_lock(&lock);
+#endif
 		//reinterpret map into vector
 		auto maxlength = num_spheres * (dimension(maxsphere - minsphere) + 1);
 		NonZeroHomology.reserve(maxlength);
@@ -300,8 +308,6 @@ namespace Mackey
 
 	template<typename rank_t, typename diff_t>
 	Green<rank_t, diff_t> MultiplicationTable<rank_t, diff_t>::triple_product(int i, int j1, int j2) {
-		auto i_j1 = index_product(i, j1); //should be in range
-		auto i_j1_j2 = index_product(i_j1, j2); //should be in range
 		auto degreeC1 = Reindex(basicIrreducibles[j1]).front();
 		auto degreeC2 = Reindex(basicIrreducibles[j2]).front();
 		auto degreeD = Reindex(degree[i]).front();

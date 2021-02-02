@@ -144,7 +144,7 @@ namespace Mackey {
 		void stepPath(int, int);
 		void computeDistance();
 		friend class Graph<WeightedGraph>; ///<Used to set up the CRTP.
-		friend class SFINAE;
+		friend struct SFINAE;
 	};
 
 	template<typename T>
@@ -259,7 +259,7 @@ namespace Mackey {
 		WeightedGraph dual;
 
 		friend class Graph<ColoredGraph>; ///<Used to set up the CRTP.
-		friend class SFINAE;
+		friend struct SFINAE;
 	};
 
 

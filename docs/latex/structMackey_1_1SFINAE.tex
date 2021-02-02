@@ -12,14 +12,14 @@
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a1cea78d0d105adaafa9a77d13a77b790}{is\+\_\+\+Dense}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a1b75937bad3b6d9d0eaff8bd81a03b16}{test\+\_\+\+Dense}}(std\+::declval$<$ T $>$()))
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a861cf9c0707bfb55a33deafa5d5222ec}{is\+\_\+\+Dense}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a1b75937bad3b6d9d0eaff8bd81a03b16}{test\+\_\+\+Dense}}(std\+::declval$<$ T $\ast$ $>$()))
 \begin{DoxyCompactList}\small\item\em Tests if matrix is dense. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_ab4f05241219d560e2e7cee5215cc37a5}{is\+\_\+\+Sparse}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a822455b3ae1980be0801f1ca334b5765}{test\+\_\+\+Sparse}}(std\+::declval$<$ T $>$()))
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a1b8e0d89f21259842d7c9041b3a35fc3}{is\+\_\+\+Sparse}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a822455b3ae1980be0801f1ca334b5765}{test\+\_\+\+Sparse}}(std\+::declval$<$ T $\ast$ $>$()))
 \begin{DoxyCompactList}\small\item\em Tests if matrix is sparse. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a9c39da3639f75d88d1368621ceab1e3f}{is\+\_\+sparse\+\_\+row\+\_\+major}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_affbe05b9e94c425333fef47202fd19fc}{test\+\_\+\+S\+RM}}(std\+::declval$<$ T $\ast$ $>$()))
+\begin{DoxyCompactList}\small\item\em Tests if matrix is sparse row major. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_ac37cce8f1f1220e29653dbcc5f0b7090}{is\+\_\+finite\+\_\+cyclic}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a2dd0f9b571ad5911cf90ae93a8e52d90}{test\+\_\+finite\+\_\+cyclic}}(std\+::declval$<$ T $>$()))
 \begin{DoxyCompactList}\small\item\em Tests if T=Z$<$\+N$>$ \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a65dd52a3c2ee8f112260288e6d2f8391}{is\+\_\+sparse\+\_\+row\+\_\+major}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_affbe05b9e94c425333fef47202fd19fc}{test\+\_\+\+S\+RM}}(std\+::declval$<$ T $>$()))
-\begin{DoxyCompactList}\small\item\em Tests if matrix is sparse row major. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a970286ad57992a30d8a82eb73c727dec}{has\+\_\+compute\+Path}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_aa8d24c8b8818ab4d1613a127ad14f758}{test\+\_\+compute\+Path}}$<$ T $>$(0))
 \begin{DoxyCompactList}\small\item\em Tests if T has member compute\+Path() \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{structMackey_1_1SFINAE_a9f27bd555a411026939195401277642d}{has\+\_\+initialize}} = decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a1734bf7c631d052255bd1d5f96fb0b21}{test\+\_\+initialize}}$<$ T $>$(0))
@@ -31,15 +31,15 @@
 \item 
 static constexpr std\+::false\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a1b75937bad3b6d9d0eaff8bd81a03b16}{test\+\_\+\+Dense}} (...)
 \item 
-{\footnotesize template$<$typename T $>$ }\\static constexpr std\+::true\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a99bc0916be7136f9c496c4eb2b6393a2}{test\+\_\+\+Dense}} (Eigen\+::\+Matrix\+Base$<$ T $>$)
+{\footnotesize template$<$typename T $>$ }\\static constexpr std\+::true\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a01a2472762d61699c8b0759555db6469}{test\+\_\+\+Dense}} (Eigen\+::\+Matrix\+Base$<$ T $>$ $\ast$)
 \item 
 static constexpr std\+::false\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a822455b3ae1980be0801f1ca334b5765}{test\+\_\+\+Sparse}} (...)
 \item 
-{\footnotesize template$<$typename T $>$ }\\static constexpr std\+::true\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a933fbb1ee190a80299401705a474a677}{test\+\_\+\+Sparse}} (Eigen\+::\+Sparse\+Matrix\+Base$<$ T $>$)
+{\footnotesize template$<$typename T $>$ }\\static constexpr std\+::true\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a6f38a65fa648d3030a17f268c1b74dce}{test\+\_\+\+Sparse}} (Eigen\+::\+Sparse\+Matrix\+Base$<$ T $>$ $\ast$)
 \item 
 static constexpr std\+::false\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_affbe05b9e94c425333fef47202fd19fc}{test\+\_\+\+S\+RM}} (...)
 \item 
-{\footnotesize template$<$typename T $>$ }\\static constexpr std\+::true\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_ad1aecc9a9a8af9287b17695cbfe1bffb}{test\+\_\+\+S\+RM}} (Eigen\+::\+Sparse\+Matrix$<$ T, 1 $>$)
+{\footnotesize template$<$typename T $>$ }\\static constexpr std\+::true\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a3f7bcf747bf586dd8ce0f5134c055810}{test\+\_\+\+S\+RM}} (Eigen\+::\+Sparse\+Matrix$<$ T, 1 $>$ $\ast$)
 \item 
 static constexpr std\+::false\+\_\+type \mbox{\hyperlink{structMackey_1_1SFINAE_a2dd0f9b571ad5911cf90ae93a8e52d90}{test\+\_\+finite\+\_\+cyclic}} (...)
 \item 
@@ -87,12 +87,12 @@ using \mbox{\hyperlink{structMackey_1_1SFINAE_a9f27bd555a411026939195401277642d}
 
 Tests if T has member initialize() 
 
-\mbox{\Hypertarget{structMackey_1_1SFINAE_a1cea78d0d105adaafa9a77d13a77b790}\label{structMackey_1_1SFINAE_a1cea78d0d105adaafa9a77d13a77b790}} 
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a861cf9c0707bfb55a33deafa5d5222ec}\label{structMackey_1_1SFINAE_a861cf9c0707bfb55a33deafa5d5222ec}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!is\_Dense@{is\_Dense}}
 \index{is\_Dense@{is\_Dense}!Mackey::SFINAE@{Mackey::SFINAE}}
 \doxysubsubsection{\texorpdfstring{is\_Dense}{is\_Dense}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-using \mbox{\hyperlink{structMackey_1_1SFINAE_a1cea78d0d105adaafa9a77d13a77b790}{Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+\+Dense}} =  decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a1b75937bad3b6d9d0eaff8bd81a03b16}{test\+\_\+\+Dense}}(std\+::declval$<$T$>$()))}
+using \mbox{\hyperlink{structMackey_1_1SFINAE_a861cf9c0707bfb55a33deafa5d5222ec}{Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+\+Dense}} =  decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a1b75937bad3b6d9d0eaff8bd81a03b16}{test\+\_\+\+Dense}}(std\+::declval$<$T$\ast$$>$()))}
 
 
 
@@ -120,23 +120,23 @@ using \mbox{\hyperlink{structMackey_1_1SFINAE_a8d7c08b95cd45987c1494510c7879f72}
 
 Tests if T is a graph type. 
 
-\mbox{\Hypertarget{structMackey_1_1SFINAE_ab4f05241219d560e2e7cee5215cc37a5}\label{structMackey_1_1SFINAE_ab4f05241219d560e2e7cee5215cc37a5}} 
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a1b8e0d89f21259842d7c9041b3a35fc3}\label{structMackey_1_1SFINAE_a1b8e0d89f21259842d7c9041b3a35fc3}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!is\_Sparse@{is\_Sparse}}
 \index{is\_Sparse@{is\_Sparse}!Mackey::SFINAE@{Mackey::SFINAE}}
 \doxysubsubsection{\texorpdfstring{is\_Sparse}{is\_Sparse}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-using \mbox{\hyperlink{structMackey_1_1SFINAE_ab4f05241219d560e2e7cee5215cc37a5}{Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+\+Sparse}} =  decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a822455b3ae1980be0801f1ca334b5765}{test\+\_\+\+Sparse}}(std\+::declval$<$T$>$()))}
+using \mbox{\hyperlink{structMackey_1_1SFINAE_a1b8e0d89f21259842d7c9041b3a35fc3}{Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+\+Sparse}} =  decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_a822455b3ae1980be0801f1ca334b5765}{test\+\_\+\+Sparse}}(std\+::declval$<$T$\ast$$>$()))}
 
 
 
 Tests if matrix is sparse. 
 
-\mbox{\Hypertarget{structMackey_1_1SFINAE_a65dd52a3c2ee8f112260288e6d2f8391}\label{structMackey_1_1SFINAE_a65dd52a3c2ee8f112260288e6d2f8391}} 
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a9c39da3639f75d88d1368621ceab1e3f}\label{structMackey_1_1SFINAE_a9c39da3639f75d88d1368621ceab1e3f}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!is\_sparse\_row\_major@{is\_sparse\_row\_major}}
 \index{is\_sparse\_row\_major@{is\_sparse\_row\_major}!Mackey::SFINAE@{Mackey::SFINAE}}
 \doxysubsubsection{\texorpdfstring{is\_sparse\_row\_major}{is\_sparse\_row\_major}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-using \mbox{\hyperlink{structMackey_1_1SFINAE_a65dd52a3c2ee8f112260288e6d2f8391}{Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+sparse\+\_\+row\+\_\+major}} =  decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_affbe05b9e94c425333fef47202fd19fc}{test\+\_\+\+S\+RM}}(std\+::declval$<$T$>$()))}
+using \mbox{\hyperlink{structMackey_1_1SFINAE_a9c39da3639f75d88d1368621ceab1e3f}{Mackey\+::\+S\+F\+I\+N\+A\+E\+::is\+\_\+sparse\+\_\+row\+\_\+major}} =  decltype(\mbox{\hyperlink{structMackey_1_1SFINAE_affbe05b9e94c425333fef47202fd19fc}{test\+\_\+\+S\+RM}}(std\+::declval$<$T$\ast$$>$()))}
 
 
 
@@ -182,12 +182,12 @@ static constexpr decltype(std\+::declval$<$T$>$().compute\+Path(), std\+::true\+
 \doxysubsubsection{\texorpdfstring{test\_Dense()}{test\_Dense()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static constexpr std\+::false\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+Dense (\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{structMackey_1_1SFINAE_a99bc0916be7136f9c496c4eb2b6393a2}\label{structMackey_1_1SFINAE_a99bc0916be7136f9c496c4eb2b6393a2}} 
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a01a2472762d61699c8b0759555db6469}\label{structMackey_1_1SFINAE_a01a2472762d61699c8b0759555db6469}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!test\_Dense@{test\_Dense}}
 \index{test\_Dense@{test\_Dense}!Mackey::SFINAE@{Mackey::SFINAE}}
 \doxysubsubsection{\texorpdfstring{test\_Dense()}{test\_Dense()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+Dense (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Base$<$ T $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+Dense (\begin{DoxyParamCaption}\item[{Eigen\+::\+Matrix\+Base$<$ T $>$ $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 \mbox{\Hypertarget{structMackey_1_1SFINAE_a2dd0f9b571ad5911cf90ae93a8e52d90}\label{structMackey_1_1SFINAE_a2dd0f9b571ad5911cf90ae93a8e52d90}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!test\_finite\_cyclic@{test\_finite\_cyclic}}
@@ -222,12 +222,12 @@ static constexpr decltype(std\+::declval$<$T$>$().initialize(), std\+::true\+\_\
 \doxysubsubsection{\texorpdfstring{test\_Sparse()}{test\_Sparse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static constexpr std\+::false\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+Sparse (\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{structMackey_1_1SFINAE_a933fbb1ee190a80299401705a474a677}\label{structMackey_1_1SFINAE_a933fbb1ee190a80299401705a474a677}} 
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a6f38a65fa648d3030a17f268c1b74dce}\label{structMackey_1_1SFINAE_a6f38a65fa648d3030a17f268c1b74dce}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!test\_Sparse@{test\_Sparse}}
 \index{test\_Sparse@{test\_Sparse}!Mackey::SFINAE@{Mackey::SFINAE}}
 \doxysubsubsection{\texorpdfstring{test\_Sparse()}{test\_Sparse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+Sparse (\begin{DoxyParamCaption}\item[{Eigen\+::\+Sparse\+Matrix\+Base$<$ T $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+Sparse (\begin{DoxyParamCaption}\item[{Eigen\+::\+Sparse\+Matrix\+Base$<$ T $>$ $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 \mbox{\Hypertarget{structMackey_1_1SFINAE_affbe05b9e94c425333fef47202fd19fc}\label{structMackey_1_1SFINAE_affbe05b9e94c425333fef47202fd19fc}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!test\_SRM@{test\_SRM}}
@@ -235,12 +235,12 @@ static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\
 \doxysubsubsection{\texorpdfstring{test\_SRM()}{test\_SRM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static constexpr std\+::false\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+S\+RM (\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{structMackey_1_1SFINAE_ad1aecc9a9a8af9287b17695cbfe1bffb}\label{structMackey_1_1SFINAE_ad1aecc9a9a8af9287b17695cbfe1bffb}} 
+\mbox{\Hypertarget{structMackey_1_1SFINAE_a3f7bcf747bf586dd8ce0f5134c055810}\label{structMackey_1_1SFINAE_a3f7bcf747bf586dd8ce0f5134c055810}} 
 \index{Mackey::SFINAE@{Mackey::SFINAE}!test\_SRM@{test\_SRM}}
 \index{test\_SRM@{test\_SRM}!Mackey::SFINAE@{Mackey::SFINAE}}
 \doxysubsubsection{\texorpdfstring{test\_SRM()}{test\_SRM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+S\+RM (\begin{DoxyParamCaption}\item[{Eigen\+::\+Sparse\+Matrix$<$ T, 1 $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+static constexpr std\+::true\+\_\+type Mackey\+::\+S\+F\+I\+N\+A\+E\+::test\+\_\+\+S\+RM (\begin{DoxyParamCaption}\item[{Eigen\+::\+Sparse\+Matrix$<$ T, 1 $>$ $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 
 

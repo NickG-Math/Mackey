@@ -188,12 +188,12 @@ Factorization</h2>
 <p>or</p>
 <p><code>file &lt;&lt; (F.getgraph() &lt;&lt; F.get_generators()) </code></p>
 <p>if you want the generator names as labels for the nodes.</p>
-<p>Now a generator name will be nonempty (or not \(?\)) as long as the generator can be obtained by multiplying/dividing the basic irreducibles with <code>1</code>. As such, it will fail for say <code>s</code>. In that case instead use</p>
+<p>A generator name being \(?\) means that the generator could not be obtained by multiplying/dividing the basic irreducibles with <code>1</code>. This means that additional sources may need to be added, such as through:</p>
 <p><code>F.compute_with_sources({{0,0,0},{-3,0,-2}}, {"1","s"});</code></p>
 <p>where now both \(1\) and \(s\) are used as sources.</p>
-<p>If you see a <code>NOT FOUND...</code> then that may mean the basic identification was not enough to compute all products. You can then use</p>
+<p>It possible that there are enough sources yet you still get \(?\); that means the basic identification was not enough to compute all products. You can then use</p>
 <p><code>F.pass_disconnected();</code></p>
-<p>to try redoing the identification now using triple box products. This will be significantly more computationally expensive.</p>
+<p>to try redoing the identification now using triple box products. This will be very computationally expensive.</p>
 <p>Finally, if only the connectivity of the Multiplication Graph is desired, as opposed to precise factorizations of the generators, you can instead and use</p>
 <p><code>auto M= MultiplicationGraphConnectivity&lt;rank_t, diff_t&gt;({ -5,-5 }, { 5,5 }, { {0,1,0},{2,2,0},{0,0,1},{2,0,1} });</code></p>
 <p>and then</p>

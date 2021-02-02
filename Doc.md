@@ -377,17 +377,17 @@ or
 
 if you want the generator names as labels for the nodes.
 
-Now a generator name will be nonempty (or not \f$?\f$) as long as the generator can be obtained by multiplying/dividing the basic irreducibles with ```1```. As such, it will fail for say ```s```. In that case instead use
+A generator name being \f$?\f$ means that the generator could not be obtained by multiplying/dividing the basic irreducibles with ```1```. This means that additional sources may need to be added, such as through:
 
 <CODE>F.compute_with_sources({{0,0,0},{-3,0,-2}}, {"1","s"});</CODE>
 
 where now both \f$1\f$ and \f$s\f$ are used as sources.
 
-If you see a ```NOT FOUND...``` then that may mean the basic identification was not enough to compute all products. You can then use
+It possible that there are enough sources yet you still get \f$?\f$; that means the basic identification was not enough to compute all products. You can then use
 
 <CODE>F.pass_disconnected();</CODE>
 
-to try redoing the identification now using triple box products. This will be significantly more computationally expensive.
+to try redoing the identification now using triple box products. This will be very computationally expensive.
 
 Finally, if only the connectivity of the Multiplication Graph is desired, as opposed to precise factorizations of the generators, you can instead and use
 

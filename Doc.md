@@ -3,17 +3,17 @@
  \section intro Introduction
 This is a C++ header only library devoted to numerically computing \f$RO(G)\f$ homology. You can find the GitHub repository <a href="https://github.com/NickG-Math/Mackey">here</a>.
 
-For a quick demonstration in the case of \f$G=C_4\f$, use one of the available binaries in the "Releases" section of the repository
+For a quick demonstration in the case of \f$G=C_4\f$, use one of the available binaries  <a href="https://github.com/NickG-Math/Mackey/releases">here</a>.
 
 
 \section req Requirements
  * C++17.
  * <a href=" http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>, a header only library for matrix manipulation. 
- The code has been tested with Eigen 3.3.7 though newer versions shouldn't break compatibility.
+ The code has been tested with Eigen 3.3.9.
 
 Optionally:
  * For serialization we have integrated support for the <a href="https://uscilab.github.io/cereal">cereal</a> library.
- * To draw the multiplication graphs use <a href="https://www.graphviz.org">Graphviz</a>.
+ * To draw the multiplication graphs you can use <a href="https://www.graphviz.org">Graphviz</a>.
  
 \section install Installation
 

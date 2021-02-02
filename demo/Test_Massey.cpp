@@ -5,11 +5,9 @@
 #endif
 
 #include <iostream>
-#include "Cerealizer.h"
 #include "C2n_Implementation.h"
+#include "Factorization.h"
 #include "omp.h"
-
-#include <chrono>
 
 using namespace Mackey;
 
@@ -36,10 +34,10 @@ bool boxnumber(const T& deg) {
 
 template<typename T>
 void doround(Factorization<rank_t, diff_t>& F, const T& round, bool do_indeter) {
-
+#if defined(_OPENMP)
 	omp_lock_t lock;
 	omp_init_lock(&lock);
-
+#endif
 	std::vector<char> done(round.size());
 	std::cout << "Computing " << round.size() << " many Massey products \n";
 #pragma omp parallel for num_threads(12) schedule(dynamic)
@@ -59,12 +57,16 @@ void doround(Factorization<rank_t, diff_t>& F, const T& round, bool do_indeter) 
 			deg[0] += 1;
 			rank_t el(1);
 			el << 1;
+#if defined(_OPENMP)
 			omp_set_lock(&lock);
+#endif
 			std::string name;
 			if (F.getelementindex(deg, el)!=-1)
 				name = F.getname(F.getelementindex(deg, el));
 			std::cout << "<" << F.getname(i) << " , " << F.getname(j) << " , " << F.getname(k) << "> = " << (int)a.normalBasis[0] << " * " << name <<"\n";
+#if defined(_OPENMP)
 			omp_unset_lock(&lock);
+#endif
 		}
 	}
 

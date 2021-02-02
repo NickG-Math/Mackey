@@ -11,8 +11,6 @@
 //note: These preprocessor directives must be before any includes.
 
 #include <iostream>
-#include <chrono>
-#include <Cerealizer.h>
 #include "C4_Implementation.h"
 #include "C4Verify.h" //to verify
 
@@ -22,8 +20,5 @@ typedef Eigen::Matrix<char, -1, -1> diff_t;
 
 
 int main() {
-	auto begin = std::chrono::high_resolution_clock::now();
 	C4Test::C4MackeyTest<rank_t, diff_t>(-30, 30, -30, 30, 0);
-	auto end = std::chrono::high_resolution_clock::now();
-	std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << "ns" << std::endl;
 }

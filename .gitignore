@@ -4,3 +4,4 @@ Clang.out
 graph.dot
 gcc.out
 graph.dot
+*.json

@@ -1,0 +1,8 @@
+<map id="Graph.hpp" name="Graph.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="131,5,220,32"/>
+<area shape="rect" id="node2" href="$Mult__Graph_8hpp.html" title="Contains the multiplication graph." alt="" coords="113,80,238,107"/>
+<area shape="rect" id="node3" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="197,155,330,181"/>
+<area shape="rect" id="node6" href="$Mult__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="5,155,172,181"/>
+<area shape="rect" id="node4" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="62,229,161,256"/>
+<area shape="rect" id="node5" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="206,229,321,256"/>
+</map>

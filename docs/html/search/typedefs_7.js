@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['nested_731',['Nested',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#aadda945d9b822d2c43cddd141d895ab5',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
-  ['noninteger_732',['NonInteger',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a54a7b88f9d282c613909ac128476d3d1',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
+  ['junction_5ft_703',['junction_t',['../namespacemackey.html#a8dab810996cef3b40d5556627acc0ad6',1,'mackey']]]
 ];

@@ -1,5 +1,0 @@
-<map id="Mackey::operator&lt;&lt;" name="Mackey::operator&lt;&lt;">
-<area shape="rect" id="node1" title="Adjoins node names to graph to get it ready for printing." alt="" coords="5,35,161,61"/>
-<area shape="rect" id="node2" href="$classMackey_1_1Graph.html#a69d21bdddbb76aa562aa9f60a84c4b10" title="Clears distances and initializes." alt="" coords="237,5,395,32"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Graph.html#acda32cd8d144dcd1ec771bd8d2753321" title="Compute all paths using the given source." alt="" coords="209,57,423,98"/>
-</map>

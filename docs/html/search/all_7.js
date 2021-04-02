@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['has_5fcomputepath_129',['has_computePath',['../structMackey_1_1SFINAE.html#a970286ad57992a30d8a82eb73c727dec',1,'Mackey::SFINAE']]],
-  ['has_5finitialize_130',['has_initialize',['../structMackey_1_1SFINAE.html#a9f27bd555a411026939195401277642d',1,'Mackey::SFINAE']]],
-  ['hashvector_131',['hashvector',['../namespaceMackey.html#a3d23281b881eb1f166107b333fa98612',1,'Mackey']]],
-  ['homology_132',['Homology',['../classMackey_1_1Homology.html',1,'Mackey::Homology&lt; rank_t, diff_t &gt;'],['../classMackey_1_1Homology.html#a3580b194f986bd59a02fb84db97e00f2',1,'Mackey::Homology::Homology()'],['../classMackey_1_1Homology.html#a31e26f0fb8e1cd7f0506ae1dbc97ea22',1,'Mackey::Homology::Homology(const Junction&lt; rank_t, diff_t &gt; &amp;)'],['../classMackey_1_1Homology.html#af42f480509ef68df47308c0f506d44c8',1,'Mackey::Homology::Homology(const Junction&lt; rank_t, diff_t &gt; &amp;, bool)']]],
-  ['homology_2eh_133',['Homology.h',['../Homology_8h.html',1,'']]],
-  ['homologylevels_134',['HomologyLevels',['../namespaceMackey.html#a1c195484cc947abef84c726b534af5a5',1,'Mackey']]],
-  ['how_20to_20use_135',['How to Use',['../use.html',1,'']]]
+  ['has_5foperator_5fevaluation_5fint_5fint_129',['has_operator_evaluation_int_int',['../namespacemackey_1_1SFINAE.html#a14f12845046cdddf9e15e9cb3fdbdf20',1,'mackey::SFINAE']]],
+  ['hash_130',['Hash',['../classmackey_1_1Hash_3_01T_01_4.html#a9344850ba7c80c3a114c8b3c152ac820',1,'mackey::Hash&lt; T &gt;::Hash()'],['../classmackey_1_1Hash_3_01T_00_01T_01_4.html#ad1c7a266796104c82d45831b7b7fe3ea',1,'mackey::Hash&lt; T, T &gt;::Hash()'],['../classmackey_1_1Hash.html',1,'Hash&lt;... &gt;']]],
+  ['hash_3c_20std_3a_3avector_3c_20int_20_3e_2c_20std_3a_3avector_3c_20int_20_3e_20_3e_131',['Hash&lt; std::vector&lt; int &gt;, std::vector&lt; int &gt; &gt;',['../classmackey_1_1Hash.html',1,'mackey']]],
+  ['hash_3c_20t_20_3e_132',['Hash&lt; T &gt;',['../classmackey_1_1Hash_3_01T_01_4.html',1,'mackey']]],
+  ['hash_3c_20t_2c_20t_20_3e_133',['Hash&lt; T, T &gt;',['../classmackey_1_1Hash_3_01T_00_01T_01_4.html',1,'mackey']]],
+  ['hash_3c_3e_134',['Hash&lt;&gt;',['../classmackey_1_1Hash_3_4.html',1,'mackey']]],
+  ['homology_135',['Homology',['../classmackey_1_1Homology.html#a8671f9b2004da658fb7db817b27b999c',1,'mackey::Homology::Homology()=default'],['../classmackey_1_1Homology.html#abcbb2a841a637723f34150841623a902',1,'mackey::Homology::Homology(const Junction&lt; rank_t, diff_t &gt; &amp;J, bool getQ=0)'],['../classmackey_1_1Homology.html',1,'Homology&lt; rank_t, diff_t &gt;']]],
+  ['homology_2ehpp_136',['Homology.hpp',['../Homology_8hpp.html',1,'']]],
+  ['homologylevels_137',['HomologyLevels',['../namespacemackey.html#acfc5c9e79a9b49061bd7d2ee6c904ceb',1,'mackey']]]
 ];

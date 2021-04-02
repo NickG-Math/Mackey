@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mackey: Mackey::GraphPrinter&lt; graph_t, node_names_t &gt; Struct Template Reference</title>
+<title>Mackey: Mackey::GraphPrinter&lt; graph_t, node_names_t, edge_names_t &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,50 +96,50 @@ $(document).ready(function(){initNavTree('structMackey_1_1GraphPrinter.html','')
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structMackey_1_1GraphPrinter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Mackey::GraphPrinter&lt; graph_t, node_names_t &gt; Struct Template Reference</div>  </div>
+<div class="title">Mackey::GraphPrinter&lt; graph_t, node_names_t, edge_names_t &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Class that allows the printing of graphs in graphviz format with/without provided names for the nodes.  
  <a href="structMackey_1_1GraphPrinter.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Graph_8h_source.html">Graph.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Graph_8hpp_source.html">Graph.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a14f52523c532b2872796f32bdee9a3fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMackey_1_1GraphPrinter.html#a14f52523c532b2872796f32bdee9a3fe">GraphPrinter</a> (const graph_t &amp;<a class="el" href="structMackey_1_1GraphPrinter.html#adc40bc865b6e1a974ed17d07d3ea0808">graph</a>, const node_names_t *const <a class="el" href="structMackey_1_1GraphPrinter.html#a748a454e6e237dda1d76deaaf481ebe8">node_names</a>=nullptr)</td></tr>
-<tr class="memdesc:a14f52523c532b2872796f32bdee9a3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with graph and optionally node names.  <a href="structMackey_1_1GraphPrinter.html#a14f52523c532b2872796f32bdee9a3fe">More...</a><br /></td></tr>
-<tr class="separator:a14f52523c532b2872796f32bdee9a3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ab2a77759b8c61a7113b202e09e454"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMackey_1_1GraphPrinter.html#a93ab2a77759b8c61a7113b202e09e454">GraphPrinter</a> (const graph_t &amp;<a class="el" href="structMackey_1_1GraphPrinter.html#a7a8c011a6b101b133289053babf20295">graph</a>, const node_names_t *const <a class="el" href="structMackey_1_1GraphPrinter.html#aff2220dcc715a26b36dd722855fb8cbd">node_names</a>=nullptr, const edge_names_t *const <a class="el" href="structMackey_1_1GraphPrinter.html#a3f5f80fab59770598171819eeecae84e">edge_names</a>=nullptr)</td></tr>
+<tr class="memdesc:a93ab2a77759b8c61a7113b202e09e454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with graph and optionally node names.  <a href="structMackey_1_1GraphPrinter.html#a93ab2a77759b8c61a7113b202e09e454">More...</a><br /></td></tr>
+<tr class="separator:a93ab2a77759b8c61a7113b202e09e454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:adc40bc865b6e1a974ed17d07d3ea0808"><td class="memItemLeft" align="right" valign="top">const graph_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMackey_1_1GraphPrinter.html#adc40bc865b6e1a974ed17d07d3ea0808">graph</a></td></tr>
-<tr class="memdesc:adc40bc865b6e1a974ed17d07d3ea0808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the graph to be printed.  <a href="structMackey_1_1GraphPrinter.html#adc40bc865b6e1a974ed17d07d3ea0808">More...</a><br /></td></tr>
-<tr class="separator:adc40bc865b6e1a974ed17d07d3ea0808"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a748a454e6e237dda1d76deaaf481ebe8"><td class="memItemLeft" align="right" valign="top">const node_names_t *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMackey_1_1GraphPrinter.html#a748a454e6e237dda1d76deaaf481ebe8">node_names</a></td></tr>
-<tr class="memdesc:a748a454e6e237dda1d76deaaf481ebe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the names of the nodes. This can be either nullptr with type void or not nullptr and type not void.  <a href="structMackey_1_1GraphPrinter.html#a748a454e6e237dda1d76deaaf481ebe8">More...</a><br /></td></tr>
-<tr class="separator:a748a454e6e237dda1d76deaaf481ebe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a8c011a6b101b133289053babf20295"><td class="memItemLeft" align="right" valign="top">const graph_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMackey_1_1GraphPrinter.html#a7a8c011a6b101b133289053babf20295">graph</a></td></tr>
+<tr class="memdesc:a7a8c011a6b101b133289053babf20295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the graph to be printed.  <a href="structMackey_1_1GraphPrinter.html#a7a8c011a6b101b133289053babf20295">More...</a><br /></td></tr>
+<tr class="separator:a7a8c011a6b101b133289053babf20295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff2220dcc715a26b36dd722855fb8cbd"><td class="memItemLeft" align="right" valign="top">const node_names_t *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMackey_1_1GraphPrinter.html#aff2220dcc715a26b36dd722855fb8cbd">node_names</a></td></tr>
+<tr class="memdesc:aff2220dcc715a26b36dd722855fb8cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the names of the nodes. This can be either nullptr with type void or not nullptr and type not void.  <a href="structMackey_1_1GraphPrinter.html#aff2220dcc715a26b36dd722855fb8cbd">More...</a><br /></td></tr>
+<tr class="separator:aff2220dcc715a26b36dd722855fb8cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5f80fab59770598171819eeecae84e"><td class="memItemLeft" align="right" valign="top">const edge_names_t *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMackey_1_1GraphPrinter.html#a3f5f80fab59770598171819eeecae84e">edge_names</a></td></tr>
+<tr class="memdesc:a3f5f80fab59770598171819eeecae84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the names of the edges. This can be either nullptr with type void or not nullptr and type not void.  <a href="structMackey_1_1GraphPrinter.html#a3f5f80fab59770598171819eeecae84e">More...</a><br /></td></tr>
+<tr class="separator:a3f5f80fab59770598171819eeecae84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename graph_t, typename node_names_t = void&gt;<br />
-struct Mackey::GraphPrinter&lt; graph_t, node_names_t &gt;</h3>
+<div class="textblock"><h3>template&lt;typename graph_t, typename node_names_t = void, typename edge_names_t = void&gt;<br />
+struct Mackey::GraphPrinter&lt; graph_t, node_names_t, edge_names_t &gt;</h3>
 
 <p>Class that allows the printing of graphs in graphviz format with/without provided names for the nodes. </p>
-<p>The template graph_t can be <a class="el" href="classMackey_1_1Graph.html">Graph&lt;void&gt;</a> , <a class="el" href="classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors.">ColoredGraph</a> etc. The template node_names_t can be void (if nodes are not named), std::vector&lt;std::string&gt; or more generally any class with an operator std::string [](int) const </p>
+<p>The template graph_t can be <a class="el" href="classMackey_1_1Graph.html">Graph&lt;void&gt;</a> , <a class="el" href="classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors.">ColoredGraph</a> etc. The template node_names_t can be void (if nodes are not named), std::vector&lt;std::string&gt; or more generally any class with an operator std::string [](int) const The template edge_names_t can be void (if edges are not named), std::vector&lt;std::vector&lt;std::string&gt;&gt; or more generally any class with an "operator" std::string [][](int,int) const, or any class with an operator std::string ()(int,int) const (this takes precedence over [][]) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a14f52523c532b2872796f32bdee9a3fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14f52523c532b2872796f32bdee9a3fe">&#9670;&nbsp;</a></span>GraphPrinter()</h2>
+<a id="a93ab2a77759b8c61a7113b202e09e454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ab2a77759b8c61a7113b202e09e454">&#9670;&nbsp;</a></span>GraphPrinter()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename graph_t , typename node_names_t  = void&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;typename graph_t , typename node_names_t  = void, typename edge_names_t  = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structMackey_1_1GraphPrinter.html">Mackey::GraphPrinter</a>&lt; graph_t, node_names_t &gt;::<a class="el" href="structMackey_1_1GraphPrinter.html">GraphPrinter</a> </td>
+          <td class="memname"><a class="el" href="structMackey_1_1GraphPrinter.html">Mackey::GraphPrinter</a>&lt; graph_t, node_names_t, edge_names_t &gt;::<a class="el" href="structMackey_1_1GraphPrinter.html">GraphPrinter</a> </td>
           <td>(</td>
           <td class="paramtype">const graph_t &amp;&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
@@ -148,7 +148,13 @@ template&lt;typename graph_t , typename node_names_t  = void&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const node_names_t *const&#160;</td>
-          <td class="paramname"><em>node_names</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>node_names</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const edge_names_t *const&#160;</td>
+          <td class="paramname"><em>edge_names</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -156,11 +162,6 @@ template&lt;typename graph_t , typename node_names_t  = void&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Constructor with graph and optionally node names. </p>
@@ -168,16 +169,34 @@ template&lt;typename graph_t , typename node_names_t  = void&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="adc40bc865b6e1a974ed17d07d3ea0808"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc40bc865b6e1a974ed17d07d3ea0808">&#9670;&nbsp;</a></span>graph</h2>
+<a id="a3f5f80fab59770598171819eeecae84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5f80fab59770598171819eeecae84e">&#9670;&nbsp;</a></span>edge_names</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename graph_t , typename node_names_t  = void&gt; </div>
+template&lt;typename graph_t , typename node_names_t  = void, typename edge_names_t  = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const graph_t&amp; <a class="el" href="structMackey_1_1GraphPrinter.html">Mackey::GraphPrinter</a>&lt; graph_t, node_names_t &gt;::graph</td>
+          <td class="memname">const edge_names_t* const <a class="el" href="structMackey_1_1GraphPrinter.html">Mackey::GraphPrinter</a>&lt; graph_t, node_names_t, edge_names_t &gt;::edge_names</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the names of the edges. This can be either nullptr with type void or not nullptr and type not void. </p>
+
+</div>
+</div>
+<a id="a7a8c011a6b101b133289053babf20295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a8c011a6b101b133289053babf20295">&#9670;&nbsp;</a></span>graph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename graph_t , typename node_names_t  = void, typename edge_names_t  = void&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const graph_t&amp; <a class="el" href="structMackey_1_1GraphPrinter.html">Mackey::GraphPrinter</a>&lt; graph_t, node_names_t, edge_names_t &gt;::graph</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -186,16 +205,16 @@ template&lt;typename graph_t , typename node_names_t  = void&gt; </div>
 
 </div>
 </div>
-<a id="a748a454e6e237dda1d76deaaf481ebe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a748a454e6e237dda1d76deaaf481ebe8">&#9670;&nbsp;</a></span>node_names</h2>
+<a id="aff2220dcc715a26b36dd722855fb8cbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2220dcc715a26b36dd722855fb8cbd">&#9670;&nbsp;</a></span>node_names</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename graph_t , typename node_names_t  = void&gt; </div>
+template&lt;typename graph_t , typename node_names_t  = void, typename edge_names_t  = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const node_names_t* const <a class="el" href="structMackey_1_1GraphPrinter.html">Mackey::GraphPrinter</a>&lt; graph_t, node_names_t &gt;::node_names</td>
+          <td class="memname">const node_names_t* const <a class="el" href="structMackey_1_1GraphPrinter.html">Mackey::GraphPrinter</a>&lt; graph_t, node_names_t, edge_names_t &gt;::node_names</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -205,7 +224,7 @@ template&lt;typename graph_t , typename node_names_t  = void&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>source/Utility/<a class="el" href="Graph_8h_source.html">Graph.h</a></li>
+<li><a class="el" href="Graph_8hpp_source.html">Graph.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

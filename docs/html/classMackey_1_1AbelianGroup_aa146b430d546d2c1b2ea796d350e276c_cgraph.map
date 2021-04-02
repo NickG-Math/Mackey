@@ -1,0 +1,4 @@
+<map id="Mackey::AbelianGroup::span" name="Mackey::AbelianGroup::span">
+<area shape="rect" id="node1" title="Expresses a as a linear combination of elements b[i] in the group. If a is not in their span,..." alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#aeb3cbf5cc7cb166e8e0a552dda57d05b" title="Given an x that is a boundary returns a y s.t. dy=x." alt="" coords="220,13,435,39"/>
+</map>

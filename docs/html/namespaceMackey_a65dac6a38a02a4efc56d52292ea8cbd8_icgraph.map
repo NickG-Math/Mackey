@@ -1,4 +1,0 @@
-<map id="Mackey::change_base_matrix_normalize" name="Mackey::change_base_matrix_normalize">
-<area shape="rect" id="node1" title="Given matrix and change of basis matrices, produces the matrix w.r.t. the new basis and normalizes it..." alt="" coords="231,5,395,47"/>
-<area shape="rect" id="node2" href="$classMackey_1_1MackeyFunctor.html#a6522cfe1071ccb92ff3db38d89e14687" title="Applies isomorphism to Mackey functor (its inverse is also needed)" alt="" coords="5,5,183,47"/>
-</map>

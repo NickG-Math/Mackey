@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scalar_5ft_735',['Scalar_t',['../namespaceMackey.html#a93ba297573961f91101fb84bc84bbe95',1,'Mackey']]],
-  ['spm_5ft_736',['spm_t',['../namespaceMackey.html#a3f5deb1be99876ac8c7d72f0f0cca3af',1,'Mackey']]],
-  ['spm_5ft_5fr_737',['spm_t_r',['../namespaceMackey.html#acc7de57bf31af7089e6bc392c8b52e7e',1,'Mackey']]]
+  ['neighborhood_5ft_705',['neighborhood_t',['../classmackey_1_1Graph.html#afc28cb676d8c09858444e5813378f70b',1,'mackey::Graph']]],
+  ['node_5ft_706',['node_t',['../classmackey_1_1Neighborhood.html#ae4ec6cab357e66c5cc192dd916119c46',1,'mackey::Neighborhood::node_t()'],['../classmackey_1_1Graph.html#a5a47656564d64be316169e14e82a4d55',1,'mackey::Graph::node_t()'],['../classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73',1,'mackey::ShortestPaths::node_t()'],['../classmackey_1_1Dijkstra.html#af6e4b6611dda42ad1de1f72b9b5b0f73',1,'mackey::Dijkstra::node_t()']]]
 ];

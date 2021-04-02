@@ -1,0 +1,5 @@
+<map id="Mackey::Mult_Graph_Identify::pass_product" name="Mackey::Mult_Graph_Identify::pass_product">
+<area shape="rect" id="node1" title="Uses triple box products to possibly identify the products of given generators if identification fail..." alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a43cf712cb611ddbafa91b005a911436e" title="Chains cerealize." alt="" coords="224,13,359,39"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Chains.html#a854da8e7da107512a99011c971e9ab64" title="The maximum index of the Chain complex." alt="" coords="407,13,603,39"/>
+</map>

@@ -1,8 +1,4 @@
 <map id="Mackey::restriction" name="Mackey::restriction">
-<area shape="rect" id="node1" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="488,101,633,127"/>
-<area shape="rect" id="node2" href="$structMackey_1_1internal_1_1MasseyCompute.html#aa62c7436a98f7be7105e6ab0157cb431" title=" " alt="" coords="253,5,439,47"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors." alt="" coords="252,71,440,98"/>
-<area shape="rect" id="node4" href="$structMackey_1_1internal_1_1MasseyCompute.html#a720436488adcfdf1d976b27be7d95b55" title=" " alt="" coords="253,123,439,164"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a6818760aa9590810daace862e4c71f04" title="Writing the restriction of each generator in terms of the generators in the image." alt="" coords="273,189,419,215"/>
-<area shape="rect" id="node5" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title=" " alt="" coords="5,123,204,164"/>
+<area shape="rect" id="node1" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="199,5,344,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a96d7fd4b6256a4526b9e2a766b00116e" title="Writing the restriction of each generator in terms of the generators in the image." alt="" coords="5,5,151,32"/>
 </map>

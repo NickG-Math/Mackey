@@ -1,0 +1,4 @@
+<map id="Mackey::ROChains" name="Mackey::ROChains">
+<area shape="rect" id="node1" title="Returns the Chains of given sphere. Optionally stop at index i (i=&#45;1 means nonstop i...." alt="" coords="5,13,148,39"/>
+<area shape="rect" id="node2" href="$classMackey_1_1AMT.html#a127dcba1532c6e8d030fd69c07c48bc4" title="Returns the average compression ratio as a double in [0,1]. Ideally as close to 0 as possible." alt="" coords="196,5,372,47"/>
+</map>

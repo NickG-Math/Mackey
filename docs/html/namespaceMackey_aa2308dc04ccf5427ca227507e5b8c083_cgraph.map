@@ -1,0 +1,7 @@
+<map id="Mackey::transfer" name="Mackey::transfer">
+<area shape="rect" id="node1" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="5,81,136,108"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a4f27f7fd15df9d64b641f324b460a9f4" title="Turn sparse matrix into a vector of Eigen triplets." alt="" coords="184,5,379,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#ad6870101d4fd762100a3115abc4a15db" title="Makes a new matrix out of A keeping only its rows indicated by Z." alt="" coords="212,56,351,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a160149e2ba605446e0ae2211ef39dc98" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="205,107,358,133"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a30ce1e024675b26182015a729c4f68b7" title="Transfer the rank to given level." alt="" coords="216,157,347,184"/>
+</map>

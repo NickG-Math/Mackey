@@ -1,9 +1,0 @@
-<map id="source/Types/Aliases.h" name="source/Types/Aliases.h">
-<area shape="rect" id="node1" title="Contains general template aliases." alt="" coords="5,5,175,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="247,229,349,256"/>
-<area shape="rect" id="node3" title=" " alt="" coords="37,155,143,181"/>
-<area shape="rect" id="node4" href="$SFINAE_8h.html" title="Contains all the SFINAE tricks." alt="" coords="215,80,296,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="422,229,502,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="168,155,260,181"/>
-<area shape="rect" id="node7" href="$Z__n_8h.html" title="Contains the class for Z/N coefficients." alt="" coords="335,155,474,181"/>
-</map>

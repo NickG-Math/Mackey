@@ -1,9 +1,0 @@
-<map id="Mackey::Green::Green" name="Mackey::Green::Green">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level. " alt="" coords="235,5,355,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a37f0a650642090aa89d5cbc89dc5d0ee" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="431,107,571,133"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#ad1e907ff76b07d4fc4c9d4bdf25918bd" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="229,107,362,133"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a30b5667e411ff694aa989e95e394bb41" title="Mackey::invRes" alt="" coords="237,157,354,184"/>
-<area shape="rect" id="node7" href="$classMackey_1_1Homology.html#a3ef6bc9a9859c3711c11d153ba55b3e1" title="Given an element in homology, write it as a linear combination of the generators of the homology..." alt="" coords="208,208,383,235"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent. " alt="" coords="445,5,556,32"/>
-<area shape="rect" id="node8" href="$namespaceMackey.html#ae44b27dcf905a7ff976ebc79f197c579" title="Makes a new matrix out of A keeping only its rows indicated by Z. " alt="" coords="434,208,567,235"/>
-</map>

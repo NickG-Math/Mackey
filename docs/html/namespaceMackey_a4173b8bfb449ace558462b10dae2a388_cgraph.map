@@ -1,0 +1,8 @@
+<map id="Mackey::distinguish" name="Mackey::distinguish">
+<area shape="rect" id="node1" title="Find if given elements can all be distinguished i.e. they have pairwise disjoint candidate sets." alt="" coords="5,74,156,101"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a33fbc196dc4860eb03b35edb651a6534" title="Use the ID data to identify all possible candidates for an element." alt="" coords="209,45,378,71"/>
+<area shape="rect" id="node6" href="$classMackey_1_1AbelianGroup.html#a0c17c7e85e9b7a91ed1f65f3728b2476" title="Returns the number of direct summands of the group." alt="" coords="204,96,383,137"/>
+<area shape="rect" id="node3" href="$classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data." alt="" coords="431,5,597,47"/>
+<area shape="rect" id="node5" href="$classMackey_1_1AbelianGroup.html#a5cd394f5cc7ee1b0b25030a53cc4c701" title="Normalize linear map whose range is this group (reduce n in Z/n to 0 etc.)." alt="" coords="431,71,597,112"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MackeyFunctor.html#a7b117ce136e8a25af08d608d9a4b074f" title="Resize all member variables." alt="" coords="645,5,823,47"/>
+</map>

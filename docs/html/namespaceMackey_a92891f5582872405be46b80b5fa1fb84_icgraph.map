@@ -1,4 +1,0 @@
-<map id="Mackey::changebasis" name="Mackey::changebasis">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a90ea60504ffb74da3a53875368225f8f" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="203,13,373,39"/>
-<area shape="rect" id="node3" href="$classMackey_1_1ChangeBasis.html#a036c1f54ffb4cf4115efa2fab60c354b" title="Constructs the change of basis matrices given two ranks. " alt="" coords="421,5,576,47"/>
-</map>

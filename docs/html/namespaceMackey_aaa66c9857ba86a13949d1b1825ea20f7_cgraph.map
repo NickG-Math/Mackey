@@ -1,8 +1,0 @@
-<map id="Mackey::action" name="Mackey::action">
-<area shape="rect" id="node1" title="Writing the Weyl group action on each generator in terms of the other generators." alt="" coords="5,31,124,57"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#aa515b26c0fbc7f19b36cee7d826f07b9" title="Compute the Weyl group action on a generator given the rank of the group it lives in." alt="" coords="206,5,325,32"/>
-<area shape="rect" id="node5" href="$classMackey_1_1Homology.html#a2e6fb6da3abdba934a1eb2f4236623cb" title="Given an element in homology, write it as a linear combination of the generators of the homology." alt="" coords="172,56,359,83"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#aab8a6292210a3b71960cb03b79d218e6" title=" " alt="" coords="407,5,572,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#aabed38680919594c4ba5eaa6730a7f82" title=" " alt="" coords="620,5,733,32"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero." alt="" coords="429,56,549,83"/>
-</map>

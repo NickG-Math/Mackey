@@ -29,70 +29,61 @@ var NAVTREE =
       [ "Introduction", "index.html#intro", null ],
       [ "Requirements", "index.html#req", null ],
       [ "Installation", "index.html#install", null ],
-      [ "Current Status", "index.html#status", null ],
       [ "Documentation", "index.html#doc", null ]
     ] ],
     [ "From Math to Code", "math.html", [
-      [ "Briefly", "math.html#Briefly", null ],
-      [ "In more detail", "math.html#imd", [
-        [ "The additive structure", "math.html#add", null ],
-        [ "\"Universal\" Additive Notation", "math.html#mack", null ],
-        [ "Isomorphic Mackey Functors", "math.html#iso", null ],
-        [ "The multiplicative structure", "math.html#mult", null ],
-        [ "Factorization", "math.html#factor", null ],
-        [ "Massey Products", "math.html#Mass", null ]
+      [ "In a nutshell", "math.html#nut", null ],
+      [ "Briefly", "math.html#br", null ],
+      [ "Obtaining a useful output", "math.html#mean", [
+        [ "\"Universal\" Mackey functor notation", "math.html#mack", null ],
+        [ "Isomorphic Mackey functors", "math.html#iso", null ],
+        [ "Factorization", "math.html#factor", null ]
       ] ],
       [ "A caveat", "math.html#caveat", [
         [ "Cyclic Generators", "math.html#cyclic", null ],
-        [ "Non cyclic generators", "math.html#noncycl", null ]
+        [ "Non cyclic generators", "math.html#noncyclic", null ]
       ] ]
     ] ],
-    [ "How to Use", "use.html", [
-      [ "Step 0: Setting the Group Parameters", "use.html#how", [
-        [ "Global variables", "use.html#var", null ],
-        [ "The standard chains", "use.html#fun", null ]
-      ] ],
-      [ "Step 1: Calling the library", "use.html#next", [
-        [ "Coefficients and templates", "use.html#coeff", null ],
-        [ "The additive structure", "use.html#step1add", null ],
-        [ "The multiplicative structure", "use.html#step1mult", null ],
-        [ "Factorization", "use.html#step1fact", null ],
-        [ "Massey products", "use.html#step1Mass", null ],
-        [ "Serialization", "use.html#step1Cer", null ]
+    [ "Tutorial", "tuto.html", [
+      [ "Includes", "tuto.html#incl", null ],
+      [ "Namespaces", "tuto.html#name", null ],
+      [ "Template parameters", "tuto.html#temp", null ],
+      [ "Code Examples", "tuto.html#next", [
+        [ "The additive structure", "tuto.html#add", null ],
+        [ "Factorization", "tuto.html#fact", null ],
+        [ "Multiplying generators", "tuto.html#mult", null ],
+        [ "Massey products", "tuto.html#mass", null ],
+        [ "Higher order groups", "tuto.html#bey", null ],
+        [ "Serialization", "tuto.html#serial", null ]
       ] ]
     ] ],
-    [ "Select Implementation Details", "algo.html", [
-      [ "Smith Normal Form", "algo.html#smith", null ],
-      [ "Change of Basis", "algo.html#cob", null ],
-      [ "Box product", "algo.html#box", null ],
-      [ "Graphs", "algo.html#graph", null ]
+    [ "Extensions", "ext.html", [
+      [ "Extending the group", "ext.html#grp", null ],
+      [ "Extending the coefficients", "ext.html#coeff", null ]
     ] ],
-    [ "Performance", "perf.html", [
-      [ "Compiler Options", "perf.html#compoptions", null ],
-      [ "Multithreading", "perf.html#thread", null ],
-      [ "Dense vs Sparse", "perf.html#densevssparse", null ],
-      [ "Integers vs Floats", "perf.html#intvsfloat", null ],
-      [ "Box Products", "perf.html#boxproducts", null ]
+    [ "Beneath the surface", "algo.html", [
+      [ "Dense vs sparse", "algo.html#dvs", null ],
+      [ "Smith normal form", "algo.html#smith", null ],
+      [ "Algebraic Morse theory", "algo.html#amt", null ],
+      [ "Equivariant chain complexes", "algo.html#equiv", null ],
+      [ "Box products", "algo.html#box", null ]
     ] ],
+    [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
-        [ "Enumerator", "functions_eval.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -100,7 +91,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -109,9 +100,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Additive_8h.html",
-"classMackey_1_1ChangeBasis.html#aa169c2e7937437ea2102de1c3072194c",
-"classZ_3_012_01_4.html#a4e3e38fa1efaac5fc42ab091b6c958f7"
+"Abelian_8hpp.html",
+"classmackey_1_1Factorization.html",
+"functions_func.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,0 +1,5 @@
+<map id="Mackey::AMT::AMT" name="Mackey::AMT::AMT">
+<area shape="rect" id="node1" title="Constructor that allows only to resize." alt="" coords="5,42,149,69"/>
+<area shape="rect" id="node2" href="$classMackey_1_1AMT.html#a77fc84e50a723b20c560d3286b62fc8c" title="Sets the morse matchiing and normalizes diff if normalize=1 (this speeds up the AMT algorithm)" alt="" coords="197,5,384,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1AMT.html#ad0b404872efd6ce4c421100be2580ae1" title="Performs the reduction and sets the &quot;change of basis&quot; f,g." alt="" coords="211,71,370,98"/>
+</map>

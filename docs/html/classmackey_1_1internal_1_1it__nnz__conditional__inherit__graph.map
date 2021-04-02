@@ -1,0 +1,5 @@
+<map id="it_nnz_conditional&lt; T, bool &gt;" name="it_nnz_conditional&lt; T, bool &gt;">
+<area shape="rect" id="node1" title="Helper class for iterating over nonzero entries in a sparse or dense Eigen matrix (offering consisten..." alt="" coords="30,5,170,47"/>
+<area shape="rect" id="node2" href="$classMackey_1_1internal_1_1it__nnz__conditional.html" title=" " alt="" coords="11,109,189,136"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Iterator__NonZero__Entries.html" title="Iterator over nonzero entries of blocks (lower right corners) of Eigen matrices, both sparse and dens..." alt="" coords="5,185,195,227"/>
+</map>

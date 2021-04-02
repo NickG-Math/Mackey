@@ -1,0 +1,7 @@
+<map id="MultTableData&lt; group_t &gt;" name="MultTableData&lt; group_t &gt;">
+<area shape="rect" id="node1" title="The data of the Multiplication Table." alt="" coords="111,5,305,32"/>
+<area shape="rect" id="node2" href="$classmackey_1_1MultTable.html" title="The Multiplication Table with both data and methods." alt="" coords="126,80,290,107"/>
+<area shape="rect" id="node3" href="$classmackey_1_1MultGraph.html" title="The Multiplication Graph created from the Multiplication Table." alt="" coords="123,155,293,181"/>
+<area shape="rect" id="node4" href="$classmackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources." alt="" coords="5,229,189,256"/>
+<area shape="rect" id="node5" href="$classmackey_1_1MultConnectivity.html" title="Finds the connectivity of the multiplication graph." alt="" coords="214,229,426,256"/>
+</map>

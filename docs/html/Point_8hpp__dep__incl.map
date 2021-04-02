@@ -1,0 +1,12 @@
+<map id="Point.hpp" name="Point.hpp">
+<area shape="rect" id="node1" title="Contains the computations for RO(G) homology of a point." alt="" coords="199,5,282,32"/>
+<area shape="rect" id="node2" href="$Mult__Table_8hpp.html" title="Contains the class and methods to form the multiplication table." alt="" coords="180,80,300,107"/>
+<area shape="rect" id="node8" href="$Additive_8hpp.html" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="372,229,476,256"/>
+<area shape="rect" id="node9" href="$Space_8hpp.html" title="File containing the class for spaces other than points!" alt="" coords="65,80,154,107"/>
+<area shape="rect" id="node3" href="$Mult__Graph_8hpp.html" title="Contains the multiplication graph." alt="" coords="178,155,303,181"/>
+<area shape="rect" id="node4" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="215,229,348,256"/>
+<area shape="rect" id="node7" href="$Mult__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="24,229,190,256"/>
+<area shape="rect" id="node5" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="151,304,250,331"/>
+<area shape="rect" id="node6" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="295,304,410,331"/>
+<area shape="rect" id="node10" href="$BC4S2_8hpp.html" title=" " alt="" coords="21,155,113,181"/>
+</map>

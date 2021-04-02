@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['lcm_175',['lcm',['../namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2',1,'Mackey']]],
-  ['lefttocanon_176',['LefttoCanon',['../classMackey_1_1ChangeBasis.html#a784f69cb8de92e84fef755461c60d3d0',1,'Mackey::ChangeBasis']]],
-  ['level_177',['level',['../classMackey_1_1MultiplicationTable.html#ad5a05c126e0b3c769fa9b1196a8db96a',1,'Mackey::MultiplicationTable::level()'],['../classMackey_1_1Levels.html#af9a1391f683685ae464829b9b32162c8',1,'Mackey::Levels::level()'],['../structMackey_1_1internal_1_1MasseyCompute.html#a8e1950e34cbfb467052e530f7a3c9e33',1,'Mackey::internal::MasseyCompute::level()']]],
-  ['levels_178',['Levels',['../classMackey_1_1Levels.html',1,'Mackey::Levels&lt; T &gt;'],['../classMackey_1_1Levels.html#a450b9aba828f03dd340e89169a4bd9e0',1,'Mackey::Levels::Levels()']]],
-  ['levels_2eh_179',['Levels.h',['../Levels_8h.html',1,'']]],
-  ['literal_180',['Literal',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#afc07a3fc65ced03bfc30de81355ac988',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
-  ['load_181',['load',['../classMackey_1_1MultiplicationTable.html#afe48d7818a420930c571f57c9bae006a',1,'Mackey::MultiplicationTable::load()'],['../namespacecereal.html#a62dfe53ce43ad27c02ca954e9da31dc5',1,'cereal::load()'],['../namespaceMackey.html#ac34d89121229145967593a1b6c30d7aa',1,'Mackey::load()']]],
-  ['loader_182',['loader',['../namespaceMackey.html#a735958355cdca12e0d312b7e604f28bc',1,'Mackey']]]
+  ['lcm_171',['lcm',['../namespacemackey.html#ae4c4ab3d22fbd93f8c1fe74079416c3b',1,'mackey']]],
+  ['left_5fto_5fcanon_172',['left_to_canon',['../structmackey_1_1ChangeBasis.html#aef5f59becb2933b3aff52c50745c9dbb',1,'mackey::ChangeBasis']]],
+  ['level_173',['level',['../structmackey_1_1MultTableData.html#acf4d33ee4cff36f69b924471174dcb11',1,'mackey::MultTableData::level()'],['../structmackey_1_1Levels.html#adac4970c9226585cf1564727256070a6',1,'mackey::Levels::level()']]],
+  ['levels_174',['Levels',['../structmackey_1_1Levels.html#a7ba0846f8571e3279ccffa838f35c784',1,'mackey::Levels::Levels()'],['../structmackey_1_1Levels.html',1,'Levels&lt; T, group_t &gt;']]],
+  ['levels_2ehpp_175',['Levels.hpp',['../Levels_8hpp.html',1,'']]],
+  ['load_176',['load',['../namespacemackey.html#a63a4fcf4374ee9ec5fce9705f2b3b769',1,'mackey']]]
 ];

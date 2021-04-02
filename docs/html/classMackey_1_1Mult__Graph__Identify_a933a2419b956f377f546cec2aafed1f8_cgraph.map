@@ -1,0 +1,5 @@
+<map id="Mackey::Mult_Graph_Identify::pass_all_unidentified" name="Mackey::Mult_Graph_Identify::pass_all_unidentified">
+<area shape="rect" id="node1" title="Uses triple box products to possibly identify ALL instances where identification failed before...." alt="" coords="5,5,160,61"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a43cf712cb611ddbafa91b005a911436e" title="Chains cerealize." alt="" coords="208,20,343,47"/>
+<area shape="rect" id="node3" href="$classMackey_1_1Chains.html#a854da8e7da107512a99011c971e9ab64" title="The maximum index of the Chain complex." alt="" coords="391,20,587,47"/>
+</map>

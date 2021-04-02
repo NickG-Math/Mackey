@@ -1,4 +1,0 @@
-<map id="Mackey::changebasis" name="Mackey::changebasis">
-<area shape="rect" id="node1" title="Returns the change of basis matrix (as a permutation) from basis A to basis B." alt="" coords="237,5,397,32"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a232e85ca1fb9017788b33b7f6f2c269b" title="Constructs the 3 bases (left+right convenient and canonical) and returns the two change of basis matr..." alt="" coords="5,5,189,32"/>
-</map>

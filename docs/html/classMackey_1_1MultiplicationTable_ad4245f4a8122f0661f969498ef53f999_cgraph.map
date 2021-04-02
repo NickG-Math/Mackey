@@ -1,4 +1,0 @@
-<map id="Mackey::MultiplicationTable::getsphere" name="Mackey::MultiplicationTable::getsphere">
-<area shape="rect" id="node1" title="Isolate sphere from the degree vector (i.e. get everything but first entry)" alt="" coords="5,5,208,47"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start." alt="" coords="256,13,356,39"/>
-</map>

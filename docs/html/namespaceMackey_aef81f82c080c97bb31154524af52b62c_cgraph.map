@@ -1,6 +1,0 @@
-<map id="Mackey::isMultiple" name="Mackey::isMultiple">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite..." alt="" coords="189,31,294,57"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a82dd9e46100ec78b6238a3b60a5b1b45" title="Finds if two elements are equal in the given finitely generated abelian group. " alt="" coords="184,81,299,108"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a9c9c2faea24be988cdfcd773360134be" title="Least common multiple of vector of elements. " alt="" coords="347,5,444,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements. " alt="" coords="347,56,444,83"/>
-</map>

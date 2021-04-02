@@ -1,4 +1,0 @@
-<map id="Mackey::isMultiple" name="Mackey::isMultiple">
-<area shape="rect" id="node1" title="Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!..." alt="" coords="260,13,403,39"/>
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]." alt="" coords="5,5,212,47"/>
-</map>

@@ -1,0 +1,4 @@
+<map id="Mackey::Junction::Junction" name="Mackey::Junction::Junction">
+<area shape="rect" id="node1" title="Extract the Junction C[i+1]&#45;&gt;C[i]&#45;&gt;C[i&#45;1] from the Chains C." alt="" coords="5,5,196,32"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Chains.html#a854da8e7da107512a99011c971e9ab64" title="The maximum index of the Chain complex." alt="" coords="244,5,440,32"/>
+</map>

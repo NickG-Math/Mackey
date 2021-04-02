@@ -1,5 +1,0 @@
-<map id="Mackey::isMultiple" name="Mackey::isMultiple">
-<area shape="rect" id="node1" title="Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!..." alt="" coords="5,5,148,32"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a1b3e66989e89c8b97d113d8eec0b47b8" title="Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group...." alt="" coords="196,5,307,32"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Homology.html#aeb3cbf5cc7cb166e8e0a552dda57d05b" title="Given an x that is a boundary returns a y s.t. dy=x." alt="" coords="355,5,569,32"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="Mackey::is_p_group" name="Mackey::is_p_group">
-<area shape="rect" id="node1" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0)" alt="" coords="5,5,155,32"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#aa136aece9117704b3e5180d92484ed10" title="Returns all primes up to n (not optimized; n is usually very small)" alt="" coords="203,5,327,32"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="Mackey::Reindex" name="Mackey::Reindex">
-<area shape="rect" id="node1" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere)" alt="" coords="256,122,388,149"/>
-<area shape="rect" id="node2" href="$classMackey_1_1AdditiveStructure.html#a2638212adc9b1fdacf0a50d9fb23cf0d" title="Retrieve the Mackey functor for the given degree." alt="" coords="11,5,203,47"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="38,71,175,98"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#aa014e2177bd124bce2e8e7a4c1dc8d38" title="Computes the homology for the given level and degree." alt="" coords="24,122,189,149"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a9fcefe47f5a8a416b173517377a61bd0" title="Computes the Massey product of three generators in the RO(G) homology given their level,..." alt="" coords="33,173,181,199"/>
-<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationTable.html#a9772a0a094c72d4bc9c1f676889ed9c0" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="5,224,208,265"/>
-</map>

@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+  C^e_*(X)\otimes C^e_*(S^V)\otimes C^e_*(S^W)\ar[d,"1\otimes 1\otimes (-)^*"]\\
+  C^e_*(X)\otimes C^e_*(S^V)\otimes C^e_{-*}(S^{-W})\ar[d,"\otimes"]\\
+  C_*^e(\Sigma^{V-W}X)\ar[d,"Tr"]\ar[r,"H_*"]&H_{*-(V-W)}^e(X)\\
+  C_*^{C_2}(\Sigma^{V-W}X)\ar[d,"Tr"]\ar[r,"H_*"]&H_{*-(V-W)}^{C_2}(X)\\
+  C_*^{C_4}(\Sigma^{V-W}X)\ar[r,"H_*"]&H_{*-(V-W)}^{C_4}(X)
+\end{tikzcd}
+\end{document}

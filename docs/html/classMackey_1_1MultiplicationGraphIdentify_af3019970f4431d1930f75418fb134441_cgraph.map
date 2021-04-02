@@ -1,5 +1,0 @@
-<map id="Mackey::MultiplicationGraphIdentify::pass_product" name="Mackey::MultiplicationGraphIdentify::pass_product">
-<area shape="rect" id="node1" title="Uses triple box products to possibly identify the products of given generators if identification fail..." alt="" coords="5,23,212,65"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices." alt="" coords="275,5,379,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a43cf712cb611ddbafa91b005a911436e" title="Chains cerealize." alt="" coords="260,56,395,83"/>
-</map>

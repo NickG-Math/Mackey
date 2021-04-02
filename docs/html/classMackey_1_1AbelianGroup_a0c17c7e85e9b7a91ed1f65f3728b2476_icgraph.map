@@ -1,0 +1,5 @@
+<map id="Mackey::AbelianGroup::number_of_summands" name="Mackey::AbelianGroup::number_of_summands">
+<area shape="rect" id="node1" title="Returns the number of direct summands of the group." alt="" coords="220,27,399,69"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a4173b8bfb449ace558462b10dae2a388" title="Find if given elements can all be distinguished i.e. they have pairwise disjoint candidate sets." alt="" coords="13,5,164,32"/>
+<area shape="rect" id="node3" href="$classMackey_1_1AbelianGroup.html#a0d979e8463685f31716b9609a7cfa0d2" title="The direct sum of groups. No sorting!" alt="" coords="5,57,172,98"/>
+</map>

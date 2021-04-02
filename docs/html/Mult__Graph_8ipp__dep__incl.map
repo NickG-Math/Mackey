@@ -1,0 +1,12 @@
+<map id="Mult_Graph.ipp" name="Mult_Graph.ipp">
+<area shape="rect" id="node1" title="Contains the multiplication graph." alt="" coords="234,5,355,32"/>
+<area shape="rect" id="node2" href="$Mult__Graph_8hpp.html" title="Contains the multiplication graph." alt="" coords="232,80,357,107"/>
+<area shape="rect" id="node3" href="$Mult__Graph__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="79,155,291,181"/>
+<area shape="rect" id="node9" href="$Mult__Graph__Identify_8hpp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="355,155,533,181"/>
+<area shape="rect" id="node4" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="237,229,371,256"/>
+<area shape="rect" id="node8" href="$Mult__Graph__Connectivity_8ipp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="5,229,213,256"/>
+<area shape="rect" id="node5" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="100,304,215,331"/>
+<area shape="rect" id="node7" href="$Factorization_8ipp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="239,304,369,331"/>
+<area shape="rect" id="node6" href="$Cerealizer_8ipp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="102,379,213,405"/>
+<area shape="rect" id="node10" href="$Mult__Graph__Identify_8ipp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="395,229,570,256"/>
+</map>

@@ -1,9 +1,9 @@
-<map id="Mackey::MultiplicationGraph&lt; rank_t, diff_t &gt;" name="Mackey::MultiplicationGraph&lt; rank_t, diff_t &gt;">
-<area shape="rect" id="node1" title="The Multiplication Graph created from the Multiplication Table." alt="" coords="541,39,748,80"/>
-<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationGraphConnectivity.html" title="Provides extra identification methods using triple box products." alt="" coords="796,5,1012,47"/>
-<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationGraphIdentify.html" title="Provides extra identification methods using triple box products." alt="" coords="801,71,1007,112"/>
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationTable.html" title="The Multiplication Table." alt="" coords="291,9,493,51"/>
-<area shape="rect" id="node3" href="$classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors." alt="" coords="308,75,476,102"/>
-<area shape="rect" id="node4" href="$classMackey_1_1Graph.html" title="A directed Graph." alt="" coords="5,75,243,102"/>
-<area shape="rect" id="node7" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources." alt="" coords="1060,71,1223,112"/>
+<map id="Mackey::MultiplicationGraph&lt; group_t &gt;" name="Mackey::MultiplicationGraph&lt; group_t &gt;">
+<area shape="rect" id="node1" title="The Multiplication Graph created from the Multiplication Table." alt="" coords="96,169,303,211"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Mult__Graph__Connectivity.html" title="Provides methods for filling the multiplication graph with &quot;wrong&quot; edges that don&#39;t affect the connec..." alt="" coords="5,259,196,300"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Mult__Graph__Identify.html" title="Provides extra identification methods using triple box products." alt="" coords="221,259,378,300"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Mult__Table.html" title="The Multiplication Table." alt="" coords="34,80,183,121"/>
+<area shape="rect" id="node3" href="$classMackey_1_1ColoredGraph.html" title="A directed Graph with two colors." alt="" coords="207,87,375,114"/>
+<area shape="rect" id="node4" href="$classMackey_1_1Graph.html" title="A directed Graph." alt="" coords="173,5,410,32"/>
+<area shape="rect" id="node7" href="$classMackey_1_1Factorization.html" title="Factorizes generators into the given basic irreducibles and sources." alt="" coords="218,348,381,389"/>
 </map>

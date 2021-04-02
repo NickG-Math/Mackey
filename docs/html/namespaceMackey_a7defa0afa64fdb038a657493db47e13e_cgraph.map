@@ -1,4 +1,4 @@
 <map id="Mackey::restriction" name="Mackey::restriction">
 <area shape="rect" id="node1" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="5,5,151,32"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="199,5,352,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a160149e2ba605446e0ae2211ef39dc98" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="199,5,352,32"/>
 </map>

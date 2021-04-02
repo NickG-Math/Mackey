@@ -1,5 +1,0 @@
-<map id="Mackey::MackeyFunctor::compare" name="Mackey::MackeyFunctor::compare">
-<area shape="rect" id="node2" href="$classMackey_1_1MackeyFunctor.html#a075cd364217700d5f5c2459d4a988a93" title="Default constructor. " alt="" coords="435,5,601,47"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a8cd5c9415c0c63c6d79dfa9b0067f416" title="Returns 1 if the Mackey functor belongs to the provided isomorphism class. " alt="" coords="220,64,387,105"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MackeyFunctor.html#af183c1f4d1558bc3c7dc75dcf8161ee8" title="Returns 1 if the Mackey functors are isomorphic. " alt="" coords="435,71,601,112"/>
-</map>

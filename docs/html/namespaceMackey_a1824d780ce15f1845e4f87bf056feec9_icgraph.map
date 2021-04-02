@@ -1,6 +1,0 @@
-<map id="Mackey::saver" name="Mackey::saver">
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html#a5c945ebff968abe788e22b025b2455ed" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="161,37,348,79"/>
-<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationTable.html#a4371e6ba8a058073c005e636979b7230" title="Extends multiplication table using the larger range provided. " alt="" coords="163,103,347,144"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#a9828268663049b5ac2668d4eb0bdd4ff" title="Uses triple box products to possibly identify the given generators. " alt="" coords="396,5,547,47"/>
-<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="396,71,547,112"/>
-</map>

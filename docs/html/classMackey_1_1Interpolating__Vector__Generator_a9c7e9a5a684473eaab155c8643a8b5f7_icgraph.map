@@ -1,0 +1,11 @@
+<map id="Mackey::Interpolating_Vector_Generator::size" name="Mackey::Interpolating_Vector_Generator::size">
+<area shape="rect" id="node1" title="Returns the total amount of elements that will be generated." alt="" coords="445,64,621,105"/>
+<area shape="rect" id="node2" href="$classMackey_1_1AbelianGroup.html#a01afad2ffb2be5517b595ea6fa935114" title="Returns all automorphisms of the group together with their inverses. Currently only for p&#45;groups and ..." alt="" coords="231,5,397,47"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a0078548b561c2000ae72b8383cd19aa8" title="Given a vector of vectors v form all combinations of the form {v[0][?],v[1][?],......" alt="" coords="231,71,397,98"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#acfd43e46006f6bf9d2a8895ec7959f82" title="Given vector or array returns vector starting from index start." alt="" coords="264,158,364,185"/>
+<area shape="rect" id="node4" href="$classMackey_1_1MackeyFunctor.html#ac7ef9ab9f3a13660a03c35e64dddd66b" title="Returns all automorphisms of a Mackey Functor and their inverses." alt="" coords="5,27,183,68"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Mult__Table.html#aeab470eac01b163514f39d53d1e04252" title="Isolate sphere from the degree vector (i.e. get everything but first entry)" alt="" coords="19,92,169,133"/>
+<area shape="rect" id="node7" href="$namespaceMackey.html#ad118cd56f3faca8899b2c499a134891c" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="25,158,163,185"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#aeaeb4192721b133c0227f2393edc639d" title="Computes the homology for the given level and degree." alt="" coords="11,209,177,235"/>
+<area shape="rect" id="node9" href="$namespaceMackey.html#a66c5cc4c839769fcd68f803b46eef6ce" title="Computes the Massey product of three generators in the RO(G) homology given their level,..." alt="" coords="20,259,168,286"/>
+</map>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wantp_711',['wantP',['../classMackey_1_1Smith.html#a7033b338fda868e33f50950d2444ae75',1,'Mackey::Smith']]],
-  ['wantq_712',['wantQ',['../classMackey_1_1Smith.html#a10ec727132ca15eee9dac0522d617a50',1,'Mackey::Smith']]],
-  ['weyl_713',['Weyl',['../classMackey_1_1MackeyFunctor.html#a22162c7320c3793b5cdaad62b063d057',1,'Mackey::MackeyFunctor']]]
+  ['tr_675',['Tr',['../classmackey_1_1IDGenerators.html#ab169a71cdd648db027c3df26f0cfcc4a',1,'mackey::IDGenerators::Tr()'],['../classmackey_1_1MackeyFunctor.html#ac6e1b0d763d14d16df27a26fc6e38372',1,'mackey::MackeyFunctor::Tr()']]],
+  ['tracker_676',['tracker',['../classmackey_1_1MultGraph.html#a2aa67e062e535eaebe5d5146e21b4c1f',1,'mackey::MultGraph']]],
+  ['triplegreens_677',['tripleGreens',['../structmackey_1_1MultTableData.html#aee535e65636aaed610ecbe03d63f5afa',1,'mackey::MultTableData']]]
 ];

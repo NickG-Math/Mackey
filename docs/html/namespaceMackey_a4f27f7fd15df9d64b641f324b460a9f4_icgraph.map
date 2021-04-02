@@ -1,0 +1,4 @@
+<map id="Mackey::keep_row_triplets" name="Mackey::keep_row_triplets">
+<area shape="rect" id="node1" title="Turn sparse matrix into a vector of Eigen triplets." alt="" coords="184,5,379,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#aa2308dc04ccf5427ca227507e5b8c083" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="5,5,136,32"/>
+</map>

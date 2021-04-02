@@ -1,6 +1,0 @@
-<map id="Mackey::MultiplicationTable::triple_product" name="Mackey::MultiplicationTable::triple_product">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="267,5,391,32"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="237,57,421,98"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="280,123,379,149"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="469,35,563,61"/>
-</map>

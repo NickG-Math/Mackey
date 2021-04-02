@@ -1,6 +1,0 @@
-<map id="Mackey::shiftsegment" name="Mackey::shiftsegment">
-<area shape="rect" id="node1" title=" " alt="" coords="408,31,573,57"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#aa515b26c0fbc7f19b36cee7d826f07b9" title="Compute the Weyl group action on a generator given the rank of the group it lives in." alt="" coords="241,31,360,57"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#aaa66c9857ba86a13949d1b1825ea20f7" title="Writing the Weyl group action on each generator in terms of the other generators." alt="" coords="40,5,159,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors." alt="" coords="5,56,193,83"/>
-</map>

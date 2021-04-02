@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['from_20math_20to_20code_764',['From Math to Code',['../math.html',1,'']]]
+  ['beneath_20the_20surface_733',['Beneath the surface',['../algo.html',1,'']]]
 ];

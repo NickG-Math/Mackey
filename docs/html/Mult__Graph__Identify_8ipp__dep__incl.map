@@ -1,0 +1,8 @@
+<map id="Mult_Graph_Identify.ipp" name="Mult_Graph_Identify.ipp">
+<area shape="rect" id="node1" title="Contains extra identification methods for the multiplication graph." alt="" coords="122,5,297,32"/>
+<area shape="rect" id="node2" href="$Mult__Graph__Identify_8hpp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="120,80,299,107"/>
+<area shape="rect" id="node3" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="143,155,276,181"/>
+<area shape="rect" id="node4" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="5,229,120,256"/>
+<area shape="rect" id="node6" href="$Factorization_8ipp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="145,229,274,256"/>
+<area shape="rect" id="node5" href="$Cerealizer_8ipp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="7,304,118,331"/>
+</map>

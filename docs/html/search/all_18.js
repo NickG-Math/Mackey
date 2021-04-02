@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['z',['Z',['../classZ.html',1,'Z&lt; N &gt;'],['../classZ.html#a21a5a03bc44e0a76607d1b89dc9e31cb',1,'Z::Z()'],['../classZ.html#aa6546d6135c97a5b8df9028068dfe0c1',1,'Z::Z(int x)'],['../classZ.html#a55fa70d38bc723f35e27139239bf385a',1,'Z::Z(long x)'],['../classZ.html#a32b7b05c9f2e161d1b9fc60dd1e7a27b',1,'Z::Z(float x)'],['../classZ_3_012_01_4.html#a2007d91fc07c751853ae945c0ece1c94',1,'Z&lt; 2 &gt;::Z()'],['../classZ_3_012_01_4.html#a42d7b146ce0e257ea7a7cc79e6140872',1,'Z&lt; 2 &gt;::Z(bool x)'],['../classZ_3_012_01_4.html#af7537f8b8e6ba15f7715354a644fb9c6',1,'Z&lt; 2 &gt;::Z(int x)'],['../classZ_3_012_01_4.html#aa57d3e40cabfe96ea16901ecda68a124',1,'Z&lt; 2 &gt;::Z(long x)'],['../classZ_3_012_01_4.html#a59bbd8b973581a967e8af5d3136ae439',1,'Z&lt; 2 &gt;::Z(float x)']]],
-  ['z_3c_202_20_3e',['Z&lt; 2 &gt;',['../classZ_3_012_01_4.html',1,'']]],
-  ['z_5fn_2eh',['Z_n.h',['../Z__n_8h.html',1,'']]],
-  ['zeroweight',['zeroWeight',['../classMackey_1_1WeightedGraph.html#aa2dfd3ecf5cbc0191ad393b605b42a1b',1,'Mackey::WeightedGraph']]]
+  ['z2_340',['Z2',['../namespacemackey.html#a04d0601e31671015025369bfd66d798d',1,'mackey']]],
+  ['z_5fmod_341',['Z_mod',['../classmackey_1_1Z__mod.html',1,'Z_mod&lt; N, T &gt;'],['../classmackey_1_1Z__mod.html#a101df470224fd7e35fa90d7fdd5d3723',1,'mackey::Z_mod::Z_mod()'],['../classmackey_1_1Z__mod.html#a659b261986e720ded62f7673e39c24e4',1,'mackey::Z_mod::Z_mod(bool x)'],['../classmackey_1_1Z__mod.html#a6a047471ea55ea53df0084fed11b0f40',1,'mackey::Z_mod::Z_mod(int x)'],['../classmackey_1_1Z__mod.html#a85975f28c895ca6416aed61546475f0f',1,'mackey::Z_mod::Z_mod(int64_t x)']]],
+  ['z_5fn_2ehpp_342',['Z_n.hpp',['../Z__n_8hpp.html',1,'']]]
 ];

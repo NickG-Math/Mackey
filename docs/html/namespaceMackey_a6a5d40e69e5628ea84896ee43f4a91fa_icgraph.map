@@ -1,6 +1,0 @@
-<map id="Mackey::dimension" name="Mackey::dimension">
-<area shape="rect" id="node1" title="Compute the dimension of a representation sphere." alt="" coords="235,56,381,83"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#abd3c2e12c91baa573c6dbaa37eeb0518" title="Returns the Chains of any given given sphere." alt="" coords="25,5,167,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="27,56,165,83"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a425b988266cedec0299fb539d99179b1" title="Returns the standard Chains of the given sphere." alt="" coords="5,107,187,133"/>
-</map>

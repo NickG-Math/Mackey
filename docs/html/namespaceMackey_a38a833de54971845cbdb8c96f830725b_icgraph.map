@@ -1,4 +1,4 @@
 <map id="Mackey::rotate" name="Mackey::rotate">
-<area shape="rect" id="node1" title="Circularly rotates given V (an Eigen/std vector)" alt="" coords="192,5,311,32"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#aa2f105c9bcbec7f5c7524027174340a0" title="Creates a matrix of size m x n that alternates the given vector v." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node1" title="Transforms V[0],V[1],...,V[n] to V[1],V[2],...,V[n],V[0]." alt="" coords="192,5,311,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a38460789f5f9ce451325b96498c3f57a" title="Creates a matrix of size m x n that alternates the given vector v." alt="" coords="5,5,144,32"/>
 </map>

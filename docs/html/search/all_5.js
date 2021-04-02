@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['factorization_89',['Factorization',['../classMackey_1_1Factorization.html',1,'Mackey::Factorization&lt; rank_t, diff_t &gt;'],['../classMackey_1_1Factorization.html#a234e9ed2bf55a4a221908bd2650c61a6',1,'Mackey::Factorization::Factorization(int, const std::vector&lt; int &gt; &amp;, const std::vector&lt; int &gt; &amp;, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;, const std::vector&lt; std::string &gt; &amp;, int=0, bool=0)'],['../classMackey_1_1Factorization.html#a4d55bc1d6f94bdbcd365ed1bb0eaa2cb',1,'Mackey::Factorization::Factorization(MultiplicationTable&lt; rank_t, diff_t &gt; &amp;M, const std::vector&lt; std::string &gt; &amp;basicIrr_names)']]],
-  ['factorization_2eh_90',['Factorization.h',['../Factorization_8h.html',1,'']]],
-  ['factorizationprinter_91',['FactorizationPrinter',['../classMackey_1_1FactorizationPrinter.html',1,'Mackey::FactorizationPrinter&lt; rank_t, diff_t &gt;'],['../classMackey_1_1FactorizationPrinter.html#a304b2cf9bd5b83dfffd1260336bc9602',1,'Mackey::FactorizationPrinter::FactorizationPrinter()']]],
-  ['find_92',['find',['../namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0',1,'Mackey']]],
-  ['function_93',['Function',['../classGroupSpecific_1_1Function.html',1,'GroupSpecific']]],
-  ['functype_94',['functype',['../classGroupSpecific_1_1Function.html#a73d984ea6bf824b9112d0cf978a46741',1,'GroupSpecific::Function']]],
-  ['from_20math_20to_20code_95',['From Math to Code',['../math.html',1,'']]]
+  ['factorization_94',['Factorization',['../classmackey_1_1Factorization.html#a4ff7e403b982d11a35db4a6ab31fd2f0',1,'mackey::Factorization::Factorization(int, const std::vector&lt; int &gt; &amp;, const std::vector&lt; int &gt; &amp;, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;, const std::vector&lt; std::string &gt; &amp;)'],['../classmackey_1_1Factorization.html#a604636345e61a241ebb0554d7dfee37e',1,'mackey::Factorization::Factorization(const MultTableData&lt; group_t &gt; &amp;MTD, const std::vector&lt; std::string &gt; &amp;)'],['../classmackey_1_1Factorization.html#aedec54f782912e55171760f4135f9f28',1,'mackey::Factorization::Factorization(MultTableData&lt; group_t &gt; &amp;&amp;MTD, const std::vector&lt; std::string &gt; &amp;)'],['../classmackey_1_1Factorization.html',1,'Factorization&lt; group_t &gt;']]],
+  ['factorization_2ehpp_95',['Factorization.hpp',['../Factorization_8hpp.html',1,'']]],
+  ['find_5fmorse_5fmatching_96',['find_Morse_matching',['../classmackey_1_1AMT.html#a8825a379d88ae7440555f5aadb3a2f6e',1,'mackey::AMT']]],
+  ['find_5fpermutation_97',['find_permutation',['../namespacemackey.html#abd6ba1f3630d84c58e8ba01e74885663',1,'mackey']]],
+  ['first_5fnumber_5fselections_98',['first_number_selections',['../classmackey_1_1Green.html#a689285ad10a5c8dec5ab501e31651325',1,'mackey::Green']]],
+  ['from_20math_20to_20code_99',['From Math to Code',['../math.html',1,'']]]
 ];

@@ -1,0 +1,5 @@
+<map id="Mackey::Homology::Homology" name="Mackey::Homology::Homology">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,225,57"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a4c3647777bc890a4649ae24b138bbb79" title="Tests if vector is zero." alt="" coords="290,5,410,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a160149e2ba605446e0ae2211ef39dc98" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="273,56,427,83"/>
+</map>

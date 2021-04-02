@@ -1,6 +1,0 @@
-<map id="Mackey::Green::select" name="Mackey::Green::select">
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraph.html#a3f974791242d9e13ddca520df4265aca" title="Constructs the multiplication graph given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="208,5,395,47"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Green.html#ad3bb0ba97c91a5db4fcf57687a571915" title="Default constructor. " alt="" coords="224,71,379,98"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a80dbde3a859378ede596b48869ec50d9" title="Mackey::multiply" alt="" coords="241,122,362,149"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="443,122,573,149"/>
-</map>

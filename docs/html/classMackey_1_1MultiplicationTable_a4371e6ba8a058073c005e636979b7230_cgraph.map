@@ -1,9 +1,0 @@
-<map id="Mackey::MultiplicationTable::extend" name="Mackey::MultiplicationTable::extend">
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="237,31,421,72"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="701,85,825,111"/>
-<area shape="rect" id="node7" href="$namespaceMackey.html#a91104eaef1ab349e68f0623cfaaf45c0" title="Find first instance of a in v for non Eigen matrices. " alt="" coords="281,147,378,174"/>
-<area shape="rect" id="node8" href="$namespaceMackey.html#a1824d780ce15f1845e4f87bf056feec9" title="Saves object to binary file of given name. Serialization is provided by cereal. " alt="" coords="275,198,383,225"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="873,30,967,57"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html#ae2801cd35f426f10c89ab8addb75f829" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="469,31,653,72"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#add5b60c8e734df2be261106e0c719f82" title="Get the box product of C,D up to index i. " alt="" coords="714,34,813,61"/>
-</map>

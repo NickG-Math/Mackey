@@ -1,0 +1,6 @@
+<map id="Additive.ipp" name="Additive.ipp">
+<area shape="rect" id="node1" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="13,5,113,32"/>
+<area shape="rect" id="node2" href="$Additive_8hpp.html" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="11,80,115,107"/>
+<area shape="rect" id="node3" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="5,155,120,181"/>
+<area shape="rect" id="node4" href="$Cerealizer_8ipp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="7,229,118,256"/>
+</map>

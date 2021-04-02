@@ -1,6 +1,0 @@
-<map id="Mackey::internal::triple_box_appender" name="Mackey::internal::triple_box_appender">
-<area shape="rect" id="node1" title="Produces a nicer version of general canonical when used for triple products." alt="" coords="680,5,851,47"/>
-<area shape="rect" id="node2" href="$namespaceMackey_1_1internal.html#a2647c2357084142a1647364848db3205" title="Forms the permutation from basis (C box D) box E to C box (D box E) using names provided by general_c..." alt="" coords="461,5,632,47"/>
-<area shape="rect" id="node3" href="$namespaceMackey_1_1internal.html#a4b352efa632d7cfab147b728a0d39491" title="Forms the permutation allowing us to go from C box (D box E) to (C box D) box E." alt="" coords="252,5,413,47"/>
-<area shape="rect" id="node4" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title=" " alt="" coords="5,5,204,47"/>
-</map>

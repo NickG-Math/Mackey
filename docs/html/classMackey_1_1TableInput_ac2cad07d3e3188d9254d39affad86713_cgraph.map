@@ -1,8 +1,0 @@
-<map id="Mackey::TableInput::TableInput" name="Mackey::TableInput::TableInput">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972" title="Given minimum and maximum degrees, constructs everything in between. " alt="" coords="191,5,383,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa" title="Compute the dimension of a representation sphere. " alt="" coords="219,56,354,83"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="216,107,357,133"/>
-<area shape="rect" id="node7" href="$classMackey_1_1TableInput.html#aff13b1ef901103816a6ed49bae688629" title="Hashes the given sphere to produce the index for IndexedChains. " alt="" coords="218,158,355,199"/>
-<area shape="rect" id="node4" href="$Z__n_8h.html#a091e8fded57ef1746169d7b32b5e1b2f" title="abs" alt="" coords="456,56,499,83"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start. " alt="" coords="431,107,524,133"/>
-</map>

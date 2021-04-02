@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+  C^e_*(S^V)\otimes C^e_*(S^W)\ar[d,"1\otimes (-)^*"]\\
+  C^e_*(S^V)\otimes C^e_*(S^{-W})\ar[d,"\otimes"]\\
+  C_*^e(S^{V-W})\ar[d,"Tr", bend left]\ar[loop left,"C_4" left]\ar[r,"H_*"]&H_*^e(S^{V-W})\ar[d,"Tr", bend left]\ar[loop right,"C_4" right]\\
+  C_*^{C_2}(S^{V-W})\ar[d,"Tr", bend left]\ar[loop left,"C_4/C_2" left]\ar[u,"Res", bend left]\ar[r,"H_*"]&H_*^{C_2}(S^{V-W}\ar[d,"Tr", bend left])\ar[u,"Res", bend left]\ar[loop right,"C_4/C_2" right]\\
+  C_*^{C_4}(S^{V-W})\ar[r,"H_*"]\ar[u,"Res", bend left]&H_*^{C_4}(S^{V-W})\ar[u,"Res", bend left]
+\end{tikzcd}
+\end{document}

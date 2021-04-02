@@ -1,8 +1,0 @@
-<map id="Mackey::remove0th" name="Mackey::remove0th">
-<area shape="rect" id="node2" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere) ..." alt="" coords="199,49,323,76"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77" title="Computes the Mackey functor homology of the given sphere. " alt="" coords="407,5,537,32"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a5efb3695c450e4e590b86f20700f726b" title="Inverse of Reindex. " alt="" coords="191,167,332,193"/>
-<area shape="rect" id="node7" href="$classMackey_1_1TableInput.html#a277a59b7c30aa21e37c0ed7f187552cd" title="Hashes the given sphere to produce the index for IndexedChains. " alt="" coords="193,101,330,142"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationTable.html#a3a7fcf71b8235a641b3e716064a3e384" title="Constructs the multiplication table given the maximum and minimum spheres and the basic irreducibles..." alt="" coords="380,62,564,103"/>
-<area shape="rect" id="node6" href="$classMackey_1_1TableInput.html#a6beec147bbfcf4e03f7a11519e478aba" title="Constructs the input of the multiplication table. Currently only for C4 (and top level) but is easily..." alt="" coords="403,138,541,179"/>
-</map>

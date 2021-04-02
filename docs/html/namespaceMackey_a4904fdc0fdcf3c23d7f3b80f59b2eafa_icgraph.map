@@ -1,9 +1,0 @@
-<map id="Mackey::intexp" name="Mackey::intexp">
-<area shape="rect" id="node1" title="Raise power to given exponent." alt="" coords="420,122,540,149"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level." alt="" coords="241,122,372,149"/>
-<area shape="rect" id="node3" href="$structMackey_1_1internal_1_1MasseyCompute.html#aa62c7436a98f7be7105e6ab0157cb431" title=" " alt="" coords="6,5,193,47"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a1c195484cc947abef84c726b534af5a5" title="The Mackey functor Homology of a Junction of Mackey functors." alt="" coords="5,71,193,98"/>
-<area shape="rect" id="node5" href="$classMackey_1_1Levels.html#a450b9aba828f03dd340e89169a4bd9e0" title="Transfer the bottom and get all levels." alt="" coords="14,122,185,149"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#aa014e2177bd124bce2e8e7a4c1dc8d38" title="Computes the homology for the given level and degree." alt="" coords="17,173,182,199"/>
-<area shape="rect" id="node7" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="34,223,165,250"/>
-</map>

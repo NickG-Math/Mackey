@@ -1,7 +1,0 @@
-<map id="Mackey::ROHomology" name="Mackey::ROHomology">
-<area shape="rect" id="node1" title="Computes the homology for the given level and degree." alt="" coords="5,56,171,83"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04" title="Reindexes the homological degree k=degree[0] so that it is always 0&lt;=k&lt;=dimension(sphere)" alt="" coords="219,5,351,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a1e4b11e9d2a5b70f8380af87cae31ef3" title="Given vector or array returns vector starting from index start." alt="" coords="409,31,509,57"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a671613d53fc3b0c9c4b115bc8b2797e6" title="Transfer the rank to given level." alt="" coords="219,107,350,133"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a4904fdc0fdcf3c23d7f3b80f59b2eafa" title="Raise power to given exponent." alt="" coords="399,107,519,133"/>
-</map>

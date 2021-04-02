@@ -1,5 +1,0 @@
-<map id="source/Factorization/MultiplicationGraph_Identify.h" name="source/Factorization/MultiplicationGraph_Identify.h">
-<area shape="rect" id="node1" title="Contains extra identification methods for the multiplication graph." alt="" coords="10,5,165,61"/>
-<area shape="rect" id="node2" href="$Factorization_8h.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="5,109,169,136"/>
-<area shape="rect" id="node3" href="$Cerealizer_8h.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="14,184,161,211"/>
-</map>

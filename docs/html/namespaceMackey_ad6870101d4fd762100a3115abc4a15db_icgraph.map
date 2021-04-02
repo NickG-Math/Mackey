@@ -1,6 +1,4 @@
 <map id="Mackey::KeepRow" name="Mackey::KeepRow">
-<area shape="rect" id="node1" title="Makes a new matrix out of A keeping only its rows indicated by Z." alt="" coords="268,64,407,91"/>
-<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a72296e393c6f22a526375b0169daab94" title=" " alt="" coords="5,5,220,32"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Homology.html#a902c8dfef7da8ad9f5e03d16eb60a423" title=" " alt="" coords="15,57,210,98"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#ad7524839b58c80d4b2c54827e4833b12" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="47,123,178,149"/>
+<area shape="rect" id="node1" title="Makes a new matrix out of A keeping only its rows indicated by Z." alt="" coords="184,5,323,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#aa2308dc04ccf5427ca227507e5b8c083" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="5,5,136,32"/>
 </map>

@@ -1,7 +1,0 @@
-<map id="Mackey::inverses" name="Mackey::inverses">
-<area shape="rect" id="node1" title="Returns the inverses of all the automorphisms Group&#45;&gt;Group." alt="" coords="5,31,140,57"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a635c87980358b97256fe159f0c59bb80" title="Normalizes the element in a group to have minimal signs amongst its multiples." alt="" coords="188,31,332,57"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a257bcf5aabab2d73fdb13a23cb975d93" title="Normalizes the element in a group so that 0&lt;=element[i]&lt;=group[i] if group[i]!=1." alt="" coords="380,5,560,32"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a4abdca157edcf425b1e7ceff39d74c2f" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="413,56,527,83"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="608,56,711,83"/>
-</map>

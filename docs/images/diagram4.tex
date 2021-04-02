@@ -1,0 +1,8 @@
+\documentclass{standalone}
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+C_0\otimes D_n\ar[dr,"R_0" below left]&[-3em]\phantom{C_0}\oplus \phantom{D_{n-1}}&[-3em]C_1\otimes D_{n-1}\ar[dl,"L_0"]\ar[dr,"R_1" below left]&[-3em]\phantom{C_1}\oplus \phantom{D_{n-2}}&[-1em]\cdots\ar[dl]\ar[dr]&[-1em]\oplus&[-1em]\cdots\ar[dl]\ar[dr]&[-3em]\phantom{C_{k-1}}\oplus \phantom{D_0}&[-3em]C_k\otimes D_0\ar[dl,"L_{k-1}"]\\
+  &C_0\otimes D_{n-1}&\phantom{C_1}\oplus \phantom{D_{n-1}}&C_1\otimes D_{n-2}&\oplus&\cdots&\oplus&C_{k-1}\otimes D_0
+  \end{tikzcd}
+\end{document}

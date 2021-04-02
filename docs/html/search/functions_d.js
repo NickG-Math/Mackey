@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['normalize_542',['normalize',['../namespaceMackey.html#a635c87980358b97256fe159f0c59bb80',1,'Mackey::normalize(Eigen::Matrix&lt; T, 1,-1 &gt; &amp;element, const Eigen::Matrix&lt; T, 1, -1 &gt; &amp;group)'],['../namespaceMackey.html#a5ae32d04bca298d2d8735635ae45b971',1,'Mackey::normalize(Eigen::Matrix&lt; T, -1, -1 &gt; &amp;linmap, const Eigen::Matrix&lt; S, 1, -1 &gt; &amp;range)']]],
-  ['normalize_5fminus_543',['normalize_minus',['../namespaceMackey.html#a463bb762b4edc2f283e8d1c0c466aedf',1,'Mackey']]],
-  ['normalizemackey_544',['normalizeMackey',['../classMackey_1_1MackeyFunctor.html#a08150b3655fc27a7298d68b1857d830f',1,'Mackey::MackeyFunctor']]],
-  ['notation_545',['notation',['../classMackey_1_1MackeyFunctor.html#a2b333a786e44000c96ffd087a81a1d17',1,'Mackey::MackeyFunctor']]]
+  ['neighbors_525',['neighbors',['../classmackey_1_1Graph.html#ad9acd12684a88316b8fef34249696d19',1,'mackey::Graph']]],
+  ['node_526',['node',['../structmackey_1_1Neighborhood_1_1const__iterator.html#aabcb341788305eaa61e8eb6a9c2556f9',1,'mackey::Neighborhood::const_iterator']]],
+  ['normalize_527',['normalize',['../classmackey_1_1AMT.html#abe7afc4fc4a9b16dee1b2ad88ed9ee2f',1,'mackey::AMT::normalize()'],['../classmackey_1_1AbelianGroup.html#a110d4493ef279f0f432c4c911f63b3a5',1,'mackey::AbelianGroup::normalize(Eigen::Matrix&lt; Scalar, -1, -1 &gt; &amp;linmap) const'],['../classmackey_1_1AbelianGroup.html#ae6928e27016cc12d39d11d7499d6eeff',1,'mackey::AbelianGroup::normalize(T &amp;element) const']]],
+  ['notation_528',['notation',['../classmackey_1_1MackeyFunctor.html#a33f9cb57ed763b1bc2ee33a68a0b1dd6',1,'mackey::MackeyFunctor']]],
+  ['number_5fof_5fnodes_529',['number_of_nodes',['../classmackey_1_1Graph.html#ae8fa7360775f8c13b1b5f343192c5044',1,'mackey::Graph']]],
+  ['number_5fof_5fsummands_530',['number_of_summands',['../classmackey_1_1AbelianGroup.html#ac73c23730e4821ed3a50b3ddb030e80b',1,'mackey::AbelianGroup']]]
 ];

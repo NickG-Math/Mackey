@@ -1,0 +1,10 @@
+<map id="Mackey::Chains::maxindex" name="Mackey::Chains::maxindex">
+<area shape="rect" id="node1" title="The maximum index of the Chain complex." alt="" coords="465,81,661,108"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Junction.html#ae6e36887e5bd3be8fe6175a501c749db" title="Extract the Junction C[i+1]&#45;&gt;C[i]&#45;&gt;C[i&#45;1] from the Chains C." alt="" coords="227,5,417,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#aeaeb4192721b133c0227f2393edc639d" title="Computes the homology for the given level and degree." alt="" coords="239,56,405,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a43cf712cb611ddbafa91b005a911436e" title="Chains cerealize." alt="" coords="255,107,389,133"/>
+<area shape="rect" id="node8" href="$namespaceMackey.html#a1859e466df668e0d0937fd0a9e9a3419" title=" " alt="" coords="257,157,387,184"/>
+<area shape="rect" id="node5" href="$classMackey_1_1Mult__Graph__Identify.html#a933a2419b956f377f546cec2aafed1f8" title="Uses triple box products to possibly identify ALL instances where identification failed before...." alt="" coords="15,19,169,75"/>
+<area shape="rect" id="node6" href="$classMackey_1_1Mult__Graph__Identify.html#a1dcf8d7f828a00dfc4f08eff76185800" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="5,99,179,141"/>
+<area shape="rect" id="node7" href="$classMackey_1_1Mult__Graph__Identify.html#a3f05f601be0a40eccf76525bc4058fc8" title="Uses triple box products to possibly identify the products of given generators if identification fail..." alt="" coords="7,165,177,206"/>
+</map>

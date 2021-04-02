@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['cerealize_763',['CEREALIZE',['../Cerealizer_8h.html#ae992826773eebd83b70cb50907f8f3db',1,'Cerealizer.h']]]
+  ['mackey_5frun_5fblock_5fserial_731',['MACKEY_RUN_BLOCK_SERIAL',['../OpenMP__Macros_8hpp.html#a5028a9cca808c5fa9f3fc0e53c85096d',1,'OpenMP_Macros.hpp']]],
+  ['mackey_5frun_5floop_5fparallel_732',['MACKEY_RUN_LOOP_PARALLEL',['../OpenMP__Macros_8hpp.html#a81d2699ba5416590a6ce8e475b9de216',1,'OpenMP_Macros.hpp']]]
 ];

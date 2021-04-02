@@ -1,5 +1,4 @@
 <map id="Mackey::operator+" name="Mackey::operator+">
-<area shape="rect" id="node1" title="The sum of two Mackey functors." alt="" coords="5,35,151,61"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a6d2d912037da84c6884ac62db997cc0f" title="The sum of two linear maps. We account for a map being empty if domain/range is 0 hence why the dimen..." alt="" coords="216,5,359,32"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11" title="Resize all member variables." alt="" coords="199,57,376,98"/>
+<area shape="rect" id="node1" title="The sum of two Mackey functors." alt="" coords="5,13,151,39"/>
+<area shape="rect" id="node2" href="$classMackey_1_1MackeyFunctor.html#a7b117ce136e8a25af08d608d9a4b074f" title="Resize all member variables." alt="" coords="199,5,376,47"/>
 </map>

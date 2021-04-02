@@ -1,0 +1,6 @@
+<map id="Mackey::id_candidates" name="Mackey::id_candidates">
+<area shape="rect" id="node1" title="Use the ID data to identify all possible candidates for an element." alt="" coords="5,46,175,73"/>
+<area shape="rect" id="node2" href="$classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data." alt="" coords="223,5,389,47"/>
+<area shape="rect" id="node4" href="$classMackey_1_1AbelianGroup.html#a5cd394f5cc7ee1b0b25030a53cc4c701" title="Normalize linear map whose range is this group (reduce n in Z/n to 0 etc.)." alt="" coords="223,71,389,112"/>
+<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#a7b117ce136e8a25af08d608d9a4b074f" title="Resize all member variables." alt="" coords="437,5,615,47"/>
+</map>

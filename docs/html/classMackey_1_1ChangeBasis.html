@@ -93,78 +93,44 @@ $(document).ready(function(){initNavTree('classMackey_1_1ChangeBasis.html',''); 
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classMackey_1_1ChangeBasis-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Mackey::ChangeBasis&lt; pScalar &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The change of basis permutation matrices needed for the box product.  
+<p>The change of basis permutation matrices needed for the equivariant tensor product.  
  <a href="classMackey_1_1ChangeBasis.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="ChangeBasis_8h_source.html">ChangeBasis.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ChangeBasis_8hpp_source.html">ChangeBasis.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1200b696d4b6db9ad942ee583c320a50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#a1200b696d4b6db9ad942ee583c320a50">ChangeBasis</a> ()</td></tr>
-<tr class="memdesc:a1200b696d4b6db9ad942ee583c320a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classMackey_1_1ChangeBasis.html#a1200b696d4b6db9ad942ee583c320a50">More...</a><br /></td></tr>
-<tr class="separator:a1200b696d4b6db9ad942ee583c320a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39b9a8d75509c70e728342172a321924"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
-<tr class="memitem:a39b9a8d75509c70e728342172a321924"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#a39b9a8d75509c70e728342172a321924">ChangeBasis</a> (const rank_t &amp;rank1, const rank_t &amp;rank2, bool convtocanon)</td></tr>
-<tr class="memdesc:a39b9a8d75509c70e728342172a321924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the change of basis matrices given two ranks. The boolean variable determines whether we go from the convenient to canonical or the opposite.  <a href="classMackey_1_1ChangeBasis.html#a39b9a8d75509c70e728342172a321924">More...</a><br /></td></tr>
-<tr class="separator:a39b9a8d75509c70e728342172a321924"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cc49fe5537e7038ff7d142ba76e7c7b"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
-<tr class="memitem:a8cc49fe5537e7038ff7d142ba76e7c7b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#a8cc49fe5537e7038ff7d142ba76e7c7b">ChangeBasis</a> (const rank_t &amp;rank1, const rank_t &amp;rank2)</td></tr>
-<tr class="memdesc:a8cc49fe5537e7038ff7d142ba76e7c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the change of basis matrices given two ranks, from the convenient bases to the canonical one.  <a href="classMackey_1_1ChangeBasis.html#a8cc49fe5537e7038ff7d142ba76e7c7b">More...</a><br /></td></tr>
-<tr class="separator:a8cc49fe5537e7038ff7d142ba76e7c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a784f69cb8de92e84fef755461c60d3d0"><td class="memItemLeft" align="right" valign="top">Eigen::PermutationMatrix&lt;-1, -1, pScalar &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#a784f69cb8de92e84fef755461c60d3d0">LefttoCanon</a></td></tr>
-<tr class="memdesc:a784f69cb8de92e84fef755461c60d3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The change of basis matrix from the left convenient basis to the canonical basis.  <a href="classMackey_1_1ChangeBasis.html#a784f69cb8de92e84fef755461c60d3d0">More...</a><br /></td></tr>
-<tr class="separator:a784f69cb8de92e84fef755461c60d3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa169c2e7937437ea2102de1c3072194c"><td class="memItemLeft" align="right" valign="top">Eigen::PermutationMatrix&lt;-1, -1, pScalar &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#aa169c2e7937437ea2102de1c3072194c">RighttoCanon</a></td></tr>
-<tr class="memdesc:aa169c2e7937437ea2102de1c3072194c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The change of basis matrix from the right convenient basis to the canonical basis.  <a href="classMackey_1_1ChangeBasis.html#aa169c2e7937437ea2102de1c3072194c">More...</a><br /></td></tr>
-<tr class="separator:aa169c2e7937437ea2102de1c3072194c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade725b74e88653f5748c2bfdf8c36a3a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; pScalar &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#ade725b74e88653f5748c2bfdf8c36a3a">Left_to_Canon</a> () const</td></tr>
+<tr class="memdesc:ade725b74e88653f5748c2bfdf8c36a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the permutation from the left convenient basis to the canonical basis.  <a href="classMackey_1_1ChangeBasis.html#ade725b74e88653f5748c2bfdf8c36a3a">More...</a><br /></td></tr>
+<tr class="separator:ade725b74e88653f5748c2bfdf8c36a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f23bb71d27ffef324ac75ad93e0e68"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; pScalar &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#a47f23bb71d27ffef324ac75ad93e0e68">Right_to_Canon</a> () const</td></tr>
+<tr class="memdesc:a47f23bb71d27ffef324ac75ad93e0e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the permutation from the right convenient basis to the canonical basis.  <a href="classMackey_1_1ChangeBasis.html#a47f23bb71d27ffef324ac75ad93e0e68">More...</a><br /></td></tr>
+<tr class="separator:a47f23bb71d27ffef324ac75ad93e0e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a3430f04865d03d52853d34ba73180"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; pScalar &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#ae6a3430f04865d03d52853d34ba73180">Canon_to_Left</a> () const</td></tr>
+<tr class="memdesc:ae6a3430f04865d03d52853d34ba73180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the permutation from the canonical basis to the left convenient basis.  <a href="classMackey_1_1ChangeBasis.html#ae6a3430f04865d03d52853d34ba73180">More...</a><br /></td></tr>
+<tr class="separator:ae6a3430f04865d03d52853d34ba73180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa215983e1f6f8f4941c8c5666a002f81"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; pScalar &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#aa215983e1f6f8f4941c8c5666a002f81">Canon_to_Right</a> () const</td></tr>
+<tr class="memdesc:aa215983e1f6f8f4941c8c5666a002f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the permutation from the canonical basis to the right convenient basis.  <a href="classMackey_1_1ChangeBasis.html#aa215983e1f6f8f4941c8c5666a002f81">More...</a><br /></td></tr>
+<tr class="separator:aa215983e1f6f8f4941c8c5666a002f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e40f8d62dbfe3faf56fc2870c0bf68"><td class="memTemplParams" colspan="2">template&lt;typename rank_t &gt; </td></tr>
+<tr class="memitem:ac6e40f8d62dbfe3faf56fc2870c0bf68"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMackey_1_1ChangeBasis.html#ac6e40f8d62dbfe3faf56fc2870c0bf68">ChangeBasis</a> (const rank_t &amp;, const rank_t &amp;, bool set_conv_to_canon, bool set_canon_to_conv)</td></tr>
+<tr class="separator:ac6e40f8d62dbfe3faf56fc2870c0bf68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename pScalar&gt;<br />
 class Mackey::ChangeBasis&lt; pScalar &gt;</h3>
 
-<p>The change of basis permutation matrices needed for the box product. </p>
+<p>The change of basis permutation matrices needed for the equivariant tensor product. </p>
+<p>The template parameter pScalar is the scalar used for the permutation vectors eg uint64_t The boolean set_conv_to_canon must be set to 1 if we want <a class="el" href="classMackey_1_1ChangeBasis.html#ade725b74e88653f5748c2bfdf8c36a3a" title="Returns the permutation from the left convenient basis to the canonical basis.">Left_to_Canon()</a> or <a class="el" href="classMackey_1_1ChangeBasis.html#a47f23bb71d27ffef324ac75ad93e0e68" title="Returns the permutation from the right convenient basis to the canonical basis.">Right_to_Canon()</a> The boolean set_canon_to_conv must be set to 1 if we want <a class="el" href="classMackey_1_1ChangeBasis.html#ae6a3430f04865d03d52853d34ba73180" title="Returns the permutation from the canonical basis to the left convenient basis.">Canon_to_Left()</a> or <a class="el" href="classMackey_1_1ChangeBasis.html#aa215983e1f6f8f4941c8c5666a002f81" title="Returns the permutation from the canonical basis to the right convenient basis.">Canon_to_Right()</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1200b696d4b6db9ad942ee583c320a50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1200b696d4b6db9ad942ee583c320a50">&#9670;&nbsp;</a></span>ChangeBasis() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename pScalar &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::<a class="el" href="classMackey_1_1ChangeBasis.html">ChangeBasis</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Default constructor. </p>
-
-</div>
-</div>
-<a id="a39b9a8d75509c70e728342172a321924"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39b9a8d75509c70e728342172a321924">&#9670;&nbsp;</a></span>ChangeBasis() <span class="overload">[2/3]</span></h2>
+<a id="ac6e40f8d62dbfe3faf56fc2870c0bf68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e40f8d62dbfe3faf56fc2870c0bf68">&#9670;&nbsp;</a></span>ChangeBasis()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,69 +138,30 @@ template&lt;typename pScalar &gt; </div>
 template&lt;typename pScalar &gt; </div>
 <div class="memtemplate">
 template&lt;typename rank_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::<a class="el" href="classMackey_1_1ChangeBasis.html">ChangeBasis</a> </td>
           <td>(</td>
           <td class="paramtype">const rank_t &amp;&#160;</td>
-          <td class="paramname"><em>rank1</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const rank_t &amp;&#160;</td>
-          <td class="paramname"><em>rank2</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>convtocanon</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructs the change of basis matrices given two ranks. The boolean variable determines whether we go from the convenient to canonical or the opposite. </p>
-
-</div>
-</div>
-<a id="a8cc49fe5537e7038ff7d142ba76e7c7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cc49fe5537e7038ff7d142ba76e7c7b">&#9670;&nbsp;</a></span>ChangeBasis() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename pScalar &gt; </div>
-<div class="memtemplate">
-template&lt;typename rank_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::<a class="el" href="classMackey_1_1ChangeBasis.html">ChangeBasis</a> </td>
-          <td>(</td>
-          <td class="paramtype">const rank_t &amp;&#160;</td>
-          <td class="paramname"><em>rank1</em>, </td>
+          <td class="paramname"><em>set_conv_to_canon</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const rank_t &amp;&#160;</td>
-          <td class="paramname"><em>rank2</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>set_canon_to_conv</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -242,20 +169,13 @@ template&lt;typename rank_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Constructs the change of basis matrices given two ranks, from the convenient bases to the canonical one. </p>
-
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a784f69cb8de92e84fef755461c60d3d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a784f69cb8de92e84fef755461c60d3d0">&#9670;&nbsp;</a></span>LefttoCanon</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae6a3430f04865d03d52853d34ba73180"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6a3430f04865d03d52853d34ba73180">&#9670;&nbsp;</a></span>Canon_to_Left()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -263,17 +183,20 @@ template&lt;typename rank_t &gt; </div>
 template&lt;typename pScalar &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::PermutationMatrix&lt;-1, -1, pScalar&gt; <a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::LefttoCanon</td>
+          <td class="memname">const std::vector&lt;pScalar&gt;&amp; <a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::Canon_to_Left </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The change of basis matrix from the left convenient basis to the canonical basis. </p>
+<p>Returns the permutation from the canonical basis to the left convenient basis. </p>
 
 </div>
 </div>
-<a id="aa169c2e7937437ea2102de1c3072194c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa169c2e7937437ea2102de1c3072194c">&#9670;&nbsp;</a></span>RighttoCanon</h2>
+<a id="aa215983e1f6f8f4941c8c5666a002f81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa215983e1f6f8f4941c8c5666a002f81">&#9670;&nbsp;</a></span>Canon_to_Right()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,17 +204,62 @@ template&lt;typename pScalar &gt; </div>
 template&lt;typename pScalar &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::PermutationMatrix&lt;-1, -1, pScalar&gt; <a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::RighttoCanon</td>
+          <td class="memname">const std::vector&lt;pScalar&gt;&amp; <a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::Canon_to_Right </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The change of basis matrix from the right convenient basis to the canonical basis. </p>
+<p>Returns the permutation from the canonical basis to the right convenient basis. </p>
+
+</div>
+</div>
+<a id="ade725b74e88653f5748c2bfdf8c36a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade725b74e88653f5748c2bfdf8c36a3a">&#9670;&nbsp;</a></span>Left_to_Canon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename pScalar &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;pScalar&gt;&amp; <a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::Left_to_Canon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the permutation from the left convenient basis to the canonical basis. </p>
+
+</div>
+</div>
+<a id="a47f23bb71d27ffef324ac75ad93e0e68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f23bb71d27ffef324ac75ad93e0e68">&#9670;&nbsp;</a></span>Right_to_Canon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename pScalar &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;pScalar&gt;&amp; <a class="el" href="classMackey_1_1ChangeBasis.html">Mackey::ChangeBasis</a>&lt; pScalar &gt;::Right_to_Canon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the permutation from the right convenient basis to the canonical basis. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>source/Chain Complexes/<a class="el" href="ChangeBasis_8h_source.html">ChangeBasis.h</a></li>
+<li><a class="el" href="ChangeBasis_8hpp_source.html">ChangeBasis.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

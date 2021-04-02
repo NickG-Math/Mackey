@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gen_5ft_717',['gen_t',['../classMackey_1_1Homology.html#a0f7541ee6181c75cb7efa41f3b63f0a5',1,'Mackey::Homology::gen_t()'],['../namespaceMackey.html#a6bb0b2796632ba6c7f8ea192f7aecffe',1,'Mackey::gen_t()']]],
-  ['gens_5ft_718',['Gens_t',['../classMackey_1_1Homology.html#a986c3a6644aa52dc8279a26ade42fd64',1,'Mackey::Homology::Gens_t()'],['../namespaceMackey.html#ab2542005948b58de00ac4647ca2c7106',1,'Mackey::Gens_t()']]]
+  ['dense_5ft_689',['dense_t',['../namespacemackey.html#aedb6e1101d12c22cefd90762099a8d72',1,'mackey']]],
+  ['diff_5ft_690',['diff_t',['../structmackey_1_1Arrow.html#a8d77ce1114b1a11f970f7cf26ba13709',1,'mackey::Arrow::diff_t()'],['../classmackey_1_1Chains.html#a8d77ce1114b1a11f970f7cf26ba13709',1,'mackey::Chains::diff_t()'],['../classmackey_1_1Junction.html#a8d77ce1114b1a11f970f7cf26ba13709',1,'mackey::Junction::diff_t()'],['../structmackey_1_1C2Power_3_01N_00_01__rank_00_01__diff_01_4.html#a8d77ce1114b1a11f970f7cf26ba13709',1,'mackey::C2Power&lt; N, _rank, _diff &gt;::diff_t()'],['../structmackey_1_1C2Power_3_01N_00_01coeff_01_4.html#af9cfb683dad7ffafb092bf9778732bb3',1,'mackey::C2Power&lt; N, coeff &gt;::diff_t()'],['../structmackey_1_1C__4.html#a8d77ce1114b1a11f970f7cf26ba13709',1,'mackey::C_4::diff_t()'],['../classmackey_1_1AdditiveStructure.html#af78b0d854f85017243d2230d47d5ac77',1,'mackey::AdditiveStructure::diff_t()']]]
 ];

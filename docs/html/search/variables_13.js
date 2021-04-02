@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../classZ.html#a81f004f23dff9772403dd7a4452ad3c6',1,'Z::x()'],['../classZ_3_012_01_4.html#ae753e180f5d8aa55370a497e2c86fbb8',1,'Z&lt; 2 &gt;::x()']]]
+  ['x_680',['x',['../classmackey_1_1Z__mod.html#a9a4f74af87a76a4c3dcb729cb0e68f8d',1,'mackey::Z_mod']]]
 ];

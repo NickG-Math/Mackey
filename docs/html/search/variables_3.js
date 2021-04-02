@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['d_631',['D',['../structMackey_1_1internal_1_1MasseyCompute.html#acbd4ef932d4b9e531bdd8036ee58a2da',1,'Mackey::internal::MasseyCompute']]],
-  ['degree_632',['degree',['../classMackey_1_1MultiplicationTable.html#a9a0d2a2d8561e378e08fcf4929df2cf6',1,'Mackey::MultiplicationTable']]],
-  ['degreec_633',['degreeC',['../structMackey_1_1internal_1_1MasseyCompute.html#a781c9bcba41136ec6597416f3b6f07b5',1,'Mackey::internal::MasseyCompute']]],
-  ['degreed_634',['degreeD',['../structMackey_1_1internal_1_1MasseyCompute.html#a7a7ca10ed59466e28fe8c164ff16e3dc',1,'Mackey::internal::MasseyCompute']]],
-  ['degreee_635',['degreeE',['../structMackey_1_1internal_1_1MasseyCompute.html#ad8589930ebb2e353da168156bac31724',1,'Mackey::internal::MasseyCompute']]],
-  ['detailedrank_636',['detailedrank',['../classMackey_1_1BoxPoint.html#abe386801d835d806f74ee219070d2b80',1,'Mackey::BoxPoint::detailedrank()'],['../classMackey_1_1ChainsBox.html#ab4db0344f896a00119783d479af44ed0',1,'Mackey::ChainsBox::detailedrank()'],['../classMackey_1_1JunctionBox.html#a433ab2c79159bd2bce8d0fca0ab96be2',1,'Mackey::JunctionBox::detailedrank()']]],
-  ['diagonal_637',['diagonal',['../classMackey_1_1Homology.html#acff409513ea412c16b84f304d097059b',1,'Mackey::Homology::diagonal()'],['../classMackey_1_1Smith.html#a4d7f709505152b53130018e46f9e8411',1,'Mackey::Smith::diagonal()']]],
-  ['diff_638',['diff',['../classMackey_1_1BoxPoint.html#affefee2b62f4168ed778d96dc219ef6f',1,'Mackey::BoxPoint::diff()'],['../classMackey_1_1Chains.html#a9ccee2cbb3daa1e82bab920aeef59516',1,'Mackey::Chains::diff()']]],
-  ['diffin_639',['diffIn',['../classMackey_1_1Junction.html#a581e0d7b62b7bf380d68936a79828cfc',1,'Mackey::Junction']]],
-  ['diffout_640',['diffOut',['../classMackey_1_1Junction.html#a909fce095bc4647a312d6b10480b2d9a',1,'Mackey::Junction']]],
-  ['disconnected_641',['disconnected',['../classMackey_1_1Graph.html#a1ac2413768ead078e79b8f1c96d815e5',1,'Mackey::Graph']]],
-  ['distance_642',['distance',['../classMackey_1_1Graph.html#a0de605e2b229c560932e8cb5a2866339',1,'Mackey::Graph']]],
-  ['dontmodout_643',['dontModOut',['../classMackey_1_1Homology.html#a12fe9d461d594721ad6985629e3f50f2',1,'Mackey::Homology']]]
+  ['degree_616',['degree',['../structmackey_1_1MultTableData.html#a388eb21c981ed268c33194d51ba815f4',1,'mackey::MultTableData']]],
+  ['diagonal_617',['diagonal',['../structmackey_1_1Smith__Normal__Form.html#a9f908b904f285ad5a1516d9a5cd53411',1,'mackey::Smith_Normal_Form']]],
+  ['diff_618',['diff',['../structmackey_1_1Arrow.html#a65112176ad3747038082bf28af6ccaff',1,'mackey::Arrow::diff()'],['../classmackey_1_1Chains.html#a4f457c1b1a5d0850eeb8e47a78225d49',1,'mackey::Chains::diff()'],['../classmackey_1_1AMT.html#a73a9486e35ae91f37201931cc1b89ae4',1,'mackey::AMT::diff()']]],
+  ['diffin_619',['diffIn',['../classmackey_1_1Junction.html#a99ca1aaee8eb728df87ed834fc4a349e',1,'mackey::Junction']]],
+  ['diffout_620',['diffOut',['../classmackey_1_1Junction.html#a8e430b430387075f0faa3b8f0aabf58e',1,'mackey::Junction']]],
+  ['disconnected_5fdegrees_621',['disconnected_degrees',['../classmackey_1_1MultConnectivity.html#abf7ac40c4d5fbf8061f8c0881b2737e4',1,'mackey::MultConnectivity']]],
+  ['disconnected_5findices_622',['disconnected_indices',['../classmackey_1_1MultConnectivity.html#a24913f48e3fff0636e07fa91574347dc',1,'mackey::MultConnectivity']]],
+  ['distance_5fpolicy_623',['distance_policy',['../classmackey_1_1ShortestPaths.html#a822cc832aa7dc40443e4799076d96a66',1,'mackey::ShortestPaths']]],
+  ['domain_624',['domain',['../structmackey_1_1Arrow.html#a9585d15ff7e485797f8c163ce8319eb9',1,'mackey::Arrow']]]
 ];

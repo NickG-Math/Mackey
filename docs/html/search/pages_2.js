@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['how_20to_20use_766',['How to Use',['../use.html',1,'']]]
+  ['from_20math_20to_20code_735',['From Math to Code',['../math.html',1,'']]]
 ];

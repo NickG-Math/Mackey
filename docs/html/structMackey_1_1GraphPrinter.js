@@ -1,6 +1,7 @@
 var structMackey_1_1GraphPrinter =
 [
-    [ "GraphPrinter", "structMackey_1_1GraphPrinter.html#a14f52523c532b2872796f32bdee9a3fe", null ],
-    [ "graph", "structMackey_1_1GraphPrinter.html#adc40bc865b6e1a974ed17d07d3ea0808", null ],
-    [ "node_names", "structMackey_1_1GraphPrinter.html#a748a454e6e237dda1d76deaaf481ebe8", null ]
+    [ "GraphPrinter", "structMackey_1_1GraphPrinter.html#a93ab2a77759b8c61a7113b202e09e454", null ],
+    [ "edge_names", "structMackey_1_1GraphPrinter.html#a3f5f80fab59770598171819eeecae84e", null ],
+    [ "graph", "structMackey_1_1GraphPrinter.html#a7a8c011a6b101b133289053babf20295", null ],
+    [ "node_names", "structMackey_1_1GraphPrinter.html#aff2220dcc715a26b36dd722855fb8cbd", null ]
 ];

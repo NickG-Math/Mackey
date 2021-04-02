@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['additive_2eh_408',['Additive.h',['../Additive_8h.html',1,'']]],
-  ['aliases_2eh_409',['Aliases.h',['../Aliases_8h.html',1,'']]],
-  ['automorphisms_2eh_410',['Automorphisms.h',['../Automorphisms_8h.html',1,'']]]
+  ['abelian_2ehpp_405',['Abelian.hpp',['../Abelian_8hpp.html',1,'']]],
+  ['additive_2ehpp_406',['Additive.hpp',['../Additive_8hpp.html',1,'']]],
+  ['aliases_2ehpp_407',['Aliases.hpp',['../Aliases_8hpp.html',1,'']]]
 ];

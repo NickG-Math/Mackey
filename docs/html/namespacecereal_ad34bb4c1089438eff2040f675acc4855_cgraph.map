@@ -1,0 +1,4 @@
+<map id="cereal::save" name="cereal::save">
+<area shape="rect" id="node1" title="Save Eigen sparse matrix." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a89428f04e5d476915aec1d5358bb7423" title="Turn sparse matrix into a vector of Eigen triplets." alt="" coords="155,5,323,32"/>
+</map>

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['equidistribute_478',['equidistribute',['../namespaceMackey.html#a55e12d500b5495a1949b212533c622be',1,'Mackey']]],
-  ['equivariant_5fbase_5fnames_479',['equivariant_base_names',['../namespaceMackey_1_1internal.html#ad3470eee0665ddd466ea1fc98adffd7c',1,'Mackey::internal']]],
-  ['extend_480',['extend',['../classMackey_1_1MultiplicationTable.html#acb7e34f9a14df48850627ca1e5c540b7',1,'Mackey::MultiplicationTable']]]
+  ['edge_469',['edge',['../structmackey_1_1Neighborhood_1_1const__iterator.html#a0c89ebff8f8d9907d7ac3a972650cd73',1,'mackey::Neighborhood::const_iterator']]],
+  ['end_470',['end',['../classmackey_1_1InterpolatingVectorGenerator.html#ae11e60e117300685401961e36f196f7a',1,'mackey::InterpolatingVectorGenerator::end()'],['../classmackey_1_1Neighborhood.html#a27dd0b5d10316802ed7a2bafc6ce1da0',1,'mackey::Neighborhood::end()']]],
+  ['equivariantamt_471',['EquivariantAMT',['../classmackey_1_1EquivariantAMT.html#a1e3187194be8b49f21497621ef7fc3b9',1,'mackey::EquivariantAMT']]],
+  ['erase_5fmatchings_472',['erase_matchings',['../classmackey_1_1AMT.html#a1ca775f281ad4f46c3b97c2e6ef678c4',1,'mackey::AMT']]],
+  ['estimate_5fnonzero_5fentries_473',['estimate_nonzero_entries',['../classmackey_1_1Space.html#a62938ca6aac6dc0c7f94a0a59ef2ae3d',1,'mackey::Space']]]
 ];

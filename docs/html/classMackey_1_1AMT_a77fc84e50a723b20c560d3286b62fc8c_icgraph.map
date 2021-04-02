@@ -1,0 +1,4 @@
+<map id="Mackey::AMT::find_Morse_matching" name="Mackey::AMT::find_Morse_matching">
+<area shape="rect" id="node1" title="Sets the morse matchiing and normalizes diff if normalize=1 (this speeds up the AMT algorithm)" alt="" coords="197,5,384,47"/>
+<area shape="rect" id="node2" href="$classMackey_1_1AMT.html#a7e5e1ceb76ec08e7306471b689c9bebd" title="Constructor that allows only to resize." alt="" coords="5,13,149,39"/>
+</map>

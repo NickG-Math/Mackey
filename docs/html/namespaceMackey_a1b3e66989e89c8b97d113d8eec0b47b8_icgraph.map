@@ -1,6 +1,0 @@
-<map id="Mackey::span" name="Mackey::span">
-<area shape="rect" id="node1" title="Expresses a as a linear combination of elements b[i] living in a finitely generated abelian group...." alt="" coords="451,31,561,57"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a1ff253bf7e043ad6455b5fea23a83f09" title="Finds if an element is in the span of other given elements in a finitely generated abelian group." alt="" coords="270,5,393,32"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#af70b0c547f7121b8815885dfebde67d9" title="Returns k if a=k*b in group. Returns 0 if a is not a multiple of b (so make sure a!..." alt="" coords="260,56,403,83"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MultiplicationGraph.html#a6ac7e92d6ceb6bc146f855898916449f" title="Returns k if element[i]=k*element[j]. Returns 0 if element[a] is not a multiple of element[b]." alt="" coords="5,49,212,90"/>
-</map>

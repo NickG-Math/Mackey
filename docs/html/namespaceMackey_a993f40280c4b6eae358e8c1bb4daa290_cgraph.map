@@ -1,4 +1,0 @@
-<map id="Mackey::MatrixMixer" name="Mackey::MatrixMixer">
-<area shape="rect" id="node2" href="$namespaceMackey.html#ae54ebc8588d873a744541394ac5113f0" title="Forms the block diagonal matrix with k many copies of a, and then applies the permutations left^{&#45;1} ..." alt="" coords="197,5,341,47"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a359aa27a035d2b1f1a3f2f8270fc9e52" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs. " alt="" coords="199,71,339,98"/>
-</map>

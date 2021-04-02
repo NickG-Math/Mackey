@@ -1,0 +1,7 @@
+<map id="Mackey::tail" name="Mackey::tail">
+<area shape="rect" id="node1" title="Given vector or array returns vector starting from index start." alt="" coords="219,97,319,123"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Mult__Table.html#aeab470eac01b163514f39d53d1e04252" title="Isolate sphere from the degree vector (i.e. get everything but first entry)" alt="" coords="13,5,163,47"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#ad118cd56f3faca8899b2c499a134891c" title="Computes the product of two generators in the RO(G) homology given their level, degrees and selection..." alt="" coords="19,71,157,98"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#aeaeb4192721b133c0227f2393edc639d" title="Computes the homology for the given level and degree." alt="" coords="5,122,171,149"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a66c5cc4c839769fcd68f803b46eef6ce" title="Computes the Massey product of three generators in the RO(G) homology given their level,..." alt="" coords="14,173,162,199"/>
+</map>

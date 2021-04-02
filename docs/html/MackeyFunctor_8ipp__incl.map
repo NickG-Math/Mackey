@@ -1,0 +1,17 @@
+<map id="MackeyFunctor.ipp" name="MackeyFunctor.ipp">
+<area shape="rect" id="node1" title="Contains the class describing Mackey Functors." alt="" coords="95,5,238,32"/>
+<area shape="rect" id="node2" href="$MackeyFunctor_8hpp.html" title="Contains the class describing Mackey Functors." alt="" coords="87,80,246,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,64,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="88,155,168,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="173,304,248,331"/>
+<area shape="rect" id="node6" href="$Abelian_8hpp.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="243,155,445,181"/>
+<area shape="rect" id="node7" href="$General_8hpp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="430,229,575,256"/>
+<area shape="rect" id="node15" href="$Abelian_8ipp.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="277,229,405,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="593,304,655,331"/>
+<area shape="rect" id="node9" href="$Aliases_8hpp.html" title="Contains general template aliases." alt="" coords="275,304,413,331"/>
+<area shape="rect" id="node14" href="$General_8ipp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="437,304,568,331"/>
+<area shape="rect" id="node10" title=" " alt="" coords="171,453,274,480"/>
+<area shape="rect" id="node11" title=" " alt="" coords="415,453,521,480"/>
+<area shape="rect" id="node12" href="$SFINAE_8hpp.html" title="Contains all the SFINAE tricks." alt="" coords="295,379,393,405"/>
+<area shape="rect" id="node13" title=" " alt="" coords="298,453,390,480"/>
+</map>

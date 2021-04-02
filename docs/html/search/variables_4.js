@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['e_644',['E',['../structMackey_1_1internal_1_1MasseyCompute.html#a0f80c1d40e4766efaa0bb628cd8fdd23',1,'Mackey::internal::MasseyCompute']]],
-  ['edgeid_645',['edgeid',['../classMackey_1_1MultiplicationGraph.html#aa0eb04947f664262233ed4cdf650371b',1,'Mackey::MultiplicationGraph']]],
-  ['edges_646',['edges',['../classMackey_1_1Graph.html#a729ec24b9f9e504f4c4e2d3f6e2cab83',1,'Mackey::Graph']]],
-  ['element_647',['element',['../classMackey_1_1MultiplicationGraph.html#a53fe65317d8cef485a93e3e516dd374f',1,'Mackey::MultiplicationGraph']]],
-  ['exists_648',['exists',['../classMackey_1_1Massey.html#a7890eb54ac6d6c48576ba131a59e551f',1,'Mackey::Massey']]]
+  ['element_625',['element',['../classmackey_1_1MultGraph.html#a26b37c00b53759a3572d8d11b8f92e54',1,'mackey::MultGraph']]],
+  ['end_626',['end',['../Smith_8hpp.html#ace6fd70b621b27a39a559357bae307a8',1,'Smith.hpp']]],
+  ['exists_627',['exists',['../classmackey_1_1Massey.html#a6e480061dc5ecc1f85a71989a6352dfc',1,'mackey::Massey']]]
 ];

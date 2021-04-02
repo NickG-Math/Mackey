@@ -1,4 +1,0 @@
-<map id="Mackey::Graph::computePath_default" name="Mackey::Graph::computePath_default">
-<area shape="rect" id="node1" title="Default implementation for graphs uses length=1 for all edges." alt="" coords="5,5,216,47"/>
-<area shape="rect" id="node2" href="$classMackey_1_1Graph.html#acda32cd8d144dcd1ec771bd8d2753321" title="Compute all paths using the given source." alt="" coords="264,5,477,47"/>
-</map>

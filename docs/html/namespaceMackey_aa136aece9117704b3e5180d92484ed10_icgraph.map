@@ -1,6 +1,0 @@
-<map id="Mackey::primes" name="Mackey::primes">
-<area shape="rect" id="node1" title="Returns all primes up to n (not optimized; n is usually very small)" alt="" coords="680,13,804,39"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a2b6ac22efe0be546f2c3f8abc2ceb5b7" title="Finds if given abelian group is actually a p&#45;group and returns the p if so (otherwise returns 0)" alt="" coords="483,13,632,39"/>
-<area shape="rect" id="node3" href="$namespaceMackey.html#a2556e2a1f78783585df78de1c1b35eae" title=" " alt="" coords="231,13,435,39"/>
-<area shape="rect" id="node4" href="$classMackey_1_1MackeyFunctor.html#ac7ef9ab9f3a13660a03c35e64dddd66b" title="Returns all automorphisms of a Mackey Functor and their inverses." alt="" coords="5,5,183,47"/>
-</map>

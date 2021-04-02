@@ -1,4 +1,0 @@
-<map id="Mackey::order" name="Mackey::order">
-<area shape="rect" id="node1" title="Finds the order of element in given finitely generated abelian group. Returns 0 if order is infinite." alt="" coords="5,5,119,32"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a5d8ae76ffb9440e27bfca124d26ee1b2" title="Least common multiple of vector of elements." alt="" coords="167,5,269,32"/>
-</map>

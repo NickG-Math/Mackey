@@ -1,0 +1,4 @@
+<map id="Mackey::make_triplets" name="Mackey::make_triplets">
+<area shape="rect" id="node1" title="Turn sparse matrix into a vector of Eigen triplets." alt="" coords="155,5,323,32"/>
+<area shape="rect" id="node2" href="$namespacecereal.html#ad34bb4c1089438eff2040f675acc4855" title="Save Eigen sparse matrix." alt="" coords="5,5,107,32"/>
+</map>

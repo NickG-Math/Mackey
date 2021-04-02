@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['z_401',['Z',['../classZ.html',1,'']]],
-  ['z_3c_202_20_3e_402',['Z&lt; 2 &gt;',['../classZ_3_012_01_4.html',1,'']]]
+  ['tensor_400',['Tensor',['../classmackey_1_1Tensor.html',1,'mackey']]]
 ];

@@ -1,0 +1,5 @@
+<map id="Mackey::AbelianGroup::normalize" name="Mackey::AbelianGroup::normalize">
+<area shape="rect" id="node1" title="Normalize linear map whose range is this group (reduce n in Z/n to 0 etc.)." alt="" coords="421,5,588,47"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#a33fbc196dc4860eb03b35edb651a6534" title="Use the ID data to identify all possible candidates for an element." alt="" coords="204,13,373,39"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a4173b8bfb449ace558462b10dae2a388" title="Find if given elements can all be distinguished i.e. they have pairwise disjoint candidate sets." alt="" coords="5,13,156,39"/>
+</map>

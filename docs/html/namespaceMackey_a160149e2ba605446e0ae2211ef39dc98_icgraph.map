@@ -1,0 +1,8 @@
+<map id="Mackey::summation" name="Mackey::summation">
+<area shape="rect" id="node1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="467,81,620,108"/>
+<area shape="rect" id="node2" href="$classMackey_1_1Homology.html#a42c33aefa264880040d1830579d56b0d" title=" " alt="" coords="199,5,419,32"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a8e17fb4ada60b950c8f4efe273b23783" title=" " alt="" coords="247,56,370,83"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e" title="Restrict generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="236,107,381,133"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#aa2308dc04ccf5427ca227507e5b8c083" title="Transfer the differential to given level. We need the ranks both at the original level and the given ..." alt="" coords="243,157,374,184"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#a96d7fd4b6256a4526b9e2a766b00116e" title="Writing the restriction of each generator in terms of the generators in the image." alt="" coords="5,107,151,133"/>
+</map>

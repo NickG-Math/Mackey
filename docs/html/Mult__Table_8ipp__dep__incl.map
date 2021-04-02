@@ -1,0 +1,14 @@
+<map id="Mult_Table.ipp" name="Mult_Table.ipp">
+<area shape="rect" id="node1" title="Contains the class and methods to form the multiplication table." alt="" coords="103,5,219,32"/>
+<area shape="rect" id="node2" href="$Mult__Table_8hpp.html" title="Contains the class and methods to form the multiplication table." alt="" coords="101,80,221,107"/>
+<area shape="rect" id="node3" href="$Mult__Graph_8hpp.html" title="Contains the multiplication graph." alt="" coords="98,155,223,181"/>
+<area shape="rect" id="node4" href="$Mult__Graph_8ipp.html" title="Contains the multiplication graph." alt="" coords="5,229,127,256"/>
+<area shape="rect" id="node5" href="$Mult__Graph__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="151,229,363,256"/>
+<area shape="rect" id="node11" href="$Mult__Graph__Identify_8hpp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="463,229,642,256"/>
+<area shape="rect" id="node6" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="346,304,479,331"/>
+<area shape="rect" id="node10" href="$Mult__Graph__Connectivity_8ipp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="114,304,322,331"/>
+<area shape="rect" id="node7" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="209,379,323,405"/>
+<area shape="rect" id="node9" href="$Factorization_8ipp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="348,379,477,405"/>
+<area shape="rect" id="node8" href="$Cerealizer_8ipp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="211,453,321,480"/>
+<area shape="rect" id="node12" href="$Mult__Graph__Identify_8ipp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="504,304,679,331"/>
+</map>

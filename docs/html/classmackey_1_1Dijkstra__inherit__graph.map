@@ -1,0 +1,9 @@
+<map id="Dijkstra&lt; graph_t, policy_t &gt;" name="Dijkstra&lt; graph_t, policy_t &gt;">
+<area shape="rect" id="node1" title="The Dijkstra algorithm producing the shortest paths." alt="" coords="245,47,387,88"/>
+<area shape="rect" id="node3" href="$classmackey_1_1MinLength.html" title=" " alt="" coords="1305,12,1476,68"/>
+<area shape="rect" id="node4" href="$classmackey_1_1Dijkstra.html" title=" " alt="" coords="641,47,829,88"/>
+<area shape="rect" id="node6" href="$classmackey_1_1Dijkstra.html" title=" " alt="" coords="620,112,849,154"/>
+<area shape="rect" id="node2" href="$classmackey_1_1ShortestPaths.html" title="The shortest paths from a collection of sources to all points in a graph." alt="" coords="5,54,196,81"/>
+<area shape="rect" id="node5" href="$classmackey_1_1MinLength.html" title="Dijkstra policy that minimizes the length of each path." alt="" coords="919,57,1089,84"/>
+<area shape="rect" id="node7" href="$classmackey_1_1MinColorsLength.html" title="Dijkstra policy that minimizes the color alterations and length." alt="" coords="899,120,1109,146"/>
+</map>

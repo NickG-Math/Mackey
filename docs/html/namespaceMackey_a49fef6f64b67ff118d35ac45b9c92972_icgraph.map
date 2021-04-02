@@ -1,7 +1,0 @@
-<map id="Mackey::DegreeConstruction" name="Mackey::DegreeConstruction">
-<area shape="rect" id="node1" title="Given minimum and maximum degrees, constructs everything in between." alt="" coords="723,38,931,65"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a2556e2a1f78783585df78de1c1b35eae" title=" " alt="" coords="231,13,435,39"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a918f02198f6daadfd0c93109b63b2f1f" title="Returns all automorphisms of finite abelian p&#45;group." alt="" coords="499,38,658,65"/>
-<area shape="rect" id="node5" href="$classMackey_1_1AdditiveStructure.html#a2ab350a9e5187964b9cf42c3f36805fa" title="Print the Mackey functors for each degree." alt="" coords="483,89,675,131"/>
-<area shape="rect" id="node3" href="$classMackey_1_1MackeyFunctor.html#ac7ef9ab9f3a13660a03c35e64dddd66b" title="Returns all automorphisms of a Mackey Functor and their inverses." alt="" coords="5,5,183,47"/>
-</map>

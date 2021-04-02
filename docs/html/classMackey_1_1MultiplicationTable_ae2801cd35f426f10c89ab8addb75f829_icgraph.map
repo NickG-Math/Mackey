@@ -1,9 +1,0 @@
-<map id="Mackey::MultiplicationTable::triple_product" name="Mackey::MultiplicationTable::triple_product">
-<area shape="rect" id="node2" href="$classMackey_1_1MultiplicationGraphIdentify.html#a5c945ebff968abe788e22b025b2455ed" title="Uses triple box products to possibly identify the products landing in degrees of given generators if ..." alt="" coords="237,71,424,112"/>
-<area shape="rect" id="node5" href="$classMackey_1_1MultiplicationTable.html#ad4245f4a8122f0661f969498ef53f999" title="Isolate sphere from the degree vector (i.e. get everything but first entry) " alt="" coords="239,168,423,209"/>
-<area shape="rect" id="node3" href="$classMackey_1_1Factorization.html#a9828268663049b5ac2668d4eb0bdd4ff" title="Uses triple box products to possibly identify the given generators. " alt="" coords="489,5,639,47"/>
-<area shape="rect" id="node4" href="$classMackey_1_1Factorization.html#aad2d840b523d193f4c3554e9e3f7fb00" title="Uses triple box products to possibly identify the generators not connected to the sources..." alt="" coords="489,71,639,112"/>
-<area shape="rect" id="node6" href="$classMackey_1_1MultiplicationTable.html#ac3bc2d09599a994b2b159def52484bae" title="Default constructor needed for loading archive. " alt="" coords="472,136,656,177"/>
-<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationTable.html#ac15f13c4a9d160226582e1970ef4b00c" title="Retrieve the degree index of the given degree. " alt="" coords="472,201,656,243"/>
-<area shape="rect" id="node8" href="$classMackey_1_1MultiplicationTable.html#a4371e6ba8a058073c005e636979b7230" title="Extends multiplication table using the larger range provided. " alt="" coords="472,267,656,308"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="Mackey::internal::general_canonical_box" name="Mackey::internal::general_canonical_box">
-<area shape="rect" id="node1" title="General expression for the canonical basis of firstChain box secondChain using the provided names." alt="" coords="5,64,192,105"/>
-<area shape="rect" id="node2" href="$namespaceMackey_1_1internal.html#a2c420c10c78dcc4f9ae579bad1cd2e45" title="General expression for the canonical basis of (firstChain box secondChain)_i using the provided names..." alt="" coords="240,64,427,105"/>
-<area shape="rect" id="node3" href="$namespaceMackey_1_1internal.html#a34dd271be1fcbda4ca21877094697796" title="General expression for the canonical basis for firstrank box secondrank using the provided names." alt="" coords="475,5,661,47"/>
-<area shape="rect" id="node4" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="709,71,863,98"/>
-<area shape="rect" id="node5" href="$namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99" title="The rank of (C box D)_i." alt="" coords="501,122,635,149"/>
-<area shape="rect" id="node6" href="$namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995" title="The tensor product of ranks of modules A,B." alt="" coords="717,122,855,149"/>
-</map>

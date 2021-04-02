@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['order_678',['order',['../classZ.html#a8da63061091de9ee7a146a856f70c4b8',1,'Z::order()'],['../classZ_3_012_01_4.html#a113854b6a1c2fec88ed352c117515c0e',1,'Z&lt; 2 &gt;::order()']]],
-  ['out_5fqi_679',['Out_Qi',['../classMackey_1_1Homology.html#a49fa2fbf9542e38b4000f4889f633f62',1,'Mackey::Homology']]]
+  ['name_646',['name',['../classmackey_1_1MackeyFunctor.html#a9b45b3e13bd9167aab02e17e08916231',1,'mackey::MackeyFunctor']]],
+  ['node_5fnames_647',['node_names',['../classmackey_1_1Graph.html#a5d98df18bd8694350f0ca8915f4c76c7',1,'mackey::Graph']]],
+  ['noindeterminacy_648',['noIndeterminacy',['../classmackey_1_1Massey.html#a9e89d50fa80f40fa57c4bd5ebb0868ce',1,'mackey::Massey']]],
+  ['nonzerohomology_649',['NonZeroHomology',['../structmackey_1_1MultTableData.html#a9ecbb9fbddc0fdf758966d29832f925f',1,'mackey::MultTableData']]],
+  ['normalbasis_650',['normalBasis',['../classmackey_1_1Massey.html#a66bca27286d132d1387efb5265675b2f',1,'mackey::Massey']]],
+  ['number_5fof_5fgenerators_651',['number_of_generators',['../classmackey_1_1MultGraph.html#ad48eeb6502120e9fd6b9fd9da5e8dc61',1,'mackey::MultGraph']]]
 ];

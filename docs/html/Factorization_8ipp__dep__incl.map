@@ -1,0 +1,6 @@
+<map id="Factorization.ipp" name="Factorization.ipp">
+<area shape="rect" id="node1" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="7,5,137,32"/>
+<area shape="rect" id="node2" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node3" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="15,155,129,181"/>
+<area shape="rect" id="node4" href="$Cerealizer_8ipp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="17,229,127,256"/>
+</map>

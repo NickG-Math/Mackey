@@ -1,5 +1,0 @@
-var classMackey_1_1Smith_3_01smithS__t_00_01smithR__t_00_01smithC__t_00_01decltype_07smithS__t_1_1Scf0454e895315bf0e7b9625b582000795 =
-[
-    [ "Smith", "classMackey_1_1Smith_3_01smithS__t_00_01smithR__t_00_01smithC__t_00_01decltype_07smithS__t_1_1Scf0454e895315bf0e7b9625b582000795.html#a7acceb67cb7bcec7cf401450d29bc13c", null ],
-    [ "Smith", "classMackey_1_1Smith_3_01smithS__t_00_01smithR__t_00_01smithC__t_00_01decltype_07smithS__t_1_1Scf0454e895315bf0e7b9625b582000795.html#afac9c25ee6d198ea2b510ef686dbf4fd", null ]
-];

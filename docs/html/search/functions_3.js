@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['degreeconstruction_471',['DegreeConstruction',['../namespaceMackey.html#a49fef6f64b67ff118d35ac45b9c92972',1,'Mackey']]],
-  ['diagonalize_472',['diagonalize',['../namespaceMackey.html#a276ffc8b4c9c52cfde39cd3da3c88cc9',1,'Mackey::diagonalize(const S_t &amp;A, bool wantP, bool wantQ, bool sort)'],['../namespaceMackey.html#a2f26791310db25c7e42bf5341fdfd48d',1,'Mackey::diagonalize(const S_t &amp;A, bool wantP, bool wantQ)']]],
-  ['digits10_473',['digits10',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#ae5b24b565ec0c0945f74e62cb0546fad',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]],
-  ['dimension_474',['dimension',['../namespaceMackey.html#a6a5d40e69e5628ea84896ee43f4a91fa',1,'Mackey']]],
-  ['distinguish_475',['distinguish',['../namespaceMackey.html#a281b9be315d7d51c7e691d4c733ac0c9',1,'Mackey']]],
-  ['dualize_476',['dualize',['../classMackey_1_1Chains.html#a9aa778859604adb53977935b03caa5a5',1,'Mackey::Chains::dualize(int k)'],['../classMackey_1_1Chains.html#a199843c84295e6755a41cf80ed0db7fd',1,'Mackey::Chains::dualize()']]],
-  ['dummy_5fprecision_477',['dummy_precision',['../structEigen_1_1NumTraits_3_01Z_3_01N_01_4_01_4.html#a75bda6fb36d6d253deba3310e9c5ed10',1,'Eigen::NumTraits&lt; Z&lt; N &gt; &gt;']]]
+  ['degreewithinrange_461',['degreewithinrange',['../classmackey_1_1MultTable.html#ab2a29eaea7365624a4c36256c3b4bcb5',1,'mackey::MultTable']]],
+  ['dijkstra_462',['Dijkstra',['../classmackey_1_1Dijkstra.html#ac9720da3ee02527287ac9031f025bd7c',1,'mackey::Dijkstra']]],
+  ['dimension_463',['dimension',['../namespacemackey.html#aadac7883d5bb1086105c33d258afc3e9',1,'mackey']]],
+  ['disconnected_464',['disconnected',['../classmackey_1_1ShortestPaths.html#ab1357f9e5087bb22ecc777fede49b803',1,'mackey::ShortestPaths']]],
+  ['disconnected_5fdegrees_465',['disconnected_degrees',['../classmackey_1_1Factorization.html#ad2b7f8300d9f35465a766551a73327ca',1,'mackey::Factorization']]],
+  ['distinguish_466',['distinguish',['../namespacemackey.html#a3b6e0b875b837f2d7e0e7cf0d915f8ec',1,'mackey']]],
+  ['draw_5fedge_467',['draw_edge',['../classmackey_1_1Graph.html#a80b53bf9070a8e8c9a8834703a5fd927',1,'mackey::Graph']]],
+  ['dualize_468',['dualize',['../classmackey_1_1Chains.html#a78d435cb51ee1677597a9b01b1033b2a',1,'mackey::Chains']]]
 ];

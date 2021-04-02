@@ -1,0 +1,8 @@
+<map id="Mackey::MackeyFunctor::resize" name="Mackey::MackeyFunctor::resize">
+<area shape="rect" id="node1" title="Resize all member variables." alt="" coords="657,64,835,105"/>
+<area shape="rect" id="node2" href="$classMackey_1_1IDGenerators.html#a9669af6c07a9ed5a91a662aef6cda1ed" title="Get a two&#45;level Mackey functor out of this data." alt="" coords="433,5,598,47"/>
+<area shape="rect" id="node5" href="$namespaceMackey.html#aa98d6408ee8f83ee2f899ae11db17217" title="The Mackey functor Homology of a Junction of Mackey functors." alt="" coords="421,71,609,98"/>
+<area shape="rect" id="node6" href="$namespaceMackey.html#a738f2b46b7d0c37be203a17083801bbd" title="The sum of two Mackey functors." alt="" coords="443,122,588,149"/>
+<area shape="rect" id="node3" href="$namespaceMackey.html#a33fbc196dc4860eb03b35edb651a6534" title="Use the ID data to identify all possible candidates for an element." alt="" coords="204,13,373,39"/>
+<area shape="rect" id="node4" href="$namespaceMackey.html#a4173b8bfb449ace558462b10dae2a388" title="Find if given elements can all be distinguished i.e. they have pairwise disjoint candidate sets." alt="" coords="5,13,156,39"/>
+</map>

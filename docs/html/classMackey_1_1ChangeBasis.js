@@ -1,8 +1,8 @@
 var classMackey_1_1ChangeBasis =
 [
-    [ "ChangeBasis", "classMackey_1_1ChangeBasis.html#a1200b696d4b6db9ad942ee583c320a50", null ],
-    [ "ChangeBasis", "classMackey_1_1ChangeBasis.html#a39b9a8d75509c70e728342172a321924", null ],
-    [ "ChangeBasis", "classMackey_1_1ChangeBasis.html#a8cc49fe5537e7038ff7d142ba76e7c7b", null ],
-    [ "LefttoCanon", "classMackey_1_1ChangeBasis.html#a784f69cb8de92e84fef755461c60d3d0", null ],
-    [ "RighttoCanon", "classMackey_1_1ChangeBasis.html#aa169c2e7937437ea2102de1c3072194c", null ]
+    [ "ChangeBasis", "classMackey_1_1ChangeBasis.html#ac6e40f8d62dbfe3faf56fc2870c0bf68", null ],
+    [ "Canon_to_Left", "classMackey_1_1ChangeBasis.html#ae6a3430f04865d03d52853d34ba73180", null ],
+    [ "Canon_to_Right", "classMackey_1_1ChangeBasis.html#aa215983e1f6f8f4941c8c5666a002f81", null ],
+    [ "Left_to_Canon", "classMackey_1_1ChangeBasis.html#ade725b74e88653f5748c2bfdf8c36a3a", null ],
+    [ "Right_to_Canon", "classMackey_1_1ChangeBasis.html#a47f23bb71d27ffef324ac75ad93e0e68", null ]
 ];

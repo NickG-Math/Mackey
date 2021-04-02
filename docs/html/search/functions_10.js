@@ -1,13 +1,20 @@
 var searchData=
 [
-  ['rankbox_581',['rankBox',['../namespaceMackey.html#a8a3b4c6cc908044298e8e287298b9b99',1,'Mackey::rankBox(const std::vector&lt; rank_t &gt; &amp;C, const std::vector&lt; rank_t &gt; &amp;D, int i)'],['../namespaceMackey.html#a6ce409eccab63034e324323c1e528814',1,'Mackey::rankBox(const std::vector&lt; rank_t &gt; &amp;C, const std::vector&lt; rank_t &gt; &amp;D)']]],
-  ['rankmult_582',['rankmult',['../namespaceMackey.html#aaa0ce7673970bf261628768fb11a1995',1,'Mackey']]],
-  ['reindex_583',['Reindex',['../namespaceMackey.html#a7da73ade3ee83c4ffd614e79242d7c04',1,'Mackey::Reindex(T degree)'],['../namespaceMackey.html#acb84c147d9ee39eac2883a762e3710dd',1,'Mackey::Reindex(int k, const T &amp;sphere)']]],
-  ['resize_584',['resize',['../classMackey_1_1MackeyFunctor.html#a44d3104a47f23de5d8141b7800db6d11',1,'Mackey::MackeyFunctor']]],
-  ['restriction_585',['restriction',['../namespaceMackey.html#a7defa0afa64fdb038a657493db47e13e',1,'Mackey::restriction(const Eigen::MatrixBase&lt; Derived &gt; &amp;generator, const rank_t &amp;domain, const rank_t &amp;range)'],['../namespaceMackey.html#a6818760aa9590810daace862e4c71f04',1,'Mackey::restriction(const Homology&lt; rank_t, diff_t &gt; &amp;high, const Homology&lt; rank_t, diff_t &gt; &amp;low, const rank_t &amp;rank_high, const rank_t &amp;rank_low)']]],
-  ['rochains_586',['ROChains',['../namespaceMackey.html#a08fd3743ffb625fceca454da757dfa5d',1,'Mackey::ROChains(int i, const deg_t &amp;sphere)'],['../namespaceMackey.html#abd3c2e12c91baa573c6dbaa37eeb0518',1,'Mackey::ROChains(const deg_t &amp;sphere)']]],
-  ['rogreen_587',['ROGreen',['../namespaceMackey.html#a2bd86833844ca62d76c47a54aeb0bb77',1,'Mackey::ROGreen(int level, const deg_t &amp;first, const deg_t &amp;second, int selectFirst, int selectSecond)'],['../namespaceMackey.html#a07d3b1e748c6cf2fd8a6e21b948a0afe',1,'Mackey::ROGreen(int level, const deg_t &amp;first, const deg_t &amp;second)']]],
-  ['rohomology_588',['ROHomology',['../namespaceMackey.html#aa014e2177bd124bce2e8e7a4c1dc8d38',1,'Mackey::ROHomology(int level, const deg_t &amp;degree)'],['../namespaceMackey.html#a58708ee937b0c4172b7cde8e5f856504',1,'Mackey::ROHomology(const deg_t &amp;sphere)']]],
-  ['romassey_589',['ROMassey',['../namespaceMackey.html#a9fcefe47f5a8a416b173517377a61bd0',1,'Mackey::ROMassey(int level, const deg_t &amp;first, const deg_t &amp;second, const deg_t &amp;third, int selectFirst, int selectSecond, int selectThird, bool do_indeter)'],['../namespaceMackey.html#afa8c8ea3bfdd5edbda71827e0b796fb1',1,'Mackey::ROMassey(int level, const deg_t &amp;first, const deg_t &amp;second, const deg_t &amp;third, bool do_indeter)']]],
-  ['rotate_590',['rotate',['../namespaceMackey.html#a38a833de54971845cbdb8c96f830725b',1,'Mackey']]]
+  ['reduce_566',['reduce',['../classmackey_1_1AMT.html#a447de6b436d6aa59edf6a09ba28a4164',1,'mackey::AMT']]],
+  ['reduced_5fto_5foriginal_567',['reduced_to_original',['../classmackey_1_1AMT.html#a493d4741361c9f3f24aeebeb28044c51',1,'mackey::AMT']]],
+  ['reduction_5fratio_568',['reduction_ratio',['../classmackey_1_1AMT.html#a5fc69cd9a8131734d0109737f3e42c2e',1,'mackey::AMT']]],
+  ['reindex_569',['Reindex',['../namespacemackey.html#a9a9af3f870d3cbf8c48a8fe5cf4ffc23',1,'mackey']]],
+  ['reserve_570',['reserve',['../classmackey_1_1Chains.html#ad8a2fbd9a0058c831dc477b923af13cb',1,'mackey::Chains::reserve()'],['../classmackey_1_1Neighborhood.html#af45d30f307f301b9d43fcdf52897bbce',1,'mackey::Neighborhood::reserve()']]],
+  ['reserve_5fedges_5ffor_5fnode_571',['reserve_edges_for_node',['../classmackey_1_1Graph.html#ab88a7affeb15325ceb8edb2d3009d3c5',1,'mackey::Graph']]],
+  ['reserve_5fedges_5fper_5fnode_572',['reserve_edges_per_node',['../classmackey_1_1Graph.html#a1e5685997ead272d8fbd75a2429d6d81',1,'mackey::Graph']]],
+  ['reserve_5fnodes_573',['reserve_nodes',['../classmackey_1_1Graph.html#a85e9848e47e3919172c8f9c8849f06c7',1,'mackey::Graph']]],
+  ['resize_574',['resize',['../classmackey_1_1MackeyFunctor.html#a9c133c95c84f0a14ce800d46fd53b380',1,'mackey::MackeyFunctor']]],
+  ['restriction_575',['restriction',['../namespacemackey.html#ae0ae5e3b0eaee6dee87bf89bc09e4677',1,'mackey::restriction(const Homology&lt; typename group_t::rank_t, typename group_t::diff_t &gt; &amp;high, const Homology&lt; typename group_t::rank_t, typename group_t::diff_t &gt; &amp;low, const typename group_t::rank_t &amp;rank_high, const typename group_t::rank_t &amp;rank_low)'],['../namespacemackey.html#a0bbe4fb0329fbcf15466b5f21ec2213f',1,'mackey::restriction(const Eigen::MatrixBase&lt; Derived &gt; &amp;generator, const rank_t &amp;domain, const rank_t &amp;range)']]],
+  ['rochains_576',['ROChains',['../namespacemackey.html#a15c0c8d38ebe6673b65598057f77275e',1,'mackey']]],
+  ['rocohomology_577',['ROCohomology',['../classmackey_1_1Space.html#a9c73c49ba4c5462943b391d1dbf15757',1,'mackey::Space::ROCohomology(int level, const std::vector&lt; int &gt; &amp;cohomologysphere)'],['../classmackey_1_1Space.html#a6be3f4db48e6820874e5066665b80a34',1,'mackey::Space::ROCohomology(const std::vector&lt; int &gt; &amp;cohomologysphere)']]],
+  ['rogreen_578',['ROGreen',['../namespacemackey.html#aea2a61da5e12dcf121d300b60617eca4',1,'mackey']]],
+  ['rohomology_579',['ROHomology',['../namespacemackey.html#af2fa2da3a24d59f4525d43bf82608a49',1,'mackey::ROHomology(int level, const deg_t &amp;degree)'],['../namespacemackey.html#a815ad92225f43a9f4afef1eea1f8f959',1,'mackey::ROHomology(const deg_t &amp;sphere)'],['../classmackey_1_1Space.html#a14c799331765021536b7900ee60b75bb',1,'mackey::Space::ROHomology(int level, const std::vector&lt; int &gt; &amp;homologysphere)'],['../classmackey_1_1Space.html#a93d521ca5cae37cb27af79ac5841c7dc',1,'mackey::Space::ROHomology(const std::vector&lt; int &gt; &amp;homologysphere)']]],
+  ['romassey_580',['ROMassey',['../namespacemackey.html#a652275fee4fde5df8fa9a4e576656a41',1,'mackey']]],
+  ['rotate_581',['rotate',['../namespacemackey.html#a1c8bdfab1c42941a630f58d486094b47',1,'mackey']]],
+  ['row_582',['row',['../classmackey_1_1IteratorNNZ.html#ab10842cab44d37e5d437ece85d0c2ec9',1,'mackey::IteratorNNZ']]]
 ];

@@ -1,0 +1,22 @@
+<map id="Levels.ipp" name="Levels.ipp">
+<area shape="rect" id="node1" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="456,5,544,32"/>
+<area shape="rect" id="node2" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="448,80,552,107"/>
+<area shape="rect" id="node3" href="$Homology_8hpp.html" title="Contains the Homology class and algorithms." alt="" coords="407,155,593,181"/>
+<area shape="rect" id="node4" href="$Chains_8hpp.html" title="Contains Chains and Junction classes for using chain complexes." alt="" coords="467,229,677,256"/>
+<area shape="rect" id="node8" href="$General_8hpp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="357,304,502,331"/>
+<area shape="rect" id="node16" href="$Smith_8hpp.html" title="Contains the base class for all Smith implementations." alt="" coords="92,304,180,331"/>
+<area shape="rect" id="node18" href="$Abelian_8hpp.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="185,229,388,256"/>
+<area shape="rect" id="node20" href="$Homology_8ipp.html" title="Contains the Homology class and algorithms." alt="" coords="701,229,845,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="563,379,626,405"/>
+<area shape="rect" id="node6" title=" " alt="" coords="578,304,654,331"/>
+<area shape="rect" id="node7" href="$Chains_8ipp.html" title="Contains Chains and Junction classes for using chain complexes." alt="" coords="679,304,801,331"/>
+<area shape="rect" id="node9" href="$Aliases_8hpp.html" title="Contains general template aliases." alt="" coords="147,379,285,405"/>
+<area shape="rect" id="node14" title=" " alt="" coords="464,379,539,405"/>
+<area shape="rect" id="node15" href="$General_8ipp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="309,379,440,405"/>
+<area shape="rect" id="node10" title=" " alt="" coords="43,528,146,555"/>
+<area shape="rect" id="node11" title=" " alt="" coords="287,528,393,555"/>
+<area shape="rect" id="node12" href="$SFINAE_8hpp.html" title="Contains all the SFINAE tricks." alt="" coords="167,453,265,480"/>
+<area shape="rect" id="node13" title=" " alt="" coords="170,528,262,555"/>
+<area shape="rect" id="node17" href="$Smith_8ipp.html" title="Contains the base class for all Smith implementations." alt="" coords="5,379,123,405"/>
+<area shape="rect" id="node19" href="$Abelian_8ipp.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="204,304,332,331"/>
+</map>

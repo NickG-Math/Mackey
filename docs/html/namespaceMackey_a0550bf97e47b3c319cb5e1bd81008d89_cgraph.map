@@ -1,4 +1,0 @@
-<map id="Mackey::transfer" name="Mackey::transfer">
-<area shape="rect" id="node1" title="Transfer generator to level given the ranks at the original level (domain) and the target level (rang..." alt="" coords="5,5,136,32"/>
-<area shape="rect" id="node2" href="$namespaceMackey.html#a654ed2652808daa206cdaa7ac0fce0e1" title="Takes the sum of the entries of an Eigen vector at higher precision than its inputs." alt="" coords="184,5,337,32"/>
-</map>

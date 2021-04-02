@@ -1,9 +1,0 @@
-<map id="Mackey::Box" name="Mackey::Box">
-<area shape="rect" id="node1" title="Get the box product of C,D up to index i." alt="" coords="503,143,607,170"/>
-<area shape="rect" id="node2" href="$structMackey_1_1internal_1_1MasseyCompute.html#aff177659d2dbcd9c3fe9d644d55141ca" title=" " alt="" coords="260,5,447,47"/>
-<area shape="rect" id="node4" href="$structMackey_1_1internal_1_1MasseyCompute.html#aa62c7436a98f7be7105e6ab0157cb431" title=" " alt="" coords="260,71,447,112"/>
-<area shape="rect" id="node5" href="$structMackey_1_1internal_1_1MasseyCompute.html#a0dc26be60def312ab591b72b1e24144f" title=" " alt="" coords="260,136,447,177"/>
-<area shape="rect" id="node6" href="$structMackey_1_1internal_1_1MasseyCompute.html#a720436488adcfdf1d976b27be7d95b55" title=" " alt="" coords="260,201,447,243"/>
-<area shape="rect" id="node7" href="$classMackey_1_1MultiplicationTable.html#a9772a0a094c72d4bc9c1f676889ed9c0" title="Multiplies the given index with two basic irreducibles. Only used by MultiplicationGraphIdentify when..." alt="" coords="252,267,455,308"/>
-<area shape="rect" id="node3" href="$structMackey_1_1internal_1_1MasseyCompute.html#a76235baafddad97e59b165f6ce56fa32" title=" " alt="" coords="5,136,204,177"/>
-</map>

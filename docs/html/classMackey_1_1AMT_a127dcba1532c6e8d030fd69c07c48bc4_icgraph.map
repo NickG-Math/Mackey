@@ -1,0 +1,4 @@
+<map id="Mackey::AMT::reduction_ratio" name="Mackey::AMT::reduction_ratio">
+<area shape="rect" id="node1" title="Returns the average compression ratio as a double in [0,1]. Ideally as close to 0 as possible." alt="" coords="196,5,372,47"/>
+<area shape="rect" id="node2" href="$namespaceMackey.html#ab3885281161bb972f3a0410834fa69ad" title="Returns the Chains of given sphere. Optionally stop at index i (i=&#45;1 means nonstop i...." alt="" coords="5,13,148,39"/>
+</map>

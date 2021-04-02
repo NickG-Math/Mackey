@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{tikz-cd}
+\begin{document}
+\begin{tikzcd}
+  a\otimes b\in H_*^G\otimes H_{*'}^G\\
+  \tilde a \otimes \tilde b\in C_*^G\otimes C_{*'}^G\ar[u]\ar[d,"Res\otimes Res"]\\
+  Res(\tilde a)\otimes Res(\tilde b)\in C_{*'}^e\otimes C_*^e\\
+  \tilde a\times \tilde b\in (C_*\otimes C_{*'})^G\ar[u,"Res" left]\ar[d]\\
+  ab\in H_{*+*'}^G
+\end{tikzcd}
+\end{document}

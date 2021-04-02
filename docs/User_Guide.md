@@ -314,7 +314,7 @@ The class \ref mackey::Factorization "Factorization" computes the multiplication
 
 In this case let us use \f$a_{\sigma},u_{2\sigma},a_{\lambda},u_{\lambda}\f$ as our irreducibles:
 
-	std::vector<std::vector<int>> basic_irr = {{0, 1, 0}, {2, 2, 0}, {0, 0, 1}, {2, 0, 1}};
+	std::vector<std::vector<int>> basic_irr = { {0, 1, 0}, {2, 2, 0}, {0, 0, 1}, {2, 0, 1} };
 	std::vector<std::string> basic_irr_names = {"asigma", "u2sigma", "alambda", "ulambda"};
 
 @note For any group \f$G\f$, the degree of an element in \f$H_kS^V\f$ is represented by a vector ```{k,t1,...,tn}``` where ```{t1,...,tn}``` represents \f$S^V\f$.

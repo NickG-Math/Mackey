@@ -18,17 +18,17 @@ namespace mackey
 	class MackeyFunctor {
 	public:
 
-		std::vector<AbelianGroup<rank_t>> Groups;///<The Groups starting at level 0 (see Homology for the labeling)
+		std::vector<AbelianGroup<rank_t>> levels;///<The levels starting at level 0 (see Homology for the labeling)
 
 		//////////////////////////////////////////////////////////////////////////////
 		///The transfers from level i to level i+1. They are encoded as matrices because the levels may be noncyclic
 
-		///Example (C4): If Tr[0]=[2] and Tr[1]=[1,2;1,3] then Tr_0^2(gen)=2*gen and Tr_2^4(gen0)=gen0+gen1 and Tr_2^4(gen1)=2*gen0+3*gen1
+		///Example (C4): If tr[0]=[2] and tr[1]=[1,2;1,3] then Tr_0^2(gen)=2*gen and Tr_2^4(gen0)=gen0+gen1 and Tr_2^4(gen1)=2*gen0+3*gen1
 		//////////////////////////////////////////////////////////////////////////////
-		std::vector<dense_t<rank_t>> Tr;
+		std::vector<dense_t<rank_t>> tr;
 
-		std::vector<dense_t<rank_t>> Res;///<Same as transfers, but now using restrictions
-		std::vector<dense_t<rank_t>> Weyl;///<Same as transfers, but now using the Weyl group action
+		std::vector<dense_t<rank_t>> res;///<Same as transfers, but now using restrictions
+		std::vector<dense_t<rank_t>> act;///<Same as transfers, but now using the act group action
 
 		std::string name; ///<The name of the Mackey functor
 

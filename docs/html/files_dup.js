@@ -41,7 +41,11 @@ var files_dup =
       [ "MultConnectivity", "classmackey_1_1MultConnectivity.html", "classmackey_1_1MultConnectivity" ]
     ] ],
     [ "Mult_Graph.hpp", "Mult__Graph_8hpp.html", [
-      [ "MultGraph", "classmackey_1_1MultGraph.html", "classmackey_1_1MultGraph" ]
+      [ "MultGraph", "classmackey_1_1MultGraph.html", "classmackey_1_1MultGraph" ],
+      [ "Product_Element_Irreducible", "structmackey_1_1MultGraph_1_1Product__Element__Irreducible.html", "structmackey_1_1MultGraph_1_1Product__Element__Irreducible" ]
+    ] ],
+    [ "Mult_Identify.hpp", "Mult__Identify_8hpp.html", [
+      [ "MultIdentify", "classmackey_1_1MultIdentify.html", "classmackey_1_1MultIdentify" ]
     ] ],
     [ "Mult_Table.hpp", "Mult__Table_8hpp.html", [
       [ "MultTableData", "structmackey_1_1MultTableData.html", "structmackey_1_1MultTableData" ],
@@ -50,7 +54,9 @@ var files_dup =
     [ "OpenMP_Macros.hpp", "OpenMP__Macros_8hpp.html", "OpenMP__Macros_8hpp" ],
     [ "Point.hpp", "Point_8hpp.html", "Point_8hpp" ],
     [ "SFINAE.hpp", "SFINAE_8hpp.html", "SFINAE_8hpp" ],
-    [ "Smith.hpp", "Smith_8hpp.html", "Smith_8hpp" ],
+    [ "Smith.hpp", "Smith_8hpp.html", [
+      [ "SmithNormalForm", "structmackey_1_1SmithNormalForm.html", "structmackey_1_1SmithNormalForm" ]
+    ] ],
     [ "Space.hpp", "Space_8hpp.html", [
       [ "Space", "classmackey_1_1Space.html", "classmackey_1_1Space" ],
       [ "cell_coefficient_pair", "classmackey_1_1Space_1_1cell__coefficient__pair.html", "classmackey_1_1Space_1_1cell__coefficient__pair" ]

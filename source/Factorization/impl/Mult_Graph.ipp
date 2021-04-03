@@ -99,38 +99,65 @@ namespace mackey {
 	void MultGraph<group_t>::add_edges(int i) {
 		auto deg_i = tracker[i];
 		for (size_t j = 0; j < this->basicIrreducibles.size(); j++) {
-			auto deg_prod = this->index_product(deg_i, j);
-			if (deg_prod == -1)
+			auto prod = product_element_irreducible(i, j);
+			if (prod.deg == -1)
 				continue;
-			auto G = this->Greens[deg_i][j];
-			auto v = determine_connection(G, i, j, deg_prod);
+			auto v = determine_connection(i, j, prod);
 			if (v.size() != 0)
-				connect(v, i, j, deg_prod);
+				connect(v, i, j, prod.deg);
 		}
 	}
 
+	template<typename group_t>
+	auto MultGraph<group_t>::product_element_irreducible(int i, int j) -> Product_Element_Irreducible {
+		Product_Element_Irreducible prod;
+		int deg_i = this->tracker[i];
+		prod.deg= this->index_product(deg_i, j);
+		if (prod.deg == -1)
+			return prod;
+		prod.G= this->Greens[deg_i][j];
+		prod.basis= prod.G.getNormalBasis(0, element[i]);
+		return prod;
+	}
+
+	template<typename group_t>
+	auto MultGraph<group_t>::product_element_irreducible(int i, int j1, int j2) -> Product_Element_Irreducible {
+		Product_Element_Irreducible prod_all;
+		auto prod_ij1 = product_element_irreducible(i, j1);
+		prod_all.deg = this->index_product(prod_ij1.deg, j2);
+		if (prod_all.deg == -1)
+			return prod_all;
+		prod_all.G = this->tripleGreens.at({ this->tracker[i], j1, j2 });
+		prod_all.basis = prod_all.G.getNormalBasis(0, prod_ij1.basis);
+		return prod_all;
+	}
+
+	template<typename group_t>
+	auto MultGraph<group_t>::product_candidates(const Product_Element_Irreducible& prod) -> std::vector<rank_t> {
+		return id_candidates(prod.basis, prod.G.boxID, this->NonZeroHomology.at(this->degree[prod.deg]));
+	}
+
+
+
+
 	///Connect element[i] to element[i] * basicIrreducible[j] if the latter is nonzero and can be identified (if noncyclic group)
 	template<typename group_t>
-	auto MultGraph<group_t>::determine_connection(const Green<group_t>& G, int i, int j, int deg_prod)
+	auto MultGraph<group_t>::determine_connection(int i, int j, const Product_Element_Irreducible& prod)
 	{
-		auto basis = G.getNormalBasis(0, element[i]); // j*i
-		if (basis.isZero()) {
+		if (prod.basis.isZero()) {
 			if (std::find(zeroproduct[i].begin(), zeroproduct[i].end(), j) == zeroproduct[i].end())
 				zeroproduct[i].push_back(j);
 			return rank_t();
 		}
-		if (basis.size() == 1)
-			return basis;
-		auto candidates = id_candidates(basis, G.boxID, this->NonZeroHomology.at(this->degree[deg_prod]));
+		if (prod.basis.size() == 1)
+			return prod.basis;
+		auto candidates = product_candidates(prod);
 		if (candidates.size() == 0) //not identified
 			return rank_t();
 		if (candidates.size() == 1)
 			return candidates[0];
-		if (candidates.size() > 1) {
-			auto ij = std::make_pair(i, j);
-			if (std::find(unidentified.begin(), unidentified.end(), ij) == unidentified.end())
-				unidentified.push_back(ij);
-		}
+		if (candidates.size() > 1) 
+			unidentified.insert(std::pair(i, j));
 		return rank_t();
 	}
 

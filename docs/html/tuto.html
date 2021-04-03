@@ -35,7 +35,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">V3.1</span>
+   &#160;<span id="projectnumber">V3.3</span>
    </div>
    <div id="projectbrief">A C++ library for computing RO(G) graded homology</div>
   </td>
@@ -156,7 +156,7 @@ The additive structure</h2>
 <h2><a class="anchor" id="fact"></a>
 Factorization</h2>
 <p>The class <a class="el" href="classmackey_1_1Factorization.html">Factorization</a> computes the multiplication graph (see the page <a class="el" href="math.html#factor">Factorization</a>) given the "basic irreducibles".</p>
-<p>In this case let us use \(a_{\sigma},u_{2\sigma},a_{\lambda},u_{\lambda}\) as our irreducibles: </p><pre class="fragment">std::vector&lt;std::vector&lt;int&gt;&gt; basic_irr = {{0, 1, 0}, {2, 2, 0}, {0, 0, 1}, {2, 0, 1}};
+<p>In this case let us use \(a_{\sigma},u_{2\sigma},a_{\lambda},u_{\lambda}\) as our irreducibles: </p><pre class="fragment">std::vector&lt;std::vector&lt;int&gt;&gt; basic_irr = { {0, 1, 0}, {2, 2, 0}, {0, 0, 1}, {2, 0, 1} };
 std::vector&lt;std::string&gt; basic_irr_names = {"asigma", "u2sigma", "alambda", "ulambda"};
 </pre> <dl class="section note"><dt>Note</dt><dd>For any group \(G\), the degree of an element in \(H_kS^V\) is represented by a vector <code>{k,t1,...,tn}</code> where <code>{t1,...,tn}</code> represents \(S^V\).</dd></dl>
 <p>To compute the multiplication graph in the range \(S^{n\sigma+m\lambda}\), $-5\leq n,m\leq 5$, use: </p><pre class="fragment">auto F = Factorization&lt;group_t&gt;(2, {-5, -5}, {5, 5}, basic_irr, basic_irr_names);
@@ -223,22 +223,28 @@ Higher order groups</h2>
 std::cout &lt;&lt; A2 &lt;&lt; "\n\n";
 </pre><p> can also produce output like: </p><pre class="fragment">The k=3  homology of the 3,1,-1 sphere is unknown 5
 </pre><p> This means that the program couldn't write \(H_{3}(S^{3\sigma+\lambda_0-\lambda_1})\) in the "universal notation" and instead named it unknown Mackey functor with id 5. To print out the Mackey functor structure, us: </p><pre class="fragment">std::cout &lt;&lt; "The unknown 5 is =\n" &lt;&lt; A2.unknown()[5].print()&lt;&lt; "\n\n";
-</pre><p>The case of <a class="el" href="classmackey_1_1Factorization.html">Factorization</a> is even worse, and generally requires triple box products in order for identifications to work.</p>
-<p>On the other hand, if only the connectivity of the multiplication graph is desired, there is a specialized <a class="el" href="classmackey_1_1MultConnectivity.html">MultConnectivity</a> for that exact purpose.</p>
-<p>Example: </p><pre class="fragment">typedef std::vector&lt;std::vector&lt;int&gt;&gt; vv;
+</pre><p>As for factorization, let us use the following basic irreducibles and sources over \(C_8\): </p><pre class="fragment">typedef std::vector&lt;std::vector&lt;int&gt;&gt; vv;
 typedef std::vector&lt;std::string&gt; vs;
 vv basic_irr2 = { {0,1,0,0},{0,0,1,0},{0,0,0,1},{2,2,0,0},{2,0,1,0},{2,0,0,1} };
 vs basic_names2 = { "a2","a4","a8","u2","u4","u8" };
 vv sources2 = { {0,0,0,0}, {-3,0,0,-2} };
 vs source_names2 = { "1", "s"};
-</pre><p> These are the sources and irreducibles for \(C_8\). Running </p><pre class="fragment">auto F2 = Factorization&lt;group2_t&gt;(3, std::vector{ -5,-5,-5 }, std::vector{ 5, 5, 5 }, basic_irr2, basic_names2);
+</pre><p> Then </p><pre class="fragment">auto F2 = Factorization&lt;group2_t&gt;(3, {-5,-5,-5 }, { 5, 5, 5 }, basic_irr2, basic_names2);
 F2.compute_with_sources(sources2, source_names2);
 std::cout &lt;&lt; F2.disconnected_degrees().size() &lt;&lt; "\n\n";
-</pre><p> will print out 49, which is the number of generators that couldn't be connected to \(1\) or \(s\) due to identification problems.</p>
-<p>On the other hand: </p><pre class="fragment">auto MC = MultConnectivity&lt;group2_t&gt;(3, std::vector{ -5,-5,-5 }, std::vector{ 5, 5, 5 }, basic_irr2);
+</pre><p> will print out 49, which is the number of generators that couldn't be connected to \(1\) or \(s\). There are two reasons that caused this:</p>
+<ul>
+<li>The generators are close to the edge of the range of spheres hence multiplying them by the basic irreducibles takes the products outside of the range so they are not considered</li>
+<li>Due to the presence of noncyclic groups, the program was not able to identify these generators (see <a class="el" href="math.html#caveat">A caveat</a>).</li>
+</ul>
+<p>The solution to the first problem is to increase the range of the spheres being used. To solve the second problem, we use triple products (see <a class="el" href="math.html#caveat">A caveat</a>) via: </p><pre class="fragment">F2.pass_unidentified();
+</pre><p> Once we do that, </p><pre class="fragment">std::cout &lt;&lt; F2.disconnected_degrees().size() &lt;&lt; "\n\n";
+</pre><p> will print out 5.</p>
+<p>Finally, if only the connectivity of the multiplication graph is desired, there is a specialized <a class="el" href="classmackey_1_1MultConnectivity.html">MultConnectivity</a> class for that exact purpose.<br  />
+For example, </p><pre class="fragment">auto MC = MultConnectivity&lt;group2_t&gt;(F2);
 MC.compute_with_sources(sources2);
 std::cout &lt;&lt; MC.disconnected_degrees.size() &lt;&lt; "\n";
-</pre><p> will produce \(0\), since the identification of the aforementioned generators is irrelevant as far as the connectivity is concerned.</p>
+</pre><p> will print \(0\), which means that all generators are connected to \(1,s\).</p>
 <h2><a class="anchor" id="serial"></a>
 Serialization</h2>
 <p>In many cases it is desirable to save computational results in cold storage and then load them back as needed.</p>

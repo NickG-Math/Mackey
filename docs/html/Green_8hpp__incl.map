@@ -1,6 +1,6 @@
 <map id="Green.hpp" name="Green.hpp">
 <area shape="rect" id="node1" title="Contains the class and methods for multiplying generators." alt="" coords="1031,5,1121,32"/>
-<area shape="rect" id="node2" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="1089,80,1297,107"/>
+<area shape="rect" id="node2" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and act&#45;group&#45;acting." alt="" coords="1089,80,1297,107"/>
 <area shape="rect" id="node23" href="$Identify_8hpp.html" title="Contains the identification classes." alt="" coords="852,80,1065,107"/>
 <area shape="rect" id="node28" href="$Box_8hpp.html" title="Contains the construction of box products of Chains." alt="" coords="335,229,529,256"/>
 <area shape="rect" id="node35" title=" " alt="" coords="1322,80,1441,107"/>

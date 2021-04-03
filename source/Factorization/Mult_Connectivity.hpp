@@ -28,10 +28,11 @@ namespace mackey {
 
 	private:
 		MinLength<typename MultGraph<group_t>::graph_t> shortest_paths;
+		std::set<int> before_disconnected;
 		std::vector<int> sources;
 		void set_sources(const std::vector<std::vector<int>>&);
-		void doinstages(bool,  const std::vector<int>&);
-		void wrong_connection(const Green<group_t>&, int, int, int, const std::vector<int>&,bool);
+		void doinstages(bool);
+		void wrong_connection(int, int, bool);
 	};
 }
 #include "impl/Mult_Connectivity.ipp"

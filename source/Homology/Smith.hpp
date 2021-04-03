@@ -6,7 +6,7 @@
 
 namespace mackey {
 
-	namespace {
+	namespace implementation_details {
 		///Storing a row/column operation
 		template<typename T, typename S>
 		struct Row_Column_Operation {
@@ -63,18 +63,18 @@ namespace mackey {
 	}
 
 	///////////////////////////////////////////////////////////////
-	/// The Smith Normal Form and its coefficient matrices
-
-	/// The Smith_Normal_Form of A is a diagonal matrix S with invertible coefficient matrices P,Q,Pi,Qi s.t. P*A*Q=S and Pi*S*Qi=A
-	///
-	/// S is stored as a diagonal vector. P,Pi are inverses and so are Q,Qi and they are all computed through row-column elimination
-	///
-	///_S is the type of the original matrix.
-	///_R is _S but row major for best performance (required for sparse)
-	///_C is _S but column major for best performance (required for sparse)
+	///	@brief 		The Smith Normal Form and its coefficient matrices
+	/// @details 	The SNF of \f$A\f$ is a diagonal matrix \f$S\f$ and
+	///				invertible coefficient matrices \f$P,Q\f$ s.t. \f$PAQ=S\f$ \n
+	/// 			S is stored as a diagonal vector \c diagonal.
+	///				In addition to ```P,Q``` we also store their inverses ```Pi,Qi```. \n
+	///				All are computed simultaneously through row-column elimination
+	///	@tparam	_S 	The type of the original matrix.
+	///	@tparam	_R 	Row major version of \c _S
+	///	@tparam	_C 	Column major version of \c _S
 	/////////////////////////////////////////////////////////////
 	template <typename _S, typename _R, typename _C>
-	struct Smith_Normal_Form : smith_conditional_members<_S> {
+	struct SmithNormalForm : implementation_details::smith_conditional_members<_S> {
 	public:
 		row_vector_t<_S> diagonal;		///< The diagonal of the Smith normal form
 		_R P;					///< One of the coefficient matrices (S=P*A*Q)
@@ -82,15 +82,16 @@ namespace mackey {
 		_C Q;					///< One of the coefficient matrices (S=P*A*Q)
 		_C Pi;					///< One of the coefficient matrices (A=Pi*S*Qi)
 
-		///////////////////////////////////////////////////////////
-		///Constructor computes the Smith Normal Form. 
-		//
-		///The parameters do_P and do_Q can be set to 0 if the P,Pi and Q,Qi matrices are not desired, respectively.
-		///The parameter do_sort determines whether we want the diagonal of the Smith Normal Form to be ordered and increasing excluding any units
-		///The parameter do_verify determines whether to do an extra check to make sure the Smith Normal Form was computed correctly. 
-		///If do_verify=1 then do_P,do_Q are overriden with 1. Thus do_verify=1 is a lot slower than do_verify=0 and should only be used for debugging SNF algos.
-		///////////////////////////////////////////////////////////
-		Smith_Normal_Form(const _S& S, bool do_P = 1, bool do_Q = 1, bool do_sort = 1, bool do_verify = 0);
+		///////////////////////////////////////////////////////////////////////////////////////////////
+		///	@brief				Constructor computes the Smith Normal Form. 
+		///	@param	S			The given matrix to diagonalize
+		///	@param	do_P		Set to 1 if P,Pi are wanted
+		///	@param	do_Q		Set to 1 if Q,Qi are wanted
+		///	@param	do_sort		Set to 1 if we want the diagonal of the SNF
+		///						to be ordered and increasing, excluding any units
+		///	@param	do_verify 	Set to 1 to verify the SNF was computed correctly (for debugging). 
+		///////////////////////////////////////////////////////////////////////////////////////////////
+		SmithNormalForm(const _S& S, bool do_P = 1, bool do_Q = 1, bool do_sort = 1, bool do_verify = 0);
 
 	private:
 
@@ -107,7 +108,7 @@ namespace mackey {
 		const bool doP;			///< Whether we want to compute the P and Pi coefficient matrices
 		const bool doQ;			///< Whether we want to compute the Q and Qi coefficient matrices
 
-		Pivot<scalar_t<S_t>, ind> piv;
+		implementation_details::Pivot<scalar_t<S_t>, ind> piv;
 
 		static constexpr bool partial_pivoting = SFINAE::is_finite_cyclic<typename S_t::Scalar>::value;
 		static constexpr bool sparse = SFINAE::is_Sparse<_S>::value;

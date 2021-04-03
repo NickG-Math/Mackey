@@ -47,7 +47,18 @@ namespace mackey
 
 	template<typename T>
 	std::ostream& operator<<(std::ostream& os, const AbelianGroup<T>& A) {
-		os << A.group;
+		if (A.istrivial()) {
+			os << "0";
+			return os;
+		}
+		for (int i = 0; i < A.group.size(); i++) {
+			if (A.group[i] == 1)
+				os << "Z";
+			else
+				os << "Z/" << A.group[i];
+			if (i<A.group.size()-1)
+				os << " + ";
+		}
 		return os;
 	}
 

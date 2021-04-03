@@ -242,8 +242,8 @@ namespace implementation_details{
 			Mass.basis = ID.H_level.basis(Masseyproduct);
 			Mass.isZero = Mass.basis.isZero();
 			Mass.normalBasis = Mass.basis;
-			ID.H_level.Groups.normalize(Mass.normalBasis);
-			Mass.Groups = ID.H_level.Groups;
+			ID.H_level.group.normalize(Mass.normalBasis);
+			Mass.group = ID.H_level.group;
 		}
 
 		template<typename group_t>
@@ -254,14 +254,14 @@ namespace implementation_details{
 			Junction<rank_t, diff_t> J_DE(BoxDE, degreeD + degreeE + 1);
 			IDGeneratorCompute<group_t> ID_DE(level, J_DE);
 
-			for (int i = 0; i < ID_DE.H_level.Generators.cols(); i++) {
-				gen_t<rank_t, diff_t> gen = ID_DE.H_level.Generators.col(i);
+			for (int i = 0; i < ID_DE.H_level.generators.cols(); i++) {
+				gen_t<rank_t, diff_t> gen = ID_DE.H_level.generators.col(i);
 				auto resgen = restriction(gen, ID_DE.rank_level, J_DE.rank);
 				gen_t<rank_t, diff_t> prod_bottom = BoxDE_to_BoxCD * product_bottom(C, BoxDE, C_DE_detailedrank, resgenC, resgen, degreeC, degreeD + degreeE + 1);
 				auto prod_level = invRes(prod_bottom, Box.rank, ID.rank_level);
 				auto basis = ID.H_level.basis(prod_level);
 				if (basis.size() != 0 && !basis.isZero()) {
-					auto o = ID.H_level.Groups.order(basis);
+					auto o = ID.H_level.group.order(basis);
 					if (o == 0)
 						indeterminacy_left.push_back(1);
 					else
@@ -272,14 +272,14 @@ namespace implementation_details{
 			Junction<rank_t, diff_t> J_CD(BoxCD, degreeC + degreeD + 1);
 			IDGeneratorCompute<group_t> ID_CD(level, J_CD);
 
-			for (int i = 0; i < ID_CD.H_level.Generators.cols(); i++) {
-				gen_t<rank_t, diff_t> gen = ID_CD.H_level.Generators.col(i);
+			for (int i = 0; i < ID_CD.H_level.generators.cols(); i++) {
+				gen_t<rank_t, diff_t> gen = ID_CD.H_level.generators.col(i);
 				auto resgen = restriction(gen, ID_CD.rank_level, J_CD.rank);
 				auto prod_bottom = product_bottom(BoxCD, E, CD_E_detailedrank, resgen, resgenE, degreeC + degreeD + 1, degreeE);
 				auto prod_level = invRes(prod_bottom, Box.rank, ID.rank_level);
 				auto basis = ID.H_level.basis(prod_level);
 				if (basis.size() != 0 && !basis.isZero()) {
-					auto o = ID.H_level.Groups.order(basis);
+					auto o = ID.H_level.group.order(basis);
 					if (o == 0)
 						indeterminacy_right.push_back(1);
 					else

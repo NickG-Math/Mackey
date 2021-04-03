@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Contains the class and methods to form the multiplication table.">
+<g id="a_node1"><a xlink:title="Contains the classes mackey::MultTableData and mackey::MultTable that form the multiplication table.">
 <polygon fill="#bfbfbf" stroke="black" points="420.84,-560.5 420.84,-579.5 510.84,-579.5 510.84,-560.5 420.84,-560.5"/>
 <text text-anchor="middle" x="465.84" y="-567.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Table.hpp</text>
 </a>
@@ -291,7 +291,7 @@
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="Levels_8hpp.html" target="_top" xlink:title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting.">
+<g id="a_node16"><a xlink:href="Levels_8hpp.html" target="_top" xlink:title="Contains the methods for transfering, restricting and act&#45;group&#45;acting.">
 <polygon fill="white" stroke="black" points="624.84,-336.5 624.84,-355.5 780.84,-355.5 780.84,-336.5 624.84,-336.5"/>
 <text text-anchor="middle" x="702.84" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mackey_Functors/Levels.hpp</text>
 </a>

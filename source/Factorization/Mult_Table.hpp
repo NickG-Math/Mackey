@@ -4,11 +4,11 @@
 #include "Spaces/Point.hpp"
 
 ///	@file
-///	@brief Contains the class and methods to form the multiplication table.
+///	@brief Contains the classes \ref mackey::MultTableData and \ref mackey::MultTable that form the multiplication table.
 
 namespace mackey
 {
-	/// @brief		The data of the Multiplication Table. 
+	/// @brief		The data of the multiplication table. 
 	/// @details	Separated from the rest so as to be serializable. Has no functions
 	template<typename group_t>
 	struct MultTableData {
@@ -24,7 +24,7 @@ namespace mackey
 		std::vector<std::vector<int>> basicIrreducibles;///<The basic irreducibles we use to produce the factorizations (eg Euler and orientation classes)
 	};
 
-	/// The Multiplication Table with both data and methods
+	///	@brief Forms the multiplication table
 	template<typename group_t>
 	class MultTable : public MultTableData<group_t>{
 		typedef typename group_t::rank_t rank_t;

@@ -8,7 +8,7 @@
 
 namespace mackey {
 
-	namespace {
+	namespace implementation_details{
 		//SFINAE aliases
 
 		template<typename T>
@@ -40,7 +40,7 @@ namespace mackey {
 	/// @tparam _output_t	The result type of tensor(). Used to resolve "overloads"
 	/// @tparam _optional_t The result type of optional(), as long as it's not void. This is the 
 	template<typename _output_t, typename _optional_t = void> 
-	class Tensor : optional_base<_optional_t, !std::is_same<_optional_t, void>::value> {
+	class Tensor : implementation_details::optional_base<_optional_t, !std::is_same<_optional_t, void>::value> {
 	public:
 		/// @brief 	Returns the tensor product
 		/// @return The tensor product as a non const ref (so you can move it!)
@@ -73,32 +73,32 @@ namespace mackey {
 
 		//The tensor product of the ranks of A,B is the rank of A tensor B
 		//Here: _input_t=rank_t, _output_t=rank_t, _optional_t is void, i=-1
-		template<typename _input_t, typename mackey::is_rank<_input_t> = 0>
+		template<typename _input_t, typename implementation_details::is_rank<_input_t> = 0>
 		void tensor(const _input_t&, const _input_t&, int = -1);
 
 		//The tensor product of the ranks of A_*,B_* at location i is the rank of (A_* tensor B_*)_i
 		//Here: _input_t=std::vector<rank_t>, _output_t=rank_t, _optional_t is std::vector<int64_t> or void, i= location
-		template<typename _input_t, typename mackey::is_vector_rank<_input_t> = 0, typename S = _output_t, typename mackey::is_rank<S> = 0>
+		template<typename _input_t, typename implementation_details::is_vector_rank<_input_t> = 0, typename S = _output_t, typename implementation_details::is_rank<S> = 0>
 		void tensor(const _input_t&, const _input_t&, int = -1);
 
 		//The tensor product of the ranks of A_*,B_* is the rank of A_* tensor B_*
 		//Here: _input_t=std::vector<rank_t>, _output_t=std::vector<rank_t>, _optional_t is void, i=-1
-		template<typename _input_t, typename T = _output_t, typename S = _output_t, typename mackey::is_vector_rank<T> = 0, typename mackey::is_vector_rank<S> = 0>
+		template<typename _input_t, typename T = _output_t, typename S = _output_t, typename implementation_details::is_vector_rank<T> = 0, typename implementation_details::is_vector_rank<S> = 0>
 		void tensor(const _input_t&, const _input_t&, int = -1);
 
 		//The tensor product of the Chains A_*,B_* at location i is the arrow (A_* tensor B_*)_i
 		//Here: _input_t=Chains<rank_t,diff_t>, _output_t=Arrow<rank_t,diff_t>, _optional_t is std::vector<int64_t> or void, i= location
-		template<typename _input_t, typename T = _output_t, typename mackey::is_arrow<T> = 0>
+		template<typename _input_t, typename T = _output_t, typename implementation_details::is_arrow<T> = 0>
 		void tensor(const _input_t&, const _input_t&, int = -1);
 
 		//The tensor product of the Chains A_*,B_* up to location i is the Chains (A_* tensor B_*)_* for *<=i
 		//Here: _input_t=Chains<rank_t,diff_t>, _output_t=Chains<rank_t,diff_t>, _optional_t is std::vector<std::vector<int64_t>> or void, i= location or -1 (if the whole tensor is desired)
-		template<typename _input_t, typename T = _output_t, typename mackey::is_chains<T> = 0>
+		template<typename _input_t, typename T = _output_t, typename implementation_details::is_chains<T> = 0>
 		void tensor(const _input_t&, const _input_t&, int = -1);
 
 		//The tensor product of the Chains A_*,B_* at location i as the Junction (A_* tensor B_*)_i->(A_* tensor B_*)_{i-1}
 		//Here: _input_t=Chains<rank_t,diff_t>, _output_t=Junction<rank_t,diff_t>, _optional_t is std::vector<int64_t> or void, i= location
-		template<typename _input_t, typename T = _output_t, typename mackey::is_junction<T> = 0>
+		template<typename _input_t, typename T = _output_t, typename implementation_details::is_junction<T> = 0>
 		void tensor(const _input_t&, const _input_t&, int = -1);
 
 	};

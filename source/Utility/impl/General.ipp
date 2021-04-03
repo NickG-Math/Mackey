@@ -366,7 +366,7 @@ namespace mackey {
 		return b;
 	}
 
-	namespace {
+	namespace implementation_details{
 
 		template<typename T>
 		typename T::StorageIndex find_inner_index(typename T::StorageIndex row, typename T::StorageIndex col) {
@@ -383,11 +383,6 @@ namespace mackey {
 			else
 				return col;
 		}
-	}
-
-	namespace implementation_details {
-
-
 
 		template <typename T>
 		class it_nnz_conditional<T, 1>
@@ -478,8 +473,8 @@ namespace mackey {
 	IteratorNNZ<T, only_iterate_over_row, only_iterate_over_col>::IteratorNNZ(const T& matrix, storage row_start, storage col_start)
 		: implementation_details::it_nnz_conditional<T>(matrix, row_start, col_start),
 		matrix(matrix),
-		inner_start(find_inner_index<T>(row_start, col_start)),
-		outer_ind(find_outer_index<T>(row_start, col_start))
+		inner_start(implementation_details::find_inner_index<T>(row_start, col_start)),
+		outer_ind(implementation_details::find_outer_index<T>(row_start, col_start))
 	{
 		increase_until_it_works();
 	}

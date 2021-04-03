@@ -6,10 +6,10 @@
 
 namespace mackey {
 
-	///Standard equality tests if all group, group_lower, Tr, Res are equal 
+	///Standard equality tests if all group, group_lower, tr, res are equal 
 	template<typename rank_t>
 	bool IDGenerators<rank_t>::operator==(const IDGenerators<rank_t>& J) const {
-		return group == J.group && group_lower == group_lower && Tr == J.Tr && Res == J.Res;
+		return group == J.group && group_lower == group_lower && tr == J.tr && res == J.res;
 	}
 
 
@@ -17,10 +17,10 @@ namespace mackey {
 	MackeyFunctor<rank_t> IDGenerators<rank_t>::getMackey() const {
 		MackeyFunctor<rank_t> M;
 		M.resize(2);
-		M.Groups[0] = group_lower;
-		M.Groups[1] = group;
-		M.Tr[0] = Tr;
-		M.Res[0] = Res;
+		M.levels[0] = group_lower;
+		M.levels[1] = group;
+		M.tr[0] = tr;
+		M.res[0] = res;
 		return M;
 	}
 
@@ -92,7 +92,7 @@ namespace mackey {
 			rank_level = current.rank;
 			H_level = Homology<rank_t, diff_t>(current, getQ);
 
-			ID.group = H_level.Groups;
+			ID.group = H_level.group;
 			if (ID.group.iscyclic())
 				return;
 			else
@@ -105,9 +105,9 @@ namespace mackey {
 			auto rank_lower = lower.rank;
 			Homology<rank_t, diff_t>H_lower(lower);
 			if (!H_lower.isZero) {
-				ID.Tr = transfer<group_t>(H_lower, H_level, rank_lower, rank_level);
-				ID.Res = restriction<group_t>(H_level, H_lower, rank_level, rank_lower);
-				ID.group_lower = H_lower.Groups;
+				ID.tr = transfer<group_t>(H_lower, H_level, rank_lower, rank_level);
+				ID.res = restriction<group_t>(H_level, H_lower, rank_level, rank_lower);
+				ID.group_lower = H_lower.group;
 			}
 		}
 	}

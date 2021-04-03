@@ -1,8 +1,8 @@
 <map id="MultConnectivity&lt; group_t &gt;" name="MultConnectivity&lt; group_t &gt;">
 <area shape="rect" id="node1" title="Finds the connectivity of the multiplication graph." alt="" coords="933,39,1145,65"/>
 <area shape="rect" id="node2" href="$classmackey_1_1MultGraph.html" title="The Multiplication Graph created from the Multiplication Table." alt="" coords="715,39,884,65"/>
-<area shape="rect" id="node3" href="$classmackey_1_1MultTable.html" title="The Multiplication Table with both data and methods." alt="" coords="432,5,596,32"/>
-<area shape="rect" id="node4" href="$structmackey_1_1MultTableData.html" title="The data of the Multiplication Table." alt="" coords="5,5,200,32"/>
+<area shape="rect" id="node3" href="$classmackey_1_1MultTable.html" title="Forms the multiplication table." alt="" coords="432,5,596,32"/>
+<area shape="rect" id="node4" href="$structmackey_1_1MultTableData.html" title="The data of the multiplication table." alt="" coords="5,5,200,32"/>
 <area shape="rect" id="node5" href="$classmackey_1_1Graph.html" title=" " alt="" coords="403,56,625,112"/>
 <area shape="rect" id="node6" href="$classmackey_1_1Graph.html" title="A directed graph." alt="" coords="9,71,196,97"/>
 </map>

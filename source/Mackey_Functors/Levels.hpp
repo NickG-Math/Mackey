@@ -2,7 +2,7 @@
 #include "Homology/Homology.hpp" 
 
 ///@file
-///@brief Contains the methods for transfering, restricting and Weyl-group-acting.
+///@brief Contains the methods for transfering, restricting and act-group-acting.
 
 namespace mackey {
 
@@ -40,7 +40,7 @@ namespace mackey {
 	template<typename rank_t, typename Derived>
 	Derived restriction(const Eigen::MatrixBase<Derived>& generator, const rank_t& domain, const rank_t& range);
 
-	///Compute the Weyl group action on a generator given the rank of the group it lives in.
+	///Compute the act group action on a generator given the rank of the group it lives in.
 	template<typename rank_t, typename Derived>
 	Derived action(const Eigen::MatrixBase<Derived>& generator, const rank_t& rank);
 
@@ -58,7 +58,7 @@ namespace mackey {
 	template<typename group_t>
 	dense_t<typename group_t::rank_t> restriction(const Homology<typename group_t::rank_t, typename group_t::diff_t>& high, const Homology<typename group_t::rank_t, typename group_t::diff_t>& low, const typename group_t::rank_t& rank_high, const typename group_t::rank_t& rank_low);
 
-	///Writing the Weyl group action on each generator in terms of the other generators.
+	///Writing the act group action on each generator in terms of the other generators.
 	template<typename group_t>
 	dense_t<typename group_t::rank_t> action(const Homology<typename group_t::rank_t, typename group_t::diff_t>& H, const typename group_t::rank_t& rank);
 }

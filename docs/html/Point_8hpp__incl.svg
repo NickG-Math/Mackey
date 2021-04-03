@@ -142,7 +142,7 @@ var sectionId = 'dynsection-0';
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="Levels_8hpp.html" target="_top" xlink:title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting.">
+<g id="a_node4"><a xlink:href="Levels_8hpp.html" target="_top" xlink:title="Contains the methods for transfering, restricting and act&#45;group&#45;acting.">
 <polygon fill="white" stroke="black" points="429,-336.5 429,-355.5 585,-355.5 585,-336.5 429,-336.5"/>
 <text text-anchor="middle" x="507" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mackey_Functors/Levels.hpp</text>
 </a>

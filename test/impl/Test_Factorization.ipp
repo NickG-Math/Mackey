@@ -18,12 +18,13 @@ namespace mackey
 			file.close();
 		}
 
+
 		template <typename group_t>
-		Factorization<group_t> getfactorizationZ(int maximum)
+		std::pair<std::vector<std::vector<int>>, std::vector<std::string>> getIrr()
 		{
 			const int power = group_t::power;
-			std::vector<std::string> names = {"sigma", "lambda"};
-			std::vector<std::string> names2 = {"2sigma", "lambda"};
+			std::vector<std::string> names = { "sigma", "lambda" };
+			std::vector<std::string> names2 = { "2sigma", "lambda" };
 
 			//basic Irreducibles for all C_{2^n}.
 			std::vector<std::vector<int>> basicIrreducibles;
@@ -53,7 +54,14 @@ namespace mackey
 				else
 					basicIrreducibles_names.push_back("u" + std::to_string(1 << (i + 1)));
 			}
+			return std::pair(basicIrreducibles,basicIrreducibles_names);
+		}
+
+		template <typename group_t>
+		std::pair<std::vector<std::vector<int>>, std::vector<std::string>> getsources()
+		{
 			//sources for all C_{2^n}.
+			const int power = group_t::power;
 			std::vector<std::vector<int>> sources(power + 2);
 			sources[0].resize(power + 1);
 			sources[1].resize(power + 1);
@@ -77,9 +85,19 @@ namespace mackey
 				source_names[i] = "x" + std::to_string(i);
 			}
 			source_names[power + 1] = "s";
+			return std::pair(sources, source_names);
+		}
 
-			Factorization<group_t> F(power, std::vector<int>(power, -maximum), std::vector<int>(power, maximum), basicIrreducibles, basicIrreducibles_names);
-			F.compute_with_sources(sources, source_names); //computes the factorizations
+
+
+
+		template <typename group_t>
+		Factorization<group_t> getfactorizationZ(int maximum)
+		{
+			auto bIr = getIrr<group_t>();
+			auto sor = getsources<group_t>();
+			Factorization<group_t> F(group_t::power, std::vector<int>(group_t::power, -maximum), std::vector<int>(group_t::power, maximum), bIr.first, bIr.second);
+			F.compute_with_sources(sor.first, sor.second); //computes the factorizations
 			return F;
 		}
 
@@ -100,7 +118,13 @@ namespace mackey
 			if constexpr (!SFINAE::is_finite_cyclic<typename group_t::diff_t::Scalar>::value)
 			{
 				auto F = getfactorizationZ<group_t>(maximum);
-				std::cout << F;
+				std::cout << F << "\n\n";
+				std::cout << F.disconnected_degrees().size() << "\n\n";
+				F.pass_unidentified();
+				std::cout << F.disconnected_degrees().size() << "\n\n";
+				auto M = MultConnectivity<group_t>(F);
+				M.compute_with_sources(getsources<group_t>().first);
+				std::cout << M.disconnected_degrees.size() << "\n\n";
 				if (printgraph1)
 					printgrapher(F);
 			}

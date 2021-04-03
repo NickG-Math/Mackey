@@ -1,0 +1,6 @@
+<map id="Mult_Identify.hpp" name="Mult_Identify.hpp">
+<area shape="rect" id="node1" title="Contains extra identification methods for the multiplication graph." alt="" coords="53,5,187,32"/>
+<area shape="rect" id="node2" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="53,80,187,107"/>
+<area shape="rect" id="node3" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="5,155,104,181"/>
+<area shape="rect" id="node4" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="128,155,243,181"/>
+</map>

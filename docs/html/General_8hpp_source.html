@@ -35,7 +35,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">V3.1</span>
+   &#160;<span id="projectnumber">V3.3</span>
    </div>
    <div id="projectbrief">A C++ library for computing RO(G) graded homology</div>
   </td>
@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('General_8hpp_source.html',''); initRes
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespacemackey.html#a5a44215e7be6d01ef71e522d7738554b">   65</a></span>&#160;    std::vector&lt;std::vector&lt;T&gt;&gt; <a class="code" href="namespacemackey.html#a5a44215e7be6d01ef71e522d7738554b">combinations</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt;&amp; v);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="namespacemackey.html#ab8a6b706d87091c2fbf0ff229044e4c4">   70</a></span>&#160;    std::vector&lt;T&gt; <a class="code" href="namespacemackey.html#ab8a6b706d87091c2fbf0ff229044e4c4">tail</a>(<span class="keyword">const</span> T* <span class="keyword">const</span>&amp; ptr, <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> <a class="code" href="Smith_8hpp.html#ac0fc66c8589d40713865b4b6a5d8af4d">start</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="namespacemackey.html#ab8a6b706d87091c2fbf0ff229044e4c4">   70</a></span>&#160;    std::vector&lt;T&gt; <a class="code" href="namespacemackey.html#ab8a6b706d87091c2fbf0ff229044e4c4">tail</a>(<span class="keyword">const</span> T* <span class="keyword">const</span>&amp; ptr, <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> start);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> rank_t&gt;</div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="namespacemackey.html#ad3b1d9580df6361a01eb5f0ed123f9c4">   74</a></span>&#160;    rank_t <a class="code" href="namespacemackey.html#ad3b1d9580df6361a01eb5f0ed123f9c4">basisElement</a>(<span class="keywordtype">int</span> length, <span class="keywordtype">int</span> position, <span class="keywordtype">int</span> multiple = 1);</div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('General_8hpp_source.html',''); initRes
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">namespace </span>implementation_details</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="Smith_8hpp.html#ae00d3a8860bb5190fe5da46e80529e70">template &lt;typename T, bool = mackey::SFINAE::is_Sparse&lt;T&gt;::value</a>&gt;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        template &lt;typename T, bool = mackey::SFINAE::is_Sparse&lt;T&gt;::value&gt;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keyword">class </span>it_nnz_conditional;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
@@ -251,7 +251,7 @@ $(document).ready(function(){initNavTree('General_8hpp_source.html',''); initRes
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
 <div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classmackey_1_1IteratorNNZ.html#a4db871693833a83cbb0ba78460834338">  211</a></span>&#160;        <a class="code" href="classmackey_1_1IteratorNNZ.html#a4db871693833a83cbb0ba78460834338">IteratorNNZ</a>(<span class="keyword">const</span> T&amp; matrix, storage row_start, storage col_start);</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="classmackey_1_1IteratorNNZ.html#a94b9eb00c8ba478e8ecfa1442be1d8d9">  216</a></span>&#160;        <a class="code" href="classmackey_1_1IteratorNNZ.html#a94b9eb00c8ba478e8ecfa1442be1d8d9">IteratorNNZ</a>(<span class="keyword">const</span> T&amp; matrix, storage <a class="code" href="Smith_8hpp.html#ac0fc66c8589d40713865b4b6a5d8af4d">start</a>);</div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="classmackey_1_1IteratorNNZ.html#a94b9eb00c8ba478e8ecfa1442be1d8d9">  216</a></span>&#160;        <a class="code" href="classmackey_1_1IteratorNNZ.html#a94b9eb00c8ba478e8ecfa1442be1d8d9">IteratorNNZ</a>(<span class="keyword">const</span> T&amp; matrix, storage start);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keyword">const</span> T&amp; matrix;</div>
@@ -262,8 +262,6 @@ $(document).ready(function(){initNavTree('General_8hpp_source.html',''); initRes
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">#include &quot;impl/General.ipp&quot;</span></div>
 <div class="ttc" id="aAliases_8hpp_html"><div class="ttname"><a href="Aliases_8hpp.html">Aliases.hpp</a></div><div class="ttdoc">Contains general template aliases.</div></div>
-<div class="ttc" id="aSmith_8hpp_html_ac0fc66c8589d40713865b4b6a5d8af4d"><div class="ttname"><a href="Smith_8hpp.html#ac0fc66c8589d40713865b4b6a5d8af4d">start</a></div><div class="ttdeci">S start</div><div class="ttdef"><b>Definition:</b> Smith.hpp:17</div></div>
-<div class="ttc" id="aSmith_8hpp_html_ae00d3a8860bb5190fe5da46e80529e70"><div class="ttname"><a href="Smith_8hpp.html#ae00d3a8860bb5190fe5da46e80529e70">value</a></div><div class="ttdeci">scalar value</div><div class="ttdef"><b>Definition:</b> Smith.hpp:26</div></div>
 <div class="ttc" id="aclassmackey_1_1Hash_3_01T_00_01T_01_4_html"><div class="ttname"><a href="classmackey_1_1Hash_3_01T_00_01T_01_4.html">mackey::Hash&lt; T, T &gt;</a></div><div class="ttdoc">Perfect hashes vectors between given min and max.</div><div class="ttdef"><b>Definition:</b> General.hpp:157</div></div>
 <div class="ttc" id="aclassmackey_1_1Hash_3_01T_00_01T_01_4_html_a24b54d668464fba58c98b7636c1ff399"><div class="ttname"><a href="classmackey_1_1Hash_3_01T_00_01T_01_4.html#a24b54d668464fba58c98b7636c1ff399">mackey::Hash&lt; T, T &gt;::max_hash</a></div><div class="ttdeci">size_t max_hash() const</div></div>
 <div class="ttc" id="aclassmackey_1_1Hash_3_01T_00_01T_01_4_html_aa6482b476bc07487e94b3139e001c1b7"><div class="ttname"><a href="classmackey_1_1Hash_3_01T_00_01T_01_4.html#aa6482b476bc07487e94b3139e001c1b7">mackey::Hash&lt; T, T &gt;::operator()</a></div><div class="ttdeci">size_t operator()(const S &amp;) const</div></div>

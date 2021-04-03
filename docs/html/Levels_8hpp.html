@@ -35,7 +35,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">V3.1</span>
+   &#160;<span id="projectnumber">V3.3</span>
    </div>
    <div id="projectbrief">A C++ library for computing RO(G) graded homology</div>
   </td>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('Levels_8hpp.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
-<p>Contains the methods for transfering, restricting and Weyl-group-acting.  
+<p>Contains the methods for transfering, restricting and act-group-acting.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Homology_8hpp_source.html">Homology/Homology.hpp</a>&quot;</code><br />
 <code>#include &quot;impl/Levels.ipp&quot;</code><br />
@@ -113,7 +113,7 @@ Include dependency graph for Levels.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Levels_8hpp__dep__incl.svg" width="482" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Levels_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="Levels_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -157,7 +157,7 @@ Functions</h2></td></tr>
 <tr class="separator:a0bbe4fb0329fbcf15466b5f21ec2213f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6e6071708ff2f81bb159377d1c7b2fb"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename Derived &gt; </td></tr>
 <tr class="memitem:ae6e6071708ff2f81bb159377d1c7b2fb"><td class="memTemplItemLeft" align="right" valign="top">Derived&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#ae6e6071708ff2f81bb159377d1c7b2fb">action</a> (const Eigen::MatrixBase&lt; Derived &gt; &amp;generator, const rank_t &amp;rank)</td></tr>
-<tr class="memdesc:ae6e6071708ff2f81bb159377d1c7b2fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Weyl group action on a generator given the rank of the group it lives in.  <a href="namespacemackey.html#ae6e6071708ff2f81bb159377d1c7b2fb">More...</a><br /></td></tr>
+<tr class="memdesc:ae6e6071708ff2f81bb159377d1c7b2fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the act group action on a generator given the rank of the group it lives in.  <a href="namespacemackey.html#ae6e6071708ff2f81bb159377d1c7b2fb">More...</a><br /></td></tr>
 <tr class="separator:ae6e6071708ff2f81bb159377d1c7b2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9ed23f23ea6bf121e09429382b544c3"><td class="memTemplParams" colspan="2">template&lt;typename rank_t , typename T &gt; </td></tr>
 <tr class="memitem:af9ed23f23ea6bf121e09429382b544c3"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#af9ed23f23ea6bf121e09429382b544c3">invRes</a> (const T &amp;generator, const rank_t &amp;domain, const rank_t &amp;range)</td></tr>
@@ -172,11 +172,11 @@ Functions</h2></td></tr>
 <tr class="separator:ae0ae5e3b0eaee6dee87bf89bc09e4677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e5182d6426f415479e31e1ba70091be"><td class="memTemplParams" colspan="2">template&lt;typename group_t &gt; </td></tr>
 <tr class="memitem:a7e5182d6426f415479e31e1ba70091be"><td class="memTemplItemLeft" align="right" valign="top">dense_t&lt; typename group_t::rank_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a7e5182d6426f415479e31e1ba70091be">action</a> (const Homology&lt; typename group_t::rank_t, typename group_t::diff_t &gt; &amp;H, const typename group_t::rank_t &amp;rank)</td></tr>
-<tr class="memdesc:a7e5182d6426f415479e31e1ba70091be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing the Weyl group action on each generator in terms of the other generators.  <a href="namespacemackey.html#a7e5182d6426f415479e31e1ba70091be">More...</a><br /></td></tr>
+<tr class="memdesc:a7e5182d6426f415479e31e1ba70091be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writing the act group action on each generator in terms of the other generators.  <a href="namespacemackey.html#a7e5182d6426f415479e31e1ba70091be">More...</a><br /></td></tr>
 <tr class="separator:a7e5182d6426f415479e31e1ba70091be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the methods for transfering, restricting and Weyl-group-acting. </p>
+<div class="textblock"><p>Contains the methods for transfering, restricting and act-group-acting. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.18-->

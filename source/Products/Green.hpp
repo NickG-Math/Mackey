@@ -27,7 +27,7 @@ namespace mackey
 		typedef typename group_t::diff_t diff_t;
 
 	public:
-		AbelianGroup<rank_t> Groups; ///<The homology group the product lives in.
+		AbelianGroup<rank_t> group;	 ///<The homology group the product lives in.
 		bool isZero;				 ///<1 if the homology group the product lives in is 0.
 		IDGenerators<rank_t> boxID;	 ///<Identifies the generators of the homology group the product lives in.
 
@@ -38,20 +38,16 @@ namespace mackey
 		Green(const Chains<rank_t, diff_t> &, const Chains<rank_t, diff_t> &, int, int, int);
 
 		///Returns the (normalized) product of the given two elements (not necessarily generators)
-		template <typename T, typename S>
-		auto getNormalBasis(const T &, const S &) const;
+		rank_t getNormalBasis(const rank_t &, const rank_t&) const;
 
 		///Returns the (normalized) product of the selected generator with another element
-		template <typename T = int, typename S>
-		auto getNormalBasis(int i, const S &b) const;
+		rank_t getNormalBasis(int i, const rank_t &b) const;
 
 		///Returns the (normalized) product of the given element with the selected generator
-		template <typename T, typename S = int>
-		auto getNormalBasis(const T &a, int j) const;
+		rank_t getNormalBasis(const rank_t&a, int j) const;
 
 		///Returns the (normalized) product of the selected generators
-		template <typename T = int, typename S = int>
-		auto getNormalBasis(int i, int j) const;
+		rank_t getNormalBasis(int i, int j) const;
 
 		bool operator==(const Green<group_t> &) const;
 

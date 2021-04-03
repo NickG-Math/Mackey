@@ -1,8 +1,9 @@
 <map id="Mult_Graph.hpp" name="Mult_Graph.hpp">
-<area shape="rect" id="node1" title="Contains the multiplication graph." alt="" coords="1121,5,1246,32"/>
-<area shape="rect" id="node2" href="$Mult__Table_8hpp.html" title="Contains the class and methods to form the multiplication table." alt="" coords="489,80,609,107"/>
-<area shape="rect" id="node45" href="$Graph_8hpp.html" title=" " alt="" coords="1117,80,1250,107"/>
-<area shape="rect" id="node50" title=" " alt="" coords="1274,80,1429,107"/>
+<area shape="rect" id="node1" title="Contains the multiplication graph." alt="" coords="1285,5,1410,32"/>
+<area shape="rect" id="node2" href="$Mult__Table_8hpp.html" title="Contains the classes mackey::MultTableData and mackey::MultTable that form the multiplication table." alt="" coords="489,80,609,107"/>
+<area shape="rect" id="node45" href="$Graph_8hpp.html" title=" " alt="" coords="1229,80,1362,107"/>
+<area shape="rect" id="node47" title=" " alt="" coords="1450,155,1493,181"/>
+<area shape="rect" id="node50" title=" " alt="" coords="1437,80,1591,107"/>
 <area shape="rect" id="node3" href="$OpenMP__Macros_8hpp.html" title="Contains open MP macros if multithreading is desired in this library." alt="" coords="255,155,458,181"/>
 <area shape="rect" id="node4" href="$General_8hpp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="1124,603,1269,629"/>
 <area shape="rect" id="node14" href="$Point_8hpp.html" title="Contains the computations for RO(G) homology of a point." alt="" coords="482,155,615,181"/>
@@ -21,7 +22,7 @@
 <area shape="rect" id="node43" title=" " alt="" coords="179,229,291,256"/>
 <area shape="rect" id="node16" href="$Green_8hpp.html" title="Contains the class and methods for multiplying generators." alt="" coords="569,304,659,331"/>
 <area shape="rect" id="node40" title=" " alt="" coords="419,304,545,331"/>
-<area shape="rect" id="node17" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="561,379,769,405"/>
+<area shape="rect" id="node17" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and act&#45;group&#45;acting." alt="" coords="561,379,769,405"/>
 <area shape="rect" id="node27" href="$Identify_8hpp.html" title="Contains the identification classes." alt="" coords="813,379,1026,405"/>
 <area shape="rect" id="node32" href="$Box_8hpp.html" title="Contains the construction of box products of Chains." alt="" coords="438,528,633,555"/>
 <area shape="rect" id="node39" title=" " alt="" coords="367,379,485,405"/>
@@ -45,8 +46,7 @@
 <area shape="rect" id="node36" title=" " alt="" coords="631,677,687,704"/>
 <area shape="rect" id="node37" title=" " alt="" coords="711,677,874,704"/>
 <area shape="rect" id="node42" title=" " alt="" coords="5,603,124,629"/>
-<area shape="rect" id="node46" title=" " alt="" coords="1429,155,1492,181"/>
-<area shape="rect" id="node47" title=" " alt="" coords="1121,155,1163,181"/>
-<area shape="rect" id="node48" title=" " alt="" coords="1187,155,1262,181"/>
-<area shape="rect" id="node49" title=" " alt="" coords="1287,155,1405,181"/>
+<area shape="rect" id="node46" title=" " alt="" coords="1264,155,1327,181"/>
+<area shape="rect" id="node48" title=" " alt="" coords="1351,155,1426,181"/>
+<area shape="rect" id="node49" title=" " alt="" coords="1121,155,1240,181"/>
 </map>

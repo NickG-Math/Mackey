@@ -1,5 +1,6 @@
 #pragma once
 #include "Mult_Graph.hpp"
+#include "Mult_Identify.hpp"
 
 ///@file
 ///@brief Contains the multiplication graph and the methods for factorizing generators.
@@ -27,20 +28,25 @@ namespace mackey {
 		Factorization(int, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int>>&, const std::vector<std::string>&);
 
 
-		/// @brief		Constructs multiplication table given the fundamental data (say after serialization)
+		/// @brief	Constructs multiplication table given the fundamental data (say after serialization)
 		Factorization(const MultTableData<group_t>& MTD, const std::vector<std::string>&);
 
-		/// @brief		Constructs multiplication table given the fundamental data (say after serialization)
+		/// @brief	Constructs multiplication table given the fundamental data (say after serialization)
 		Factorization(MultTableData<group_t>&& MTD, const std::vector<std::string>&);
 
 
-		/// Compute the factorizations using the given sources for the multiplication graph and their given names.
+		///	@brief Compute the factorizations using the given sources for the multiplication graph and their given names.
 		void compute_with_sources(const std::vector<std::vector<int>>&, const std::vector<std::string>&);
 
+		///	@brief	Returns the degrees of the generators that could not be connected to the sources
 		std::vector<std::vector<int>> disconnected_degrees() const;
 
 		///	@brief	The paths from sources to all nodes that minimize multiplication/division alteration and overall length
 		MinColorsLength<graph_t> shortest_paths;
+
+		///	@brief	Uses triple box products to identify generators where identification failed before
+		void pass_unidentified();
+
 	private:
 		std::string print_power(const std::vector<size_t>& power) const;
 		std::vector<int> sources;

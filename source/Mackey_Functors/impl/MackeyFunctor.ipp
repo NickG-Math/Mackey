@@ -76,8 +76,8 @@ namespace mackey
 
 	//Resize all member variables.
 	template<typename rank_t>
-	void MackeyFunctor<rank_t>::resize(int levels) {
-		Groups.resize(levels); Tr.resize(levels - 1); Res.resize(levels - 1); Weyl.resize(levels - 1);
+	void MackeyFunctor<rank_t>::resize(int lvls) {
+		levels.resize(lvls); tr.resize(lvls - 1); res.resize(lvls - 1); act.resize(lvls - 1);
 	}
 
 
@@ -87,7 +87,7 @@ namespace mackey
 		if (!name.empty() && !M.name.empty())
 			return (name == M.name);
 		else
-			return (Groups == M.Groups && implementation_details::genericcompare(Tr, M.Tr) && implementation_details::genericcompare(Res, M.Res) && implementation_details::genericcompare(Weyl, M.Weyl));
+			return (levels == M.levels && implementation_details::genericcompare(tr, M.tr) && implementation_details::genericcompare(res, M.res) && implementation_details::genericcompare(act, M.act));
 	}
 
 	template<typename rank_t>
@@ -96,7 +96,7 @@ namespace mackey
 		if (!name.empty())
 			return;
 		size_t number_of_zeros = 0;
-		for (const auto& i : Groups) {
+		for (const auto& i : levels) {
 			if (i.istrivial()) {
 				name.append("0");
 				number_of_zeros++;
@@ -108,20 +108,20 @@ namespace mackey
 				return;
 			}
 		}
-		if (number_of_zeros == Groups.size()) {
+		if (number_of_zeros == levels.size()) {
 			name = "0";
 			return;
 		}
 		bool sharp = 1;
-		for (size_t i = 0; i < Tr.size(); i++) {
-			if (!Groups[i].istrivial() && !Groups[i + 1].istrivial()) {
-				if ((Tr[i](0, 0) == 1 || Tr[i](0, 0) * Groups[i][0] == Groups[i + 1][0]) && ((Groups[i][0] == 1 && Res[i](0, 0) == 2) || ((Res[i](0, 0) - 2) % Groups[i][0] == 0))) {
+		for (size_t i = 0; i < tr.size(); i++) {
+			if (!levels[i].istrivial() && !levels[i + 1].istrivial()) {
+				if ((tr[i](0, 0) == 1 || tr[i](0, 0) * levels[i][0] == levels[i + 1][0]) && ((levels[i][0] == 1 && res[i](0, 0) == 2) || ((res[i](0, 0) - 2) % levels[i][0] == 0))) {
 					if (sharp)
 						name.append(" # ");
 					name.append(std::to_string(i));
 					sharp = 0;
 				}
-				else if (!((Res[i](0, 0) == 1 || Res[i](0, 0) * Groups[i + 1][0] == Groups[i][0]) && ((Groups[i + 1][0] == 1 && Tr[i](0, 0) == 2) || ((Tr[i](0, 0) - 2) % Groups[i + 1][0] == 0)))) {
+				else if (!((res[i](0, 0) == 1 || res[i](0, 0) * levels[i + 1][0] == levels[i][0]) && ((levels[i + 1][0] == 1 && tr[i](0, 0) == 2) || ((tr[i](0, 0) - 2) % levels[i + 1][0] == 0)))) {
 					name.clear();
 					return;
 				}
@@ -135,15 +135,15 @@ namespace mackey
 		resize(length);
 		for (int i = 0; i < length; i++) {
 			if (bigarray(i) != 0)
-				Groups[i] = bigarray.segment(i, 1);
+				levels[i] = bigarray.segment(i, 1);
 		}
 		for (int i = 0; i < length - 1; i++) {
 			if (bigarray(i) != 0 && bigarray(i + 1) != 0) {
-				Tr[i] = bigarray.segment(i + length, 1);
-				Res[i] = bigarray.segment(i + 2 * length - 1, 1);
+				tr[i] = bigarray.segment(i + length, 1);
+				res[i] = bigarray.segment(i + 2 * length - 1, 1);
 			}
 			if (bigarray(i) != 0)
-				Weyl[i] = bigarray.segment(i + 3 * length - 2, 1);
+				act[i] = bigarray.segment(i + 3 * length - 2, 1);
 		}
 	}
 
@@ -151,14 +151,14 @@ namespace mackey
 	template<typename rank_t>
 	MackeyFunctor<rank_t> operator +(const MackeyFunctor<rank_t>& M, const MackeyFunctor<rank_t>& N) {
 		MackeyFunctor<rank_t> K;
-		K.resize(M.Groups.size());
-		for (size_t i = 0; i < M.Groups.size(); i++) {
-			K.Groups[i] = M.Groups[i] + N.Groups[i];
+		K.resize(M.levels.size());
+		for (size_t i = 0; i < M.levels.size(); i++) {
+			K.levels[i] = M.levels[i] + N.levels[i];
 		}
-		for (size_t i = 0; i < M.Groups.size() - 1; i++) {
-			K.Tr[i] = implementation_details::blockdiag(M.Tr[i], N.Tr[i], M.Groups[i].number_of_summands(), M.Groups[i + 1].number_of_summands(), N.Groups[i].number_of_summands(), N.Groups[i + 1].number_of_summands());
-			K.Res[i] = implementation_details::blockdiag(M.Res[i], N.Res[i], M.Groups[i + 1].number_of_summands(), M.Groups[i].number_of_summands(), N.Groups[i + 1].number_of_summands(), N.Groups[i].number_of_summands());
-			K.Weyl[i] = implementation_details::blockdiag(M.Weyl[i], N.Weyl[i]);
+		for (size_t i = 0; i < M.levels.size() - 1; i++) {
+			K.tr[i] = implementation_details::blockdiag(M.tr[i], N.tr[i], M.levels[i].number_of_summands(), M.levels[i + 1].number_of_summands(), N.levels[i].number_of_summands(), N.levels[i + 1].number_of_summands());
+			K.res[i] = implementation_details::blockdiag(M.res[i], N.res[i], M.levels[i + 1].number_of_summands(), M.levels[i].number_of_summands(), N.levels[i + 1].number_of_summands(), N.levels[i].number_of_summands());
+			K.act[i] = implementation_details::blockdiag(M.act[i], N.act[i]);
 		}
 		if (!M.name.empty() && !N.name.empty()) {
 			if (M.name == "0")
@@ -177,33 +177,37 @@ namespace mackey
 	template<typename rank_t>
 	std::string MackeyFunctor<rank_t>::print() const {
 		std::stringstream out;
-		out << "Groups:";
-		for (const auto& i : Groups) {
+		int counter = 0;
+		for (const auto& i : levels) {
 			if (i.istrivial())
-				out << "0,";
+				out << "Level " << counter << " = 0\n";
 			else
-				out << i << ",";
+				out << "Level " << counter << " = " << i << "\n";
+			counter++;
 		}
-		out << "\n Tr:";
-		for (const auto& i : Tr) {
+		counter = 0;
+		for (const auto& i : tr) {
 			if (i.size() == 0)
-				out << "0 \n";
+				out << "Transfer " << counter << " -> " << (counter+1) << ":\n0\n";
 			else
-				out << i << "\n";
+				out << "Transfer " << counter << " -> " << (counter + 1) << ":\n"<< i << "\n";
+			counter++;
 		}
-		out << "\n Res:";
-		for (const auto& i : Res) {
+		counter = 1;
+		for (const auto& i : res) {
 			if (i.size() == 0)
-				out << "0 \n";
+				out << "Restriction " << counter << " -> " << (counter - 1) << ":\n0\n";
 			else
-				out << i << "\n";
+				out << "Restriction " << counter << " -> " << (counter - 1) << ":\n" << i << "\n";
+			counter++;
 		}
-		out << "\n Weyl:";
-		for (const auto& i : Weyl) {
+		counter = 0;
+		for (const auto& i : act) {
 			if (i.size() == 0)
-				out << "0 \n";
+				out << "Action on level " << counter << ":\n0\n";
 			else
-				out << i << "\n";
+				out << "Action on level " << counter << ":\n" << i << "\n";
+			counter++;
 		}
 		return out.str();
 	}
@@ -224,12 +228,12 @@ namespace mackey
 	template<typename rank_t>
 	MackeyFunctor<rank_t> MackeyFunctor<rank_t>::apply(const iso_t<rank_t>& iso, const iso_t<rank_t>& isoinv) const {
 		MackeyFunctor<rank_t> N = *this;
-		for (size_t i = 0; i < Tr.size(); i++)
-			N.Tr[i] = implementation_details::change_base_matrix_normalize(Tr[i], iso[i + 1], isoinv[i], Groups[i + 1]);
-		for (size_t i = 0; i < Res.size(); i++)
-			N.Res[i] = implementation_details::change_base_matrix_normalize(Res[i], iso[i], isoinv[i + 1], Groups[i]);
-		for (size_t i = 0; i < Weyl.size(); i++)
-			N.Weyl[i] = implementation_details::change_base_matrix_normalize(Weyl[i], iso[i], isoinv[i], Groups[i]);
+		for (size_t i = 0; i < tr.size(); i++)
+			N.tr[i] = implementation_details::change_base_matrix_normalize(tr[i], iso[i + 1], isoinv[i], levels[i + 1]);
+		for (size_t i = 0; i < res.size(); i++)
+			N.res[i] = implementation_details::change_base_matrix_normalize(res[i], iso[i], isoinv[i + 1], levels[i]);
+		for (size_t i = 0; i < act.size(); i++)
+			N.act[i] = implementation_details::change_base_matrix_normalize(act[i], iso[i], isoinv[i], levels[i]);
 		return N;
 	}
 
@@ -237,9 +241,9 @@ namespace mackey
 	template<typename rank_t>
 	std::pair<std::vector<iso_t<rank_t>>, std::vector<iso_t<rank_t>>> MackeyFunctor<rank_t>::automorphisms() const {
 		std::vector<std::vector<dense_t<rank_t>>> isosfirst, isossecond;
-		isosfirst.reserve(Groups.size());
-		isossecond.reserve(Groups.size());
-		for (const auto& i : Groups) {
+		isosfirst.reserve(levels.size());
+		isossecond.reserve(levels.size());
+		for (const auto& i : levels) {
 			auto pair = i.all_automorphisms();
 			isosfirst.push_back(pair.first);
 			isossecond.push_back(pair.second);
@@ -262,7 +266,7 @@ namespace mackey
 
 	template<typename rank_t>
 	bool MackeyFunctor<rank_t>::isomorphic(const std::vector<MackeyFunctor<rank_t>>& isoclass) const {
-		if (isoclass[0].Groups != Groups)
+		if (isoclass[0].levels != levels)
 			return 0;
 		for (const auto& i : isoclass) {
 			if (*this == i)
@@ -273,7 +277,7 @@ namespace mackey
 
 	template<typename rank_t>
 	bool MackeyFunctor<rank_t>::isomorphic(const MackeyFunctor<rank_t>& M) {
-		if (Groups != M.Groups)
+		if (levels != M.levels)
 			return 0;
 		auto isoclass = isomorphism_class();
 		return isomorphic(isoclass);

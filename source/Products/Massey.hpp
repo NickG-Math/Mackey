@@ -15,7 +15,7 @@ namespace mackey {
 	public:
 		rank_t basis; ///<Expresses the Massey product as a linear combination of the generators of the box product.
 		rank_t normalBasis; ///<Same as basis, but normalized
-		AbelianGroup<rank_t> Groups; ///<The homology group the product lives in.
+		AbelianGroup<rank_t> group; ///<The homology group the product lives in.
 		std::array<rank_t, 2> indeterminacy; ///< The indeterminacy of the Massey product, stored as two bases
 		IDGenerators<rank_t> boxID; ///< Identification data for the generators of the Massey product
 		bool exists; ///< If the Massey product exists

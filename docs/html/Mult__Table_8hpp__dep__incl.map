@@ -1,8 +1,9 @@
 <map id="Mult_Table.hpp" name="Mult_Table.hpp">
-<area shape="rect" id="node1" title="Contains the class and methods to form the multiplication table." alt="" coords="115,5,235,32"/>
-<area shape="rect" id="node2" href="$Mult__Graph_8hpp.html" title="Contains the multiplication graph." alt="" coords="113,80,238,107"/>
-<area shape="rect" id="node3" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="197,155,330,181"/>
-<area shape="rect" id="node6" href="$Mult__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="5,155,172,181"/>
-<area shape="rect" id="node4" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="62,229,161,256"/>
-<area shape="rect" id="node5" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="206,229,321,256"/>
+<area shape="rect" id="node1" title="Contains the classes mackey::MultTableData and mackey::MultTable that form the multiplication table." alt="" coords="83,5,203,32"/>
+<area shape="rect" id="node2" href="$Mult__Graph_8hpp.html" title="Contains the multiplication graph." alt="" coords="80,80,205,107"/>
+<area shape="rect" id="node3" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="5,229,139,256"/>
+<area shape="rect" id="node6" href="$Mult__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="163,229,330,256"/>
+<area shape="rect" id="node7" href="$Mult__Identify_8hpp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="76,155,209,181"/>
+<area shape="rect" id="node4" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="175,304,273,331"/>
+<area shape="rect" id="node5" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="15,304,129,331"/>
 </map>

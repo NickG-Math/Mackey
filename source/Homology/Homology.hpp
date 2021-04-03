@@ -28,8 +28,8 @@ namespace mackey {
 		///The dense type of our generators (a column in the generator matrix, always dense for convenience)
 		typedef col_vector_t<diff_t_C> gen_t;
 
-		AbelianGroup<rank_t> Groups;///<Encodes the homology groups as follows: Groups=[1,2,3] means homology Z+Z/2+Z/3. This works even for Z/n coefficients: the free module (Z/n)^, is encoded as [n,n,...,n]
-		Gens_t Generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for Groups[i]
+		AbelianGroup<rank_t> group;///<Encodes the homology groups as follows: group=[1,2,3] means homology Z+Z/2+Z/3. This works even for Z/n coefficients: the free module (Z/n)^, is encoded as [n,n,...,n]
+		Gens_t generators;///<Encodes the generators homology groups as follows: The i-th column corresponds to the generator for group[i]
 		bool isZero;///<1 if the homology is trivial
 		
 		///Default constructor

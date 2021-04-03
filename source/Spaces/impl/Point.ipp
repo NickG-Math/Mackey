@@ -97,17 +97,17 @@ namespace mackey {
 
 		for (int i = 0; i < group_t::power + 1; i++) {
 			H[i] = Homology<rank_t, diff_t>(J.level[i]);
-			M.Groups[i] = H[i].Groups;
+			M.levels[i] = H[i].group;
 		}
 		for (int i = 0; i < group_t::power; i++) { //for each level
 			if (!H[i].isZero && !H[i + 1].isZero) {
-				M.Tr[i] = transfer<group_t>(H[i], H[i + 1], J.level[i].rank, J.level[i + 1].rank);
-				M.Res[i] = restriction<group_t>(H[i + 1], H[i], J.level[i + 1].rank, J.level[i].rank);
+				M.tr[i] = transfer<group_t>(H[i], H[i + 1], J.level[i].rank, J.level[i + 1].rank);
+				M.res[i] = restriction<group_t>(H[i + 1], H[i], J.level[i + 1].rank, J.level[i].rank);
 			}
 		}
 		for (int i = 0; i < group_t::power; i++) { //for each level
 			if (!H[i].isZero)
-				M.Weyl[i] = action<group_t>(H[i], J.level[i].rank);
+				M.act[i] = action<group_t>(H[i], J.level[i].rank);
 		}
 		return M;
 	}
@@ -127,7 +127,7 @@ namespace mackey {
 		Junction<rank_t, diff_t> J(A, k);
 		auto J_l = transfer<group_t>(J, level);
 		Homology<rank_t, diff_t> H(J_l);
-		return H.Groups;
+		return H.group;
 	}
 
 	template<typename group_t, typename deg_t>

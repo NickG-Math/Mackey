@@ -16,8 +16,8 @@ namespace mackey {
 		typedef Eigen::Matrix<typename rank_t::Scalar, -1, -1> matrix_t;
 		AbelianGroup<rank_t> group; ///<The homology group at our level
 		AbelianGroup<rank_t> group_lower; ///<The homology group at one level lower
-		matrix_t Tr; ///<The transfer from one level lower to our level
-		matrix_t Res; ///<The restriction from our level to one lower
+		matrix_t tr; ///<The transfer from one level lower to our level
+		matrix_t res; ///<The restriction from our level to one lower
 
 		///Default Constructor
 		IDGenerators()=default;
@@ -25,7 +25,7 @@ namespace mackey {
 		///Get a two-level Mackey functor out of this data
 		MackeyFunctor<rank_t> getMackey() const;
 
-		///Standard equality tests if all group, group_lower, Tr, Res are equal 
+		///Standard equality tests if all group, group_lower, tr, res are equal 
 		bool operator==(const IDGenerators<rank_t>&) const;
 	};
 
@@ -39,9 +39,9 @@ namespace mackey {
 	bool distinguish(const std::vector<rank_t>&, const IDGenerators<rank_t>&);
 
 
-	///Contains classes and methods whose user interface is provided by the rest of the library
+	///Namespace for internal use withing the library
 	namespace internal {
-		///Computes the homology at given level and the identification data coming from the Mackey functor structure
+		///Computes homology and identification data
 		template<typename group_t>
 		class IDGeneratorCompute {
 			typedef typename group_t::rank_t rank_t;

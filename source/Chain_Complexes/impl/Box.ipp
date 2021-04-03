@@ -43,7 +43,7 @@ namespace mackey {
 
 	//_input_t is rank_t, _output_t is rank_t, _optional_t is void
 	template<typename _output_t, typename _optional_t>
-	template<typename _input_t, typename mackey::is_rank<_input_t>>
+	template<typename _input_t, typename implementation_details::is_rank<_input_t>>
 	void Tensor<_output_t, _optional_t>::tensor(const _input_t& A, const _input_t& B, int) {
 		int sum = 0;
 		for (int i = 0; i < A.size(); i++) {
@@ -63,7 +63,7 @@ namespace mackey {
 
 	//_input_t is vector<rank_t>, _output_t is rank_t, _optional_t can be std::vector<int64_t>
 	template<typename _output_t, typename _optional_t>
-	template<typename _input_t, typename mackey::is_vector_rank<_input_t>, typename S, typename mackey::is_rank<S>>
+	template<typename _input_t, typename implementation_details::is_vector_rank<_input_t>, typename S, typename implementation_details::is_rank<S>>
 	void Tensor<_output_t, _optional_t>::tensor(const _input_t& A, const _input_t& B, int location_of_rank) {
 		_input_t verydetailedrank;
 		if constexpr (optional_exists)
@@ -88,7 +88,7 @@ namespace mackey {
 
 	//_input_t is vector<rank_t>, _output_t is vector<rank_t>, _optional_t is void
 	template<typename _output_t, typename _optional_t>
-	template<typename _input_t, typename T, typename S, typename mackey::is_vector_rank<T>, typename mackey::is_vector_rank<S>>
+	template<typename _input_t, typename T, typename S, typename implementation_details::is_vector_rank<T>, typename implementation_details::is_vector_rank<S>>
 	void Tensor<_output_t, _optional_t>::tensor(const _input_t& A, const _input_t& B, int) {
 		_tensor.reserve(A.size() + B.size() - 1);
 		for (int i = 0; i < A.size() + B.size() - 1; i++)
@@ -96,7 +96,7 @@ namespace mackey {
 	}
 
 	//Computing the differential of the tensor product
-	namespace {
+	namespace implementation_details {
 
 		///Forms the block diagonal matrix with k many copies of a, and then applies the permutations left^{-1} * block *right 
 		///Significant performance improvement over the naive implementation by forming left^{-1}*block in one step
@@ -236,7 +236,7 @@ namespace mackey {
 	}
 
 	template<typename _output_t, typename _optional_t>
-	template<typename _input_t, typename T, typename mackey::is_arrow<T>>
+	template<typename _input_t, typename T, typename implementation_details::is_arrow<T>>
 	void Tensor<_output_t, _optional_t>::tensor(const _input_t& A, const _input_t& B, int i) {
 		typedef typename T::rank_t rank_t;
 		typedef typename T::diff_t diff_t;
@@ -247,14 +247,14 @@ namespace mackey {
 			rank_range = Tensor<rank_t, _optional_t>(A.rank, B.rank, i - 1).tensor();
 		diff_t diff;
 		if (rank_domain.size() != 0 && rank_range.size() != 0)
-			diff = diff_of_Tensor<rank_t, diff_t>(A, B, i, summation(rank_range), summation(rank_domain));
+			diff = implementation_details::diff_of_Tensor<rank_t, diff_t>(A, B, i, summation(rank_range), summation(rank_domain));
 		_tensor = Arrow<rank_t, diff_t>(rank_domain, rank_range, diff);
 		if constexpr (optional_exists)
 			this->_optional = Ranks.optional();
 	}
 
 	template<typename _output_t, typename _optional_t>
-	template<typename _input_t, typename T, typename mackey::is_chains<T>>
+	template<typename _input_t, typename T, typename implementation_details::is_chains<T>>
 	void Tensor<_output_t, _optional_t>::tensor(const _input_t& A, const _input_t& B, int i) {
 		if (i == -1)
 			i = A.maxindex() + B.maxindex();
@@ -276,7 +276,7 @@ namespace mackey {
 
 
 	template<typename _output_t, typename _optional_t>
-	template<typename _input_t, typename T, typename mackey::is_junction<T>>
+	template<typename _input_t, typename T, typename implementation_details::is_junction<T>>
 	void Tensor<_output_t, _optional_t>::tensor(const _input_t& A, const _input_t& B, int i) {
 		Tensor<arrow_t<T>, _optional_t> OUT(A, B, i);
 		_tensor.setOut(OUT.tensor());

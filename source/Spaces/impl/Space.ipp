@@ -29,7 +29,7 @@ namespace mackey {
 			Junction<rank_t, diff_t> J(C, k);
 			auto J_l = transfer<group_t>(J, level);
 			Homology<rank_t, diff_t> H(J_l);
-			groups.push_back(H.Groups);
+			groups.push_back(H.group);
 		}
 		return groups;
 	}
@@ -58,7 +58,7 @@ namespace mackey {
 			Junction<rank_t, diff_t> J(C, k);
 			auto J_l = transfer<group_t>(J, level);
 			Homology<rank_t, diff_t> H(J_l);
-			groups.push_back(H.Groups);
+			groups.push_back(H.group);
 		}
 		return groups;
 	}

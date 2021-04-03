@@ -26,7 +26,7 @@ int main()
 	constexpr bool verify = 1;
 	constexpr bool verify_deep = 1;
 
-	constexpr bool performance_test = 1;
+	constexpr bool performance_test = 0;
 
 	constexpr bool factorization = 1;
 	constexpr bool massey = 1;

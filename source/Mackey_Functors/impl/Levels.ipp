@@ -241,9 +241,9 @@ namespace mackey {
 		typedef typename group_t::rank_t rank_t;
 		typedef typename group_t::diff_t diff_t;
 
-		dense_t<rank_t> Tr(high.Groups.number_of_summands(), low.Groups.number_of_summands());
-		for (decltype(low.Generators.cols()) i = 0; i < low.Generators.cols(); i++) {
-			gen_t<rank_t, diff_t> generator = low.Generators.col(i);
+		dense_t<rank_t> Tr(high.group.number_of_summands(), low.group.number_of_summands());
+		for (decltype(low.generators.cols()) i = 0; i < low.generators.cols(); i++) {
+			gen_t<rank_t, diff_t> generator = low.generators.col(i);
 			Tr.col(i) = high.basis(transfer<group_t>(generator, rank_low, rank_high)).transpose();
 		}
 		return Tr;
@@ -252,9 +252,9 @@ namespace mackey {
 	//Writing the restriction of each generator in terms of the generators in the image.
 	template<typename group_t>
 	dense_t<typename group_t::rank_t> restriction(const Homology<typename group_t::rank_t, typename group_t::diff_t>& high, const Homology<typename group_t::rank_t, typename group_t::diff_t>& low, const typename group_t::rank_t& rank_high, const typename group_t::rank_t& rank_low) {
-		dense_t<typename group_t::rank_t> Res(low.Groups.number_of_summands(), high.Groups.number_of_summands());
-		for (decltype(high.Generators.cols()) i = 0; i < high.Generators.cols(); i++) {
-			gen_t<typename group_t::rank_t, typename group_t::diff_t> generator = high.Generators.col(i);
+		dense_t<typename group_t::rank_t> Res(low.group.number_of_summands(), high.group.number_of_summands());
+		for (decltype(high.generators.cols()) i = 0; i < high.generators.cols(); i++) {
+			gen_t<typename group_t::rank_t, typename group_t::diff_t> generator = high.generators.col(i);
 			Res.col(i) = low.basis(restriction(generator, rank_high, rank_low)).transpose();
 		}
 		return Res;
@@ -263,9 +263,9 @@ namespace mackey {
 	//Writing the Weyl group action on each generator in terms of the other generators.
 	template<typename group_t>
 	dense_t<typename group_t::rank_t> action(const Homology<typename group_t::rank_t, typename group_t::diff_t>& H, const typename group_t::rank_t& rank) {
-		dense_t<typename group_t::rank_t> Weyl(H.Groups.number_of_summands(), H.Groups.number_of_summands());
-		for (decltype(H.Generators.cols()) i = 0; i < H.Generators.cols(); i++) {
-			gen_t<typename group_t::rank_t, typename group_t::diff_t> generator = H.Generators.col(i);
+		dense_t<typename group_t::rank_t> Weyl(H.group.number_of_summands(), H.group.number_of_summands());
+		for (decltype(H.generators.cols()) i = 0; i < H.generators.cols(); i++) {
+			gen_t<typename group_t::rank_t, typename group_t::diff_t> generator = H.generators.col(i);
 			Weyl.col(i) = H.basis(action(generator, rank)).transpose();
 		}
 		return Weyl;

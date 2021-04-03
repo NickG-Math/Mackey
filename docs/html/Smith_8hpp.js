@@ -1,6 +1,6 @@
 var Smith_8hpp =
 [
-    [ "Smith_Normal_Form", "structmackey_1_1Smith__Normal__Form.html", "structmackey_1_1Smith__Normal__Form" ],
+    [ "SmithNormalForm", "structmackey_1_1SmithNormalForm.html", "structmackey_1_1SmithNormalForm" ],
     [ "scalar", "Smith_8hpp.html#ac5b8be724834ba8c85ce16ad857329be", null ],
     [ "start", "Smith_8hpp.html#ac0fc66c8589d40713865b4b6a5d8af4d", null ],
     [ "end", "Smith_8hpp.html#ace6fd70b621b27a39a559357bae307a8", null ],

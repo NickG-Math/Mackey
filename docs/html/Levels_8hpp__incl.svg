@@ -58,7 +58,7 @@ var sectionId = 'dynsection-0';
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting.">
+<g id="a_node1"><a xlink:title="Contains the methods for transfering, restricting and act&#45;group&#45;acting.">
 <polygon fill="#bfbfbf" stroke="black" points="304.88,-336.5 304.88,-355.5 373.88,-355.5 373.88,-336.5 304.88,-336.5"/>
 <text text-anchor="middle" x="339.38" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Levels.hpp</text>
 </a>

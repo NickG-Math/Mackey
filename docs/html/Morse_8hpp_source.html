@@ -35,7 +35,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">V3.1</span>
+   &#160;<span id="projectnumber">V3.3</span>
    </div>
    <div id="projectbrief">A C++ library for computing RO(G) graded homology</div>
   </td>
@@ -148,9 +148,9 @@ $(document).ready(function(){initNavTree('Morse_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> resize();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">void</span> set_critical();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> kill_dead_paths();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">auto</span> zig_zag_differential(<span class="keywordtype">int</span> k, <a class="code" href="classmackey_1_1AMT.html#a0c0ca31a491cb140de0a8f31fc89b6e2">ind</a> <a class="code" href="Smith_8hpp.html#a9f85090dfc81982b5445f3179f1afd10">col</a>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">auto</span> zig_zag_f(<span class="keywordtype">int</span> k, <a class="code" href="classmackey_1_1AMT.html#a0c0ca31a491cb140de0a8f31fc89b6e2">ind</a> <a class="code" href="Smith_8hpp.html#a9f85090dfc81982b5445f3179f1afd10">col</a>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">auto</span> zig_zag_g(<span class="keywordtype">int</span> k, <a class="code" href="classmackey_1_1AMT.html#a0c0ca31a491cb140de0a8f31fc89b6e2">ind</a> <a class="code" href="Smith_8hpp.html#a9f85090dfc81982b5445f3179f1afd10">col</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">auto</span> zig_zag_differential(<span class="keywordtype">int</span> k, <a class="code" href="classmackey_1_1AMT.html#a0c0ca31a491cb140de0a8f31fc89b6e2">ind</a> col) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">auto</span> zig_zag_f(<span class="keywordtype">int</span> k, <a class="code" href="classmackey_1_1AMT.html#a0c0ca31a491cb140de0a8f31fc89b6e2">ind</a> col) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">auto</span> zig_zag_g(<span class="keywordtype">int</span> k, <a class="code" href="classmackey_1_1AMT.html#a0c0ca31a491cb140de0a8f31fc89b6e2">ind</a> col) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> set_f(<span class="keywordtype">int</span> k);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> set_g(<span class="keywordtype">int</span> k);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> reduce_diff(<span class="keywordtype">int</span> k);</div>
@@ -180,7 +180,6 @@ $(document).ready(function(){initNavTree('Morse_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#include &quot;impl/Morse.ipp&quot;</span></div>
 <div class="ttc" id="aChains_8hpp_html"><div class="ttname"><a href="Chains_8hpp.html">Chains.hpp</a></div><div class="ttdoc">Contains Chains and Junction classes for using chain complexes.</div></div>
-<div class="ttc" id="aSmith_8hpp_html_a9f85090dfc81982b5445f3179f1afd10"><div class="ttname"><a href="Smith_8hpp.html#a9f85090dfc81982b5445f3179f1afd10">col</a></div><div class="ttdeci">storage col</div><div class="ttdef"><b>Definition:</b> Smith.hpp:27</div></div>
 <div class="ttc" id="aclassmackey_1_1AMT_html"><div class="ttname"><a href="classmackey_1_1AMT.html">mackey::AMT</a></div><div class="ttdoc">Performs algebraic Morse theory reduction.</div><div class="ttdef"><b>Definition:</b> Morse.hpp:15</div></div>
 <div class="ttc" id="aclassmackey_1_1AMT_html_a0c0ca31a491cb140de0a8f31fc89b6e2"><div class="ttname"><a href="classmackey_1_1AMT.html#a0c0ca31a491cb140de0a8f31fc89b6e2">mackey::AMT::ind</a></div><div class="ttdeci">diff_t::StorageIndex ind</div><div class="ttdoc">The storage type of the differential matrices (eg size_t)</div><div class="ttdef"><b>Definition:</b> Morse.hpp:35</div></div>
 <div class="ttc" id="aclassmackey_1_1AMT_html_a1ca775f281ad4f46c3b97c2e6ef678c4"><div class="ttname"><a href="classmackey_1_1AMT.html#a1ca775f281ad4f46c3b97c2e6ef678c4">mackey::AMT::erase_matchings</a></div><div class="ttdeci">void erase_matchings(int k, const std::vector&lt; std::pair&lt; ind, ind &gt;&gt; &amp;toremove)</div><div class="ttdoc">Erase the given morse matchings (eg if they are not equivariant).</div></div>

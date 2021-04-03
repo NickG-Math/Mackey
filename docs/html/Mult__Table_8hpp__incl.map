@@ -1,5 +1,5 @@
 <map id="Mult_Table.hpp" name="Mult_Table.hpp">
-<area shape="rect" id="node1" title="Contains the class and methods to form the multiplication table." alt="" coords="566,5,686,32"/>
+<area shape="rect" id="node1" title="Contains the classes mackey::MultTableData and mackey::MultTable that form the multiplication table." alt="" coords="566,5,686,32"/>
 <area shape="rect" id="node2" href="$OpenMP__Macros_8hpp.html" title="Contains open MP macros if multithreading is desired in this library." alt="" coords="334,80,537,107"/>
 <area shape="rect" id="node3" href="$General_8hpp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="962,528,1107,555"/>
 <area shape="rect" id="node13" href="$Point_8hpp.html" title="Contains the computations for RO(G) homology of a point." alt="" coords="612,80,745,107"/>
@@ -18,7 +18,7 @@
 <area shape="rect" id="node43" title=" " alt="" coords="662,155,774,181"/>
 <area shape="rect" id="node15" href="$Green_8hpp.html" title="Contains the class and methods for multiplying generators." alt="" coords="740,229,830,256"/>
 <area shape="rect" id="node40" title=" " alt="" coords="854,229,980,256"/>
-<area shape="rect" id="node16" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="838,304,1046,331"/>
+<area shape="rect" id="node16" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and act&#45;group&#45;acting." alt="" coords="838,304,1046,331"/>
 <area shape="rect" id="node27" href="$Identify_8hpp.html" title="Contains the identification classes." alt="" coords="1070,304,1284,331"/>
 <area shape="rect" id="node32" href="$Box_8hpp.html" title="Contains the construction of box products of Chains." alt="" coords="374,453,569,480"/>
 <area shape="rect" id="node39" title=" " alt="" coords="695,304,814,331"/>

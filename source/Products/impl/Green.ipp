@@ -17,30 +17,44 @@ namespace mackey {
 	}
 
 	template<typename group_t>
-	template<typename T, typename S>
-	auto Green<group_t>::getNormalBasis(int i, const S& b) const {
+	auto Green<group_t>::getNormalBasis(const rank_t& c, const rank_t& d) const ->rank_t {
+		if (isZero)
+			return rank_t();
+		rank_t result=rank_t::Zero(basis[0].size());
+		for (int i = 0; i < c.size(); i++)
+			for (int j = 0; j < d.size(); j++) {
+				if (c[i] == 0 || d[j] == 0)
+					continue;
+				result += c[i] * d[j] * basis[select(i, j)];
+			}
+		group.normalize(result);
+		return result;
+	}
+
+	template<typename group_t>
+	auto Green<group_t>::getNormalBasis(int i, const rank_t& b) const ->rank_t {
 		if (isZero)
 			return rank_t();
 		return getNormalBasis(basisElement<rank_t>(first_number_selections, i), b);
 	}
 
 	template<typename group_t>
-	template<typename T, typename S>
-	auto Green<group_t>::getNormalBasis(const T& a, int j) const {
+	auto Green<group_t>::getNormalBasis(const rank_t& a, int j) const ->rank_t {
 		if (isZero)
 			return rank_t();
 		return getNormalBasis(a, basisElement<rank_t>(second_number_selections, j));
 	}
 
 	template<typename group_t>
-	template<typename T, typename S>
-	auto Green<group_t>::getNormalBasis(int i, int j) const {
+	auto Green<group_t>::getNormalBasis(int i, int j) const ->rank_t {
 		if (isZero)
 			return rank_t();
 		auto b = basis[select(i, j)];
-		Groups.normalize(b);
+		group.normalize(b);
 		return b;
 	}
+
+
 
 	template<typename group_t>
 	int Green<group_t>::select(int select_first, int select_second) const {
@@ -51,29 +65,11 @@ namespace mackey {
 		return select_second + select_first * second_number_selections;
 	}
 
-	template<typename group_t>
-	template<typename T, typename S>
-	auto Green<group_t>::getNormalBasis(const T& c, const S& d) const {
-		if (isZero)
-			return rank_t();
-		rank_t result(basis[0].size());
-		result.setZero();
-		for (int i = 0; i < c.size(); i++) {
-			if (c[i] == 0)
-				continue;
-			for (int j = 0; j < d.size(); j++) {
-				if (d[j] == 0)
-					continue;
-				result += c[i] * d[j] * basis[select(i, j)];
-			}
-		}
-		Groups.normalize(result);
-		return result;
-	}
+
 
 	template<typename group_t>
 	bool Green<group_t>::operator==(const Green<group_t>& other) const {
-		return isZero == other.isZero && Groups.size() == other.Groups.size() && Groups == other.Groups && basis.size() == other.basis.size() && basis == other.basis && boxID == other.boxID;
+		return isZero == other.isZero && group == other.group && basis.size() == other.basis.size() && basis == other.basis && boxID == other.boxID;
 	}
 
 
@@ -94,7 +90,7 @@ namespace mackey {
 			isZero = Homol.isZero;
 			if (isZero)
 				return;
-			Gens = std::move(Homol.Generators);
+			Gens = std::move(Homol.generators);
 			rank_level = std::move(J_Level.rank);
 		}
 
@@ -186,7 +182,7 @@ namespace mackey {
 					G.basis.push_back(basis);
 				}
 			}
-			G.Groups = std::move(H_Level.Groups);
+			G.group = std::move(H_Level.group);
 		}
 	}
 

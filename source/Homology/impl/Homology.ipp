@@ -30,7 +30,7 @@ namespace mackey {
 
 	template<typename rank_t, typename diff_t>
 	typename Homology<rank_t, diff_t>::diff_t_C Homology<rank_t, diff_t>::getKernel(diff_t_C& Out) {
-		Smith_Normal_Form<diff_t_C, diff_t_R, diff_t_C> OUT(Out, 0, 1, 0);
+		SmithNormalForm<diff_t_C, diff_t_R, diff_t_C> OUT(Out, 0, 1, 0);
 		diff_t_C Kernel(M,M);
 		std::vector<typename diff_t::StorageIndex> nonZeroVectors;
 		nonZeroVectors.reserve(M);
@@ -57,13 +57,13 @@ namespace mackey {
 		else
 			In = Out_Qi * In;
 		auto L = std::min(In.rows(), In.cols());
-		Smith_Normal_Form<diff_t_C, diff_t_R, diff_t_C> IN(In, 1, getQ, 1);
+		SmithNormalForm<diff_t_C, diff_t_R, diff_t_C> IN(In, 1, getQ, 1);
 
 		if constexpr (SFINAE::is_Sparse<diff_t>::value)
-			Generators= (Kernel * IN.Pi).pruned();
+			generators= (Kernel * IN.Pi).pruned();
 		else
-			Generators = Kernel * IN.Pi;
-		auto maxsize = Generators.cols();
+			generators = Kernel * IN.Pi;
+		auto maxsize = generators.cols();
 		std::vector<scalar_t<rank_t>> groups;
 		groups.reserve(maxsize);
 		dontModOut.reserve(maxsize);
@@ -95,20 +95,20 @@ namespace mackey {
 		}
 
 		if (isZero) {
-			Generators.resize(0,0);
+			generators.resize(0,0);
 			return;
 		}
 		rank_t G=Eigen::Map<rank_t>(groups.data(), groups.size());
-		Groups = AbelianGroup(G);
-		Generators = KeepCol(Generators, dontModOut);
+		group = AbelianGroup(G);
+		generators = KeepCol(generators, dontModOut);
 
 
-		//Check for non integer coefficients and replace the Z in Groups with Z/N
+		//Check for non integer coefficients and replace the Z in group with Z/N
 		if constexpr (SFINAE::is_finite_cyclic<scalar_t<diff_t>>::value) {
 			constexpr int order = scalar_t<diff_t>::order;
-			for (int i = 0; i < Groups.number_of_summands(); i++) {
-				if (Groups[i] == 1)
-					Groups[i] = static_cast<scalar_t<rank_t>>(order);
+			for (int i = 0; i < group.number_of_summands(); i++) {
+				if (group[i] == 1)
+					group[i] = static_cast<scalar_t<rank_t>>(order);
 			}
 		}
 	}
@@ -117,12 +117,12 @@ namespace mackey {
 	rank_t Homology<rank_t, diff_t>::basis(const gen_t& generator) const {
 		if (isZero)
 			return rank_t();
-		rank_t basisArray(Groups.number_of_summands());
+		rank_t basisArray(group.number_of_summands());
 		gen_t element = Out_Qi * generator;
 		element = In_P_reduced * element;
-		for (int j = 0; j < Groups.number_of_summands();j++) {
-			if (Groups[j] != 1)
-				basisArray[j] = static_cast<scalar_t<rank_t>>((Groups[j] + (int64_t)element[j] % Groups[j]) % Groups[j]);
+		for (int j = 0; j < group.number_of_summands();j++) {
+			if (group[j] != 1)
+				basisArray[j] = static_cast<scalar_t<rank_t>>((group[j] + (int64_t)element[j] % group[j]) % group[j]);
 			else
 				basisArray[j] = static_cast<scalar_t<rank_t>>(element[j]);
 		}

@@ -97,7 +97,7 @@ namespace mackey {
 	///Chains cerealize
 	template<typename Archive, typename rank_t, typename diff_t>
 	void serialize(Archive& archive, Homology<rank_t, diff_t>& H) {
-		archive(CEREAL_NVP(H.Groups), CEREAL_NVP(H.Generators), CEREAL_NVP(H.isZero), CEREAL_NVP(H.nonZeroVectors), CEREAL_NVP(H.dontModOut), \
+		archive(CEREAL_NVP(H.group), CEREAL_NVP(H.generators), CEREAL_NVP(H.isZero), CEREAL_NVP(H.nonZeroVectors), CEREAL_NVP(H.dontModOut), \
 			CEREAL_NVP(H.In_Q), CEREAL_NVP(H.Out_Qi), CEREAL_NVP(H.In_P_full), CEREAL_NVP(H.In_P_reduced));
 	}
 
@@ -111,13 +111,13 @@ namespace mackey {
 	///IDGenerator cerealize
 	template<typename Archive, typename rank_t>
 	void serialize(Archive& archive, IDGenerators<rank_t>& ID) {
-		archive(CEREAL_NVP(ID.group), CEREAL_NVP(ID.group_lower), CEREAL_NVP(ID.Tr), CEREAL_NVP(ID.Res));
+		archive(CEREAL_NVP(ID.group), CEREAL_NVP(ID.group_lower), CEREAL_NVP(ID.tr), CEREAL_NVP(ID.res));
 	}
 
 	///MackeyFunctor cerealize
 	template<typename Archive, typename rank_t>
 	void serialize(Archive& archive, MackeyFunctor<rank_t>& Mack) {
-		archive(CEREAL_NVP(Mack.Groups), CEREAL_NVP(Mack.Tr), CEREAL_NVP(Mack.Res), CEREAL_NVP(Mack.Weyl), CEREAL_NVP(Mack.name));
+		archive(CEREAL_NVP(Mack.group), CEREAL_NVP(Mack.tr), CEREAL_NVP(Mack.res), CEREAL_NVP(Mack.act), CEREAL_NVP(Mack.name));
 	}
 
 
@@ -130,7 +130,7 @@ namespace mackey {
 	///Green cerealize
 	template<typename Archive, typename group_t>
 	void serialize(Archive& archive, Green<group_t>& G) {
-		archive(CEREAL_NVP(G.Groups), CEREAL_NVP(G.basis), CEREAL_NVP(G.boxID), CEREAL_NVP(G.first_number_selections), CEREAL_NVP(G.second_number_selections), CEREAL_NVP(G.isZero));
+		archive(CEREAL_NVP(G.group), CEREAL_NVP(G.basis), CEREAL_NVP(G.boxID), CEREAL_NVP(G.first_number_selections), CEREAL_NVP(G.second_number_selections), CEREAL_NVP(G.isZero));
 	}
 
 	///Mult_Table cerealize

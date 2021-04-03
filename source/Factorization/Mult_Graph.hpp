@@ -1,6 +1,7 @@
 #pragma once
 #include "Mult_Table.hpp"
 #include "Utility/Graph.hpp"
+#include <set>
 
 ///@file
 ///@brief Contains the multiplication graph.
@@ -45,6 +46,26 @@ namespace mackey {
 
 	protected:
 
+		/// @brief Stores the product of an element and a basic irreducible
+		struct Product_Element_Irreducible {
+			int deg;			///<The degree of the product
+			rank_t basis;			///<The product as a linear combination in G
+			Green<group_t> G;		///<The Green functor at the degree of the product
+		};
+
+		/// @brief		Returns the product of element and irreducible
+		/// @param	i	The element index
+		/// @param  j	The irreducible index
+		Product_Element_Irreducible product_element_irreducible(int i, int j);
+
+		/// @brief		Returns the product of element and 2 irreducibles
+		/// @param	i	The element index
+		/// @param  j1	The first irreducible index
+		/// @param  j2	The second irreducible index
+		Product_Element_Irreducible product_element_irreducible(int i, int j1, int j2);
+
+		/// @brief	Produces all candidates for the given product
+		std::vector<rank_t> product_candidates(const Product_Element_Irreducible&);
 
 		std::vector<rank_t> element; ///<An element (linear combination of generators) in each NonZeroHomology group of the table.
 		std::vector<int> tracker; ///< Maps element index to degree index
@@ -57,7 +78,7 @@ namespace mackey {
 
 	private:
 		void make();
-		std::vector<std::pair<int, int>> unidentified; ///All pairs (i,j) for which we couldn't identify the product i*j
+		std::set<std::pair<int, int>> unidentified; ///All pairs (i,j) for which we couldn't identify the product i*j
 		std::vector<std::vector<int>> zeroproduct; ///<zeroproduct[i] consists of all j for which i*j leads to 0.
 
 		void initialize();
@@ -71,7 +92,7 @@ namespace mackey {
 		int find_and_add_element(int, const rank_t&);
 
 		///Determines how and if i can be connected to j*i
-		auto determine_connection(const Green<group_t>&, int, int, int);
+		auto determine_connection(int, int, const Product_Element_Irreducible&);
 
 		///Connects i to j*i
 		void connect(const rank_t&, int, int, int);

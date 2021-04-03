@@ -463,11 +463,7 @@ This means that the program couldn't write \f$H_{3}(S^{3\sigma+\lambda_0-\lambda
 	std::cout << "The unknown 5 is =\n" << A2.unknown()[5].print()<< "\n\n";
 
 
-The case of \ref mackey::Factorization "Factorization" is even worse, and generally requires triple box products in order for identifications to work.
-
-On the other hand, if only the connectivity of the multiplication graph is desired, there is a specialized \ref mackey::MultConnectivity "MultConnectivity" for that exact purpose.
-
-Example:
+As for factorization, let us use the following basic irreducibles and sources over \f$C_8\f$:
 
 	typedef std::vector<std::vector<int>> vv;
 	typedef std::vector<std::string> vs;
@@ -476,21 +472,37 @@ Example:
 	vv sources2 = { {0,0,0,0}, {-3,0,0,-2} };
 	vs source_names2 = { "1", "s"};
 
-These are the sources and irreducibles for \f$C_8\f$. Running
+Then
 
-	auto F2 = Factorization<group2_t>(3, std::vector{ -5,-5,-5 }, std::vector{ 5, 5, 5 }, basic_irr2, basic_names2);
+	auto F2 = Factorization<group2_t>(3, {-5,-5,-5 }, { 5, 5, 5 }, basic_irr2, basic_names2);
 	F2.compute_with_sources(sources2, source_names2);
 	std::cout << F2.disconnected_degrees().size() << "\n\n";
 
-will print out 49, which is the number of generators that couldn't be connected to \f$1\f$ or \f$s\f$ due to identification problems.
+will print out 49, which is the number of generators that couldn't be connected to \f$1\f$ or \f$s\f$. There are two reasons that caused this:
 
-On the other hand:
+* The generators are close to the edge of the range of spheres hence multiplying them by the basic irreducibles takes the products outside of the
+range so they are not considered
+* Due to the presence of noncyclic groups, the program was not able to identify these generators (see \ref caveat).
 
-	auto MC = MultConnectivity<group2_t>(3, std::vector{ -5,-5,-5 }, std::vector{ 5, 5, 5 }, basic_irr2);
+The solution to the first problem is to increase the range of the spheres being used. To solve the second problem, we use triple products (see \ref caveat) via:
+
+	F2.pass_unidentified();
+
+Once we do that,
+
+	std::cout << F2.disconnected_degrees().size() << "\n\n";
+
+will print out 5.
+
+
+Finally, if only the connectivity of the multiplication graph is desired, there is a specialized \ref mackey::MultConnectivity "MultConnectivity" class for that exact purpose.\n
+For example, 
+
+	auto MC = MultConnectivity<group2_t>(F2);
 	MC.compute_with_sources(sources2);
 	std::cout << MC.disconnected_degrees.size() << "\n";
 
-will produce \f$0\f$, since the identification of the aforementioned generators is irrelevant as far as the connectivity is concerned.
+will print \f$0\f$, which means that all generators are connected to \f$1,s\f$.
 
 \subsection serial Serialization
 

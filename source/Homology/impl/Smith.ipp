@@ -113,7 +113,7 @@ namespace mackey {
 
 
 	template<typename _S, typename _R, typename _C>
-	Smith_Normal_Form<_S, _R, _C>::Smith_Normal_Form(const _S& A, bool do_P, bool do_Q, bool do_sort, bool do_verify)
+	SmithNormalForm<_S, _R, _C>::SmithNormalForm(const _S& A, bool do_P, bool do_Q, bool do_sort, bool do_verify)
 		: S(A), M(A.rows()), N(A.cols()), doP(do_verify ? 1 : do_P), doQ(do_verify ? 1 : do_Q) {
 		diagonal.resize(std::min(M, N));
 		if (doP) {
@@ -134,7 +134,7 @@ namespace mackey {
 	}
 
 	template<typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::compute() {
+	void SmithNormalForm<_S, _R, _C>::compute() {
 		initialize();
 		for (ind start = 0; start < std::min(M, N); start++) {
 			bool pivot_found = initial_pivoting_per_loop(start);
@@ -174,7 +174,7 @@ namespace mackey {
 	}
 
 	template<typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::sorter() {
+	void SmithNormalForm<_S, _R, _C>::sorter() {
 		std::vector<std::pair<scalar_t<S_t>, ind>> toBeSorted;
 		toBeSorted.reserve(diagonal.size());
 		for (ind i = 0; i < diagonal.size(); i++) {
@@ -198,7 +198,7 @@ namespace mackey {
 	}
 
 	template<typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::verify(const S_t& A) const {
+	void SmithNormalForm<_S, _R, _C>::verify(const S_t& A) const {
 		S_t R = P * A * Q;
 		if constexpr (SFINAE::is_Sparse<S_t>::value)
 			R.prune(0, 0);
@@ -222,7 +222,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	int64_t Smith_Normal_Form<_S, _R, _C>::metric(ind i, ind j) const {
+	int64_t SmithNormalForm<_S, _R, _C>::metric(ind i, ind j) const {
 		if constexpr (R_exists && C_exists)
 			return this->Rnorm[i] * this->Cnorm[j];
 		else if constexpr (C_exists)
@@ -232,7 +232,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::initialize() {
+	void SmithNormalForm<_S, _R, _C>::initialize() {
 		if constexpr (!sparse) {
 			if (doP) {
 				P.setIdentity();
@@ -258,7 +258,7 @@ namespace mackey {
 
 
 	template <typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::row_pivot(ind start, bool tail) {
+	void SmithNormalForm<_S, _R, _C>::row_pivot(ind start, bool tail) {
 		if (piv.row == start)
 			return;
 		if constexpr (R_exists)
@@ -287,7 +287,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::col_pivot(ind start, bool tail) {
+	void SmithNormalForm<_S, _R, _C>::col_pivot(ind start, bool tail) {
 		if (piv.col == start)
 			return;
 		if constexpr (C_exists)
@@ -314,7 +314,7 @@ namespace mackey {
 
 
 	template <typename _S, typename _R, typename _C>
-	bool Smith_Normal_Form<_S, _R, _C>::initial_pivoting_per_loop(ind start) {
+	bool SmithNormalForm<_S, _R, _C>::initial_pivoting_per_loop(ind start) {
 		if constexpr (!partial_pivoting && sparse) {
 			update(-1);
 			if (S.nonZeros() == start)
@@ -332,7 +332,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	bool Smith_Normal_Form<_S, _R, _C>::doneRow(ind start) {
+	bool SmithNormalForm<_S, _R, _C>::doneRow(ind start) {
 		if constexpr (!partial_pivoting && R_exists)
 			return (this->Rnorm[start] <= 1);
 		else if constexpr (!partial_pivoting)
@@ -342,7 +342,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	bool Smith_Normal_Form<_S, _R, _C>::doneCol(ind start) {
+	bool SmithNormalForm<_S, _R, _C>::doneCol(ind start) {
 		if constexpr (C_exists)
 			return (this->Cnorm[start] <= 1);
 		else
@@ -351,7 +351,7 @@ namespace mackey {
 
 	template <typename _S, typename _R, typename _C>
 	template<bool onlyrow, bool onlycol>
-	void Smith_Normal_Form<_S, _R, _C>::find_and_set_pivot(ind start) {
+	void SmithNormalForm<_S, _R, _C>::find_and_set_pivot(ind start) {
 		int64_t minNorm = 0;
 		if constexpr (!partial_pivoting) { //full pivoting. We follow the instructions in the template parameters onlyrow and onlycolumn as to find the pivot either in the whole matrix, or in the row/column start.
 			typedef std::conditional_t<!(sparse&& onlyrow), S_t, S_row_t> matrix_t;
@@ -401,7 +401,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::initialize_norms() { //only in full pivoting
+	void SmithNormalForm<_S, _R, _C>::initialize_norms() { //only in full pivoting
 		if constexpr (R_exists)
 			this->Rnorm.resize(M);
 		if constexpr (C_exists)
@@ -418,7 +418,7 @@ namespace mackey {
 
 	template <typename _S, typename _R, typename _C>
 	template<bool row, bool col, char increase_decrease_zero, typename iter>
-	void Smith_Normal_Form<_S, _R, _C>::update_norms(iter it) { //only in full pivoting
+	void SmithNormalForm<_S, _R, _C>::update_norms(iter it) { //only in full pivoting
 		constexpr bool doR = row && R_exists;
 		constexpr bool doC = col && C_exists;
 		if constexpr (std::is_integral_v<iter>) {
@@ -450,7 +450,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::eliminateCol(ind start) { //only in full pivoting
+	void SmithNormalForm<_S, _R, _C>::eliminateCol(ind start) { //only in full pivoting
 		if constexpr (!sparse) {
 			for (IteratorNNZ<S_t, 0, 1> it(S, start + 1, start); it; ++it) { //iterate through nonzeros in column=start, beginning with row=start+1
 				auto thequotient = implementation_details::floor_division(it.value(), piv.value);
@@ -483,7 +483,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::eliminateRow(ind start) {
+	void SmithNormalForm<_S, _R, _C>::eliminateRow(ind start) {
 		if constexpr (!sparse) {
 			for (IteratorNNZ<S_t, 1, 0> it(S, start, start + 1); it; ++it) { //iterate through nonzeros in row=start, beginning with col=start+1
 				auto thequotient = implementation_details::floor_division(it.value(), piv.value);
@@ -520,7 +520,7 @@ namespace mackey {
 
 
 	template <typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::renderPQ() { //only in partial pivoting + dense or any pivoting +sparse
+	void SmithNormalForm<_S, _R, _C>::renderPQ() { //only in partial pivoting + dense or any pivoting +sparse
 		if (doQ)
 			if constexpr (sparse) {
 				auto counter = implementation_details::expected_size(this->Qops, N);
@@ -550,7 +550,7 @@ namespace mackey {
 	}
 
 	template <typename _S, typename _R, typename _C>
-	void Smith_Normal_Form<_S, _R, _C>::update(int a) {
+	void SmithNormalForm<_S, _R, _C>::update(int a) {
 		if (a == 0) {
 			update(1);
 			update(-1);

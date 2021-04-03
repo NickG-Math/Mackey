@@ -35,7 +35,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Mackey
-   &#160;<span id="projectnumber">V3.1</span>
+   &#160;<span id="projectnumber">V3.3</span>
    </div>
    <div id="projectbrief">A C++ library for computing RO(G) graded homology</div>
   </td>
@@ -152,10 +152,10 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:a10f7c703d6901d337eafbfe89e9880ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sparse column major.  <a href="namespacemackey.html#a10f7c703d6901d337eafbfe89e9880ba">More...</a><br /></td></tr>
 <tr class="separator:a10f7c703d6901d337eafbfe89e9880ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4534a8859e18627bd3b04896bcb44b6a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4534a8859e18627bd3b04896bcb44b6a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a4534a8859e18627bd3b04896bcb44b6a">row_major_t</a> = std::conditional&lt; SFINAE::is_Dense&lt; T &gt;::<a class="el" href="Smith_8hpp.html#ae00d3a8860bb5190fe5da46e80529e70">value</a>, Eigen::Matrix&lt; scalar_t&lt; T &gt;, -1, -1, 1 &gt;, Eigen::SparseMatrix&lt; scalar_t&lt; T &gt;, 1, storage_t&lt; T &gt; &gt;&gt;</td></tr>
+<tr class="memitem:a4534a8859e18627bd3b04896bcb44b6a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a4534a8859e18627bd3b04896bcb44b6a">row_major_t</a> = std::conditional&lt; SFINAE::is_Dense&lt; T &gt;::value, Eigen::Matrix&lt; scalar_t&lt; T &gt;, -1, -1, 1 &gt;, Eigen::SparseMatrix&lt; scalar_t&lt; T &gt;, 1, storage_t&lt; T &gt; &gt;&gt;</td></tr>
 <tr class="separator:a4534a8859e18627bd3b04896bcb44b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d0366ad907e5c44c0c52e62daecce97"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a6d0366ad907e5c44c0c52e62daecce97"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a6d0366ad907e5c44c0c52e62daecce97">col_major_t</a> = std::conditional&lt; SFINAE::is_Dense&lt; T &gt;::<a class="el" href="Smith_8hpp.html#ae00d3a8860bb5190fe5da46e80529e70">value</a>, Eigen::Matrix&lt; scalar_t&lt; T &gt;, -1, -1 &gt;, Eigen::SparseMatrix&lt; scalar_t&lt; T &gt;, 0, storage_t&lt; T &gt; &gt;&gt;</td></tr>
+<tr class="memitem:a6d0366ad907e5c44c0c52e62daecce97"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a6d0366ad907e5c44c0c52e62daecce97">col_major_t</a> = std::conditional&lt; SFINAE::is_Dense&lt; T &gt;::value, Eigen::Matrix&lt; scalar_t&lt; T &gt;, -1, -1 &gt;, Eigen::SparseMatrix&lt; scalar_t&lt; T &gt;, 0, storage_t&lt; T &gt; &gt;&gt;</td></tr>
 <tr class="separator:a6d0366ad907e5c44c0c52e62daecce97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a865a9eae65ec355ee3df930350462068"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a865a9eae65ec355ee3df930350462068"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a865a9eae65ec355ee3df930350462068">triplet_t</a> = Eigen::Triplet&lt; scalar_t&lt; T &gt;, storage_t&lt; T &gt; &gt;</td></tr>

@@ -91,7 +91,6 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -101,9 +100,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Abelian_8hpp.html",
-"classmackey_1_1Factorization.html",
-"functions_func.html"
+"classmackey_1_1Factorization.html#a4ff7e403b982d11a35db4a6ab31fd2f0",
+"functions_d.html"
 ];
 
-var SYNCONMSG = '';
-var SYNCOFFMSG = '';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';

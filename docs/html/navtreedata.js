@@ -104,5 +104,5 @@ var NAVTREEINDEX =
 "functions_d.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = '';
+var SYNCOFFMSG = '';

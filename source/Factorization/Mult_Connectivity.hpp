@@ -2,8 +2,7 @@
 #include "Mult_Graph.hpp"
 
 ///@file
-///@brief Contains methods for the finding the connectivity of the multiplication graph should identification fail.
-
+///@brief Contains the class \ref mackey::MultConnectivity
 namespace mackey {
 
 	///	@brief	Finds the connectivity of the multiplication graph

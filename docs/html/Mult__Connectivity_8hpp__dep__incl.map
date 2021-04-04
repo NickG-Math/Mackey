@@ -1,4 +1,4 @@
 <map id="Mult_Connectivity.hpp" name="Mult_Connectivity.hpp">
-<area shape="rect" id="node1" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="5,5,172,32"/>
-<area shape="rect" id="node2" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="39,80,138,107"/>
+<area shape="rect" id="node1" title="Contains the class mackey::MultConnectivity." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="$Mackey_8hpp.html" title="Includes the entire library apart from Serialization/Cerealizer.hpp." alt="" coords="39,80,138,107"/>
 </map>

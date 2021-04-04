@@ -2,7 +2,7 @@
 #include <vector>
 #include "Types/Aliases.hpp"
 ///@file
-///@brief Contains the base class for all Smith implementations. 
+///@brief Contains the class \ref mackey::SmithNormalForm. 
 
 namespace mackey {
 

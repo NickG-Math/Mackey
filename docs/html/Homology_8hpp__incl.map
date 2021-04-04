@@ -1,9 +1,9 @@
 <map id="Homology.hpp" name="Homology.hpp">
-<area shape="rect" id="node1" title="Contains the Homology class and algorithms." alt="" coords="311,5,426,32"/>
-<area shape="rect" id="node2" href="$Chains_8hpp.html" title="Contains Chains and Junction classes for using chain complexes." alt="" coords="9,80,224,107"/>
+<area shape="rect" id="node1" title="Contains the class mackey::Homology." alt="" coords="311,5,426,32"/>
+<area shape="rect" id="node2" href="$Chains_8hpp.html" title="Contains the classes mackey::Arrow, mackey::Chains and mackey::Junction." alt="" coords="9,80,224,107"/>
 <area shape="rect" id="node6" href="$General_8hpp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="383,155,528,181"/>
-<area shape="rect" id="node15" href="$Smith_8hpp.html" title="Contains the base class for all Smith implementations." alt="" coords="270,155,358,181"/>
-<area shape="rect" id="node17" href="$Abelian_8hpp.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="406,80,505,107"/>
+<area shape="rect" id="node15" href="$Smith_8hpp.html" title="Contains the class mackey::SmithNormalForm." alt="" coords="270,155,358,181"/>
+<area shape="rect" id="node17" href="$Abelian_8hpp.html" title="Contains the class mackey::AbelianGroup." alt="" coords="406,80,505,107"/>
 <area shape="rect" id="node19" title=" " alt="" coords="529,80,673,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="27,229,89,256"/>
 <area shape="rect" id="node4" title=" " alt="" coords="23,155,99,181"/>

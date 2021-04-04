@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('Graph_8hpp.html',''); initResizable();
 <div class="title">Graph.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contains the classes <a class="el" href="classmackey_1_1Neighborhood.html">mackey::Neighborhood</a>, <a class="el" href="classmackey_1_1Graph.html">mackey::Graph</a>, <a class="el" href="classmackey_1_1ShortestPaths.html">mackey::ShortestPaths</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;queue&gt;</code><br />
 <code>#include &lt;set&gt;</code><br />
@@ -113,7 +116,8 @@ Include dependency graph for Graph.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Graph_8hpp__dep__incl.svg" width="336" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Graph_8hpp__dep__incl.svg" width="336" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div>
 <p><a href="Graph_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -129,20 +133,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1Graph.html">Graph&lt; _neighborhood &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A directed graph.  <a href="classmackey_1_1Graph.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html">ShortestPaths&lt; graph_t &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html">ShortestPaths&lt; graph_t, policy_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shortest paths from a collection of sources to all points in a graph.  <a href="classmackey_1_1ShortestPaths.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1Dijkstra.html">Dijkstra&lt; graph_t, policy_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classmackey_1_1Dijkstra.html" title="The Dijkstra algorithm producing the shortest paths.">Dijkstra</a> algorithm producing the shortest paths.  <a href="classmackey_1_1Dijkstra.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmackey_1_1bicolored__edge__with__id.html">bicolored_edge_with_id</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An edge with two possible colors and a numerical id.  <a href="structmackey_1_1bicolored__edge__with__id.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1MinLength.html">MinLength&lt; graph_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmackey_1_1Dijkstra.html" title="The Dijkstra algorithm producing the shortest paths.">Dijkstra</a> policy that minimizes the length of each path.  <a href="classmackey_1_1MinLength.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1MinColorsLength.html">MinColorsLength&lt; graph_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmackey_1_1Dijkstra.html" title="The Dijkstra algorithm producing the shortest paths.">Dijkstra</a> policy that minimizes the color alterations and length.  <a href="classmackey_1_1MinColorsLength.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -153,17 +145,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ace9bfedd2fd4649ba4c06ef354aa6577"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemackey.html#ace9bfedd2fd4649ba4c06ef354aa6577">operator&lt;&lt;</a> (std::ostream &amp;os, const bicolored_edge_with_id &amp;edge)</td></tr>
-<tr class="memdesc:ace9bfedd2fd4649ba4c06ef354aa6577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints edge to output stream in .dot format.  <a href="namespacemackey.html#ace9bfedd2fd4649ba4c06ef354aa6577">More...</a><br /></td></tr>
-<tr class="separator:ace9bfedd2fd4649ba4c06ef354aa6577"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fd45380270a089095616eee2b483c6f"><td class="memTemplParams" colspan="2">template&lt;typename neighborhood_t &gt; </td></tr>
-<tr class="memitem:a7fd45380270a089095616eee2b483c6f"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a7fd45380270a089095616eee2b483c6f">operator&lt;&lt;</a> (std::ostream &amp;os, const Graph&lt; neighborhood_t &gt; &amp;G)</td></tr>
-<tr class="separator:a7fd45380270a089095616eee2b483c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68e777dda7aad215b7655d0e0392735b"><td class="memTemplParams" colspan="2">template&lt;typename graph_t &gt; </td></tr>
-<tr class="memitem:a68e777dda7aad215b7655d0e0392735b"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a68e777dda7aad215b7655d0e0392735b">operator&lt;&lt;</a> (std::ostream &amp;os, const ShortestPaths&lt; graph_t &gt; &amp;D)</td></tr>
-<tr class="separator:a68e777dda7aad215b7655d0e0392735b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4641b2dacb76f90999a7a7322b06137"><td class="memTemplParams" colspan="2">template&lt;typename neighborhood_t &gt; </td></tr>
+<tr class="memitem:ad4641b2dacb76f90999a7a7322b06137"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#ad4641b2dacb76f90999a7a7322b06137">operator&lt;&lt;</a> (std::ostream &amp;os, const Graph&lt; neighborhood_t &gt; &amp;G)</td></tr>
+<tr class="separator:ad4641b2dacb76f90999a7a7322b06137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5762bcdf05cf484e2cb33ac304044748"><td class="memTemplParams" colspan="2">template&lt;typename graph_t , typename policy_t &gt; </td></tr>
+<tr class="memitem:a5762bcdf05cf484e2cb33ac304044748"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemackey.html#a5762bcdf05cf484e2cb33ac304044748">operator&lt;&lt;</a> (std::ostream &amp;os, const ShortestPaths&lt; graph_t, policy_t &gt; &amp;D)</td></tr>
+<tr class="separator:a5762bcdf05cf484e2cb33ac304044748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains the classes <a class="el" href="classmackey_1_1Neighborhood.html">mackey::Neighborhood</a>, <a class="el" href="classmackey_1_1Graph.html">mackey::Graph</a>, <a class="el" href="classmackey_1_1ShortestPaths.html">mackey::ShortestPaths</a>. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.18-->
 <!-- start footer part -->

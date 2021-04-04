@@ -2,7 +2,7 @@
 #include "Mult_Graph.hpp"
 
 ///@file
-///@brief Contains extra identification methods for the multiplication graph.
+///@brief Contains the class \ref mackey::MultIdentify
 
 namespace mackey {
 

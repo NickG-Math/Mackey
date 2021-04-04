@@ -1,7 +1,7 @@
 #pragma once
 
 ///	@file
-///	@brief Contains open MP macros if multithreading is desired in this library
+///	@brief Contains open MP macros that enable and control multithreading
 
 
 #if defined MACKEY_USE_OPEN_MP & defined _OPENMP

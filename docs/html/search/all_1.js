@@ -6,7 +6,7 @@ var searchData=
   ['basiselement_22',['basisElement',['../namespacemackey.html#ad3b1d9580df6361a01eb5f0ed123f9c4',1,'mackey']]],
   ['bc4s2_23',['BC4S2',['../classmackey_1_1BC4S2.html#a91da7a5496c2b7fef3259fc90e4dda3e',1,'mackey::BC4S2::BC4S2()'],['../classmackey_1_1BC4S2.html',1,'BC4S2&lt; group_t &gt;']]],
   ['bc4s2_2ehpp_24',['BC4S2.hpp',['../BC4S2_8hpp.html',1,'']]],
-  ['begin_25',['begin',['../classmackey_1_1InterpolatingVectorGenerator.html#ad5c959a538216a09ab28c5283585956c',1,'mackey::InterpolatingVectorGenerator::begin()'],['../classmackey_1_1Neighborhood.html#a23979fc3b0d806ce9927f16938fb00ce',1,'mackey::Neighborhood::begin()']]],
+  ['begin_25',['begin',['../classmackey_1_1Neighborhood.html#a23979fc3b0d806ce9927f16938fb00ce',1,'mackey::Neighborhood::begin()'],['../classmackey_1_1InterpolatingVectorGenerator.html#ad5c959a538216a09ab28c5283585956c',1,'mackey::InterpolatingVectorGenerator::begin()']]],
   ['beneath_20the_20surface_26',['Beneath the surface',['../algo.html',1,'']]],
   ['bicolored_5fedge_5fwith_5fid_27',['bicolored_edge_with_id',['../structmackey_1_1bicolored__edge__with__id.html#a5c3d91b140adb55e255a351b45268e83',1,'mackey::bicolored_edge_with_id::bicolored_edge_with_id()'],['../structmackey_1_1bicolored__edge__with__id.html',1,'bicolored_edge_with_id']]],
   ['boundary_28',['boundary',['../classmackey_1_1Homology.html#ab7f57eda7fd83a897aace9241c059617',1,'mackey::Homology::boundary()'],['../classmackey_1_1Space.html#ae76966a89420c2b74d22e0c1cba5ba05',1,'mackey::Space::boundary()']]],

@@ -1,6 +1,6 @@
 <map id="Morse.hpp" name="Morse.hpp">
-<area shape="rect" id="node1" title="Contains classes for (equivariant) Algebraic Morse Theory." alt="" coords="210,5,301,32"/>
-<area shape="rect" id="node2" href="$Chains_8hpp.html" title="Contains Chains and Junction classes for using chain complexes." alt="" coords="83,80,177,107"/>
+<area shape="rect" id="node1" title="Contains the classes mackey::AMT and mackey::EquivariantAMT." alt="" coords="210,5,301,32"/>
+<area shape="rect" id="node2" href="$Chains_8hpp.html" title="Contains the classes mackey::Arrow, mackey::Chains and mackey::Junction." alt="" coords="83,80,177,107"/>
 <area shape="rect" id="node6" title=" " alt="" coords="202,80,309,107"/>
 <area shape="rect" id="node7" title=" " alt="" coords="333,80,452,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,68,181"/>

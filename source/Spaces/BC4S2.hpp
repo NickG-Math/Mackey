@@ -1,5 +1,9 @@
 #pragma once
 #include "Space.hpp"
+
+///	@file
+///	@brief	Contains the class \ref mackey::BC4S2
+
 namespace mackey{
 
 ///	@brief	The spaces \f$B_{C_4}\Sigma_2(j)\f$

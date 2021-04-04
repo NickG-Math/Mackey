@@ -21,6 +21,7 @@ var files_dup =
     ] ],
     [ "General.hpp", "General_8hpp.html", "General_8hpp" ],
     [ "Graph.hpp", "Graph_8hpp.html", "Graph_8hpp" ],
+    [ "Graph_Policies.hpp", "Graph__Policies_8hpp.html", "Graph__Policies_8hpp" ],
     [ "Green.hpp", "Green_8hpp.html", "Green_8hpp" ],
     [ "Homology.hpp", "Homology_8hpp.html", [
       [ "Homology", "classmackey_1_1Homology.html", "classmackey_1_1Homology" ]

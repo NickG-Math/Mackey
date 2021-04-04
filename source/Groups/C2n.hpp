@@ -3,7 +3,7 @@
 #include "Utility/General.hpp"
 
 ///	@file
-///	@brief	Defines the groups \f$C_2^n\f$
+///	@brief	Defines the groups \f$C_{2^n}\f$ via \ref mackey::C2Power
 
 namespace mackey
 {

@@ -1,9 +1,10 @@
 <map id="Graph.hpp" name="Graph.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="98,5,187,32"/>
-<area shape="rect" id="node2" href="$Mult__Graph_8hpp.html" title="Contains the multiplication graph." alt="" coords="80,80,205,107"/>
-<area shape="rect" id="node3" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="5,229,139,256"/>
-<area shape="rect" id="node6" href="$Mult__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="163,229,330,256"/>
-<area shape="rect" id="node7" href="$Mult__Identify_8hpp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="76,155,209,181"/>
-<area shape="rect" id="node4" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="175,304,273,331"/>
-<area shape="rect" id="node5" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="15,304,129,331"/>
+<area shape="rect" id="node1" title="Contains the classes mackey::Neighborhood, mackey::Graph, mackey::ShortestPaths." alt="" coords="131,5,220,32"/>
+<area shape="rect" id="node2" href="$Graph__Policies_8hpp.html" title="Contains the classes mackey::bicolored_edge_with_id, mackey::MinLength, mackey::MinColorsLength." alt="" coords="102,80,249,107"/>
+<area shape="rect" id="node3" href="$Mult__Graph_8hpp.html" title="Contains the class mackey::MultGraph." alt="" coords="113,155,238,181"/>
+<area shape="rect" id="node4" href="$Mult__Connectivity_8hpp.html" title="Contains the class mackey::MultConnectivity." alt="" coords="5,304,172,331"/>
+<area shape="rect" id="node6" href="$Mult__Identify_8hpp.html" title="Contains the class mackey::MultIdentify." alt="" coords="178,229,311,256"/>
+<area shape="rect" id="node5" href="$Mackey_8hpp.html" title="Includes the entire library apart from Serialization/Cerealizer.hpp." alt="" coords="62,379,161,405"/>
+<area shape="rect" id="node7" href="$Factorization_8hpp.html" title="Contains the class mackey::Factorization." alt="" coords="197,304,330,331"/>
+<area shape="rect" id="node8" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations via cereal." alt="" coords="206,379,321,405"/>
 </map>

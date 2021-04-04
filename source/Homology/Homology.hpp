@@ -5,7 +5,7 @@
 #include "Abelian.hpp"
 
 ///@file
-///@brief Contains the Homology class and algorithms.
+///@brief Contains the class \ref mackey::Homology.
 
 namespace mackey {
 

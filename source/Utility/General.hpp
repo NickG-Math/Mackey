@@ -4,8 +4,8 @@
 #include <numeric> //lcm
 #include <iostream> //cerr
 
-///@file
-///@brief Contains general functions and vector overloads independent of everything else.
+///	@file
+///	@brief Contains general functions and vector overloads independent of everything else.
 
 ///Everything in this library is under this namespace
 namespace mackey

@@ -1,5 +1,5 @@
 <map id="Smith.hpp" name="Smith.hpp">
-<area shape="rect" id="node1" title="Contains the base class for all Smith implementations." alt="" coords="142,5,230,32"/>
+<area shape="rect" id="node1" title="Contains the class mackey::SmithNormalForm." alt="" coords="142,5,230,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="29,80,92,107"/>
 <area shape="rect" id="node3" href="$Aliases_8hpp.html" title="Contains general template aliases." alt="" coords="117,80,255,107"/>
 <area shape="rect" id="node8" title=" " alt="" coords="279,80,397,107"/>

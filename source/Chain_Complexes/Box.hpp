@@ -3,7 +3,7 @@
 #include "Chains.hpp" 
 #include "ChangeBasis.hpp"
 ///@file
-///@brief Contains the construction of box products of Chains.
+///@brief Contains the class \ref mackey::Tensor
 
 
 namespace mackey {

@@ -1,5 +1,6 @@
 /// @file
-/// @brief Includes the entire library
+/// @brief Includes the entire library apart from \ref Serialization/Cerealizer.hpp
+/// @note  Include \ref Serialization/Cerealizer.hpp only if you have cereal 
 #pragma once
 #include "Coefficients/Z_n.hpp"
 #include "Groups/C2n.hpp"

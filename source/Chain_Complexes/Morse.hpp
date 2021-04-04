@@ -3,7 +3,7 @@
 #include <Eigen/Sparse>
 
 ///@file
-///@brief Contains classes for (equivariant) Algebraic Morse Theory.
+///@brief Contains the classes \ref mackey::AMT and \ref mackey::EquivariantAMT
 
 namespace mackey {
 

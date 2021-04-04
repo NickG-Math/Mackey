@@ -58,7 +58,7 @@ var sectionId = 'dynsection-0';
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Defines group .">
+<g id="a_node1"><a xlink:title="Defines group &#160;via mackey::C_4.">
 <polygon fill="#bfbfbf" stroke="black" points="314.5,-224.5 314.5,-243.5 364.5,-243.5 364.5,-224.5 314.5,-224.5"/>
 <text text-anchor="middle" x="339.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">C4.hpp</text>
 </a>
@@ -67,7 +67,7 @@ var sectionId = 'dynsection-0';
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="Chains_8hpp.html" target="_top" xlink:title="Contains Chains and Junction classes for using chain complexes.">
+<g id="a_node2"><a xlink:href="Chains_8hpp.html" target="_top" xlink:title="Contains the classes mackey::Arrow, mackey::Chains and mackey::Junction.">
 <polygon fill="white" stroke="black" points="92,-168.5 92,-187.5 253,-187.5 253,-168.5 92,-168.5"/>
 <text text-anchor="middle" x="172.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">Chain_Complexes/Chains.hpp</text>
 </a>

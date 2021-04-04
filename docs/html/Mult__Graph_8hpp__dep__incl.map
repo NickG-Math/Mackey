@@ -1,8 +1,8 @@
 <map id="Mult_Graph.hpp" name="Mult_Graph.hpp">
-<area shape="rect" id="node1" title="Contains the multiplication graph." alt="" coords="80,5,205,32"/>
-<area shape="rect" id="node2" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="5,155,139,181"/>
-<area shape="rect" id="node5" href="$Mult__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="163,155,330,181"/>
-<area shape="rect" id="node6" href="$Mult__Identify_8hpp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="76,80,209,107"/>
-<area shape="rect" id="node3" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="175,229,273,256"/>
-<area shape="rect" id="node4" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="15,229,129,256"/>
+<area shape="rect" id="node1" title="Contains the class mackey::MultGraph." alt="" coords="113,5,238,32"/>
+<area shape="rect" id="node2" href="$Mult__Connectivity_8hpp.html" title="Contains the class mackey::MultConnectivity." alt="" coords="5,155,172,181"/>
+<area shape="rect" id="node4" href="$Mult__Identify_8hpp.html" title="Contains the class mackey::MultIdentify." alt="" coords="178,80,311,107"/>
+<area shape="rect" id="node3" href="$Mackey_8hpp.html" title="Includes the entire library apart from Serialization/Cerealizer.hpp." alt="" coords="62,229,161,256"/>
+<area shape="rect" id="node5" href="$Factorization_8hpp.html" title="Contains the class mackey::Factorization." alt="" coords="197,155,330,181"/>
+<area shape="rect" id="node6" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations via cereal." alt="" coords="206,229,321,256"/>
 </map>

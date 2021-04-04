@@ -1,11 +1,11 @@
 <map id="Levels.hpp" name="Levels.hpp">
-<area shape="rect" id="node1" title="Contains the methods for transfering, restricting and act&#45;group&#45;acting." alt="" coords="412,5,504,32"/>
-<area shape="rect" id="node2" href="$Homology_8hpp.html" title="Contains the Homology class and algorithms." alt="" coords="275,80,462,107"/>
+<area shape="rect" id="node1" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="412,5,504,32"/>
+<area shape="rect" id="node2" href="$Homology_8hpp.html" title="Contains the class mackey::Homology." alt="" coords="275,80,462,107"/>
 <area shape="rect" id="node21" title=" " alt="" coords="487,80,608,107"/>
-<area shape="rect" id="node3" href="$Chains_8hpp.html" title="Contains Chains and Junction classes for using chain complexes." alt="" coords="9,155,224,181"/>
+<area shape="rect" id="node3" href="$Chains_8hpp.html" title="Contains the classes mackey::Arrow, mackey::Chains and mackey::Junction." alt="" coords="9,155,224,181"/>
 <area shape="rect" id="node7" href="$General_8hpp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="383,229,528,256"/>
-<area shape="rect" id="node16" href="$Smith_8hpp.html" title="Contains the base class for all Smith implementations." alt="" coords="270,229,358,256"/>
-<area shape="rect" id="node18" href="$Abelian_8hpp.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="406,155,505,181"/>
+<area shape="rect" id="node16" href="$Smith_8hpp.html" title="Contains the class mackey::SmithNormalForm." alt="" coords="270,229,358,256"/>
+<area shape="rect" id="node18" href="$Abelian_8hpp.html" title="Contains the class mackey::AbelianGroup." alt="" coords="406,155,505,181"/>
 <area shape="rect" id="node20" title=" " alt="" coords="529,155,673,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="27,304,89,331"/>
 <area shape="rect" id="node5" title=" " alt="" coords="23,229,99,256"/>

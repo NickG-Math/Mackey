@@ -58,7 +58,7 @@ var sectionId = 'dynsection-0';
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Contains the construction of box products of Chains.">
+<g id="a_node1"><a xlink:title="Contains the class mackey::Tensor.">
 <polygon fill="#bfbfbf" stroke="black" points="592,-224.5 592,-243.5 648,-243.5 648,-224.5 592,-224.5"/>
 <text text-anchor="middle" x="620" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Box.hpp</text>
 </a>
@@ -82,7 +82,7 @@ var sectionId = 'dynsection-0';
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="Chains_8hpp.html" target="_top" xlink:title="Contains Chains and Junction classes for using chain complexes.">
+<g id="a_node12"><a xlink:href="Chains_8hpp.html" target="_top" xlink:title="Contains the classes mackey::Arrow, mackey::Chains and mackey::Junction.">
 <polygon fill="white" stroke="black" points="490.5,-168.5 490.5,-187.5 561.5,-187.5 561.5,-168.5 490.5,-168.5"/>
 <text text-anchor="middle" x="526" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">Chains.hpp</text>
 </a>
@@ -97,7 +97,7 @@ var sectionId = 'dynsection-0';
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="ChangeBasis_8hpp.html" target="_top" xlink:title="Contains the construction of the change of basis matrices.">
+<g id="a_node15"><a xlink:href="ChangeBasis_8hpp.html" target="_top" xlink:title="Contains the class mackey::ChangeBasis.">
 <polygon fill="white" stroke="black" points="622.5,-168.5 622.5,-187.5 723.5,-187.5 723.5,-168.5 622.5,-168.5"/>
 <text text-anchor="middle" x="673" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChangeBasis.hpp</text>
 </a>

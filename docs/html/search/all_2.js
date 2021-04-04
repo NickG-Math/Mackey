@@ -29,9 +29,8 @@ var searchData=
   ['col_5fvector_5ft_57',['col_vector_t',['../namespacemackey.html#a02087359ab2d1ffbe4faf021d300a061',1,'mackey']]],
   ['color_58',['color',['../structmackey_1_1bicolored__edge__with__id.html#ae2d77c102b2d2d3f0881c0e2bcdbe777',1,'mackey::bicolored_edge_with_id']]],
   ['combinations_59',['combinations',['../namespacemackey.html#a5a44215e7be6d01ef71e522d7738554b',1,'mackey']]],
-  ['compute_5fwith_5froot_60',['compute_with_root',['../classmackey_1_1Dijkstra.html#a40542787e528caa6b27d28884936054f',1,'mackey::Dijkstra']]],
+  ['compute_5fwith_5froot_60',['compute_with_root',['../classmackey_1_1ShortestPaths.html#a40542787e528caa6b27d28884936054f',1,'mackey::ShortestPaths']]],
   ['compute_5fwith_5fsources_61',['compute_with_sources',['../classmackey_1_1MultConnectivity.html#a8a66480d152b1bb08a39c87af07abcf2',1,'mackey::MultConnectivity::compute_with_sources()'],['../classmackey_1_1Factorization.html#ae3a263bfadb87b063f4e55a0cb80de47',1,'mackey::Factorization::compute_with_sources()']]],
   ['const_5fiterator_62',['const_iterator',['../structmackey_1_1Neighborhood_1_1const__iterator.html#a6afa4cd50251c4155ef701e51bb6c766',1,'mackey::Neighborhood::const_iterator::const_iterator()'],['../classmackey_1_1InterpolatingVectorGenerator_1_1const__iterator.html',1,'InterpolatingVectorGenerator&lt; T &gt;::const_iterator'],['../structmackey_1_1Neighborhood_1_1const__iterator.html',1,'Neighborhood&lt; _node, _edge, container_t, Args &gt;::const_iterator']]],
-  ['critical_63',['critical',['../classmackey_1_1AMT.html#afd2652e1ac0e1e6148c093607f9d1c84',1,'mackey::AMT']]],
-  ['current_64',['current',['../classmackey_1_1Dijkstra.html#a86cbd9c1c65321efc2b3c9d7826f87ae',1,'mackey::Dijkstra']]]
+  ['critical_63',['critical',['../classmackey_1_1AMT.html#afd2652e1ac0e1e6148c093607f9d1c84',1,'mackey::AMT']]]
 ];

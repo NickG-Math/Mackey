@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Contains the class describing Mackey Functors.">
+<g id="a_node1"><a xlink:title="Contains the class mackey::MackeyFunctor.">
 <polygon fill="#bfbfbf" stroke="black" points="55,-280.5 55,-299.5 165,-299.5 165,-280.5 55,-280.5"/>
 <text text-anchor="middle" x="110" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">MackeyFunctor.hpp</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="Abelian_8hpp.html" target="_top" xlink:title="Contains the methods for finding the automorphisms of finitely generated abelian groups.">
+<g id="a_node5"><a xlink:href="Abelian_8hpp.html" target="_top" xlink:title="Contains the class mackey::AbelianGroup.">
 <polygon fill="white" stroke="black" points="138,-224.5 138,-243.5 266,-243.5 266,-224.5 138,-224.5"/>
 <text text-anchor="middle" x="202" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Homology/Abelian.hpp</text>
 </a>

@@ -3,7 +3,7 @@
 #include "Mackey_Functors/MackeyFunctor.hpp"
 
 ///@file
-///@brief Contains the identification classes
+///@brief Contains the classes \ref mackey::IDGenerators and \ref mackey::internal::IDGeneratorCompute 
 
 
 namespace mackey {

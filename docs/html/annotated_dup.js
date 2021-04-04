@@ -22,6 +22,12 @@ var annotated_dup =
       [ "MultIdentify", "classmackey_1_1MultIdentify.html", "classmackey_1_1MultIdentify" ],
       [ "MultTableData", "structmackey_1_1MultTableData.html", "structmackey_1_1MultTableData" ],
       [ "MultTable", "classmackey_1_1MultTable.html", "classmackey_1_1MultTable" ],
+      [ "Neighborhood", "classmackey_1_1Neighborhood.html", "classmackey_1_1Neighborhood" ],
+      [ "Graph", "classmackey_1_1Graph.html", "classmackey_1_1Graph" ],
+      [ "ShortestPaths", "classmackey_1_1ShortestPaths.html", "classmackey_1_1ShortestPaths" ],
+      [ "bicolored_edge_with_id", "structmackey_1_1bicolored__edge__with__id.html", "structmackey_1_1bicolored__edge__with__id" ],
+      [ "MinLength", "classmackey_1_1MinLength.html", "classmackey_1_1MinLength" ],
+      [ "MinColorsLength", "classmackey_1_1MinColorsLength.html", "classmackey_1_1MinColorsLength" ],
       [ "C2Power", "structmackey_1_1C2Power.html", null ],
       [ "C2Power< N, _rank, _diff >", "structmackey_1_1C2Power_3_01N_00_01__rank_00_01__diff_01_4.html", "structmackey_1_1C2Power_3_01N_00_01__rank_00_01__diff_01_4" ],
       [ "C2Power< N, coeff >", "structmackey_1_1C2Power_3_01N_00_01coeff_01_4.html", "structmackey_1_1C2Power_3_01N_00_01coeff_01_4" ],
@@ -42,13 +48,6 @@ var annotated_dup =
       [ "Hash<>", "classmackey_1_1Hash_3_4.html", "classmackey_1_1Hash_3_4" ],
       [ "Hash< T >", "classmackey_1_1Hash_3_01T_01_4.html", "classmackey_1_1Hash_3_01T_01_4" ],
       [ "Hash< T, T >", "classmackey_1_1Hash_3_01T_00_01T_01_4.html", "classmackey_1_1Hash_3_01T_00_01T_01_4" ],
-      [ "IteratorNNZ", "classmackey_1_1IteratorNNZ.html", "classmackey_1_1IteratorNNZ" ],
-      [ "Neighborhood", "classmackey_1_1Neighborhood.html", "classmackey_1_1Neighborhood" ],
-      [ "Graph", "classmackey_1_1Graph.html", "classmackey_1_1Graph" ],
-      [ "ShortestPaths", "classmackey_1_1ShortestPaths.html", "classmackey_1_1ShortestPaths" ],
-      [ "Dijkstra", "classmackey_1_1Dijkstra.html", "classmackey_1_1Dijkstra" ],
-      [ "bicolored_edge_with_id", "structmackey_1_1bicolored__edge__with__id.html", "structmackey_1_1bicolored__edge__with__id" ],
-      [ "MinLength", "classmackey_1_1MinLength.html", "classmackey_1_1MinLength" ],
-      [ "MinColorsLength", "classmackey_1_1MinColorsLength.html", "classmackey_1_1MinColorsLength" ]
+      [ "IteratorNNZ", "classmackey_1_1IteratorNNZ.html", "classmackey_1_1IteratorNNZ" ]
     ] ]
 ];

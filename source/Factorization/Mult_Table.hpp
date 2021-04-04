@@ -4,7 +4,7 @@
 #include "Spaces/Point.hpp"
 
 ///	@file
-///	@brief Contains the classes \ref mackey::MultTableData and \ref mackey::MultTable that form the multiplication table.
+///	@brief Contains the classes \ref mackey::MultTableData and \ref mackey::MultTable
 
 namespace mackey
 {

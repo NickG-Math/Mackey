@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['idgeneratorcompute_382',['IDGeneratorCompute',['../classmackey_1_1internal_1_1IDGeneratorCompute.html',1,'mackey::internal']]],
-  ['idgenerators_383',['IDGenerators',['../classmackey_1_1IDGenerators.html',1,'mackey']]],
-  ['interpolatingvectorgenerator_384',['InterpolatingVectorGenerator',['../classmackey_1_1InterpolatingVectorGenerator.html',1,'mackey']]],
-  ['iteratornnz_385',['IteratorNNZ',['../classmackey_1_1IteratorNNZ.html',1,'mackey']]]
+  ['junction_383',['Junction',['../classmackey_1_1Junction.html',1,'mackey']]],
+  ['junction_3c_20rank_5ft_2c_20diff_5ft_20_3e_384',['Junction&lt; rank_t, diff_t &gt;',['../classmackey_1_1Junction.html',1,'mackey']]]
 ];

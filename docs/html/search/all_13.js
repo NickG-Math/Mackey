@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['tableinput_324',['TableInput',['../classmackey_1_1internal_1_1IDGeneratorCompute.html#aa9b93b7c7f692b237593457fa7dc78a8',1,'mackey::internal::IDGeneratorCompute']]],
-  ['tail_325',['tail',['../namespacemackey.html#ab8a6b706d87091c2fbf0ff229044e4c4',1,'mackey']]],
-  ['tensor_326',['Tensor',['../classmackey_1_1Tensor.html',1,'Tensor&lt; _output_t, _optional_t &gt;'],['../structmackey_1_1Arrow.html#af4a07134de1525172d3c60c57e8f1496',1,'mackey::Arrow::Tensor()'],['../classmackey_1_1Junction.html#af4a07134de1525172d3c60c57e8f1496',1,'mackey::Junction::Tensor()'],['../classmackey_1_1Tensor.html#afc2727b6f5201f044c89c0db4da200ee',1,'mackey::Tensor::Tensor(const _input_t &amp;A, const _input_t &amp;B, int i=-1)']]],
-  ['tensor_327',['tensor',['../classmackey_1_1Tensor.html#ab5c2e82e2b715b71c96810152bcaa43a',1,'mackey::Tensor::tensor()'],['../classmackey_1_1Tensor.html#a13d2c2c8e8e443dc3e3c46c403496239',1,'mackey::Tensor::tensor() const']]],
+  ['tableinput_323',['TableInput',['../classmackey_1_1internal_1_1IDGeneratorCompute.html#aa9b93b7c7f692b237593457fa7dc78a8',1,'mackey::internal::IDGeneratorCompute']]],
+  ['tail_324',['tail',['../namespacemackey.html#ab8a6b706d87091c2fbf0ff229044e4c4',1,'mackey']]],
+  ['tensor_325',['Tensor',['../classmackey_1_1Tensor.html',1,'mackey']]],
+  ['tensor_326',['tensor',['../classmackey_1_1Tensor.html#ab5c2e82e2b715b71c96810152bcaa43a',1,'mackey::Tensor::tensor()'],['../classmackey_1_1Tensor.html#a13d2c2c8e8e443dc3e3c46c403496239',1,'mackey::Tensor::tensor() const']]],
+  ['tensor_327',['Tensor',['../structmackey_1_1Arrow.html#af4a07134de1525172d3c60c57e8f1496',1,'mackey::Arrow::Tensor()'],['../classmackey_1_1Junction.html#af4a07134de1525172d3c60c57e8f1496',1,'mackey::Junction::Tensor()'],['../classmackey_1_1Tensor.html#afc2727b6f5201f044c89c0db4da200ee',1,'mackey::Tensor::Tensor()']]],
   ['test_5fdense_328',['test_Dense',['../namespacemackey_1_1SFINAE.html#ad430daf46085f8ba13c3a08f9ad7139a',1,'mackey::SFINAE::test_Dense(Eigen::MatrixBase&lt; T &gt; *)'],['../namespacemackey_1_1SFINAE.html#a1772d47ecf7324218bee7cc415fba8f1',1,'mackey::SFINAE::test_Dense(...)']]],
   ['test_5ffinite_5fcyclic_329',['test_finite_cyclic',['../namespacemackey_1_1SFINAE.html#a3530b08eb6b782961947beb23617939f',1,'mackey::SFINAE::test_finite_cyclic(Z_mod&lt; N, T &gt;)'],['../namespacemackey_1_1SFINAE.html#a08476b914e27f4e5cda138976127963e',1,'mackey::SFINAE::test_finite_cyclic(...)']]],
   ['test_5foperator_5fevaluation_5fint_5fint_330',['test_operator_evaluation_int_int',['../namespacemackey_1_1SFINAE.html#a9a38e52fd0a95d224b7dc33013898983',1,'mackey::SFINAE::test_operator_evaluation_int_int(...)'],['../namespacemackey_1_1SFINAE.html#a467d4ed1391cad51a1dfd0688593a178',1,'mackey::SFINAE::test_operator_evaluation_int_int(int)']]],

@@ -1,10 +1,9 @@
 #pragma once
 #include "Mult_Table.hpp"
-#include "Utility/Graph.hpp"
-#include <set>
+#include "Graph/Graph_Policies.hpp"
 
 ///@file
-///@brief Contains the multiplication graph.
+///@brief Contains the class \ref mackey::MultGraph
 
 
 namespace mackey {

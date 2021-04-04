@@ -5,7 +5,7 @@
 #include "Homology/Abelian.hpp"
 
 ///@file
-///@brief Contains the class describing Mackey Functors.
+///@brief Contains the class \ref mackey::MackeyFunctor
 
 namespace mackey
 {

@@ -1,9 +1,8 @@
 #pragma once
-#include "Mult_Graph.hpp"
 #include "Mult_Identify.hpp"
 
 ///@file
-///@brief Contains the multiplication graph and the methods for factorizing generators.
+///@brief Contains the class \ref mackey::Factorization
 
 namespace mackey {
 

@@ -12,7 +12,8 @@
 #include "Factorization/Factorization.hpp"
 
 ///@file
-///@brief Contains the methods for serializing the results of our computations (before their interpretation) via cereal
+///@brief Contains the methods for serializing the results of our computations via cereal
+///@note You must include cereal in your path amongst your compiler flags for this to compile
 
 ///Consult the Cereal documentation for this
 namespace cereal

@@ -1,6 +1,6 @@
 <map id="C4.hpp" name="C4.hpp">
-<area shape="rect" id="node1" title="Defines group ." alt="" coords="425,5,491,32"/>
-<area shape="rect" id="node2" href="$Chains_8hpp.html" title="Contains Chains and Junction classes for using chain complexes." alt="" coords="128,80,343,107"/>
+<area shape="rect" id="node1" title="Defines group &#160;via mackey::C_4." alt="" coords="425,5,491,32"/>
+<area shape="rect" id="node2" href="$Chains_8hpp.html" title="Contains the classes mackey::Arrow, mackey::Chains and mackey::Junction." alt="" coords="128,80,343,107"/>
 <area shape="rect" id="node6" href="$General_8hpp.html" title="Contains general functions and vector overloads independent of everything else." alt="" coords="385,80,531,107"/>
 <area shape="rect" id="node15" title=" " alt="" coords="555,80,651,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="253,155,316,181"/>

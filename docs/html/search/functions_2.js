@@ -5,7 +5,7 @@ var searchData=
   ['changebasis_463',['ChangeBasis',['../structmackey_1_1ChangeBasis.html#abe963609107211671ea812d5c8032b42',1,'mackey::ChangeBasis']]],
   ['col_464',['col',['../classmackey_1_1IteratorNNZ.html#a615d462e0eb27093bc365fc2df6d1072',1,'mackey::IteratorNNZ']]],
   ['combinations_465',['combinations',['../namespacemackey.html#a5a44215e7be6d01ef71e522d7738554b',1,'mackey']]],
-  ['compute_5fwith_5froot_466',['compute_with_root',['../classmackey_1_1Dijkstra.html#a40542787e528caa6b27d28884936054f',1,'mackey::Dijkstra']]],
+  ['compute_5fwith_5froot_466',['compute_with_root',['../classmackey_1_1ShortestPaths.html#a40542787e528caa6b27d28884936054f',1,'mackey::ShortestPaths']]],
   ['compute_5fwith_5fsources_467',['compute_with_sources',['../classmackey_1_1Factorization.html#ae3a263bfadb87b063f4e55a0cb80de47',1,'mackey::Factorization::compute_with_sources()'],['../classmackey_1_1MultConnectivity.html#a8a66480d152b1bb08a39c87af07abcf2',1,'mackey::MultConnectivity::compute_with_sources()']]],
   ['const_5fiterator_468',['const_iterator',['../structmackey_1_1Neighborhood_1_1const__iterator.html#a6afa4cd50251c4155ef701e51bb6c766',1,'mackey::Neighborhood::const_iterator']]]
 ];

@@ -3,7 +3,7 @@
 #include "Spaces/Point.hpp"
 #include <iomanip>
 ///@file
-///@brief Contains the class for presenting the additive structure of the RO(G) homology. 
+///@brief Contains the class \ref mackey::AdditiveStructure 
 
 namespace mackey {
 

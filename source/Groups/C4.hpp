@@ -3,7 +3,7 @@
 #include "Utility/General.hpp"
 
 ///	@file
-///	@brief		Defines group \f$C_4\f$
+///	@brief		Defines group \f$C_4\f$ via \ref mackey::C_4
 ///	@details	Implementation is simpler compared to all \f$C_{2^n}\f$
 
 //First set the variables

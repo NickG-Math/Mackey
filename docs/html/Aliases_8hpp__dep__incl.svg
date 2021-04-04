@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 515;
+var viewWidth = 479;
 var viewHeight = 700;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,432 +54,426 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>Aliases.hpp</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-696 511,-696 511,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-696 475,-696 475,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="Contains general template aliases.">
-<polygon fill="#bfbfbf" stroke="black" points="158.5,-672.5 158.5,-691.5 231.5,-691.5 231.5,-672.5 158.5,-672.5"/>
-<text text-anchor="middle" x="195" y="-679.5" font-family="Helvetica,sans-Serif" font-size="10.00">Aliases.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="315.5,-672.5 315.5,-691.5 388.5,-691.5 388.5,-672.5 315.5,-672.5"/>
+<text text-anchor="middle" x="352" y="-679.5" font-family="Helvetica,sans-Serif" font-size="10.00">Aliases.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="Smith_8hpp.html" target="_top" xlink:title="Contains the base class for all Smith implementations.">
-<polygon fill="white" stroke="black" points="118,-616.5 118,-635.5 184,-635.5 184,-616.5 118,-616.5"/>
-<text text-anchor="middle" x="151" y="-623.5" font-family="Helvetica,sans-Serif" font-size="10.00">Smith.hpp</text>
+<g id="a_node2"><a xlink:href="Smith_8hpp.html" target="_top" xlink:title="Contains the class mackey::SmithNormalForm.">
+<polygon fill="white" stroke="black" points="372,-616.5 372,-635.5 438,-635.5 438,-616.5 372,-616.5"/>
+<text text-anchor="middle" x="405" y="-623.5" font-family="Helvetica,sans-Serif" font-size="10.00">Smith.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M181.27,-664.14C173.6,-654.74 164.37,-643.4 158.13,-635.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="178.7,-666.54 187.73,-672.08 184.13,-662.12 178.7,-666.54"/>
+<path fill="none" stroke="midnightblue" d="M367.98,-664.72C377.32,-655.2 388.75,-643.56 396.41,-635.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="365.26,-662.49 360.75,-672.08 370.25,-667.4 365.26,-662.49"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
 <g id="a_node19"><a xlink:href="General_8hpp.html" target="_top" xlink:title="Contains general functions and vector overloads independent of everything else.">
-<polygon fill="white" stroke="black" points="210,-616.5 210,-635.5 286,-635.5 286,-616.5 210,-616.5"/>
-<text text-anchor="middle" x="248" y="-623.5" font-family="Helvetica,sans-Serif" font-size="10.00">General.hpp</text>
+<polygon fill="white" stroke="black" points="270,-616.5 270,-635.5 346,-635.5 346,-616.5 270,-616.5"/>
+<text text-anchor="middle" x="308" y="-623.5" font-family="Helvetica,sans-Serif" font-size="10.00">General.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node19 -->
-<g id="edge24" class="edge">
+<g id="edge23" class="edge">
 <title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M210.98,-664.72C220.32,-655.2 231.75,-643.56 239.41,-635.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="208.26,-662.49 203.75,-672.08 213.25,-667.4 208.26,-662.49"/>
+<path fill="none" stroke="midnightblue" d="M338.27,-664.14C330.6,-654.74 321.37,-643.4 315.13,-635.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="335.7,-666.54 344.73,-672.08 341.13,-662.12 335.7,-666.54"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="Homology_8hpp.html" target="_top" xlink:title="Contains the Homology class and algorithms.">
-<polygon fill="white" stroke="black" points="128,-504.5 128,-523.5 214,-523.5 214,-504.5 128,-504.5"/>
-<text text-anchor="middle" x="171" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">Homology.hpp</text>
+<g id="a_node3"><a xlink:href="Homology_8hpp.html" target="_top" xlink:title="Contains the class mackey::Homology.">
+<polygon fill="white" stroke="black" points="338,-504.5 338,-523.5 424,-523.5 424,-504.5 338,-504.5"/>
+<text text-anchor="middle" x="381" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">Homology.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M153.57,-606.08C155.43,-593.08 158.1,-575.45 161,-560 163.39,-547.26 166.76,-532.62 168.91,-523.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="150.09,-605.75 152.17,-616.14 157.02,-606.72 150.09,-605.75"/>
+<path fill="none" stroke="midnightblue" d="M402.83,-605.99C401.16,-592.96 398.54,-575.31 395,-560 392.02,-547.09 387.2,-532.5 384.07,-523.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="399.38,-606.58 404.06,-616.09 406.33,-605.74 399.38,-606.58"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="Identify_8hpp.html" target="_top" xlink:title="Contains the identification classes.">
-<polygon fill="white" stroke="black" points="45.5,-448.5 45.5,-467.5 118.5,-467.5 118.5,-448.5 45.5,-448.5"/>
-<text text-anchor="middle" x="82" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">Identify.hpp</text>
+<g id="a_node4"><a xlink:href="Identify_8hpp.html" target="_top" xlink:title="Contains the classes mackey::IDGenerators and mackey::internal::IDGeneratorCompute">
+<polygon fill="white" stroke="black" points="235.5,-448.5 235.5,-467.5 308.5,-467.5 308.5,-448.5 235.5,-448.5"/>
+<text text-anchor="middle" x="272" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">Identify.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M147.76,-498.9C131.44,-489 110.13,-476.07 96.26,-467.65"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="146.34,-502.13 156.7,-504.32 149.97,-496.14 146.34,-502.13"/>
+<path fill="none" stroke="midnightblue" d="M354.48,-499.86C334.27,-489.85 307.01,-476.35 289.47,-467.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="352.97,-503.02 363.49,-504.32 356.08,-496.75 352.97,-503.02"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="Levels_8hpp.html" target="_top" xlink:title="Contains the methods for transfering, restricting and act&#45;group&#45;acting.">
-<polygon fill="white" stroke="black" points="136.5,-448.5 136.5,-467.5 205.5,-467.5 205.5,-448.5 136.5,-448.5"/>
-<text text-anchor="middle" x="171" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">Levels.hpp</text>
+<g id="a_node18"><a xlink:href="Levels_8hpp.html" target="_top" xlink:title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting.">
+<polygon fill="white" stroke="black" points="333.5,-448.5 333.5,-467.5 402.5,-467.5 402.5,-448.5 333.5,-448.5"/>
+<text text-anchor="middle" x="368" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">Levels.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node18 -->
-<g id="edge22" class="edge">
+<g id="edge21" class="edge">
 <title>Node3&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M171,-493.8C171,-484.91 171,-474.78 171,-467.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="167.5,-494.08 171,-504.08 174.5,-494.08 167.5,-494.08"/>
+<path fill="none" stroke="midnightblue" d="M376.45,-494.1C374.29,-485.14 371.82,-474.86 370.11,-467.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="373.11,-495.18 378.85,-504.08 379.92,-493.54 373.11,-495.18"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="Green_8hpp.html" target="_top" xlink:title="Contains the class and methods for multiplying generators.">
-<polygon fill="white" stroke="black" points="136.5,-392.5 136.5,-411.5 203.5,-411.5 203.5,-392.5 136.5,-392.5"/>
-<text text-anchor="middle" x="170" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00">Green.hpp</text>
+<g id="a_node5"><a xlink:href="Green_8hpp.html" target="_top" xlink:title="Contains the classes mackey::Green, mackey::internal::GreenCompute, mackey::internal::ChainsLevelGen,...">
+<polygon fill="white" stroke="black" points="238.5,-392.5 238.5,-411.5 305.5,-411.5 305.5,-392.5 238.5,-392.5"/>
+<text text-anchor="middle" x="272" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00">Green.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M104.98,-442.9C121.11,-433 142.18,-420.07 155.9,-411.65"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="102.83,-440.11 96.14,-448.32 106.49,-446.08 102.83,-440.11"/>
+<path fill="none" stroke="midnightblue" d="M272,-437.8C272,-428.91 272,-418.78 272,-411.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="268.5,-438.08 272,-448.08 275.5,-438.08 268.5,-438.08"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="Massey_8hpp.html" target="_top" xlink:title="Contains the class and methods for Massey Products.">
-<polygon fill="white" stroke="black" points="132,-336.5 132,-355.5 206,-355.5 206,-336.5 132,-336.5"/>
-<text text-anchor="middle" x="169" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Massey.hpp</text>
+<g id="a_node6"><a xlink:href="Massey_8hpp.html" target="_top" xlink:title="Contains the classes mackey::Massey and mackey::internal::MasseyCompute.">
+<polygon fill="white" stroke="black" points="235,-336.5 235,-355.5 309,-355.5 309,-336.5 235,-336.5"/>
+<text text-anchor="middle" x="272" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Massey.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M169.64,-381.8C169.48,-372.91 169.29,-362.78 169.16,-355.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="166.15,-382.15 169.83,-392.08 173.15,-382.02 166.15,-382.15"/>
+<path fill="none" stroke="midnightblue" d="M272,-381.8C272,-372.91 272,-362.78 272,-355.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="268.5,-382.08 272,-392.08 275.5,-382.08 268.5,-382.08"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="Point_8hpp.html" target="_top" xlink:title="Contains the computations for RO(G) homology of a point.">
-<polygon fill="white" stroke="black" points="138,-280.5 138,-299.5 200,-299.5 200,-280.5 138,-280.5"/>
-<text text-anchor="middle" x="169" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point.hpp</text>
+<g id="a_node7"><a xlink:href="Point_8hpp.html" target="_top" xlink:title="Contains the methods computing the RO(G) homology of a point.">
+<polygon fill="white" stroke="black" points="241,-280.5 241,-299.5 303,-299.5 303,-280.5 241,-280.5"/>
+<text text-anchor="middle" x="272" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M169,-325.8C169,-316.91 169,-306.78 169,-299.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="165.5,-326.08 169,-336.08 172.5,-326.08 165.5,-326.08"/>
+<path fill="none" stroke="midnightblue" d="M272,-325.8C272,-316.91 272,-306.78 272,-299.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="268.5,-326.08 272,-336.08 275.5,-326.08 268.5,-326.08"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="Mult__Table_8hpp.html" target="_top" xlink:title="Contains the classes mackey::MultTableData and mackey::MultTable that form the multiplication table.">
-<polygon fill="white" stroke="black" points="279,-224.5 279,-243.5 369,-243.5 369,-224.5 279,-224.5"/>
-<text text-anchor="middle" x="324" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Table.hpp</text>
+<g id="a_node8"><a xlink:href="Mult__Table_8hpp.html" target="_top" xlink:title="Contains the classes mackey::MultTableData and mackey::MultTable.">
+<polygon fill="white" stroke="black" points="103,-224.5 103,-243.5 193,-243.5 193,-224.5 103,-224.5"/>
+<text text-anchor="middle" x="148" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Table.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M203.33,-277.04C232.5,-266.88 273.64,-252.55 299.55,-243.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="201.85,-273.85 193.56,-280.44 204.16,-280.46 201.85,-273.85"/>
+<path fill="none" stroke="midnightblue" d="M242.99,-276.37C219.77,-266.26 187.84,-252.35 167.56,-243.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="241.79,-279.66 252.35,-280.44 244.58,-273.24 241.79,-279.66"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="Additive_8hpp.html" target="_top" xlink:title="Contains the class for presenting the additive structure of the RO(G) homology.">
-<polygon fill="white" stroke="black" points="63,-56.5 63,-75.5 141,-75.5 141,-56.5 63,-56.5"/>
-<text text-anchor="middle" x="102" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">Additive.hpp</text>
+<g id="a_node15"><a xlink:href="Additive_8hpp.html" target="_top" xlink:title="Contains the class mackey::AdditiveStructure">
+<polygon fill="white" stroke="black" points="229,-56.5 229,-75.5 307,-75.5 307,-56.5 229,-56.5"/>
+<text text-anchor="middle" x="268" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">Additive.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node15 -->
-<g id="edge16" class="edge">
+<g id="edge15" class="edge">
 <title>Node7&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M149.79,-273.87C141.08,-265.93 131.53,-255.48 126,-244 97.48,-184.77 99.74,-102.25 101.36,-75.64"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="147.53,-276.54 157.4,-280.4 152.09,-271.23 147.53,-276.54"/>
+<path fill="none" stroke="midnightblue" d="M271.66,-270.3C270.84,-224.64 268.75,-108.85 268.16,-75.88"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="268.16,-270.36 271.84,-280.3 275.16,-270.24 268.16,-270.36"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="Space_8hpp.html" target="_top" xlink:title="File containing the class for spaces other than points!">
-<polygon fill="white" stroke="black" points="135.5,-224.5 135.5,-243.5 202.5,-243.5 202.5,-224.5 135.5,-224.5"/>
-<text text-anchor="middle" x="169" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Space.hpp</text>
+<g id="a_node16"><a xlink:href="Space_8hpp.html" target="_top" xlink:title="Contains the class mackey::Space.">
+<polygon fill="white" stroke="black" points="301.5,-224.5 301.5,-243.5 368.5,-243.5 368.5,-224.5 301.5,-224.5"/>
+<text text-anchor="middle" x="335" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Space.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node16 -->
-<g id="edge19" class="edge">
+<g id="edge18" class="edge">
 <title>Node7&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M169,-269.8C169,-260.91 169,-250.78 169,-243.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="165.5,-270.08 169,-280.08 172.5,-270.08 165.5,-270.08"/>
+<path fill="none" stroke="midnightblue" d="M290.04,-273.54C301.27,-263.91 315.32,-251.87 324.69,-243.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="287.44,-271.16 282.12,-280.32 291.99,-276.47 287.44,-271.16"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="Mult__Graph_8hpp.html" target="_top" xlink:title="Contains the multiplication graph.">
-<polygon fill="white" stroke="black" points="277,-168.5 277,-187.5 371,-187.5 371,-168.5 277,-168.5"/>
-<text text-anchor="middle" x="324" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Graph.hpp</text>
+<g id="a_node9"><a xlink:href="Mult__Graph_8hpp.html" target="_top" xlink:title="Contains the class mackey::MultGraph.">
+<polygon fill="white" stroke="black" points="101,-168.5 101,-187.5 195,-187.5 195,-168.5 101,-168.5"/>
+<text text-anchor="middle" x="148" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Graph.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node8&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M324,-213.8C324,-204.91 324,-194.78 324,-187.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="320.5,-214.08 324,-224.08 327.5,-214.08 320.5,-214.08"/>
+<path fill="none" stroke="midnightblue" d="M148,-213.8C148,-204.91 148,-194.78 148,-187.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="144.5,-214.08 148,-224.08 151.5,-214.08 144.5,-214.08"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="Factorization_8hpp.html" target="_top" xlink:title="Contains the multiplication graph and the methods for factorizing generators.">
-<polygon fill="white" stroke="black" points="197,-56.5 197,-75.5 297,-75.5 297,-56.5 197,-56.5"/>
-<text text-anchor="middle" x="247" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factorization.hpp</text>
+<g id="a_node10"><a xlink:href="Mult__Connectivity_8hpp.html" target="_top" xlink:title="Contains the class mackey::MultConnectivity.">
+<polygon fill="white" stroke="black" points="118.5,-112.5 118.5,-131.5 243.5,-131.5 243.5,-112.5 118.5,-112.5"/>
+<text text-anchor="middle" x="181" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Connectivity.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M322.02,-158.06C319.85,-144.31 315.33,-125.79 306,-112 295.17,-95.99 276.78,-83.3 263.4,-75.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="318.59,-158.81 323.35,-168.27 325.53,-157.9 318.59,-158.81"/>
+<path fill="none" stroke="midnightblue" d="M158.83,-159.27C164.47,-150.05 171.12,-139.17 175.65,-131.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="155.68,-157.73 153.45,-168.08 161.65,-161.38 155.68,-157.73"/>
 </g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="Mult__Connectivity_8hpp.html" target="_top" xlink:title="Contains methods for the finding the connectivity of the multiplication graph should identification f...">
-<polygon fill="white" stroke="black" points="353.5,-112.5 353.5,-131.5 478.5,-131.5 478.5,-112.5 353.5,-112.5"/>
-<text text-anchor="middle" x="416" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Connectivity.hpp</text>
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="Mult__Identify_8hpp.html" target="_top" xlink:title="Contains the class mackey::MultIdentify.">
+<polygon fill="white" stroke="black" points="0,-112.5 0,-131.5 100,-131.5 100,-112.5 0,-112.5"/>
+<text text-anchor="middle" x="50" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Identify.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node13 -->
-<g id="edge12" class="edge">
-<title>Node9&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M347.55,-163.18C364.48,-153.24 386.78,-140.15 401.26,-131.65"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="345.63,-160.24 338.78,-168.32 349.18,-166.28 345.63,-160.24"/>
-</g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="Mult__Identify_8hpp.html" target="_top" xlink:title="Contains extra identification methods for the multiplication graph.">
-<polygon fill="white" stroke="black" points="197,-112.5 197,-131.5 297,-131.5 297,-112.5 197,-112.5"/>
-<text text-anchor="middle" x="247" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mult_Identify.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node9&#45;&gt;Node14 -->
-<g id="edge14" class="edge">
-<title>Node9&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M303.1,-162.34C289.09,-152.52 271.12,-139.91 259.34,-131.65"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="301.43,-165.45 311.63,-168.32 305.45,-159.72 301.43,-165.45"/>
+<!-- Node9&#45;&gt;Node12 -->
+<g id="edge11" class="edge">
+<title>Node9&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M123.41,-163.45C105.32,-153.48 81.27,-140.23 65.71,-131.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="121.81,-166.56 132.25,-168.32 125.19,-160.43 121.81,-166.56"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="Mackey_8hpp.html" target="_top" xlink:title="Includes the entire library.">
-<polygon fill="white" stroke="black" points="210,-0.5 210,-19.5 284,-19.5 284,-0.5 210,-0.5"/>
-<text text-anchor="middle" x="247" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mackey.hpp</text>
+<g id="a_node11"><a xlink:href="Mackey_8hpp.html" target="_top" xlink:title="Includes the entire library apart from Serialization/Cerealizer.hpp.">
+<polygon fill="white" stroke="black" points="231,-0.5 231,-19.5 305,-19.5 305,-0.5 231,-0.5"/>
+<text text-anchor="middle" x="268" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mackey.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M247,-45.8C247,-36.91 247,-26.78 247,-19.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="243.5,-46.08 247,-56.08 250.5,-46.08 243.5,-46.08"/>
+<path fill="none" stroke="midnightblue" d="M190.11,-102.87C197.33,-89.32 208.14,-70.69 220,-56 231.33,-41.96 246.96,-28.11 257.27,-19.56"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="186.83,-101.6 185.34,-112.09 193.05,-104.82 186.83,-101.6"/>
 </g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="Cerealizer_8hpp.html" target="_top" xlink:title="Contains the methods for serializing the results of our computations (before their interpretation) vi...">
-<polygon fill="white" stroke="black" points="83,-0.5 83,-19.5 169,-19.5 169,-0.5 83,-0.5"/>
-<text text-anchor="middle" x="126" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Cerealizer.hpp</text>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="Factorization_8hpp.html" target="_top" xlink:title="Contains the class mackey::Factorization.">
+<polygon fill="white" stroke="black" points="73,-56.5 73,-75.5 173,-75.5 173,-56.5 73,-56.5"/>
+<text text-anchor="middle" x="123" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">Factorization.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node12 -->
-<g id="edge11" class="edge">
-<title>Node10&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M218.69,-52.37C196.03,-42.26 164.87,-28.35 145.08,-19.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="217.27,-55.56 227.83,-56.44 220.12,-49.17 217.27,-55.56"/>
+<!-- Node12&#45;&gt;Node13 -->
+<g id="edge12" class="edge">
+<title>Node12&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M70.14,-106.1C83.28,-96.38 99.98,-84.03 111.06,-75.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="67.69,-103.56 61.73,-112.32 71.85,-109.19 67.69,-103.56"/>
 </g>
 <!-- Node13&#45;&gt;Node11 -->
 <g id="edge13" class="edge">
 <title>Node13&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M394.05,-106.71C358.44,-83.53 289.14,-38.43 260.2,-19.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="392.45,-109.85 402.74,-112.37 396.27,-103.98 392.45,-109.85"/>
+<path fill="none" stroke="midnightblue" d="M155.48,-52.91C182.74,-42.75 220.99,-28.51 245.13,-19.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="154.13,-49.67 145.98,-56.44 156.57,-56.23 154.13,-49.67"/>
 </g>
-<!-- Node14&#45;&gt;Node10 -->
-<g id="edge15" class="edge">
-<title>Node14&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M247,-101.8C247,-92.91 247,-82.78 247,-75.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="243.5,-102.08 247,-112.08 250.5,-102.08 243.5,-102.08"/>
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="Cerealizer_8hpp.html" target="_top" xlink:title="Contains the methods for serializing the results of our computations via cereal.">
+<polygon fill="white" stroke="black" points="104,-0.5 104,-19.5 190,-19.5 190,-0.5 104,-0.5"/>
+<text text-anchor="middle" x="147" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Cerealizer.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node13&#45;&gt;Node14 -->
+<g id="edge14" class="edge">
+<title>Node13&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M131.14,-46.69C135.18,-37.59 139.88,-27.01 143.11,-19.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="127.83,-45.52 126.96,-56.08 134.22,-48.37 127.83,-45.52"/>
 </g>
 <!-- Node15&#45;&gt;Node11 -->
-<g id="edge17" class="edge">
+<g id="edge16" class="edge">
 <title>Node15&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M134.48,-52.91C161.74,-42.75 199.99,-28.51 224.13,-19.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="133.13,-49.67 124.98,-56.44 135.57,-56.23 133.13,-49.67"/>
+<path fill="none" stroke="midnightblue" d="M268,-45.8C268,-36.91 268,-26.78 268,-19.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="264.5,-46.08 268,-56.08 271.5,-46.08 264.5,-46.08"/>
 </g>
-<!-- Node15&#45;&gt;Node12 -->
-<g id="edge18" class="edge">
-<title>Node15&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M110.14,-46.69C114.18,-37.59 118.88,-27.01 122.11,-19.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="106.83,-45.52 105.96,-56.08 113.22,-48.37 106.83,-45.52"/>
+<!-- Node15&#45;&gt;Node14 -->
+<g id="edge17" class="edge">
+<title>Node15&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M239.69,-52.37C217.03,-42.26 185.87,-28.35 166.08,-19.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="238.27,-55.56 248.83,-56.44 241.12,-49.17 238.27,-55.56"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="BC4S2_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="134.5,-168.5 134.5,-187.5 203.5,-187.5 203.5,-168.5 134.5,-168.5"/>
-<text text-anchor="middle" x="169" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">BC4S2.hpp</text>
+<g id="a_node17"><a xlink:href="BC4S2_8hpp.html" target="_top" xlink:title="Contains the class mackey::BC4S2.">
+<polygon fill="white" stroke="black" points="300.5,-168.5 300.5,-187.5 369.5,-187.5 369.5,-168.5 300.5,-168.5"/>
+<text text-anchor="middle" x="335" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">BC4S2.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node16&#45;&gt;Node17 -->
-<g id="edge20" class="edge">
+<g id="edge19" class="edge">
 <title>Node16&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M169,-213.8C169,-204.91 169,-194.78 169,-187.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="165.5,-214.08 169,-224.08 172.5,-214.08 165.5,-214.08"/>
+<path fill="none" stroke="midnightblue" d="M335,-213.8C335,-204.91 335,-194.78 335,-187.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="331.5,-214.08 335,-224.08 338.5,-214.08 331.5,-214.08"/>
 </g>
 <!-- Node17&#45;&gt;Node11 -->
-<g id="edge21" class="edge">
+<g id="edge20" class="edge">
 <title>Node17&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M167.78,-158.03C167.06,-132.9 168.92,-88.01 188,-56 197.76,-39.62 215.96,-27.14 229.57,-19.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="164.3,-158.53 168.26,-168.36 171.3,-158.2 164.3,-158.53"/>
+<path fill="none" stroke="midnightblue" d="M335.72,-158.31C335.9,-133.48 333.43,-88.94 316,-56 307.88,-40.65 292.48,-27.67 281.31,-19.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="332.22,-158.42 335.49,-168.49 339.22,-158.58 332.22,-158.42"/>
 </g>
 <!-- Node18&#45;&gt;Node5 -->
-<g id="edge23" class="edge">
+<g id="edge22" class="edge">
 <title>Node18&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M170.64,-437.8C170.48,-428.91 170.29,-418.78 170.16,-411.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="167.15,-438.15 170.83,-448.08 174.15,-438.02 167.15,-438.15"/>
+<path fill="none" stroke="midnightblue" d="M343.43,-443.18C325.76,-433.24 302.49,-420.15 287.39,-411.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="342.14,-446.47 352.58,-448.32 345.58,-440.37 342.14,-446.47"/>
 </g>
 <!-- Node19&#45;&gt;Node3 -->
-<g id="edge35" class="edge">
+<g id="edge34" class="edge">
 <title>Node19&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M245.65,-606.08C243.23,-592.34 238.41,-573.82 229,-560 218.24,-544.2 200.18,-531.46 187.06,-523.63"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="242.24,-606.91 247.17,-616.28 249.16,-605.87 242.24,-606.91"/>
+<path fill="none" stroke="midnightblue" d="M310.49,-606.17C312.99,-592.48 317.84,-573.98 327,-560 337.17,-544.49 354.3,-531.53 366.54,-523.56"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="306.99,-605.91 308.9,-616.33 313.91,-606.99 306.99,-605.91"/>
 </g>
 <!-- Node19&#45;&gt;Node8 -->
-<g id="edge27" class="edge">
+<g id="edge26" class="edge">
 <title>Node19&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M267.52,-609.85C290.04,-590.5 324,-554.72 324,-515 324,-515 324,-515 324,-345 324,-307.19 324,-262.06 324,-243.56"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="265.02,-607.37 259.54,-616.43 269.48,-612.76 265.02,-607.37"/>
+<path fill="none" stroke="midnightblue" d="M260,-619.66C200.83,-610.11 108,-584.11 108,-515 108,-515 108,-515 108,-345 108,-305.17 131.45,-261.85 142.44,-243.73"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="259.5,-623.13 269.91,-621.16 260.55,-616.21 259.5,-623.13"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="Box_8hpp.html" target="_top" xlink:title="Contains the construction of box products of Chains.">
-<polygon fill="white" stroke="black" points="237,-504.5 237,-523.5 293,-523.5 293,-504.5 237,-504.5"/>
-<text text-anchor="middle" x="265" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">Box.hpp</text>
+<g id="a_node20"><a xlink:href="Box_8hpp.html" target="_top" xlink:title="Contains the class mackey::Tensor.">
+<polygon fill="white" stroke="black" points="136,-504.5 136,-523.5 192,-523.5 192,-504.5 136,-504.5"/>
+<text text-anchor="middle" x="164" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">Box.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node19&#45;&gt;Node20 -->
-<g id="edge25" class="edge">
+<g id="edge24" class="edge">
 <title>Node19&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M254.86,-606.71C257.58,-598.64 260.43,-588.97 262,-580 265.48,-560.19 265.57,-536.51 265.3,-523.91"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="251.53,-605.61 251.47,-616.2 258.13,-607.96 251.53,-605.61"/>
+<path fill="none" stroke="midnightblue" d="M260.29,-613.87C238.94,-606.97 214.66,-596.23 197,-580 179.85,-564.25 170.31,-537.56 166.29,-523.79"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="259.27,-617.22 269.85,-616.78 261.3,-610.52 259.27,-617.22"/>
 </g>
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="C2n_8hpp.html" target="_top" xlink:title="Defines the groups .">
+<g id="a_node21"><a xlink:href="C2n_8hpp.html" target="_top" xlink:title="Defines the groups &#160;via mackey::C2Power.">
 <polygon fill="white" stroke="black" points="415,-392.5 415,-411.5 471,-411.5 471,-392.5 415,-392.5"/>
 <text text-anchor="middle" x="443" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00">C2n.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node19&#45;&gt;Node21 -->
-<g id="edge28" class="edge">
+<g id="edge27" class="edge">
 <title>Node19&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M283.93,-612.61C301.69,-605.18 322.57,-594.36 338,-580 393.97,-527.91 429.74,-439.22 439.97,-411.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="282.43,-609.44 274.44,-616.38 285.02,-615.94 282.43,-609.44"/>
+<path fill="none" stroke="midnightblue" d="M340.95,-612.62C358.32,-605 379.23,-594 395,-580 417.49,-560.03 422.99,-552.36 433,-524 447.17,-483.85 445.21,-431.72 443.74,-411.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="339.58,-609.4 331.72,-616.5 342.29,-615.85 339.58,-609.4"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="C4_8hpp.html" target="_top" xlink:title="Defines group .">
-<polygon fill="white" stroke="black" points="170,-560.5 170,-579.5 220,-579.5 220,-560.5 170,-560.5"/>
-<text text-anchor="middle" x="195" y="-567.5" font-family="Helvetica,sans-Serif" font-size="10.00">C4.hpp</text>
+<g id="a_node22"><a xlink:href="C4_8hpp.html" target="_top" xlink:title="Defines group &#160;via mackey::C_4.">
+<polygon fill="white" stroke="black" points="336,-560.5 336,-579.5 386,-579.5 386,-560.5 336,-560.5"/>
+<text text-anchor="middle" x="361" y="-567.5" font-family="Helvetica,sans-Serif" font-size="10.00">C4.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node19&#45;&gt;Node22 -->
-<g id="edge30" class="edge">
+<g id="edge29" class="edge">
 <title>Node19&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M232.02,-608.72C222.68,-599.2 211.25,-587.56 203.59,-579.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="229.75,-611.4 239.25,-616.08 234.74,-606.49 229.75,-611.4"/>
+<path fill="none" stroke="midnightblue" d="M323.98,-608.72C333.32,-599.2 344.75,-587.56 352.41,-579.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="321.26,-606.49 316.75,-616.08 326.25,-611.4 321.26,-606.49"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="Abelian_8hpp.html" target="_top" xlink:title="Contains the methods for finding the automorphisms of finitely generated abelian groups.">
-<polygon fill="white" stroke="black" points="40,-560.5 40,-579.5 114,-579.5 114,-560.5 40,-560.5"/>
-<text text-anchor="middle" x="77" y="-567.5" font-family="Helvetica,sans-Serif" font-size="10.00">Abelian.hpp</text>
+<g id="a_node23"><a xlink:href="Abelian_8hpp.html" target="_top" xlink:title="Contains the class mackey::AbelianGroup.">
+<polygon fill="white" stroke="black" points="206,-560.5 206,-579.5 280,-579.5 280,-560.5 206,-560.5"/>
+<text text-anchor="middle" x="243" y="-567.5" font-family="Helvetica,sans-Serif" font-size="10.00">Abelian.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node19&#45;&gt;Node23 -->
-<g id="edge31" class="edge">
+<g id="edge30" class="edge">
 <title>Node19&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M210.96,-613.3C178.74,-603.13 132.81,-588.62 103.97,-579.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="210.31,-616.77 220.9,-616.44 212.42,-610.09 210.31,-616.77"/>
+<path fill="none" stroke="midnightblue" d="M289.73,-609.82C278.08,-600.15 263.4,-587.95 253.63,-579.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="287.63,-612.63 297.56,-616.32 292.1,-607.24 287.63,-612.63"/>
 </g>
 <!-- Node20&#45;&gt;Node5 -->
-<g id="edge26" class="edge">
+<g id="edge25" class="edge">
 <title>Node20&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M252.54,-496.1C242.5,-482.74 227.83,-463.77 214,-448 202.48,-434.85 188.17,-420.56 179.06,-411.69"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="249.9,-498.42 258.68,-504.35 255.52,-494.24 249.9,-498.42"/>
+<path fill="none" stroke="midnightblue" d="M178.87,-497.11C191.33,-483.86 209.67,-464.54 226,-448 238.72,-435.12 253.76,-420.52 263.09,-411.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="176.22,-494.81 171.93,-504.5 181.33,-499.6 176.22,-494.81"/>
 </g>
 <!-- Node21&#45;&gt;Node11 -->
-<g id="edge29" class="edge">
+<g id="edge28" class="edge">
 <title>Node21&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M459.65,-384.99C478.61,-364.96 507,-328.67 507,-291 507,-291 507,-291 507,-121 507,-25.43 356.14,-11.63 284.25,-10.48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="456.96,-382.73 452.44,-392.31 461.95,-387.64 456.96,-382.73"/>
+<path fill="none" stroke="midnightblue" d="M434.89,-382.93C426,-361.47 413,-324.36 413,-291 413,-291 413,-291 413,-121 413,-64.44 342.11,-33.2 299.46,-19.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="431.78,-384.58 438.95,-392.38 438.21,-381.81 431.78,-384.58"/>
 </g>
 <!-- Node23&#45;&gt;Node3 -->
-<g id="edge32" class="edge">
+<g id="edge31" class="edge">
 <title>Node23&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M101.06,-555.18C118.36,-545.24 141.15,-532.15 155.93,-523.65"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="99.03,-552.31 92.1,-560.32 102.52,-558.38 99.03,-552.31"/>
+<path fill="none" stroke="midnightblue" d="M274.25,-556.77C300.17,-546.63 336.36,-532.47 359.24,-523.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="272.9,-553.54 264.87,-560.44 275.45,-560.06 272.9,-553.54"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="MackeyFunctor_8hpp.html" target="_top" xlink:title="Contains the class describing Mackey Functors.">
-<polygon fill="white" stroke="black" points="0,-504.5 0,-523.5 110,-523.5 110,-504.5 0,-504.5"/>
-<text text-anchor="middle" x="55" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">MackeyFunctor.hpp</text>
+<g id="a_node24"><a xlink:href="MackeyFunctor_8hpp.html" target="_top" xlink:title="Contains the class mackey::MackeyFunctor.">
+<polygon fill="white" stroke="black" points="210,-504.5 210,-523.5 320,-523.5 320,-504.5 210,-504.5"/>
+<text text-anchor="middle" x="265" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">MackeyFunctor.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node23&#45;&gt;Node24 -->
-<g id="edge33" class="edge">
+<g id="edge32" class="edge">
 <title>Node23&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M69.54,-550.69C65.83,-541.59 61.52,-531.01 58.57,-523.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="66.35,-552.14 73.37,-560.08 72.84,-549.5 66.35,-552.14"/>
+<path fill="none" stroke="midnightblue" d="M250.46,-550.69C254.17,-541.59 258.48,-531.01 261.43,-523.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="247.16,-549.5 246.63,-560.08 253.65,-552.14 247.16,-549.5"/>
 </g>
 <!-- Node24&#45;&gt;Node4 -->
-<g id="edge34" class="edge">
+<g id="edge33" class="edge">
 <title>Node24&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M64.01,-494.98C68.59,-485.82 73.95,-475.09 77.62,-467.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="60.8,-493.57 59.46,-504.08 67.06,-496.7 60.8,-493.57"/>
+<path fill="none" stroke="midnightblue" d="M267.45,-494.1C268.61,-485.14 269.94,-474.86 270.87,-467.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="263.97,-493.72 266.16,-504.08 270.91,-494.62 263.97,-493.72"/>
 </g>
 </g>
 </svg>

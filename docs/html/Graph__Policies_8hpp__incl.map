@@ -1,0 +1,10 @@
+<map id="Graph_Policies.hpp" name="Graph_Policies.hpp">
+<area shape="rect" id="node1" title="Contains the classes mackey::bicolored_edge_with_id, mackey::MinLength, mackey::MinColorsLength." alt="" coords="205,5,351,32"/>
+<area shape="rect" id="node2" href="$Graph_8hpp.html" title="Contains the classes mackey::Neighborhood, mackey::Graph, mackey::ShortestPaths." alt="" coords="156,80,245,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="269,80,444,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,68,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="92,155,155,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="179,155,222,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="246,155,321,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="345,155,464,181"/>
+</map>

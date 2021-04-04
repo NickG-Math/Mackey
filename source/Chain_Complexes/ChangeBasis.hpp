@@ -5,7 +5,7 @@
 #include <array>
 
 ///@file
-///@brief Contains the construction of the change of basis matrices.
+///@brief Contains the class \ref mackey::ChangeBasis
 namespace mackey {
 
 	/// @brief				If vector B is permutation of vector A i.e. B= A * sigma then returns permutation sigma

@@ -3,7 +3,7 @@
 #include <ostream>
 
 ///@file
-///@brief Contains Chains and Junction classes for using chain complexes.
+///@brief Contains the classes \ref mackey::Arrow, \ref mackey::Chains and \ref mackey::Junction
 namespace mackey
 {
 

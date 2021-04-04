@@ -149,33 +149,33 @@ $(document).ready(function(){initNavTree('Z__n_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">int</span>64_t N, <span class="keyword">typename</span> T&gt; <span class="comment">//Eigen needs this to be non member</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespacemackey.html#aa0829ec4fb987356f1881ec973192e51">   59</a></span>&#160;    std::ostream&amp; <a class="code" href="namespacemackey.html#a23e570c8900af71a069bf56d7103b23a">operator&lt;&lt;</a>(std::ostream&amp; out, <span class="keyword">const</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a> a);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespacemackey.html#a04d0601e31671015025369bfd66d798d">   61</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classmackey_1_1Z__mod.html">Z2</a> = <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;2, bool&gt;</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">namespace </span>Eigen {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespacemackey.html">mackey</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">int</span>64_t N, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">struct </span>NumTraits&lt;<a class="code" href="classmackey_1_1Z__mod.html">Z_mod</a>&lt;N, T&gt;&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a> Real;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a> Nested;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">typedef</span> <span class="keywordtype">int</span> Literal;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            IsComplex = 0,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            IsInteger = 0,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            IsSigned = 0,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            RequireInitialization = 0,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            ReadCost = 1,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            AddCost = 1,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            MulCost = 1</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        };</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a> dummy_precision() { <span class="keywordflow">return</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a>(0); }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> digits10() { <span class="keywordflow">return</span> 0; }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    };</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#include &quot;impl/Z_n.ipp&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespacemackey.html#a04d0601e31671015025369bfd66d798d">   62</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classmackey_1_1Z__mod.html">Z2</a> = <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;2, bool&gt;</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">namespace </span>Eigen {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespacemackey.html">mackey</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">int</span>64_t N, <span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">struct </span>NumTraits&lt;<a class="code" href="classmackey_1_1Z__mod.html">Z_mod</a>&lt;N, T&gt;&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a> Real;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a> Nested;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">typedef</span> <span class="keywordtype">int</span> Literal;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            IsComplex = 0,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            IsInteger = 0,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            IsSigned = 0,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            RequireInitialization = 0,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            ReadCost = 1,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            AddCost = 1,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            MulCost = 1</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        };</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a> dummy_precision() { <span class="keywordflow">return</span> <a class="code" href="classmackey_1_1Z__mod.html">Z_mod&lt;N, T&gt;</a>(0); }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> digits10() { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#include &quot;impl/Z_n.ipp&quot;</span></div>
 <div class="ttc" id="aSFINAE_8hpp_html"><div class="ttname"><a href="SFINAE_8hpp.html">SFINAE.hpp</a></div><div class="ttdoc">Contains all the SFINAE tricks.</div></div>
 <div class="ttc" id="aclassmackey_1_1Z__mod_html"><div class="ttname"><a href="classmackey_1_1Z__mod.html">mackey::Z_mod</a></div><div class="ttdoc">The class of Z/N coefficients where N is prime.</div><div class="ttdef"><b>Definition:</b> Z_n.hpp:17</div></div>
 <div class="ttc" id="aclassmackey_1_1Z__mod_html_a05a901d81c1e98fa07fed566e019cdb5"><div class="ttname"><a href="classmackey_1_1Z__mod.html#a05a901d81c1e98fa07fed566e019cdb5">mackey::Z_mod::operator-</a></div><div class="ttdeci">Z_mod&lt; N, T &gt; operator-(Z_mod&lt; N, T &gt; b) const</div></div>

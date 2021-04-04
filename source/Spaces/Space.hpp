@@ -2,7 +2,7 @@
 #include "Point.hpp"
 
 ///	@file
-///	@brief File containing the class for spaces other than points!
+///	@brief Contains the class \ref mackey::Space
 
 namespace mackey {
 

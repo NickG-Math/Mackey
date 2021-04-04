@@ -2,7 +2,7 @@
 #include "Utility/General.hpp"
 
 ///@file
-///@brief Contains the methods for finding the automorphisms of finitely generated abelian groups.
+///@brief Contains the class \ref mackey::AbelianGroup
 
 namespace mackey
 {

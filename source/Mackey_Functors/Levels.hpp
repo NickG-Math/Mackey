@@ -2,7 +2,7 @@
 #include "Homology/Homology.hpp" 
 
 ///@file
-///@brief Contains the methods for transfering, restricting and act-group-acting.
+///@brief Contains the methods for transfering, restricting and Weyl-group-acting.
 
 namespace mackey {
 

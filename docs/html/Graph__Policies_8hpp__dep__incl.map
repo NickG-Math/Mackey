@@ -1,0 +1,9 @@
+<map id="Graph_Policies.hpp" name="Graph_Policies.hpp">
+<area shape="rect" id="node1" title="Contains the classes mackey::bicolored_edge_with_id, mackey::MinLength, mackey::MinColorsLength." alt="" coords="102,5,249,32"/>
+<area shape="rect" id="node2" href="$Mult__Graph_8hpp.html" title="Contains the class mackey::MultGraph." alt="" coords="113,80,238,107"/>
+<area shape="rect" id="node3" href="$Mult__Connectivity_8hpp.html" title="Contains the class mackey::MultConnectivity." alt="" coords="5,229,172,256"/>
+<area shape="rect" id="node5" href="$Mult__Identify_8hpp.html" title="Contains the class mackey::MultIdentify." alt="" coords="178,155,311,181"/>
+<area shape="rect" id="node4" href="$Mackey_8hpp.html" title="Includes the entire library apart from Serialization/Cerealizer.hpp." alt="" coords="62,304,161,331"/>
+<area shape="rect" id="node6" href="$Factorization_8hpp.html" title="Contains the class mackey::Factorization." alt="" coords="197,229,330,256"/>
+<area shape="rect" id="node7" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations via cereal." alt="" coords="206,304,321,331"/>
+</map>

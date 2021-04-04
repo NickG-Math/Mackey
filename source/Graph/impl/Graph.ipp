@@ -5,7 +5,7 @@ namespace mackey {
 	template<typename node_t, typename edge_t, template<typename ...> typename container_t, typename ...Args>
 	template<typename ... Argshere>
 	void Neighborhood<node_t, edge_t, container_t, Args...>::insert(node_t end, Argshere&&... args) {
-		for (const auto i:edges)
+		for (const auto i : edges)
 			if (i.first == end) //never insert duplicate edges
 				return;
 		edges.emplace_back(end, edge_t(args...));
@@ -96,21 +96,16 @@ namespace mackey {
 		}
 	}
 
-	template<typename graph_t>
-	bool ShortestPaths<graph_t>::operator()(node_t a, node_t b) const {
-		return (distance_policy[a] > distance_policy[b]);
-	}
-
-	template<typename graph_t>
-	void ShortestPaths<graph_t>::print_path(std::ostream& os, node_t i) const {
+	template<typename graph_t, typename policy_t>
+	void ShortestPaths<graph_t, policy_t>::print_path(std::ostream& os, node_t i) const {
 		os << "digraph{\ngraph [overlap=false];	\n";
 		print_path_minimal(os, i);
 		G.print_name_labels(os);
 		os << "}";
 	}
 
-	template<typename graph_t>
-	void ShortestPaths<graph_t>::print_path_minimal(std::ostream& os, node_t i, std::set<node_t>& nodes_printed) const {
+	template<typename graph_t, typename policy_t>
+	void ShortestPaths<graph_t, policy_t>::print_path_minimal(std::ostream& os, node_t i, std::set<node_t>& nodes_printed) const {
 		const auto& p = paths[i];
 		for (size_t ind = 0; ind + 1 < p.size(); ind++) {
 			if (nodes_printed.find(p[ind].node()) == nodes_printed.end()) {
@@ -128,8 +123,8 @@ namespace mackey {
 		}
 	}
 
-	template<typename graph_t>
-	void ShortestPaths<graph_t>::print_path_minimal(std::ostream& os, node_t i) const {
+	template<typename graph_t, typename policy_t>
+	void ShortestPaths<graph_t, policy_t>::print_path_minimal(std::ostream& os, node_t i) const {
 		const auto& p = paths[i];
 		for (size_t ind = 0; ind + 1 < p.size(); ind++)
 			os << p[ind + 1].node() << " -> " << p[ind].node() << p[ind].edge() << "\n";
@@ -137,53 +132,57 @@ namespace mackey {
 			os << root_per_path[i] << " -> " << p.back().node() << p.back().edge() << "\n";
 	}
 
-	template<typename graph_t>
-	ShortestPaths<graph_t>::ShortestPaths(const graph_t& G) : G(G){}
+	template<typename graph_t, typename policy_t>
+	ShortestPaths<graph_t, policy_t>::ShortestPaths(const graph_t& G) : G(G) {}
 
-	template<typename graph_t>
-	bool ShortestPaths<graph_t>::disconnected(node_t i) const
+	template<typename node_t>
+	struct Node_Distance_Pair {
+		node_t node;
+		size_t distance;
+		bool operator < (const Node_Distance_Pair& other) const {
+			return distance > other.distance;
+		}
+	};
+
+
+	template<typename graph_t, typename policy_t>
+	bool ShortestPaths<graph_t, policy_t>::disconnected(node_t i) const
 	{
 		return (root_per_path[i] == -1);
 	}
 
-	namespace implementation_details {
-		template<typename T>
-		std::vector<T> reserve(size_t n) {
-			std::vector<T> cont;
-			cont.reserve(n);
-			return cont;
-		};
-	}
-
 	template<typename graph_t, typename policy_t>
-	Dijkstra<graph_t, policy_t>::Dijkstra(const graph_t& G) : ShortestPaths<graph_t>(G), next(*this, implementation_details::reserve<node_t>(G.number_of_nodes())) {}
-
-	template<typename graph_t, typename policy_t>
-	void Dijkstra<graph_t, policy_t>::compute_distance() {
-		distance_policy = std::vector<size_t>(G.number_of_nodes(), -1);
+	void ShortestPaths<graph_t, policy_t>::compute_distance() {
+		distance_policy = std::vector<size_t>(G.number_of_nodes(), -1); //initialize with infinity
 		previous.resize(G.number_of_nodes());
-		static_cast<policy_t*>(this)->initialize();
-		current = root;
-		has_been_extracted = std::vector<char>(G.number_of_nodes(), 0);
-		distance_policy[current] = 0;
-		next.push(current);
+		static_cast<policy_t*>(this)->initialize(); //initialize policy
+		distance_policy[root] = 0;
+
+		std::vector<Node_Distance_Pair<node_t>> cont; //lets us reserve in the priority queue
+		cont.reserve(G.number_of_nodes());
+		std::priority_queue<Node_Distance_Pair<node_t>> next(std::less<Node_Distance_Pair<node_t>>(), cont);
+
+		auto current = root;
+		next.push({ current,0 });
 		while (!next.empty())
 		{
-			current = next.top();
+			auto ndp = next.top();
 			next.pop();
-			if (has_been_extracted[current])
-				continue;
-			for (auto it = G.neighbors(current).begin(); it != G.neighbors(current).end(); ++it)
-				update(it);
-			has_been_extracted[current] = 1;
+			current = ndp.node;
+			if (ndp.distance <= distance_policy[current]) //since we are not decreasing key, this lets us know that we are not using an outdated node
+				for (auto it = G.neighbors(current).begin(); it != G.neighbors(current).end(); ++it) {
+					if (static_cast<policy_t*>(this)->check_and_update_policy(it, current)) { //check and update the policy in the inheriting class
+						previous[it.node()] = std::pair(current, it);
+						next.push({ it.node(),distance_policy[it.node()] }); //if it.node() existed before the new it.node() will have higher priority
+					}
+				}
 		}
-		has_been_extracted.clear();
 	}
 
 	template<typename graph_t, typename policy_t>
-	void Dijkstra<graph_t, policy_t>::compute_paths() {
+	void ShortestPaths<graph_t, policy_t>::compute_paths() {
 		paths.resize(G.number_of_nodes());
-		root_per_path.resize(G.number_of_nodes(),-1);
+		root_per_path.resize(G.number_of_nodes(), -1);
 		for (size_t i = 0; i < G.number_of_nodes(); i++) {
 			if (distance_policy[i] == -1)
 				continue;
@@ -206,34 +205,10 @@ namespace mackey {
 	}
 
 	template<typename graph_t, typename policy_t>
-	void Dijkstra<graph_t, policy_t>::update(edge_iter_t it) {
-		if (static_cast<policy_t*>(this)->check_and_update_policy(it)) {
-			previous[it.node()] = std::pair(current, it); //<Is this slow?
-			next.push(it.node());
-		}
-	}
-
-	template<typename graph_t, typename policy_t>
-	 void Dijkstra<graph_t, policy_t>::compute_with_root(node_t new_root){
+	void ShortestPaths<graph_t, policy_t>::compute_with_root(node_t new_root) {
 		root = new_root;
 		compute_distance();
 		compute_paths();
-	}
-
-	bicolored_edge_with_id::bicolored_edge_with_id(char color, unsigned char id) : color(color), id(id) {}
-
-	std::ostream& operator << (std::ostream& os, const bicolored_edge_with_id& edge) {
-		os << "[color=\"";
-		if (edge.color == 0) 
-			os << "red"; //red for multiplication
-		else if (edge.color == 1)
-			os << "blue"; //blue for division
-		else
-			os << "black"; //black for multiple
-		os << "\"";
-		os << ", tooltip=\"" << std::to_string(edge.id) << "\"";
-		os << "]";
-		return os;
 	}
 
 	template<typename neighborhood_t>
@@ -248,9 +223,8 @@ namespace mackey {
 		return os;
 	}
 
-	template<typename graph_t>
-	std::ostream& operator<<(std::ostream& os, const ShortestPaths<graph_t>& D)
-	{
+	template<typename graph_t, typename policy_t>
+	std::ostream& operator<<(std::ostream& os, const ShortestPaths<graph_t, policy_t>& D){
 		os << "digraph{\ngraph [overlap=false];	\n";
 		std::set<typename graph_t::node_t> nodes_printed;
 		for (size_t i = 0; i < D.G.number_of_nodes(); i++)
@@ -259,57 +233,4 @@ namespace mackey {
 		os << "}";
 		return os;
 	}
-
-
-	template<typename graph_t>
-	MinLength<graph_t>::MinLength(const graph_t& G) : Dijkstra<graph_t, MinLength<graph_t>>(G) {}
-
-	template<typename graph_t>
-	template<typename iter>
-	bool MinLength<graph_t>::check_and_update_policy(iter it) {
-		auto newdist_policy = distance_policy[current] + 1;
-		if (distance_policy[it.node()] == -1 || distance_policy[it.node()] > newdist_policy) {
-			distance_policy[it.node()] = newdist_policy;
-			return 1;
-		}
-		return 0;
-	}
-
-	template<typename graph_t>
-	size_t MinLength<graph_t>::path_length(node_t i) const {
-		return distance_policy[i];
-	}
-
-	template<typename graph_t>
-	MinColorsLength<graph_t>::MinColorsLength(const graph_t& G) : Dijkstra<graph_t, MinColorsLength<graph_t>>(G) {
-		initialize();
-	}
-
-	template<typename graph_t>
-	template<typename iter>
-	bool MinColorsLength<graph_t>::check_and_update_policy(iter it) {
-		auto newdist_policy = distance_policy[current] + 1 + 1*(current != this->root && this->previous[current].second.edge().color%2 != it.edge().color%2); //add 1 for extra length, 3 for color alteration
-		if (distance_policy[it.node()] == -1 || distance_policy[it.node()] > newdist_policy) {
-			distance_policy[it.node()] = newdist_policy;
-			length[it.node()] = length[current] + 1;
-			return 1;
-		}
-		return 0;
-	}
-
-	template<typename graph_t>
-	size_t MinColorsLength<graph_t>::path_length(node_t i) const {
-		return length[i];
-	}
-
-	template<typename graph_t>
-	void MinColorsLength<graph_t>::initialize() {
-		length = std::vector<size_t>(this->G.number_of_nodes(), 0);
-	}
-
-	template<typename graph_t>
-	void MinColorsLength<graph_t>::clear() {
-		length.clear();
-	}
-
 }

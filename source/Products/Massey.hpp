@@ -2,7 +2,7 @@
 #include "Green.hpp"
 
 ///@file
-///@brief Contains the class and methods for Massey Products.
+///@brief Contains the classes \ref mackey::Massey and \ref mackey::internal::MasseyCompute
 
 namespace mackey {
 

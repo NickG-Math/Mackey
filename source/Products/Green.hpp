@@ -4,7 +4,7 @@
 #include "Chain_Complexes/Box.hpp"
 
 ///@file
-///@brief Contains the class and methods for multiplying generators.
+///@brief Contains the classes \ref mackey::Green, \ref mackey::internal::GreenCompute, \ref mackey::internal::ChainsLevelGen, \ref mackey::internal::ProductGen
 
 namespace mackey
 {

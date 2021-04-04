@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Contains the class mackey::BC4S2.">
 <polygon fill="#bfbfbf" stroke="black" points="998.5,-616.5 998.5,-635.5 1067.5,-635.5 1067.5,-616.5 998.5,-616.5"/>
 <text text-anchor="middle" x="1033" y="-623.5" font-family="Helvetica,sans-Serif" font-size="10.00">BC4S2.hpp</text>
 </a>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="Space_8hpp.html" target="_top" xlink:title="File containing the class for spaces other than points!">
+<g id="a_node2"><a xlink:href="Space_8hpp.html" target="_top" xlink:title="Contains the class mackey::Space.">
 <polygon fill="white" stroke="black" points="951.5,-560.5 951.5,-579.5 1018.5,-579.5 1018.5,-560.5 951.5,-560.5"/>
 <text text-anchor="middle" x="985" y="-567.5" font-family="Helvetica,sans-Serif" font-size="10.00">Space.hpp</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="Point_8hpp.html" target="_top" xlink:title="Contains the computations for RO(G) homology of a point.">
+<g id="a_node3"><a xlink:href="Point_8hpp.html" target="_top" xlink:title="Contains the methods computing the RO(G) homology of a point.">
 <polygon fill="white" stroke="black" points="907,-504.5 907,-523.5 969,-523.5 969,-504.5 907,-504.5"/>
 <text text-anchor="middle" x="938" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point.hpp</text>
 </a>
@@ -81,7 +81,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="Massey_8hpp.html" target="_top" xlink:title="Contains the class and methods for Massey Products.">
+<g id="a_node4"><a xlink:href="Massey_8hpp.html" target="_top" xlink:title="Contains the classes mackey::Massey and mackey::internal::MasseyCompute.">
 <polygon fill="white" stroke="black" points="588.5,-448.5 588.5,-467.5 707.5,-467.5 707.5,-448.5 588.5,-448.5"/>
 <text text-anchor="middle" x="648" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">Products/Massey.hpp</text>
 </a>
@@ -96,7 +96,7 @@
 <!-- Node41 -->
 <g id="node41" class="node">
 <title>Node41</title>
-<g id="a_node41"><a xlink:href="Morse_8hpp.html" target="_top" xlink:title="Contains classes for (equivariant) Algebraic Morse Theory.">
+<g id="a_node41"><a xlink:href="Morse_8hpp.html" target="_top" xlink:title="Contains the classes mackey::AMT and mackey::EquivariantAMT.">
 <polygon fill="white" stroke="black" points="943,-224.5 943,-243.5 1101,-243.5 1101,-224.5 943,-224.5"/>
 <text text-anchor="middle" x="1022" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Chain_Complexes/Morse.hpp</text>
 </a>
@@ -126,7 +126,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="Green_8hpp.html" target="_top" xlink:title="Contains the class and methods for multiplying generators.">
+<g id="a_node5"><a xlink:href="Green_8hpp.html" target="_top" xlink:title="Contains the classes mackey::Green, mackey::internal::GreenCompute, mackey::internal::ChainsLevelGen,...">
 <polygon fill="white" stroke="black" points="614.5,-392.5 614.5,-411.5 681.5,-411.5 681.5,-392.5 614.5,-392.5"/>
 <text text-anchor="middle" x="648" y="-399.5" font-family="Helvetica,sans-Serif" font-size="10.00">Green.hpp</text>
 </a>
@@ -156,7 +156,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="Levels_8hpp.html" target="_top" xlink:title="Contains the methods for transfering, restricting and act&#45;group&#45;acting.">
+<g id="a_node6"><a xlink:href="Levels_8hpp.html" target="_top" xlink:title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting.">
 <polygon fill="white" stroke="black" points="429,-336.5 429,-355.5 585,-355.5 585,-336.5 429,-336.5"/>
 <text text-anchor="middle" x="507" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mackey_Functors/Levels.hpp</text>
 </a>
@@ -171,7 +171,7 @@
 <!-- Node27 -->
 <g id="node27" class="node">
 <title>Node27</title>
-<g id="a_node27"><a xlink:href="Identify_8hpp.html" target="_top" xlink:title="Contains the identification classes.">
+<g id="a_node27"><a xlink:href="Identify_8hpp.html" target="_top" xlink:title="Contains the classes mackey::IDGenerators and mackey::internal::IDGeneratorCompute">
 <polygon fill="white" stroke="black" points="202,-336.5 202,-355.5 362,-355.5 362,-336.5 202,-336.5"/>
 <text text-anchor="middle" x="282" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mackey_Functors/Identify.hpp</text>
 </a>
@@ -186,7 +186,7 @@
 <!-- Node32 -->
 <g id="node32" class="node">
 <title>Node32</title>
-<g id="a_node32"><a xlink:href="Box_8hpp.html" target="_top" xlink:title="Contains the construction of box products of Chains.">
+<g id="a_node32"><a xlink:href="Box_8hpp.html" target="_top" xlink:title="Contains the class mackey::Tensor.">
 <polygon fill="white" stroke="black" points="648,-224.5 648,-243.5 794,-243.5 794,-224.5 648,-224.5"/>
 <text text-anchor="middle" x="721" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Chain_Complexes/Box.hpp</text>
 </a>
@@ -216,7 +216,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="Homology_8hpp.html" target="_top" xlink:title="Contains the Homology class and algorithms.">
+<g id="a_node7"><a xlink:href="Homology_8hpp.html" target="_top" xlink:title="Contains the class mackey::Homology.">
 <polygon fill="white" stroke="black" points="354,-280.5 354,-299.5 494,-299.5 494,-280.5 354,-280.5"/>
 <text text-anchor="middle" x="424" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">Homology/Homology.hpp</text>
 </a>
@@ -246,7 +246,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="Chains_8hpp.html" target="_top" xlink:title="Contains Chains and Junction classes for using chain complexes.">
+<g id="a_node8"><a xlink:href="Chains_8hpp.html" target="_top" xlink:title="Contains the classes mackey::Arrow, mackey::Chains and mackey::Junction.">
 <polygon fill="white" stroke="black" points="518.5,-168.5 518.5,-187.5 679.5,-187.5 679.5,-168.5 518.5,-168.5"/>
 <text text-anchor="middle" x="599" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">Chain_Complexes/Chains.hpp</text>
 </a>
@@ -276,7 +276,7 @@
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="Smith_8hpp.html" target="_top" xlink:title="Contains the base class for all Smith implementations.">
+<g id="a_node21"><a xlink:href="Smith_8hpp.html" target="_top" xlink:title="Contains the class mackey::SmithNormalForm.">
 <polygon fill="white" stroke="black" points="410,-168.5 410,-187.5 476,-187.5 476,-168.5 410,-168.5"/>
 <text text-anchor="middle" x="443" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">Smith.hpp</text>
 </a>
@@ -291,7 +291,7 @@
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="Abelian_8hpp.html" target="_top" xlink:title="Contains the methods for finding the automorphisms of finitely generated abelian groups.">
+<g id="a_node23"><a xlink:href="Abelian_8hpp.html" target="_top" xlink:title="Contains the class mackey::AbelianGroup.">
 <polygon fill="white" stroke="black" points="302,-224.5 302,-243.5 376,-243.5 376,-224.5 302,-224.5"/>
 <text text-anchor="middle" x="339" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Abelian.hpp</text>
 </a>
@@ -546,7 +546,7 @@
 <!-- Node28 -->
 <g id="node28" class="node">
 <title>Node28</title>
-<g id="a_node28"><a xlink:href="MackeyFunctor_8hpp.html" target="_top" xlink:title="Contains the class describing Mackey Functors.">
+<g id="a_node28"><a xlink:href="MackeyFunctor_8hpp.html" target="_top" xlink:title="Contains the class mackey::MackeyFunctor.">
 <polygon fill="white" stroke="black" points="119.5,-280.5 119.5,-299.5 316.5,-299.5 316.5,-280.5 119.5,-280.5"/>
 <text text-anchor="middle" x="218" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">Mackey_Functors/MackeyFunctor.hpp</text>
 </a>
@@ -636,7 +636,7 @@
 <!-- Node33 -->
 <g id="node33" class="node">
 <title>Node33</title>
-<g id="a_node33"><a xlink:href="ChangeBasis_8hpp.html" target="_top" xlink:title="Contains the construction of the change of basis matrices.">
+<g id="a_node33"><a xlink:href="ChangeBasis_8hpp.html" target="_top" xlink:title="Contains the class mackey::ChangeBasis.">
 <polygon fill="white" stroke="black" points="794.5,-168.5 794.5,-187.5 895.5,-187.5 895.5,-168.5 794.5,-168.5"/>
 <text text-anchor="middle" x="845" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChangeBasis.hpp</text>
 </a>

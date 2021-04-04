@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['equivariantamt_370',['EquivariantAMT',['../classmackey_1_1EquivariantAMT.html',1,'mackey']]]
+  ['factorization_368',['Factorization',['../classmackey_1_1Factorization.html',1,'mackey']]]
 ];

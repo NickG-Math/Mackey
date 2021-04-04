@@ -3,7 +3,7 @@
 #include "Chain_Complexes/Morse.hpp"
 
 ///	@file
-///	@brief		Contains the computations for RO(G) homology of a point
+///	@brief		Contains the methods computing the RO(G) homology of a point
 /// @details	That includes the additive (Mackey functor) and multiplicative (Green functor) structures and Massey products. 
 
 namespace mackey {

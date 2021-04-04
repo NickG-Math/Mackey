@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mackey: ShortestPaths&lt; graph_t &gt; Class Template Reference</title>
+<title>Mackey: ShortestPaths&lt; graph_t, policy_t &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('classmackey_1_1ShortestPaths.html','')
 <a href="#friends">Friends</a> &#124;
 <a href="classmackey_1_1ShortestPaths-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ShortestPaths&lt; graph_t &gt; Class Template Reference</div>  </div>
+<div class="title">ShortestPaths&lt; graph_t, policy_t &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -110,9 +110,9 @@ $(document).ready(function(){initNavTree('classmackey_1_1ShortestPaths.html','')
 
 <p><code>#include &lt;<a class="el" href="Graph_8hpp_source.html">Graph.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ShortestPaths&lt; graph_t &gt;:</div>
+Inheritance diagram for ShortestPaths&lt; graph_t, policy_t &gt;:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classmackey_1_1ShortestPaths__inherit__graph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classmackey_1_1ShortestPaths__inherit__graph.svg" width="100%" height="429"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -121,18 +121,19 @@ Public Types</h2></td></tr>
 <tr class="memdesc:af6e4b6611dda42ad1de1f72b9b5b0f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">The node type.  <a href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">More...</a><br /></td></tr>
 <tr class="separator:af6e4b6611dda42ad1de1f72b9b5b0f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82e1d1be3078c26629cbad563f821aae"><td class="memItemLeft" align="right" valign="top">typedef graph_t::neighborhood_t::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a82e1d1be3078c26629cbad563f821aae">edge_iter_t</a></td></tr>
+<tr class="memdesc:a82e1d1be3078c26629cbad563f821aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The iterator type used in the paths.  <a href="classmackey_1_1ShortestPaths.html#a82e1d1be3078c26629cbad563f821aae">More...</a><br /></td></tr>
 <tr class="separator:a82e1d1be3078c26629cbad563f821aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a32d5685f47beea0881c740e200852ead"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a32d5685f47beea0881c740e200852ead">operator()</a> (<a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a> a, <a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a> b) const</td></tr>
-<tr class="memdesc:a32d5685f47beea0881c740e200852ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparator used for the <a class="el" href="classmackey_1_1Dijkstra.html" title="The Dijkstra algorithm producing the shortest paths.">Dijkstra</a> algorithm.  <a href="classmackey_1_1ShortestPaths.html#a32d5685f47beea0881c740e200852ead">More...</a><br /></td></tr>
-<tr class="separator:a32d5685f47beea0881c740e200852ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a956fea55d5f5c1c86fb028e274866a65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a956fea55d5f5c1c86fb028e274866a65">print_path</a> (std::ostream &amp;os, <a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a> i) const</td></tr>
 <tr class="memdesc:a956fea55d5f5c1c86fb028e274866a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print shortest path to node i to the output stream.  <a href="classmackey_1_1ShortestPaths.html#a956fea55d5f5c1c86fb028e274866a65">More...</a><br /></td></tr>
 <tr class="separator:a956fea55d5f5c1c86fb028e274866a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40542787e528caa6b27d28884936054f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a40542787e528caa6b27d28884936054f">compute_with_root</a> (<a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a> new_root)</td></tr>
+<tr class="memdesc:a40542787e528caa6b27d28884936054f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute all paths using given root.  <a href="classmackey_1_1ShortestPaths.html#a40542787e528caa6b27d28884936054f">More...</a><br /></td></tr>
+<tr class="separator:a40542787e528caa6b27d28884936054f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1357f9e5087bb22ecc777fede49b803"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#ab1357f9e5087bb22ecc777fede49b803">disconnected</a> (<a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a>) const</td></tr>
-<tr class="memdesc:ab1357f9e5087bb22ecc777fede49b803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if given node is disconnected from the sources.  <a href="classmackey_1_1ShortestPaths.html#ab1357f9e5087bb22ecc777fede49b803">More...</a><br /></td></tr>
+<tr class="memdesc:ab1357f9e5087bb22ecc777fede49b803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if node is connected to any one of the sources.  <a href="classmackey_1_1ShortestPaths.html#ab1357f9e5087bb22ecc777fede49b803">More...</a><br /></td></tr>
 <tr class="separator:ab1357f9e5087bb22ecc777fede49b803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -158,18 +159,34 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a822cc832aa7dc40443e4799076d96a66"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a822cc832aa7dc40443e4799076d96a66">distance_policy</a></td></tr>
 <tr class="memdesc:a822cc832aa7dc40443e4799076d96a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">The distance from a source to a node, computed by some policy (eg weight)  <a href="classmackey_1_1ShortestPaths.html#a822cc832aa7dc40443e4799076d96a66">More...</a><br /></td></tr>
 <tr class="separator:a822cc832aa7dc40443e4799076d96a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a185f0cc2c5e3e954d48a113ba30721ec"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a>, <a class="el" href="classmackey_1_1ShortestPaths.html#a82e1d1be3078c26629cbad563f821aae">edge_iter_t</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a185f0cc2c5e3e954d48a113ba30721ec">previous</a></td></tr>
+<tr class="memdesc:a185f0cc2c5e3e954d48a113ba30721ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">previous[i]=(node,edge) where node is 1 step closer to the source and edge connects node to i  <a href="classmackey_1_1ShortestPaths.html#a185f0cc2c5e3e954d48a113ba30721ec">More...</a><br /></td></tr>
+<tr class="separator:a185f0cc2c5e3e954d48a113ba30721ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc9c0b347a7837045742efbb430810b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a2cc9c0b347a7837045742efbb430810b">root</a></td></tr>
+<tr class="memdesc:a2cc9c0b347a7837045742efbb430810b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The root (source) of the graph being considered.  <a href="classmackey_1_1ShortestPaths.html#a2cc9c0b347a7837045742efbb430810b">More...</a><br /></td></tr>
+<tr class="separator:a2cc9c0b347a7837045742efbb430810b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a15f3f42f2d34b97717c083829040009e"><td class="memTemplParams" colspan="2">template&lt;typename _graph &gt; </td></tr>
-<tr class="memitem:a15f3f42f2d34b97717c083829040009e"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a15f3f42f2d34b97717c083829040009e">operator&lt;&lt;</a> (std::ostream &amp;, const <a class="el" href="classmackey_1_1ShortestPaths.html">ShortestPaths</a>&lt; _graph &gt; &amp;)</td></tr>
-<tr class="separator:a15f3f42f2d34b97717c083829040009e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e7fd64aeb4c17d56faca671d2b527f"><td class="memTemplParams" colspan="2">template&lt;typename _graph , typename _pol &gt; </td></tr>
+<tr class="memitem:a24e7fd64aeb4c17d56faca671d2b527f"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmackey_1_1ShortestPaths.html#a24e7fd64aeb4c17d56faca671d2b527f">operator&lt;&lt;</a> (std::ostream &amp;, const <a class="el" href="classmackey_1_1ShortestPaths.html">ShortestPaths</a>&lt; _graph, _pol &gt; &amp;)</td></tr>
+<tr class="separator:a24e7fd64aeb4c17d56faca671d2b527f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename graph_t&gt;<br />
-class mackey::ShortestPaths&lt; graph_t &gt;</h3>
+<div class="textblock"><h3>template&lt;typename graph_t, typename policy_t&gt;<br />
+class mackey::ShortestPaths&lt; graph_t, policy_t &gt;</h3>
 
 <p>The shortest paths from a collection of sources to all points in a graph. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">graph_t</td><td>The type of directed graph </td></tr>
+    <tr><td class="paramname">policy_t</td><td>The policy that determines what we are minimizing against (eg total weight or number of color changes)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Implementation of the Dijkstra algorithm (without decrease key), using the policy to determine if we should update the distance<br  />
+ Specify the policy via CRTP: have <code>policy_t</code> inherit from this class Policy examples include <a class="el" href="classmackey_1_1MinLength.html">MinLength</a> and <a class="el" href="classmackey_1_1MinColorsLength.html">MinColorsLength</a> <br  />
+ </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af6e4b6611dda42ad1de1f72b9b5b0f73"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6e4b6611dda42ad1de1f72b9b5b0f73">&#9670;&nbsp;</a></span>node_t</h2>
@@ -198,7 +215,8 @@ class mackey::ShortestPaths&lt; graph_t &gt;</h3>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The iterator type used in the paths </p>
+
+<p>The iterator type used in the paths. </p>
 
 </div>
 </div>
@@ -232,36 +250,6 @@ class mackey::ShortestPaths&lt; graph_t &gt;</h3>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a32d5685f47beea0881c740e200852ead"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32d5685f47beea0881c740e200852ead">&#9670;&nbsp;</a></span>operator()()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator() </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a>&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a>&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Comparator used for the <a class="el" href="classmackey_1_1Dijkstra.html" title="The Dijkstra algorithm producing the shortest paths.">Dijkstra</a> algorithm. </p>
-
-</div>
-</div>
 <a id="a956fea55d5f5c1c86fb028e274866a65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a956fea55d5f5c1c86fb028e274866a65">&#9670;&nbsp;</a></span>print_path()</h2>
 
@@ -292,6 +280,26 @@ class mackey::ShortestPaths&lt; graph_t &gt;</h3>
 
 </div>
 </div>
+<a id="a40542787e528caa6b27d28884936054f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40542787e528caa6b27d28884936054f">&#9670;&nbsp;</a></span>compute_with_root()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compute_with_root </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a>&#160;</td>
+          <td class="paramname"><em>new_root</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute all paths using given root. </p>
+
+</div>
+</div>
 <a id="ab1357f9e5087bb22ecc777fede49b803"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1357f9e5087bb22ecc777fede49b803">&#9670;&nbsp;</a></span>disconnected()</h2>
 
@@ -308,13 +316,14 @@ class mackey::ShortestPaths&lt; graph_t &gt;</h3>
       </table>
 </div><div class="memdoc">
 
-<p>Returns 1 if given node is disconnected from the sources. </p>
+<p>Checks if node is connected to any one of the sources. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns <code>true</code> if given node is disconnected and <code>false</code> if connected </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a15f3f42f2d34b97717c083829040009e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15f3f42f2d34b97717c083829040009e">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+<a id="a24e7fd64aeb4c17d56faca671d2b527f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e7fd64aeb4c17d56faca671d2b527f">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,7 +340,7 @@ class mackey::ShortestPaths&lt; graph_t &gt;</h3>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classmackey_1_1ShortestPaths.html">ShortestPaths</a>&lt; _graph &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classmackey_1_1ShortestPaths.html">ShortestPaths</a>&lt; _graph, _pol &gt; &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -428,6 +437,54 @@ class mackey::ShortestPaths&lt; graph_t &gt;</h3>
 </div><div class="memdoc">
 
 <p>The distance from a source to a node, computed by some policy (eg weight) </p>
+
+</div>
+</div>
+<a id="a185f0cc2c5e3e954d48a113ba30721ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a185f0cc2c5e3e954d48a113ba30721ec">&#9670;&nbsp;</a></span>previous</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a>, <a class="el" href="classmackey_1_1ShortestPaths.html#a82e1d1be3078c26629cbad563f821aae">edge_iter_t</a>&gt; &gt; previous</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>previous[i]=(node,edge) where node is 1 step closer to the source and edge connects node to i </p>
+
+</div>
+</div>
+<a id="a2cc9c0b347a7837045742efbb430810b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cc9c0b347a7837045742efbb430810b">&#9670;&nbsp;</a></span>root</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmackey_1_1ShortestPaths.html#af6e4b6611dda42ad1de1f72b9b5b0f73">node_t</a> root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The root (source) of the graph being considered. </p>
 
 </div>
 </div>

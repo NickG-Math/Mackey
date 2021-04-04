@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Contains the Homology class and algorithms.">
+<g id="a_node1"><a xlink:title="Contains the class mackey::Homology.">
 <polygon fill="#bfbfbf" stroke="black" points="229.38,-280.5 229.38,-299.5 315.38,-299.5 315.38,-280.5 229.38,-280.5"/>
 <text text-anchor="middle" x="272.38" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">Homology.hpp</text>
 </a>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="Chains_8hpp.html" target="_top" xlink:title="Contains Chains and Junction classes for using chain complexes.">
+<g id="a_node2"><a xlink:href="Chains_8hpp.html" target="_top" xlink:title="Contains the classes mackey::Arrow, mackey::Chains and mackey::Junction.">
 <polygon fill="white" stroke="black" points="2.88,-224.5 2.88,-243.5 163.88,-243.5 163.88,-224.5 2.88,-224.5"/>
 <text text-anchor="middle" x="83.38" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Chain_Complexes/Chains.hpp</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="Smith_8hpp.html" target="_top" xlink:title="Contains the base class for all Smith implementations.">
+<g id="a_node15"><a xlink:href="Smith_8hpp.html" target="_top" xlink:title="Contains the class mackey::SmithNormalForm.">
 <polygon fill="white" stroke="black" points="198.38,-168.5 198.38,-187.5 264.38,-187.5 264.38,-168.5 198.38,-168.5"/>
 <text text-anchor="middle" x="231.38" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">Smith.hpp</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="Abelian_8hpp.html" target="_top" xlink:title="Contains the methods for finding the automorphisms of finitely generated abelian groups.">
+<g id="a_node17"><a xlink:href="Abelian_8hpp.html" target="_top" xlink:title="Contains the class mackey::AbelianGroup.">
 <polygon fill="white" stroke="black" points="300.38,-224.5 300.38,-243.5 374.38,-243.5 374.38,-224.5 300.38,-224.5"/>
 <text text-anchor="middle" x="337.38" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">Abelian.hpp</text>
 </a>

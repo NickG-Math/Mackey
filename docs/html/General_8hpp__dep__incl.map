@@ -1,24 +1,24 @@
 <map id="General.hpp" name="General.hpp">
-<area shape="rect" id="node1" title="Contains general functions and vector overloads independent of everything else." alt="" coords="342,5,444,32"/>
-<area shape="rect" id="node2" href="$Box_8hpp.html" title="Contains the construction of box products of Chains." alt="" coords="194,155,269,181"/>
-<area shape="rect" id="node6" href="$Mult__Table_8hpp.html" title="Contains the classes mackey::MultTableData and mackey::MultTable that form the multiplication table." alt="" coords="97,528,217,555"/>
-<area shape="rect" id="node16" href="$C2n_8hpp.html" title="Defines the groups ." alt="" coords="576,304,650,331"/>
-<area shape="rect" id="node17" href="$C4_8hpp.html" title="Defines group ." alt="" coords="653,80,720,107"/>
-<area shape="rect" id="node18" href="$Abelian_8hpp.html" title="Contains the methods for finding the automorphisms of finitely generated abelian groups." alt="" coords="388,80,486,107"/>
-<area shape="rect" id="node19" href="$Homology_8hpp.html" title="Contains the Homology class and algorithms." alt="" coords="293,155,408,181"/>
-<area shape="rect" id="node3" href="$Green_8hpp.html" title="Contains the class and methods for multiplying generators." alt="" coords="307,304,396,331"/>
-<area shape="rect" id="node4" href="$Massey_8hpp.html" title="Contains the class and methods for Massey Products." alt="" coords="309,379,408,405"/>
-<area shape="rect" id="node5" href="$Point_8hpp.html" title="Contains the computations for RO(G) homology of a point." alt="" coords="320,453,402,480"/>
-<area shape="rect" id="node13" href="$Additive_8hpp.html" title="Contains the class for presenting the additive structure of the RO(G) homology." alt="" coords="312,752,416,779"/>
-<area shape="rect" id="node14" href="$Space_8hpp.html" title="File containing the class for spaces other than points!" alt="" coords="424,528,514,555"/>
-<area shape="rect" id="node7" href="$Mult__Graph_8hpp.html" title="Contains the multiplication graph." alt="" coords="44,603,169,629"/>
-<area shape="rect" id="node8" href="$Factorization_8hpp.html" title="Contains the multiplication graph and the methods for factorizing generators." alt="" coords="65,752,198,779"/>
-<area shape="rect" id="node11" href="$Mult__Connectivity_8hpp.html" title="Contains methods for the finding the connectivity of the multiplication graph should identification f..." alt="" coords="180,677,347,704"/>
-<area shape="rect" id="node12" href="$Mult__Identify_8hpp.html" title="Contains extra identification methods for the multiplication graph." alt="" coords="22,677,156,704"/>
-<area shape="rect" id="node9" href="$Mackey_8hpp.html" title="Includes the entire library." alt="" coords="314,827,413,853"/>
-<area shape="rect" id="node10" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations (before their interpretation) vi..." alt="" coords="132,827,246,853"/>
-<area shape="rect" id="node15" href="$BC4S2_8hpp.html" title=" " alt="" coords="423,603,515,629"/>
-<area shape="rect" id="node22" href="$MackeyFunctor_8hpp.html" title="Contains the class describing Mackey Functors." alt="" coords="432,155,578,181"/>
-<area shape="rect" id="node20" href="$Identify_8hpp.html" title="Contains the identification classes." alt="" coords="420,229,518,256"/>
-<area shape="rect" id="node21" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and act&#45;group&#45;acting." alt="" coords="304,229,396,256"/>
+<area shape="rect" id="node1" title="Contains general functions and vector overloads independent of everything else." alt="" coords="351,5,452,32"/>
+<area shape="rect" id="node2" href="$Box_8hpp.html" title="Contains the class mackey::Tensor." alt="" coords="315,155,389,181"/>
+<area shape="rect" id="node6" href="$Mult__Table_8hpp.html" title="Contains the classes mackey::MultTableData and mackey::MultTable." alt="" coords="320,528,440,555"/>
+<area shape="rect" id="node16" href="$C2n_8hpp.html" title="Defines the groups &#160;via mackey::C2Power." alt="" coords="517,304,592,331"/>
+<area shape="rect" id="node17" href="$C4_8hpp.html" title="Defines group &#160;via mackey::C_4." alt="" coords="515,80,581,107"/>
+<area shape="rect" id="node18" href="$Abelian_8hpp.html" title="Contains the class mackey::AbelianGroup." alt="" coords="168,80,267,107"/>
+<area shape="rect" id="node19" href="$Homology_8hpp.html" title="Contains the class mackey::Homology." alt="" coords="5,155,120,181"/>
+<area shape="rect" id="node3" href="$Green_8hpp.html" title="Contains the classes mackey::Green, mackey::internal::GreenCompute, mackey::internal::ChainsLevelGen,..." alt="" coords="163,304,253,331"/>
+<area shape="rect" id="node4" href="$Massey_8hpp.html" title="Contains the classes mackey::Massey and mackey::internal::MasseyCompute." alt="" coords="159,379,257,405"/>
+<area shape="rect" id="node5" href="$Point_8hpp.html" title="Contains the methods computing the RO(G) homology of a point." alt="" coords="167,453,249,480"/>
+<area shape="rect" id="node13" href="$Additive_8hpp.html" title="Contains the class mackey::AdditiveStructure" alt="" coords="67,752,171,779"/>
+<area shape="rect" id="node14" href="$Space_8hpp.html" title="Contains the class mackey::Space." alt="" coords="163,528,253,555"/>
+<area shape="rect" id="node7" href="$Mult__Graph_8hpp.html" title="Contains the class mackey::MultGraph." alt="" coords="317,603,443,629"/>
+<area shape="rect" id="node8" href="$Mult__Connectivity_8hpp.html" title="Contains the class mackey::MultConnectivity." alt="" coords="403,677,570,704"/>
+<area shape="rect" id="node10" href="$Mult__Identify_8hpp.html" title="Contains the class mackey::MultIdentify." alt="" coords="245,677,379,704"/>
+<area shape="rect" id="node9" href="$Mackey_8hpp.html" title="Includes the entire library apart from Serialization/Cerealizer.hpp." alt="" coords="263,827,361,853"/>
+<area shape="rect" id="node11" href="$Factorization_8hpp.html" title="Contains the class mackey::Factorization." alt="" coords="245,752,379,779"/>
+<area shape="rect" id="node12" href="$Cerealizer_8hpp.html" title="Contains the methods for serializing the results of our computations via cereal." alt="" coords="93,827,208,853"/>
+<area shape="rect" id="node15" href="$BC4S2_8hpp.html" title="Contains the class mackey::BC4S2." alt="" coords="162,603,254,629"/>
+<area shape="rect" id="node22" href="$MackeyFunctor_8hpp.html" title="Contains the class mackey::MackeyFunctor." alt="" coords="144,155,291,181"/>
+<area shape="rect" id="node20" href="$Identify_8hpp.html" title="Contains the classes mackey::IDGenerators and mackey::internal::IDGeneratorCompute" alt="" coords="159,229,257,256"/>
+<area shape="rect" id="node21" href="$Levels_8hpp.html" title="Contains the methods for transfering, restricting and Weyl&#45;group&#45;acting." alt="" coords="34,229,126,256"/>
 </map>

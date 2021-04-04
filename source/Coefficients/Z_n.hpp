@@ -5,7 +5,7 @@
 #include "Types/SFINAE.hpp"
 
 ///@file
-///@brief Contains the class for Z/N coefficients
+///@brief Contains the class \ref mackey::Z_mod
 
 namespace mackey {
 	///////////////////////////////////
@@ -58,6 +58,7 @@ namespace mackey {
 	template<int64_t N, typename T> //Eigen needs this to be non member
 	std::ostream& operator<<(std::ostream& out, const Z_mod<N, T> a);
 
+	///\f$\Z/2\f$ coefficients
 	using Z2 = Z_mod<2, bool>;
 }
 

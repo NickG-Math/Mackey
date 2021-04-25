@@ -58,7 +58,7 @@ namespace mackey {
 	template<int64_t N, typename T> //Eigen needs this to be non member
 	std::ostream& operator<<(std::ostream& out, const Z_mod<N, T> a);
 
-	///\f$\Z/2\f$ coefficients
+	///The \f$\mathbf Z/2\f$ coefficients
 	using Z2 = Z_mod<2, bool>;
 }
 

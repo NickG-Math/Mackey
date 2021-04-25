@@ -1,0 +1,7 @@
+<map id="FactoryGenerator&lt; spec_t, gen_t &gt;" name="FactoryGenerator&lt; spec_t, gen_t &gt;">
+<area shape="rect" id="node1" title="Prototype for coroutine&#45;like iterators that generate elements such as combinations." alt="" coords="5,54,184,95"/>
+<area shape="rect" id="node2" href="$classmackey_1_1FactoryGenerator.html" title=" " alt="" coords="401,7,631,63"/>
+<area shape="rect" id="node4" href="$classmackey_1_1FactoryGenerator.html" title=" " alt="" coords="400,87,632,143"/>
+<area shape="rect" id="node3" href="$classmackey_1_1PermutationGenerator_1_1ConstIterator.html" title="Constant iterator that is used in a ranged for loop to generate the permutations." alt="" coords="681,21,788,48"/>
+<area shape="rect" id="node5" href="$classmackey_1_1CombinationGenerator_1_1ConstIterator.html" title="Constant iterator that is used in a ranged for loop to generate the combinations." alt="" coords="681,101,788,128"/>
+</map>

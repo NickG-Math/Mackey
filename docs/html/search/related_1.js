@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['greencompute_723',['GreenCompute',['../classmackey_1_1Green.html#ae49fda117fadfc80dc40ca724b48131f',1,'mackey::Green']]],
-  ['idgenerators_724',['IDGenerators',['../classmackey_1_1internal_1_1IDGeneratorCompute.html#a01dc345af0bda982b61f68e8fb297e8d',1,'mackey::internal::IDGeneratorCompute']]],
-  ['interpolatingvectorgenerator_725',['InterpolatingVectorGenerator',['../classmackey_1_1InterpolatingVectorGenerator_1_1const__iterator.html#ac618634440214c255d63a3ba5be11937',1,'mackey::InterpolatingVectorGenerator::const_iterator']]]
+  ['factorygenerator_3c_20combinationgenerator_3a_3aconstiterator_2c_20std_3a_3avector_3c_20t_20_3e_20_3e_758',['FactoryGenerator&lt; CombinationGenerator::ConstIterator, std::vector&lt; T &gt; &gt;',['../classmackey_1_1CombinationGenerator_1_1ConstIterator.html#a606fcaa7fb0db1af76ffdfd823c0740b',1,'mackey::CombinationGenerator::ConstIterator']]],
+  ['factorygenerator_3c_20permutationgenerator_3a_3aconstiterator_2c_20std_3a_3avector_3c_20t_20_3e_20_3e_759',['FactoryGenerator&lt; PermutationGenerator::ConstIterator, std::vector&lt; T &gt; &gt;',['../classmackey_1_1PermutationGenerator_1_1ConstIterator.html#a4ff987c0c0e2588dc4fa2d85d3965548',1,'mackey::PermutationGenerator::ConstIterator']]]
 ];

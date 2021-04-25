@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['left_5fto_5fcanon_652',['left_to_canon',['../structmackey_1_1ChangeBasis.html#aef5f59becb2933b3aff52c50745c9dbb',1,'mackey::ChangeBasis']]],
-  ['level_653',['level',['../structmackey_1_1MultTableData.html#acf4d33ee4cff36f69b924471174dcb11',1,'mackey::MultTableData::level()'],['../structmackey_1_1Levels.html#adac4970c9226585cf1564727256070a6',1,'mackey::Levels::level()']]],
-  ['levels_654',['levels',['../classmackey_1_1MackeyFunctor.html#a8bcc39158ec6f76407dc9e339246962c',1,'mackey::MackeyFunctor']]]
+  ['left_5fto_5fcanon_687',['left_to_canon',['../structmackey_1_1ChangeBasis.html#aef5f59becb2933b3aff52c50745c9dbb',1,'mackey::ChangeBasis']]],
+  ['level_688',['level',['../structmackey_1_1MultTableData.html#acf4d33ee4cff36f69b924471174dcb11',1,'mackey::MultTableData::level()'],['../structmackey_1_1Levels.html#adac4970c9226585cf1564727256070a6',1,'mackey::Levels::level()']]],
+  ['levels_689',['levels',['../classmackey_1_1MackeyFunctor.html#a8bcc39158ec6f76407dc9e339246962c',1,'mackey::MackeyFunctor']]]
 ];

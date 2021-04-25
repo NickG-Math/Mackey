@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['greencompute_722',['GreenCompute',['../classmackey_1_1internal_1_1IDGeneratorCompute.html#a0eca3a2daf1befbba8889a6ef8ab7e3d',1,'mackey::internal::IDGeneratorCompute::GreenCompute()'],['../classmackey_1_1internal_1_1ChainsLevelGen.html#a0eca3a2daf1befbba8889a6ef8ab7e3d',1,'mackey::internal::ChainsLevelGen::GreenCompute()'],['../classmackey_1_1internal_1_1ProductGen.html#a0eca3a2daf1befbba8889a6ef8ab7e3d',1,'mackey::internal::ProductGen::GreenCompute()']]]
+  ['combinationgenerator_757',['CombinationGenerator',['../classmackey_1_1CombinationGenerator_1_1ConstIterator.html#a72ff8adf15af1b6a2547254d25ef4a38',1,'mackey::CombinationGenerator::ConstIterator']]]
 ];

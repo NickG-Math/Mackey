@@ -98,37 +98,71 @@ $(document).ready(function(){initNavTree('BC4S2_8hpp_source.html',''); initResiz
 <div class="contents">
 <a href="BC4S2_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Space_8hpp.html">Space.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemackey.html">mackey</a>{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> group_t&gt;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classmackey_1_1BC4S2.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmackey_1_1BC4S2.html">BC4S2</a> : <span class="keyword">public</span> <a class="code" href="classmackey_1_1Space.html">mackey::Space</a>&lt;BC4S2&lt;group_t&gt;, group_t&gt; {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classmackey_1_1BC4S2.html#a91da7a5496c2b7fef3259fc90e4dda3e">   15</a></span>&#160;    <a class="code" href="classmackey_1_1BC4S2.html#a91da7a5496c2b7fef3259fc90e4dda3e">BC4S2</a>(<span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> group_t::rank_t rank_t;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> group_t::diff_t diff_t;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;char&gt; cell_t; <span class="comment">// a cell is 1,-1,0,-1,... etc.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> std::vector&lt;typename Space&lt;BC4S2&lt;group_t&gt;, group_t&gt;::cell_coefficient_pair&gt; boundary_t;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::vector&lt;std::vector&lt;cell_t&gt;&gt; all_cells_in_dimension; <span class="comment">//All cells in each dimension</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::vector&lt;std::map&lt;cell_t, int&gt;&gt; cell_to_location; <span class="comment">//A map that takes each cell to its index</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">auto</span> boundary(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> k);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classmackey_1_1BC4S2.html#aebc791693aabca30f7b277255cf83a2d">   30</a></span>&#160;    <span class="keywordtype">long</span> estimate_nonzero_entries(<span class="keywordtype">int</span> i);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classmackey_1_1Space.html">Space</a>&lt;<a class="code" href="classmackey_1_1BC4S2.html">BC4S2</a>&lt;group_t&gt;, group_t&gt;;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;impl/BC4S2.ipp&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Generators_8hpp.html">Utility/Generators.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemackey.html">mackey</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> group_t&gt;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classmackey_1_1BC4S2.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmackey_1_1BC4S2.html">BC4S2</a> : <span class="keyword">public</span> <a class="code" href="classmackey_1_1Space.html">Space</a>&lt;BC4S2&lt;group_t&gt;, group_t&gt; {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classmackey_1_1BC4S2.html#a915596a637117d5fb8d97acbd2a1cb8b">   18</a></span>&#160;        <a class="code" href="classmackey_1_1BC4S2.html#a915596a637117d5fb8d97acbd2a1cb8b">BC4S2</a>(<span class="keywordtype">int</span> dimension);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classmackey_1_1Space.html">Space&lt;BC4S2&lt;group_t&gt;</a>, group_t&gt;::cell_coefficient_pair ccp;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> std::vector&lt;ccp&gt; boundary_t;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classmackey_1_1Space.html">Space&lt;BC4S2&lt;group_t&gt;</a>, group_t&gt;::equivariant_index eq_t;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="classmackey_1_1Space.html">Space&lt;BC4S2&lt;group_t&gt;</a>, group_t&gt;::nonequivariant_index neq_t;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> group_t::rank_t rank_t;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> group_t::diff_t diff_t;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">struct </span>cell_expanded {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            std::vector&lt;char&gt; cell; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            cell_expanded <a class="code" href="classmackey_1_1Space.html#a7e080a98b779880295f15b49cbe497d0">action</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> cell_expanded&amp; c) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordtype">bool</span> isfaceof(<span class="keyword">const</span> cell_expanded&amp; c) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">struct </span>cell_compressed {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            std::vector&lt;uint32_t&gt; cell; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> cell_compressed&amp; c) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        };</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> dimension;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::vector&lt;std::vector&lt;cell_compressed&gt;&gt; cells_equivariant;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::vector&lt;std::vector&lt;std::vector&lt;int&gt;&gt;&gt; cuts;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::vector&lt;std::vector&lt;cell_expanded&gt;&gt; cells_nonequivariant;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">int</span> getrank(<span class="keyword">const</span> cell_compressed&amp; v) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        rank_t getrank(<span class="keyword">const</span> std::vector&lt;cell_compressed&gt;&amp; v) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> setcells();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> setexpandedcells();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::vector&lt;cell_expanded&gt; getfaces(<span class="keywordtype">int</span> dim, eq_t k);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        cell_expanded getexpandedcell(<span class="keywordtype">int</span> dim, eq_t i) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        int64_t estimate_nonzero_entries(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">auto</span> boundary(<span class="keywordtype">int</span> dim, eq_t k);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::pair&lt;cell_compressed, int&gt; erase_by_criterion(<span class="keyword">const</span> cell_compressed&amp; v, <span class="keyword">const</span> T&amp; criterion) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::array&lt;std::pair&lt;cell_compressed, int&gt;, 2&gt; quickcut(<span class="keyword">const</span> cell_compressed&amp; v) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classmackey_1_1BC4S2.html#aebc791693aabca30f7b277255cf83a2d">   62</a></span>&#160;        std::pair&lt;std::vector&lt;cell_compressed&gt;, std::vector&lt;std::vector&lt;int&gt;&gt;&gt; quickcut(<span class="keyword">const</span> std::vector&lt;cell_compressed&gt;&amp; v) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classmackey_1_1Space.html">Space</a>&lt;<a class="code" href="classmackey_1_1BC4S2.html">BC4S2</a>&lt;group_t&gt;, group_t&gt;;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    };</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#include &quot;impl/BC4S2.ipp&quot;</span></div>
+<div class="ttc" id="aGenerators_8hpp_html"><div class="ttname"><a href="Generators_8hpp.html">Generators.hpp</a></div><div class="ttdoc">Contains classes for generating permutations, combinations and a factory for such classes.</div></div>
 <div class="ttc" id="aSpace_8hpp_html"><div class="ttname"><a href="Space_8hpp.html">Space.hpp</a></div><div class="ttdoc">Contains the class mackey::Space.</div></div>
-<div class="ttc" id="aclassmackey_1_1BC4S2_html"><div class="ttname"><a href="classmackey_1_1BC4S2.html">mackey::BC4S2</a></div><div class="ttdoc">The spaces .</div><div class="ttdef"><b>Definition:</b> BC4S2.hpp:11</div></div>
-<div class="ttc" id="aclassmackey_1_1BC4S2_html_a91da7a5496c2b7fef3259fc90e4dda3e"><div class="ttname"><a href="classmackey_1_1BC4S2.html#a91da7a5496c2b7fef3259fc90e4dda3e">mackey::BC4S2::BC4S2</a></div><div class="ttdeci">BC4S2(int j)</div><div class="ttdoc">Constructs BC4S2(j) as a cellular equivariant space.</div></div>
-<div class="ttc" id="aclassmackey_1_1Space_html"><div class="ttname"><a href="classmackey_1_1Space.html">mackey::Space</a></div><div class="ttdoc">An equivariant space with an equivariant cellular decomposition.</div><div class="ttdef"><b>Definition:</b> Space.hpp:16</div></div>
+<div class="ttc" id="aclassmackey_1_1BC4S2_html"><div class="ttname"><a href="classmackey_1_1BC4S2.html">mackey::BC4S2</a></div><div class="ttdoc">The space  up to given dimension.</div><div class="ttdef"><b>Definition:</b> BC4S2.hpp:13</div></div>
+<div class="ttc" id="aclassmackey_1_1BC4S2_html_a915596a637117d5fb8d97acbd2a1cb8b"><div class="ttname"><a href="classmackey_1_1BC4S2.html#a915596a637117d5fb8d97acbd2a1cb8b">mackey::BC4S2::BC4S2</a></div><div class="ttdeci">BC4S2(int dimension)</div><div class="ttdoc">Constructs BC4S2 as a cellular equivariant space up to given dimension.</div></div>
+<div class="ttc" id="aclassmackey_1_1Space_html"><div class="ttname"><a href="classmackey_1_1Space.html">mackey::Space</a></div><div class="ttdoc">An equivariant space with an equivariant cellular decomposition.</div><div class="ttdef"><b>Definition:</b> Space.hpp:24</div></div>
+<div class="ttc" id="aclassmackey_1_1Space_html_a7e080a98b779880295f15b49cbe497d0"><div class="ttname"><a href="classmackey_1_1Space.html#a7e080a98b779880295f15b49cbe497d0">mackey::Space&lt; BC4S2&lt; group_t &gt;, group_t &gt;::action</a></div><div class="ttdeci">nonequivariant_index action(nonequivariant_index n, int dimension) const</div><div class="ttdoc">Produces g*n given cell n.</div></div>
 <div class="ttc" id="anamespacemackey_html"><div class="ttname"><a href="namespacemackey.html">mackey</a></div><div class="ttdoc">Everything in this library is under this namespace.</div><div class="ttdef"><b>Definition:</b> Box.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

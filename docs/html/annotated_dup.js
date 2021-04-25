@@ -48,6 +48,9 @@ var annotated_dup =
       [ "Hash<>", "classmackey_1_1Hash_3_4.html", "classmackey_1_1Hash_3_4" ],
       [ "Hash< T >", "classmackey_1_1Hash_3_01T_01_4.html", "classmackey_1_1Hash_3_01T_01_4" ],
       [ "Hash< T, T >", "classmackey_1_1Hash_3_01T_00_01T_01_4.html", "classmackey_1_1Hash_3_01T_00_01T_01_4" ],
-      [ "IteratorNNZ", "classmackey_1_1IteratorNNZ.html", "classmackey_1_1IteratorNNZ" ]
+      [ "IteratorNNZ", "classmackey_1_1IteratorNNZ.html", "classmackey_1_1IteratorNNZ" ],
+      [ "FactoryGenerator", "classmackey_1_1FactoryGenerator.html", "classmackey_1_1FactoryGenerator" ],
+      [ "PermutationGenerator", "classmackey_1_1PermutationGenerator.html", "classmackey_1_1PermutationGenerator" ],
+      [ "CombinationGenerator", "classmackey_1_1CombinationGenerator.html", "classmackey_1_1CombinationGenerator" ]
     ] ]
 ];

@@ -20,6 +20,7 @@ var files_dup =
       [ "Factorization", "classmackey_1_1Factorization.html", "classmackey_1_1Factorization" ]
     ] ],
     [ "General.hpp", "General_8hpp.html", "General_8hpp" ],
+    [ "Generators.hpp", "Generators_8hpp.html", "Generators_8hpp" ],
     [ "Graph.hpp", "Graph_8hpp.html", "Graph_8hpp" ],
     [ "Graph_Policies.hpp", "Graph__Policies_8hpp.html", "Graph__Policies_8hpp" ],
     [ "Green.hpp", "Green_8hpp.html", "Green_8hpp" ],
@@ -60,7 +61,9 @@ var files_dup =
     ] ],
     [ "Space.hpp", "Space_8hpp.html", [
       [ "Space", "classmackey_1_1Space.html", "classmackey_1_1Space" ],
-      [ "cell_coefficient_pair", "classmackey_1_1Space_1_1cell__coefficient__pair.html", "classmackey_1_1Space_1_1cell__coefficient__pair" ]
+      [ "equivariant_index", "structmackey_1_1Space_1_1equivariant__index.html", "structmackey_1_1Space_1_1equivariant__index" ],
+      [ "nonequivariant_index", "structmackey_1_1Space_1_1nonequivariant__index.html", "structmackey_1_1Space_1_1nonequivariant__index" ],
+      [ "cell_coefficient_pair", "structmackey_1_1Space_1_1cell__coefficient__pair.html", "structmackey_1_1Space_1_1cell__coefficient__pair" ]
     ] ],
     [ "Z_n.hpp", "Z__n_8hpp.html", "Z__n_8hpp" ]
 ];

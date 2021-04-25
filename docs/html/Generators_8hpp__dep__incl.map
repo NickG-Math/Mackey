@@ -1,0 +1,5 @@
+<map id="Generators.hpp" name="Generators.hpp">
+<area shape="rect" id="node1" title="Contains classes for generating permutations, combinations and a factory for such classes." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$BC4S2_8hpp.html" title="Contains the class mackey::BC4S2." alt="" coords="21,80,113,107"/>
+<area shape="rect" id="node3" href="$Mackey_8hpp.html" title="Includes the entire library apart from Serialization/Cerealizer.hpp." alt="" coords="17,155,116,181"/>
+</map>

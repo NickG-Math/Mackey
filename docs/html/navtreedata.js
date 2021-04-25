@@ -81,7 +81,7 @@ var NAVTREE =
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
@@ -100,8 +100,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Abelian_8hpp.html",
-"classmackey_1_1Factorization.html#ad2b7f8300d9f35465a766551a73327ca",
-"functions_f.html"
+"classmackey_1_1CombinationGenerator_1_1ConstIterator.html#a606fcaa7fb0db1af76ffdfd823c0740b",
+"classmackey_1_1Z__mod.html#abab39ed36cae57e94fba7ea88057214d",
+"structmackey_1_1Neighborhood_1_1const__iterator.html"
 ];
 
 var SYNCONMSG = '';
